@@ -1,13 +1,15 @@
 library QuelthalasConfig initializer OnInit requires Faction
 
     globals
-        constant integer FACTION_QUELTHELAS = 6
+      Faction FACTION_QUELTHELAS
     endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_QUELTHELAS,"Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+        set FACTION_QUELTHELAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+        set f = FACTION_QUELTHELAS
+
             call f.setAbsenceResearch('R04L')
             //Structures
             call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

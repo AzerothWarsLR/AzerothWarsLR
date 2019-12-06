@@ -20,17 +20,17 @@ library EnableSecondChances initializer OnInit requires Team, Persons
     local Team triggerTeam = GetTriggerTeam()
     if triggerTeam.size == 0 then
       call TriggerSleepAction(RESEARCH_DELAY)
-      if triggerTeam.id == TEAM_SCOURGE then
+      if triggerTeam == TEAM_SCOURGE then
         call EnableResearchForAll('http') 
-      elseif triggerTeam.id == TEAM_NORTH_ALLIANCE then
+      elseif triggerTeam == TEAM_NORTH_ALLIANCE then
         call EnableResearchForAll('http')
-      elseif triggerTeam.id == TEAM_HORDE then
+      elseif triggerTeam == TEAM_HORDE then
         call EnableResearchForAll('R05C')
-      elseif triggerTeam.id == TEAM_NIGHT_ELVES then
+      elseif triggerTeam == TEAM_NIGHT_ELVES then
         call EnableResearchForAll('R05C')
-      elseif triggerTeam.id == TEAM_SOUTH_ALLIANCE then  
+      elseif triggerTeam == TEAM_SOUTH_ALLIANCE then  
         call EnableResearchForAll('R05D')
-      elseif triggerTeam.id == TEAM_FEL_HORDE then
+      elseif triggerTeam == TEAM_FEL_HORDE then
         call EnableResearchForAll('R05D')
       endif  
     endif

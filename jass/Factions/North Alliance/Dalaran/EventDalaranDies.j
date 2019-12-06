@@ -1,10 +1,8 @@
-//When Dalaran is destroyed, remove its ability to damage Undead units and prevent DemonInstantiation.
+//When Dalaran is destroyed, remove its ability to damage Undead units
 
-library EventDalaranDies initializer OnInit requires DemonWarpBarrierConfig
+library EventDalaranDies initializer OnInit
 
   private function Dies takes nothing returns nothing
-    set DemonWarpBarrier.barriersByIndex[DEMON_WARP_BARRIER_DALARAN].enabled = false
-
     //call DisableTrigger( gg_trg_Dalaran_Generator_Aura )
     //call RemoveWeatherEffectBJ( udg_DalaranAura )
     call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "With the Violet Citadel destroyed, the mystical aura surrounding it has fallen as well. The Undead are no longer harmed by its effects, and Demons can be Instantiated into the city.")   

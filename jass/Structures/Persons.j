@@ -124,7 +124,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       return this.team
     endmethod
     
-    method setTeam takes integer id returns nothing
+    method setTeam takes Team team returns nothing
       if this.team != 0 then
         set thistype.triggerPerson = this
         call this.team.removePlayer(this.p)
@@ -133,17 +133,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call OnPersonTeamLeave.fire()
       endif  
 
-      if id > -1 then
-        if Team.getTeam(id) != 0 then
-          call Team.getTeam(id).addPlayer(this.p) 
-          set this.team = Team.getTeam(id)
-          call MMD_UpdateValueString("lateTeam", this.p, I2S(id))
-          set thistype.triggerPerson = this
-          call OnPersonTeamJoin.fire()
-        else
-          call BJDebugMsg("Error: attempted to add player " + I2S(GetPlayerId(p)) + " to nonexistent team with ID " + (I2S(id)))
-        endif  
-      endif
+      call team.addPlayer(this.p) 
+      set this.team = team
+      set thistype.triggerPerson = this
+      call OnPersonTeamJoin.fire()
     endmethod
     
     method clearFactionMods takes nothing returns nothing
@@ -201,8 +194,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           call this.modObjectLimit( this.faction.getObjectList(i), -this.faction.getObjectLimit(this.faction.getObjectList(i)) )
           set i = i + 1
         endloop                       
-        //call SetPlayerColorBJ(this.p, PLAYER_COLOR_COAL, true)
-        set PersonsByFaction[this.faction.getId()] = 0     //Free up existing faction slot
+        set PersonsByFaction[this.faction] = 0     //Free up existing faction slot
         //Toggle absence and presence researches for this faction
         set i = 0
         loop
@@ -218,8 +210,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       endif        
     endmethod
 
-    method setFaction takes integer id returns nothing
-      local Faction newFaction = Faction.getFactionById(id)
+    method setFaction takes Faction newFaction returns nothing
       local integer i = 0
 
       set thistype.prevFaction = this.faction
@@ -229,38 +220,31 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       endif
 
       if newFaction != 0 then
-        if PersonsByFaction[id] == 0 then
-          if id != -1 then
-            set i = 0
-            loop //Apply object limits
-            exitwhen i > newFaction.getObjectCount()
-              call this.modObjectLimit( newFaction.getObjectList(i), newFaction.getObjectLimit(newFaction.getObjectList(i)) )
-              set i = i + 1
-            endloop             
-            call SetPlayerColorBJ(this.p, newFaction.getPlayCol(), true)
-            set PersonsByFaction[id] = this   
-            set this.faction = newFaction 
-            //Toggle absence and presence researches for this faction
-            set i = 0
-            loop
-            exitwhen i > MAX_PLAYERS
-              if this.faction.getAbsenceResearch() != 0 then
-                call SetPlayerTechResearched(Player(i), this.faction.getAbsenceResearch(), 0)
-              endif
-              if this.faction.getPresenceResearch() != 0 then
-                call SetPlayerTechResearched(Player(i), this.faction.getPresenceResearch(), 1)
-              endif
-              set i = i + 1
-            endloop 
-            call this.faction.executeEnterTrigger()                    
-            call TeamButton.buildAllianceCenter(this.p)
-          endif
+        if PersonsByFaction[newFaction] == 0 then
+          set i = 0
+          loop //Apply object limits
+          exitwhen i > newFaction.getObjectCount()
+            call this.modObjectLimit( newFaction.getObjectList(i), newFaction.getObjectLimit(newFaction.getObjectList(i)) )
+            set i = i + 1
+          endloop             
+          call SetPlayerColorBJ(this.p, newFaction.getPlayCol(), true)
+          set PersonsByFaction[newFaction] = this   
+          set this.faction = newFaction 
+          //Toggle absence and presence researches for this faction
+          set i = 0
+          loop
+          exitwhen i > MAX_PLAYERS
+            if this.faction.getAbsenceResearch() != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.getAbsenceResearch(), 0)
+            endif
+            if this.faction.getPresenceResearch() != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.getPresenceResearch(), 1)
+            endif
+            set i = i + 1
+          endloop 
+          call this.faction.executeEnterTrigger()                    
         else
-          call BJDebugMsg("Error: attempted to set Person " + this.name + " to already occupied faction with ID" + I2S(id))
-        endif
-      else
-        if id != -1 then
-        call BJDebugMsg("Error: attempted to apply nonexistent faction with ID " + I2S(id) + " to person " + GetPlayerName(this.p))
+          call BJDebugMsg("Error: attempted to set Person " + this.name + " to already occupied faction with name " + newFaction.name)
         endif
       endif
       

@@ -1,185 +1,46 @@
 library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
 
   globals
-    constant integer TEAM_SCOURGE = 0
-    constant integer TEAM_NORTH_ALLIANCE = 1
-    constant integer TEAM_HORDE = 2
-    constant integer TEAM_NIGHT_ELVES = 3
-    constant integer TEAM_SOUTH_ALLIANCE = 4
-    constant integer TEAM_FEL_HORDE = 5
-    constant integer TEAM_AHNQIRAJ = 7
-    constant integer TEAM_ILLIDARI = 6
-    constant integer TEAM_QUELTHALAS = 8
-    constant integer TEAM_EBON_BLADE = 55
+    Team TEAM_SCOURGE = 0
+    Team TEAM_NORTH_ALLIANCE = 1
+    Team TEAM_HORDE = 2
+    Team TEAM_NIGHT_ELVES = 3
+    Team TEAM_SOUTH_ALLIANCE = 4
+    Team TEAM_FEL_HORDE = 5
+    Team TEAM_AHNQIRAJ = 7
+    Team TEAM_ILLIDARI = 6
+    Team TEAM_QUELTHALAS = 8
+    Team TEAM_EBON_BLADE = 55
   endglobals
 
   private function OnInit takes nothing returns nothing 
     //Starting teams
     local Team t = 0
     
-    set t = Team.create(TEAM_SCOURGE,"Scourge","ReplaceableTextures\\CommandButtons\\BTNUndeadCaptureFlag.blp", 2)
-      call t.addFaction(0)
-      call t.addFaction(1)        
-    set t = Team.create(TEAM_NORTH_ALLIANCE,"North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp", 3)
-      call t.addFaction(3)
-      call t.addFaction(5)      
-      call t.addFaction(6)
-    set t = Team.create(TEAM_HORDE,"Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp", 2)
-      call t.addFaction(7)
-      call t.addFaction(8)        
-    set t = Team.create(TEAM_NIGHT_ELVES,"Night Elves","ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp", 2)
-      call t.addFaction(9)
-      call t.addFaction(11)
-    set t = Team.create(TEAM_SOUTH_ALLIANCE,"South Alliance","ReplaceableTextures\\CommandButtons\\BTNHelmutPurple.blp", 2)
-      call t.addFaction(4)
-      call t.addFaction(10)               
-    set t = Team.create(TEAM_FEL_HORDE,"Fel Horde","", 1)
+    set TEAM_SCOURGE = Team.create("Scourge","ReplaceableTextures\\CommandButtons\\BTNUndeadCaptureFlag.blp", 2)
+      call TEAM_SCOURGE.addFaction(FACTION_SCOURGE)
+      call TEAM_SCOURGE.addFaction(FACTION_LEGION)        
+    set TEAM_NORTH_ALLIANCE = Team.create("North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp", 3)
+      call TEAM_NORTH_ALLIANCE.addFaction(FACTION_LORDAERON)
+      call TEAM_NORTH_ALLIANCE.addFaction(FACTION_QUELTHELAS)      
+      call TEAM_NORTH_ALLIANCE.addFaction(FACTION_DALARAN)
+    set TEAM_HORDE = Team.create("Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp", 2)
+      call TEAM_HORDE.addFaction(FACTION_FROSTWOLF)
+      call TEAM_HORDE.addFaction(FACTION_WARSONG)        
+    set TEAM_NIGHT_ELVES = Team.create("Night Elves","ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp", 2)
+      call TEAM_NIGHT_ELVES.addFaction(FACTION_SENTINELS)
+      call TEAM_NIGHT_ELVES.addFaction(FACTION_DRUIDS)
+    set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance","ReplaceableTextures\\CommandButtons\\BTNHelmutPurple.blp", 2)
+      call TEAM_SOUTH_ALLIANCE.addFaction(FACTION_IRONFORGE)
+      call TEAM_SOUTH_ALLIANCE.addFaction(FACTION_STORMWIND)               
+    set TEAM_FEL_HORDE = Team.create("Fel Horde","", 1)
         
     //Solo event teams  
-    set t = Team.create(TEAM_ILLIDARI,"Illidari","",1)
-    set t = Team.create(TEAM_AHNQIRAJ,"Old Gods","",1)
-    set t = Team.create(TEAM_QUELTHALAS,"Quel'thalas","",1)    
-    set t = Team.create(TEAM_EBON_BLADE,"Ebon Blade","",2)   
-        
-    //Joint event teams
-    set t = Team.create(9,"Demonsong Warpact","ReplaceableTextures\\CommandButtons\\BTNCoD.blp",2)  //Legion & Warsong
-      call t.addFaction(1)    
-      call t.addFaction(8)
-    set t = Team.create(10,"Shadowspirit Warpact","ReplaceableTextures\\CommandButtons\\BTNLifeBurn.blp",2)  //Legion & Frostwolf
-      call t.addFaction(1)   
-      call t.addFaction(7) 
-    set t = Team.create(11,"Burning Crusade","ReplaceableTextures\\CommandButtons\\BTNAdept 003.blp",2)  //Legion & Quel'thelas
-      call t.addFaction(1)
-      call t.addFaction(6) 
-    set t = Team.create(12,"Shadowcrown Kingdom","ReplaceableTextures\\CommandButtons\\BTNMindControlWBrain.blp",2)  //Legion & Lordaeron
-      call t.addFaction(1)
-      call t.addFaction(10) 
-    set t = Team.create(13,"Shadowcrown Empire","ReplaceableTextures\\CommandButtons\\BTNDarkness Shield.blp",2)  //Legion & Stormwind
-      call t.addFaction(1)
-      call t.addFaction(3) 
-    set t = Team.create(14,"Black Council","ReplaceableTextures\\CommandButtons\\BTNUmbralTome.blp",2)  //Legion & Dalaran
-      call t.addFaction(1)
-      call t.addFaction(5) 
-    set t = Team.create(15,"Felsteel Legion","ReplaceableTextures\\CommandButtons\\BTNInfernalFlameCannon.blp",2)  //Legion & Ironforge
-      call t.addFaction(1)
-      call t.addFaction(4) 
-    set t = Team.create(16,"Shadow Council","ReplaceableTextures\\CommandButtons\\BTN_EyeOfShadows.blp",2)  //Ebon Blade & Frostwolf
-      call t.addFaction(19)
-      call t.addFaction(7) 
-    set t = Team.create(17,"Draenor's Chosen","ReplaceableTextures\\CommandButtons\\BTNDarkHelmet.BLP",2)  //Ebon Blade & Warsong
-      call t.addFaction(19)
-      call t.addFaction(8) 
-    set t = Team.create(18,"Shadowlight Order","ReplaceableTextures\\CommandButtons\\BTNGoblet of mystic powers.blp",2)  
-      call t.addFaction(19)
-      call t.addFaction(3)
-    set t = Team.create(19,"Shadowlight Crusade","ReplaceableTextures\\CommandButtons\\BTNgoblet of fire.blp",2)    
-      call t.addFaction(19)
-      call t.addFaction(10)
-    set t = Team.create(20,"Violet Order","ReplaceableTextures\\CommandButtons\\BTNRaven_Shield.blp",2)    
-      call t.addFaction(19)
-      call t.addFaction(5)
-    set t = Team.create(21,"Order of the Dark Phoenix","ReplaceableTextures\\CommandButtons\\BTNSolarFlareFinalQualityUpdate.blp",2)    
-      call t.addFaction(19)
-      call t.addFaction(6)
-    set t = Team.create(22,"Frost Dominion","ReplaceableTextures\\CommandButtons\\BTNRunestoneGreatsword.blp",2)    
-      call t.addFaction(19)
-      call t.addFaction(4)
-    set t = Team.create(23,"Arcane Brotherhood","ReplaceableTextures\\CommandButtons\\BTNArcaneEye.blp",2)  
-      call t.addFaction(5)
-      call t.addFaction(10)
-    set t = Team.create(24,"Arcane Technocracy","ReplaceableTextures\\CommandButtons\\BTNArcaniteNightRing.blp",2) 
-      call t.addFaction(5)
-      call t.addFaction(4)
-    set t = Team.create(25,"White Covenant","ReplaceableTextures\\CommandButtons\\BTNElements.blp",2)   
-      call t.addFaction(5)
-      call t.addFaction(9)
-    set t = Team.create(26,"Arcane Wardens","ReplaceableTextures\\CommandButtons\\BTN_CR_TIDE_weir.blp",2)  
-      call t.addFaction(5)
-      call t.addFaction(11)
-    set t = Team.create(27,"Council","ReplaceableTextures\\CommandButtons\\BTNWeaver 02.blp",2)  
-      call t.addFaction(5)
-      call t.addFaction(7)
-    set t = Team.create(28,"Bloodfury Order","ReplaceableTextures\\CommandButtons\\BTNBloodBoundTome.blp",2)    
-      call t.addFaction(5)
-      call t.addFaction(8)
-    set t = Team.create(29,"Ascendancy","ReplaceableTextures\\CommandButtons\\BTNJudgment.blp",2)  
-      call t.addFaction(6)
-      call t.addFaction(10)
-    set t = Team.create(30,"Kaldorei Empire","ReplaceableTextures\\CommandButtons\\BTNWellSpring.blp",2)  
-      call t.addFaction(6)
-      call t.addFaction(9)
-    set t = Team.create(31,"Greenwood Watch","ReplaceableTextures\\CommandButtons\\BTNNatureAmulet.blp",2)  
-      call t.addFaction(6)
-      call t.addFaction(11)
-    set t = Team.create(32,"True Horde","ReplaceableTextures\\CommandButtons\\BTNHordeFlagLastOne.blp",2)   
-      call t.addFaction(6)
-      call t.addFaction(8)
-    set t = Team.create(33,"Sages of An'she","ReplaceableTextures\\CommandButtons\\BTNFireFrostRing.blp",2)  
-      call t.addFaction(6)
-      call t.addFaction(7)
-    set t = Team.create(34,"Frostfire Corps","ReplaceableTextures\\CommandButtons\\BTNak1e.blp",2)  
-      call t.addFaction(6)
-      call t.addFaction(4)
-  set t = Team.create(35,"Arathi Supremacy","ReplaceableTextures\\CommandButtons\\BTNInv_bannerpvp_02.blp",2)  
-      call t.addFaction(3)
-      call t.addFaction(10)
-    set t = Team.create(36,"Stonehammmer Alliance","ReplaceableTextures\\CommandButtons\\BTNHoly Maul.blp",2)  
-      call t.addFaction(3)
-      call t.addFaction(4)
-    set t = Team.create(37,"Tirisfal Watchers","ReplaceableTextures\\CommandButtons\\BTNSpell_Nature_SpiritArmor.blp",2)  
-      call t.addFaction(3)
-      call t.addFaction(9)
-    set t = Team.create(38,"Tirisfal Wardens","ReplaceableTextures\\CommandButtons\\BTNSphereOfNature.blp",2)    
-      call t.addFaction(3)
-      call t.addFaction(11)
-    set t = Team.create(39,"Bloodshield Pact","ReplaceableTextures\\CommandButtons\\BTNShield.blp",2)    
-      call t.addFaction(3)
-      call t.addFaction(8)
-    set t = Team.create(40,"Warhammer's Pact","ReplaceableTextures\\CommandButtons\\BTNRunestoneWarhammer.blp",2)    
-      call t.addFaction(3)
-      call t.addFaction(7)
-    set t = Team.create(41,"Nightforged","ReplaceableTextures\\CommandButtons\\BTNMaskOfForestMadness.blp",2)
-      call t.addFaction(4)
-      call t.addFaction(9)
-    set t = Team.create(42,"Keepers of the Earthen Forge","ReplaceableTextures\\CommandButtons\\BTNPhilosopher's Stone.blp",2)    
-      call t.addFaction(4)
-      call t.addFaction(11)
-    set t = Team.create(43,"Honorbound","ReplaceableTextures\\CommandButtons\\BTNRuneOfStrength.blp",2)  
-      call t.addFaction(4)
-      call t.addFaction(7)
-    set t = Team.create(44,"Axe and Hammer Pact","ReplaceableTextures\\CommandButtons\\BTNINV_Misc_StoneTablet_05.blp",2)    
-      call t.addFaction(4)
-      call t.addFaction(8)
-    set t = Team.create(45,"Starlit Kingdom","ReplaceableTextures\\CommandButtons\\BTNMoonOrb.blp",2)    
-      call t.addFaction(10)
-      call t.addFaction(9)
-    set t = Team.create(46,"Sons of Goldrinn","ReplaceableTextures\\CommandButtons\\BTNDWHowl.blp",2)  
-      call t.addFaction(10)
-      call t.addFaction(11)
-    set t = Team.create(47,"Blood Phalanx","ReplaceableTextures\\CommandButtons\\BTNWarmthChant.blp",2)  
-      call t.addFaction(10)
-      call t.addFaction(8)
-    set t = Team.create(48,"Wolf Pack","ReplaceableTextures\\CommandButtons\\BTNLunarBeast.blp",2)  
-      call t.addFaction(10)
-      call t.addFaction(7)
-    set t = Team.create(49,"Keepers of the Wild","ReplaceableTextures\\CommandButtons\\BTNElementalSpin.blp",2)  
-      call t.addFaction(7)
-      call t.addFaction(9)
-    set t = Team.create(50,"Cenarion Pact","ReplaceableTextures\\CommandButtons\\BTNPsiPoison.blp",2)  
-      call t.addFaction(7)
-      call t.addFaction(11)
-    set t = Team.create(51,"Warkeepers","ReplaceableTextures\\CommandButtons\\BTNTreantNatureSign.blp",2)  
-      call t.addFaction(8)
-      call t.addFaction(11)
-    set t = Team.create(52,"Western Warpact","ReplaceableTextures\\CommandButtons\\BTNAdept 01.blp",2)  
-      call t.addFaction(8)
-      call t.addFaction(9)
-    set t = Team.create(53,"Silent Watchers","ReplaceableTextures\\CommandButtons\\BTNSightBreak.blp",2)  
-      call t.addFaction(19)
-      call t.addFaction(9)
-    set t = Team.create(54,"Duskwell Vigil","ReplaceableTextures\\CommandButtons\\BTNTaint.blp",2)  
-      call t.addFaction(19)
-      call t.addFaction(11)
-  endfunction    
+    set TEAM_ILLIDARI = Team.create("Illidari","",1)
+    set TEAM_AHNQIRAJ = Team.create("Old Gods","",1)
+    set TEAM_QUELTHALAS = Team.create("Quel'thalas","",1)    
+    set TEAM_EBON_BLADE = Team.create("Ebon Blade","",2)   
   
+  endfunction
+
 endlibrary

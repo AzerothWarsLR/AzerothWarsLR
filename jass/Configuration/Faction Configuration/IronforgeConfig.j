@@ -1,13 +1,15 @@
 library IronforgeConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_IRONFORGE = 4
+    Faction FACTION_IRONFORGE
   endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_IRONFORGE,"Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
+        set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
+        set f = FACTION_IRONFORGE
+
             //Structures
             call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
             call f.registerObjectLimit('hkee', UNLIMITED)   //Keep

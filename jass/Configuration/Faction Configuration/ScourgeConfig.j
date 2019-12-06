@@ -1,13 +1,15 @@
 library ScourgeConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_SCOURGE = 0
+    Faction FACTION_SCOURGE
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set f = Faction.create(FACTION_SCOURGE, "Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
+    set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
+    set f = FACTION_SCOURGE
+
       call f.setEnterTrigger(ScourgeEnterTrigger)
       call f.setExitTrigger(ScourgeExitTrigger)
 

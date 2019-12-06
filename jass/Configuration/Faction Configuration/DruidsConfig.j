@@ -1,13 +1,15 @@
 library DruidsConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_DRUIDS = 11
+    Faction FACTION_DRUIDS = 11
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set f = Faction.create(FACTION_DRUIDS,"Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+    set f = FACTION_DRUIDS
+
       call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
       call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages
       call f.registerObjectLimit('etoe', UNLIMITED)   //Tree of Eternity  

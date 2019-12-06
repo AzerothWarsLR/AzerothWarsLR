@@ -3,7 +3,7 @@ library NewHordeEnters initializer OnInit requires Persons, NewHordeConfig, Dete
   private function PersonFactionChanges takes nothing returns nothing
     local unit u = null
     local player p = null
-    if GetTriggerPerson().faction.id == FACTION_NEW_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE then
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "Warchief Thrall has united the disparate races of Kalimdor into the " + GetTriggerPerson().faction.prefixCol + "New Horde!")     
       set p = GetTriggerPerson().p
       set u = CreateUnit(p, 'Ntin', -8882, -654, 151)   //Gazlowe

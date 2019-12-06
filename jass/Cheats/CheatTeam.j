@@ -1,35 +1,35 @@
 library CheatTeam initializer OnInit requires Team, TestSafety
 
-    globals
-        private constant string COMMAND     = "-team "
-        private string parameter = null
-    endglobals
+  globals
+    private constant string COMMAND     = "-team "
+    private string parameter = null
+  endglobals
 
-    private function Actions takes nothing returns nothing
-        local integer i = 0
-        local string enteredString = GetEventPlayerChatString()
-        local player p = GetTriggerPlayer()
-        local integer pId = GetPlayerId(p)
-        local Team t
-        set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
-        set t = Team.teamsByName[parameter]
-        
-        call Persons[pId].setTeam(t.id)
-        call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set team to " + t.getName() + ".")
-    endfunction
+  private function Actions takes nothing returns nothing
+    local integer i = 0
+    local string enteredString = GetEventPlayerChatString()
+    local player p = GetTriggerPlayer()
+    local integer pId = GetPlayerId(p)
+    local Team t
+    set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
+    set t = Team.teamsByName[parameter]
+    
+    call Persons[pId].setTeam(t)
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set team to " + t.name + ".")
+  endfunction
 
-    //===========================================================================
-    private function OnInit takes nothing returns nothing
-        local trigger trig = CreateTrigger(  )
-        local integer i = 0
-        if AreCheatsActive == true then
-            loop
-            exitwhen i > MAX_PLAYERS
-                call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
-                set i = i + 1
-            endloop   
-            call TriggerAddAction( trig, function Actions )
-        endif
-    endfunction
+  //===========================================================================
+  private function OnInit takes nothing returns nothing
+    local trigger trig = CreateTrigger(  )
+    local integer i = 0
+    if AreCheatsActive == true then
+      loop
+      exitwhen i > MAX_PLAYERS
+        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
+        set i = i + 1
+      endloop   
+      call TriggerAddAction( trig, function Actions )
+    endif
+  endfunction
 
 endlibrary

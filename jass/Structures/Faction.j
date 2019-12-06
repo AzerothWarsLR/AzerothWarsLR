@@ -6,11 +6,9 @@ library Faction initializer OnInit requires Persons, Event
   endglobals
 
   struct Faction
-    readonly static Table              factionsById
     readonly static StringTable        factionsByName
     readonly static thistype triggerFaction = 0
     
-    readonly integer           id = 0
     readonly string            name = null
     readonly playercolor       playCol = null
     readonly string            prefixCol = null
@@ -29,10 +27,7 @@ library Faction initializer OnInit requires Persons, Event
     method getIcon takes nothing returns string
       return this.icon
     endmethod
-    
-    method getId takes nothing returns integer
-      return this.id
-    endmethod
+
     
     method getName takes nothing returns string
       return this.name
@@ -132,14 +127,9 @@ library Faction initializer OnInit requires Persons, Event
       return objectList[index]
     endmethod
     
-    static method getFactionById takes integer id returns Faction
-      return thistype.factionsById[id]
-    endmethod
-    
-    static method create takes integer id, string name, playercolor playCol, string prefixCol, string icon returns Faction
+    static method create takes string name, playercolor playCol, string prefixCol, string icon returns Faction
       local Faction this = Faction.allocate()
-      
-      set this.id = id
+    
       set this.name = name
       set this.playCol = playCol
       set this.prefixCol = prefixCol
@@ -150,13 +140,7 @@ library Faction initializer OnInit requires Persons, Event
         set factionsByName[name] = this
       else
         call BJDebugMsg("Error: created faction that already exists with name " + name)
-      endif
-
-      if not factionsById.exists(id) then
-        set factionsById[id] = this
-      else
-        call BJDebugMsg("Error: created faction that already exists with id " + I2S(id))
-      endif         
+      endif 
 
       set thistype.triggerFaction = this
       call OnFactionCreate.fire()   
@@ -165,7 +149,6 @@ library Faction initializer OnInit requires Persons, Event
     endmethod        
 
     private static method onInit takes nothing returns nothing
-      set Faction.factionsById = Table.create()
       set Faction.factionsByName = StringTable.create()
     endmethod 
   endstruct

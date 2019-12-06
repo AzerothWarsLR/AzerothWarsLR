@@ -1,13 +1,15 @@
 library SentinelsConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_SENTINELS = 9
+    Faction FACTION_SENTINELS
   endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_SENTINELS,"Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp")
+        set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp")
+        set f = FACTION_SENTINELS
+
             call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
             call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   
             call f.registerObjectLimit('eaom', UNLIMITED)   //Ancient of War

@@ -11,7 +11,7 @@ library CthunCPCapture initializer OnInit requires Event, ControlPoint, Ahnqiraj
     local ControlPoint triggerControlPoint = GetTriggerControlPoint()
     local Person tempPerson = Persons[GetPlayerId(triggerControlPoint.owner)]
     local unit tempUnit = null
-    if tempPerson.getFaction().getId() == FACTION_AHNQIRAJ then
+    if tempPerson.faction == FACTION_AHNQIRAJ then
       set tempUnit = CreateUnit(triggerControlPoint.owner, TENTACLE_ID, GetUnitX(triggerControlPoint.u), GetUnitY(triggerControlPoint.u), 0)
       call QueueUnitAnimation(tempUnit, "birth")
       call QueueUnitAnimation(tempUnit, "stand")

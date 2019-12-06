@@ -60,13 +60,13 @@ library BuildCrossroads initializer OnInit requires Persons, WarsongConfig, Fros
 
   private function EntersRegion takes nothing returns nothing
     local Person tempPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-    if tempPerson.getFaction().getId() == 7 or tempPerson.getFaction().getId() == 8 then   //Any Horde faction
+    if tempPerson.faction == FACTION_FROSTWOLF or tempPerson.faction == FACTION_WARSONG then   //Any Horde faction
       call Build()
     endif
   endfunction    
 
   private function PersonFactionChanges takes nothing returns nothing
-    if GetTriggerPerson().faction.id == FACTION_NEW_HORDE or GetTriggerPerson().faction.id == FACTION_TRUE_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_TRUE_HORDE then
       call Build()
     endif
   endfunction

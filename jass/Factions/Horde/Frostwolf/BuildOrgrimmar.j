@@ -65,7 +65,7 @@ library Build initializer OnInit requires Persons, WarsongConfig, FrostwolfConfi
   endfunction    
 
   private function PersonFactionChanges takes nothing returns nothing
-    if GetTriggerPerson().faction.id == FACTION_NEW_HORDE or GetTriggerPerson().faction.id == FACTION_TRUE_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_TRUE_HORDE then
       call Build()
     endif
   endfunction

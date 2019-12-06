@@ -1,6 +1,6 @@
 //A command for a player to ally another player according to their Faction. 
 
-library AllyCommand initializer OnInit requires Team, Persons, Faction
+/* library AllyCommand initializer OnInit requires Team, Persons, Faction
 
 	globals
     private constant string COMMAND = "-ally "
@@ -59,4 +59,4 @@ library AllyCommand initializer OnInit requires Team, Persons, Faction
     call TriggerAddAction(trig, function Actions)
  	endfunction
 
-endlibrary
+endlibrary */

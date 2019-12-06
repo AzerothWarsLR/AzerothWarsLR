@@ -1,10 +1,13 @@
 library WarsongConfig initializer OnInit requires Faction
   globals
-    constant integer FACTION_WARSONG = 8
+    Faction FACTION_WARSONG
   endglobals
 
   private function OnInit takes nothing returns nothing
-    local Faction f = Faction.create(FACTION_WARSONG,"Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+    local Faction f
+    set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+    set f = FACTION_WARSONG
+
       call f.setAbsenceResearch('R04V')
       call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
       call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

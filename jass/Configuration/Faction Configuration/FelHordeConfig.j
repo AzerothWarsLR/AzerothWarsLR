@@ -2,13 +2,15 @@
 library FelHordeConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_FEL_HORDE = 2
+    Faction FACTION_FEL_HORDE
   endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_FEL_HORDE,"Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
+        set FACTION_FEL_HORDE = Faction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
+        set f = FACTION_FEL_HORDE
+
             call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
             call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold
             call f.registerObjectLimit('ofrt', UNLIMITED)   //Fortress

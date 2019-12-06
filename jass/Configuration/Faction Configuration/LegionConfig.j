@@ -3,13 +3,15 @@
 library LegionConfig initializer OnInit requires Faction
 
     globals
-        constant integer FACTION_LEGION = 1
+      Faction FACTION_LEGION
     endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_LEGION,"Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
+        set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
+        set f = FACTION_LEGION
+
             call f.setPresenceResearch('R04T')
             //Structures
             call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon

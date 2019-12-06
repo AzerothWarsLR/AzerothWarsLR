@@ -1,9 +1,15 @@
 library EbonbladeConfig initializer OnInit requires Faction
 
+  globals
+    Faction FACTION_EBONBLADE
+  endglobals
+
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(19,"Ebon Blade", PLAYER_COLOR_BROWN, "|c004E2A04","ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
+        set FACTION_EBONBLADE = Faction.create("Ebon Blade", PLAYER_COLOR_BROWN, "|c004E2A04","ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
+        set f = FACTION_EBONBLADE
+
             call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
             call f.registerObjectLimit('unp1', UNLIMITED)   //Halls of the Dead 
             call f.registerObjectLimit('unp2', UNLIMITED)   //Black Citadel 

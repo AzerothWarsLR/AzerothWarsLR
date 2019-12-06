@@ -1,10 +1,14 @@
 library NzothConfig initializer OnInit requires Faction
   globals
-    constant integer FACTION_NZOTH = 120
+    Faction FACTION_NZOTH
   endglobals
 
   private function OnInit takes nothing returns nothing
-    local Faction f = Faction.create(FACTION_NZOTH,"N'zoth", PLAYER_COLOR_VIOLET, "|c00BE00FE","ReplaceableTextures\\CommandButtons\\BTNNagaSeaWitch.blp")
+    local Faction f
+
+    set FACTION_NZOTH = Faction.create("N'zoth", PLAYER_COLOR_VIOLET, "|c00BE00FE","ReplaceableTextures\\CommandButtons\\BTNNagaSeaWitch.blp")
+    set f = FACTION_NZOTH
+
       //Units
       call f.registerObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
       call f.registerObjectLimit('nsgb', 2)           //Sea Giant Behemoth

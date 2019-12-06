@@ -5,13 +5,15 @@
 library StormwindConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_STORMWIND = 10
+    Faction FACTION_STORMWIND
   endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_STORMWIND,"Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
+        set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
+        set f = FACTION_STORMWIND
+
             //Structures
             call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
             call f.registerObjectLimit('hkee', UNLIMITED)   //Keep

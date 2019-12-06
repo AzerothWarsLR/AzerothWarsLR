@@ -1,13 +1,15 @@
 library FrostwolfConfig initializer OnInit requires Faction
 
   globals
-    constant integer FACTION_FROSTWOLF = 7
+    Faction FACTION_FROSTWOLF
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set f = Faction.create(FACTION_FROSTWOLF,"Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
+    set FACTION_FROSTWOLF = Faction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
+    set f = FACTION_FROSTWOLF
+
       call f.setAbsenceResearch('R04U')
       call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
       call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

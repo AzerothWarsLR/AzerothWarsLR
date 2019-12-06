@@ -1,13 +1,15 @@
 library IllidariConfig initializer OnInit requires Faction
 
     globals
-        constant integer FACTION_ILLIDARI = 16
+        Faction FACTION_ILLIDARI
     endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set f = Faction.create(FACTION_ILLIDARI, "Illidari", PLAYER_COLOR_TURQUOISE, "|cFF00EAFF","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
+        set FACTION_ILLIDARI = Faction.create("Illidari", PLAYER_COLOR_TURQUOISE, "|cFF00EAFF","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
+        set f = FACTION_ILLIDARI
+
             //Units
             call f.registerObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
             call f.registerObjectLimit('nsgb', 2)           //Sea Giant Behemoth
