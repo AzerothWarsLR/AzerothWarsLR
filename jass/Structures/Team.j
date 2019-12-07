@@ -16,6 +16,7 @@ library Team initializer OnInit requires Table, Event
     readonly string name = null
     readonly string icon = null
     readonly force players = null
+    readonly force invitees = null                    //Players that have been invited to join this Team
     readonly player array playerArray[MAX_PLAYERS]    //Just a different way of storing "players". Indexed by player number
     readonly integer maxSize = 0
     readonly integer size = 0
@@ -75,6 +76,26 @@ library Team initializer OnInit requires Table, Event
       endloop
     endmethod
 
+    //Revokes an invite sent to a player
+    method uninvite takes player whichPlayer returns nothing
+      local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
+      if not IsPlayerInForce(whichPlayer, this.invitees) then
+        call DisplayTextToForce(this.players, whichPerson.faction.prefixCol + whichPerson.faction.name + "|r is no longer invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichPerson.p, 0, 0, "You are no longer invited to join the " + this.name + ".")
+        call ForceRemovePlayer(this.invitees, whichPlayer)
+      endif
+    endmethod
+
+    //Sends an invite to this team to a player, which they can choose to accept at a later date
+    method invite takes player whichPlayer returns nothing
+      local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
+      if IsPlayerInForce(whichPlayer, this.invitees) == false and IsPlayerInForce(whichPlayer, this.players) == false then
+        call DisplayTextToForce(this.players, whichPerson.faction.prefixCol + whichPerson.faction.name + "|r has been invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichPerson.p, 0, 0, "You have been invited to join the " + this.name + ". Type -join " + this.name + " to accept.")
+        call ForceAddPlayer(this.invitees, whichPlayer)
+      endif
+    endmethod
+
     method addPlayer takes player p returns nothing
       set thistype.enumPlayer = p
       call ForForce(this.players, function thistype.enumAlly)    
@@ -82,10 +103,11 @@ library Team initializer OnInit requires Table, Event
       set this.playerArray[GetPlayerId(p)] = p
       set this.size = this.size+1
       call this.refreshUpgrades()
-      
+      call ForceRemovePlayer(this.invitees, p)
       if this.size < 0 then
         call BJDebugMsg("ERROR: Team " + this.name + " increased to size " + I2S(this.size))
       endif
+
       set triggerTeam = this
       call OnTeamSizeChange.fire()
     endmethod
