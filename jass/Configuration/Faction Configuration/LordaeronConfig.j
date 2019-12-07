@@ -9,7 +9,7 @@ library LordaeronConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_LIGHT_BLUE, "|c007ebff1","ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
+    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_LIGHT_BLUE, "|c007ebff1","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 3)
     set f = FACTION_LORDAERON
 
       //Structures

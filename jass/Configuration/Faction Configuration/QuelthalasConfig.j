@@ -7,7 +7,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_QUELTHELAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp")
+        set FACTION_QUELTHELAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 3)
         set f = FACTION_QUELTHELAS
 
             call f.setAbsenceResearch('R04L')

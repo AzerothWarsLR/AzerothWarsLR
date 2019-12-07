@@ -7,7 +7,7 @@ library IronforgeConfig initializer OnInit requires Faction
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
+        set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
         set f = FACTION_IRONFORGE
 
             //Structures

@@ -7,7 +7,7 @@ library NightElfConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_NIGHT_ELVES = Faction.create("Night Elves", PLAYER_COLOR_BLUE, "|c000000FF","ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
+    set FACTION_NIGHT_ELVES = Faction.create("Night Elves", PLAYER_COLOR_BLUE, "|c000000FF","ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp", 4)
     set f = FACTION_NIGHT_ELVES
       call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
       call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages

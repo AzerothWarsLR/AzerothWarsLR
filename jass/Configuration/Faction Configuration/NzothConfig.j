@@ -6,7 +6,7 @@ library NzothConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_NZOTH = Faction.create("N'zoth", PLAYER_COLOR_VIOLET, "|c00BE00FE","ReplaceableTextures\\CommandButtons\\BTNNagaSeaWitch.blp")
+    set FACTION_NZOTH = Faction.create("N'zoth", PLAYER_COLOR_VIOLET, "|c00BE00FE","ReplaceableTextures\\CommandButtons\\BTNNagaSeaWitch.blp", 5)
     set f = FACTION_NZOTH
 
       //Units

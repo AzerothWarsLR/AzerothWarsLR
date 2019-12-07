@@ -7,7 +7,7 @@ library IllidariConfig initializer OnInit requires Faction
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_ILLIDARI = Faction.create("Illidari", PLAYER_COLOR_TURQUOISE, "|cFF00EAFF","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
+        set FACTION_ILLIDARI = Faction.create("Illidari", PLAYER_COLOR_TURQUOISE, "|cFF00EAFF","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp", 5)
         set f = FACTION_ILLIDARI
 
             //Units

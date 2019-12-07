@@ -13,7 +13,7 @@ library Faction initializer OnInit requires Persons, Event
     readonly playercolor playCol = null
     readonly string prefixCol = null
     readonly string icon = null
-    readonly integer weight = 3 //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
+    readonly integer weight //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
     
     readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
@@ -127,13 +127,14 @@ library Faction initializer OnInit requires Persons, Event
       return objectList[index]
     endmethod
     
-    static method create takes string name, playercolor playCol, string prefixCol, string icon returns Faction
+    static method create takes string name, playercolor playCol, string prefixCol, string icon, integer weight returns Faction
       local Faction this = Faction.allocate()
     
       set this.name = name
       set this.playCol = playCol
       set this.prefixCol = prefixCol
       set this.icon = icon
+      set this.weight = weight
       set this.objectLimits = Table.create()
       
       if not factionsByName.exists(name) then

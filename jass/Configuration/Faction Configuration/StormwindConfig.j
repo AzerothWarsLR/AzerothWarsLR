@@ -11,7 +11,7 @@ library StormwindConfig initializer OnInit requires Faction
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
+        set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
         set f = FACTION_STORMWIND
 
             //Structures

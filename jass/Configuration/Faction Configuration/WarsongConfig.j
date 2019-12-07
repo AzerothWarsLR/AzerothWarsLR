@@ -5,7 +5,7 @@ library WarsongConfig initializer OnInit requires Faction
 
   private function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+    set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp", 3)
     set f = FACTION_WARSONG
 
       call f.setAbsenceResearch('R04V')

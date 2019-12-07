@@ -7,7 +7,7 @@ library AhnqirajConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_AHNQIRAJ = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNForgottenOne.blp")
+    set FACTION_AHNQIRAJ = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNForgottenOne.blp", 5)
     set f = FACTION_AHNQIRAJ
     
       //Units

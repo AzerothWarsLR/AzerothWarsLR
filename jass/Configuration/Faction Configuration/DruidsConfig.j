@@ -7,7 +7,7 @@ library DruidsConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
 
       call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  

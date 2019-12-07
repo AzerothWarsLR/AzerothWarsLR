@@ -10,7 +10,7 @@ library BloodElfConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_BLOOD_ELVES = Faction.create("Blood Elves", PLAYER_COLOR_MAROON, "|C009B0000","ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp")
+    set FACTION_BLOOD_ELVES = Faction.create("Blood Elves", PLAYER_COLOR_MAROON, "|C009B0000","ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp", 3)
     set f = FACTION_BLOOD_ELVES
     
       //Structures
