@@ -1,4 +1,4 @@
-library Team initializer OnInit requires Table, Event
+library Team initializer OnInit requires Table, Event, Persons
   globals
     private integer ALLY_LEFT_GAME_UPG = 'R04I'
 
@@ -22,6 +22,8 @@ library Team initializer OnInit requires Table, Event
     readonly integer size = 0
     readonly Faction array factions[10]       //These are the Factions that can join this team using a TeamButton
     readonly integer factionCount = 0
+    readonly integer weight //The combined weight of all Factions in this Team
+    readonly integer maxWeight //When the Faction has more weight than this, it begins to incur penalties
 
     //For allying everybody in a team when a player leaves, called by addPlayer
     private static method enumAlly takes nothing returns nothing
@@ -97,6 +99,7 @@ library Team initializer OnInit requires Table, Event
     endmethod
 
     method addPlayer takes player p returns nothing
+      local Person whichPerson = Persons[GetPlayerId(p)]
       set thistype.enumPlayer = p
       call ForForce(this.players, function thistype.enumAlly)    
       call ForceAddPlayer(this.players, p)
@@ -107,12 +110,14 @@ library Team initializer OnInit requires Table, Event
       if this.size < 0 then
         call BJDebugMsg("ERROR: Team " + this.name + " increased to size " + I2S(this.size))
       endif
+      set this.weight = this.weight + whichPerson.faction.weight
 
       set triggerTeam = this
       call OnTeamSizeChange.fire()
     endmethod
     
     method removePlayer takes player p returns nothing
+      local Person whichPerson = Persons[GetPlayerId(p)]
       set thistype.enumPlayer = p
       call ForForce(this.players, function thistype.enumUnally)        
       call ForceRemovePlayer(this.players, p)
@@ -124,6 +129,8 @@ library Team initializer OnInit requires Table, Event
       if this.size < 0 then
         call BJDebugMsg("ERROR: Team " + this.name + " reduced to size " + I2S(this.size))
       endif
+      set this.weight = this.weight - whichPerson.faction.weight
+
       set triggerTeam = this
       call OnTeamSizeChange.fire()
     endmethod
@@ -164,13 +171,23 @@ library Team initializer OnInit requires Table, Event
       endloop
       return false
     endmethod
-      
+
+    //When a Person inside this Team has their Faction changed, the Team's weight needs to be changed to accomodate
+    private static method onPersonFactionChanged takes nothing returns nothing
+      local Person triggerPerson = GetTriggerPerson()
+      local Faction prevFaction = GetChangingPersonPrevFaction()
+      set triggerPerson.team.weight = triggerPerson.team.weight - prevFaction.weight
+      set triggerPerson.team.weight = triggerPerson.team.weight + triggerPerson.faction.weight
+    endmethod
+
     static method create takes string name, string icon, integer maxSize returns Team
       local Team this = Team.allocate()
       
       set this.name = name
       set this.icon = icon
       set this.maxSize = maxSize
+      set this.weight = 0
+      set this.maxWeight = 9
       set this.players = CreateForce()
       
       if thistype.teamsByName[name] == 0 then
@@ -190,8 +207,13 @@ library Team initializer OnInit requires Table, Event
     endmethod
       
     private static method onInit takes nothing returns nothing
+      local trigger trig
       set thistype.teamsByName = StringTable.create()
       set thistype.teamsByIndex = Table.create()
+
+      set trig = CreateTrigger()
+      call OnPersonFactionChange.register(trig)
+      call TriggerAddAction(trig, function Team.onPersonFactionChanged)
     endmethod     
   endstruct        
     

@@ -6,28 +6,28 @@ library Faction initializer OnInit requires Persons, Event
   endglobals
 
   struct Faction
-    readonly static StringTable        factionsByName
+    readonly static StringTable factionsByName
     readonly static thistype triggerFaction = 0
     
-    readonly string            name = null
-    readonly playercolor       playCol = null
-    readonly string            prefixCol = null
-    readonly string            icon = null
+    readonly string name = null
+    readonly playercolor playCol = null
+    readonly string prefixCol = null
+    readonly string icon = null
+    readonly integer weight = 3 //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
     
-    readonly integer           absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
-    readonly integer           presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
+    readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
+    readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
 
-    readonly trigger           enterTrigger = null  //Commenced when this faction is added to any player
-    readonly trigger           exitTrigger = null   //Commenced when this faction is removed from any player
+    readonly trigger enterTrigger = null  //Commenced when this faction is added to any player
+    readonly trigger exitTrigger = null   //Commenced when this faction is removed from any player
     
-    readonly Table             objectLimits         //This is how many units, researches or structures of a given type this faction can build
-    readonly integer array     objectList[100]      //An index for objectLimits
-    readonly integer           objectCount = 0
+    readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
+    readonly integer array objectList[100] //An index for objectLimits
+    readonly integer objectCount = 0
 
     method getIcon takes nothing returns string
       return this.icon
     endmethod
-
     
     method getName takes nothing returns string
       return this.name
