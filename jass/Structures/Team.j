@@ -1,6 +1,7 @@
 library Team initializer OnInit requires Table, Event, Persons
   globals
     private integer ALLY_LEFT_GAME_UPG = 'R04I'
+    private integer DEFAULT_MAX_WEIGHT = 6  //All Teams have this much maximum weight
 
     Event OnTeamCreate = 0
     Event OnTeamSizeChange = 0
@@ -187,7 +188,7 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.icon = icon
       set this.maxSize = maxSize
       set this.weight = 0
-      set this.maxWeight = 9
+      set this.maxWeight = DEFAULT_MAX_WEIGHT
       set this.players = CreateForce()
       
       if thistype.teamsByName[name] == 0 then
