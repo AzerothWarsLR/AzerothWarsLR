@@ -1,16 +1,16 @@
 library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
 
   globals
-    Team TEAM_SCOURGE = 0
-    Team TEAM_NORTH_ALLIANCE = 1
-    Team TEAM_HORDE = 2
-    Team TEAM_NIGHT_ELVES = 3
-    Team TEAM_SOUTH_ALLIANCE = 4
-    Team TEAM_FEL_HORDE = 5
-    Team TEAM_AHNQIRAJ = 7
-    Team TEAM_ILLIDARI = 6
-    Team TEAM_QUELTHALAS = 8
-    Team TEAM_EBON_BLADE = 55
+    Team TEAM_SCOURGE
+    Team TEAM_NORTH_ALLIANCE
+    Team TEAM_HORDE
+    Team TEAM_NIGHT_ELVES
+    Team TEAM_SOUTH_ALLIANCE
+    Team TEAM_FEL_HORDE
+    Team TEAM_AHNQIRAJ
+    Team TEAM_ILLIDARI
+    Team TEAM_QUELTHALAS
+    Team TEAM_EBON_BLADE
   endglobals
 
   private function OnInit takes nothing returns nothing 
