@@ -13,7 +13,7 @@ library Unally initializer OnInit requires Team, Persons, Faction
     if triggerPerson.team.size > 1 then
       set newTeam = Team.teamsByName[triggerPerson.faction.name]
       if newTeam == 0 then
-        set newTeam = Team.create(triggerPerson.faction.name, triggerPerson.faction.icon, 2)
+        set newTeam = Team.create(triggerPerson.faction.name, triggerPerson.faction.icon)
       endif
       call triggerPerson.setTeam(newTeam)
     endif

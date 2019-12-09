@@ -17,29 +17,29 @@ library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig
     //Starting teams
     local Team t = 0
     
-    set TEAM_SCOURGE = Team.create("Scourge","ReplaceableTextures\\CommandButtons\\BTNUndeadCaptureFlag.blp", 2)
+    set TEAM_SCOURGE = Team.create("Scourge","ReplaceableTextures\\CommandButtons\\BTNUndeadCaptureFlag.blp")
       call TEAM_SCOURGE.addFaction(FACTION_SCOURGE)
       call TEAM_SCOURGE.addFaction(FACTION_LEGION)        
-    set TEAM_NORTH_ALLIANCE = Team.create("North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp", 3)
+    set TEAM_NORTH_ALLIANCE = Team.create("North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp")
       call TEAM_NORTH_ALLIANCE.addFaction(FACTION_LORDAERON)
       call TEAM_NORTH_ALLIANCE.addFaction(FACTION_QUELTHELAS)      
       call TEAM_NORTH_ALLIANCE.addFaction(FACTION_DALARAN)
-    set TEAM_HORDE = Team.create("Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp", 2)
+    set TEAM_HORDE = Team.create("Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp")
       call TEAM_HORDE.addFaction(FACTION_FROSTWOLF)
       call TEAM_HORDE.addFaction(FACTION_WARSONG)        
-    set TEAM_NIGHT_ELVES = Team.create("Night Elves","ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp", 2)
+    set TEAM_NIGHT_ELVES = Team.create("Night Elves","ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp")
       call TEAM_NIGHT_ELVES.addFaction(FACTION_SENTINELS)
       call TEAM_NIGHT_ELVES.addFaction(FACTION_DRUIDS)
-    set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance","ReplaceableTextures\\CommandButtons\\BTNHelmutPurple.blp", 2)
+    set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance","ReplaceableTextures\\CommandButtons\\BTNHelmutPurple.blp")
       call TEAM_SOUTH_ALLIANCE.addFaction(FACTION_IRONFORGE)
       call TEAM_SOUTH_ALLIANCE.addFaction(FACTION_STORMWIND)               
-    set TEAM_FEL_HORDE = Team.create("Fel Horde","", 1)
+    set TEAM_FEL_HORDE = Team.create("Fel Horde","")
         
     //Solo event teams  
-    set TEAM_ILLIDARI = Team.create("Illidari","",1)
-    set TEAM_AHNQIRAJ = Team.create("Old Gods","",1)
-    set TEAM_QUELTHALAS = Team.create("Quel'thalas","",1)    
-    set TEAM_EBON_BLADE = Team.create("Ebon Blade","",2)   
+    set TEAM_ILLIDARI = Team.create("Illidari","")
+    set TEAM_AHNQIRAJ = Team.create("Old Gods","")
+    set TEAM_QUELTHALAS = Team.create("Quel'thalas","")    
+    set TEAM_EBON_BLADE = Team.create("Ebon Blade","")   
   
   endfunction
 

@@ -19,7 +19,6 @@ library Team initializer OnInit requires Table, Event, Persons
     readonly force players = null
     readonly force invitees = null                    //Players that have been invited to join this Team
     readonly player array playerArray[MAX_PLAYERS]    //Just a different way of storing "players". Indexed by player number
-    readonly integer maxSize = 0
     readonly integer size = 0
     readonly Faction array factions[10]       //These are the Factions that can join this team using a TeamButton
     readonly integer factionCount = 0
@@ -69,7 +68,7 @@ library Team initializer OnInit requires Table, Event, Persons
       loop
       exitwhen i > MAX_PLAYERS   
         if this.containsPlayer(Player(i)) != null then
-          if this.size < this.maxSize or this.maxSize == 1 then
+          if this.weight < this.maxWeight or this.size == 1 then
             call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, 1)   
           else
             call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, 0)    
@@ -108,9 +107,6 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.size = this.size+1
       call this.refreshUpgrades()
       call ForceRemovePlayer(this.invitees, p)
-      if this.size < 0 then
-        call BJDebugMsg("ERROR: Team " + this.name + " increased to size " + I2S(this.size))
-      endif
       set this.weight = this.weight + whichPerson.faction.weight
 
       set triggerTeam = this
@@ -126,10 +122,6 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.size = this.size-1
       call SetPlayerTechResearched(p, ALLY_LEFT_GAME_UPG, 1)      //If the player is not in a team they cerainly have no allies
       call this.refreshUpgrades()
-      
-      if this.size < 0 then
-        call BJDebugMsg("ERROR: Team " + this.name + " reduced to size " + I2S(this.size))
-      endif
       set this.weight = this.weight - whichPerson.faction.weight
 
       set triggerTeam = this
@@ -140,25 +132,12 @@ library Team initializer OnInit requires Table, Event, Persons
       return IsPlayerInForce(p, this.players)
     endmethod        
     
-    method setMaxSize takes integer i returns nothing
-      set this.maxSize = i
-      call this.refreshUpgrades()
-    endmethod
-    
     method getIcon takes nothing returns string
       return this.icon
     endmethod
     
     method getName takes nothing returns string
       return this.name
-    endmethod
-    
-    method getMaxSize takes nothing returns integer
-      return this.maxSize
-    endmethod
-    
-    method getSize takes nothing returns integer
-      return this.size
     endmethod
 
     method containsFaction takes Faction f returns boolean
@@ -181,12 +160,11 @@ library Team initializer OnInit requires Table, Event, Persons
       set triggerPerson.team.weight = triggerPerson.team.weight + triggerPerson.faction.weight
     endmethod
 
-    static method create takes string name, string icon, integer maxSize returns Team
+    static method create takes string name, string icon returns Team
       local Team this = Team.allocate()
       
       set this.name = name
       set this.icon = icon
-      set this.maxSize = maxSize
       set this.weight = 0
       set this.maxWeight = DEFAULT_MAX_WEIGHT
       set this.players = CreateForce()

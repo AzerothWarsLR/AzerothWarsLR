@@ -59,7 +59,6 @@ library PathNightElvesUnited initializer OnInit requires Persons, Faction, Team,
     //Set faction and team
     call triggerPerson.setFaction(20)                   //Night Elves
     call triggerPerson.setTeam(3)                       //Night Elves
-    call triggerPerson.getTeam().setMaxSize(1)     
 
     //Apply free technologies
     call SetPlayerTechResearched(triggerPlayer, 'R00V', 1)  //Balance Mastery
