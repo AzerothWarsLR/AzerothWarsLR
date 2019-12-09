@@ -1,7 +1,7 @@
 library DruidsConfig initializer OnInit requires Faction
 
   globals
-    Faction FACTION_DRUIDS = 11
+    Faction FACTION_DRUIDS
   endglobals
 
   private function OnInit takes nothing returns nothing
