@@ -15,7 +15,7 @@ library EventHonorHold initializer OnInit requires Persons, Faction
 
     private function Build takes nothing returns nothing
         local group tempGroup = CreateGroup()
-        local Person tempPerson = PersonsByFaction[10]  //Stormwind
+        local Person tempPerson = PersonsByFaction[FACTION_STORMWIND]  //Stormwind
         local player recipient = tempPerson.getPlayer() 
 
         //Transfer all Neutral Passive units in HonorHold to one of the above factions
@@ -41,7 +41,7 @@ library EventHonorHold initializer OnInit requires Persons, Faction
     endfunction
 
     private function Dies takes nothing returns nothing
-        if GetUnitTypeId(GetTriggerUnit()) == 'o008' and PersonsByFaction[10] != 0 then
+        if GetUnitTypeId(GetTriggerUnit()) == 'o008' and PersonsByFaction[FACTION_STORMWIND] != 0 then
             call Build()
         endif
     endfunction

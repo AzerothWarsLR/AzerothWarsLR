@@ -1,7 +1,7 @@
 library EventBecomeNega requires IllidariConfig, QuelthalasConfig, TeamConfig, Artifact
 
     function DoBecomeNaga takes nothing returns nothing
-        local Person triggerPerson = PersonsByFaction[6]
+        local Person triggerPerson = PersonsByFaction[FACTION_QUELTHELAS]
         local player triggerPlayer = triggerPerson.getPlayer()
         local Artifact tempArtifact = Artifact.artifactsByType['I007']
 

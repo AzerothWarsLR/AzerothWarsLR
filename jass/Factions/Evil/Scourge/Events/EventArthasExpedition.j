@@ -10,7 +10,7 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
   endglobals
 
   function TimerEnds takes nothing returns nothing
-    local Person scourge = PersonsByFaction[0]
+    local Person scourge = PersonsByFaction[FACTION_SCOURGE]
     local Person legion = PersonsByFaction[FACTION_LEGION]
     local unit arthas = null
     local unit malganis = null

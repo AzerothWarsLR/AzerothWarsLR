@@ -7,7 +7,7 @@ library EventGarithosSpawn initializer OnInit requires EventArthasExpedition
     local unit garithos = null
     local real x = 10597
     local real y = 3228
-    local Person tempPerson = PersonsByFaction[3]
+    local Person tempPerson = PersonsByFaction[FACTION_LORDAERON]
     local player p = tempPerson.getPlayer()
     local integer i = 0
     call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "Arthas has set sail to Northrend to find Frostmourne. Disgusted by Arthas' abandonment, Lord Garithos has stepped up and formed a large resistance force near Dalaran to purge the inhuman beasts in Lordaeron.")            

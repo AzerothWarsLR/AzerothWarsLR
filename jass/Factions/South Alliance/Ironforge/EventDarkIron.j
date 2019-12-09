@@ -15,15 +15,15 @@ library EventDarkIron
         local group tempGroup = CreateGroup()
         local unit u = null
 
-        if PersonsByFaction[4] != 0 then                    //Ironforge
-            set tempPerson = PersonsByFaction[4]
+        if PersonsByFaction[FACTION_IRONFORGE] != 0 then
+            set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
             set recipient = tempPerson.getPlayer()
             call tempPerson.applyFactionMod(12)      //Dark Iron
             set dagran = CreateUnit(recipient, 'H03G', -24540, -30728, 45)
             call SetHeroXP(dagran, GetHeroXP(gg_unit_H00S_1948), false)        //Set experience of Dagran to be the same as Magni
             call SetPlayerTechResearched(recipient, RESEARCH, 1)
-        elseif PersonsByFaction[10] != 0 then                 //Stormwind
-            set tempPerson = PersonsByFaction[10]
+        elseif PersonsByFaction[FACTION_STORMWIND] != 0 then
+            set tempPerson = PersonsByFaction[FACTION_STORMWIND]
             set recipient = tempPerson.getPlayer()                                
         endif
 

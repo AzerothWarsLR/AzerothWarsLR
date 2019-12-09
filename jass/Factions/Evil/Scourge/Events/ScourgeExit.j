@@ -5,7 +5,7 @@ library ScourgeExit initializer OnInit
   endglobals
 
   private function Actions takes nothing returns nothing
-    local Person scourgePerson = PersonsByFaction[0]
+    local Person scourgePerson = PersonsByFaction[FACTION_SCOURGE]
     local player scourgePlayer = null
     local integer i = 0
     loop

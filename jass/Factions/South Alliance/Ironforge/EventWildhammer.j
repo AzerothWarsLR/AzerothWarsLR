@@ -15,8 +15,8 @@ library EventWildhammer
         local group tempGroup = CreateGroup()
         local unit u = null
 
-        if PersonsByFaction[4] != 0 then                    //Ironforge
-            set tempPerson = PersonsByFaction[4]
+        if PersonsByFaction[FACTION_IRONFORGE] != 0 then                    //Ironforge
+            set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
             set recipient = tempPerson.getPlayer()
             call tempPerson.applyFactionMod(13)      //Wildhammer
             set falstad = CreateUnit(recipient, 'H028', 14081, 4580, 35)

@@ -14,7 +14,7 @@ library EventMaievArrives initializer OnInit requires Persons, Faction
     endfunction
 
     private function TimerEnds takes nothing returns nothing
-        local Person sentinelPerson = PersonsByFaction[9]
+        local Person sentinelPerson = PersonsByFaction[FACTION_SENTINELS]
         local unit maiev = gg_unit_Ewrd_0438
         local unit naisha = gg_unit_ensh_0094
         local unit illidan = gg_unit_Eill_2459

@@ -1,7 +1,7 @@
 library EventSilvermoonDies initializer OnInit requires Persons, Faction
 
   private function Actions takes nothing returns nothing
-    local Person quelthalas = PersonsByFaction[6]
+    local Person quelthalas = PersonsByFaction[FACTION_QUELTHELAS]
     if quelthalas != 0 then        //Quel'thalas
       call quelthalas.applyFactionMod(25)
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "The grand city of the high elves, Silvermoon, has been crushed by her enemies. The Sunwell still remains; without it, the High Elves will be powerless.")  
