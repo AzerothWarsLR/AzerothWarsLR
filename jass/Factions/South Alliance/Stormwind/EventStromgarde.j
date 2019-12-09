@@ -12,8 +12,8 @@ library EventStromgarde initializer OnInit requires Persons, Faction, DetermineL
     local Person tempPerson = 0
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-    if PersonsByFaction[10] != 0 then                    //Stormwind
-      set tempPerson = PersonsByFaction[10]
+    if PersonsByFaction[FACTION_STORMWIND] != 0 then
+      set tempPerson = PersonsByFaction[FACTION_STORMWIND]
       set recipient = tempPerson.getPlayer()                          
     endif
 
