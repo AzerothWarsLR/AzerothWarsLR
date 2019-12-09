@@ -21,7 +21,11 @@ library UninviteCommand initializer OnInit requires Team
       	set targetPerson = PersonsByFaction[targetFaction]
         if targetPerson != 0 then
         	call senderPerson.team.uninvite(targetPerson.p)
+        else
+          call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.name + "|r.")
       	endif
+      else
+        call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no Faction with the name " + content + ".")
       endif
     endif
   endfunction
