@@ -28,8 +28,6 @@ library EventMaievArrives initializer OnInit requires Persons, Faction
       call EnableUnitForPlayer(naisha, sentinelPerson.p)
     endif
 
-    call DestroyTrigger(TimerTrig)
-    call DestroyTrigger(FactionTrig)
     set maiev = null
     set naisha = null
     set illidan = null
