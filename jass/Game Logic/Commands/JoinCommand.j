@@ -22,6 +22,8 @@ library JoinCommand initializer OnInit requires Team
         else
           call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have not been invited to join " + targetTeam.name + ".")
         endif
+      else
+        call DisplayTextToPlayer(triggerPerson.p, 0, 0, "There is no Team with the name " + targetTeam.name + ".")
       endif
     endif
   endfunction
