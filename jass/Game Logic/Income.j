@@ -19,7 +19,7 @@ library Income initializer OnInit requires Persons
       exitwhen i > MAX_PLAYERS
         if not (Persons[i] == 0) then
           if Persons[i].getIncome() > 0 then
-            call Persons[i].addGold( RMinBJ( Persons[i].getIncome() * (1 - (RMaxBJ(I2R(Persons[i].team.weight - Persons[i].team.maxWeight), 0))*OVERWEIGHT_PENALTY) / 60 * PERIOD, 0) )
+            call Persons[i].addGold( RMinBJ( Persons[i].getIncome() * (1 - (RMaxBJ(I2R(Persons[i].team.weight - Persons[i].team.maxWeight), 0))*OVERWEIGHT_PENALTY) / 60 * PERIOD, 0) * GetPlayerState(Persons[i].p, PLAYER_STATE_GOLD_UPKEEP_RATE) )
           endif
         endif
         set i = i + 1
