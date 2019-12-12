@@ -1,10 +1,12 @@
 library TinkerConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        set f = FactionMod.create(24)
-            call f.registerObjectLimit('h03R', UNLIMITED)      //Tinker
-    endfunction
+  globals
+    FactionMod FACTIONMOD_TINKER
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    set FACTIONMOD_TINKER = FactionMod.create()
+    call FACTIONMOD_TINKER.registerObjectLimit('h03R', UNLIMITED)      //Tinker
+  endfunction
     
 endlibrary

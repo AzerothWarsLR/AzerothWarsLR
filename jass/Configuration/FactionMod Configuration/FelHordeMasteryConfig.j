@@ -1,12 +1,12 @@
 library FelHordeMasteryConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        //Fel Blood Mastery
-        set f = FactionMod.create(32)
-            call f.registerObjectLimit('ndfl', 1)   //Defiled Fountain of Life
-                 
-    endfunction
+  globals
+    FactionMod FACTIONMOD_FELBLOODMASTERY
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    set FACTIONMOD_FELBLOODMASTERY = FactionMod.create()
+    call FACTIONMOD_FELBLOODMASTERY.registerObjectLimit('ndfl', 1)   //Defiled Fountain of Life    
+  endfunction
     
 endlibrary                                         

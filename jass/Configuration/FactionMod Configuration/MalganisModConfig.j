@@ -1,14 +1,12 @@
 library MalganisModConfig initializer OnInit requires FactionMod
 
   globals
-    constant integer FACTION_MOD_MALGANIS = 82
+    FactionMod FACTIONMOD_MALGANIS
   endglobals
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        set f = FactionMod.create(FACTION_MOD_MALGANIS)
-            call f.registerObjectLimit('u01A', -UNLIMITED)      //Mal'ganis
-    endfunction
+  private function OnInit takes nothing returns nothing  
+    set FACTIONMOD_MALGANIS = FactionMod.create()
+    call FACTIONMOD_MALGANIS.registerObjectLimit('u01A', -UNLIMITED)      //Mal'ganis
+  endfunction
     
 endlibrary

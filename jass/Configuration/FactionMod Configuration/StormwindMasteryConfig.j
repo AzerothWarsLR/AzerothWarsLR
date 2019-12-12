@@ -1,14 +1,14 @@
 library StormwindMasteryConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        //Shipwright Guild Mastery
-        set f = FactionMod.create(34)
-            call f.registerObjectLimit('h060', 1)   //Arathor Flagship
-            call f.registerObjectLimit('h024', UNLIMITED)   //Light House
-            call f.registerObjectLimit('h061', UNLIMITED)   //Naval Outpost
-                 
-    endfunction
+  globals
+    FactionMod FACTIONMOD_MASTERY_SHIPWRIGHT
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    set FACTIONMOD_MASTERY_SHIPWRIGHT = FactionMod.create()
+    call FACTIONMOD_MASTERY_SHIPWRIGHT.registerObjectLimit('h060', 1)   //Arathor Flagship
+    call FACTIONMOD_MASTERY_SHIPWRIGHT.registerObjectLimit('h024', UNLIMITED)   //Light House
+    call FACTIONMOD_MASTERY_SHIPWRIGHT.registerObjectLimit('h061', UNLIMITED)   //Naval Outpost    
+  endfunction
     
 endlibrary                                         

@@ -1,10 +1,12 @@
 library PaladinLossConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        set f = FactionMod.create(26)
-            call f.registerObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
-    endfunction
+  globals
+    FactionMod FACTIONMOD_PALADINLOSS
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    set FACTIONMOD_PALADINLOSS = FactionMod.create()
+    call FACTIONMOD_PALADINLOSS.registerObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
+  endfunction
     
 endlibrary

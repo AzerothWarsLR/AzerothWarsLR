@@ -1,11 +1,12 @@
 library RiteofStrengthConfig initializer OnInit requires FactionMod
 
+  globals
+    FactionMod FACTIONMOD_RITEOFSTRENGTH
+  endglobals
+
   private function OnInit takes nothing returns nothing  
-    local FactionMod f
-    
-    set f = FactionMod.create(8)
-      //Units
-      call f.registerObjectLimit('n03F', 6)           //Ogre Lord     
+    set FACTIONMOD_RITEOFSTRENGTH = FactionMod.create()
+    call FACTIONMOD_RITEOFSTRENGTH.registerObjectLimit('n03F', 6)           //Ogre Lord     
   endfunction
     
 endlibrary

@@ -1,10 +1,12 @@
 library StormwindLossConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        set f = FactionMod.create(11)
-            call f.registerObjectLimit('h05F', -UNLIMITED)      //Stormwind Champion
-    endfunction
+  globals
+    FactionMod FACTINMOD_STORMWINDLOSS
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    set FACTINMOD_STORMWINDLOSS = FactionMod.create()
+    call FACTINMOD_STORMWINDLOSS.registerObjectLimit('h05F', -UNLIMITED)      //Stormwind Champion
+  endfunction
     
 endlibrary

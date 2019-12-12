@@ -1,12 +1,14 @@
 library ScourgeMasteryConfig initializer OnInit requires FactionMod
 
-    private function OnInit takes nothing returns nothing  
-        local FactionMod f
-        
-        //Plague Engineering Mastery
-        set f = FactionMod.create(28)
-            call f.registerObjectLimit('nfgl', 2)     //Flesh Golem
-            call f.registerObjectLimit('umtw', 2)     //Meat Wagon
-    endfunction
+  globals
+    FactionMod FACTIONMOD_MASTERY_PLAGUEENGINEERING
+  endglobals
+
+  private function OnInit takes nothing returns nothing  
+    //Plague Engineering Mastery
+    set FACTIONMOD_MASTERY_PLAGUEENGINEERING = FactionMod.create()
+    call FACTIONMOD_MASTERY_PLAGUEENGINEERING.registerObjectLimit('nfgl', 2)     //Flesh Golem
+    call FACTIONMOD_MASTERY_PLAGUEENGINEERING.registerObjectLimit('umtw', 2)     //Meat Wagon
+  endfunction
     
 endlibrary

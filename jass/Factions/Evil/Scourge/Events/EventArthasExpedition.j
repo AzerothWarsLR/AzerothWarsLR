@@ -25,7 +25,7 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
         set malganis = GroupPickRandomUnit(tempGroup)
         call UnitTransferItems(malganis, arthas)
         call RemoveUnit(malganis)
-        call legion.applyFactionMod(FACTION_MOD_MALGANIS)
+        call legion.applyFactionMod(FACTIONMOD_MALGANIS)
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "With the cursed Runeblade in hand, " + scourge.getFaction().getPrefixCol() + "Arthas|r's lust for vengeance swells. " + legion.getFaction().getPrefixCol() + "Mal'ganis|r can no longer be revived.")  
         //cleanup
         set malganis = null
