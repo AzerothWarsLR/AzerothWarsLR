@@ -150,8 +150,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call mod.removePlayer(this.p)
         set j = 0
         loop
-        exitwhen j == mod.getObjectCount()
-          call this.modObjectLimit( mod.getObjectList(j), -mod.getObjectLimit(mod.getObjectList(j)) )
+        exitwhen j == mod.objectCount
+          call this.modObjectLimit( mod.objectLimits[j], -mod.objectLimits[mod.objectList[j]] )
           set j = j + 1
         endloop
         set this.factionMods[i] = 0
@@ -160,20 +160,13 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set this.factionModCount = 0
     endmethod
 
-    method applyFactionMod takes integer id returns nothing
+    method applyFactionMod takes FactionMod mod returns nothing
       //Note that it is currently not possible to remove a specific FactionMod from a player; this should be rectified
-      local FactionMod mod = FactionMod.getFactionModById(id)
       local integer i = 0
-      
-      if mod == 0 then
-        call BJDebugMsg("ERORR: attempted to apply nonexistant FactionMod " + I2S(id) + " to player " + I2S(GetPlayerId(this.p)))
-        return
-      endif
-
       if not mod.containsPlayer(this.p) then  //The provided FactionMod is not already affecting this player
         loop
-        exitwhen i > mod.getObjectCount()
-          call this.modObjectLimit( mod.getObjectList(i), mod.getObjectLimit(mod.getObjectList(i)) )
+        exitwhen i > mod.objectCount
+          call this.modObjectLimit( mod.objectList[i], mod.objectLimits[mod.objectList[i]] )
           set i = i + 1
         endloop
         set this.factionMods[this.factionModCount] = mod

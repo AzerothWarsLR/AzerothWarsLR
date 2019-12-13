@@ -2,13 +2,10 @@
 library FactionMod requires Table
 
   struct FactionMod
-    static integer array      factionModifiersById
-
-    private force             players = null
-    
-    private Table             objectLimits         //This is how many units, researches or structures of a given type this faction can build
-    private integer array     objectList[100]      //An index for objectLimits
-    private integer           objectCount = 0
+    readonly force             players = null
+    readonly Table             objectLimits         //This is how many units, researches or structures of a given type this faction can build
+    readonly integer array     objectList[100]      //An index for objectLimits
+    readonly integer           objectCount = 0
 
     method registerObjectLimit takes integer id, integer limit returns nothing
       if this.objectLimits[id] == 0 then
@@ -18,18 +15,6 @@ library FactionMod requires Table
       else
         call BJDebugMsg("Error: attempted to register already existing id " + GetObjectName(id) + " to FactionMod " + I2S(this))
       endif       
-    endmethod
-
-    method getObjectCount takes nothing returns integer
-      return objectCount
-    endmethod
-    
-    method getObjectLimit takes integer index returns integer
-      return objectLimits[index]
-    endmethod
-    
-    method getObjectList takes integer index returns integer
-      return objectList[index]
     endmethod
 
     method removePlayer takes player p returns nothing
@@ -42,10 +27,6 @@ library FactionMod requires Table
 
     method containsPlayer takes player p returns boolean
       return IsPlayerInForce(p, this.players)
-    endmethod
-    
-    static method getFactionModById takes integer id returns FactionMod
-      return thistype.factionModifiersById[id]
     endmethod
     
     static method create takes nothing returns FactionMod
