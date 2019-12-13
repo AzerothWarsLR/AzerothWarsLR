@@ -16,8 +16,8 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
     local unit malganis = null
     local group tempGroup = null
     if scourge != 0 then
-      set arthas = CreateUnit(scourge.getPlayer(), 'Uear', -2796, 21842, 270)
-      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, scourge.getFaction().getPrefixCol() + "Arthas|r has claimed the cursed sword of Frostmourne and become enslaved by Ner'zhul; he is now a loyal Death Knight of the " + scourge.getFaction().getPrefixCol() + "Scourge|r.")   
+      set arthas = CreateUnit(scourge.p, 'Uear', -2796, 21842, 270)
+      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, scourge.faction.prefixCol + "Arthas|r has claimed the cursed sword of Frostmourne and become enslaved by Ner'zhul; he is now a loyal Death Knight of the " + scourge.faction.prefixCol + "Scourge|r.")   
       call UnitDetermineLevel(arthas, 1.00)
       if legion != 0 then
         set tempGroup = CreateGroup()
@@ -26,7 +26,7 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
         call UnitTransferItems(malganis, arthas)
         call RemoveUnit(malganis)
         call legion.applyFactionMod(FACTIONMOD_MALGANIS)
-        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "With the cursed Runeblade in hand, " + scourge.getFaction().getPrefixCol() + "Arthas|r's lust for vengeance swells. " + legion.getFaction().getPrefixCol() + "Mal'ganis|r can no longer be revived.")  
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "With the cursed Runeblade in hand, " + scourge.faction.prefixCol + "Arthas|r's lust for vengeance swells. " + legion.faction.prefixCol + "Mal'ganis|r can no longer be revived.")  
         //cleanup
         set malganis = null
         call DestroyGroup(tempGroup)

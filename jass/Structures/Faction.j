@@ -25,30 +25,6 @@ library Faction initializer OnInit requires Persons, Event
     readonly integer array objectList[100] //An index for objectLimits
     readonly integer objectCount = 0
 
-    method getIcon takes nothing returns string
-      return this.icon
-    endmethod
-    
-    method getName takes nothing returns string
-      return this.name
-    endmethod
-
-    method getPlayCol takes nothing returns playercolor
-      return this.playCol
-    endmethod
-
-    method getPrefixCol takes nothing returns string
-      return this.prefixCol
-    endmethod
-
-    method getPresenceResearch takes nothing returns integer
-      return this.presenceResearch
-    endmethod
-    
-    method getAbsenceResearch takes nothing returns integer
-      return this.absenceResearch
-    endmethod        
-
     method setPresenceResearch takes integer research returns nothing
       local integer i = 0
       if this.presenceResearch == 0 then
@@ -113,18 +89,6 @@ library Faction initializer OnInit requires Persons, Event
       else
         call BJDebugMsg("Error: attempted to register already existing id " + I2S(id) + " to faction " + this.name)
       endif       
-    endmethod
-
-    method getObjectCount takes nothing returns integer
-      return objectCount
-    endmethod
-    
-    method getObjectLimit takes integer index returns integer
-      return objectLimits[index]
-    endmethod
-    
-    method getObjectList takes integer index returns integer
-      return objectList[index]
     endmethod
     
     static method create takes string name, playercolor playCol, string prefixCol, string icon, integer weight returns Faction

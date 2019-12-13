@@ -28,7 +28,7 @@ library DemonSoulAssembly initializer OnInit requires Artifact, Persons
       set tempItem = tempArtifact.item
       call UnitAddItem(triggerUnit, tempItem)
       set triggerPerson = Persons[GetPlayerId(GetOwningPlayer(triggerUnit))]
-      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.getFaction().getPrefixCol() + triggerPerson.getFaction().getName() + "|r has assembled the Demon Soul!" )
+      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.faction.prefixCol + triggerPerson.faction.name + "|r has assembled the Demon Soul!" )
       set tempItem = null
       call DestroyTrigger(GetTriggeringTrigger())  
     endif

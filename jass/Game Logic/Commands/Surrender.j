@@ -10,7 +10,7 @@ library Surrender initializer OnInit
         local Person triggerPerson = Persons[GetPlayerId(GetTriggerPlayer())]
         local group tempGroup = CreateGroup()
 
-        call DisplayTextToForce ( bj_FORCE_ALL_PLAYERS, triggerPerson.getFaction().getName() + " has surrendered.")   
+        call DisplayTextToForce ( bj_FORCE_ALL_PLAYERS, triggerPerson.faction.name + " has surrendered.")   
         call triggerPerson.leave()
         call triggerPerson.setFaction(-1)
         call triggerPerson.setTeam(-1)

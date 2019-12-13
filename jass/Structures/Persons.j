@@ -190,8 +190,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       local integer i = 0
       if this.faction != 0 then       //Unapply existing faction first
         loop //Unapply object limits
-        exitwhen i > faction.getObjectCount()
-          call this.modObjectLimit( this.faction.getObjectList(i), -this.faction.getObjectLimit(this.faction.getObjectList(i)) )
+        exitwhen i > faction.objectCount
+          call this.modObjectLimit( this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]] )
           set i = i + 1
         endloop                       
         set PersonsByFaction[this.faction] = 0     //Free up existing faction slot
@@ -199,8 +199,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set i = 0
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.faction.getAbsenceResearch(), 1)
-          call SetPlayerTechResearched(Player(i), this.faction.getPresenceResearch(), 0)
+          call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
           set i = i + 1
         endloop
         //Run the exit trigger
@@ -223,22 +223,22 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         if PersonsByFaction[newFaction] == 0 then
           set i = 0
           loop //Apply object limits
-          exitwhen i > newFaction.getObjectCount()
-            call this.modObjectLimit( newFaction.getObjectList(i), newFaction.getObjectLimit(newFaction.getObjectList(i)) )
+          exitwhen i > newFaction.objectCount
+            call this.modObjectLimit( newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]] )
             set i = i + 1
           endloop             
-          call SetPlayerColorBJ(this.p, newFaction.getPlayCol(), true)
+          call SetPlayerColorBJ(this.p, newFaction.playCol, true)
           set PersonsByFaction[newFaction] = this   
           set this.faction = newFaction 
           //Toggle absence and presence researches for this faction
           set i = 0
           loop
           exitwhen i > MAX_PLAYERS
-            if this.faction.getAbsenceResearch() != 0 then
-              call SetPlayerTechResearched(Player(i), this.faction.getAbsenceResearch(), 0)
+            if this.faction.absenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 0)
             endif
-            if this.faction.getPresenceResearch() != 0 then
-              call SetPlayerTechResearched(Player(i), this.faction.getPresenceResearch(), 1)
+            if this.faction.presenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 1)
             endif
             set i = i + 1
           endloop 

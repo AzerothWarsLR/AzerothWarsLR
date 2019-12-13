@@ -15,9 +15,9 @@ library ObserverCommand initializer OnInit
     call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
 
     if triggerPerson.getFaction() != 0 then
-      call BJDebugMsg( triggerPerson.getFaction().getName() + " has become an observer." )
+      call BJDebugMsg( triggerPerson.faction.name + " has become an observer." )
     else
-      call BJDebugMsg( GetPlayerName(triggerPerson.getPlayer()) + " has become an observer." )        
+      call BJDebugMsg( GetPlayerName(triggerPerson.p) + " has become an observer." )        
     endif        
 
     if triggerPerson != 0 then         

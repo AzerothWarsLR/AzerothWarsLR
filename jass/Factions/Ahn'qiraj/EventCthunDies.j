@@ -9,7 +9,7 @@ library EventCthunDies initializer OnInit requires Persons
       local Person triggerPerson = 0
       if GetUnitTypeId(GetTriggerUnit()) == UNIT_ID then
         set triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-        call DisplayTextToForce(GetPlayersAll(), "The unfathomable eldritch entity known as C'thun has finally been brought to an end. The " + triggerPerson.getFaction().getPrefixCol() + "Kingdom of Ahn'qiraj|r is no more. Without a hive mind to control them, C'thun's former minions have dispersed into the deserts of Silithus.")
+        call DisplayTextToForce(GetPlayersAll(), "The unfathomable eldritch entity known as C'thun has finally been brought to an end. The " + triggerPerson.faction.prefixCol + "Kingdom of Ahn'qiraj|r is no more. Without a hive mind to control them, C'thun's former minions have dispersed into the deserts of Silithus.")
         set tempEffect = AddSpecialEffect("Abilities\\Spells\\Undead\\DarkRitual\\DarkRitualTarget.mdl", GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
         call BlzSetSpecialEffectScale(tempEffect, 3)
         call DestroyEffect(tempEffect)
