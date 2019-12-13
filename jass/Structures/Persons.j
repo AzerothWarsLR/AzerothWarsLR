@@ -186,7 +186,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       loop
       exitwhen u == null 
         set tempUnitType = UnitTypes[GetUnitTypeId(u)]               
-        if not tempUnitType.getMeta() then
+        if not tempUnitType.meta then
           call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
         endif
         call GroupRemoveUnit(tempGroup, u)
