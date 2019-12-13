@@ -25,6 +25,38 @@ library Faction initializer OnInit requires Persons, Event
     readonly integer array objectList[100] //An index for objectLimits
     readonly integer objectCount = 0
 
+    method modObjectLimit takes integer id, integer limit returns nothing
+      local Person affectedPerson = 0
+
+      if this.objectLimits.exists(id) then
+        set this.objectLimits[id] = this.objectLimits[id] + limit
+      else
+        set this.objectLimits[id] = limit         
+        set this.objectList[this.objectCount] = id
+        set this.objectCount = this.objectCount + 1       
+      endif
+
+      //If a Person has this Faction, adjust their techtree as well
+      if PersonsByFaction[this] != 0 then
+        set affectedPerson = PersonsByFaction[this]
+        call affectedPerson.modObjectLimit(id, limit)
+      endif
+
+      if this.objectLimits[id] == 0 then
+        call this.objectLimits.flush(id)
+      endif        
+    endmethod
+
+    //Permanently adds all of a FactionMod's objects to this Faction
+    method applyFactionMod takes FactionMod whichMod returns nothing
+      local integer i = 0
+      loop
+      exitwhen i > whichMod.objectCount
+        call this.modObjectLimit( whichMod.objectList[i], whichMod.objectLimits[whichMod.objectList[i]] )
+        set i = i + 1
+      endloop
+    endmethod
+
     method setPresenceResearch takes integer research returns nothing
       local integer i = 0
       if this.presenceResearch == 0 then

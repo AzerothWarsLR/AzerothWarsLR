@@ -18,7 +18,7 @@ library EventWildhammer
         if PersonsByFaction[FACTION_IRONFORGE] != 0 then                    //Ironforge
             set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
             set recipient = tempPerson.p
-            call tempPerson.applyFactionMod(FACTIONMOD_WILDHAMMER)      //Wildhammer
+            call FACTION_IRONFORGE.applyFactionMod(FACTIONMOD_WILDHAMMER)      //Wildhammer
             set falstad = CreateUnit(recipient, 'H028', 14081, 4580, 35)
             call SetHeroXP(falstad, GetHeroXP(gg_unit_H00S_1948), false)        //Set experience of Falstad to be the same as Magni
             call SetPlayerTechResearched(recipient, RESEARCH, 1)                      

@@ -18,7 +18,7 @@ library EventDarkIron
         if PersonsByFaction[FACTION_IRONFORGE] != 0 then
             set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
             set recipient = tempPerson.p
-            call tempPerson.applyFactionMod(FACTIONMOD_DARKIRON)      //Dark Iron
+            call FACTION_IRONFORGE.applyFactionMod(FACTIONMOD_DARKIRON)      //Dark Iron
             set dagran = CreateUnit(recipient, 'H03G', -24540, -30728, 45)
             call SetHeroXP(dagran, GetHeroXP(gg_unit_H00S_1948), false)        //Set experience of Dagran to be the same as Magni
             call SetPlayerTechResearched(recipient, RESEARCH, 1)

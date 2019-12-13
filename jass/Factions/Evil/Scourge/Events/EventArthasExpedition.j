@@ -19,13 +19,13 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
       set arthas = CreateUnit(scourge.p, 'Uear', -2796, 21842, 270)
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, scourge.faction.prefixCol + "Arthas|r has claimed the cursed sword of Frostmourne and become enslaved by Ner'zhul; he is now a loyal Death Knight of the " + scourge.faction.prefixCol + "Scourge|r.")   
       call UnitDetermineLevel(arthas, 1.00)
+      call FACTION_LEGION.applyFactionMod(FACTIONMOD_MALGANIS)
       if legion != 0 then
         set tempGroup = CreateGroup()
         call GroupEnumUnitsOfType(tempGroup, "Mal'Ganis", null)
         set malganis = GroupPickRandomUnit(tempGroup)
         call UnitTransferItems(malganis, arthas)
         call RemoveUnit(malganis)
-        call legion.applyFactionMod(FACTIONMOD_MALGANIS)
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "With the cursed Runeblade in hand, " + scourge.faction.prefixCol + "Arthas|r's lust for vengeance swells. " + legion.faction.prefixCol + "Mal'ganis|r can no longer be revived.")  
         //cleanup
         set malganis = null
@@ -38,8 +38,8 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
   endfunction
 
   function DoArthasExpedition takes nothing returns nothing
-      local timer time = CreateTimer()
-      call TimerStart(time, DELAY, false, function TimerEnds)
+    local timer time = CreateTimer()
+    call TimerStart(time, DELAY, false, function TimerEnds)
   endfunction
     
 endlibrary

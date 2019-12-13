@@ -26,7 +26,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     readonly string name = null
     readonly Faction faction                  //Controls name, available objects, color, and icon
-    readonly FactionMod array factionMods[15] //A list of FactionMods, which contribute to the list of available objects for this player
     readonly Team team                        //The team this person is on
     readonly integer controlPoints = 0        //Count of control points
     readonly real income = 0                  //Gold per minute 
@@ -36,7 +35,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
      
     private real partialGold = 0              //Just used for income calculations
     readonly group cpGroup                    //Group of control point units this person owns  
-    private integer factionModCount = 0       //   
 
     method modObjectLimit takes integer id, integer limit returns nothing
       if this.objectLimits.exists(id) then
@@ -106,42 +104,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set thistype.triggerPerson = this
       call OnPersonTeamJoin.fire()
     endmethod
-    
-    method clearFactionMods takes nothing returns nothing
-      local FactionMod mod = 0
-      local integer i = 0
-      local integer j = 0
-      
-      loop
-      exitwhen i == this.factionModCount
-        set mod = this.factionMods[i]
-        call mod.removePlayer(this.p)
-        set j = 0
-        loop
-        exitwhen j == mod.objectCount
-          call this.modObjectLimit( mod.objectLimits[j], -mod.objectLimits[mod.objectList[j]] )
-          set j = j + 1
-        endloop
-        set this.factionMods[i] = 0
-        set i = i + 1
-      endloop
-      set this.factionModCount = 0
-    endmethod
-
-    method applyFactionMod takes FactionMod mod returns nothing
-      //Note that it is currently not possible to remove a specific FactionMod from a player; this should be rectified
-      local integer i = 0
-      if not mod.containsPlayer(this.p) then  //The provided FactionMod is not already affecting this player
-        loop
-        exitwhen i > mod.objectCount
-          call this.modObjectLimit( mod.objectList[i], mod.objectLimits[mod.objectList[i]] )
-          set i = i + 1
-        endloop
-        set this.factionMods[this.factionModCount] = mod
-        set this.factionModCount = this.factionModCount + 1
-        call mod.addPlayer(this.p)
-      endif
-    endmethod
 
     private method nullFaction takes nothing returns nothing
       local integer i = 0
@@ -163,7 +125,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         //Run the exit trigger
         call this.faction.executeExitTrigger()
         set this.faction = 0 
-        call this.clearFactionMods()    //Assuming that there are no faction mods that carry across faction change
       endif        
     endmethod
 
