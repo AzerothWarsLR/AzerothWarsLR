@@ -35,12 +35,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     readonly integer xp = 0                   //Stored by DistributeUnits and given out again by DistributeResources
      
     private real partialGold = 0              //Just used for income calculations
-    private group cpGroup                     //Group of control points this person owns  
+    readonly group cpGroup                    //Group of control point units this person owns  
     private integer factionModCount = 0       //   
-
-    method getObjectLimit takes integer i returns integer
-      return this.objectLimits[i]
-    endmethod
 
     method modObjectLimit takes integer id, integer limit returns nothing
       if this.objectLimits.exists(id) then
@@ -77,37 +73,13 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call SetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD) + 1)
       endloop
     endmethod
-
-    method getPlayerId takes nothing returns integer
-      return GetPlayerId(this.p)
-    endmethod
-
-    method getPlayer takes nothing returns player
-      return this.p
-    endmethod
-    
-    method getcpGroup takes nothing returns group
-      return this.cpGroup
-    endmethod
     
     method modControlPoints takes integer mod returns nothing
       set this.controlPoints = this.controlPoints + mod
     endmethod
     
-    method getControlPoints takes nothing returns integer
-      return this.controlPoints
-    endmethod
-    
     method modIncome takes real mod returns nothing
       set this.income = this.income + mod
-    endmethod
-    
-    method getIncome takes nothing returns real
-      return this.income
-    endmethod
-    
-    method getName takes nothing returns string
-      return this.name
     endmethod
 
     method setName takes string s returns nothing
@@ -119,10 +91,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call DisplayTextToPlayer(this.p, 0, 0, "There is already a Person with name: " + s)
       endif         
     endmethod        
-    
-    method getTeam takes nothing returns Team
-      return this.team
-    endmethod
     
     method setTeam takes Team team returns nothing
       if this.team != 0 then
@@ -173,10 +141,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set this.factionModCount = this.factionModCount + 1
         call mod.addPlayer(this.p)
       endif
-    endmethod
-
-    method getFaction takes nothing returns Faction
-      return this.faction
     endmethod
 
     private method nullFaction takes nothing returns nothing

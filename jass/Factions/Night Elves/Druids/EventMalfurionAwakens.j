@@ -9,8 +9,8 @@ library EventMalfurionAwakens initializer OnInit
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    local Person druidsPerson = PersonsByFaction[11]
-    local player druidsPlayer = druidsPerson.getPlayer()
+    local Person druidsPerson = PersonsByFaction[FACTION_DRUIDS]
+    local player druidsPlayer = druidsPerson.p
     local Person triggerPerson = 0
     local unit malfurion = gg_unit_Efur_3093
     local Artifact tempArtifact = 0

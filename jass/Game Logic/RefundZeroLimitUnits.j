@@ -7,7 +7,7 @@ library RefundZeroLimitUnits initializer OnInit requires Persons, UnitType
         local player p = GetOwningPlayer(u)
         local Person tempPerson = Persons[GetPlayerId(p)]
         local UnitType tempUnitType = 0
-        if tempPerson.getObjectLimit(GetUnitTypeId(u)) == 0 then
+        if tempPerson.objectLimits[GetUnitTypeId(u)] == 0 then
             set tempUnitType = UnitTypes[GetUnitTypeId(u)]
             if tempUnitType != 0 then
                 call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_GOLD, tempUnitType.getGoldCost())

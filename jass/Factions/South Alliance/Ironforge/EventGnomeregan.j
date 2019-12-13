@@ -8,10 +8,10 @@ library EventGnomeregan initializer OnInit
 
     if PersonsByFaction[FACTION_IRONFORGE] != 0 then                        //Ironforge
       set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
-      set recipient = tempPerson.getPlayer()
+      set recipient = tempPerson.p
     elseif PersonsByFaction[FACTION_STORMWIND] != 0 then                   //Stormwind
       set tempPerson = PersonsByFaction[FACTION_STORMWIND]                 
-      set recipient = tempPerson.getPlayer()                                 
+      set recipient = tempPerson.p                                
     endif
 
     //Transfer all Neutral Passive units in Gnomeregan to one of the above factions

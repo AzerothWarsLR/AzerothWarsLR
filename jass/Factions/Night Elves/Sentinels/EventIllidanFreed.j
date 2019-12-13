@@ -16,11 +16,11 @@ library EventIllidanFreed initializer OnInit
     if PersonsByFaction[FACTION_SENTINELS] != 0 then
       set killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
       set sentinelsPerson = PersonsByFaction[FACTION_SENTINELS]
-      if killingPerson.getTeam() == TEAM_NIGHT_ELVES and GetOwningPlayer(maiev) != sentinelsPerson.getPlayer() and GetOwningPlayer(illidan) == Player(PLAYER_NEUTRAL_PASSIVE)  then //Night Elves team
+      if killingPerson.team == TEAM_NIGHT_ELVES and GetOwningPlayer(maiev) != sentinelsPerson.p and GetOwningPlayer(illidan) == Player(PLAYER_NEUTRAL_PASSIVE)  then //Night Elves team
         call DisplayTextToForce(GetPlayersAll(), "Illidan has been released from his prison in the Barrow Deeps.")
         call KillUnit(gg_unit_n08W_2160)    //Illidan's prison
-        call EnableUnitForPlayer(illidan, sentinelsPerson.getPlayer())
-        call EnableUnitForPlayer(amara, sentinelsPerson.getPlayer())
+        call EnableUnitForPlayer(illidan, sentinelsPerson.p)
+        call EnableUnitForPlayer(amara, sentinelsPerson.p)
       endif
     endif
 

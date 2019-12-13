@@ -14,7 +14,7 @@ library EventStromgarde initializer OnInit requires Persons, Faction, DetermineL
 
     if PersonsByFaction[FACTION_STORMWIND] != 0 then
       set tempPerson = PersonsByFaction[FACTION_STORMWIND]
-      set recipient = tempPerson.getPlayer()                          
+      set recipient = tempPerson.p                         
     endif
 
     //If recipient is Stormwind, level Galen, otherwise delete him

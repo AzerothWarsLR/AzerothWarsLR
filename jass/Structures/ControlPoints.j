@@ -45,7 +45,7 @@ library ControlPoint initializer OnInit requires AIDS, Persons, Event
       if person != 0 then
         call person.modIncome(this.value*-1)
         call person.modControlPoints(-1)
-        call GroupRemoveUnit(person.getcpGroup(), this.u)
+        call GroupRemoveUnit(person.cpGroup, this.u)
       endif
   
       set thistype.triggerControlPoint = this
@@ -57,7 +57,7 @@ library ControlPoint initializer OnInit requires AIDS, Persons, Event
       if person != 0 then
         call person.modIncome(this.value)
         call person.modControlPoints(1)
-        call GroupAddUnit(person.getcpGroup(), this.u)
+        call GroupAddUnit(person.cpGroup, this.u)
       endif
 
       set thistype.triggerControlPoint = this
@@ -112,7 +112,7 @@ library ControlPoint initializer OnInit requires AIDS, Persons, Event
       set CPData[GetUnitId(u)] = this 
       
       call GroupAddUnit(ControlPoints,u)
-      call GroupAddUnit(person.getcpGroup(), u)
+      call GroupAddUnit(person.cpGroup, u)
       
       call person.modIncome(value)
       call person.modControlPoints(1)

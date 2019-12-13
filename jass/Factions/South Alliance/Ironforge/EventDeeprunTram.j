@@ -15,7 +15,7 @@ library EventDeeprunTram initializer OnInit requires Persons, Faction
 
       //Set Ironforge tram
       if ironforgePerson != 0 then
-        call SetUnitOwner(ironforgeTram, ironforgePerson.getPlayer(), true)
+        call SetUnitOwner(ironforgeTram, ironforgePerson.p, true)
         call WaygateActivateBJ(true, ironforgeTram)
         call WaygateSetDestination(ironforgeTram, GetRectCenterX(gg_rct_Stormwind), GetRectCenterY(gg_rct_Stormwind))
         call SetUnitInvulnerable(ironforgeTram, false)
@@ -24,9 +24,9 @@ library EventDeeprunTram initializer OnInit requires Persons, Faction
       //Set Stormwnd tram
       if stormwindPerson != 0 or ironforgePerson != 0 then
         if stormwindPerson != 0 then
-          call SetUnitOwner(stormwindTram, stormwindPerson.getPlayer(), true)
+          call SetUnitOwner(stormwindTram, stormwindPerson.p, true)
         else
-          call SetUnitOwner(stormwindTram, ironforgePerson.getPlayer(), true)
+          call SetUnitOwner(stormwindTram, ironforgePerson.p, true)
         endif
         call WaygateActivateBJ(true, stormwindTram)
         call WaygateSetDestination(stormwindTram, GetRectCenterX(gg_rct_Ironforge), GetRectCenterY(gg_rct_Ironforge))

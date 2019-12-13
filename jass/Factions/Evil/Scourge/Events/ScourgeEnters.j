@@ -14,7 +14,7 @@ library ScourgeEnter initializer OnInit
     local player scourgePlayer = null
     local integer i = 0
     if scourgePerson != 0 then
-      set scourgePlayer = scourgePerson.getPlayer()
+      set scourgePlayer = scourgePerson.p
       set ScourgeFogModifiers[0] = CreateFogModifierRect(scourgePlayer, FOG_OF_WAR_VISIBLE, gg_rct_Storm_Peaks, true, true)
       set ScourgeFogModifiers[1] = CreateFogModifierRect(scourgePlayer, FOG_OF_WAR_VISIBLE, gg_rct_Central_Northrend, true, true)
       set ScourgeFogModifiers[2] = CreateFogModifierRect(scourgePlayer, FOG_OF_WAR_VISIBLE, gg_rct_The_Basin, true, true)

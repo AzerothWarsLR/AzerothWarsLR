@@ -16,7 +16,7 @@ library EventHonorHold initializer OnInit requires Persons, Faction
     private function Build takes nothing returns nothing
         local group tempGroup = CreateGroup()
         local Person tempPerson = PersonsByFaction[FACTION_STORMWIND]  //Stormwind
-        local player recipient = tempPerson.getPlayer() 
+        local player recipient = tempPerson.p 
 
         //Transfer all Neutral Passive units in HonorHold to one of the above factions
         call Reveal(gg_unit_h05Z_3325, recipient)  //Honor Hold

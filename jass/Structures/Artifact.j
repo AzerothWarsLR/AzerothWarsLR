@@ -197,11 +197,11 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
 
     method setOwningPerson takes Person p returns nothing
       if this.owningPerson != 0 then
-        call ArtifactGroup.artifactGroupsByPlayerId[this.owningPerson.getPlayerId()].remove(this) //Remove this from the old owner's Artifact group
+        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(this.owningPerson.p)].remove(this) //Remove this from the old owner's Artifact group
       endif
 
       if p != 0 then
-        call ArtifactGroup.artifactGroupsByPlayerId[p.getPlayerId()].add(this) //Add this to the new owner's Artifact Group
+        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(p.p)].add(this) //Add this to the new owner's Artifact Group
       endif
 
       set this.owningPerson = p
@@ -308,7 +308,7 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
   endfunction
 
   private function OnPersonFactionChanged takes nothing returns nothing
-    call ArtifactGroup.artifactGroupsByPlayerId[GetTriggerPerson().getPlayerId()].updateFactions()
+    call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(GetTriggerPerson().p)].updateFactions()
   endfunction
 
   private function UnitChangeOwner takes nothing returns nothing

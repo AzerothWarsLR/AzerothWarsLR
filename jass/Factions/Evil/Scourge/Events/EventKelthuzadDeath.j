@@ -19,7 +19,7 @@ library EventKelthuzadDeath initializer OnInit
     //Kel'thuzad (Necromancer) is slain
     if GetUnitTypeId(GetTriggerUnit()) == 'U001' then
         set killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
-        set killingTeam = killingPerson.getTeam()
+        set killingTeam = killingPerson.team
         if killingTeam != 0 and killingTeam  == TEAM_SCOURGE then
           call DisplayTextToForce( GetPlayersAll(), "Kel'Thuzad has been slain. His spirit lives on in spectral form, and he can be revived by taking him to the Sunwell." )
           set u = GetTriggerUnit()
