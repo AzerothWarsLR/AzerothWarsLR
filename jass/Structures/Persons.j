@@ -24,7 +24,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     readonly static Faction prevFaction = 0            //Used in OnPersonFactionChange event response for the previous faction 
     //readonly static group allCapitals = null
 
-    readonly string name = null
     readonly Faction faction                  //Controls name, available objects, color, and icon
     readonly Team team                        //The team this person is on
     readonly integer controlPoints = 0        //Count of control points
@@ -78,17 +77,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     
     method modIncome takes real mod returns nothing
       set this.income = this.income + mod
-    endmethod
-
-    method setName takes string s returns nothing
-      if PersonsByName[s] == null then
-        set PersonsByName[this.name] = 0     //Free up the existing name
-        set PersonsByName[s] = this
-        call SetPlayerName(this.p, s)
-      else
-        call DisplayTextToPlayer(this.p, 0, 0, "There is already a Person with name: " + s)
-      endif         
-    endmethod        
+    endmethod    
     
     method setTeam takes Team team returns nothing
       if this.team != 0 then
@@ -162,7 +151,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           endloop 
           call this.faction.executeEnterTrigger()                    
         else
-          call BJDebugMsg("Error: attempted to set Person " + this.name + " to already occupied faction with name " + newFaction.name)
+          call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
         endif
       endif
       
@@ -322,18 +311,11 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set this.p = p
       set this.cpGroup = CreateGroup()
       set this.objectLimits = Table.create()
-      //set this.capitals = CreateGroup()
-      //set this.startingCapitals = CreateGroup()
-      
-      call this.setName(GetPlayerName(p))
       set Persons[GetPlayerId(p)] = this
       
       return this           
     endmethod
 
-    static method onInit takes nothing returns nothing
-      //set thistype.allCapitals = CreateGroup()
-    endmethod
   endstruct
 
   function GetChangingPersonPrevFaction takes nothing returns Faction
