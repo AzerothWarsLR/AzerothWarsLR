@@ -10,7 +10,7 @@ library IncomeCommand initializer OnInit requires Income
     local real teamMult = (1 - (RMaxBJ(I2R(whichPerson.team.weight - whichPerson.team.maxWeight), 0))*Income_OVERWEIGHT_PENALTY)
     local real upkeepMult = (1 - GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE))
 
-    call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income before tax: " + "|r" + R2S(whichPerson.income))
+    call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income before tax: " + "|r" + R2S(whichPerson.income) + " gold per minute")
     if teamMult < 1 or upkeepMult < 1 then
       if teamMult < 1 then
         call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Team size factor: " + "|r x" + R2S(teamMult))
@@ -18,7 +18,7 @@ library IncomeCommand initializer OnInit requires Income
       if upkeepMult < 1 then
         call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Upkeep factor: " + "|r x" + R2S(teamMult))
       endif
-      call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income after tax: " + "|r" + R2S(whichPerson.income * teamMult * upkeepMult))
+      call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income after tax: " + "|r" + R2S(whichPerson.income * teamMult * upkeepMult) + " gold per minute")
     endif
   endfunction
 
