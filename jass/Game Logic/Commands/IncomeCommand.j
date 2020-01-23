@@ -13,10 +13,10 @@ library IncomeCommand initializer OnInit requires Income
     call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income before tax: " + "|r" + R2S(whichPerson.income) + " gold per minute")
     if teamMult != 1 or upkeepMult != 1 then
       if teamMult != 1 then
-        call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Team size factor: " + "|r x" + R2S(teamMult))
+        call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Team size factor: " + "|rx" + R2S(teamMult))
       endif
       if upkeepMult != 1 then
-        call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Upkeep factor: " + "|r x" + R2S(upkeepMult))
+        call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Upkeep factor: " + "|rx" + R2S(upkeepMult))
       endif
       call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income after tax: " + "|r" + R2S(whichPerson.income * teamMult * upkeepMult) + " gold per minute")
     endif
