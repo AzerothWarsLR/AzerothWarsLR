@@ -10,7 +10,7 @@ library Income initializer OnInit requires Persons
   private function AddPersonIncome takes Person whichPerson returns nothing
     local real goldPerSecond = whichPerson.income * PERIOD / 60
     local real teamMult = (1 - (RMaxBJ(I2R(whichPerson.team.weight - whichPerson.team.maxWeight), 0))*OVERWEIGHT_PENALTY)
-    local real upkeepMult = (1 - GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE))
+    local real upkeepMult = GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE)
     call whichPerson.addGold(goldPerSecond * teamMult * upkeepMult)
   endfunction
 
