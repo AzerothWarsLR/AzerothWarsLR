@@ -8,7 +8,7 @@ library IncomeCommand initializer OnInit requires Income
   private function Actions takes nothing returns nothing
     local Person whichPerson = Persons[GetPlayerId(GetTriggerPlayer())]
     local real teamMult = (1 - (RMaxBJ(I2R(whichPerson.team.weight - whichPerson.team.maxWeight), 0))*Income_OVERWEIGHT_PENALTY)
-    local real upkeepMult = GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE)
+    local real upkeepMult = (100 - GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE))/100
 
     call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income before tax: " + "|r" + R2S(whichPerson.income) + " gold per minute")
     if teamMult != 1 or upkeepMult != 1 then
