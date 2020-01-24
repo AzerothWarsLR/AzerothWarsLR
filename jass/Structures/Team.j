@@ -168,6 +168,7 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.weight = 0
       set this.maxWeight = DEFAULT_MAX_WEIGHT
       set this.players = CreateForce()
+      set this.invitees = CreateForce()
       
       if thistype.teamsByName[name] == 0 then
         set thistype.teamsByName[name] = this
