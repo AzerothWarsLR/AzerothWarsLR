@@ -122,11 +122,11 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
       set thistype.prevFaction = this.faction
 
-      if this.faction != 0 then
+      if this.faction > 0 then
         call this.nullFaction() 
       endif
 
-      if newFaction != 0 then
+      if newFaction > 0 then
         if PersonsByFaction[newFaction] == 0 then
           set i = 0
           loop //Apply object limits
