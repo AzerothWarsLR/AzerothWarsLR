@@ -170,8 +170,8 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.players = CreateForce()
       set this.invitees = CreateForce()
       
-      if thistype.teamsByName[name] == 0 then
-        set thistype.teamsByName[name] = this
+      if thistype.teamsByName[StringCase(name, false)] == 0 then
+        set thistype.teamsByName[StringCase(name, false)] = this
       else
         call BJDebugMsg("Error: created team that already exists with name " + name)
         return 0

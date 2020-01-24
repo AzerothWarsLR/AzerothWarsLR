@@ -133,8 +133,8 @@ library Faction initializer OnInit requires Persons, Event
       set this.weight = weight
       set this.objectLimits = Table.create()
       
-      if not factionsByName.exists(name) then
-        set factionsByName[name] = this
+      if not factionsByName.exists(StringCase(name,false)) then
+        set factionsByName[StringCase(name,false)] = this
       else
         call BJDebugMsg("Error: created faction that already exists with name " + name)
       endif 
