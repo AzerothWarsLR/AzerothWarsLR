@@ -64,15 +64,16 @@ library Team initializer OnInit requires Table, Event, Persons
     
     method refreshUpgrades takes nothing returns nothing
       local integer i = 0
-      
+      local integer upgradeLevel = 0
+    
+      if this.weight < this.maxWeight or this.size == 1 then
+        set upgradeLevel = 1
+      endif
+
       loop
-      exitwhen i > MAX_PLAYERS   
-        if this.containsPlayer(Player(i)) != null then
-          if this.weight < this.maxWeight or this.size == 1 then
-            call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, 1)   
-          else
-            call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, 0)    
-          endif
+        exitwhen i > MAX_PLAYERS
+        if this.containsPlayer(Player(i)) then
+          call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, upgradeLevel)
         endif
         set i = i + 1
       endloop
@@ -105,9 +106,9 @@ library Team initializer OnInit requires Table, Event, Persons
       call ForceAddPlayer(this.players, p)
       set this.playerArray[GetPlayerId(p)] = p
       set this.size = this.size+1
-      call this.refreshUpgrades()
       call ForceRemovePlayer(this.invitees, p)
       set this.weight = this.weight + whichPerson.faction.weight
+      call this.refreshUpgrades()
 
       set triggerTeam = this
       call OnTeamSizeChange.fire()
@@ -121,8 +122,8 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.playerArray[GetPlayerId(p)] = null
       set this.size = this.size-1
       call SetPlayerTechResearched(p, ALLY_LEFT_GAME_UPG, 1)      //If the player is not in a team they cerainly have no allies
-      call this.refreshUpgrades()
       set this.weight = this.weight - whichPerson.faction.weight
+      call this.refreshUpgrades()
 
       set triggerTeam = this
       call OnTeamSizeChange.fire()
