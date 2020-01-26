@@ -22,7 +22,7 @@ library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig
       call TEAM_SCOURGE.addFaction(FACTION_LEGION)        
     set TEAM_NORTH_ALLIANCE = Team.create("North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp")
       call TEAM_NORTH_ALLIANCE.addFaction(FACTION_LORDAERON)
-      call TEAM_NORTH_ALLIANCE.addFaction(FACTION_QUELTHELAS)      
+      call TEAM_NORTH_ALLIANCE.addFaction(FACTION_QUELTHALAS)      
       call TEAM_NORTH_ALLIANCE.addFaction(FACTION_DALARAN)
     set TEAM_HORDE = Team.create("Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp")
       call TEAM_HORDE.addFaction(FACTION_FROSTWOLF)

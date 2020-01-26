@@ -1,15 +1,14 @@
-
-library SentinelsConfig initializer OnInit requires Faction
+library SoloSentinelsConfig initializer OnInit requires Faction
 
   globals
-    Faction FACTION_SENTINELS
+    Faction FACTION_SOLO_SENTINELS
   endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
-        set f = FACTION_SENTINELS
+        set FACTION_SOLO_SENTINELS = Faction.create("Sentinels Unleashed", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 4)
+        set f = FACTION_SOLO_SENTINELS
 
             call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
             call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   
@@ -23,11 +22,12 @@ library SentinelsConfig initializer OnInit requires Faction
             call f.registerObjectLimit('n06P', UNLIMITED)   //Sentinel Enclave
             call f.registerObjectLimit('n06J', UNLIMITED)   //Sentinel Outpost
             call f.registerObjectLimit('n06M', UNLIMITED)   //Residence 
+            call f.registerObjectLimit('e00T', UNLIMITED)   //Watcher's Guild
 
             call f.registerObjectLimit('ewsp', UNLIMITED)   //Wisp 
             call f.registerObjectLimit('e006', UNLIMITED)   //Priestess
             call f.registerObjectLimit('n06C', UNLIMITED)   //Trapper
-            call f.registerObjectLimit('h04L', 6)           //Priestess of the Moon
+            call f.registerObjectLimit('n06E', 6)           //Shadowleaf Sentinel
             call f.registerObjectLimit('earc', UNLIMITED)   //Archer
             call f.registerObjectLimit('esen', UNLIMITED)   //Huntress
             call f.registerObjectLimit('ebal', 8)           //Glaive Thrower
@@ -36,6 +36,9 @@ library SentinelsConfig initializer OnInit requires Faction
             call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
             call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
             call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
+            call f.registerObjectLimit('h04L', 6)           //Priestess of the Moon
+            call f.registerObjectLimit('n08H', UNLIMITED)   //Panther
+            call f.registerObjectLimit('h045', 6)           //Wardens
             call f.registerObjectLimit('nnmg', 12)          //Redeemed Highborne 
 
             call f.registerObjectLimit('ensh', 1)           //Naisha

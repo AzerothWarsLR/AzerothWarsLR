@@ -1,14 +1,15 @@
+
 library QuelthalasConfig initializer OnInit requires Faction
 
     globals
-      Faction FACTION_QUELTHELAS
+        Faction FACTION_QUELTHALAS
     endglobals
 
     private function OnInit takes nothing returns nothing
         local Faction f
         
-        set FACTION_QUELTHELAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 3)
-        set f = FACTION_QUELTHELAS
+        set FACTION_QUELTHALAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
+        set f = FACTION_QUELTHALAS
 
             call f.setAbsenceResearch('R04L')
             //Structures
@@ -37,11 +38,15 @@ library QuelthalasConfig initializer OnInit requires Faction
             call f.registerObjectLimit('hhes', UNLIMITED)   //Elven Warrior
             call f.registerObjectLimit('hmpr', UNLIMITED)   //Priest
             call f.registerObjectLimit('hsor', UNLIMITED)   //Sorceress
+            call f.registerObjectLimit('n0A2', UNLIMITED)   //Warlock
             call f.registerObjectLimit('hdhw', 6)           //Dragonhawk Rider
             call f.registerObjectLimit('nhea', UNLIMITED)   //Archer
-            call f.registerObjectLimit('e008', 8)           //Elven Ballista
+            call f.registerObjectLimit('e008', 6)           //Elven Ballista
             call f.registerObjectLimit('n00A', 6)           //Farstrider
-            call f.registerObjectLimit('n063', 12)          //Magus           
+            call f.registerObjectLimit('n063', 12)          //Magus 
+            call f.registerObjectLimit('n048', 6)           //Blood Mage 
+            call f.registerObjectLimit('hspt', 12)          //Spell Breaker   
+            call f.registerObjectLimit('nggr', 4)           //Granite Golem       
 
             //Upgrades
             call f.registerObjectLimit('R01S', UNLIMITED)   //Aimed Shot
@@ -56,6 +61,7 @@ library QuelthalasConfig initializer OnInit requires Faction
             call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
             call f.registerObjectLimit('Rhpt', UNLIMITED)   //Priest Adept Training
             call f.registerObjectLimit('Rhst', UNLIMITED)   //Sorceress Adept Training
+            call f.registerObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
             
 
             //Masteries
@@ -64,9 +70,7 @@ library QuelthalasConfig initializer OnInit requires Faction
             call f.registerObjectLimit('R00H', UNLIMITED)   //Blood Elf Mastery
             
             //Paths
-            call f.registerObjectLimit('R041', UNLIMITED)   //Blood Elves Path
             call f.registerObjectLimit('R046', UNLIMITED)   //Quel'thelas Full Mobilization
-            call f.registerObjectLimit('R049', UNLIMITED)   //Unlock Naga Early
     endfunction
     
 endlibrary

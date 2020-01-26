@@ -9,7 +9,7 @@ library DruidsConfig initializer OnInit requires Faction
     
     set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
-
+    
       call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
       call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages
       call f.registerObjectLimit('etoe', UNLIMITED)   //Tree of Eternity  
@@ -36,11 +36,16 @@ library DruidsConfig initializer OnInit requires Faction
       call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
       call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
       call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
+      call f.registerObjectLimit('e00X', 3)  	      //Elemental Guardian
+      call f.registerObjectLimit('e012', 6)           //Siege Ancient
+
+      call f.registerObjectLimit('e015', 1)           //Broll
 
       call f.registerObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
       call f.registerObjectLimit('Renb', UNLIMITED)   //Nature's Blessing
       call f.registerObjectLimit('Rers', UNLIMITED)   //Resistant Skin
       call f.registerObjectLimit('Reuv', UNLIMITED)   //Ultravision
+      call f.registerObjectLimit('Rews', UNLIMITED)   //Well Spring
       call f.registerObjectLimit('R026', UNLIMITED)   //Elune's Power Infusion
       call f.registerObjectLimit('R02G', UNLIMITED)   //Druid of the Growth Adept Training
       call f.registerObjectLimit('R00A', UNLIMITED)   //Wild Instincts

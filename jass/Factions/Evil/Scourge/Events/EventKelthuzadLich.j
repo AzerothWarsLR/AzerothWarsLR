@@ -29,7 +29,7 @@ library EventKelthuzadLich initializer OnInit requires EventKelthuzadDeath, Quel
 
   private function EntersRegion takes nothing returns nothing
     local Person tempPerson = Persons[GetPlayerId(GetOwningPlayer(gg_unit_n001_0165))]
-    if (GetUnitTypeId(GetTriggerUnit()) == 'U001' or GetUnitTypeId(GetTriggerUnit()) == 'uktg') and tempPerson != FACTION_QUELTHELAS then
+    if (GetUnitTypeId(GetTriggerUnit()) == 'U001' or GetUnitTypeId(GetTriggerUnit()) == 'uktg') and tempPerson != FACTION_QUELTHALAS then
       call CreateLich()
     endif
   endfunction

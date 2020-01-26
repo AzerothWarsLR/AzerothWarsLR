@@ -21,7 +21,7 @@ library PlayerConfig initializer OnInit requires Persons, Team, TeamConfig, Scou
       call p.setFaction(FACTION_DALARAN)          
       call p.setTeam(TEAM_NORTH_ALLIANCE)
     set  p = Person.create(Player(6))
-      call p.setFaction(FACTION_QUELTHELAS)          
+      call p.setFaction(FACTION_QUELTHALAS)          
       call p.setTeam(TEAM_NORTH_ALLIANCE)
     set  p = Person.create(Player(7))
       call p.setFaction(FACTION_FROSTWOLF)         
