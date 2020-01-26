@@ -13,7 +13,7 @@ library ScarletCrusadeConfig initializer OnInit requires FactionMod
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('h067', 8)               //Scarlet Paladin
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('h00T', UNLIMITED)       //Scarlet Monastery
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('h06A', UNLIMITED)       //Inquisitor
-    call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('h06B', 6)               //Grand Crusader
+    call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('h06B', UNLIMITED+6)     //Grand Crusader
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('R04F', UNLIMITED)       //Scarlet Mage Initiate Training
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('e011', 8)               //Gryphon Knight
     call FACTIONMOD_SCARLETCRUSADE.registerObjectLimit('hkni', -UNLIMITED)      //Knight
