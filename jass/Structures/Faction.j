@@ -25,6 +25,19 @@ library Faction initializer OnInit requires Persons, Event
     readonly integer array objectList[100] //An index for objectLimits
     readonly integer objectCount = 0
 
+    method modWeight takes integer mod returns nothing
+      local Person affectedPerson = 0
+      if this.weight + mod < 0 then
+        call BJDebugMsg("Attempted to reduce weight of Faction " + this.name + " to " + I2S(this.weight + mod)) 
+        return
+      endif
+      set this.weight = this.weight + mod
+      if PersonsByFaction[this] != 0 then
+        set affectedPerson = PersonsByFaction[this]
+      endif
+      call affectedPerson.team.modWeight(mod)
+    endmethod
+
     method modObjectLimit takes integer id, integer limit returns nothing
       local Person affectedPerson = 0
 
@@ -55,6 +68,7 @@ library Faction initializer OnInit requires Persons, Event
         call this.modObjectLimit( whichMod.objectList[i], whichMod.objectLimits[whichMod.objectList[i]] )
         set i = i + 1
       endloop
+      call this.modWeight(whichMod.weight)
     endmethod
 
     method setPresenceResearch takes integer research returns nothing

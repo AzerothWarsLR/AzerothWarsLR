@@ -5,6 +5,11 @@ library FactionMod requires Table
     readonly Table             objectLimits         //This is how many units, researches or structures of a given type this faction can build
     readonly integer array     objectList[100]      //An index for objectLimits
     readonly integer           objectCount = 0
+    readonly integer           weight = 0           //Added to any Faction this mod mods
+
+    method modWeight takes integer weight returns nothing
+      set this.weight = this.weight + weight
+    endmethod
 
     method registerObjectLimit takes integer id, integer limit returns nothing
       if this.objectLimits[id] == 0 then

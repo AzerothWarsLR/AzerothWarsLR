@@ -79,6 +79,14 @@ library Team initializer OnInit requires Table, Event, Persons
       endloop
     endmethod
 
+    method modWeight takes integer mod returns nothing
+      if (this.weight + mod) < 0 then
+        call BJDebugMsg("Attempted to reduce weight of Team " + this.name + " to " + I2S(this.weight + mod)) 
+      endif
+      set this.weight = this.weight + mod
+      call this.refreshUpgrades()
+    endmethod
+
     //Revokes an invite sent to a player
     method uninvite takes player whichPlayer returns nothing
       local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
@@ -107,7 +115,7 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.playerArray[GetPlayerId(p)] = p
       set this.size = this.size+1
       call ForceRemovePlayer(this.invitees, p)
-      set this.weight = this.weight + whichPerson.faction.weight
+      call this.modWeight(whichPerson.faction.weight)
       call this.refreshUpgrades()
 
       set triggerTeam = this
@@ -122,7 +130,7 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.playerArray[GetPlayerId(p)] = null
       set this.size = this.size-1
       call SetPlayerTechResearched(p, ALLY_LEFT_GAME_UPG, 1)      //If the player is not in a team they cerainly have no allies
-      set this.weight = this.weight - whichPerson.faction.weight
+      call this.modWeight(-whichPerson.faction.weight)
       call this.refreshUpgrades()
 
       set triggerTeam = this
