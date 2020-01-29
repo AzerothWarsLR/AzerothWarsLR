@@ -80,7 +80,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     endmethod    
     
     method setTeam takes Team team returns nothing
-      if this.team != 0 then
+      if this.team > 0 then
         set thistype.triggerPerson = this
         call this.team.removePlayer(this.p)
         set this.triggerPersonPrevTeam = this.team
@@ -96,25 +96,34 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     private method nullFaction takes nothing returns nothing
       local integer i = 0
-      if this.faction != 0 then       //Unapply existing faction first
-        loop //Unapply object limits
-        exitwhen i > faction.objectCount
-          call this.modObjectLimit( this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]] )
-          set i = i + 1
-        endloop                       
-        set PersonsByFaction[this.faction] = 0     //Free up existing faction slot
-        //Toggle absence and presence researches for this faction
-        set i = 0
-        loop
-        exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
-          call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
-          set i = i + 1
-        endloop
-        //Run the exit trigger
-        call this.faction.executeExitTrigger()
-        set this.faction = 0 
-      endif        
+
+      if this.faction == 0 then
+        call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
+        return
+      endif
+
+      //Unapply object limits
+      loop 
+      exitwhen i > faction.objectCount
+        call this.modObjectLimit( this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]] )
+        set i = i + 1
+      endloop       
+
+      set PersonsByFaction[this.faction] = 0 //Free up existing faction slot
+      call this.team.modWeight(-this.faction.weight) //Remove faction's weight from team
+
+      //Toggle absence and presence researches for this faction
+      set i = 0
+      loop
+      exitwhen i > MAX_PLAYERS
+        call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
+        call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
+        set i = i + 1
+      endloop
+
+      //Run the exit trigger
+      call this.faction.executeExitTrigger()
+      set this.faction = 0 
     endmethod
 
     method setFaction takes Faction newFaction returns nothing
@@ -129,7 +138,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       if newFaction > 0 then
         if PersonsByFaction[newFaction] == 0 then
           set i = 0
-          loop //Apply object limits
+          //Apply object limits
+          loop
           exitwhen i > newFaction.objectCount
             call this.modObjectLimit( newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]] )
             set i = i + 1
@@ -137,6 +147,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           call SetPlayerColorBJ(this.p, newFaction.playCol, true)
           set PersonsByFaction[newFaction] = this   
           set this.faction = newFaction 
+          //Add new faction's weight to current team
+          if this.team > 0 then
+            call this.team.modWeight(newFaction.weight)
+          endif
           //Toggle absence and presence researches for this faction
           set i = 0
           loop

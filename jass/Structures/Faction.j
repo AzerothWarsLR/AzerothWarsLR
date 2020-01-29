@@ -28,7 +28,7 @@ library Faction initializer OnInit requires Persons, Event
     method modWeight takes integer mod returns nothing
       local Person affectedPerson = 0
       if this.weight + mod < 0 then
-        call BJDebugMsg("Attempted to reduce weight of Faction " + this.name + " to " + I2S(this.weight + mod)) 
+        call BJDebugMsg("ERROR: Attempted to reduce weight of Faction " + this.name + " to " + I2S(this.weight + mod)) 
         return
       endif
       set this.weight = this.weight + mod
@@ -103,7 +103,7 @@ library Faction initializer OnInit requires Persons, Event
       if this.enterTrigger == null then
         set this.enterTrigger = trig
       else
-        call BJDebugMsg("Attempted to set enter trigger for faction " + this.name + " but one is already set.")
+        call BJDebugMsg("ERROR: Attempted to set enter trigger for faction " + this.name + " but one is already set.")
       endif
     endmethod
 
@@ -111,7 +111,7 @@ library Faction initializer OnInit requires Persons, Event
       if this.exitTrigger == null then
         set this.exitTrigger = trig
       else
-        call BJDebugMsg("Attempted to set exit trigger for faction " + this.name + " but one is already set.")
+        call BJDebugMsg("ERROR: Attempted to set exit trigger for faction " + this.name + " but one is already set.")
       endif
     endmethod
 
@@ -133,7 +133,7 @@ library Faction initializer OnInit requires Persons, Event
         set objectList[objectCount] = id
         set this.objectCount = this.objectCount + 1
       else
-        call BJDebugMsg("Error: attempted to register already existing id " + I2S(id) + " to faction " + this.name)
+        call BJDebugMsg("ERROR: attempted to register already registered id " + I2S(id) + " to faction " + this.name)
       endif       
     endmethod
     
