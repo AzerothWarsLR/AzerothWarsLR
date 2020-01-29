@@ -51,9 +51,9 @@ library PlayerConfig initializer OnInit requires Persons, Team, TeamConfig, Scou
     call p.setFaction(FACTION_DRUIDS)
     call p.setTeam(TEAM_NIGHT_ELVES)
 
-    call Person.create(Player(12))
-    call Person.create(Player(13))
     call Person.create(Player(14))
+    call Person.create(Player(15))
+    call Person.create(Player(16))
   endfunction
 
 endlibrary
