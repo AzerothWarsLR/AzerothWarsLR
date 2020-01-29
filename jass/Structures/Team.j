@@ -140,14 +140,6 @@ library Team initializer OnInit requires Table, Event, Persons
     method containsPlayer takes player p returns boolean
       return IsPlayerInForce(p, this.players)
     endmethod        
-    
-    method getIcon takes nothing returns string
-      return this.icon
-    endmethod
-    
-    method getName takes nothing returns string
-      return this.name
-    endmethod
 
     method containsFaction takes Faction f returns boolean
       local integer i = 0

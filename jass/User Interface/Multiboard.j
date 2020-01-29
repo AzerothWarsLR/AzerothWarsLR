@@ -232,7 +232,7 @@ library Multiboard initializer OnInit requires Faction, Team, Event, Table
         endif
         
         set updatingRow = this.rowsByTeam[whichTeam]
-        call updatingRow.updateRowItem(0, "-------"+whichTeam.getName()+ SubString("-----------------------------------------", 0, 28-StringLength(whichTeam.name)), null, WIDTH_TEAM)
+        call updatingRow.updateRowItem(0, "-------"+whichTeam.name+ SubString("-----------------------------------------", 0, 28-StringLength(whichTeam.name)), null, WIDTH_TEAM)
 
         call renderRow(updatingRow)
       else
