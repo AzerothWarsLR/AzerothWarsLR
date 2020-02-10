@@ -45,9 +45,11 @@ library EventMaievArrives initializer OnInit requires Persons, Faction
 
   private function OnInit takes nothing returns nothing
     //Timer ends
+    set TimerTrig = CreateTrigger()
     call TriggerRegisterTimerEvent(TimerTrig, TIMER_DURATION, false)
     call TriggerAddAction(TimerTrig, function TimerEnds)
     //Someone's faction changes
+    set FactionTrig = CreateTrigger()
     call OnPersonFactionChange.register(FactionTrig)
     call TriggerAddAction(FactionTrig, function PersonChangesFaction)
   endfunction
