@@ -20,7 +20,7 @@ library EventKelthuzadDeath initializer OnInit
     if GetUnitTypeId(GetTriggerUnit()) == 'U001' then
         set killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
         set killingTeam = killingPerson.team
-        if killingTeam != 0 and killingTeam  == TEAM_SCOURGE then
+        if killingTeam != 0 and killingTeam  == TEAM_NORTH_ALLIANCE then
           call DisplayTextToForce( GetPlayersAll(), "Kel'Thuzad has been slain. His spirit lives on in spectral form, and he can be revived by taking him to the Sunwell." )
           set u = GetTriggerUnit()
           set KelthuzadExp = GetHeroXP(u)
