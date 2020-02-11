@@ -22,8 +22,8 @@ library ObserverCommand initializer OnInit
 
     if triggerPerson != 0 then         
       call triggerPerson.leave()
-      call triggerPerson.setFaction(-1)
-      call triggerPerson.setTeam(-1)
+      call triggerPerson.setFaction(0)
+      call triggerPerson.setTeam(0)
       call triggerPerson.destroy()
     endif
   endfunction

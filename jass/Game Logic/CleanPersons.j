@@ -10,8 +10,8 @@ library CleanPersons initializer OnInit requires Persons, TestSafety
       exitwhen i > MAX_PLAYERS
         if Persons[i] != 0 and GetPlayerSlotState(Persons[i].p) != PLAYER_SLOT_STATE_PLAYING then
           call Persons[i].leave()
-          call Persons[i].setFaction(-1)
-          call Persons[i].setTeam(-1)
+          call Persons[i].setFaction(0)
+          call Persons[i].setTeam(0)
           call Persons[i].destroy()
         endif
         set i = i + 1

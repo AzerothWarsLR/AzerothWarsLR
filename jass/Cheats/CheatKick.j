@@ -16,8 +16,8 @@ library CheatKick initializer OnInit requires TestSafety
     set kickId = (S2I(parameter))
     
     call Persons[kickId].leave()
-    call Persons[kickId].setFaction(-1)
-    call Persons[kickId].setTeam(-1)
+    call Persons[kickId].setFaction(0)
+    call Persons[kickId].setTeam(0)
     call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to kick player " + GetPlayerName(Player(kickId)) + ".")
   endfunction
 

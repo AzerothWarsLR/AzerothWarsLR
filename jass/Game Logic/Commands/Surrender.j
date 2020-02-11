@@ -12,8 +12,8 @@ library Surrender initializer OnInit
 
         call DisplayTextToForce ( bj_FORCE_ALL_PLAYERS, triggerPerson.faction.name + " has surrendered.")   
         call triggerPerson.leave()
-        call triggerPerson.setFaction(-1)
-        call triggerPerson.setTeam(-1)
+        call triggerPerson.setFaction(0)
+        call triggerPerson.setTeam(0)
     endfunction
 
     private function OnInit takes nothing returns nothing
