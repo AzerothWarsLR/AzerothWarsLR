@@ -28,8 +28,9 @@ library EventKelthuzadLich initializer OnInit requires EventKelthuzadDeath, Quel
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    local Person tempPerson = Persons[GetPlayerId(GetOwningPlayer(gg_unit_n001_0165))]
-    if (GetUnitTypeId(GetTriggerUnit()) == 'U001' or GetUnitTypeId(GetTriggerUnit()) == 'uktg') and tempPerson != FACTION_QUELTHALAS then
+    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(gg_unit_n001_0165))]
+    local Person scourgePerson = PersonsByFaction[FACTION_SCOURGE]
+    if (GetUnitTypeId(GetTriggerUnit()) == 'U001' or GetUnitTypeId(GetTriggerUnit()) == 'uktg') and triggerPerson.team.containsPlayer(scourgePerson.p) then
       call CreateLich()
     endif
   endfunction
