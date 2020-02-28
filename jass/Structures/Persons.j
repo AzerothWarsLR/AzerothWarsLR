@@ -88,10 +88,12 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call OnPersonTeamLeave.fire()
       endif  
 
-      call team.addPlayer(this.p) 
-      set this.team = team
-      set thistype.triggerPerson = this
-      call OnPersonTeamJoin.fire()
+      if team > 0 then
+        call team.addPlayer(this.p) 
+        set this.team = team
+        set thistype.triggerPerson = this
+        call OnPersonTeamJoin.fire()
+      endif
     endmethod
 
     private method nullFaction takes nothing returns nothing
