@@ -8,12 +8,13 @@ library Unally initializer OnInit requires Team, Persons, Faction
 
 	private function Actions takes nothing returns nothing
     local Person triggerPerson = Persons[GetPlayerId(GetTriggerPlayer())]
+    local string newTeamName = triggerPerson.team.name + " Pact"
     local Team newTeam = 0
 
     if triggerPerson.team.size > 1 then
-      set newTeam = Team.teamsByName[triggerPerson.faction.name]
+      set newTeam = Team.teamsByName[newTeamName]
       if newTeam == 0 then
-        set newTeam = Team.create(triggerPerson.faction.name + " Pact", triggerPerson.faction.icon)
+        set newTeam = Team.create(newTeamName, triggerPerson.faction.icon)
       endif
       call triggerPerson.setTeam(newTeam)
     endif
