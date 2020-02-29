@@ -1,4 +1,4 @@
-library ReapingHour initializer OnInit requires T32
+library ReapingHour initializer OnInit requires T32, Set
 
   globals
     private constant integer ABIL_ID = 'A10N'
@@ -22,36 +22,103 @@ library ReapingHour initializer OnInit requires T32
     private constant real EFFECT_SCALE_SPAWN = 0.5
   endglobals
 
-  private struct Reap
-    private unit caster = null
+  private struct ReapProjectile
     private effect sfx = null
     private real x = 0
     private real y = 0
-    private real tick = 0
     private real face = 0
-    private real curDist = 0
-    private real maxDist = 0
-    private real damage = 0
-    private group hitGroup = null   //Units already hit by this Reap
 
     method destroy takes nothing returns nothing
       call DestroyEffect(this.sfx)
       set this.sfx = null
+      call this.deallocate()
+    endmethod
 
+    method operator X= takes real r returns nothing
+      set x = r
+      call BlzSetSpecialEffectX(sfx, r)
+      call BlzSetSpecialEffectZ(sfx, GetPositionZ(x, y))
+    endmethod
+
+    method operator X takes nothing returns real
+      return x
+    endmethod
+
+    method operator Y= takes real r returns nothing
+      set y = r
+      call BlzSetSpecialEffectY(sfx, r)
+      call BlzSetSpecialEffectZ(sfx, GetPositionZ(x, y))
+    endmethod
+
+    method operator Y takes nothing returns real
+      return y
+    endmethod
+
+    method operator Face= takes real r returns nothing
+      set face = r
+      call BlzSetSpecialEffectYaw(sfx, r*bj_DEGTORAD)
+    endmethod
+
+    method operator Face takes nothing returns real
+      return face
+    endmethod
+
+    method operator Alpha= takes integer i returns nothing
+      call BlzSetSpecialEffectAlpha(sfx, i)
+    endmethod
+
+    static method create takes real x, real y, real face returns thistype
+      local thistype this = thistype.allocate()
+      local effect tempSfx = AddSpecialEffect(EFFECT_SPAWN, x, y)
+      call DestroyEffect(tempSfx)
+      call BlzSetSpecialEffectScale(tempSfx, EFFECT_SCALE_SPAWN)
+
+      set this.sfx = AddSpecialEffect(EFFECT_PROJ, x, y)
+      set X = x
+      set Y = y
+      set Face = face
+      call BlzPlaySpecialEffect(this.sfx, ANIM_TYPE_WALK)
+      call BlzSetSpecialEffectScale(this.sfx, EFFECT_SCALE_PROJ)
+
+      return this
+    endmethod
+  endstruct
+
+  //Responsible for handling the movement, damage and expiry of its child ReapProjectiles
+  private struct ReapingHour
+    private Set reapProjectiles
+    private unit caster = null
+    private real curDist = 0
+    private real maxDist = 0
+    private real damage = 0
+    private group hitGroup = null   //Units already hit by this ReapingHour
+
+    method destroy takes nothing returns nothing
+      local integer i = 0
+      local ReapProjectile reapProjectile
+      call DestroyGroup(hitGroup)
+      set hitGroup = null
+      loop
+        exitwhen i == reapProjectiles.size
+        set reapProjectile = reapProjectiles[i]
+        call reapProjectile.destroy()
+        set i = i + 1
+      endloop
+      call reapProjectiles.destroy()
       call this.stopPeriodic()
       call this.deallocate()
     endmethod
 
-    method doHit takes nothing returns nothing
+    method hit takes ReapProjectile reapProjectile returns nothing
       local group tempGroup = CreateGroup()
       local integer i = 0
       local unit u = null
       local effect tempEffect = null
       local real damageMult = 0
-      call GroupEnumUnitsInRange(tempGroup, this.x, this.y, RADIUS, null)
+      call GroupEnumUnitsInRange(tempGroup, reapProjectile.X, reapProjectile.Y, RADIUS, null)
       loop
-      exitwhen BlzGroupGetSize(tempGroup) == 0
         set u = FirstOfGroup(tempGroup)
+        exitwhen u == null
         if not IsUnitInGroup(u, this.hitGroup) and not IsUnitAlly(u, GetOwningPlayer(this.caster)) and IsUnitAlive(u) and not BlzIsUnitInvulnerable(u) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) then
           set damageMult = 1 + ((GetUnitState(u, UNIT_STATE_MAX_LIFE) - GetUnitState(u, UNIT_STATE_LIFE))/GetUnitState(u, UNIT_STATE_MAX_LIFE))*EXECUTE_PERC
           call UnitDamageTarget(this.caster, u, this.damage*damageMult, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
@@ -65,51 +132,62 @@ library ReapingHour initializer OnInit requires T32
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null
-      set u = null
     endmethod
 
     method periodic takes nothing returns nothing
-      set this.tick = this.tick + 1
-      set this.x = GetPolarOffsetX(this.x, VELOCITY/T32_FPS, this.face)
-      set this.y = GetPolarOffsetY(this.y, VELOCITY/T32_FPS, this.face)
-      call BlzSetSpecialEffectX(this.sfx, this.x)
-      call BlzSetSpecialEffectY(this.sfx, this.y)
-      call BlzSetSpecialEffectZ(this.sfx, GetPositionZ(this.x, this.y))
-      set this.curDist = this.curDist + VELOCITY/T32_FPS
-
-      call this.doHit()
-
-      //Begin fadeout near the end of the path
-      if this.curDist > (this.maxDist - DIST_FADE_START) then
-        call BlzSetSpecialEffectAlpha( this.sfx, R2I(255*( 1 - ( ( this.curDist / this.maxDist ) ) ) ))
-      endif   
+      local integer i = 0
+      local ReapProjectile reapProjectile
+      loop
+        exitwhen i == reapProjectiles.size
+        set reapProjectile = reapProjectiles[i]
+        set reapProjectile.X = GetPolarOffsetX(reapProjectile.X, VELOCITY/T32_FPS, reapProjectile.Face)
+        set reapProjectile.Y = GetPolarOffsetY(reapProjectile.Y, VELOCITY/T32_FPS, reapProjectile.Face)
+        call hit(reapProjectile)
+        //Begin fadeout near the end of the path
+        if this.curDist > (this.maxDist - DIST_FADE_START) then
+          set reapProjectile.Alpha = R2I(255*( 1 - ( ( this.curDist / this.maxDist ) ) ) )
+        endif
+        set i = i + 1
+      endloop
 
       //Ended path
       if this.curDist >= this.maxDist then
         call this.destroy()
       endif
+
+      set this.curDist = this.curDist + VELOCITY/T32_FPS
     endmethod
 
     implement T32x
 
     static method create takes unit caster, real x, real y, real face, real damage, real maxDist returns thistype
       local thistype this = thistype.allocate()
-      local effect tempSfx = AddSpecialEffect(EFFECT_SPAWN, x, y)
-      call DestroyEffect(tempSfx)
-      call BlzSetSpecialEffectScale(tempSfx, EFFECT_SCALE_SPAWN)
+      local integer i = 0
+      local real offsetAngle
+      local real offsetDist
+      local integer middle = (HORSEMEN_COUNT-1)/2
 
       set this.caster = caster
-      set this.x = x
-      set this.y = y
-      set this.face = face
       set this.maxDist = maxDist
       set this.damage = damage
-      set this.sfx = AddSpecialEffect(EFFECT_PROJ, x, y)
-      call BlzSetSpecialEffectAlpha(this.sfx, 100)
-      call BlzSetSpecialEffectYaw(this.sfx, face*bj_DEGTORAD)
-      call BlzPlaySpecialEffect(this.sfx, ANIM_TYPE_WALK)
-      call BlzSetSpecialEffectScale(this.sfx, EFFECT_SCALE_PROJ)
       set this.hitGroup = CreateGroup()
+      set this.reapProjectiles = Set.create()
+
+      loop
+        exitwhen i == HORSEMEN_COUNT
+        if i < middle then
+          set offsetAngle = face-90 - 15*(middle-i)
+          set offsetDist = (middle - i)*(HORSEMEN_WIDTH / HORSEMEN_COUNT)
+        elseif i > middle then
+          set offsetAngle = face+90 + 15*(i - middle)
+          set offsetDist = (i - middle)*(HORSEMEN_WIDTH / HORSEMEN_COUNT)
+        else
+          set offsetAngle = 0
+          set offsetDist = 0
+        endif
+        call reapProjectiles.add(ReapProjectile.create(GetPolarOffsetX(x, offsetDist, offsetAngle), GetPolarOffsetY(y, offsetDist, offsetAngle), face)) 
+        set i = i + 1
+      endloop
 
       call this.startPeriodic()
 
@@ -135,23 +213,7 @@ library ReapingHour initializer OnInit requires T32
       set triggerFace = GetUnitFacing(triggerUnit)
       set level = GetUnitAbilityLevel(triggerUnit, ABIL_ID)    
 
-      set i = 0
-      loop
-      exitwhen i == HORSEMEN_COUNT
-        set middle = (HORSEMEN_COUNT-1)/2
-        if i < middle then
-          set offsetAngle = triggerFace-90 - 15*(middle-i)
-          set offsetDist = (middle - i)*(HORSEMEN_WIDTH / HORSEMEN_COUNT)
-        elseif i > middle then
-          set offsetAngle = triggerFace+90 + 15*(i - middle)
-          set offsetDist = (i - middle)*(HORSEMEN_WIDTH / HORSEMEN_COUNT)
-        else
-          set offsetAngle = 0
-          set offsetDist = 0
-        endif
-        call Reap.create(triggerUnit, GetPolarOffsetX(triggerX, offsetDist, offsetAngle), GetPolarOffsetY(triggerY, offsetDist, offsetAngle), triggerFace, DAMAGE_BASE + DAMAGE_LEVEL*level, RANGE)
-        set i = i + 1
-      endloop
+      call ReapingHour.create(triggerUnit, triggerX, triggerY, triggerFace, DAMAGE_BASE + DAMAGE_LEVEL*level, RANGE)
 
       set triggerUnit = null
     endif
