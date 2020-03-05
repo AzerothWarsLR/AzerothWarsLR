@@ -17,16 +17,14 @@ library EventMalfurionAwakens initializer OnInit
 
     if UnitHasItemOfTypeBJ(GetTriggerUnit(), HORN_OF_CENARIUS) and IsUnitAliveBJ(gg_unit_nbwd_0737) then
       set triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-      if triggerPerson.team == TEAM_NIGHT_ELVES and druidsPerson != 0 then //Night Elves
+      if triggerPerson.team.containsPlayer(druidsPerson.p) then
         call DisplayTextToForce(GetPlayersAll(), "Malfurion has awoken from his deep slumber in the Barrow Den.")
         call ShowUnit(malfurion, true)
         call SetUnitInvulnerable(malfurion, false)
         call SetUnitOwner(malfurion, druidsPlayer, true)
         set tempArtifact = Artifact.artifactsByType[GHANIR] //G'hanir
         call UnitAddItem(malfurion, tempArtifact.item)
-        call DestroyTrigger(GetTriggeringTrigger())
       endif
-      call DestroyTrigger(GetTriggeringTrigger())
     endif
 
     //Cleanup
