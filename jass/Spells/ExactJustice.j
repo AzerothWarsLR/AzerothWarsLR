@@ -2,12 +2,12 @@ library DivineJustice initializer OnInit requires Filters
 
     globals
         private constant integer    ABIL_ID                        = 'A097'
-        private constant real       DURATION                       = 6.
+        private constant real       DURATION                       = 8.
 
         private constant string     CONSECRATION_EFFECT_SPARKLE    = "war3mapImported\\Consecrate.mdx"
         private constant string     CONSECRATION_EFFECT_RING       = "war3mapImported\\Point Target.mdx"
         private constant real       CONSECRATION_DAMAGE_BASE       = 100.
-        private constant real       CONSECRATION_DAMAGE_LEVEL      = 200.
+        private constant real       CONSECRATION_DAMAGE_LEVEL      = 250.
         private constant real       CONSECRATION_RADIUS            = 400.
         private constant real       CONSECRATION_SCALE             = 2.3
         private constant real       CONSECRATION_SCALE_RING        = 5.5
