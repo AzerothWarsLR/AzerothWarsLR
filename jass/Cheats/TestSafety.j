@@ -9,7 +9,7 @@ library TestSafety initializer OnInit
   endglobals
 
   private function Warning takes nothing returns nothing
-    call DisplayTextToForce(GetPlayersAll(), "This map is in test mode amd contains |cffD27575CHEATS|r.")
+    call DisplayTextToForce(GetPlayersAll(), "This map is in test mode and contains |cffD27575CHEATS|r.")
     call DisplayTextToForce(GetPlayersAll(), "To use these |cffD27575CHEATS|r, refer to the Quest menu.")
   endfunction
 
