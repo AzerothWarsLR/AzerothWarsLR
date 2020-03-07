@@ -14,7 +14,7 @@ library Set requires Table
 
     method operator [] takes integer index returns integer
       if list[index] == 0 then
-        call BJDebugMsg("ERROR: Table index " + I2S(index) + " out of bounds")
+        call BJDebugMsg("ERROR: Set " + I2S(this) + " Table index " + I2S(index) + " out of bounds")
         return 0
       endif
       return list[index]
