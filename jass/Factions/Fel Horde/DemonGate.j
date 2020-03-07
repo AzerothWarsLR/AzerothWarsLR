@@ -1,10 +1,9 @@
 library DemonGate requires T32, Set, Math
 
   globals
-    private constant integer MANA_MAXIMUM = 1000
+    private constant integer MANA_MAXIMUM = 180
     private constant real MANA_REGEN = 1.
     private constant real TICK_RATE = 1.
-    private constant real MANA_PER_UNIT_LEVEL = 25. //The amount of mana consumed per level of the demon spawned
     private constant real FACING_OFFSET = -45. //Demon gate model is spun around weirdly so this reverses that for code
     private constant real SPAWN_DISTANCE = 300. //How far away from the gate to spawn units
   endglobals
@@ -64,7 +63,6 @@ library DemonGate requires T32, Set, Math
     private method spawnUnit takes integer whichUnitId returns nothing
       local unit newUnit = CreateUnit(Owner, whichUnitId, SpawnX, SpawnY, Facing)
       local location rally = GetUnitRallyPoint(u)
-      set Mana = Mana - GetUnitLevel(newUnit)*MANA_PER_UNIT_LEVEL
       call IssuePointOrder(newUnit, "attackground", GetLocationX(rally), GetLocationY(rally))
       call RemoveLocation(rally)
     endmethod
@@ -77,7 +75,8 @@ library DemonGate requires T32, Set, Math
       set tick = tick + 1
       if tick == TICK_RATE * T32_FPS then
         set Mana = Mana + MANA_REGEN*TICK_RATE
-        if Mana > 20*MANA_PER_UNIT_LEVEL then
+        if Mana >= 180 then
+          set Mana = 0
           call spawnRandomUnitFromSet(greaterDemons)
           call spawnRandomUnitFromSet(lesserDemons)
           call spawnRandomUnitFromSet(lesserDemons)
@@ -99,6 +98,7 @@ library DemonGate requires T32, Set, Math
       set this.tick = 0
       set this.MaxMana = MANA_MAXIMUM
       set this.enabled = true
+      call IssuePointOrder(u, "setrally", this.SpawnX, this.SpawnY)
       call startPeriodic()
       return this
     endmethod
