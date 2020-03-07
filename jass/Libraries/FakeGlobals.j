@@ -5,7 +5,7 @@ library FakeGlobals
 
   globals
     unit gg_unit_h01Z_0618
-    unit gg_unit_Nsjs_2670
+    unit gg_unit_h04E_2670
   endglobals
 
 endlibrary FakeGlobals
