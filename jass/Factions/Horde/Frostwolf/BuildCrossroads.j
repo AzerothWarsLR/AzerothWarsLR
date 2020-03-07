@@ -1,6 +1,6 @@
 //If any Horde unit enters the Crossroads area, OR a time elapses, OR someone becomes a solo Horde Path, give the Crossroads to a Horde player.
 
-library BuildCrossroads initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, TrueHordeConfig
+library BuildCrossroads initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, MannorothConfig
 
   globals
     private constant real TIMER = 420.     //How long it takes for this event to elapse automatically
@@ -21,8 +21,8 @@ library BuildCrossroads initializer OnInit requires Persons, WarsongConfig, Fros
     elseif PersonsByFaction[FACTION_WARSONG] != 0 then     
       set tempPerson = PersonsByFaction[FACTION_WARSONG]
       set recipient = tempPerson.p  
-    elseif PersonsByFaction[FACTION_TRUE_HORDE] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_TRUE_HORDE]
+    elseif PersonsByFaction[FACTION_MANNOROTH] != 0 then
+      set tempPerson = PersonsByFaction[FACTION_MANNOROTH]
       set recipient = tempPerson.p        
     elseif PersonsByFaction[FACTION_NEW_HORDE] != 0 then
       set tempPerson = PersonsByFaction[FACTION_NEW_HORDE]
@@ -66,7 +66,7 @@ library BuildCrossroads initializer OnInit requires Persons, WarsongConfig, Fros
   endfunction    
 
   private function PersonFactionChanges takes nothing returns nothing
-    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_TRUE_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_MANNOROTH then
       call Build()
     endif
   endfunction

@@ -19,7 +19,7 @@ library EventCenariusDies initializer OnInit requires Persons, Faction
 
         //Play extra sound for Warsong kill
         set tempPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
-        if tempPerson.faction == FACTION_WARSONG or tempPerson.faction == FACTION_TRUE_HORDE then
+        if tempPerson.faction == FACTION_WARSONG or tempPerson.faction == FACTION_MANNOROTH then
           call PlaySoundBJ(gg_snd_O05Grom38)
           call DisplayTextToForce(GetPlayersAll(), "The Demigod has fallen! The Warsong is supreme!")
         endif

@@ -1,6 +1,6 @@
 //If Grom enters the Warsong Camp area, OR a time elapses, OR someone becomes a solo Horde Path, give the Camp to a Horde player.
 
-library BuildWarsongCamp initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, TrueHordeConfig
+library BuildWarsongCamp initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, MannorothConfig
 
   globals
     private constant real TIMER = 270.     //How long it takes for Warsong Lumber Camp to be built instantly
@@ -21,8 +21,8 @@ library BuildWarsongCamp initializer OnInit requires Persons, WarsongConfig, Fro
     elseif PersonsByFaction[FACTION_FROSTWOLF] != 0 then                   
       set tempPerson = PersonsByFaction[FACTION_FROSTWOLF]
       set recipient = tempPerson.p      
-    elseif PersonsByFaction[FACTION_TRUE_HORDE] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_TRUE_HORDE]
+    elseif PersonsByFaction[FACTION_MANNOROTH] != 0 then
+      set tempPerson = PersonsByFaction[FACTION_MANNOROTH]
       set recipient = tempPerson.p     
     elseif PersonsByFaction[FACTION_NEW_HORDE] != 0 then
       set tempPerson = PersonsByFaction[FACTION_NEW_HORDE]
@@ -57,7 +57,7 @@ library BuildWarsongCamp initializer OnInit requires Persons, WarsongConfig, Fro
   endfunction    
 
   private function PersonFactionChanges takes nothing returns nothing
-    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_TRUE_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_MANNOROTH then
       call Build()
     endif
   endfunction

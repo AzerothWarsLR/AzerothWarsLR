@@ -1,6 +1,6 @@
 //If Thrall enters the Orgrimmar area, OR a time elapses, OR someone becomes a solo Horde Path, give Orgrimmar to a Horde player.
 
-library Build initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, TrueHordeConfig
+library Build initializer OnInit requires Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, MannorothConfig
 
   globals
     private constant real ORGRIMMAR_TIMER = 600.     //How long it takes for Orgrimmar to be built instantly
@@ -26,8 +26,8 @@ library Build initializer OnInit requires Persons, WarsongConfig, FrostwolfConfi
     elseif PersonsByFaction[FACTION_NEW_HORDE] != 0 then
       set tempPerson = PersonsByFaction[FACTION_NEW_HORDE]
       set recipient = tempPerson.p      
-    elseif PersonsByFaction[FACTION_TRUE_HORDE] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_TRUE_HORDE]
+    elseif PersonsByFaction[FACTION_MANNOROTH] != 0 then
+      set tempPerson = PersonsByFaction[FACTION_MANNOROTH]
       set recipient = tempPerson.p  
     endif
 
@@ -65,7 +65,7 @@ library Build initializer OnInit requires Persons, WarsongConfig, FrostwolfConfi
   endfunction    
 
   private function PersonFactionChanges takes nothing returns nothing
-    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_TRUE_HORDE then
+    if GetTriggerPerson().faction == FACTION_NEW_HORDE or GetTriggerPerson().faction == FACTION_MANNOROTH then
       call Build()
     endif
   endfunction
