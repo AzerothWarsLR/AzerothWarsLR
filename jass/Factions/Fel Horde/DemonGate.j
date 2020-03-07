@@ -1,12 +1,12 @@
-library DemonGate initializer OnInit requires T32, Set, Math
+library DemonGate requires T32, Set, Math
 
   globals
-    private constant real MANA_MAXIMUM = 500.
+    private constant integer MANA_MAXIMUM = 1000
     private constant real MANA_REGEN = 1.
     private constant real TICK_RATE = 1.
     private constant real MANA_PER_UNIT_LEVEL = 25. //The amount of mana consumed per level of the demon spawned
-    private constant real FACING_OFFSET = 30. //Demon gate model is spun around weirdly so this reverses that for code
-    private constant real SPAWN_DISTANCE = 150. //How far away from the gate to spawn units
+    private constant real FACING_OFFSET = -45. //Demon gate model is spun around weirdly so this reverses that for code
+    private constant real SPAWN_DISTANCE = 300. //How far away from the gate to spawn units
   endglobals
 
   struct DemonGate
@@ -21,12 +21,12 @@ library DemonGate initializer OnInit requires T32, Set, Math
       call stopPeriodic()
     endmethod
 
-    private method operator MaxMana= takes real r returns nothing
-      call SetUnitState(u, UNIT_STATE_MANA, r)
+    private method operator MaxMana= takes integer i returns nothing
+      call BlzSetUnitMaxMana(u, i)
     endmethod
 
-    private method operator MaxMana takes nothing returns real
-      return GetUnitState(u, UNIT_STATE_MAX_MANA)
+    private method operator MaxMana takes nothing returns integer
+      return BlzGetUnitMaxMana(u)
     endmethod
 
     private method operator Mana takes nothing returns real
@@ -62,24 +62,27 @@ library DemonGate initializer OnInit requires T32, Set, Math
     endmethod
 
     private method spawnUnit takes integer whichUnitId returns nothing
-      local unit newUnit = CreateUnit(Owner, whichUnitId, X, Y, Facing)
-      call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", X, Y))
+      local unit newUnit = CreateUnit(Owner, whichUnitId, SpawnX, SpawnY, Facing)
+      local location rally = GetUnitRallyPoint(u)
       set Mana = Mana - GetUnitLevel(newUnit)*MANA_PER_UNIT_LEVEL
+      call IssuePointOrder(newUnit, "attackground", GetLocationX(rally), GetLocationY(rally))
+      call RemoveLocation(rally)
     endmethod
 
     private method spawnRandomUnitFromSet takes Set whichSet returns nothing
-        call spawnUnit(whichSet[GetRandomInt(0, whichSet.size-1)])
+      call spawnUnit(whichSet[GetRandomInt(0, whichSet.size-1)])
     endmethod
 
     private method periodic takes nothing returns nothing
       set tick = tick + 1
-      if tick == TICK_RATE / T32_FPS then
+      if tick == TICK_RATE * T32_FPS then
         set Mana = Mana + MANA_REGEN*TICK_RATE
-        if Mana > 30*MANA_PER_UNIT_LEVEL then
+        if Mana > 20*MANA_PER_UNIT_LEVEL then
           call spawnRandomUnitFromSet(greaterDemons)
           call spawnRandomUnitFromSet(lesserDemons)
           call spawnRandomUnitFromSet(lesserDemons)
           call spawnRandomUnitFromSet(lesserDemons)
+          call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", SpawnX, SpawnY))
         endif
         if not IsUnitAliveBJ(u) then
           call destroy()
@@ -102,20 +105,15 @@ library DemonGate initializer OnInit requires T32, Set, Math
 
     static method onInit takes nothing returns nothing
       set greaterDemons = Set.create()
+      call greaterDemons.add('nbal') //Overlord
+      call greaterDemons.add('ninf') //Infernal
       call greaterDemons.add('ndqs') //Queen of Suffering
-      call greaterDemons.add('n05A') //Overlord
-      call greaterDemons.add('n05D') //Infernal
 
       set lesserDemons = Set.create()
-      call greaterDemons.add('nfgb') //Bloodfiend
-      call greaterDemons.add('n04H') //Felguard
-    endmethod
-  endstruct
+      call lesserDemons.add('nfgu') //Felguard
+      call lesserDemons.add('nfgb') //Bloodfiend
+    endmethod    
 
-  private function OnInit takes nothing returns nothing
-    call DemonGate.create(gg_unit_n000_0717)
-    call DemonGate.create(gg_unit_n000_1038)
-    call DemonGate.create(gg_unit_n000_1585)
-  endfunction
+  endstruct
 
 endlibrary
