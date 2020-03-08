@@ -1,4 +1,3 @@
-
 library NewHordeConfig initializer OnInit requires Faction
 
   globals
@@ -43,10 +42,10 @@ library NewHordeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
     call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
     call f.registerObjectLimit('ojgn', 24)          //Juggernaught
-    call f.registerObjectLimit('n062', UNLIMITED)   //Goblin Shredder
+    call f.registerObjectLimit('n062', 8)           //Goblin Shredder
+    call f.registerObjectLimit('ocat', 6)           //Catapult
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
-    call f.registerObjectLimit('n065', 1)           //Drazilb
     call f.registerObjectLimit('o01R', 1)           //Nazgrel
     call f.registerObjectLimit('h04E', 1)           //Chen
 
@@ -79,6 +78,7 @@ library NewHordeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R021', UNLIMITED)   //Horde War Machine
     call f.registerObjectLimit('Rhfs', UNLIMITED)   //Dragmentation Shards
     call f.registerObjectLimit('R01T', UNLIMITED)   //Move your arse
+
+    call f.registerObjectLimit('R02O', UNLIMITED)   //Rite of Blood
   endfunction 
-  
 endlibrary

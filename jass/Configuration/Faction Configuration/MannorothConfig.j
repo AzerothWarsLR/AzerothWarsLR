@@ -1,5 +1,4 @@
 library MannorothConfig initializer OnInit requires Faction
-
   globals
     Faction FACTION_MANNOROTH
   endglobals
@@ -47,6 +46,7 @@ library MannorothConfig initializer OnInit requires Faction
 
       call f.registerObjectLimit('n065', 1)           //Drazilb
       call f.registerObjectLimit('o01R', 1)           //Nazgrel
+      call f.registerObjectLimit('h04E', 1)           //Chen
 
       call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
       call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration

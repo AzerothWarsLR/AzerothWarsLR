@@ -8,7 +8,7 @@ library EventChenStormstout initializer OnInit requires Persons, WarsongConfig, 
     private Set PrimaryEligibleFactions
     private Set SecondaryEligibleFactions
     private Person ChenOwner = 0
-    private constant integer CHEN_RESEARCH = 0
+    private constant integer CHEN_RESEARCH = 'R037'
   endglobals
 
   private function EnableUnitForPlayer takes unit u, player p returns nothing
