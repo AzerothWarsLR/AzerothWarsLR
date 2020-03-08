@@ -25,6 +25,7 @@ library EventGrimBatol initializer OnInit requires Persons, Faction, DetermineLe
       call EnableUnitForPlayer(u, whichPlayer)
       call GroupRemoveUnit(GrimBatolUnits, u)
     endloop
+    call EnableUnitForPlayer(gg_unit_n08A_3097, whichPlayer)  //Neltharauku
     call SetUnitOwner(gg_unit_h01Z_0618, whichPlayer, true)
     call UnitDetermineLevel(gg_unit_O00Y_3094, 1.) //Zuluhed
     call EnableWaygate(gg_unit_n08R_2209) //Grim Batol Tunnels
@@ -37,7 +38,7 @@ library EventGrimBatol initializer OnInit requires Persons, Faction, DetermineLe
 
   private function Actions takes nothing returns nothing
     local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-    if triggerPerson.faction == FACTION_FEL_HORDE then
+    if triggerPerson.faction == FACTION_FEL_HORDE and not IsUnitAliveBJ(gg_unit_nrwm_1981) and not IsUnitAliveBJ(gg_unit_h05H_1847) and not IsUnitAliveBJ(gg_unit_h03Y_0077) then
       call GiveGrimBatol(triggerPerson.p)
     endif
   endfunction
