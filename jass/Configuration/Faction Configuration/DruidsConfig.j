@@ -40,6 +40,7 @@ library DruidsConfig initializer OnInit requires Faction
       call f.registerObjectLimit('e012', 6)           //Siege Ancient
 
       call f.registerObjectLimit('e015', 1)           //Broll
+      call f.registerObjectLimit('e00W', 1)           //Bear Broll
 
       call f.registerObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
       call f.registerObjectLimit('Renb', UNLIMITED)   //Nature's Blessing

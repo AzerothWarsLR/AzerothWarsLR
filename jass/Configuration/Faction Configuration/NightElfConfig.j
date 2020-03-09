@@ -1,4 +1,3 @@
-
 library NightElfConfig initializer OnInit requires Faction
 
   globals
@@ -41,10 +40,11 @@ library NightElfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
     call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 24)          //Night Elf Battleship
-    call f.registerObjectLimit('e00X', 3)  	        //Elemental Guardian
+    call f.registerObjectLimit('e00X', 3)  	      //Elemental Guardian
     call f.registerObjectLimit('e012', 6)           //Siege Ancient
 
     call f.registerObjectLimit('e015', 1)           //Broll
+    call f.registerObjectLimit('e00W', 1)           //Bear Broll
 
     call f.registerObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
     call f.registerObjectLimit('Renb', UNLIMITED)   //Nature's Blessing
