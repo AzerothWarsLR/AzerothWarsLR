@@ -42,7 +42,7 @@ library WarglaivesOfAzzinoth initializer OnInit
 
   private function Damaging takes nothing returns nothing
     local integer level = GetUnitAbilityLevel(GetEventDamageSource(), ABIL_ID)
-    if level > 0 and BlzGetEventWeaponType() != WEAPON_TYPE_WHOKNOWS then
+    if level > 0 and BlzGetEventIsAttack() == true then
       call DoGlaive()
     endif
   endfunction
