@@ -2,11 +2,7 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
 
   globals
     private unit UNIT_MALGANIS = null
-
     private constant real DELAY = 35.
-    private constant integer XP_BASE = 800
-    private constant integer XP_PER_SECOND = 1
-    private constant integer XP_MAX = 2700
   endglobals
 
   function TimerEnds takes nothing returns nothing
@@ -16,7 +12,7 @@ library EventArthasExpedition requires Persons, GameTimer, GeneralHelpers, Legio
     local unit malganis = null
     local group tempGroup = null
     if scourge != 0 then
-      set arthas = CreateUnit(scourge.p, 'Uear', -2796, 21842, 270)
+      set arthas = CreateUnit(scourge.p, 'Uear', -3801, 21321, 135)
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, scourge.faction.prefixCol + "Arthas|r has claimed the cursed sword of Frostmourne and become enslaved by Ner'zhul; he is now a loyal Death Knight of the " + scourge.faction.prefixCol + "Scourge|r.")   
       call UnitDetermineLevel(arthas, 1.00)
       call FACTION_LEGION.applyFactionMod(FACTIONMOD_MALGANIS)
