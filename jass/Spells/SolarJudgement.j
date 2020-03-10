@@ -1,15 +1,15 @@
 library SolarJudgement initializer OnInit requires T32, Filters
 
   globals
-    private constant integer ABIL_ID = 'A000'
+    private constant integer ABIL_ID = 'A01F'
 
-    private constant real DAMAGE_BASE = 100.
-    private constant real DAMAGE_LEVEL = 100.
+    private constant real DAMAGE_BASE = 20.
+    private constant real DAMAGE_LEVEL = 20.
     private constant real DURATION = 14.
     private constant real PERIOD = 0.5
 
-    private constant real HEAL_MULT = 0.5
-    private constant real EVIL_MULT = 1.5
+    private constant real HEAL_MULT = 1.5
+    private constant real EVIL_MULT = 1.1
 
     private constant real RADIUS = 300.
     private constant real BOLT_RADIUS = 100.
