@@ -1,13 +1,12 @@
-library HideousAppendages initializer OnInit requires T32
+library HideousAppendages initializer OnInit requires T32, Environment, Table, Math
 
   globals
-    private constant integer ABIL_ID = 'A10K'
-    private constant integer SPELL_MAX_LEVEL = 5
+    private constant integer ABIL_ID = 'A10K'         //Change this to the ID of the passive in your map
 
-    private constant integer TENTACLE_COUNT_BASE = 2
-    private constant integer TENTACLE_COUNT_LEVEL = 2     
-    private constant integer TENTACLE_ID = 'n04Q'
-    private constant real RADIUS_OFFSET = 200.  //How far away from the caster to position the tentacles
+    private constant integer TENTACLE_COUNT_BASE = 2  //How many tentacles to spawn at level 0
+    private constant integer TENTACLE_COUNT_LEVEL = 2 //Number of tentacles gained per level
+    private constant integer TENTACLE_ID = 'n04Q'     //ID for tentacles; these should be immobile
+    private constant real RADIUS_OFFSET = 200.        //How far away from the caster to position the tentacles
   endglobals    
 
   struct HideousAppendageSet
