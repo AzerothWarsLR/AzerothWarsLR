@@ -7,7 +7,6 @@ library EventGarithosSpawn initializer OnInit requires LordaeronConfig, Determin
   endglobals
 
   private function GarithosSpawn takes nothing returns nothing
-    local unit arthas = gg_unit_Hart_1342
     local unit garithos = null
     local real x = 10597
     local real y = 3228
@@ -16,14 +15,7 @@ library EventGarithosSpawn initializer OnInit requires LordaeronConfig, Determin
     local integer i = 0
     call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "Garithos has finally arrived with reinforcements for the Alliance.")            
     set garithos = CreateUnit(p, 'Hlgr', x, y, 270)      //Garithos
-
-    call SetHeroXP(garithos, GetHeroXP(arthas), false)
-    //Transfer items to Garithos
-    loop
-    exitwhen i > 6
-      call UnitAddItem(garithos, UnitItemInSlot(arthas, i))
-      set i = i + 1
-    endloop        
+    call UnitDetermineLevel(garithos, 1.00)     
 
     set i = 0
     loop
@@ -43,10 +35,7 @@ library EventGarithosSpawn initializer OnInit requires LordaeronConfig, Determin
       set i = i + 1
     endloop   
 
-    call RemoveUnit(arthas)
-
     //Cleanup
-    set arthas = null
     set garithos = null
   endfunction
 
