@@ -1,5 +1,5 @@
-library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
-  
+library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters, QuestData
+
   globals   
     Person array Persons    //Indexed by player ID number
     StringTable PersonsByName
@@ -98,6 +98,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     private method nullFaction takes nothing returns nothing
       local integer i = 0
+      local QuestData tempQuestData
 
       if this.faction == 0 then
         call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
@@ -123,6 +124,17 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set i = i + 1
       endloop
 
+      //Hide completed and uncompleted quests for this faction
+      if GetLocalPlayer() == p then   
+        set i = 0
+        loop
+          exitwhen i == faction.quests.size
+          set tempQuestData = faction.quests[i]
+          set tempQuestData.Enabled = false
+          set i = i + 1
+        endloop
+      endif
+
       //Run the exit trigger
       call this.faction.executeExitTrigger()
       set this.faction = 0 
@@ -130,6 +142,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     method setFaction takes Faction newFaction returns nothing
       local integer i = 0
+      local QuestData tempQuestData
+      local QuestItemData tempQuestItemData
 
       set thistype.prevFaction = this.faction
 
@@ -170,7 +184,26 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
         endif
       endif
-      
+
+      //Show completed and uncompleted quests for this faction
+      if GetLocalPlayer() == p then   
+        set i = 0
+        loop
+          exitwhen i == faction.quests.size
+          set tempQuestData = faction.quests[i]
+          set tempQuestData.Enabled = true
+          set i = i + 1
+        endloop
+
+        set i = 0
+        loop
+          exitwhen i == faction.completedQuestItems.size
+          set tempQuestItemData = faction.completedQuestItems[i]
+          set tempQuestItemData.Completed = true
+          set i = i + 1
+        endloop
+      endif
+
       set thistype.triggerPerson = this
       call OnPersonFactionChange.fire()
     endmethod
@@ -301,12 +334,12 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
     method leave takes nothing returns nothing
-      if this.team.size > 1 then
-        call this.distributeUnits()
-        call this.distributeResources()
-        call this.distributeExperience()
+      if team.size > 1 then
+        call distributeUnits()
+        call distributeResources()
+        call distributeExperience()
       else
-        call this.obliterate()
+        call obliterate()
       endif
     endmethod                                   
 

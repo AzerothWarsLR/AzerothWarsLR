@@ -1,5 +1,5 @@
 
-library Faction initializer OnInit requires Persons, Event
+library Faction initializer OnInit requires Persons, Event, Set
 
   globals
     Event OnFactionCreate = 0
@@ -24,6 +24,31 @@ library Faction initializer OnInit requires Persons, Event
     readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
     readonly integer array objectList[100] //An index for objectLimits
     readonly integer objectCount = 0
+
+    readonly Set quests
+    readonly Set completedQuestItems
+
+    method operator whichPerson takes nothing returns Person
+      return PersonsByFaction[this]
+    endmethod
+
+    method completeQuestItem takes QuestItemData questItemData returns nothing
+      if quests.contains(questItemData.parent) and not completedQuestItems.contains(questItemData) then
+        call completedQuestItems.add(questItemData)
+        if GetLocalPlayer() == whichPerson.p then
+          set questItemData.Completed = true
+        endif
+      else
+        call BJDebugMsg("ERROR: attempted to complete questItem " + questItemData.desc + " for faction " + name + " but it is already completed or not available")
+      endif
+    endmethod
+
+    method addQuest takes QuestData questData returns nothing
+      call quests.add(questData)
+      if GetLocalPlayer() == whichPerson.p then
+        set questData.Enabled = true
+      endif
+    endmethod
 
     method modWeight takes integer mod returns nothing
       local Person affectedPerson = 0
@@ -146,6 +171,8 @@ library Faction initializer OnInit requires Persons, Event
       set this.icon = icon
       set this.weight = weight
       set this.objectLimits = Table.create()
+      set this.completedQuestItems = Set.create()
+      set this.quests = Set.create()
       
       if not factionsByName.exists(StringCase(name,false)) then
         set factionsByName[StringCase(name,false)] = this
@@ -157,7 +184,7 @@ library Faction initializer OnInit requires Persons, Event
       call OnFactionCreate.fire()   
       
       return this                
-    endmethod        
+    endmethod       
 
     private static method onInit takes nothing returns nothing
       set Faction.factionsByName = StringTable.create()
