@@ -5,6 +5,10 @@ library Environment initializer OnInit
     private unit PosUnit
   endglobals
   
+  native UnitAlive takes unit id returns boolean
+  native GetUnitGoldCost takes integer unitid returns integer
+  native GetUnitWoodCost takes integer unitid returns integer
+
   function GetPositionZ takes real x, real y returns real
     call SetUnitX(PosUnit,x)
     call SetUnitY(PosUnit,y)
