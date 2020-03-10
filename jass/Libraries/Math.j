@@ -1,10 +1,10 @@
 library Math
 
-   	function GetDistanceBetweenPoints takes real xa, real ya, real xb, real yb returns real
-	        local real dx = xb - xa
-	        local real dy = yb - ya
-    
-	        return SquareRoot(dx*dx + dy*dy)
+  function GetDistanceBetweenPoints takes real xa, real ya, real xb, real yb returns real
+    local real dx = xb - xa
+    local real dy = yb - ya
+
+    return SquareRoot(dx*dx + dy*dy)
 	endfunction  
 
 	function GetAngleBetweenPoints takes real xa, real ya, real xb, real yb returns real
