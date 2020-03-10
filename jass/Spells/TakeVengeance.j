@@ -1,13 +1,13 @@
 //When Maiev dies, she becomes an illusory assassin with additional damage. 
 //If she hits at least x times before it expires, she revives. Lasts y seconds.
 
-library EnactVengeance initializer OnInit requires Table
+library TakeVengeance initializer OnInit requires Table
 
   globals
-    private constant integer ABIL_ID = 'A002'
+    private constant integer ABIL_ID = 'A017'
     private constant integer ALTERNATE_FORM_ID = 'espv'
     private constant integer HITS_REVIVE_THRESHOLD = 7   //Maiev needs to hit this many times to revive
-    private constant real HEAL_BASE = 400.                //Maiev goes into Vengeance form with this much free health
+    private constant real HEAL_BASE = 500.                //Maiev goes into Vengeance form with this much free health
     private constant real HEAL_LEVEL = 200.
     private constant integer DAMAGE_BASE = 20
     private constant integer DAMAGE_LEVEL = 20
