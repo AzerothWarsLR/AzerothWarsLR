@@ -4,28 +4,35 @@ library QuestData requires Set
     constant integer QUEST_PROGRESS_UNDISCOVERED = 0
     constant integer QUEST_PROGRESS_INCOMPLETE = 1
     constant integer QUEST_PROGRESS_COMPLETE = 2
+    constant integer QUEST_PROGRESS_FAILED = 3
   endglobals
 
   struct QuestItemData
     private questitem questItem
     readonly QuestData parent
-    private boolean completed
+    private integer progress
     readonly string desc
 
-    method operator Completed takes nothing returns boolean
-      return completed
+    method operator Progress takes nothing returns integer
+      return progress
     endmethod
 
-    method operator Completed= takes boolean b returns nothing
-      set completed = b
-      call QuestItemSetCompleted(questItem, b)
-      call parent.onItemCompletionChange(this)
+    method operator Progress= takes integer i returns nothing
+      if progress != i then
+        set progress = i
+        if i == QUEST_PROGRESS_COMPLETE then
+          call QuestItemSetCompleted(questItem, true)
+        else
+          call QuestItemSetCompleted(questItem, false)
+        endif
+        call parent.onItemProgressChange(this)
+      endif
     endmethod
 
     static method create takes QuestData parent, string desc returns thistype
       local thistype this = thistype.allocate()
       set questItem = QuestCreateItem(parent.quest)
-      set this.completed = false
+      set this.progress = QUEST_PROGRESS_INCOMPLETE
       set this.parent = parent
       set this.desc = desc
       call QuestItemSetDescription(questItem, desc)
@@ -42,7 +49,28 @@ library QuestData requires Set
     readonly string completionDesc
     readonly Set questItems
 
-    method displayComplete takes nothing returns nothing
+    private method displayFailed takes nothing returns nothing
+      local integer i = 0
+      local QuestItemData tempQuestItemData
+      local string display = ""
+      set display = display + "|cffffcc00QUEST FAILED - " + title + "|r\n" + desc + "\n"
+      loop 
+        exitwhen i == questItems.size
+        set tempQuestItemData = questItems[i]
+        if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
+          set display = display + " - |cff808080" + tempQuestItemData.desc + " (Completed)|r\n"
+        elseif tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
+          set display = display + " - |cffCD5C5C" + tempQuestItemData.desc + " (Failed)|r\n"
+        else
+          set display = display + " - " + tempQuestItemData.desc + "\n"
+        endif
+        set i = i + 1
+      endloop
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
+      call StartSound(bj_questFailedSound)
+    endmethod
+
+    private method displayComplete takes nothing returns nothing
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
@@ -54,9 +82,10 @@ library QuestData requires Set
         set i = i + 1
       endloop
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
+      call StartSound(bj_questCompletedSound)
     endmethod
 
-    method displayUpdate takes nothing returns nothing
+    private method displayUpdate takes nothing returns nothing
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
@@ -64,7 +93,7 @@ library QuestData requires Set
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
-        if tempQuestItemData.Completed then
+        if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
           set display = display + " - |cff808080" + tempQuestItemData.desc + " (Completed)|r\n"
         else
           set display = display + " - " + tempQuestItemData.desc + "\n"
@@ -72,22 +101,30 @@ library QuestData requires Set
         set i = i + 1
       endloop
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
+      call StartSound(bj_questUpdatedSound)
     endmethod
 
-    method operator Progress= takes integer whichState returns nothing
+    private method operator Progress= takes integer whichState returns nothing
       if whichState != progress then
         if whichState == QUEST_PROGRESS_UNDISCOVERED then
           call QuestSetCompleted(quest, false)
           call QuestSetDiscovered(quest, false)
+          call QuestSetFailed(quest, false)
         elseif whichState == QUEST_PROGRESS_INCOMPLETE then
           call StartSound(bj_questDiscoveredSound)
           call QuestSetCompleted(quest, false)
           call QuestSetDiscovered(quest, true)
+          call QuestSetFailed(quest, false)
         elseif whichState == QUEST_PROGRESS_COMPLETE then
-          call StartSound(bj_questCompletedSound)
           call QuestSetCompleted(quest, true)
           call QuestSetDiscovered(quest, true)
+          call QuestSetFailed(quest, false)
           call displayComplete()
+        elseif whichState == QUEST_PROGRESS_FAILED then
+          call QuestSetCompleted(quest, false)
+          call QuestSetDiscovered(quest, true)
+          call QuestSetFailed(quest, true)
+          call displayFailed()
         endif
       endif
       set progress = whichState
@@ -98,21 +135,28 @@ library QuestData requires Set
     endmethod
 
     //An item has changed completion; the Quest may need to change completion as well
-    method onItemCompletionChange takes QuestItemData whichItem returns nothing
+    method onItemProgressChange takes QuestItemData whichItem returns nothing
       local QuestItemData tempQuestItemData
       local integer i = 0
       local boolean allComplete = true
+      local boolean anyFailed = false
       loop
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
-        if tempQuestItemData.Completed == false then
+        if tempQuestItemData.Progress != QUEST_PROGRESS_COMPLETE then
           set allComplete = false
+          if tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
+            set anyFailed = true
+          endif
         endif
         set i = i + 1
       endloop
       if allComplete == true then
         set Progress = QUEST_PROGRESS_COMPLETE
+      elseif anyFailed == true then
+        set Progress = QUEST_PROGRESS_FAILED
       else
+        set Progress = QUEST_PROGRESS_INCOMPLETE
         call displayUpdate()
       endif
     endmethod

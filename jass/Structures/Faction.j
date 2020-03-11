@@ -26,20 +26,27 @@ library Faction initializer OnInit requires Persons, Event, Set
     readonly integer objectCount = 0
 
     readonly Set quests
-    readonly Set completedQuestItems
+    readonly Set completedQuestItems  //
+    readonly Set failedQuestItems     //Replace both of these with a Dictionary when one is implemented
 
     method operator whichPerson takes nothing returns Person
       return PersonsByFaction[this]
     endmethod
 
-    method completeQuestItem takes QuestItemData questItemData returns nothing
-      if quests.contains(questItemData.parent) and not completedQuestItems.contains(questItemData) then
-        call completedQuestItems.add(questItemData)
-        if GetLocalPlayer() == whichPerson.p then
-          set questItemData.Completed = true
+    method setQuestItemStatus takes QuestItemData questItemData, integer progress returns nothing
+      if progress == QUEST_PROGRESS_COMPLETE then
+        if quests.contains(questItemData.parent) and not completedQuestItems.contains(questItemData) then
+          call failedQuestItems.discard(questItemData)
+          call completedQuestItems.add(questItemData)
         endif
-      else
-        call BJDebugMsg("ERROR: attempted to complete questItem " + questItemData.desc + " for faction " + name + " but it is already completed or not available")
+      elseif progress == QUEST_PROGRESS_FAILED then
+        if quests.contains(questItemData.parent) and not failedQuestItems.contains(questItemData) then
+          call completedQuestItems.discard(questItemData)
+          call failedQuestItems.add(questItemData)
+        endif
+      endif
+      if GetLocalPlayer() == whichPerson.p then
+        set questItemData.Progress = progress
       endif
     endmethod
 

@@ -96,9 +96,64 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       endif
     endmethod
 
-    private method nullFaction takes nothing returns nothing
+    //Goes through all Quests and hides them, then goes through all child Quest Items and sets them to a default uncompleted.
+    private method hideQuests takes nothing returns nothing
+      local integer i = 0
+      local integer j = 0
+      local QuestData tempQuestData
+      local QuestItemData tempQuestItemData
+      if GetLocalPlayer() == p then   
+        set i = 0
+        loop
+          exitwhen i == faction.quests.size
+          set tempQuestData = faction.quests[i]
+          set tempQuestData.Enabled = false
+          set i = i + 1
+          set j = 0
+          loop  
+            exitwhen j == tempQuestData.questItems.size
+            set tempQuestItemData = tempQuestData.questItems[j]
+            set tempQuestItemData.Progress = QUEST_PROGRESS_INCOMPLETE
+            set j = j + 1
+          endloop
+        endloop
+      endif
+    endmethod
+
+    //Goes through all Quests, Completed Quest Itens and Uncompleted Quest Items and shows them. 
+    private method showQuests takes nothing returns nothing
       local integer i = 0
       local QuestData tempQuestData
+      local QuestItemData tempQuestItemData
+      if GetLocalPlayer() == p then   
+        set i = 0
+        loop
+          exitwhen i == faction.quests.size
+          set tempQuestData = faction.quests[i]
+          set tempQuestData.Enabled = true
+          set i = i + 1
+        endloop
+
+        set i = 0
+        loop
+          exitwhen i == faction.completedQuestItems.size
+          set tempQuestItemData = faction.completedQuestItems[i]
+          set tempQuestItemData.Progress = QUEST_PROGRESS_COMPLETE
+          set i = i + 1
+        endloop
+
+        set i = 0
+        loop
+          exitwhen i == faction.failedQuestItems.size
+          set tempQuestItemData = faction.failedQuestItems[i]
+          set tempQuestItemData.Progress = QUEST_PROGRESS_FAILED
+          set i = i + 1
+        endloop
+      endif
+    endmethod
+
+    private method nullFaction takes nothing returns nothing
+      local integer i = 0
 
       if this.faction == 0 then
         call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
@@ -124,16 +179,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set i = i + 1
       endloop
 
-      //Hide completed and uncompleted quests for this faction
-      if GetLocalPlayer() == p then   
-        set i = 0
-        loop
-          exitwhen i == faction.quests.size
-          set tempQuestData = faction.quests[i]
-          set tempQuestData.Enabled = false
-          set i = i + 1
-        endloop
-      endif
+      call hideQuests()
 
       //Run the exit trigger
       call this.faction.executeExitTrigger()
@@ -142,8 +188,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     method setFaction takes Faction newFaction returns nothing
       local integer i = 0
-      local QuestData tempQuestData
-      local QuestItemData tempQuestItemData
 
       set thistype.prevFaction = this.faction
 
@@ -185,24 +229,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         endif
       endif
 
-      //Show completed and uncompleted quests for this faction
-      if GetLocalPlayer() == p then   
-        set i = 0
-        loop
-          exitwhen i == faction.quests.size
-          set tempQuestData = faction.quests[i]
-          set tempQuestData.Enabled = true
-          set i = i + 1
-        endloop
-
-        set i = 0
-        loop
-          exitwhen i == faction.completedQuestItems.size
-          set tempQuestItemData = faction.completedQuestItems[i]
-          set tempQuestItemData.Completed = true
-          set i = i + 1
-        endloop
-      endif
+      call showQuests()
 
       set thistype.triggerPerson = this
       call OnPersonFactionChange.fire()
