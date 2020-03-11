@@ -71,6 +71,12 @@ library Set requires Table
       endif
     endmethod
 
+    method discard takes integer i returns nothing
+      if contains(i) then
+        call remove(i)
+      endif
+    endmethod
+
     static method create takes nothing returns thistype
       local thistype this = thistype.allocate()
       set size = 0
