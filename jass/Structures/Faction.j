@@ -33,7 +33,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return PersonsByFaction[this]
     endmethod
 
-    method setQuestItemStatus takes QuestItemData questItemData, integer progress returns nothing
+    method setQuestItemStatus takes QuestItemData questItemData, integer progress, boolean display returns nothing
       if progress == QUEST_PROGRESS_COMPLETE then
         if quests.contains(questItemData.parent) and not completedQuestItems.contains(questItemData) then
           call failedQuestItems.discard(questItemData)
@@ -46,7 +46,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         endif
       endif
       if whichPerson != 0 and GetLocalPlayer() == whichPerson.p then
-        call questItemData.setProgress(progress, true)
+        call questItemData.setProgress(progress, display)
       endif
     endmethod
 
