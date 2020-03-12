@@ -1,5 +1,4 @@
-
-library ScourgeConfig initializer OnInit requires Faction
+library ScourgeConfig initializer OnInit requires Faction, QuestPlague, QuestReanimateArthas, QuestSapphiron, QuestSylvanas
 
     globals
         Faction FACTION_SCOURGE
@@ -71,12 +70,6 @@ library ScourgeConfig initializer OnInit requires Faction
       call f.registerObjectLimit('R01X', UNLIMITED)   //Plague Engineering Mastery
 
       call f.registerObjectLimit('R01E', UNLIMITED)   //Gilneas Captured
-
-      //Quests
-      call f.addQuest(QUEST_REANIMATE_ARTHAS)
-      call f.addQuest(QUEST_SAPPHIRON)
-      call f.addQuest(QUEST_SYLVANAS)
-      call f.addQuest(QUEST_PLAGUE)
   endfunction
     
 endlibrary
