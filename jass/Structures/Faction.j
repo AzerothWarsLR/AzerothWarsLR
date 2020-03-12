@@ -1,5 +1,5 @@
 
-library Faction initializer OnInit requires Persons, Event, Set
+library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
   globals
     Event OnFactionCreate = 0
@@ -45,8 +45,8 @@ library Faction initializer OnInit requires Persons, Event, Set
           call failedQuestItems.add(questItemData)
         endif
       endif
-      if GetLocalPlayer() == whichPerson.p then
-        set questItemData.Progress = progress
+      if whichPerson != 0 and GetLocalPlayer() == whichPerson.p then
+        call questItemData.setProgress(progress, true)
       endif
     endmethod
 

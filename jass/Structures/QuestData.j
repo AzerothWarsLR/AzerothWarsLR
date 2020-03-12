@@ -8,8 +8,8 @@ library QuestData requires Set
   endglobals
 
   struct QuestItemData
-    private questitem questItem
     readonly QuestData parent
+    private questitem questItem
     private integer progress
     readonly string desc
 
@@ -17,15 +17,15 @@ library QuestData requires Set
       return progress
     endmethod
 
-    method operator Progress= takes integer i returns nothing
-      if progress != i then
-        set progress = i
-        if i == QUEST_PROGRESS_COMPLETE then
+    method setProgress takes integer whichState, boolean display returns nothing
+      if progress != whichState then
+        set progress = whichState
+        if whichState == QUEST_PROGRESS_COMPLETE then
           call QuestItemSetCompleted(questItem, true)
         else
           call QuestItemSetCompleted(questItem, false)
         endif
-        call parent.onItemProgressChange(this)
+        call parent.onItemProgressChange(this, display)
       endif
     endmethod
 
@@ -104,7 +104,7 @@ library QuestData requires Set
       call StartSound(bj_questUpdatedSound)
     endmethod
 
-    private method operator Progress= takes integer whichState returns nothing
+    private method setProgress takes integer whichState, boolean display returns nothing
       if whichState != progress then
         if whichState == QUEST_PROGRESS_UNDISCOVERED then
           call QuestSetCompleted(quest, false)
@@ -119,15 +119,23 @@ library QuestData requires Set
           call QuestSetCompleted(quest, true)
           call QuestSetDiscovered(quest, true)
           call QuestSetFailed(quest, false)
-          call displayComplete()
+          if display then 
+            call displayComplete()
+          endif
         elseif whichState == QUEST_PROGRESS_FAILED then
           call QuestSetCompleted(quest, false)
           call QuestSetDiscovered(quest, true)
           call QuestSetFailed(quest, true)
-          call displayFailed()
+          if display then
+            call displayFailed()
+          endif
         endif
       endif
       set progress = whichState
+    endmethod
+
+    method operator Progress takes nothing returns integer
+      return progress
     endmethod
 
     method operator Enabled= takes boolean b returns nothing
@@ -135,7 +143,7 @@ library QuestData requires Set
     endmethod
 
     //An item has changed completion; the Quest may need to change completion as well
-    method onItemProgressChange takes QuestItemData whichItem returns nothing
+    method onItemProgressChange takes QuestItemData whichItem, boolean display returns nothing
       local QuestItemData tempQuestItemData
       local integer i = 0
       local boolean allComplete = true
@@ -151,13 +159,12 @@ library QuestData requires Set
         endif
         set i = i + 1
       endloop
-      if allComplete == true then
-        set Progress = QUEST_PROGRESS_COMPLETE
-      elseif anyFailed == true then
-        set Progress = QUEST_PROGRESS_FAILED
-      else
-        set Progress = QUEST_PROGRESS_INCOMPLETE
-        call displayUpdate()
+      if allComplete == true and Progress != QUEST_PROGRESS_COMPLETE then
+        call setProgress(QUEST_PROGRESS_COMPLETE, display)
+      elseif anyFailed == true and Progress != QUEST_PROGRESS_FAILED then
+        call setProgress(QUEST_PROGRESS_FAILED, display)
+      elseif Progress != QUEST_PROGRESS_INCOMPLETE then
+        call setProgress(QUEST_PROGRESS_INCOMPLETE, display)
       endif
     endmethod
 

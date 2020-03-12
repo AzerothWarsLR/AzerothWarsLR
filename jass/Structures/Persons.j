@@ -113,7 +113,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           loop  
             exitwhen j == tempQuestData.questItems.size
             set tempQuestItemData = tempQuestData.questItems[j]
-            set tempQuestItemData.Progress = QUEST_PROGRESS_INCOMPLETE
+            call tempQuestItemData.setProgress(QUEST_PROGRESS_INCOMPLETE, false)
             set j = j + 1
           endloop
         endloop
@@ -138,7 +138,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         loop
           exitwhen i == faction.completedQuestItems.size
           set tempQuestItemData = faction.completedQuestItems[i]
-          set tempQuestItemData.Progress = QUEST_PROGRESS_COMPLETE
+          call tempQuestItemData.setProgress(QUEST_PROGRESS_COMPLETE, false)
           set i = i + 1
         endloop
 
@@ -146,7 +146,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         loop
           exitwhen i == faction.failedQuestItems.size
           set tempQuestItemData = faction.failedQuestItems[i]
-          set tempQuestItemData.Progress = QUEST_PROGRESS_FAILED
+          call tempQuestItemData.setProgress(QUEST_PROGRESS_FAILED, false)
           set i = i + 1
         endloop
       endif
