@@ -96,10 +96,9 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       endif
     endmethod
 
-    //Goes through all Quests and hides them, then goes through all child Quest Items and sets them to a default uncompleted.
+    //Goes through all Quests and hides them, then goes through all child Quest Items and hide them
     private method hideQuests takes nothing returns nothing
       local integer i = 0
-      local integer j = 0
       local QuestData tempQuestData
       local QuestItemData tempQuestItemData
       if GetLocalPlayer() == p then   
@@ -109,20 +108,14 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           set tempQuestData = faction.quests[i]
           set tempQuestData.Enabled = false
           set i = i + 1
-          set j = 0
-          loop  
-            exitwhen j == tempQuestData.questItems.size
-            set tempQuestItemData = tempQuestData.questItems[j]
-            call tempQuestItemData.setProgress(QUEST_PROGRESS_INCOMPLETE, false)
-            set j = j + 1
-          endloop
         endloop
       endif
     endmethod
 
-    //Goes through all Quests, Completed Quest Itens and Uncompleted Quest Items and shows them. 
+    //Goes through all Quests and locally updates their progress to what this Faction has recorded of them
     private method showQuests takes nothing returns nothing
       local integer i = 0
+      local integer j = 0
       local QuestData tempQuestData
       local QuestItemData tempQuestItemData
       if GetLocalPlayer() == p then   
@@ -132,22 +125,13 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           set tempQuestData = faction.quests[i]
           set tempQuestData.Enabled = true
           set i = i + 1
-        endloop
-
-        set i = 0
-        loop
-          exitwhen i == faction.completedQuestItems.size
-          set tempQuestItemData = faction.completedQuestItems[i]
-          call tempQuestItemData.setProgress(QUEST_PROGRESS_COMPLETE, false)
-          set i = i + 1
-        endloop
-
-        set i = 0
-        loop
-          exitwhen i == faction.failedQuestItems.size
-          set tempQuestItemData = faction.failedQuestItems[i]
-          call tempQuestItemData.setProgress(QUEST_PROGRESS_FAILED, false)
-          set i = i + 1
+          set j = 0
+          loop  
+            exitwhen j == tempQuestData.questItems.size
+            set tempQuestItemData = tempQuestData.questItems[j]
+            call tempQuestItemData.setProgress(faction.questItemProgress[tempQuestItemData], false)
+            set j = j + 1
+          endloop
         endloop
       endif
     endmethod

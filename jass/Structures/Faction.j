@@ -26,35 +26,35 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer objectCount = 0
 
     readonly Set quests
-    readonly Set completedQuestItems  //
-    readonly Set failedQuestItems     //Replace both of these with a Dictionary when one is implemented
+    readonly Table questItemProgress
 
     method operator whichPerson takes nothing returns Person
       return PersonsByFaction[this]
     endmethod
 
     method setQuestItemStatus takes QuestItemData questItemData, integer progress, boolean display returns nothing
-      if progress == QUEST_PROGRESS_COMPLETE then
-        if quests.contains(questItemData.parent) and not completedQuestItems.contains(questItemData) then
-          call failedQuestItems.discard(questItemData)
-          call completedQuestItems.add(questItemData)
+      if quests.contains(questItemData.parent) then
+        set questItemProgress[questItemData] = progress
+        if whichPerson != 0 and GetLocalPlayer() == whichPerson.p then
+          call questItemData.setProgress(progress, display)
         endif
-      elseif progress == QUEST_PROGRESS_FAILED then
-        if quests.contains(questItemData.parent) and not failedQuestItems.contains(questItemData) then
-          call completedQuestItems.discard(questItemData)
-          call failedQuestItems.add(questItemData)
-        endif
-      endif
-      if whichPerson != 0 and GetLocalPlayer() == whichPerson.p then
-        call questItemData.setProgress(progress, display)
       endif
     endmethod
 
     method addQuest takes QuestData questData returns nothing
+      local integer i = 0
+      local QuestItemData tempQuestItemData
       call quests.add(questData)
       if GetLocalPlayer() == whichPerson.p then
         set questData.Enabled = true
       endif
+      //Set quest progression of child quest items to a default value
+      loop
+        exitwhen i == questData.questItems.size
+        set tempQuestItemData = questData.questItems[i]
+        call setQuestItemStatus(tempQuestItemData, QUEST_PROGRESS_INCOMPLETE, false)
+        set i = i + 1
+      endloop
     endmethod
 
     method modWeight takes integer mod returns nothing
@@ -178,8 +178,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set this.icon = icon
       set this.weight = weight
       set this.objectLimits = Table.create()
-      set this.completedQuestItems = Set.create()
       set this.quests = Set.create()
+      set this.questItemProgress = Table.create()
       
       if not factionsByName.exists(StringCase(name,false)) then
         set factionsByName[StringCase(name,false)] = this

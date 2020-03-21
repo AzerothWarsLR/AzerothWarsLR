@@ -85,6 +85,25 @@ library QuestData requires Set
       call StartSound(bj_questCompletedSound)
     endmethod
 
+    private method displayDiscovered takes nothing returns nothing
+      local integer i = 0
+      local QuestItemData tempQuestItemData
+      local string display = ""
+      set display = display + "|cffffcc00QUEST DISCOVERED - " + title + "|r\n" + desc + "\n"
+      loop 
+        exitwhen i == questItems.size
+        set tempQuestItemData = questItems[i]
+        if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
+          set display = display + " - |cff808080" + tempQuestItemData.desc + " (Completed)|r\n"
+        else
+          set display = display + " - " + tempQuestItemData.desc + "\n"
+        endif
+        set i = i + 1
+      endloop
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
+      call StartSound(bj_questDiscoveredSound)
+    endmethod
+
     private method displayUpdate takes nothing returns nothing
       local integer i = 0
       local QuestItemData tempQuestItemData
@@ -105,30 +124,34 @@ library QuestData requires Set
     endmethod
 
     private method setProgress takes integer whichState, boolean display returns nothing
-      if whichState != progress then
-        if whichState == QUEST_PROGRESS_UNDISCOVERED then
-          call QuestSetCompleted(quest, false)
-          call QuestSetDiscovered(quest, false)
-          call QuestSetFailed(quest, false)
-        elseif whichState == QUEST_PROGRESS_INCOMPLETE then
-          call StartSound(bj_questDiscoveredSound)
-          call QuestSetCompleted(quest, false)
-          call QuestSetDiscovered(quest, true)
-          call QuestSetFailed(quest, false)
-        elseif whichState == QUEST_PROGRESS_COMPLETE then
-          call QuestSetCompleted(quest, true)
-          call QuestSetDiscovered(quest, true)
-          call QuestSetFailed(quest, false)
-          if display then 
-            call displayComplete()
+      if whichState == QUEST_PROGRESS_UNDISCOVERED and whichState != progress then
+        call QuestSetCompleted(quest, false)
+        call QuestSetDiscovered(quest, false)
+        call QuestSetFailed(quest, false)
+      elseif whichState == QUEST_PROGRESS_INCOMPLETE then
+        call QuestSetCompleted(quest, false)
+        call QuestSetDiscovered(quest, true)
+        call QuestSetFailed(quest, false)
+        if display then 
+          if progress == QUEST_PROGRESS_UNDISCOVERED then
+            call displayDiscovered()
+          else
+            call displayUpdate()
           endif
-        elseif whichState == QUEST_PROGRESS_FAILED then
-          call QuestSetCompleted(quest, false)
-          call QuestSetDiscovered(quest, true)
-          call QuestSetFailed(quest, true)
-          if display then
-            call displayFailed()
-          endif
+        endif
+      elseif whichState == QUEST_PROGRESS_COMPLETE and whichState != progress then
+        call QuestSetCompleted(quest, true)
+        call QuestSetDiscovered(quest, true)
+        call QuestSetFailed(quest, false)
+        if display then 
+          call displayComplete()
+        endif
+      elseif whichState == QUEST_PROGRESS_FAILED and whichState != progress then
+        call QuestSetCompleted(quest, false)
+        call QuestSetDiscovered(quest, true)
+        call QuestSetFailed(quest, true)
+        if display then
+          call displayFailed()
         endif
       endif
       set progress = whichState
@@ -148,6 +171,7 @@ library QuestData requires Set
       local integer i = 0
       local boolean allComplete = true
       local boolean anyFailed = false
+      local boolean anyUndiscovered = false
       loop
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
@@ -155,15 +179,22 @@ library QuestData requires Set
           set allComplete = false
           if tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
             set anyFailed = true
+          elseif tempQuestItemData.Progress == QUEST_PROGRESS_UNDISCOVERED then
+            set anyUndiscovered = true
           endif
         endif
         set i = i + 1
       endloop
-      if allComplete == true and Progress != QUEST_PROGRESS_COMPLETE then
+      //If anything is undiscovered, the quest is undiscovered
+      if anyUndiscovered == true and Progress != QUEST_PROGRESS_UNDISCOVERED then
+        call setProgress(QUEST_PROGRESS_UNDISCOVERED, display)
+      //If everything is complete, the quest is completed
+      elseif allComplete == true and Progress != QUEST_PROGRESS_COMPLETE then
         call setProgress(QUEST_PROGRESS_COMPLETE, display)
+      //If anything is failed, the quest is failed
       elseif anyFailed == true and Progress != QUEST_PROGRESS_FAILED then
         call setProgress(QUEST_PROGRESS_FAILED, display)
-      elseif Progress != QUEST_PROGRESS_INCOMPLETE then
+      else
         call setProgress(QUEST_PROGRESS_INCOMPLETE, display)
       endif
     endmethod
@@ -182,6 +213,7 @@ library QuestData requires Set
       set this.completionDesc = completionDesc
       set this.icon = icon
       set this.questItems = Set.create()
+      set this.progress = QUEST_PROGRESS_INCOMPLETE
       call QuestSetTitle(quest, title)
       call QuestSetDescription(quest, desc)
       call QuestSetIconPath(quest, icon)
