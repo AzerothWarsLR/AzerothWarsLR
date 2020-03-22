@@ -1,4 +1,4 @@
-library ScourgeConfig initializer OnInit requires Faction, QuestPlague, QuestReanimateArthas, QuestSapphiron, QuestSylvanas
+library ScourgeConfig initializer OnInit requires Faction
 
     globals
         Faction FACTION_SCOURGE

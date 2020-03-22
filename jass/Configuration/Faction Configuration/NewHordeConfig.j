@@ -47,7 +47,6 @@ library NewHordeConfig initializer OnInit requires Faction
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
     call f.registerObjectLimit('o01R', 1)           //Nazgrel
-    call f.registerObjectLimit('h04E', 1)           //Chen
 
     call f.registerObjectLimit('Rolf', UNLIMITED)   //Liquid Fire
     call f.registerObjectLimit('Robs', UNLIMITED)   //Berseker Strength
@@ -80,5 +79,5 @@ library NewHordeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R01T', UNLIMITED)   //Move your arse
 
     call f.registerObjectLimit('R02O', UNLIMITED)   //Rite of Blood
-  endfunction 
+    endfunction 
 endlibrary

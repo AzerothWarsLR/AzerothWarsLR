@@ -1,4 +1,3 @@
-
 library FrostwolfConfig initializer OnInit requires Faction
 
   globals
@@ -44,7 +43,6 @@ library FrostwolfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
-    call f.registerObjectLimit('h04E', 1)           //Chen
 
     call f.registerObjectLimit('Rolf', UNLIMITED)   //Liquid Fire
     call f.registerObjectLimit('Rovs', UNLIMITED)   //Envenomed Spears
