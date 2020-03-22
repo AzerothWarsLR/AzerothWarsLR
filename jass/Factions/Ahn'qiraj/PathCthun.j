@@ -62,7 +62,7 @@ library PathCthun initializer OnInit requires AhnqirajConfig, TeamConfig, Contro
       call SetPlayerState(triggerPlayer, PLAYER_STATE_RESOURCE_GOLD, 3000)
       call SetPlayerState(triggerPlayer, PLAYER_STATE_RESOURCE_LUMBER, 2500)
       call DisplayTextToForce(GetPlayersAll(), "The gates of Ahn'qiraj have been opened. The planetary parasite known as C'thun has set his maddening gaze on Azeroth once more, prompting the denizens of Kalimdor to ready their forces for conflict against the renewed Qiraji invasion.")
-      set u = CreateUnit(triggerPlayer, 'U00R', -21846.6, -23803.9, 0)
+      set u = CreateUnit(triggerPlayer, 'U00R', -18635.6, -23677.9, 0)
       call UnitAddItem(u, CreateItem('stel', GetUnitX(u), GetUnitY(u)))
       call SetHeroLevel(u, 10, false)
       
@@ -89,31 +89,41 @@ library PathCthun initializer OnInit requires AhnqirajConfig, TeamConfig, Contro
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    local group tempGroup = CreateGroup()
-    local integer i = 0
+    local group groupInside = CreateGroup()
+    local group groupOutside = CreateGroup()
     local unit u = null
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
     call TriggerAddCondition( trig, Condition(function Research) )   
 
     //Enumerate preplaced units in Ahnqiraj, hide them, and add them to a Group for later transfer
     set AhnQirajGroup = CreateGroup()
-    call GroupEnumUnitsInRect(AhnQirajGroup, gg_rct_AhnQiraj, null)
-    call GroupEnumUnitsInRect(tempGroup, gg_rct_InstanceAhnqiraj, null)
-    call BlzGroupAddGroupFast(tempGroup, AhnQirajGroup)
-    call DestroyGroup(tempGroup)
-    set tempGroup = null
+    set groupInside = CreateGroup()
+    call GroupEnumUnitsInRect(groupInside, gg_rct_InstanceAhnqiraj, null)
+    set groupOutside = CreateGroup()
+    call GroupEnumUnitsInRect(groupOutside, gg_rct_AhnQiraj, null)
 
     loop
-    exitwhen i > BlzGroupGetSize(AhnQirajGroup)
-      set u = BlzGroupUnitAt(AhnQirajGroup, i)
+      set u = FirstOfGroup(groupInside)
+      exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-        call SetUnitInvulnerable(u, true)
+        call GroupAddUnit(AhnQirajGroup, u)
         call ShowUnit(u, false)
-        set i = i + 1
-      else
-        call GroupRemoveUnit(AhnQirajGroup, u)
       endif
+      call GroupRemoveUnit(groupInside, u)
     endloop
+
+    loop
+      set u = FirstOfGroup(groupOutside)
+      exitwhen u == null
+      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+        call GroupAddUnit(AhnQirajGroup, u)
+        call ShowUnit(u, false)
+      endif
+      call GroupRemoveUnit(groupOutside, u)
+    endloop
+
+    call DestroyGroup(groupInside)
+    call DestroyGroup(groupOutside)
   endfunction
 
 endlibrary
