@@ -6,13 +6,13 @@ library SolarJudgement initializer OnInit requires T32, Filters
     private constant real DAMAGE_BASE = 20.
     private constant real DAMAGE_LEVEL = 20.
     private constant real DURATION = 14.
-    private constant real PERIOD = 0.5
+    private constant real PERIOD = 0.25
 
     private constant real HEAL_MULT = 1.5
     private constant real EVIL_MULT = 1.1
 
-    private constant real RADIUS = 300.
-    private constant real BOLT_RADIUS = 100.
+    private constant real RADIUS = 250.
+    private constant real BOLT_RADIUS = 125.
 
     private constant string EFFECT = "Shining Flare.mdx"
     private constant string EFFECT_HEAL = "Abilities\\Spells\\Human\\Heal\\HealTarget.mdl"
