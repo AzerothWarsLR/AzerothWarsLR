@@ -60,7 +60,11 @@ library QuestData requires Set
       set display = display + "|cffffcc00MAJOR EVENT - " + triggerFaction.prefixCol + title + "|r\n" + completionDesc + "\n"
       if GetLocalPlayer() != Player(triggerPlayerNumber) then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
-        call StartSound(bj_questWarningSound)
+        if Person(Persons[GetPlayerId(GetLocalPlayer())]).team.containsPlayer(triggerFaction.whichPerson.p) then
+          call StartSound(bj_questCompletedSound)
+        else
+          call StartSound(bj_questWarningSound)
+        endif
       endif
     endmethod
 
