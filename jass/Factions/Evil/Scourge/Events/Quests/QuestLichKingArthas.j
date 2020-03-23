@@ -61,6 +61,7 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
     call TriggerAddAction(trig, function UnitGainsLevel)
 
     set QUEST_LICHKINGARTHAS = QuestData.create("The Ascension", "From within the depths of the Frozen Throne, the Lich King Ner'zhul cries out for his champion. Release the Helm of Domination from its confines and merge its power with that of the Scourge's greatest Death Knight.", "Arthas has ascended the Frozen Throne itself and shattered Ner'zhul's frozen prison. Ner'zhul and Arthas are now joined, body and soul, into one being: the god-like Lich King.", "ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
+    set QUEST_LICHKINGARTHAS.Global = true
     set QUESTITEM_LICHKINGARTHAS_GETARTHAS = QUEST_LICHKINGARTHAS.addItem("Corrupt Prince Arthas")
     set QUESTITEM_LICHKINGARTHAS_LEVELARTHAS = QUEST_LICHKINGARTHAS.addItem("Get Arthas to level 18")
     set QUESTITEM_LICHKINGARTHAS_GOTHRONE = QUEST_LICHKINGARTHAS.addItem("Bring Arthas to the Frozen Throne")

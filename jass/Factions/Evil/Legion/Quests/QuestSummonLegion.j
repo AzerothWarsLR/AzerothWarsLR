@@ -21,7 +21,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
 
   private function Cast takes nothing returns nothing
     if GetSpellAbilityId() == RITUAL_ID then
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_SCOURGESUMMONLEGION, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_SCOURGESUMMONLEGION, QUEST_PROGRESS_COMPLETE, false) //Not needed because they can see the global completion
       call FACTION_LEGION.setQuestItemStatus(QUESTITEM_LEGIONSUMMONLEGION, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
@@ -35,6 +35,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     call FACTION_SCOURGE.addQuest(QUEST_SCOURGESUMMONLEGION)
 
     set QUEST_LEGIONSUMMONLEGION = QuestData.create("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "Tremble, mortals, and despair. Doom has come to this world.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
+    set QUEST_LEGIONSUMMONLEGION.Global = true
     set QUESTITEM_LEGIONSUMMONLEGION = QUEST_LEGIONSUMMONLEGION.addItem("Summon the Burning Legion")
     call FACTION_LEGION.addQuest(QUEST_LEGIONSUMMONLEGION)
 
