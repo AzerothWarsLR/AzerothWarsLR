@@ -17,8 +17,6 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
     if scourgePerson != 0 and Enabled then
       call TriggerExecute( gg_trg_Plague_Actions )
       call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_PLAGUESTART, QUEST_PROGRESS_COMPLETE, true)
-    else
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_PLAGUESTART, QUEST_PROGRESS_FAILED, true)
     endif
     set Enabled = false
   endfunction

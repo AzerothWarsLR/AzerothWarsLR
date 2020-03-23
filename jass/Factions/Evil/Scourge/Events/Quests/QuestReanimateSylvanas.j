@@ -36,7 +36,7 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
     call TriggerRegisterUnitEvent( trig, gg_unit_Hvwd_1515, EVENT_UNIT_DEATH )  //Sylvanas
     call TriggerAddAction(trig, function Dies)
 
-    set QUEST_KILL_SYLVANAS = QuestData.create("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Slay her, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "Sylvanas been slain. She demands a clean death. Instead, her soul is ripped from her body, and she becomes the first of the High Elven Banshees.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
+    set QUEST_KILL_SYLVANAS = QuestData.create("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Slay her, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "Sylvanas has been slain. Her soul is ripped from her body, and she becomes the first of the High Elven Banshees.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
     set QUESTITEM_KILL_SYLVANAS = QUEST_KILL_SYLVANAS.addItem("Kill Sylvanas Windrunner")
     call FACTION_SCOURGE.addQuest(QUEST_KILL_SYLVANAS)
 
