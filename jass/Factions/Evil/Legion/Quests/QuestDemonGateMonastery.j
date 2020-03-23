@@ -12,7 +12,6 @@ library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionCon
     local Person killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
 
     if killingPerson.team.containsPlayer(legionPerson.p) then
-      call DisplayTextToForce( GetPlayersAll(), "TRIGSTR_930" )
       call CreateUnit(legionPerson.p, DEMONGATE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 270.)
       call SetDoodadAnimationRectBJ( "hide", 'YObb', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'ZSab', gg_rct_ScarletMonastery )

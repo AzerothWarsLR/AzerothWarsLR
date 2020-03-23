@@ -9,8 +9,7 @@ library QuestProtectLordaeron initializer OnInit requires QuestData, LordaeronCo
 
   private function Abandon takes nothing returns nothing
     local unit arthas = gg_unit_Hart_1342
-    local Person tempPerson = PersonsByFaction[FACTION_LORDAERON]
-    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, tempPerson.faction.prefixCol + "Arthas|r has set sail to Northrend to find Frostmourne.")            
+    local Person tempPerson = PersonsByFaction[FACTION_LORDAERON]          
     call KillUnit(arthas)
     call RemoveUnit(arthas)
 
