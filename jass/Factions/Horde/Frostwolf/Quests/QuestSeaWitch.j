@@ -30,7 +30,7 @@ library QuestSeaWitch initializer OnInit requires QuestData, FrostwolfConfig, Ne
       set frostwolfPerson = FACTION_NEW_HORDE.whichPerson
     endif
 
-    if killingPerson.team.containsPlayer(frostwolfPerson.p) then
+    if frostwolfPerson != 0 then
       //Update quest
       call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_NEW_HORDE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
