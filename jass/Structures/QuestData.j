@@ -5,6 +5,8 @@ library QuestData requires Set
     constant integer QUEST_PROGRESS_INCOMPLETE = 1
     constant integer QUEST_PROGRESS_COMPLETE = 2
     constant integer QUEST_PROGRESS_FAILED = 3
+
+    private constant string SYNC_PREFIX = "GlobalQuestCompleted"  //Used as the sync prefix when global quests are completed and need to be send to every client
   endglobals
 
   struct QuestItemData
@@ -48,6 +50,19 @@ library QuestData requires Set
     readonly string desc
     readonly string completionDesc
     readonly Set questItems
+    public boolean Global
+
+    //Display a warning message to everyone EXCEPT the player that completed the quest
+    private method displayGlobal takes nothing returns nothing
+      local string display = ""
+      local integer triggerPlayerNumber = S2I(SubString(BlzGetTriggerSyncPrefix(), StringLength(SYNC_PREFIX), StringLength(BlzGetTriggerSyncPrefix())))
+      local Faction triggerFaction = Persons[triggerPlayerNumber].faction
+      set display = display + "|cffffcc00MAJOR EVENT - " + triggerFaction.prefixCol + title + "|r\n" + completionDesc + "\n"
+      if GetLocalPlayer() != Player(triggerPlayerNumber) then
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
+        call StartSound(bj_questWarningSound)
+      endif
+    endmethod
 
     private method displayFailed takes nothing returns nothing
       local integer i = 0
@@ -81,6 +96,12 @@ library QuestData requires Set
         set display = display + " - |cff808080" + tempQuestItemData.desc + " (Completed)|r\n"
         set i = i + 1
       endloop
+
+      //Completed quest is global; pass this information to all clients so a synchronized message can be shared
+      if Global then
+        call BlzSendSyncData(SYNC_PREFIX + I2S(GetPlayerId(GetLocalPlayer())), I2S(this))
+      endif
+
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
       call StartSound(bj_questCompletedSound)
     endmethod
@@ -220,6 +241,23 @@ library QuestData requires Set
       call QuestSetRequired(quest, false)
       call QuestSetEnabled(quest, false)
       return this
+    endmethod
+
+    static method onSyncData takes nothing returns nothing
+      if SubString(BlzGetTriggerSyncPrefix(), 0, StringLength(SYNC_PREFIX)) == SYNC_PREFIX then
+        call QuestData(S2I(BlzGetTriggerSyncData())).displayGlobal()
+      endif
+    endmethod
+
+    static method onInit takes nothing returns nothing
+      local trigger trig = CreateTrigger()
+      local integer i = 0
+      loop
+        exitwhen i == MAX_PLAYERS
+        call TriggerRegisterPlayerEvent(trig, Player(i), EVENT_PLAYER_SYNC_DATA)
+        set i = i + 1
+      endloop
+      call TriggerAddAction(trig, function thistype.onSyncData)
     endmethod
   endstruct
 
