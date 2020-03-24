@@ -35,8 +35,10 @@ library QuestSeaWitch initializer OnInit requires QuestData, FrostwolfConfig, Ne
       call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_NEW_HORDE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       //Spawn escape ships
-      call CreateUnit(frostwolfPerson.p, 'o02J', GetRectCenterX(gg_rct_Thrall_Ship_1), GetRectCenterY(gg_rct_Thrall_Ship_1), 270)
-      call CreateUnit(frostwolfPerson.p, 'o02J', GetRectCenterX(gg_rct_Thrall_Ship_2), GetRectCenterY(gg_rct_Thrall_Ship_2), 270)
+      call RemoveUnit(gg_unit_o02M_1463)
+      call RemoveUnit(gg_unit_o02M_1374)
+      call CreateUnit(frostwolfPerson.p, 'obot', GetRectCenterX(gg_rct_Thrall_Ship_1), GetRectCenterY(gg_rct_Thrall_Ship_1), 270)
+      call CreateUnit(frostwolfPerson.p, 'obot', GetRectCenterX(gg_rct_Thrall_Ship_2), GetRectCenterY(gg_rct_Thrall_Ship_2), 270)
       //Transfer control of all passive units on island
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Darkspear_Island, null)
       loop
