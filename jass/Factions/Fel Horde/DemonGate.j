@@ -1,7 +1,7 @@
 library DemonGate requires T32, Set, Math
 
   globals
-    private constant integer MANA_MAXIMUM = 180
+    private constant integer MANA_MAXIMUM = 360
     private constant real MANA_REGEN = 1.
     private constant real TICK_RATE = 1.
     private constant real FACING_OFFSET = -45. //Demon gate model is spun around weirdly so this reverses that for code
@@ -75,7 +75,7 @@ library DemonGate requires T32, Set, Math
       set tick = tick + 1
       if tick == TICK_RATE * T32_FPS then
         set Mana = Mana + MANA_REGEN*TICK_RATE
-        if Mana >= 180 then
+        if Mana >= 360 then
           set Mana = 0
           call spawnRandomUnitFromSet(greaterDemons)
           call spawnRandomUnitFromSet(lesserDemons)
@@ -110,7 +110,7 @@ library DemonGate requires T32, Set, Math
       call greaterDemons.add('ndqs') //Queen of Suffering
 
       set lesserDemons = Set.create()
-      call lesserDemons.add('nfgu') //Felguard
+      call lesserDemons.add('n05B') //Felguard
       call lesserDemons.add('nfgb') //Bloodfiend
     endmethod    
 
