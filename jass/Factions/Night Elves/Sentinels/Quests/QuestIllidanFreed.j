@@ -50,8 +50,8 @@ library QuestIllidanFreed initializer OnInit requires QuestData, SentinelsConfig
     call TriggerRegisterTimerEvent(trig, TIMER_DURATION, false)
     call TriggerAddAction(trig, function TimerEnds)
 
-    set QUEST_ILLIDAN = QuestData.create("The Betrayer", "Illidan the Betrayer has been imprisoned for ten thousand years in the depths of the Barrow Den. Now, his help may be required if the Night Elves are to survive.", "Illidan has been released from captivity.", "ReplaceableTextures\\CommandButtons\\BTNHeroDemonHunter.blp")
-    set QUESTITEM_FREED = QUEST_ILLIDAN.addItem("Kill Califax in the Barrow Den")
+    set QUEST_ILLIDAN = QuestData.create("The Betrayer", "Illidan the Betrayer has been imprisoned for ten thousand years. Now, his help may be required if the Night Elves are to survive.", "Illidan has been released from captivity.", "ReplaceableTextures\\CommandButtons\\BTNHeroDemonHunter.blp")
+    set QUESTITEM_FREED = QUEST_ILLIDAN.addItem("Kill Califax in Illidan's Prison")
     set QUESTITEM_TIME = QUEST_ILLIDAN.addItem("Do not let Illidan stay imprisoned for 8 turns")
     call FACTION_SENTINELS.addQuest(QUEST_ILLIDAN)
     call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_TIME, QUEST_PROGRESS_COMPLETE, false)
