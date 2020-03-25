@@ -22,6 +22,24 @@ library GeneralHelpers
     call ForForce(sourceForce, function ForceAddForceEnum)
   endfunction
 
+  function AddHeroAttributes takes unit whichUnit, integer str, integer agi, integer int returns nothing
+    local string sfx = ""
+    call SetHeroStr(whichUnit, GetHeroStr(whichUnit, false) + str, true)
+    call SetHeroAgi(whichUnit, GetHeroAgi(whichUnit, false) + agi, true)
+    call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + int, true)
+
+    if str > 0 and agi == 0 and int == 0 then
+      set sfx = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl"
+    elseif str == 0 and agi > 0 and int == 0 then
+      set sfx = "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl"
+    elseif str == 0 and agi == 0 and int > 0 then
+      set sfx = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl"
+    else
+      set sfx = "Abilities\\Spells\\Items\\AIlm\\AIlmTarget.mdl"
+    endif
+    call DestroyEffect(AddSpecialEffect(sfx, GetUnitX(whichUnit), GetUnitY(whichUnit)))
+  endfunction
+
   function UnitRescue takes unit whichUnit, player whichPlayer returns nothing
     if GetLocalPlayer() == whichPlayer then
       call StartSound(bj_rescueSound)
