@@ -1,3 +1,4 @@
+
 library NightElfConfig initializer OnInit requires Faction
 
   globals
@@ -57,6 +58,7 @@ library NightElfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Resc', UNLIMITED)   //Sentinel
     call f.registerObjectLimit('Remg', UNLIMITED)   //Upgraded Moon Glaive
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
+    call f.registerObjectLimit('R05X', UNLIMITED)   //Blessing of Ursoc
 
     call f.registerObjectLimit('R00V', UNLIMITED)   //Balance Mastery 
     call f.registerObjectLimit('R04H', UNLIMITED)   //Night Elves United
