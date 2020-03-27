@@ -1,81 +1,28 @@
-library PathNightElvesUnited initializer OnInit requires Persons, Faction, Team, GeneralHelpers, DetermineLevel
+library PathNightElvesUnited initializer OnInit requires Persons, Faction, LegendSentinels, LegendDruids
 
   private function ApplyPath takes nothing returns nothing
     local player triggerPlayer = GetTriggerPlayer()
     local Person triggerPerson = Persons[GetPlayerId(triggerPlayer)]
-    local item tempItem = null
-    local unit u = null
-    local unit malfurion = gg_unit_Efur_3093
-    local unit cenarius = gg_unit_Ecen_1213
-    local unit illidan = gg_unit_Eill_2459
-    local unit fandral = gg_unit_E00K_2993
-    local unit tyrande = gg_unit_Etyr_1241
-    local unit shandris = gg_unit_E002_1221
-    local unit maiev = gg_unit_Ewrd_0438
-
     call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "The Night Elves have united under one banner!")        
 
-    //Sentinels triggered the research
-    if triggerPerson.faction == FACTION_SENTINELS then             
-      set u = CreateUnit(triggerPlayer, 'Ecen', -11679, 6904, 255)   //Cenarius
-      call UnitDetermineLevel(u, 1.2)
-      set cenarius = u
-      set u = CreateUnit(triggerPlayer, 'Efur', -11808, 6931, 247)   //Malfurion
-      call UnitDetermineLevel(u, 0.9)
-      set malfurion = u
-      call UnitAddItem(malfurion, tempItem)
-      if GetOwningPlayer(illidan) == triggerPlayer then 
-        call UnitTransferItems(illidan, cenarius)
-        call RemoveUnit(illidan)                    
-      endif       
-      if GetOwningPlayer(maiev) != triggerPlayer then
-        set u = CreateUnit(triggerPlayer, 'Ewrd', -15466, 3075, 245)   //Maiev
-        call UnitDetermineLevel(u, 0.9)
-      endif
-      call UnitTransferItems(shandris, malfurion)
-      call RemoveUnit(shandris)     
+    call LEGEND_MAIEV.Spawn(triggerPlayer, -15466, 3075, 245)
+    call LEGEND_TYRANDE.Spawn(triggerPlayer, -15466, 3075, 245)
+    if not UnitAlive(LEGEND_CENARIUS.Unit) then
+      call LEGEND_CENARIUS.Spawn(triggerPlayer, -11679, 6904, 255)
     endif
-
-    //Druids triggered the research
-    if triggerPerson.faction == FACTION_DRUIDS then            //Druids
-      set u = CreateUnit(triggerPlayer, 'Ewrd', -15466, 3075, 245)   //Maiev
-      call UnitDetermineLevel(u, 0.9)
-      set u = CreateUnit(triggerPlayer, 'Etyr', -15466, 3075, 245)   //Tyrande
-      call UnitDetermineLevel(u, 1.1)
-      set tyrande = u
-      if not IsUnitAliveBJ(cenarius) then
-        set u = CreateUnit(triggerPlayer, 'Ecen', -11679, 6904, 255)   //Cenarius
-        call UnitDetermineLevel(u, 1.1)
-      endif
-      if GetOwningPlayer(malfurion) != triggerPlayer then
-        set u = CreateUnit(triggerPlayer, 'Efur', -11808, 6931, 247)   //Malfurion
-        call UnitDetermineLevel(u, 0.9)
-        set malfurion = u
-      endif
-      call UnitTransferItems(fandral, tyrande)
-      call RemoveUnit(fandral)                        //Fandral      
+    if LEGEND_MALFURION.OwningPlayer != triggerPlayer then
+      call LEGEND_MALFURION.Spawn(triggerPlayer, -11808, 6931, 247)
     endif
+    call UnitTransferItems(LEGEND_FANDRAL.Unit, LEGEND_TYRANDE.Unit)
+    set LEGEND_FANDRAL.Unit = null 
 
-    //Set faction and team
-    call triggerPerson.setFaction(20)                   //Night Elves
-    call triggerPerson.setTeam(3)                       //Night Elves
+    call triggerPerson.setFaction(FACTION_NIGHT_ELVES)
 
     //Apply free technologies
     call SetPlayerTechResearched(triggerPlayer, 'R00V', 1)  //Balance Mastery
     call SetPlayerTechResearched(triggerPlayer, 'R04O', 1)  //Sentinel Buff
     call SetPlayerTechResearched(triggerPlayer, 'R04P', 1)  //Nature Buff
-    call SetPlayerTechResearched(triggerPlayer, 'R02G', 2)  //Druid of the Growth Adept Training                 
-
-    //Cleanup
-    set u = null
-    set malfurion = null
-    set cenarius = null
-    set illidan = null
-    set fandral = null
-    set tyrande = null
-    set shandris = null
-    set maiev = null
-    set tempItem = null
+    call SetPlayerTechResearched(triggerPlayer, 'R02G', 2)  //Druid of the Growth Adept Training
   endfunction
 
   private function Research takes nothing returns nothing
