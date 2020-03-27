@@ -123,7 +123,7 @@ library DemonGate requires T32, Math, Environment
             call spawnUnit()
           endif
         endif
-        if not UnitAlive(u) then
+        if not UnitAlive(u) or GetOwningPlayer(u) == Player(bj_PLAYER_NEUTRAL_VICTIM) then
           call destroy()
         endif 
         set tick = 0
