@@ -12,7 +12,7 @@ library QuestIllidanKillFT initializer OnInit requires QuestData, IllidariConfig
       call AddHeroAttributes(LEGEND_ILLIDAN.Unit, 10, 10, 10)
       call FACTION_ILLIDARI.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_ILLIDARI.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_ILLIDARI.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
     endif
   endfunction
 
