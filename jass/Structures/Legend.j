@@ -5,7 +5,8 @@
 library Legend requires GeneralHelpers
 
   globals
-    private constant integer DUMMY_PASSIVE = 'LEgn'
+    private constant integer DUMMY_DIESWITHOUT = 'LEgn'
+    private constant integer DUMMY_PERMADIES = 'LEgo'
   endglobals
 
   struct Legend
@@ -15,8 +16,14 @@ library Legend requires GeneralHelpers
     private integer unitType
     private string deathMessage
     private string deathSfx
+    private boolean permaDies = false
     private group diesWithout //This hero permanently dies if it dies without these under control]
     private trigger deathTrig
+
+    public method operator PermaDies= takes boolean b returns nothing
+      set permaDies = b
+      call refreshDummy()
+    endmethod
 
     public method operator DeathSfx= takes string s returns nothing
       set deathSfx = s
@@ -27,21 +34,33 @@ library Legend requires GeneralHelpers
     endmethod
 
     public method operator Unit= takes unit u returns nothing
-      set thistype.ByHandle[GetHandleId(unit)] = 0
+      if Unit != null then
+        set thistype.ByHandle[GetHandleId(unit)] = 0
+        call UnitDropAllItems(unit)
+        call RemoveUnit(unit)
+      endif
       set unit = u
-      set unitType = GetUnitTypeId(unit)
-      call DestroyTrigger(deathTrig)
-      set deathTrig = CreateTrigger()
-      call TriggerRegisterUnitEvent(deathTrig, unit, EVENT_UNIT_DEATH)
-      call TriggerAddAction(deathTrig, function thistype.onUnitDeath)
-      set thistype.ByHandle[GetHandleId(unit)] = this
+      if Unit != null then
+        set unitType = GetUnitTypeId(unit)
+        call DestroyTrigger(deathTrig)
+        set deathTrig = CreateTrigger()
+        call TriggerRegisterUnitEvent(deathTrig, unit, EVENT_UNIT_DEATH)
+        call TriggerAddAction(deathTrig, function thistype.onUnitDeath)
+        set thistype.ByHandle[GetHandleId(unit)] = this
+      endif
     endmethod
 
     public method operator Unit takes nothing returns unit
+      if GetOwningPlayer(unit) == null then
+        return null
+      endif
       return unit
     endmethod
 
     public method AddUnitDependency takes unit u returns nothing
+      if diesWithout == null then
+        set diesWithout = CreateGroup()
+      endif
       call GroupAddUnit(diesWithout, u)
       call refreshDummy()
     endmethod
@@ -56,8 +75,9 @@ library Legend requires GeneralHelpers
         call UnitTransferItems(unit, newUnit)
         call refreshDummy()
         call RemoveUnit(unit)
+        set Unit = newUnit
       endif
-      set Unit = newUnit
+      set unitType = i
     endmethod
 
     public method operator OwningPlayer takes nothing returns player
@@ -65,26 +85,40 @@ library Legend requires GeneralHelpers
     endmethod
 
     public method Spawn takes player owner, real x, real y, real face returns nothing
-      if unit == null then
+      if Unit == null then
         set Unit = CreateUnit(owner, unitType, x, y, face)
+        call UnitDetermineLevel(unit, 1.)
+      else
+        call BJDebugMsg("ERROR: attempted to spawn already spawned Legend with name " + GetObjectName(unitType))
       endif
     endmethod
 
     private method refreshDummy takes nothing returns nothing
-      local group tempGroup = CreateGroup()
+      local group tempGroup
       local unit u
-      local string tooltip = "When this unit dies, it will be unrevivable unless any of the following capitals are under your control:\n"
-      call BlzGroupAddGroupFast(diesWithout, tempGroup)   
-      loop
-        set u = FirstOfGroup(tempGroup)
-        exitwhen u == null
-        set tooltip = tooltip + " - " + GetUnitName(u) + "|n"
-        call GroupRemoveUnit(tempGroup, u)
-      endloop
-      set tooltip = tooltip + "\nUsing this ability pings each of these capitals on the minimap."
-      call UnitAddAbility(unit, DUMMY_PASSIVE)
-      call BlzSetAbilityStringLevelField(BlzGetUnitAbility(unit, DUMMY_PASSIVE), ABILITY_SLF_TOOLTIP_NORMAL_EXTENDED, 0, tooltip)
-      call DestroyGroup(tempGroup)
+      local string tooltip
+      if permaDies then
+        call UnitAddAbility(unit, DUMMY_PERMADIES)
+      else 
+        call UnitRemoveAbility(unit, DUMMY_PERMADIES)
+        if diesWithout != null then
+          set tempGroup = CreateGroup()
+          set tooltip = "When this unit dies, it will be unrevivable unless any of the following capitals are under your control:\n"
+          call BlzGroupAddGroupFast(diesWithout, tempGroup)   
+          loop
+            set u = FirstOfGroup(tempGroup)
+            exitwhen u == null
+            set tooltip = tooltip + " - " + GetUnitName(u) + "|n"
+            call GroupRemoveUnit(tempGroup, u)
+          endloop
+          set tooltip = tooltip + "\nUsing this ability pings each of these capitals on the minimap."
+          call UnitAddAbility(unit, DUMMY_DIESWITHOUT)
+          call BlzSetAbilityStringLevelField(BlzGetUnitAbility(unit, DUMMY_DIESWITHOUT), ABILITY_SLF_TOOLTIP_NORMAL_EXTENDED, 0, tooltip)
+          call DestroyGroup(tempGroup)
+        else
+          call UnitRemoveAbility(unit, DUMMY_DIESWITHOUT)
+        endif
+      endif
     endmethod
 
     private method permaDeath takes nothing returns nothing
@@ -97,26 +131,32 @@ library Legend requires GeneralHelpers
     endmethod
 
     private method onDeath takes nothing returns nothing
-      local group tempGroup = CreateGroup()
+      local group tempGroup
       local boolean anyOwned = false
       local unit u
-      call BlzGroupAddGroupFast(diesWithout, tempGroup)
-
-      loop
-        set u = FirstOfGroup(tempGroup)
-        exitwhen u == null
-        if GetOwningPlayer(u) == GetOwningPlayer(unit) and UnitAlive(u) == true then
-          set anyOwned = true
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-      endloop
-
-      if anyOwned == false then
+      
+      if permaDies then
         call permaDeath()
+        return
       endif
 
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
+      if diesWithout != null then
+        set tempGroup = CreateGroup()
+        call BlzGroupAddGroupFast(diesWithout, tempGroup)
+        loop
+          set u = FirstOfGroup(tempGroup)
+          exitwhen u == null
+          if GetOwningPlayer(u) == GetOwningPlayer(unit) and UnitAlive(u) == true then
+            set anyOwned = true
+          endif
+          call GroupRemoveUnit(tempGroup, u)
+        endloop
+        if anyOwned == false then
+          call permaDeath()
+        endif
+        call DestroyGroup(tempGroup)
+        set tempGroup = null
+      endif
     endmethod
 
     private static method onUnitDeath takes nothing returns nothing
@@ -137,7 +177,8 @@ library Legend requires GeneralHelpers
 
     static method create takes nothing returns thistype
       local thistype this = thistype.allocate()
-      set diesWithout = CreateGroup()
+      set unit = null
+      set this.deathSfx = "Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl"
       return this
     endmethod
   endstruct
