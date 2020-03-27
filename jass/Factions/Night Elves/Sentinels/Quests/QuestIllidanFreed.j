@@ -9,34 +9,29 @@ library QuestIllidanFreed initializer OnInit requires QuestData, SentinelsConfig
   endglobals
 
   private function TimerEnds takes nothing returns nothing
-    if GetOwningPlayer(gg_unit_Eill_2459) != FACTION_SENTINELS.whichPerson.p then
+    if LEGEND_ILLIDAN.OwningPlayer != FACTION_SENTINELS.whichPerson.p then
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_TIME, QUEST_PROGRESS_FAILED, false)
-      call KillUnit(gg_unit_Eill_2459)
+      set LEGEND_ILLIDAN.Unit = null
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
-    local unit maiev = gg_unit_Ewrd_0438
-    local unit illidan = gg_unit_Eill_2459
     local Person killingPerson = 0
     local Person sentinelsPerson = 0
 
     if PersonsByFaction[FACTION_SENTINELS] != 0 then
       set killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
       set sentinelsPerson = PersonsByFaction[FACTION_SENTINELS]
-      if killingPerson.team == TEAM_NIGHT_ELVES and GetOwningPlayer(maiev) != sentinelsPerson.p and GetOwningPlayer(illidan) == Player(PLAYER_NEUTRAL_PASSIVE)  then //Night Elves team
+      if killingPerson.team == TEAM_NIGHT_ELVES and GetOwningPlayer(LEGEND_MAIEV.Unit) != sentinelsPerson.p and GetOwningPlayer(LEGEND_ILLIDAN.Unit) == Player(PLAYER_NEUTRAL_PASSIVE)  then //Night Elves team
         call KillUnit(gg_unit_n08W_2160)    //Illidan's prison
-        call UnitRescue(illidan, sentinelsPerson.p)
+        call UnitRescue(LEGEND_ILLIDAN.Unit, sentinelsPerson.p)
         call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_FREED, QUEST_PROGRESS_COMPLETE, true)
       else
-        call KillUnit(illidan)
+        call KillUnit(LEGEND_ILLIDAN.Unit)
         call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_FREED, QUEST_PROGRESS_FAILED, true)
       endif
     endif
 
-    //Cleanup
-    set illidan = null
-    set maiev = null
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 

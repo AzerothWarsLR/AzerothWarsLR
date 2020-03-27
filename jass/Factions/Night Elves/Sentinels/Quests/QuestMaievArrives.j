@@ -1,16 +1,14 @@
 //If Illidan is not under the Sentinel's control by the timer, OR a player becomes Illidari, give Maiev to the Sentinels.
 //This should not apply for the Night Elves, since they already have Maiev.
 
-library QuestMaievArrives initializer OnInit requires QuestData,DetermineLevel, GeneralHelpers, SentinelsConfig
+library QuestMaievArrives initializer OnInit requires QuestData ,DetermineLevel, GeneralHelpers, SentinelsConfig, LegendSentinels
 
   globals
     private constant real TIMER_DURATION = 480.
     private trigger TimerTrig
     private trigger FactionTrig
 
-    private unit Maiev
     private unit Naisha
-    private unit Illidan
 
     private QuestData QUEST_MAIEV
     private QuestItemData QUESTITEM_WAIT
@@ -19,10 +17,10 @@ library QuestMaievArrives initializer OnInit requires QuestData,DetermineLevel, 
 
   private function TimerEnds takes nothing returns nothing
     local Person sentinelPerson = PersonsByFaction[FACTION_SENTINELS]
-    if sentinelPerson != 0 and GetOwningPlayer(Illidan) != sentinelPerson.p and GetOwningPlayer(Maiev) != sentinelPerson.p then
-      call DisplayTextToForce(GetPlayersAll(), "Maiev has emerged to hunt down the Betrayer.")
-      call UnitRescue(Maiev, sentinelPerson.p)
-      call UnitDetermineLevel(Maiev, 1.)
+    if sentinelPerson != 0 and GetOwningPlayer(LEGEND_ILLIDAN.Unit) != sentinelPerson.p and GetOwningPlayer(LEGEND_MAIEV.Unit) != sentinelPerson.p then
+      call LEGEND_MAIEV.Spawn(sentinelPerson.p, GetRectCenterX(gg_rct_IllidansPrisonEntrance), GetRectCenterY(gg_rct_IllidansPrisonEntrance), 270)
+      call UnitRescue(LEGEND_MAIEV.Unit, sentinelPerson.p)
+      call UnitDetermineLevel(LEGEND_MAIEV.Unit, 1.)
       call UnitRescue(Naisha, sentinelPerson.p)
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_DONT, QUEST_PROGRESS_COMPLETE, false)
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_WAIT, QUEST_PROGRESS_COMPLETE, true)
@@ -33,22 +31,21 @@ library QuestMaievArrives initializer OnInit requires QuestData,DetermineLevel, 
     local Person sentinelPerson = 0
     if GetTriggerPerson().faction == FACTION_ILLIDARI then
       set sentinelPerson = PersonsByFaction[FACTION_SENTINELS]
-      if sentinelPerson != 0 and GetOwningPlayer(Maiev) != sentinelPerson.p then
-        call UnitRescue(Maiev, sentinelPerson.p)
+      if sentinelPerson != 0 and GetOwningPlayer(LEGEND_MAIEV.Unit) != sentinelPerson.p then
+        call UnitRescue(LEGEND_MAIEV.Unit, sentinelPerson.p)
         call UnitRescue(Naisha, sentinelPerson.p)
         call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_DONT, QUEST_PROGRESS_COMPLETE, false)
         call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_WAIT, QUEST_PROGRESS_COMPLETE, true)
         //If Sentinels currently have Illidan, take him away and transfer everything to Maiev. Just give her new hero EXP
-        if GetOwningPlayer(Illidan) == sentinelPerson.p then
-          call SetUnitX(Maiev, GetUnitX(Illidan))
-          call SetUnitY(Maiev, GetUnitY(Illidan))
-          call SetHeroXP(Maiev, GetHeroXP(Illidan), true)
-          call UnitTransferItems(Illidan, Maiev)
+        if LEGEND_ILLIDAN.OwningPlayer == sentinelPerson.p then
+          call LEGEND_MAIEV.Spawn(sentinelPerson.p, GetUnitX(LEGEND_ILLIDAN.Unit), GetUnitY(LEGEND_ILLIDAN.Unit), GetUnitFacing(LEGEND_ILLIDAN.Unit))
+          call SetHeroXP(LEGEND_MAIEV.Unit, GetHeroXP(LEGEND_ILLIDAN.Unit), true)
+          call UnitTransferItems(LEGEND_ILLIDAN.Unit, LEGEND_MAIEV.Unit)
         else
-          call UnitDetermineLevel(Maiev, 1.)
+          call UnitDetermineLevel(LEGEND_MAIEV.Unit, 1.)
         endif
-        call UnitRescue(Maiev, sentinelPerson.p)
-        call RemoveUnit(Illidan)
+        call UnitRescue(LEGEND_MAIEV.Unit, sentinelPerson.p)
+        set LEGEND_ILLIDAN.Unit = null
       endif
     endif
   endfunction
@@ -63,9 +60,7 @@ library QuestMaievArrives initializer OnInit requires QuestData,DetermineLevel, 
   private function OnInit takes nothing returns nothing
     local trigger trig
     //Assign units
-    set Maiev = gg_unit_Ewrd_0438
     set Naisha = gg_unit_ensh_0094
-    set Illidan = gg_unit_Eill_2459
     //Timer ends
     set TimerTrig = CreateTrigger()
     call TriggerRegisterTimerEvent(TimerTrig, TIMER_DURATION, false)
@@ -76,7 +71,7 @@ library QuestMaievArrives initializer OnInit requires QuestData,DetermineLevel, 
     call TriggerAddAction(FactionTrig, function PersonChangesFaction)
     //Illidan changes control
     set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent(trig, Illidan, EVENT_UNIT_CHANGE_OWNER)
+    call TriggerRegisterUnitEvent(trig, LEGEND_ILLIDAN.Unit, EVENT_UNIT_CHANGE_OWNER)
     call TriggerAddAction(trig, function IllidanChangesOwner)
     
 

@@ -1,4 +1,4 @@
-library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig, IllidariConfig
+library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig, IllidariConfig, SoloSentinelsConfig
 
   globals
     private QuestData QUEST_ILLIDAN
@@ -12,14 +12,17 @@ library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig,
       call AddHeroXP(LEGEND_MAIEV.Unit, 2000, true)
       call AddHeroAttributes(LEGEND_MAIEV.Unit, 10, 10, 10)
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
     else
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
   private function OnFactionChange takes nothing returns nothing
     if GetTriggerPerson().faction == FACTION_ILLIDARI then
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
@@ -43,6 +46,8 @@ library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig,
     set QUESTITEM_KILL = QUEST_ILLIDAN.addItem("Destroy Tempest Keep")
     call FACTION_SENTINELS.addQuest(QUEST_ILLIDAN)
     call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_UNDISCOVERED, false)
+    call FACTION_SOLO_SENTINELS.addQuest(QUEST_ILLIDAN)
+    call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_UNDISCOVERED, false)
   endfunction
 
 endlibrary
