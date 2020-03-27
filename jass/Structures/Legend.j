@@ -65,6 +65,10 @@ library Legend requires GeneralHelpers
       call refreshDummy()
     endmethod
 
+    public method operator UnitType takes nothing returns integer
+      return unitType
+    endmethod
+
     public method operator UnitType= takes integer i returns nothing
       local unit newUnit
       if unit != null then
@@ -80,6 +84,10 @@ library Legend requires GeneralHelpers
       set unitType = i
     endmethod
 
+    public method operator OwningFaction takes nothing returns Faction
+      return Persons[GetPlayerId(GetOwningPlayer(unit))].faction
+    endmethod
+
     public method operator OwningPlayer takes nothing returns player
       return GetOwningPlayer(unit)
     endmethod
@@ -88,8 +96,12 @@ library Legend requires GeneralHelpers
       if Unit == null then
         set Unit = CreateUnit(owner, unitType, x, y, face)
         call UnitDetermineLevel(unit, 1.)
+      elseif not UnitAlive(Unit) then
+        call ReviveHero(Unit, x, y, false)
       else
-        call BJDebugMsg("ERROR: attempted to spawn already spawned Legend with name " + GetObjectName(unitType))
+        call SetUnitX(Unit, x)
+        call SetUnitY(Unit, y)
+        call SetUnitFacing(Unit, face)
       endif
     endmethod
 
