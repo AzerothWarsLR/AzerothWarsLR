@@ -11,10 +11,10 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig
     local Person tempPerson = 0
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-    if PersonsByFaction[FACTION_IRONFORGE] != 0 then                        //Ironforge
+    if PersonsByFaction[FACTION_IRONFORGE] != 0 then
       set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
       set recipient = tempPerson.p
-    elseif PersonsByFaction[FACTION_STORMWIND] != 0 then                   //Stormwind
+    elseif PersonsByFaction[FACTION_STORMWIND] != 0 then
       set tempPerson = PersonsByFaction[FACTION_STORMWIND]                 
       set recipient = tempPerson.p                                
     endif
