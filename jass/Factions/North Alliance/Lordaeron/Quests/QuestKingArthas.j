@@ -1,5 +1,5 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
-library QuestKingArthas initializer OnInit requires QuestData, Artifact, GeneralHelpers
+library QuestKingArthas initializer OnInit requires QuestData, Artifact, GeneralHelpers, LordaeronConfig
   globals
     private constant integer CROWN_ID = 'I001'
     private QuestData QUEST_KINGARTHAS
@@ -15,26 +15,17 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
     local real y = 0
     local Artifact tempArtifact = 0
 
-    if GetUnitTypeId(triggerUnit) == 'Hart' then     //Prince Arthas
-      if not IsUnitDeadBJ(gg_unit_h000_0406) and IsUnitDeadBJ(gg_unit_u000_0649) then
-        //Replace Arthas with King Arthas
-        set x = GetUnitX(triggerUnit)
-        set y = GetUnitY(triggerUnit)
-        set kingArthas = CreateUnit(GetOwningPlayer(triggerUnit), 'Harf', x, y, GetUnitFacing(triggerUnit))
-        call SetHeroXP(kingArthas, GetHeroXP(triggerUnit), true)
-        call UnitTransferItems(triggerUnit, kingArthas)
-        call RemoveUnit(triggerUnit)
-        call SetUnitPosition(kingArthas, x, y)
-        call SetUnitColor(kingArthas, PLAYER_COLOR_BLUE)
-
+    if triggerUnit == LEGEND_ARTHAS.Unit and LEGEND_ARTHAS.UnitType == 'Hart' then
+      if not UnitAlive(gg_unit_u000_0649) then
+        set LEGEND_ARTHAS.UnitType = 'Harf'
         //Give Crown of Lordaeron
         set tempArtifact = Artifact.artifactsByType[CROWN_ID]
-        if tempArtifact != 0 then
+        if tempArtifact != 0 and tempArtifact.owningPerson == FACTION_LORDAERON.whichPerson then
           call SetItemPosition(tempArtifact.item, x, y)
           call UnitAddItem(kingArthas, tempArtifact.item)
         endif
 
-        //Display message
+        //Update quest
         call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_VISIT, QUEST_PROGRESS_COMPLETE, true)
         
         //Kill Terenas

@@ -10,43 +10,30 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
   endglobals
 
   private function CreateLichKing takes nothing returns nothing
-    local unit DeathKnight = GetTriggerUnit()
-    local unit LichKing = null
     local item tempItem = null
     local integer i = 0
     local Artifact tempArtifact = Artifact.artifactsByType['I01Y']
 
     call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
-    set LichKing = CreateUnit(GetOwningPlayer(DeathKnight), 'N023', -3464, 20914, 135) 
-    call SetHeroLevel(LichKing, 12, false)
-    loop
-    exitwhen i > 6
-      call UnitAddItem(LichKing, UnitItemInSlot(DeathKnight, i))
-      set i = i + 1
-    endloop
+    set LEGEND_ARTHAS.UnitType = 'N023'
     if tempArtifact != 0 then
-      call UnitAddItem(LichKing, tempArtifact.item)
+      call UnitAddItem(LEGEND_ARTHAS.Unit, tempArtifact.item)
     endif
     call RemoveUnit(gg_unit_u000_0649)      //The Frozen Throne
-    call RemoveUnit(GetTriggerUnit())
-    //call DisableTrigger( gg_trg_ThrallnNZ )
-    //call DisableTrigger( gg_trg_Throne_Protection_2 )
     call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_GOTHRONE, QUEST_PROGRESS_COMPLETE, true)
     //Cleanup
-    set DeathKnight = null
-    set LichKing = null     
     set tempItem = null 
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if GetUnitTypeId(GetTriggerUnit()) == 'Uear' and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
+    if LEGEND_ARTHAS.OwningFaction == FACTION_SCOURGE and GetTriggerUnit() == LEGEND_ARTHAS.Unit and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
       call CreateLichKing()
     endif
   endfunction
 
   private function UnitGainsLevel takes nothing returns nothing
-    if GetUnitTypeId(GetTriggerUnit()) == 'Uear' and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
+    if LEGEND_ARTHAS.OwningFaction == FACTION_SCOURGE and GetTriggerUnit() == LEGEND_ARTHAS.Unit and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
       call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_LEVELARTHAS, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction

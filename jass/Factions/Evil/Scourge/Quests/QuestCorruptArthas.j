@@ -12,25 +12,24 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
   private function CorruptArthas takes nothing returns nothing
     local Person scourge = PersonsByFaction[FACTION_SCOURGE]
     local Person legion = PersonsByFaction[FACTION_LEGION]
-    local unit arthas = null
     local unit malganis = null
     local group tempGroup = null
     if scourge != 0 then
-      set arthas = CreateUnit(scourge.p, 'Uear', -3801, 21321, 135)
-      call UnitDetermineLevel(arthas, 1.00)
+      set LEGEND_ARTHAS.UnitType = 'Uear'
+      call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
+      call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
       call FACTION_LEGION.applyFactionMod(FACTIONMOD_MALGANIS)
       if legion != 0 then
         set tempGroup = CreateGroup()
         call GroupEnumUnitsOfType(tempGroup, "Mal'Ganis", null)
         set malganis = GroupPickRandomUnit(tempGroup)
-        call UnitTransferItems(malganis, arthas)
+        call UnitTransferItems(malganis, LEGEND_ARTHAS.Unit)
         call RemoveUnit(malganis)
         //cleanup
         set malganis = null
         call DestroyGroup(tempGroup)
         set tempGroup = null
       endif
-      set arthas = null
     endif
     call FACTION_SCOURGE.setQuestItemStatus(QuestLichKingArthas_QUESTITEM_LICHKINGARTHAS_GETARTHAS, QUEST_PROGRESS_COMPLETE, true)
   endfunction
