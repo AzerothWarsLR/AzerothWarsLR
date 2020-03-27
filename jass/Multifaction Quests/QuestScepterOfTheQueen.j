@@ -164,7 +164,6 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     call HordeFactions.add(FACTION_NEW_HORDE)
     set NightElvenFactions = Set.create()
     call NightElvenFactions.add(FACTION_SENTINELS)
-    call NightElvenFactions.add(FACTION_DRUIDS)
     call NightElvenFactions.add(FACTION_SOLO_SENTINELS)
     call NightElvenFactions.add(FACTION_NIGHT_ELVES)
 
