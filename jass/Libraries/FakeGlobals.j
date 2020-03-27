@@ -11,6 +11,8 @@ library FakeGlobals
     trigger gg_trg_Plague_Actions
     group udg_QuelDanilLodge
     unit gg_unit_o01I_0449
+    unit gg_unit_Ocbh_1163
+    rect gg_rct_Andrassil
   endglobals
 
 endlibrary FakeGlobals
