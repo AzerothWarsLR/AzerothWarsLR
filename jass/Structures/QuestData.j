@@ -72,7 +72,7 @@ library QuestData requires Set
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
-      set display = display + "|cffffcc00QUEST FAILED - " + title + "|r\n" + desc + "\n"
+      set display = display + "|cffffcc00QUEST FAILED - " + title + "|r\n"
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
