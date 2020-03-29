@@ -151,10 +151,20 @@ library DemonGate requires T32, Math, Environment
       endif
     endmethod
 
+    private static method onUnitConstructed takes nothing returns nothing
+      if DemonGateType.byUnitType[GetUnitTypeId(GetTriggerUnit())] != 0 then
+        call DemonGate.create(GetTriggerUnit())
+      endif
+    endmethod
+
     private static method onInit takes nothing returns nothing
       local trigger trig = CreateTrigger()
       call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_UPGRADE_FINISH)
       call TriggerAddAction(trig, function thistype.onUnitUpgraded)
+
+      set trig = CreateTrigger()
+      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
+      call TriggerAddAction(trig, function thistype.onUnitConstructed)
 
       set byHandle = Table.create()
     endmethod
