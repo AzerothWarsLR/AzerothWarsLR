@@ -235,7 +235,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       loop
       exitwhen u == null 
         set tempUnitType = UnitTypes[GetUnitTypeId(u)]               
-        if not tempUnitType.meta then
+        if not tempUnitType.Meta then
           call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
         endif
         call GroupRemoveUnit(tempGroup, u)
@@ -320,12 +320,12 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           set this.xp = this.xp + GetHeroXP(u)
           call UnitDropAllItems(u)  
           call RemoveUnit(u)
-        elseif tempUnitType.refund == true then
-          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) +  R2I(tempUnitType.goldCost*REFUND_PERCENT))
-          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER) + R2I(tempUnitType.lumberCost*REFUND_PERCENT))
+        elseif tempUnitType.Refund == true then
+          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) +  R2I(tempUnitType.GoldCost*REFUND_PERCENT))
+          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER) + R2I(tempUnitType.LumberCost*REFUND_PERCENT))
           call UnitDropAllItems(u)  
           call RemoveUnit(u)
-        elseif tempUnitType.meta == false or tempUnitType == 0 then
+        elseif tempUnitType.Meta == false or tempUnitType == 0 then
           set recipient = ForcePickRandomPlayer(eligiblePlayers)
           if recipient == null then
             set recipient = Player(bj_PLAYER_NEUTRAL_VICTIM)
