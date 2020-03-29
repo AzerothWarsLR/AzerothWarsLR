@@ -1,5 +1,5 @@
 
-library UnitType initializer OnInit
+library UnitType initializer OnInit requires Environment
 
   globals
     Table UnitTypes
@@ -9,28 +9,30 @@ library UnitType initializer OnInit
     readonly integer unitId = 0
     readonly boolean refund = false      //When the player leaves this unit gets deleted, cost refunded, and given to allies
     readonly boolean meta = false        //When the player leaves this unit is exempted from being affected
-    readonly integer goldCost = 0
-    readonly integer lumberCost = 0
     readonly string iconPath = null
 
-    method setIconPath takes string s returns nothing
-      set this.iconPath = s
+    method operator GoldCost takes nothing returns integer
+      return GetUnitGoldCost(unitId)
     endmethod
 
-    method setGoldCost takes integer val returns nothing
-      set this.goldCost = val
+    method operator LumberCost takes nothing returns integer
+      return GetUnitWoodCost(unitId)
     endmethod
     
-    method setLumberCost takes integer val returns nothing
-      set this.lumberCost = val        
+    method operator Meta takes nothing returns boolean
+      return meta
+    endmethod
+
+    method operator Meta= takes boolean b returns nothing
+      set meta = b
     endmethod
     
-    method setMeta takes boolean b returns nothing
-      set this.meta = b
+    method operator Refund= takes boolean b returns nothing
+      set refund = b        
     endmethod
-    
-    method setRefund takes boolean b returns nothing
-      set this.refund = b        
+
+    method operator Refund takes nothing returns boolean
+      return refund
     endmethod        
 
     static method create takes integer unitId returns UnitType
