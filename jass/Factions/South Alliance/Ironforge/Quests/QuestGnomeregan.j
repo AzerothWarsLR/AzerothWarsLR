@@ -32,7 +32,8 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig
       set u = FirstOfGroup(tempGroup)
     endloop
     //Give resources and display message
-    call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_GNOMEREGAN, QUEST_PROGRESS_COMPLETE, true)     
+    call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_GNOMEREGAN, QUEST_PROGRESS_COMPLETE, true)    
+    call SetPlayerTechResearched(recipient, 'R05Q', 1) 
 
     //Cleanup
     call DestroyGroup (TempGroup)
