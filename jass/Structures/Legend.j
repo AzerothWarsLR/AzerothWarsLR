@@ -17,6 +17,7 @@ library Legend requires GeneralHelpers
     private string deathMessage
     private string deathSfx
     private boolean permaDies = false
+    private boolean hivemind = false  //This hero causes the death of its own faction if it dies
     private group diesWithout //This hero permanently dies if it dies without these under control]
     private trigger deathTrig
 
@@ -65,6 +66,10 @@ library Legend requires GeneralHelpers
       call refreshDummy()
     endmethod
 
+    public method operator Hivemind= takes boolean b returns nothing
+      set hivemind = true
+    endmethod
+
     public method operator UnitType takes nothing returns integer
       return unitType
     endmethod
@@ -88,6 +93,10 @@ library Legend requires GeneralHelpers
       return Persons[GetPlayerId(GetOwningPlayer(unit))].faction
     endmethod
 
+    public method operator OwningPerson takes nothing returns Person
+      return Persons[GetPlayerId(GetOwningPlayer(unit))]
+    endmethod
+
     public method operator OwningPlayer takes nothing returns player
       return GetOwningPlayer(unit)
     endmethod
@@ -103,6 +112,8 @@ library Legend requires GeneralHelpers
         call SetUnitY(Unit, y)
         call SetUnitFacing(Unit, face)
       endif
+      call SetUnitOwner(Unit, owner, true)
+      call refreshDummy()
     endmethod
 
     private method refreshDummy takes nothing returns nothing
@@ -140,6 +151,9 @@ library Legend requires GeneralHelpers
       call UnitDropAllItems(unit)
       call RemoveUnit(unit)
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
+      if hivemind then
+        call OwningPerson.obliterate()
+      endif
     endmethod
 
     private method onDeath takes nothing returns nothing
