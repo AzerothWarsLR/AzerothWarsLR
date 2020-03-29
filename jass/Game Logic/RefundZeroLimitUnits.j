@@ -10,8 +10,8 @@ library RefundZeroLimitUnits initializer OnInit requires Persons, UnitType
     if tempPerson.objectLimits[GetUnitTypeId(u)] == 0 then
       set tempUnitType = UnitTypes[GetUnitTypeId(u)]
       if tempUnitType != 0 then
-        call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_GOLD, tempUnitType.goldCost)
-        call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_LUMBER, tempUnitType.lumberCost)
+        call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_GOLD, tempUnitType.GoldCost)
+        call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_LUMBER, tempUnitType.LumberCost)
       endif
       call RemoveUnit(u)
     endif
