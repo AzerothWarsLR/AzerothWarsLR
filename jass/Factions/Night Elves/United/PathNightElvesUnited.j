@@ -10,6 +10,8 @@ library PathNightElvesUnited initializer OnInit requires Persons, Faction, Legen
     if not UnitAlive(LEGEND_CENARIUS.Unit) then
       call LEGEND_CENARIUS.Spawn(triggerPlayer, -11679, 6904, 255)
     endif
+    set LEGEND_CENARIUS.PermaDies = false
+    call LEGEND_CENARIUS.AddUnitDependency(gg_unit_n002_0130)
     if LEGEND_MALFURION.OwningPlayer != triggerPlayer then
       call LEGEND_MALFURION.Spawn(triggerPlayer, -11808, 6931, 247)
     endif
