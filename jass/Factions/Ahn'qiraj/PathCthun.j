@@ -1,4 +1,4 @@
-library PathCthun initializer OnInit requires AhnqirajConfig, TeamConfig, ControlPoint, ArtifactConfig
+library PathCthun initializer OnInit requires AhnqirajConfig, TeamConfig, ControlPoint, ArtifactConfig, LegendAhnqiraj
 
   globals
     private group AhnQirajGroup = null
@@ -62,11 +62,9 @@ library PathCthun initializer OnInit requires AhnqirajConfig, TeamConfig, Contro
       call SetPlayerState(triggerPlayer, PLAYER_STATE_RESOURCE_GOLD, 3000)
       call SetPlayerState(triggerPlayer, PLAYER_STATE_RESOURCE_LUMBER, 2500)
       call DisplayTextToForce(GetPlayersAll(), "The gates of Ahn'qiraj have been opened. The planetary parasite known as C'thun has set his maddening gaze on Azeroth once more, prompting the denizens of Kalimdor to ready their forces for conflict against the renewed Qiraji invasion.")
-      set u = CreateUnit(triggerPlayer, 'U00R', -18635.6, -23677.9, 0)
-      call UnitAddItem(u, CreateItem('stel', GetUnitX(u), GetUnitY(u)))
-      call SetHeroLevel(u, 10, false)
-      
-      set u = null
+      call LEGEND_CTHUN.Spawn(triggerPlayer, -18635.6, -23677.9, 0)
+      call UnitAddItem(LEGEND_CTHUN.Unit, CreateItem('stel', GetUnitX(LEGEND_CTHUN.Unit), GetUnitY(LEGEND_CTHUN.Unit)))
+      call SetHeroLevel(LEGEND_CTHUN.Unit, 10, false)
 
       //Transfer C'thun's artifact to a hero
       set tempArtifact = Artifact.artifactsByType['I00F']
