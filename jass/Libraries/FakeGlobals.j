@@ -13,6 +13,17 @@ library FakeGlobals
     unit gg_unit_o01I_0449
     unit gg_unit_Ocbh_1163
     rect gg_rct_Andrassil
+    rect gg_rct_Tempest_Keep_Evacuate
+    rect gg_rct_EvilIllidanSpawn
+    unit gg_unit_Hkal_1946
+    unit gg_unit_Hvsh_3282
+    unit gg_unit_Naka_3361
+    unit gg_unit_Nmag_0893
+    unit gg_unit_n03U_0281
+    unit gg_unit_n05Y_0805
+    unit gg_unit_n00J_3344
+    unit gg_unit_Uwar_2344
+    rect gg_rct_VaultoftheWardens
   endglobals
 
 endlibrary FakeGlobals
