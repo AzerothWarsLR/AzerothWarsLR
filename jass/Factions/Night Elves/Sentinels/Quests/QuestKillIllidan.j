@@ -1,4 +1,4 @@
-library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig, IllidariConfig, SoloSentinelsConfig
+library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig, IllidariConfig, SoloSentinelsConfig, NightElfConfig
 
   globals
     private QuestData QUEST_ILLIDAN
@@ -8,14 +8,22 @@ library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig,
 
   private function Dies takes nothing returns nothing
     local Person sentinelsPerson = FACTION_SENTINELS.whichPerson
+    if sentinelsPerson == 0 then
+      set sentinelsPerson = FACTION_SOLO_SENTINELS.whichPerson
+    endif
+    if sentinelsPerson == 0 then
+      set sentinelsPerson = FACTION_NIGHT_ELVES.whichPerson
+    endif
     if GetOwningPlayer(GetKillingUnit()) == sentinelsPerson.p then
       call AddHeroXP(LEGEND_MAIEV.Unit, 2000, true)
       call AddHeroAttributes(LEGEND_MAIEV.Unit, 10, 10, 10)
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
     else
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
@@ -23,6 +31,7 @@ library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig,
     if GetTriggerPerson().faction == FACTION_ILLIDARI then
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_ILLIDARI, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
@@ -48,6 +57,8 @@ library QuestKillIllidan initializer OnInit requires QuestData, SentinelsConfig,
     call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_UNDISCOVERED, false)
     call FACTION_SOLO_SENTINELS.addQuest(QUEST_ILLIDAN)
     call FACTION_SOLO_SENTINELS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_UNDISCOVERED, false)
+    call FACTION_NIGHT_ELVES.addQuest(QUEST_ILLIDAN)
+    call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_UNDISCOVERED, false)
   endfunction
 
 endlibrary

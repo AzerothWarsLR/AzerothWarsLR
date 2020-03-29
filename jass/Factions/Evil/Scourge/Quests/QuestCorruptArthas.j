@@ -16,6 +16,7 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
     local group tempGroup = null
     if scourge != 0 then
       set LEGEND_ARTHAS.UnitType = 'Uear'
+      call UnitDropAllItems(LEGEND_ARTHAS.Unit)
       call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
       call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
       call FACTION_LEGION.applyFactionMod(FACTIONMOD_MALGANIS)
