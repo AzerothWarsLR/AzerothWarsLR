@@ -67,10 +67,11 @@ library FelHordeConfig initializer OnInit requires Faction
 
       call f.registerObjectLimit('R02L', UNLIMITED)   //Shattered Hand Clan
       call f.registerObjectLimit('R03L', UNLIMITED)   //Shadow Council Reformed
-      call f.registerObjectLimit('R047', -1)          //Shadowmoon Clan Remnants
-      call f.registerObjectLimit('R036', -1)          //Dragonmaw Clan          
+      call f.registerObjectLimit('R047', UNLIMITED)   //Shadowmoon Clan Remnants
+      call f.registerObjectLimit('R036', UNLIMITED)   //Dragonmaw Clan          
 
-      call f.registerObjectLimit('R045', UNLIMITED)   //Thelsmamar and Darkshire destroyed
+      call f.registerObjectLimit('R05Z', UNLIMITED)   //Tier 1
+      call f.registerObjectLimit('R05Y', UNLIMITED)   //Tier 2
             
     endfunction
     
