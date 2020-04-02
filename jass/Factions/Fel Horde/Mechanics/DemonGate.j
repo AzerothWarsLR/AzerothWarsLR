@@ -12,6 +12,11 @@ library DemonGate requires T32, Math, Environment
     private integer spawnUnitType
     private integer interval
     private integer unitType
+    private integer count
+
+    public method operator Count takes nothing returns integer
+      return count
+    endmethod
 
     public method operator Interval takes nothing returns integer
       return interval
@@ -21,11 +26,12 @@ library DemonGate requires T32, Math, Environment
       return spawnUnitType
     endmethod
 
-    static method create takes integer gateUnitType, integer spawnUnitType, integer interval returns thistype
+    static method create takes integer gateUnitType, integer spawnUnitType, integer interval, integer count returns thistype
       local thistype this = thistype.allocate()
       set this.unitType = gateUnitType
       set this.interval = interval
       set this.spawnUnitType = spawnUnitType
+      set this.count = count
       set byUnitType[unitType] = this
       return this
     endmethod
@@ -101,12 +107,19 @@ library DemonGate requires T32, Math, Environment
     endmethod
 
     private method spawnUnit takes nothing returns nothing
-      local unit newUnit = CreateUnit(Owner, gateType.SpawnUnitType, SpawnX, SpawnY, Facing)
+      local unit newUnit
       local location rally = GetUnitRallyPoint(u)
+      local integer i = 0
+      loop
+        exitwhen i == gateType.Count
+        set newUnit = CreateUnit(Owner, gateType.SpawnUnitType, SpawnX, SpawnY, Facing)
+        call GroupAddUnit(spawnedDemons, newUnit)
+        call IssuePointOrder(newUnit, "attackground", GetLocationX(rally), GetLocationY(rally))
+        set i = i + 1
+      endloop
+      set newUnit = null
       call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", SpawnX, SpawnY))
-      call IssuePointOrder(newUnit, "attackground", GetLocationX(rally), GetLocationY(rally))
       call RemoveLocation(rally)
-      call GroupAddUnit(spawnedDemons, newUnit)
     endmethod
 
     private method onUpgrade takes nothing returns nothing
