@@ -20,6 +20,7 @@ library Legend requires GeneralHelpers
     private boolean hivemind = false  //This hero causes the death of its own faction if it dies
     private group diesWithout //This hero permanently dies if it dies without these under control]
     private trigger deathTrig
+    private trigger castTrig
 
     public method operator PermaDies= takes boolean b returns nothing
       set permaDies = b
@@ -43,10 +44,17 @@ library Legend requires GeneralHelpers
       set unit = u
       if Unit != null then
         set unitType = GetUnitTypeId(unit)
+        //Death trig
         call DestroyTrigger(deathTrig)
         set deathTrig = CreateTrigger()
         call TriggerRegisterUnitEvent(deathTrig, unit, EVENT_UNIT_DEATH)
         call TriggerAddAction(deathTrig, function thistype.onUnitDeath)
+        //Cast trig
+        call DestroyTrigger(castTrig)
+        set castTrig = CreateTrigger()
+        call TriggerRegisterUnitEvent(castTrig, unit, EVENT_UNIT_SPELL_FINISH)
+        call TriggerAddAction(castTrig, function thistype.onUnitCast)
+        //
         set thistype.ByHandle[GetHandleId(unit)] = this
       endif
     endmethod
@@ -156,6 +164,22 @@ library Legend requires GeneralHelpers
       endif
     endmethod
 
+    private method onCast takes nothing returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+      call BlzGroupAddGroupFast(diesWithout, tempGroup)
+      loop
+        set u = FirstOfGroup(tempGroup)
+        exitwhen u == null
+        if GetLocalPlayer() == GetTriggerPlayer() then
+          call PingMinimap(GetUnitX(u), GetUnitY(u), 5)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
+    endmethod
+
     private method onDeath takes nothing returns nothing
       local group tempGroup
       local boolean anyOwned = false
@@ -187,6 +211,10 @@ library Legend requires GeneralHelpers
 
     private static method onUnitDeath takes nothing returns nothing
       call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDeath()
+    endmethod
+
+    private static method onUnitCast takes nothing returns nothing
+      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onCast()
     endmethod
 
     private method destroy takes nothing returns nothing
