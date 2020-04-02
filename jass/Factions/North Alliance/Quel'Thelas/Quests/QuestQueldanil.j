@@ -13,17 +13,14 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig
       loop
         set u = FirstOfGroup(udg_QuelDanilLodge)
         exitwhen u == null
-        call SetUnitOwner(u, quelPerson.p, true)
-        call SetUnitInvulnerable(u, false)
+        call UnitRescue(u, quelPerson.p)
         call GroupRemoveUnit(udg_QuelDanilLodge, u)
       endloop
       call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-    else
-      call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
+      //Cleanup
+      call DestroyGroup(udg_QuelDanilLodge)
+      call DestroyTrigger(GetTriggeringTrigger())
     endif
-    //Cleanup
-    call DestroyGroup(udg_QuelDanilLodge)
-    call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function OnInit takes nothing returns nothing
