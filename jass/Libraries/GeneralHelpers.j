@@ -41,14 +41,9 @@ library GeneralHelpers
   endfunction
 
   function UnitRescue takes unit whichUnit, player whichPlayer returns nothing
-    if GetLocalPlayer() == whichPlayer then
-      call StartSound(bj_rescueSound)
-      call UnitAddIndicator(whichUnit, 0, 255, 0, 255)
-    endif
     call ShowUnit(whichUnit, true)
     call SetUnitInvulnerable(whichUnit, false)
     call SetUnitOwner(whichUnit, whichPlayer, true)
-    call PingMinimapForPlayer(whichPlayer, GetUnitX(whichUnit), GetUnitY(whichUnit), bj_RESCUE_PING_TIME)
   endfunction
 
   function UnitDropAllItems takes unit u returns nothing
