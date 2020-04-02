@@ -10,16 +10,6 @@ library QuestSeaWitch initializer OnInit requires QuestData, FrostwolfConfig, Ne
     private weathereffect Storm
   endglobals
 
-  private function UnitRescue takes unit whichUnit, player whichPlayer returns nothing
-    if GetLocalPlayer() == whichPlayer then
-      call StartSound(bj_rescueSound)
-    endif
-    call SetUnitInvulnerable(whichUnit, false)
-    call SetUnitOwner(whichUnit, whichPlayer, true)
-    call UnitAddIndicator(whichUnit, 0, 255, 0, 255)
-    call PingMinimapForPlayer(whichPlayer, GetUnitX(whichUnit), GetUnitY(whichUnit), bj_RESCUE_PING_TIME)
-  endfunction
-
   private function Dies takes nothing returns nothing
     local Person killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
     local Person frostwolfPerson = FACTION_FROSTWOLF.whichPerson
