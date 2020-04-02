@@ -29,7 +29,8 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
   private function OnInit takes nothing returns nothing
     local trigger trig
     local integer i
-    set QUEST_PLAGUE = QuestData.create("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "The plague has been unleashed!", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
+    set QUEST_PLAGUE = QuestData.create("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
+    set QUEST_PLAGUE.Global = true
     set QUESTITEM_PLAGUETIME = QUEST_PLAGUE.addItem("Survive until turn 6")
     set QUESTITEM_PLAGUESTART = QUEST_PLAGUE.addItem("Type -plague OR wait until turn 11")
     call FACTION_SCOURGE.addQuest(QUEST_PLAGUE)
