@@ -20,6 +20,17 @@ library Set requires Table
       return list[index]
     endmethod
 
+    method copy takes nothing returns thistype
+      local Set newSet = thistype.create()
+      local integer i = 0
+      loop
+        exitwhen i == size
+        call newSet.add(list[i])
+        set i = i + 1
+      endloop
+      return newSet
+    endmethod
+
     method print takes nothing returns nothing
       local integer i = 0
       call BJDebugMsg("Count: " + I2S(size))
