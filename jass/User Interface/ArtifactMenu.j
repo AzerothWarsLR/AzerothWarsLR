@@ -191,9 +191,6 @@
     framehandle title
     framehandle text
     framehandle pingButton
-    framehandle frame
-    framehandle tooltip
-    framehandle tooltipText
     trigger pingTrigger
     ArtifactMenuPage parentPage = 0
 
@@ -228,9 +225,6 @@
       call BlzDestroyFrame(this.pingButton)
       call BlzDestroyFrame(this.icon)
       call BlzDestroyFrame(this.title)
-      call BlzDestroyFrame(this.tooltip)
-      call BlzDestroyFrame(this.tooltipText)
-      call BlzDestroyFrame(this.frame)
       call BlzDestroyFrame(this.box)
       set thistype.repsByPingButton[GetHandleId(this.pingButton)] = 0
 
@@ -286,23 +280,7 @@
       set this.icon = BlzCreateFrameByType("BACKDROP", "ArtifactIcon", this.box, "", 0)
       call BlzFrameSetSize(this.icon, 0.04, 0.04)
       call BlzFrameSetPoint(this.icon, FRAMEPOINT_LEFT, this.box, FRAMEPOINT_LEFT, 0.015, -0.0090)        
-      call BlzFrameSetTexture(this.icon, BlzGetItemIconPath(whichArtifact.item), 0, true)     
-
-      //Create tooltip box for icon
-      set this.tooltip = BlzCreateFrame("BoxedText", this.box, 0, 0)
-      call BlzFrameSetPoint(this.tooltip, FRAMEPOINT_TOP, this.icon, FRAMEPOINT_BOTTOM, 0.0, 0.0)
-      call BlzFrameSetSize(this.tooltip, TOOLTIP_WIDTH, TOOLTIP_HEIGHT)
-
-      //Create tooltip text for tooltip box
-      set this.tooltipText = BlzCreateFrame("BoxedTextValue", this.tooltip, 0, 0)
-      call BlzFrameSetText(this.tooltipText, BlzGetItemExtendedTooltip(this.whichArtifact.item))  
-      call BlzFrameSetPoint(this.tooltipText, FRAMEPOINT_CENTER, this.tooltip, FRAMEPOINT_CENTER, 0.0, 0.0)
-      call BlzFrameSetSize(this.tooltipText, TOOLTIP_WIDTH - 0.01, TOOLTIP_HEIGHT - 0.01)
-
-      //Create frame for icon; this is only used to attach tooltip to       
-      set this.frame = BlzCreateFrameByType("FRAME", "IconFrame", this.icon, "", 0)
-      call BlzFrameSetAllPoints(this.frame, this.icon)      
-      call BlzFrameSetTooltip(this.frame, this.tooltip)              
+      call BlzFrameSetTexture(this.icon, BlzGetItemIconPath(whichArtifact.item), 0, true)             
 
       //Create title of artifact at top of box
       set this.title = BlzCreateFrame("ArtifactItemTitle", this.box, 0, 0)
