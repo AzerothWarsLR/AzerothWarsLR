@@ -159,8 +159,12 @@ library DemonGate requires T32, Math, Environment
     endmethod
 
     private static method onUnitUpgraded takes nothing returns nothing
+      //Unit was already a Demon Gate
       if byHandle[GetHandleId(GetTriggerUnit())] != 0 then
         call thistype(byHandle[GetHandleId(GetTriggerUnit())]).onUpgrade()
+      //Unit was not a Demon Gate
+      elseif DemonGateType.byUnitType[GetUnitTypeId(GetTriggerUnit())] != 0 then
+        call DemonGate.create(GetTriggerUnit())
       endif
     endmethod
 
