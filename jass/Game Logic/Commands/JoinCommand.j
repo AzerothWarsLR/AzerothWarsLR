@@ -18,9 +18,13 @@ library JoinCommand initializer OnInit requires Team
       set targetTeam = Team.teamsByName[content]
       if targetTeam != 0 then
         if IsPlayerInForce(triggerPerson.p, targetTeam.invitees) then
-          call triggerPerson.setTeam(targetTeam)
-          call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have joined " + targetTeam.name + ".")
-          call DisplayTextToForce(targetTeam.players, triggerPerson.faction.prefixCol + triggerPerson.faction.name + "|r has joined the " + targetTeam.name + ".")
+          if targetTeam.maxWeight <= targetTeam.weight + triggerPerson.faction.weight then
+            call triggerPerson.setTeam(targetTeam)
+            call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have joined " + targetTeam.name + ".")
+            call DisplayTextToForce(targetTeam.players, triggerPerson.faction.prefixCol + triggerPerson.faction.name + "|r has joined the " + targetTeam.name + ".")
+          else
+            call DisplayTextToPlayer(triggerPerson.p, 0, 0, "That team is already full.")
+          endif
         else
           call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have not been invited to join " + targetTeam.name + ".")
         endif
