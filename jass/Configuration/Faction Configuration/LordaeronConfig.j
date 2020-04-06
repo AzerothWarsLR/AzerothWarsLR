@@ -9,6 +9,7 @@ library LordaeronConfig initializer OnInit requires Faction
     
     set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_LIGHT_BLUE, "|c007ebff1","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
+    set f.AbsenceResearch = 'R045'
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

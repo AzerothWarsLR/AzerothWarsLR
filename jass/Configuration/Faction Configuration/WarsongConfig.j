@@ -10,7 +10,8 @@ library WarsongConfig initializer OnInit requires Faction
     set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp", 3)
     set f = FACTION_WARSONG
 
-    call f.setAbsenceResearch('R04V')
+    set f.AbsenceResearch = 'R04V'
+
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold
     call f.registerObjectLimit('ofrt', UNLIMITED)   //Fortress
@@ -70,4 +71,5 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R021', UNLIMITED)   //Horde War Machine
     call f.registerObjectLimit('R02M', UNLIMITED)   //True Horde
   endfunction
+
 endlibrary

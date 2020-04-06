@@ -1,7 +1,7 @@
 library LegionConfig initializer OnInit requires Faction
 
   globals
-      Faction FACTION_LEGION
+    Faction FACTION_LEGION
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -11,6 +11,7 @@ library LegionConfig initializer OnInit requires Faction
     set f = FACTION_LEGION
 
     call f.setPresenceResearch('R04T')
+    set f.AbsenceResearch = 'R00U'
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
     call f.registerObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon

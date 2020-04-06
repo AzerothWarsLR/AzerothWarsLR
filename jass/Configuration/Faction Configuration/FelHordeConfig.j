@@ -9,6 +9,7 @@ library FelHordeConfig initializer OnInit requires Faction
       
       set FACTION_FEL_HORDE = Faction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp", 6)
       set f = FACTION_FEL_HORDE
+      set f.AbsenceResearch = 'R03M'
 
       call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
       call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

@@ -1,4 +1,3 @@
-
 library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
   globals
@@ -117,7 +116,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
     endmethod
 
-    method setAbsenceResearch takes integer research returns nothing
+    method operator AbsenceResearch= takes integer research returns nothing
       local integer i = 0
       if this.absenceResearch == 0 then
         set this.absenceResearch = research

@@ -10,7 +10,8 @@ library FrostwolfConfig initializer OnInit requires Faction
     set FACTION_FROSTWOLF = Faction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp", 3)
     set f = FACTION_FROSTWOLF
 
-    call f.setAbsenceResearch('R04U')
+    set f.AbsenceResearch = 'R04U'
+
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold
     call f.registerObjectLimit('ofrt', UNLIMITED)   //Fortress

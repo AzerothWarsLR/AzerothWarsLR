@@ -12,6 +12,7 @@ library ScourgeConfig initializer OnInit requires Faction
 
       call f.setEnterTrigger(ScourgeEnterTrigger)
       call f.setExitTrigger(ScourgeExitTrigger)
+      set f.AbsenceResearch = 'R05V'
 
       call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
       call f.registerObjectLimit('unp1', UNLIMITED)   //Halls of the Dead 
