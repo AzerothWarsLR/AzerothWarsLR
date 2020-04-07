@@ -1,7 +1,7 @@
 library FelSinged initializer OnInit requires LegionConfig
 
   private function FelSinge takes unit whichUnit returns nothing
-    call AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\Immolation\\ImmolationDamage.mdl", whichUnit, "origin")
+    call AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\Immolation\\ImmolationDamage.mdl", whichUnit, "head")
     call SetUnitVertexColor(whichUnit, 170, 255, 170, 255)
   endfunction
 
