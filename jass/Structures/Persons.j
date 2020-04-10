@@ -390,6 +390,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     return Person.triggerPerson
   endfunction
 
+  function GetOwningPerson takes unit whichUnit returns Person
+    return Persons[GetPlayerId(GetOwningPlayer(whichUnit))]
+  endfunction
+
   private function OnInit takes nothing returns nothing
     set PersonsByName = StringTable.create()
     set PersonsByFaction = Table.create()
