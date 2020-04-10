@@ -1,7 +1,7 @@
 //If Illidan is not under the Sentinel's control by the timer, OR a player becomes Illidari, give Maiev to the Sentinels.
 //This should not apply for the Night Elves, since they already have Maiev.
 
-library QuestMaievArrives initializer OnInit requires QuestData ,DetermineLevel, GeneralHelpers, SentinelsConfig, LegendSentinels
+library QuestMaievArrives initializer OnInit requires QuestData, DetermineLevel, GeneralHelpers, SentinelsConfig, LegendSentinels
 
   globals
     private constant real TIMER_DURATION = 480.
