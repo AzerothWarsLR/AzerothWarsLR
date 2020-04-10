@@ -5,7 +5,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       private constant real DUMMY_X = 22700
       private constant real DUMMY_Y = 23735
 
+      Artifact ARTIFACT_GHANIR
       Artifact ARTIFACT_SKULLOFGULDAN
+      Artifact ARTIFACT_CROWNLORDAERON
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -30,9 +32,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)
     call UnitAddItem(gg_unit_u000_0649, tempArtifact.item)
 
-    set tempArtifact = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y))    //Crown of Lordaeron
-    call UnitAddAbility(gg_unit_h000_0406, ARTIFACT_HOLDER_ABIL_ID)             //Capital Palace
-    call UnitAddItem(gg_unit_h000_0406, tempArtifact.item)
+    set ARTIFACT_CROWNLORDAERON = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y))
+    call UnitAddAbility(gg_unit_h000_0406, ARTIFACT_HOLDER_ABIL_ID) //Capital Palace
+    call UnitAddItem(gg_unit_h000_0406, ARTIFACT_CROWNLORDAERON.item)
 
     set tempArtifact = Artifact.create(CreateItem('I00D', DUMMY_X, DUMMY_Y))    //Shalamayne
     call UnitAddItem(gg_unit_H00R_1875, tempArtifact.item)                      //Variann
@@ -106,9 +108,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact.falseX = -14269
     set tempArtifact.falseY = 22281
 
-    set tempArtifact = Artifact.create(CreateItem('I00C', DUMMY_X, DUMMY_Y))    //G'hanir
-    call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)             //Barrow Den  
-    call UnitAddItem(gg_unit_nbwd_0737, tempArtifact.item)  
+    set ARTIFACT_GHANIR = Artifact.create(CreateItem('I00C', DUMMY_X, DUMMY_Y))    //G'hanir
+    call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)                //Barrow Den  
+    call UnitAddItem(gg_unit_nbwd_0737, ARTIFACT_GHANIR.item)  
 
     set tempArtifact = Artifact.create(CreateItem('thdm', DUMMY_X, DUMMY_Y))    //Thunderlizard Diamond
     call UnitAddAbility(gg_unit_nstw_2078, ARTIFACT_HOLDER_ABIL_ID)             //Storm Wyrm

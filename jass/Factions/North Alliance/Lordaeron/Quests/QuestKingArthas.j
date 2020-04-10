@@ -10,19 +10,14 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
 
   private function EntersRegion takes nothing returns nothing
     local unit triggerUnit = GetTriggerUnit()
-    local unit kingArthas = null
-    local real x = 0
-    local real y = 0
-    local Artifact tempArtifact = 0
 
     if triggerUnit == LEGEND_ARTHAS.Unit and LEGEND_ARTHAS.UnitType == 'Hart' then
       if not UnitAlive(gg_unit_u000_0649) then
         set LEGEND_ARTHAS.UnitType = 'Harf'
         //Give Crown of Lordaeron
-        set tempArtifact = Artifact.artifactsByType[CROWN_ID]
-        if tempArtifact != 0 and tempArtifact.owningPerson == FACTION_LORDAERON.whichPerson then
-          call SetItemPosition(tempArtifact.item, x, y)
-          call UnitAddItem(kingArthas, tempArtifact.item)
+        if ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.whichPerson then
+          call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
+          call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
         endif
 
         //Update quest
@@ -33,7 +28,6 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
 
         //Cleanup
         call DestroyTrigger(GetTriggeringTrigger())
-        set kingArthas = null
       endif
     endif
 
