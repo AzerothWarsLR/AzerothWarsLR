@@ -131,8 +131,8 @@ library DemonGate requires T32, Math, Environment
       if tick == TICK_RATE * T32_FPS then
         set Mana = Mana + 1*TICK_RATE
         if Mana == MaxMana then
-          set Mana = 0
-          if GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_CAP) then
+          if GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_CAP) and GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_FOOD_CAP_CEILING) then
+            set Mana = 0
             call spawnUnit()
           endif
         endif
