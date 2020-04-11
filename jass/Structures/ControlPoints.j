@@ -1,4 +1,4 @@
-library ControlPoint initializer OnInit requires AIDS, Persons, Event
+library ControlPoint initializer OnInit requires AIDS, PlayerConfig
 
   //*CONFIG*
   globals
@@ -157,8 +157,6 @@ library ControlPoint initializer OnInit requires AIDS, Persons, Event
     
     set OnControlPointLoss = Event.create()
     set OnControlPointOwnerChange = Event.create()
-
-    call TriggerSleepAction(1)
 
     call ControlPoint.initializeSystem()
   endfunction

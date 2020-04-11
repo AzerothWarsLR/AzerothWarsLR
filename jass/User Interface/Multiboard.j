@@ -1,6 +1,6 @@
 //Decoupled version of Multiboard
 
-library Multiboard initializer OnInit requires Faction, Team, Event, Table
+library Multiboard initializer OnInit requires Faction, Team, Event, Table, ControlPoint
 
   globals
     private constant integer COLUMN_COUNT   = 3

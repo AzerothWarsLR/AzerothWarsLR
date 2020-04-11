@@ -1,4 +1,4 @@
-library QuestAndrassil initializer OnInit requires QuestData, DruidsConfig, NightElfConfig
+library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, DruidsConfig, NightElfConfig
 
   globals
     private QuestData QUEST_ANDRASSIL
