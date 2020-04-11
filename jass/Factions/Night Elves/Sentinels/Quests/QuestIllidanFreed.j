@@ -19,7 +19,7 @@ library QuestIllidanFreed initializer OnInit requires QuestData, SentinelsConfig
     local Person killingPerson = 0
     local Person sentinelsPerson = 0
 
-    if PersonsByFaction[FACTION_SENTINELS] != 0 then
+    if LEGEND_ILLIDAN.OwningPlayer == Player(PLAYER_NEUTRAL_PASSIVE) and FACTION_SENTINELS.whichPerson != 0 then
       set killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
       set sentinelsPerson = PersonsByFaction[FACTION_SENTINELS]
       if killingPerson.team == TEAM_NIGHT_ELVES and GetOwningPlayer(LEGEND_MAIEV.Unit) != sentinelsPerson.p and GetOwningPlayer(LEGEND_ILLIDAN.Unit) == Player(PLAYER_NEUTRAL_PASSIVE)  then //Night Elves team
@@ -35,6 +35,12 @@ library QuestIllidanFreed initializer OnInit requires QuestData, SentinelsConfig
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
+  private function PersonChangesFaction takes nothing returns nothing
+    if GetTriggerPerson().faction == FACTION_ILLIDARI then
+      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_FREED, QUEST_PROGRESS_FAILED, false)
+    endif
+  endfunction
+
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call TriggerRegisterUnitEvent( trig, gg_unit_Ekgg_2463, EVENT_UNIT_DEATH )
@@ -44,6 +50,10 @@ library QuestIllidanFreed initializer OnInit requires QuestData, SentinelsConfig
     set trig = CreateTrigger()
     call TriggerRegisterTimerEvent(trig, TIMER_DURATION, false)
     call TriggerAddAction(trig, function TimerEnds)
+
+    set trig = CreateTrigger()
+    call OnPersonFactionChange.register(trig)
+    call TriggerAddAction(trig, function PersonChangesFaction)
 
     set QUEST_ILLIDAN = QuestData.create("The Betrayer", "Illidan the Betrayer has been imprisoned for ten thousand years. Now, his help may be required if the Night Elves are to survive.", "Illidan has been released from captivity.", "ReplaceableTextures\\CommandButtons\\BTNHeroDemonHunter.blp")
     set QUESTITEM_FREED = QUEST_ILLIDAN.addItem("Kill Califax in Illidan's Prison")
