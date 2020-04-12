@@ -46,7 +46,7 @@ library PathIllidari initializer OnInit requires IllidariConfig, TeamConfig, Art
       call LEGEND_ILLIDAN.Spawn(triggerPlayer, GetRectCenterX(gg_rct_EvilIllidanSpawn), GetRectCenterY(gg_rct_EvilIllidanSpawn), 200)
       call UnitDetermineLevel(LEGEND_AKAMA.Unit, 1.)
       call UnitDetermineLevel(LEGEND_KAEL.Unit, 1.)
-      call UnitDetermineLevel(LEGEND_VASHJ.Unit, .1)
+      call UnitDetermineLevel(LEGEND_VASHJ.Unit, 1.)
       call SetItemPosition(ARTIFACT_SKULLOFGULDAN.item, GetRectCenterX(gg_rct_EvilIllidanSpawn), GetRectCenterY(gg_rct_EvilIllidanSpawn))
       call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_GROUND)
 
