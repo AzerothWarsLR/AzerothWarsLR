@@ -4,6 +4,9 @@ library DemonGate requires T32, Math, Environment
     private constant real TICK_RATE = 1.
     private constant real FACING_OFFSET = -45. //Demon gate model is spun around weirdly so this reverses that for code
     private constant real SPAWN_DISTANCE = 300. //How far away from the gate to spawn units
+
+    private constant integer TOGGLE_ABILITY = 'A05V' //Gates can use this to toggle summoning
+    private constant integer TOGGLE_BUFF = 'B08B' //Gates need this buff to be able to summon
   endglobals
 
   struct DemonGateType
@@ -124,6 +127,8 @@ library DemonGate requires T32, Math, Environment
 
     private method onUpgrade takes nothing returns nothing
       set GateType = DemonGateType.byUnitType[GetUnitTypeId(GetTriggerUnit())]
+      call UnitAddAbility(u, TOGGLE_ABILITY)
+      call IssueImmediateOrder(u, "immolation")
     endmethod
 
     private method periodic takes nothing returns nothing
@@ -131,7 +136,7 @@ library DemonGate requires T32, Math, Environment
       if tick == TICK_RATE * T32_FPS then
         set Mana = Mana + 1*TICK_RATE
         if Mana == MaxMana then
-          if GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_CAP) and GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_FOOD_CAP_CEILING) then
+          if GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_CAP) and GetPlayerState(Owner, PLAYER_STATE_RESOURCE_FOOD_USED) < GetPlayerState(Owner, PLAYER_STATE_FOOD_CAP_CEILING) and GetUnitAbilityLevel(u, TOGGLE_BUFF) > 0 then
             set Mana = 0
             call spawnUnit()
           endif
@@ -155,6 +160,8 @@ library DemonGate requires T32, Math, Environment
       set this.GateType = DemonGateType.byUnitType[GetUnitTypeId(u)]
       call IssuePointOrder(u, "setrally", this.SpawnX, this.SpawnY)
       call startPeriodic()
+      call UnitAddAbility(u, TOGGLE_ABILITY)
+      call IssueImmediateOrder(u, "immolation")
       return this
     endmethod
 
