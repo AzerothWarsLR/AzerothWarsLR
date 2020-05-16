@@ -28,9 +28,8 @@ library Income initializer OnInit requires Persons
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, PERIOD, true)
-    call TriggerAddCondition(trig, Condition(function IncomeTimer))
+    local timer incomeTimer = CreateTimer()
+    call TimerStart(incomeTimer, PERIOD, true, function IncomeTimer)
   endfunction    
 
 endlibrary
