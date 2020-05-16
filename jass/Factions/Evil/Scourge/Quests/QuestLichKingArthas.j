@@ -16,6 +16,9 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
 
     call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
     set LEGEND_ARTHAS.UnitType = 'N023'
+    set LEGEND_ARTHAS.Hivemind = true
+    set LEGEND_ARTHAS.PermaDies = true
+    set LEGEND_ARTHAS.DeathMessage = "The indomitable Lich King has fallen. Without a central mind to dominate them, the forces of the Scourge have become feral."
     if tempArtifact != 0 then
       call UnitAddItem(LEGEND_ARTHAS.Unit, tempArtifact.item)
     endif
