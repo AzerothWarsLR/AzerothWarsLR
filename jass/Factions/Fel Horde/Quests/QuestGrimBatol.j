@@ -23,7 +23,6 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
 
   private function GiveGrimBatol takes player whichPlayer returns nothing
     local unit u
-    call DisplayTextToPlayer(whichPlayer, 0, 0, "The Dark Horde has been reformed once more! Zuluhed and the Dragonmaw Clan of Grim Batol have joined with Magtheridon's Fel Horde.")
     loop
       set u = FirstOfGroup(GrimBatolUnits)
       exitwhen u == null
@@ -61,6 +60,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     local trigger trig
     local integer i = 0
     local unit u = null
+    local group tempGroup = CreateGroup()
 
     set trig = CreateTrigger()
     call TriggerRegisterEnterRectSimple(trig, gg_rct_Grim_Batol)
@@ -68,18 +68,20 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
 
     //Setup initially invulnerable and hidden group at Grim Batol
     set GrimBatolUnits = CreateGroup()
-    call GroupEnumUnitsInRect(GrimBatolUnits, gg_rct_Grim_Batol, null)
+    call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
     loop
-      exitwhen i > BlzGroupGetSize(GrimBatolUnits)
-      set u = BlzGroupUnitAt(GrimBatolUnits, i)
+      set u = FirstOfGroup(GrimBatolUnits)
+      exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
         call SetUnitInvulnerable(u, true)
         call ShowUnit(u, false)
-      else
-        call GroupRemoveUnit(GrimBatolUnits, u)
+        call GroupAddUnit(GrimBatolUnits, u)
       endif
+      call GroupRemoveUnit(tempGroup, u)
       set i = i + 1
     endloop
+    call DestroyGroup(tempGroup)
+    set tempGroup = null
 
     //Capital death setup
     set trig = CreateTrigger()
