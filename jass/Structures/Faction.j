@@ -31,6 +31,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return PersonsByFaction[this]
     endmethod
 
+    method getQuestItemProgress takes QuestItemData questItemData returns integer
+      return questItemProgress[questItemData]
+    endmethod
+
     method setQuestItemStatus takes QuestItemData questItemData, integer progress, boolean display returns nothing
       if quests.contains(questItemData.parent) then
         set questItemProgress[questItemData] = progress
