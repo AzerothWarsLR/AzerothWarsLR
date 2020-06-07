@@ -6,14 +6,10 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     private QuestItemData QUESTITEM_GRIMBATOL_DARKSHIRE
     private QuestItemData QUESTITEM_GRIMBATOL_VISIT
 
+    private constant integer RESEARCH_ID = 'R069'
+
     private group GrimBatolUnits
   endglobals
-
-  private function EnableUnitForPlayer takes unit u, player p returns nothing
-    call ShowUnit(u, true)
-    call SetUnitInvulnerable(u, false)
-    call SetUnitOwner(u, p, true)
-  endfunction
 
   private function EnableWaygate takes unit u returns nothing
     call ShowUnit(u, true)
@@ -26,10 +22,10 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     loop
       set u = FirstOfGroup(GrimBatolUnits)
       exitwhen u == null
-      call EnableUnitForPlayer(u, whichPlayer)
+      call UnitRescue(u, whichPlayer)
       call GroupRemoveUnit(GrimBatolUnits, u)
     endloop
-    call EnableUnitForPlayer(gg_unit_n08A_3097, whichPlayer)  //Neltharauku
+    call UnitRescue(gg_unit_n08A_3097, whichPlayer)  //Neltharauku
     call SetUnitOwner(gg_unit_h01Z_0618, whichPlayer, true)
     call UnitDetermineLevel(gg_unit_O00Y_3094, 1.) //Zuluhed
     call EnableWaygate(gg_unit_n08R_2209) //Grim Batol Tunnels
@@ -37,14 +33,14 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     call IssueImmediateOrderBJ( gg_unit_o02O_3247, "battlestations" ) //Orc Burrow
     call IssueImmediateOrderBJ( gg_unit_o02O_3248, "battlestations" ) //Orc Burrow
     call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_GRIMBATOL_VISIT, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_FEL_HORDE.whichPerson.p, RESEARCH_ID, 1)
     call DestroyGroup(GrimBatolUnits)
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
-  private function Actions takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-    if triggerPerson.faction == FACTION_FEL_HORDE and not IsUnitAliveBJ(gg_unit_nrwm_1981) and not IsUnitAliveBJ(gg_unit_h05H_1847) and not IsUnitAliveBJ(gg_unit_h03Y_0077) then
-      call GiveGrimBatol(triggerPerson.p)
+  private function EntersRegion takes nothing returns nothing
+    if GetOwningPlayer(GetTriggerUnit()) == FACTION_FEL_HORDE.whichPerson.p and not IsUnitAliveBJ(gg_unit_nrwm_1981) and not IsUnitAliveBJ(gg_unit_h05H_1847) and not IsUnitAliveBJ(gg_unit_h03Y_0077) then
+      call GiveGrimBatol(FACTION_FEL_HORDE.whichPerson.p)
     endif
   endfunction
 
@@ -64,18 +60,20 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
 
     set trig = CreateTrigger()
     call TriggerRegisterEnterRectSimple(trig, gg_rct_Grim_Batol)
-    call TriggerAddAction(trig, function Actions)
+    call TriggerAddAction(trig, function EntersRegion)
 
     //Setup initially invulnerable and hidden group at Grim Batol
     set GrimBatolUnits = CreateGroup()
     call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
     loop
-      set u = FirstOfGroup(GrimBatolUnits)
+      set u = FirstOfGroup(tempGroup)
       exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
         call SetUnitInvulnerable(u, true)
-        call ShowUnit(u, false)
         call GroupAddUnit(GrimBatolUnits, u)
+        if IsUnitType(u, UNIT_TYPE_STRUCTURE) == false then
+          call ShowUnit(u, false)
+        endif
       endif
       call GroupRemoveUnit(tempGroup, u)
       set i = i + 1
