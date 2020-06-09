@@ -28,6 +28,7 @@ library FakeGlobals
     unit gg_unit_n05F_3538
     unit gg_unit_n04I_1038
     sound gg_snd_O04Grom26
+    rect gg_rct_Guldan
   endglobals
 
 endlibrary FakeGlobals
