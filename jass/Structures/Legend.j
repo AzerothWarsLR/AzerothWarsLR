@@ -21,6 +21,8 @@ library Legend requires GeneralHelpers
     private group diesWithout //This hero permanently dies if it dies without these under control]
     private trigger deathTrig
     private trigger castTrig
+    private trigger damageTrig
+    private boolean capturable
 
     public method operator PermaDies= takes boolean b returns nothing
       set permaDies = b
@@ -33,6 +35,10 @@ library Legend requires GeneralHelpers
 
     public method operator DeathMessage= takes string s returns nothing
       set deathMessage = s
+    endmethod
+
+    public method operator Capturable= takes boolean capturable returns nothing
+      set this.capturable = capturable
     endmethod
 
     public method operator Unit= takes unit u returns nothing
@@ -54,6 +60,11 @@ library Legend requires GeneralHelpers
         set castTrig = CreateTrigger()
         call TriggerRegisterUnitEvent(castTrig, unit, EVENT_UNIT_SPELL_FINISH)
         call TriggerAddAction(castTrig, function thistype.onUnitCast)
+        //Damage trig
+        call DestroyTrigger(damageTrig)
+        set damageTrig = CreateTrigger()
+        call TriggerRegisterUnitEvent(castTrig, unit, EVENT_UNIT_DAMAGING)
+        call TriggerAddAction(castTrig, function thistype.onUnitDamaging)
         //
         set thistype.ByHandle[GetHandleId(unit)] = this
       endif
@@ -84,6 +95,8 @@ library Legend requires GeneralHelpers
 
     public method operator UnitType= takes integer i returns nothing
       local unit newUnit
+      local real oldX
+      local real oldY
       if unit != null then
         set newUnit = CreateUnit(OwningPlayer, i, GetUnitX(unit), GetUnitY(unit), GetUnitFacing(unit))
         call SetUnitState(newUnit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_LIFE))
@@ -91,14 +104,17 @@ library Legend requires GeneralHelpers
         call SetHeroXP(newUnit, GetHeroXP(unit), false)
         call UnitTransferItems(unit, newUnit)
         call refreshDummy()
+        set oldX = GetUnitX(this.unit)
+        set oldY = GetUnitY(this.unit)
         call RemoveUnit(unit)
         set Unit = newUnit
+        call SetUnitPosition(this.unit, oldX, oldY)
       endif
       set unitType = i
     endmethod
 
     public method operator OwningFaction takes nothing returns Faction
-      return Persons[GetPlayerId(GetOwningPlayer(unit))].faction
+      return Persons[GetPlayerId(GetOwningPlayer(unit))].Faction
     endmethod
 
     public method operator OwningPerson takes nothing returns Person
@@ -112,7 +128,6 @@ library Legend requires GeneralHelpers
     public method Spawn takes player owner, real x, real y, real face returns nothing
       if Unit == null then
         set Unit = CreateUnit(owner, unitType, x, y, face)
-        call UnitDetermineLevel(unit, 1.)
       elseif not UnitAlive(Unit) then
         call ReviveHero(Unit, x, y, false)
       else
@@ -158,9 +173,19 @@ library Legend requires GeneralHelpers
       call DestroyEffect(tempEffect)
       call UnitDropAllItems(unit)
       call RemoveUnit(unit)
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
+      if this.deathMessage != "" then
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
+      endif
       if hivemind then
         call OwningPerson.obliterate()
+      endif
+    endmethod
+
+    private method onDamaging takes nothing returns nothing
+      if capturable and GetEventDamage() >= GetUnitState(unit, UNIT_STATE_LIFE) then
+        call SetUnitOwner(unit, GetOwningPlayer(GetEventDamageSource()), true)
+        call BlzSetEventDamage(0)
+        call SetUnitState(unit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_MAX_LIFE))
       endif
     endmethod
 
@@ -185,7 +210,7 @@ library Legend requires GeneralHelpers
       local boolean anyOwned = false
       local unit u
       
-      if permaDies then
+      if permaDies or not IsUnitType(this.unit, UNIT_TYPE_HERO) then
         call permaDeath()
         return
       endif
@@ -207,6 +232,10 @@ library Legend requires GeneralHelpers
         call DestroyGroup(tempGroup)
         set tempGroup = null
       endif
+    endmethod
+
+    private static method onUnitDamaging takes nothing returns nothing
+      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDamaging()
     endmethod
 
     private static method onUnitDeath takes nothing returns nothing
