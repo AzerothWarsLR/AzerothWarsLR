@@ -27,6 +27,7 @@ library FakeGlobals
     unit gg_unit_n03T_0555
     unit gg_unit_n05F_3538
     unit gg_unit_n04I_1038
+    sound gg_snd_O04Grom26
   endglobals
 
 endlibrary FakeGlobals
