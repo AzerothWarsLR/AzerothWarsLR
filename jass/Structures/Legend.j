@@ -2,11 +2,14 @@
 //A Legend might have other units it relies on to survive. If so, when it dies, it gets removed if those units are not under control.
 //There is a dummy ability to represent this.
 
-library Legend requires GeneralHelpers
+library Legend initializer OnInit requires GeneralHelpers, Event
 
   globals
     private constant integer DUMMY_DIESWITHOUT = 'LEgn'
     private constant integer DUMMY_PERMADIES = 'LEgo'
+
+    private Legend TriggerLegend = 0
+    Event OnLegendChangeOwner
   endglobals
 
   struct Legend
@@ -19,6 +22,7 @@ library Legend requires GeneralHelpers
     private boolean permaDies = false
     private boolean hivemind = false  //This hero causes the death of its own faction if it dies
     private group diesWithout //This hero permanently dies if it dies without these under control]
+    private trigger ownerTrig
     private trigger deathTrig
     private trigger castTrig
     private trigger damageTrig
@@ -63,8 +67,13 @@ library Legend requires GeneralHelpers
         //Damage trig
         call DestroyTrigger(damageTrig)
         set damageTrig = CreateTrigger()
-        call TriggerRegisterUnitEvent(castTrig, unit, EVENT_UNIT_DAMAGING)
+        call TriggerRegisterUnitEvent(damageTrig, unit, EVENT_UNIT_DAMAGING)
         call TriggerAddAction(castTrig, function thistype.onUnitDamaging)
+        //Ownership change trig
+        call DestroyTrigger(ownerTrig)
+        set ownerTrig = CreateTrigger()
+        call TriggerRegisterUnitEvent(ownerTrig, unit, EVENT_UNIT_CHANGE_OWNER)
+        call TriggerAddAction(ownerTrig, function thistype.onUnitChangeOwner)
         //
         set thistype.ByHandle[GetHandleId(unit)] = this
       endif
@@ -181,6 +190,11 @@ library Legend requires GeneralHelpers
       endif
     endmethod
 
+    private method onChangeOwner takes nothing returns nothing
+      set TriggerLegend = this
+      call OnLegendChangeOwner.fire()
+    endmethod
+
     private method onDamaging takes nothing returns nothing
       if capturable and GetEventDamage() >= GetUnitState(unit, UNIT_STATE_LIFE) then
         call SetUnitOwner(unit, GetOwningPlayer(GetEventDamageSource()), true)
@@ -234,6 +248,10 @@ library Legend requires GeneralHelpers
       endif
     endmethod
 
+    private static method onUnitChangeOwner takes nothing returns nothing
+      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onChangeOwner()
+    endmethod
+
     private static method onUnitDamaging takes nothing returns nothing
       call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDamaging()
     endmethod
@@ -265,5 +283,13 @@ library Legend requires GeneralHelpers
       return this
     endmethod
   endstruct
+
+  function GetTriggerLegend takes nothing returns Legend
+    return TriggerLegend
+  endfunction
+
+  private function OnInit takes nothing returns nothing
+    set OnLegendChangeOwner = Event.create()
+  endfunction
 
 endlibrary
