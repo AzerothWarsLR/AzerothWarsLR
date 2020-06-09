@@ -5,6 +5,22 @@ library GeneralHelpers
     private force DestForce = null
   endglobals
   
+  function PlayDialogue takes player whichPlayer, sound whichSound, string speakerName, string caption returns nothing
+    if GetLocalPlayer() == whichPlayer then
+      call StartSound(whichSound)
+      call DisplayTimedTextToPlayer(whichPlayer, 0, 0, GetSoundDuration(whichSound) / 1000, "\n|cffffcc00" + speakerName + ":|r " + caption)
+    endif
+  endfunction
+
+  function CreateUnits takes player whichPlayer, integer unitId, real x, real y, real face, integer count returns nothing
+    local integer i = 0
+    loop
+      exitwhen i == count
+      call CreateUnit(whichPlayer, unitId, x, y, face)
+      set i = i + 1
+    endloop
+  endfunction
+
   function GetRectRandomY takes rect whichRect returns real
     return GetRandomReal(GetRectMinY(whichRect), GetRectMaxY(whichRect))
   endfunction
