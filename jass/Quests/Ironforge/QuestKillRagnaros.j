@@ -9,7 +9,7 @@ library QuestKillRagnaros initializer OnInit requires QuestData, IronforgeConfig
   private function FrozenThroneDies takes nothing returns nothing
     if FACTION_IRONFORGE.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
       call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_IRONFORGE.p, RESEARCH_ID, 1)
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH_ID, 1)
     else
       call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
     endif
