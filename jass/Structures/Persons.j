@@ -35,6 +35,14 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     private real partialGold = 0              //Just used for income calculations
     readonly group cpGroup                    //Group of control point units this person owns  
 
+    method operator Faction takes nothing returns Faction
+      return this.faction
+    endmethod
+
+    method operator Team takes nothing returns Team
+      return this.team
+    endmethod
+
     method modObjectLimit takes integer id, integer limit returns nothing
       if this.objectLimits.exists(id) then
         set this.objectLimits[id] = this.objectLimits[id] + limit
