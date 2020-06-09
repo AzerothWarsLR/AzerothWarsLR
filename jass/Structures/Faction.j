@@ -27,8 +27,13 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly Set quests
     readonly Table questItemProgress
 
-    method operator whichPerson takes nothing returns Person
+    method operator Person takes nothing returns Person
       return PersonsByFaction[this]
+    endmethod
+
+    //DEPRECATED
+    method operator whichPerson takes nothing returns Person
+      return this.Person
     endmethod
 
     method getQuestItemProgress takes QuestItemData questItemData returns integer
