@@ -11,24 +11,15 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
   private function EntersRegion takes nothing returns nothing
     local unit triggerUnit = GetTriggerUnit()
 
-    if triggerUnit == LEGEND_ARTHAS.Unit and LEGEND_ARTHAS.UnitType == 'Hart' then
-      if not UnitAlive(gg_unit_u000_0649) then
-        set LEGEND_ARTHAS.UnitType = 'Harf'
-        //Give Crown of Lordaeron
-        if ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.whichPerson then
-          call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
-          call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
-        endif
-
-        //Update quest
-        call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_VISIT, QUEST_PROGRESS_COMPLETE, true)
-        
-        //Kill Terenas
-        call KillUnit(gg_unit_nemi_0019)
-
-        //Cleanup
-        call DestroyTrigger(GetTriggeringTrigger())
+    if triggerUnit == LEGEND_ARTHAS.Unit and LEGEND_ARTHAS.OwningFaction == FACTION_LORDAERON and FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_KINGARTHAS_VISIT) == QUEST_PROGRESS_INCOMPLETE and FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_KINGARTHAS_DESTROY) == QUEST_PROGRESS_COMPLETE and FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_KINGARTHAS_PROTECT) == QUEST_PROGRESS_COMPLETE then
+      set LEGEND_ARTHAS.UnitType = 'Harf'
+      if ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.Person then
+        call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
+        call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
       endif
+      call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_VISIT, QUEST_PROGRESS_COMPLETE, true) 
+      call KillUnit(gg_unit_nemi_0019)  //King Terenas
+      call DestroyTrigger(GetTriggeringTrigger())
     endif
 
     set triggerUnit = null
