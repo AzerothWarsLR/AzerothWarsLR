@@ -6,7 +6,6 @@ library LordaeronConfig initializer OnInit requires Faction
 
   private function OnInit takes nothing returns nothing
     local Faction f
-    
     set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_LIGHT_BLUE, "|c007ebff1","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
     set f.AbsenceResearch = 'R045'
@@ -54,6 +53,7 @@ library LordaeronConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R00I', UNLIMITED)   //Light's Praise Initiate Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.registerObjectLimit('R01P', UNLIMITED)   //Second Chance
+    call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
     call f.registerObjectLimit('Rhan', UNLIMITED)   //Animal War Training
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
@@ -75,4 +75,3 @@ library LordaeronConfig initializer OnInit requires Faction
   endfunction
     
 endlibrary
-

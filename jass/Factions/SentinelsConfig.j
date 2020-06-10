@@ -41,16 +41,18 @@ library SentinelsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ensh', 1)           //Naisha
 
     call f.registerObjectLimit('R00S', UNLIMITED)   //Priestess Adept Training
+    call f.registerObjectLimit('R064', UNLIMITED)   //Sentinel Fortifications
     call f.registerObjectLimit('R01W', UNLIMITED)   //Trapper Adept Training  
     call f.registerObjectLimit('R026', UNLIMITED)   //Elune's Power Infusion
     call f.registerObjectLimit('Reib', UNLIMITED)   //Improved Bows
-    call f.registerObjectLimit('Resc', UNLIMITED)   //Sentinel
+    call f.registerObjectLimit('Resc', -UNLIMITED)   //Sentinel
     call f.registerObjectLimit('Reuv', UNLIMITED)   //Ultravision
     call f.registerObjectLimit('Remg', UNLIMITED)   //Upgraded Moon Glaive
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
     call f.registerObjectLimit('R04E', UNLIMITED)   //Ysera's Gift (World Tree upgrade)
+    call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
 
-    call f.registerObjectLimit('R00U', UNLIMITED)   //Aerial Expertise Mastery
+    call f.registerObjectLimit('R01J', UNLIMITED)   //Warden Mastery
     call f.registerObjectLimit('R007', UNLIMITED)   //Lost Heritage Mastery
     call f.registerObjectLimit('R03J', UNLIMITED)   //Wind COntrol Mastery
     

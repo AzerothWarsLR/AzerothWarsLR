@@ -1,5 +1,3 @@
-
-
 library QuelthalasConfig initializer OnInit requires Faction
 
   globals
@@ -8,10 +6,8 @@ library QuelthalasConfig initializer OnInit requires Faction
 
   private function OnInit takes nothing returns nothing
     local Faction f
-    
     set FACTION_QUELTHALAS = Faction.create("Quel'thelas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
     set f = FACTION_QUELTHALAS
-
     set f.AbsenceResearch = 'R04L'
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -30,6 +26,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('nheb', UNLIMITED)   //High Elven Barracks
     call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('nefm', UNLIMITED)   //Elven Farm
+    call f.registerObjectLimit('n06Y', 2)           //Healing Spire
 
     //Units
     call f.registerObjectLimit('nbee', UNLIMITED)   //Elven Worker
@@ -48,6 +45,8 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('n048', 6)           //Blood Mage 
     call f.registerObjectLimit('hspt', 12)          //Spell Breaker   
     call f.registerObjectLimit('nggr', 4)           //Granite Golem    
+    call f.registerObjectLimit('u00J', 2)           //Arcane Wagon
+    call f.registerObjectLimit('h02C', 0)           //Flagship 
 
     call f.registerObjectLimit('h052', 1)           //Dar'kan
     call f.registerObjectLimit('n075', 1)           //Vareesa 
@@ -78,4 +77,3 @@ library QuelthalasConfig initializer OnInit requires Faction
   endfunction
     
 endlibrary
-

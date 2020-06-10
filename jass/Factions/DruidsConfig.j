@@ -7,7 +7,7 @@ library DruidsConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_NAVY, "|CFF000080","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
+    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BLUE, "|c000000FF","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
   
     set f.AbsenceResearch = 'R05T' 
@@ -38,7 +38,7 @@ library DruidsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
     call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
-    call f.registerObjectLimit('e00X', 3)  	      //Elemental Guardian
+    call f.registerObjectLimit('e00X', 0)  	    //Elemental Guardian
     call f.registerObjectLimit('e012', 6)           //Siege Ancient
 
     call f.registerObjectLimit('e015', 1)           //Broll
@@ -48,15 +48,16 @@ library DruidsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rers', UNLIMITED)   //Resistant Skin
     call f.registerObjectLimit('Reuv', UNLIMITED)   //Ultravision
     call f.registerObjectLimit('Rews', UNLIMITED)   //Well Spring
-    call f.registerObjectLimit('R026', UNLIMITED)   //Elune's Power Infusion
+    call f.registerObjectLimit('R01H', UNLIMITED)   //Malorne's Power Infusion
     call f.registerObjectLimit('R02G', UNLIMITED)   //Druid of the Growth Adept Training
     call f.registerObjectLimit('R00A', UNLIMITED)   //Wild Instincts
     call f.registerObjectLimit('R04E', UNLIMITED)   //Ysera's Gift
     call f.registerObjectLimit('R05X', UNLIMITED)   //Blessing of Ursoc
+    call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
 
-    call f.registerObjectLimit('R019', UNLIMITED)   //Feral Mastery 
-    call f.registerObjectLimit('R018', UNLIMITED)   //Bonding Mastery
-    call f.registerObjectLimit('R00V', UNLIMITED)   //Balance Mastery 
+    call f.registerObjectLimit('R019', UNLIMITED)   //Ursoc Mastery 
+    call f.registerObjectLimit('R018', UNLIMITED)   //Emerald Mastery
+    call f.registerObjectLimit('R00V', UNLIMITED)   //Cenarian Mastery 
     
     call f.registerObjectLimit('R04H', UNLIMITED)   //Night Elves United
   endfunction

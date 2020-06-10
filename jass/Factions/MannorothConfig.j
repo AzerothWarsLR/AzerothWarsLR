@@ -1,4 +1,5 @@
 library MannorothConfig initializer OnInit requires Faction
+
   globals
     Faction FACTION_MANNOROTH
   endglobals
@@ -26,12 +27,12 @@ library MannorothConfig initializer OnInit requires Faction
 
       call f.registerObjectLimit('o00E', UNLIMITED)   //Peon
       call f.registerObjectLimit('o00S', UNLIMITED)   //Raider
-      call f.registerObjectLimit('n03L', UNLIMITED)   //Orc Warlock
+      call f.registerObjectLimit('n03L', -UNLIMITED)  //Orc Warlock
       call f.registerObjectLimit('nftk', 12)          //Darkspear Warlord
+      call f.registerObjectLimit('n08E', UNLIMITED)   //Hexbinder
       call f.registerObjectLimit('otbk', UNLIMITED)   //Troll Berseker
-      call f.registerObjectLimit('nogo', UNLIMITED)   //Stonemaul SOldier
+      call f.registerObjectLimit('nogo', UNLIMITED)   //Stonemaul Soldier
       call f.registerObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
-      call f.registerObjectLimit('n03R', 6)           //Orc Champion
       call f.registerObjectLimit('o00P', UNLIMITED)   //Warsong Grunt
       call f.registerObjectLimit('o00I', 6)           //Horde War Machine
       call f.registerObjectLimit('n061', 12)          //Goblin Sapper
@@ -41,12 +42,11 @@ library MannorothConfig initializer OnInit requires Faction
       call f.registerObjectLimit('ojgn', 12)          //Juggernaught
       call f.registerObjectLimit('o005', 6)           //Blademaster
       call f.registerObjectLimit('n03F', 6)           //Ogre Lord
-      call f.registerObjectLimit('nckb', 2)           //Kodo
       call f.registerObjectLimit('nzep', 2)           //Goblin Zeppelin
 
       call f.registerObjectLimit('n065', 1)           //Drazilb
       call f.registerObjectLimit('o01R', 1)           //Nazgrel
-      call f.registerObjectLimit('h04E', 1)           //Chen
+      call f.registerObjectLimit('nckb', 1)           //Kodo Beast
 
       call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
       call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
@@ -54,7 +54,7 @@ library MannorothConfig initializer OnInit requires Faction
       call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
       call f.registerObjectLimit('Rwdm', UNLIMITED)   //War Drums
       call f.registerObjectLimit('R02I', UNLIMITED)   //Ogre Magi Adept Training
-      call f.registerObjectLimit('R03Q', UNLIMITED)   //Warlock Adept Training
+      call f.registerObjectLimit('R03Q', UNLIMITED)   //Hexbinder Adept Training
       call f.registerObjectLimit('Rorb', UNLIMITED)   //Reinforced Defenses
       call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
 

@@ -29,12 +29,11 @@ library NewHordeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
     call f.registerObjectLimit('otau', UNLIMITED)   //Tauren
     call f.registerObjectLimit('ohun', UNLIMITED)   //Troll Headhunter
-    call f.registerObjectLimit('h04M', 9)           //Dynamite Team
-    call f.registerObjectLimit('okod', 2)           //Kodo Beast
+    call f.registerObjectLimit('h04M', -UNLIMITED)  //Dynamite Team
     call f.registerObjectLimit('nzep', 2)           //Goblin Zeppelin
-    call f.registerObjectLimit('owyv', 6)           //Wind Rider
+    call f.registerObjectLimit('owyv', 8)           //Wind Rider
+    call f.registerObjectLimit('otbr', 12)          //Troll Batrider
     call f.registerObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
-    call f.registerObjectLimit('otbr', 6)           //Troll Batrider
     call f.registerObjectLimit('odoc', UNLIMITED)   //Troll Witch Doctor
     call f.registerObjectLimit('oshm', UNLIMITED)   //Shaman
     call f.registerObjectLimit('ospw', UNLIMITED)   //Spirit Walker
@@ -47,11 +46,12 @@ library NewHordeConfig initializer OnInit requires Faction
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
     call f.registerObjectLimit('o01R', 1)           //Nazgrel
+    call f.registerObjectLimit('okod', 1)           //Kodo Beast
 
     call f.registerObjectLimit('Rolf', UNLIMITED)   //Liquid Fire
-    call f.registerObjectLimit('Robs', UNLIMITED)   //Berseker Strength
+    call f.registerObjectLimit('R065', 0)           //War Armaments
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
-    call f.registerObjectLimit('Rows', UNLIMITED)   //Pulverize
+    call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
     call f.registerObjectLimit('R02I', UNLIMITED)   //Ogre Magi Adept Training
@@ -69,10 +69,6 @@ library NewHordeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R01O', UNLIMITED)   //Age of Prosperity
     call f.registerObjectLimit('R02T', UNLIMITED)   //Season of Thunder
     call f.registerObjectLimit('R02R', UNLIMITED)   //Voodic Command
-
-    call f.registerObjectLimit('R04X', UNLIMITED)   //Tauren Elite Mastery
-    call f.registerObjectLimit('R04Y', UNLIMITED)   //Warrior Ascendance Mastery
-    call f.registerObjectLimit('R04Z', UNLIMITED)   //Elemental Connection Mastery
     
     call f.registerObjectLimit('R021', UNLIMITED)   //Horde War Machine
     call f.registerObjectLimit('Rhfs', UNLIMITED)   //Dragmentation Shards

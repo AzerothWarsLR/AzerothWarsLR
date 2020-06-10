@@ -8,8 +8,9 @@ library IronforgeConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
+    set FACTION_IRONFORGE = Faction.create("Khaz Modan", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
     set f = FACTION_IRONFORGE
+    set f.AbsenceResearch = 'R01B'
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -53,6 +54,8 @@ library IronforgeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('h041', 12)          //Fire Tank
     call f.registerObjectLimit('h01P', 3)           //Steam Tank
     call f.registerObjectLimit('n00C', 6)           //Rune Priest
+    call f.registerObjectLimit('nsgg', 2)           //Siege Golem
+    call f.registerObjectLimit('h02C', 0)           //Flagship 
 
     call f.registerObjectLimit('h01M', 1)           //Baelgun
 
@@ -67,6 +70,7 @@ library IronforgeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('Rhri', UNLIMITED)   //Long Rifles
     call f.registerObjectLimit('Rhhb', UNLIMITED)   //Storm Hammers
+    call f.registerObjectLimit('R063', UNLIMITED)   //Thunder Ale
 
     //Excavation
     call f.registerObjectLimit('R035', UNLIMITED)   //Gunpowder Innovation

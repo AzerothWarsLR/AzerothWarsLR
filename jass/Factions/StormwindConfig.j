@@ -7,7 +7,7 @@ library StormwindConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
+    set FACTION_STORMWIND = Faction.create("Arathor", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
     set f = FACTION_STORMWIND
     set f.AbsenceResearch = 'R03M'
 
@@ -42,14 +42,14 @@ library StormwindConfig initializer OnInit requires Faction
     call f.registerObjectLimit('h01B', UNLIMITED)   //Outriders
     call f.registerObjectLimit('h05F', 6)           //Stormwind Champion
     call f.registerObjectLimit('h00J', UNLIMITED)   //Clergyman
-    call f.registerObjectLimit('n06N', 6)           //Zeppelin
+    call f.registerObjectLimit('n06N', 6)           //Gyrobomber
     call f.registerObjectLimit('n093', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('hbot', UNLIMITED)   //Alliance Transport Ship
     call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
-    call f.registerObjectLimit('h060', 1)           //Arathor Flagship
+    call f.registerObjectLimit('h060', 3)           //Arathor Flagship
     call f.registerObjectLimit('o003', 8)           //War wagon
-    call f.registerObjectLimit('n0A4', UNLIMITED)   //Wizard
+    call f.registerObjectLimit('n0A4', 12)   	    //Wizard
 
     call f.registerObjectLimit('h04W', 1)           //Crowley
     call f.registerObjectLimit('h03W', 1)           //Danath
@@ -86,4 +86,3 @@ library StormwindConfig initializer OnInit requires Faction
   endfunction
     
 endlibrary
-

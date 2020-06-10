@@ -1,4 +1,3 @@
-
 library NightElfConfig initializer OnInit requires Faction
 
   globals
@@ -26,7 +25,7 @@ library NightElfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('e000', UNLIMITED)   //Improved Ancient Protector 
 
     call f.registerObjectLimit('ewsp', UNLIMITED)   //Wisp 
-    call f.registerObjectLimit('edry', 24)  	      //Dryad
+    call f.registerObjectLimit('edry', 24)  	    //Dryad
     call f.registerObjectLimit('echm', 4)           //Chimaera
     call f.registerObjectLimit('edot', UNLIMITED)   //Druid of the Talon 
     call f.registerObjectLimit('emtg', 12)          //Mountain Giant
@@ -41,7 +40,6 @@ library NightElfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
     call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 24)          //Night Elf Battleship
-    call f.registerObjectLimit('e00X', 3)  	      //Elemental Guardian
     call f.registerObjectLimit('e012', 6)           //Siege Ancient
 
     call f.registerObjectLimit('e015', 1)           //Broll
@@ -51,18 +49,18 @@ library NightElfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Renb', UNLIMITED)   //Nature's Blessing
     call f.registerObjectLimit('Rers', UNLIMITED)   //Resistant Skin
     call f.registerObjectLimit('Reuv', UNLIMITED)   //Ultravision
-    call f.registerObjectLimit('R026', UNLIMITED)   //Elune's Power Infusion
+    call f.registerObjectLimit('R01H', UNLIMITED)   //Malorne's Power Infusion
     call f.registerObjectLimit('R02G', UNLIMITED)   //Druid of the Growth Adept Training
     call f.registerObjectLimit('R04E', UNLIMITED)   //Ysera's Gift
     call f.registerObjectLimit('Reib', UNLIMITED)   //Improved Bows
-    call f.registerObjectLimit('Resc', UNLIMITED)   //Sentinel
     call f.registerObjectLimit('Remg', UNLIMITED)   //Upgraded Moon Glaive
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
-    call f.registerObjectLimit('R05X', UNLIMITED)   //Blessing of Ursoc
+    call f.registerObjectLimit('R05X', UNLIMITED)   //Blessing of Ursol
+    call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
 
-    call f.registerObjectLimit('R00V', UNLIMITED)   //Balance Mastery 
-    call f.registerObjectLimit('R04H', UNLIMITED)   //Night Elves United
-    call f.registerObjectLimit('R04P', UNLIMITED)   //Sentinel Buff
-    call f.registerObjectLimit('R04O', UNLIMITED)   //Nature Buff
+    call f.registerObjectLimit('R019', UNLIMITED)   //Ursoc Mastery 
+    call f.registerObjectLimit('R018', UNLIMITED)   //Emerald Mastery
+    call f.registerObjectLimit('R00V', UNLIMITED)   //Cenarian Mastery 
+    
   endfunction
 endlibrary
