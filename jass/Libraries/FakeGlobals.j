@@ -33,6 +33,10 @@ library FakeGlobals
     trigger gg_trg_Lordaeron_West
     trigger gg_trg_Lordaeron_West_post_tier
     trigger gg_trg_Lordaeron_East_post_tier
+    unit gg_unit_h055_0035 
+    unit gg_unit_h053_1121 
+    unit udg_HeadquartersORHall 
+    unit udg_SanctumORCathedral 
   endglobals
 
 endlibrary FakeGlobals
