@@ -1,4 +1,4 @@
-library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig
+library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R02N'
@@ -8,7 +8,7 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig
     local player frostwolfPlayer
     if GetResearched() == RESEARCH_ID then
       set frostwolfPlayer = FACTION_FROSTWOLF.Person.p
-      call DisplayTextToPlayer(frostwolfPlayer, 0, 0, "Thrall has reformed the Horde of Kalimdor, and has united the various races into a uniform force.")
+      call DisplaySoloPath(FACTION_FROSTWOLF, "Thrall has reformed the Horde of Kalimdor, and has united the various races into a uniform force.")
       call LEGEND_GAZLOWE.Spawn(frostwolfPlayer, GetRectCenterX(gg_rct_Orgrimmar), GetRectCenterY(gg_rct_Orgrimmar), 0)
       call LEGEND_REXXAR.Spawn(frostwolfPlayer, GetRectCenterX(gg_rct_Orgrimmar), GetRectCenterY(gg_rct_Orgrimmar), 0)
     endif
