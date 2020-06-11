@@ -37,6 +37,8 @@ library FakeGlobals
     unit gg_unit_h053_1121 
     unit udg_HeadquartersORHall 
     unit udg_SanctumORCathedral 
+    trigger gg_trg_Flagship_Construction
+    trigger gg_trg_Bombing_Run
   endglobals
 
 endlibrary FakeGlobals
