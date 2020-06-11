@@ -39,6 +39,8 @@ library FakeGlobals
     unit udg_SanctumORCathedral 
     trigger gg_trg_Flagship_Construction
     trigger gg_trg_Bombing_Run
+    unit gg_unit_n081_4074
+    unit gg_unit_n081_1585
   endglobals
 
 endlibrary FakeGlobals
