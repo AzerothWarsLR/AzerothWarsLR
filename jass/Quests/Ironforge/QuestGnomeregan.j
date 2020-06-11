@@ -8,38 +8,23 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig
   private function Actions takes nothing returns nothing
     local group tempGroup = CreateGroup()
     local unit u
-    local Person tempPerson = 0
-    local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-    if PersonsByFaction[FACTION_IRONFORGE] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
-      set recipient = tempPerson.p
-    elseif PersonsByFaction[FACTION_STORMWIND] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_STORMWIND]                 
-      set recipient = tempPerson.p                                
-    endif
-
-    //Transfer all Neutral Passive units in Gnomeregan to one of the above factions
+    //Transfer all Neutral Passive units in Gnomeregan to Ironforge
     call GroupEnumUnitsInRect(tempGroup, gg_rct_Gnomergan, null)
     set u = FirstOfGroup(tempGroup)
     loop
     exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-        call SetUnitInvulnerable(u, false)
-        call SetUnitOwner(u, recipient, true)
+        call UnitRescue(u, FACTION_IRONFORGE.Person.p)
       endif
       call GroupRemoveUnit(tempGroup, u)
       set u = FirstOfGroup(tempGroup)
     endloop
-    //Give resources and display message
+    call DestroyGroup(tempGroup)
+    set tempGroup = null
     call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_GNOMEREGAN, QUEST_PROGRESS_COMPLETE, true)    
-    call SetPlayerTechResearched(recipient, 'R05Q', 1) 
-
-    //Cleanup
-    call DestroyGroup (TempGroup)
-    call DestroyTrigger(GetTriggeringTrigger())      
-    set recipient = null
-    set tempGroup = null        
+    call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, 'R05Q', 1) 
+    call DestroyTrigger(GetTriggeringTrigger())            
   endfunction
 
   private function OnInit takes nothing returns nothing
