@@ -1,55 +1,51 @@
-library EventWildhammer
+library EventWildhammer requires IronforgeConfig, LegendIronforge
 
-    //Ironforge gains Falstad Wildhammer, access to the Wildhammer FactionMod, and all units in Aerie Peak.
-    //If Ironforge is not in the game, then Stormwind gains the units only.
-    //This event is called by other events. 
+  //Ironforge gains Falstad Wildhammer, access to the Wildhammer FactionMod, and all units in Aerie Peak.
 
-    globals
-        private constant integer RESEARCH = 'RO1T'
-    endglobals
+  globals
+    private constant integer RESEARCH = 'A0UC'
+  endglobals
 
-    function DoWildhammer takes nothing returns nothing
-        local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-        local Person tempPerson = 0
-        local unit falstad = null
-        local group tempGroup = CreateGroup()
-        local unit u = null
+  private function Cast takes nothing returns nothing
+    local group tempGroup
+    local unit u
 
-        if PersonsByFaction[FACTION_IRONFORGE] != 0 then                    //Ironforge
-            set tempPerson = PersonsByFaction[FACTION_IRONFORGE]
-            set recipient = tempPerson.p
-            call FACTION_IRONFORGE.applyFactionMod(FACTIONMOD_WILDHAMMER)      //Wildhammer
-            set falstad = CreateUnit(recipient, 'H028', 14081, 4580, 35)
-            call SetHeroXP(falstad, GetHeroXP(gg_unit_H00S_1948), false)        //Set experience of Falstad to be the same as Magni
-            call SetPlayerTechResearched(recipient, RESEARCH, 1)                      
+    if GetSpellAbilityId() == 'A0UC' then
+      call LEGEND_FALSTAD.Spawn(FACTION_IRONFORGE.Person.p, 14081, 4580, 35)
+      call SetHeroXP(LEGEND_FALSTAD.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
+      call FACTION_IRONFORGE.modObjectLimit('n04F', UNLIMITED)      //Wildhammer War Golem
+      call FACTION_IRONFORGE.modObjectLimit('hgry', 3)              //Gryphon Rider
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)
+
+      //Remove pathing blockers obstructing Aerie Peak
+      call RemoveDestructable( gg_dest_YTpc_7559 )
+      call RemoveDestructable( gg_dest_YTpc_2065 )
+      call RemoveDestructable( gg_dest_YTpc_2067 )
+      call RemoveDestructable( gg_dest_YTpc_12037 )
+
+      //Transfer all Neutral Passive units in region to Ironforge
+      set tempGroup = CreateGroup()
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_Aerie_Peak, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, FACTION_IRONFORGE.Person.p)
         endif
-
-        //Remove pathing blockers obstructing Aerie Peak
-        call RemoveDestructable( gg_dest_YTpc_7559 )
-        call RemoveDestructable( gg_dest_YTpc_2065 )
-        call RemoveDestructable( gg_dest_YTpc_2067 )
-        call RemoveDestructable( gg_dest_YTpc_12037 )
-
-        //Transfer all Neutral Passive units in region to one of the above factions
-        call GroupEnumUnitsInRect(tempGroup, gg_rct_Aerie_Peak, null)
+        call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
-        loop
-        exitwhen u == null
-            if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-                call SetUnitInvulnerable(u, false)
-                call SetUnitOwner(u, recipient, true)
-            endif
-            call GroupRemoveUnit(tempGroup, u)
-            set u = FirstOfGroup(tempGroup)
-        endloop
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
 
-        //Give resources and display message
-        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "King Magni Bronzebeard has traveled to Aerie Peak and enlisted the aid of his Dwarven brethern.")
+      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "King Magni Bronzebeard has traveled to Aerie Peak and enlisted the aid of his Dwarven brethern.")
+    endif
+  endfunction
 
-        //Cleanup
-        set falstad = null
-        call DestroyGroup(tempGroup)
-        set tempGroup = null
-    endfunction
+  private function OnInit takes nothing returns nothing
+    local trigger trig = CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( trig, Condition(function Cast))
+  endfunction 
 
 endlibrary
