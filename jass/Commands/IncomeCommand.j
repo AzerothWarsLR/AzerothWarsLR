@@ -11,7 +11,7 @@ library IncomeCommand initializer OnInit requires Income
 
     call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income before tax: " + "|r" + R2S(whichPerson.income) + " gold per minute")
     call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Team size factor: " + "|rx" + R2S(teamMult))
-    call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income after tax: " + "|r" + R2S(whichPerson.income * teamMult * upkeepMult) + " gold per minute")
+    call DisplayTextToPlayer(whichPerson.p, 0, 0, INFO_COLOR + "Income after tax: " + "|r" + R2S(whichPerson.income * teamMult) + " gold per minute")
   endfunction
 
   private function OnInit takes nothing returns nothing
