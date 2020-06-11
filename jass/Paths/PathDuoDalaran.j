@@ -8,7 +8,7 @@ library PathDuoDalaran initializer OnInit requires DalaranConfig, Display
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID_STEEL or GetResearched() == RESEARCH_ID_STONE then
-      set tempPlayer = FACTION_STORMWIND.Person.p
+      set tempPlayer = FACTION_DALARAN.Person.p
       call FACTION_DALARAN.modObjectLimit('h01H', 0)           //Fleet Commander
       call FACTION_DALARAN.modObjectLimit('h06F', UNLIMITED)   //Kul Tiras Rifleman
       call FACTION_DALARAN.modObjectLimit('h034', -UNLIMITED)  //Harpooner
