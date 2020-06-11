@@ -29,6 +29,10 @@ library FakeGlobals
     unit gg_unit_n04I_1038
     sound gg_snd_O04Grom26
     rect gg_rct_Guldan
+    trigger gg_trg_Lordaeron_East
+    trigger gg_trg_Lordaeron_West
+    trigger gg_trg_Lordaeron_West_post_tier
+    trigger gg_trg_Lordaeron_East_post_tier
   endglobals
 
 endlibrary FakeGlobals

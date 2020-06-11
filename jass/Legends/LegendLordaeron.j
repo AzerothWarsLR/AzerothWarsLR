@@ -3,6 +3,7 @@ library LegendLordaeron initializer OnInit requires Legend
   globals
     Legend LEGEND_UTHER
     Legend LEGEND_ARTHAS
+    Legend LEGEND_MOGRAINE
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -13,6 +14,8 @@ library LegendLordaeron initializer OnInit requires Legend
   
     set LEGEND_ARTHAS = Legend.create()
     set LEGEND_ARTHAS.Unit = gg_unit_Hart_1342
+
+    set LEGEND_MOGRAINE = Legend.create()
   endfunction
 
 endlibrary
