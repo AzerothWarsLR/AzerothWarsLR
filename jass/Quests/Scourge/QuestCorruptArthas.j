@@ -1,4 +1,4 @@
-library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, GeneralHelpers, LegionConfig, ScourgeConfig, DetermineLevel, MalganisModConfig
+library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, GeneralHelpers, LegionConfig, ScourgeConfig, DetermineLevel
 
   globals
     private QuestData QUEST_REANIMATE_ARTHAS
@@ -19,7 +19,6 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)
       call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
       call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
-      call FACTION_LEGION.applyFactionMod(FACTIONMOD_MALGANIS)
       if legion != 0 then
         set tempGroup = CreateGroup()
         call GroupEnumUnitsOfType(tempGroup, "Mal'Ganis", null)
