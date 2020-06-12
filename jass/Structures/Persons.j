@@ -7,7 +7,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     
     force Observers
     
-    constant integer UNLIMITED = 200    //This is used in Persons, Faction and FactionMod for effectively unlimited unit production
+    constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
     constant integer HERO_COST = 100    //For refunding
 
     private constant real REFUND_PERCENT = 0.75          //How much gold and lumber is refunded from units that get refunded on leav

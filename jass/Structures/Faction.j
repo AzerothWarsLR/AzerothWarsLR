@@ -105,17 +105,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif        
     endmethod
 
-    //Permanently adds all of a FactionMod's objects to this Faction
-    method applyFactionMod takes FactionMod whichMod returns nothing
-      local integer i = 0
-      loop
-      exitwhen i > whichMod.objectCount
-        call this.modObjectLimit( whichMod.objectList[i], whichMod.objectLimits[whichMod.objectList[i]] )
-        set i = i + 1
-      endloop
-      call this.modWeight(whichMod.weight)
-    endmethod
-
     method setPresenceResearch takes integer research returns nothing
       local integer i = 0
       if this.presenceResearch == 0 then
