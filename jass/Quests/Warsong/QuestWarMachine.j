@@ -29,10 +29,16 @@ library QuestWarMachine initializer OnInit requires QuestData, WarsongConfig
   endfunction
 
   private function Research takes nothing returns nothing
+    local integer i = 0
     if GetResearched() == 'R021' then
       set Progress = QUEST_PROGRESS_COMPLETE
-      call BlessPlayer(FACTION_WARSONG.Person.p)
-      call BlessPlayer(FACTION_WARSONG.Person.p)
+      loop
+        exitwhen i == MAX_PLAYERS
+        if FACTION_WARSONG.Person.Team.containsPlayer(Player(i)) then
+          call BlessPlayer(Player(i))
+        endif
+        set i = i + 1
+      endloop
       call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_RESEARCH, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction  
