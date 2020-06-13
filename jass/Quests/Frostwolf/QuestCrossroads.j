@@ -1,6 +1,6 @@
 //If any Horde unit enters the Crossroads area, OR a time elapses, OR someone becomes a solo Horde Path, give the Crossroads to a Horde player.
 
-library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, GeneralHelpers
+library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
 
   globals
     private constant real TIMER = 420.     //How long it takes for this event to elapse automatically
@@ -16,6 +16,8 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Ge
 
     if FACTION_FROSTWOLF.Person != 0 then                    
       set recipient = FACTION_FROSTWOLF.Person.p  
+    elseif FACTION_WARSONG.Person != 0 then
+      set recipient = FACTION_WARSONG.Person.p
     endif
 
     //Transfer all Neutral Passive units in Crossroads to one of the above factions

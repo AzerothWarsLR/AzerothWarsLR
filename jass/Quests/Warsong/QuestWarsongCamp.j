@@ -1,6 +1,6 @@
 //If Grom enters the Warsong Camp area, OR a time elapses, OR someone becomes a solo Horde Path, give the Camp to a Horde player.
 
-library QuestWarsongCamp initializer OnInit requires WarsongConfig, GeneralHelpers
+library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfConfig, GeneralHelpers
 
   globals
     private QuestData QUEST_CAMP
@@ -16,6 +16,8 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, GeneralHelpe
 
     if FACTION_WARSONG.Person != 0 then
       set recipient = FACTION_WARSONG.Person.p
+    elseif FACTION_FROSTWOLF.Person != 0 then
+      set recipient = FACTION_FROSTWOLF.Person.p
     endif
 
     //Transfer all Neutral Passive units in Orgrimmar to one of the above factions
