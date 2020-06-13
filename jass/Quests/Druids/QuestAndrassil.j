@@ -1,4 +1,4 @@
-library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, DruidsConfig, NightElfConfig
+library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, DruidsConfig
 
   globals
     private QuestData QUEST_ANDRASSIL
@@ -7,21 +7,13 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
   endglobals
 
   private function TryComplete takes nothing returns nothing
-    local Person druidsPerson = FACTION_DRUIDS.whichPerson
-    local unit andrassil
-    if druidsPerson == 0 then
-      set druidsPerson = FACTION_NIGHT_ELVES.whichPerson
-    endif
-    if not UnitAlive(gg_unit_u000_0649) and GetOwningPlayer(gg_unit_n03U_0281) == druidsPerson.p then
-      set andrassil = CreateUnit(druidsPerson.p, 'n04F', GetRectCenterX(gg_rct_Andrassil), GetRectCenterY(gg_rct_Andrassil), 0)
-      call UnitRescue(andrassil, druidsPerson.p)
-      set andrassil = null
+    if not UnitAlive(gg_unit_u000_0649) and GetOwningPlayer(gg_unit_n03U_0281) == FACTION_DRUIDS.Person.p then
+      call CreateUnit(FACTION_DRUIDS.Person.p, 'n04F', GetRectCenterX(gg_rct_Andrassil), GetRectCenterY(gg_rct_Andrassil), 0)
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
     call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-    call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
@@ -30,13 +22,11 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
     local Person capturePerson
     if GetUnitTypeId(GetTriggerControlPoint().u) == 'n03U' then
       set capturePerson = Persons[GetPlayerId(GetTriggerControlPoint().owner)]
-      if capturePerson.faction == FACTION_DRUIDS or capturePerson.faction == FACTION_NIGHT_ELVES then
+      if capturePerson.faction == FACTION_DRUIDS then
         call TryComplete()
         call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
-        call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       else
         call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
-        call FACTION_NIGHT_ELVES.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
       endif
     endif
   endfunction
@@ -59,7 +49,6 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
     set QUESTITEM_KILL = QUEST_ANDRASSIL.addItem("The Frozen Throne is destroyed")
     set QUESTITEM_CAPTURE = QUEST_ANDRASSIL.addItem("Capture Grizzly Hills")
     call FACTION_DRUIDS.addQuest(QUEST_ANDRASSIL)
-    call FACTION_NIGHT_ELVES.addQuest(QUEST_ANDRASSIL)
   endfunction
 
 endlibrary

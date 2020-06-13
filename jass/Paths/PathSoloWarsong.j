@@ -12,6 +12,17 @@ library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong
       call LEGEND_JERGOSH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Orgrimmar), GetRectCenterY(gg_rct_Orgrimmar), 0)
       call LEGEND_MANNOROTH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Orgrimmar), GetRectCenterY(gg_rct_Orgrimmar), 0)
       set LEGEND_REXXAR.Unit = null
+      //Techtree subtractions
+      call FACTION_WARSONG.modObjectLimit('opeo', -UNLIMITED)   //Peon
+      call FACTION_WARSONG.modObjectLimit('ogru', -UNLIMITED)   //Grunt
+      call FACTION_WARSONG.modObjectLimit('orai', -UNLIMITED)   //Raider
+      call FACTION_WARSONG.modObjectLimit('o00G', -UNLIMITED)   //Blademaster
+      //Techtree additions
+      call FACTION_WARSONG.modObjectLimit('o00E', UNLIMITED)   //Peon
+      call FACTION_WARSONG.modObjectLimit('o00P', UNLIMITED)   //Warsong Grunt
+      call FACTION_WARSONG.modObjectLimit('o00S', UNLIMITED)   //Raider
+      call FACTION_WARSONG.modObjectLimit('o005', 6)           //Blademaster
+      //Free researches
       call SetPlayerTechMaxAllowed(warsongPlayer, 'R02O', 1)
       call SetPlayerTechMaxAllowed(warsongPlayer, 'R02Q', 1)
       call SetPlayerTechResearched(warsongPlayer, 'R02O', 1)

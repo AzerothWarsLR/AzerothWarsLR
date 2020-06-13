@@ -1,4 +1,4 @@
-library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environment, FrostwolfConfig, WarsongConfig, NewHordeConfig, MannorothConfig, SentinelsConfig, DruidsConfig, SoloSentinelsConfig, NightElfConfig, ArtifactConfig
+library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environment, FrostwolfConfig, WarsongConfig, SentinelsConfig, DruidsConfig, ArtifactConfig
 
   globals
     private QuestData QUEST_SCEPTER_HORDE
@@ -45,13 +45,13 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     //Quest updates
     loop
       exitwhen i == HordeFactions.size
-      call Faction(HordeFactions[i]).setQuestItemStatus(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_COMPLETE, true)
+      call Faction(HordeFactions[i]).setQuestItemProgress(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_COMPLETE, true)
       set i = i + 1
     endloop
     set i = 0
     loop
       exitwhen i == NightElvenFactions.size
-      call Faction(NightElvenFactions[i]).setQuestItemStatus(QUESTITEM_VISIT_NE, QUEST_PROGRESS_FAILED, true)
+      call Faction(NightElvenFactions[i]).setQuestItemProgress(QUESTITEM_VISIT_NE, QUEST_PROGRESS_FAILED, true)
       set i = i + 1
     endloop
   endfunction
@@ -75,17 +75,8 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     endloop
 
     //Quest updates
-    loop
-      exitwhen i == NightElvenFactions.size
-      call Faction(NightElvenFactions[i]).setQuestItemStatus(QUESTITEM_VISIT_NE, QUEST_PROGRESS_COMPLETE, true)
-      set i = i + 1
-    endloop
-    set i = 0
-    loop
-      exitwhen i == HordeFactions.size
-      call Faction(HordeFactions[i]).setQuestItemStatus(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_FAILED, true)
-      set i = i + 1
-    endloop
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_VISIT_NE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_FAILED, true)
 
     //Cleanup
     call DestroyGroup(tempGroup)
@@ -124,7 +115,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     local integer i = 0
     loop
       exitwhen i == NightElvenFactions.size
-      call Faction(NightElvenFactions[i]).setQuestItemStatus(QUESTITEM_KILL_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
+      call Faction(NightElvenFactions[i]).setQuestItemProgress(QUESTITEM_KILL_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
       set i = i + 1
     endloop
   endfunction
@@ -133,7 +124,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     local integer i = 0
     loop
       exitwhen i == HordeFactions.size
-      call Faction(HordeFactions[i]).setQuestItemStatus(QUESTITEM_KILL_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
+      call Faction(HordeFactions[i]).setQuestItemProgress(QUESTITEM_KILL_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
       set i = i + 1
     endloop
   endfunction
@@ -160,12 +151,8 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     set HordeFactions = Set.create()
     call HordeFactions.add(FACTION_WARSONG)
     call HordeFactions.add(FACTION_FROSTWOLF)
-    call HordeFactions.add(FACTION_MANNOROTH)
-    call HordeFactions.add(FACTION_NEW_HORDE)
     set NightElvenFactions = Set.create()
     call NightElvenFactions.add(FACTION_SENTINELS)
-    call NightElvenFactions.add(FACTION_SOLO_SENTINELS)
-    call NightElvenFactions.add(FACTION_NIGHT_ELVES)
 
     //Horde quest setup
     set QUEST_SCEPTER_HORDE = QuestData.create("Royal Plunder", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Feathermoon Stronghold falls, it would become a simple matter to slaughter the Highborne and plunder their artifacts.", "The Highborne are no longer implicitly defended by the Night Elven presence at Feathermoon Stronghold. The Horde unleashes their full might against these Night Elven arcanists.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
@@ -182,12 +169,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
     set QUEST_SCEPTER_NE = QuestData.create("Return to the Fold", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Stonemaul falls, it would be safe for them to come out.", "The Shen'dralar, the Highborne survivors of the Sundering, swear allegiance to their fellow Night Elves. As a sign of their loyalty, they offer up an artifact they have guarded for thousands of years: the Scepter of the Queen.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
     set QUESTITEM_KILL_STONEMAUL = QUEST_SCEPTER_NE.addItem("Destroy Stonemaul Keep")
     set QUESTITEM_VISIT_NE = QUEST_SCEPTER_NE.addItem("Bring a unit to Eldre'thalas")
-    set i = 0
-    loop
-      exitwhen i == NightElvenFactions.size
-      call Faction(NightElvenFactions[i]).addQuest(QUEST_SCEPTER_NE)
-      set i = i + 1
-    endloop
+    call FACTION_SENTINELS.addQuest(QUEST_SCEPTER_NE)
 
     //Make the Shen'dralar starting units invulnerable
     set tempGroup = CreateGroup()

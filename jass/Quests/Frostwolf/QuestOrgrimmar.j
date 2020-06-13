@@ -1,36 +1,25 @@
 //If Thrall enters the Orgrimmar area, OR a time elapses, OR Frostwolf leaves, give Orgrimmar to a Horde player.
 
-library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongConfig, FrostwolfConfig, NewHordeConfig, MannorothConfig
+library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongConfig, FrostwolfConfig
 
   globals
     private constant real ORGRIMMAR_TIMER = 600.     //How long it takes for Orgrimmar to be built instantly
     private constant integer GOLD = 100
     private constant integer LUMBER = 350
-    private boolean Built = false
 
-    private QuestData QUEST_ORGRIMMMAR
+    private QuestData QUEST_ORGRIMMAR
     private QuestItemData QUESTITEM_VISIT
   endglobals
 
   private function Build takes nothing returns nothing
     local group tempGroup = CreateGroup()
     local unit u
-    local Person tempPerson = 0
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-    set Built = true
-
-    if PersonsByFaction[FACTION_FROSTWOLF] != 0 then                 
-      set tempPerson = PersonsByFaction[FACTION_FROSTWOLF]
-    elseif PersonsByFaction[FACTION_NEW_HORDE] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_NEW_HORDE]  
-    elseif PersonsByFaction[FACTION_WARSONG] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_WARSONG]
-    elseif PersonsByFaction[FACTION_MANNOROTH] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_MANNOROTH]
-    endif
-    if tempPerson != 0 then
-      set recipient = tempPerson.p  
+    if FACTION_FROSTWOLF.Person != 0 then                 
+      set recipient = FACTION_FROSTWOLF.Person.p
+    elseif FACTION_WARSONG.Person != 0 then
+      set recipient = FACTION_WARSONG.Person.p
     endif
 
     //Transfer all Neutral Passive units in Orgrimmar to one of the above factions
@@ -73,7 +62,7 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
   endfunction
 
   private function Conditions takes nothing returns boolean
-    return not Built
+    return FACTION_FROSTWOLF.getQuestItemProgress(QUEST_ORGRIMMAR) == QUEST_PROGRESS_INCOMPLETE
   endfunction
 
   private function OnInit takes nothing returns nothing
@@ -95,9 +84,9 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     call TriggerAddAction(trig, function PersonFactionChanges)    
 
     //Quest setup
-    set QUEST_ORGRIMMMAR = QuestData.create("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "At the northern edge of Durotar, the Horde has finally found a place to call home. They name it Orgrimmar in honour of Orgrim Doomhammer.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
-    set QUESTITEM_VISIT = QUEST_ORGRIMMMAR.addItem("Survive until turn 10 OR bring Thrall to Orgrimmar")
-    call FACTION_FROSTWOLF.addQuest(QUEST_ORGRIMMMAR)
+    set QUEST_ORGRIMMAR = QuestData.create("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "At the northern edge of Durotar, the Horde has finally found a place to call home. They name it Orgrimmar in honour of Orgrim Doomhammer.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
+    set QUESTITEM_VISIT = QUEST_ORGRIMMAR.addItem("Survive until turn 10 OR bring Thrall to Orgrimmar")
+    call FACTION_FROSTWOLF.addQuest(QUEST_ORGRIMMAR)
   endfunction
 
 endlibrary

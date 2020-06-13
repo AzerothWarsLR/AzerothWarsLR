@@ -1,4 +1,4 @@
-library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig, MannorothConfig
+library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig
 
   globals
     private QuestData QUEST_CENARIUS
@@ -6,16 +6,13 @@ library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig, 
   endglobals
 
   private function Dies takes nothing returns nothing
-    local Person killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
     if LEGEND_CENARIUS.Unit != null and GetTriggerUnit() == LEGEND_CENARIUS.Unit then 
-      if killingPerson.team.containsPlayer(FACTION_WARSONG.whichPerson.p) or killingPerson.team.containsPlayer(FACTION_MANNOROTH.whichPerson.p) then
+      if FACTION_WARSONG.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
         call AddHeroXP(LEGEND_GROM.Unit, 2000, true)
         call AddHeroAttributes(LEGEND_GROM.Unit, 5, 5, 5)
         call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-        call FACTION_MANNOROTH.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       else
         call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
-        call FACTION_MANNOROTH.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
       endif
     endif
   endfunction
@@ -33,7 +30,6 @@ library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig, 
     set QUEST_CENARIUS = QuestData.create("Thorn in Our Side", "The Night Elves are protected by a towering stag-like creature they call a demigod. Even he cannot stand against the might of the Warsong.", "The Demigod has fallen! Warsong is supreme!", "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
     set QUESTITEM_KILL = QUEST_CENARIUS.addItem("Kill Cenarius")
     call FACTION_WARSONG.addQuest(QUEST_CENARIUS)
-    call FACTION_MANNOROTH.addQuest(QUEST_CENARIUS)
   endfunction
 
 endlibrary

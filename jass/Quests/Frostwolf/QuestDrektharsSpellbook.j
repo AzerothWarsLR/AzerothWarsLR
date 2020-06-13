@@ -1,4 +1,4 @@
-library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig, NewHordeConfig
+library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig
 
   globals
     private QuestData QUEST_DREKTHAR
@@ -12,7 +12,6 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
       call UnitAddItem(GetTriggerUnit(), tempArtifact.item)
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement.")
       call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-      call FACTION_NEW_HORDE.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
@@ -26,7 +25,6 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
     set QUEST_DREKTHAR = QuestData.create("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
     set QUESTITEM_VISIT = QUEST_DREKTHAR.addItem("Bring Thrall to the World Tree")
     call FACTION_FROSTWOLF.addQuest(QUEST_DREKTHAR)
-    call FACTION_NEW_HORDE.addQuest(QUEST_DREKTHAR)
   endfunction
 
 endlibrary
