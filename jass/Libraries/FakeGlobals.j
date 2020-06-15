@@ -41,6 +41,8 @@ library FakeGlobals
     trigger gg_trg_Bombing_Run
     unit gg_unit_n081_4074
     unit gg_unit_n081_1585
+    unit gg_unit_U001_1237
+    unit gg_unit_u01Q_3871
   endglobals
 
 endlibrary FakeGlobals

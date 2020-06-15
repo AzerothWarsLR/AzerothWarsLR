@@ -5,6 +5,7 @@ library LegendWarsong initializer OnInit requires Legend
     Legend LEGEND_REXXAR
     Legend LEGEND_JERGOSH
     Legend LEGEND_MANNOROTH
+    Legend LEGEND_STONEMAUL
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -20,6 +21,10 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_JERGOSH = Legend.create()
 
     set LEGEND_MANNOROTH = Legend.create()
+
+    set LEGEND_STONEMAUL = Legend.create()
+    set LEGEND_STONEMAUL.Unit = gg_unit_o004_0169
+    set LEGEND_STONEMAUL.DeathMessage = "The fortress of the Stonemaul Clan has fallen."
   endfunction
 
 endlibrary

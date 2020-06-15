@@ -4,6 +4,8 @@ library LegendLordaeron initializer OnInit requires Legend
     Legend LEGEND_UTHER
     Legend LEGEND_ARTHAS
     Legend LEGEND_MOGRAINE
+
+    Legend LEGEND_TYRSHAND
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -16,6 +18,11 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_ARTHAS.Unit = gg_unit_Hart_1342
 
     set LEGEND_MOGRAINE = Legend.create()
+    set LEGEND_MOGRAINE.UnitType = 'H01J'
+
+    set LEGEND_TYRSHAND = Legend.create()
+    set LEGEND_TYRSHAND.Unit = gg_unit_h030_0839
+    set LEGEND_TYRSHAND.DeathMessage = "Tyr's Hand, the bastion of human power in Lordaeron, has fallen."
   endfunction
 
 endlibrary

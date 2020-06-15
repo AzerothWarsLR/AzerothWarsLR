@@ -4,6 +4,8 @@ library LegendDruids initializer OnInit requires Legend
     Legend LEGEND_CENARIUS
     Legend LEGEND_MALFURION
     Legend LEGEND_FANDRAL
+
+    Legend LEGEND_NORDRASSIL
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -18,6 +20,10 @@ library LegendDruids initializer OnInit requires Legend
 
     set LEGEND_FANDRAL = Legend.create()
     set LEGEND_FANDRAL.Unit = gg_unit_E00K_2993
+
+    set LEGEND_NORDRASSIL = Legend.create()
+    set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
+    set LEGEND_NORDRASSIL.Capturable = true
   endfunction
 
 endlibrary

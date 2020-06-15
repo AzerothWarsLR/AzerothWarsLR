@@ -3,6 +3,8 @@ library LegendLegion initializer OnInit requires Legend
   globals
     Legend LEGEND_ARCHIMONDE
     Legend LEGEND_ANETHERON
+
+    Legend LEGEND_NEXUS
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -12,6 +14,10 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_ARCHIMONDE.DeathMessage = "Archimonde the Defiler has been banished from Azeroth, marking the end of his second failed invasion."
     
     set LEGEND_ANETHERON = Legend.create()
+
+    set LEGEND_NEXUS = Legend.create()
+    set LEGEND_NEXUS.Unit = gg_unit_u01Q_3871
+    set LEGEND_NEXUS.DeathMessage = "The Legion Nexus was destroyed. The Burning Legion is now cut off from Azeroth."
   endfunction
 
 endlibrary
