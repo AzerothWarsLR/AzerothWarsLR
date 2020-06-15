@@ -1,4 +1,3 @@
-
 library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, PlayerConfig
 
   globals
@@ -8,6 +7,8 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       Artifact ARTIFACT_GHANIR
       Artifact ARTIFACT_SKULLOFGULDAN
       Artifact ARTIFACT_CROWNLORDAERON
+      Artifact ARTIFACT_BELTOFGIANTSTRENGTH
+      Artifact ARTIFACT_HELMOFDOMINATION
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -24,17 +25,17 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_N00D_1457, ARTIFACT_HOLDER_ABIL_ID)             //Ragnaros
     call UnitAddItem(gg_unit_N00D_1457, tempArtifact.item)   
 
-    set tempArtifact = Artifact.create(CreateItem('I00F', DUMMY_X, DUMMY_Y))    //Gloves of Ahn'qiraj
-    call UnitAddAbility(gg_unit_n02F_1138, ARTIFACT_HOLDER_ABIL_ID)             //C'thun (creep)
-    call UnitAddItem(gg_unit_n02F_1138, tempArtifact.item)  
+    set ARTIFACT_BELTOFGIANTSTRENGTH = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))    //Belt of Giant Strength
+    call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Inside the Great Forge")
 
-    set tempArtifact = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
-    call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)
-    call UnitAddItem(gg_unit_u000_0649, tempArtifact.item)
+    set ARTIFACT_HELMOFDOMINATION = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
+    call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  
+    call UnitAddItem(gg_unit_u000_0649, ARTIFACT_HELMOFDOMINATION.item)                            
 
-    set ARTIFACT_CROWNLORDAERON = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y))
-    call UnitAddAbility(gg_unit_h000_0406, ARTIFACT_HOLDER_ABIL_ID) //Capital Palace
-    call UnitAddItem(gg_unit_h000_0406, ARTIFACT_CROWNLORDAERON.item)
+    set ARTIFACT_CROWNLORDAERON = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y))//Crown of Lordaeron
+    call UnitAddAbility(gg_unit_nemi_0019, ARTIFACT_HOLDER_ABIL_ID)                    //King Terenas
+    call UnitAddItem(gg_unit_nemi_0019, ARTIFACT_CROWNLORDAERON.item)           
 
     set tempArtifact = Artifact.create(CreateItem('I00D', DUMMY_X, DUMMY_Y))    //Shalamayne
     call UnitAddItem(gg_unit_H00R_1875, tempArtifact.item)                      //Variann
@@ -69,36 +70,33 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call tempArtifact.setDescription("Assembled from its fragments")
 
     set tempArtifact = Artifact.create(CreateItem('I01M', DUMMY_X, DUMMY_Y))    //Bronze Demon Soul Fragment
-    call UnitAddAbility(gg_unit_ndtw_0858, ARTIFACT_HOLDER_ABIL_ID)             //Dark Troll Warlord
-    call UnitAddItem(gg_unit_ndtw_0858, tempArtifact.item)
+    call UnitAddAbility(gg_unit_O024_0567, ARTIFACT_HOLDER_ABIL_ID)             //Ukorz
+    call UnitAddItem(gg_unit_O024_0567, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01L', DUMMY_X, DUMMY_Y))    //Black Demon Soul Fragment
-    call UnitAddAbility(gg_unit_nitw_2437, ARTIFACT_HOLDER_ABIL_ID)             //Ice Troll Warlord
-    call UnitAddItem(gg_unit_nitw_2437, tempArtifact.item)
+    call UnitAddAbility(gg_unit_O026_1705, ARTIFACT_HOLDER_ABIL_ID)             //Rastakhan
+    call UnitAddItem(gg_unit_O026_1705, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01J', DUMMY_X, DUMMY_Y))    //Red Demon Soul Fragment
-    call UnitAddAbility(gg_unit_nfsh_3661, ARTIFACT_HOLDER_ABIL_ID)             //Forest Troll High Priest
-    call UnitAddItem(gg_unit_nfsh_3661, tempArtifact.item)
+    call UnitAddAbility(gg_unit_O023_0517, ARTIFACT_HOLDER_ABIL_ID)             //Jin'do
+    call UnitAddItem(gg_unit_O023_0517, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01I', DUMMY_X, DUMMY_Y))    //Blue Demon Soul Fragment
-    call UnitAddAbility(gg_unit_n072_1423, ARTIFACT_HOLDER_ABIL_ID)             //Vile Priestess Hexx
-    call UnitAddItem(gg_unit_n072_1423, tempArtifact.item)
+    call UnitAddAbility(gg_unit_O02C_2437, ARTIFACT_HOLDER_ABIL_ID)             //Gal'darah
+    call UnitAddItem(gg_unit_O02C_2437, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01K', DUMMY_X, DUMMY_Y))    //Green Demon Soul Fragment
     call UnitAddAbility(gg_unit_O00O_1933, ARTIFACT_HOLDER_ABIL_ID)             //Zul'jin
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)
 
-    set tempArtifact = Artifact.create(CreateItem('I01T', DUMMY_X, DUMMY_Y))    //Fandral's Flamescythe
-    call UnitAddItem(gg_unit_E00K_2993, tempArtifact.item)                      //Fandral
 
-    set tempArtifact = Artifact.create(CreateItem('arsh', DUMMY_X, DUMMY_Y))    //Arcanite Shield
-    call UnitAddAbility(gg_unit_nsll_1588, ARTIFACT_HOLDER_ABIL_ID)             //Salazarian Lizard
-    call UnitAddItem(gg_unit_nsll_1588, tempArtifact.item)  
+    set tempArtifact = Artifact.create(CreateItem('arsh', DUMMY_X, DUMMY_Y))    //Shroud of Nozdormuru
+    call UnitAddAbility(gg_unit_O025_3426, ARTIFACT_HOLDER_ABIL_ID)             //Occulus
+    call UnitAddItem(gg_unit_O025_3426, tempArtifact.item)  
 
     set tempArtifact = Artifact.create(CreateItem('dtsb', DUMMY_X, DUMMY_Y))    //Drek'thar's Spellbook
-    call tempArtifact.setStatus(ARTIFACT_STATUS_SPECIAL)
-    set tempArtifact.falseX = -11643
-    set tempArtifact.falseY = 7318 
+    call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call tempArtifact.setDescription("From the World Tree")
 
     set tempArtifact = Artifact.create(CreateItem('ktrm', DUMMY_X, DUMMY_Y))    //Urn of Kings
     call UnitAddItem(gg_unit_Huth_1343, tempArtifact.item)                      //Uther
@@ -112,9 +110,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)                //Barrow Den  
     call UnitAddItem(gg_unit_nbwd_0737, ARTIFACT_GHANIR.item)  
 
-    set tempArtifact = Artifact.create(CreateItem('thdm', DUMMY_X, DUMMY_Y))    //Thunderlizard Diamond
-    call UnitAddAbility(gg_unit_nstw_2078, ARTIFACT_HOLDER_ABIL_ID)             //Storm Wyrm
-    call UnitAddItem(gg_unit_nstw_2078, tempArtifact.item)     
+    set tempArtifact = Artifact.create(CreateItem('thdm', DUMMY_X, DUMMY_Y))    //Thunderfury
+    call UnitAddAbility(gg_unit_N09I_2740, ARTIFACT_HOLDER_ABIL_ID)             //Al'akir
+    call UnitAddItem(gg_unit_N09I_2740, tempArtifact.item)     
 
     set tempArtifact = Artifact.create(CreateItem('cnhn', DUMMY_X, DUMMY_Y))    //Horn of Cenarius
     call UnitAddAbility(gg_unit_nhcn_2597, ARTIFACT_HOLDER_ABIL_ID)             //Horn of Cenarius Pedestal
@@ -123,8 +121,12 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('kgal', DUMMY_X, DUMMY_Y))    //Keg of Thunderwater
     call UnitAddItem(gg_unit_Hmbr_0628, tempArtifact.item)  
 
-    set tempArtifact = Artifact.create(CreateItem('I000', DUMMY_X, DUMMY_Y))    //Verdant Sphere
-    call UnitAddItem(gg_unit_Hkal_1946, tempArtifact.item)                      //Kael'thas
+    set tempArtifact = Artifact.create(CreateItem('I00J', DUMMY_X, DUMMY_Y))    //Felo'melorn
+    call UnitAddItem(gg_unit_H00Q_0630, tempArtifact.item)                      //Anasterian
+
+    set tempArtifact = Artifact.create(CreateItem('I00K', DUMMY_X, DUMMY_Y))    //Essence
+    call UnitAddItem(gg_unit_n03T_0555, tempArtifact.item)                      //Murmur
+
   endfunction
 
 endlibrary
