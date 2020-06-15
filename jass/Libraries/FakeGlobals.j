@@ -53,6 +53,7 @@ library FakeGlobals
     unit gg_unit_h04P_1732
     unit gg_unit_o00V_2194
     unit gg_unit_o00N_0704
+    unit gg_unit_Orex_0312
   endglobals
 
 endlibrary FakeGlobals

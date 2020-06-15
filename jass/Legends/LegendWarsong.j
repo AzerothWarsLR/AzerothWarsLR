@@ -17,10 +17,13 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_GROM.DeathMessage = "Grom Hellscream lies broken on the battlefield. It is yet to be seen whether or not the Warsong Clan can survive without his strong leadership."
 
     set LEGEND_REXXAR = Legend.create()
+    set LEGEND_REXXAR.Unit = gg_unit_Orex_0312
 
     set LEGEND_JERGOSH = Legend.create()
+    set LEGEND_JERGOSH.UnitType = 'Oths'
 
     set LEGEND_MANNOROTH = Legend.create()
+    set LEGEND_MANNOROTH.UnitType = 'Nman'
 
     set LEGEND_STONEMAUL = Legend.create()
     set LEGEND_STONEMAUL.Unit = gg_unit_o004_0169

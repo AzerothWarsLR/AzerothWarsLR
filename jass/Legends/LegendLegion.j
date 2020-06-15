@@ -14,6 +14,7 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_ARCHIMONDE.DeathMessage = "Archimonde the Defiler has been banished from Azeroth, marking the end of his second failed invasion."
     
     set LEGEND_ANETHERON = Legend.create()
+    set LEGEND_ANETHERON.UnitType = 'U00L'
 
     set LEGEND_LEGIONNEXUS = Legend.create()
     set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871
