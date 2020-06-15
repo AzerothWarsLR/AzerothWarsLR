@@ -43,6 +43,16 @@ library FakeGlobals
     unit gg_unit_n081_1585
     unit gg_unit_U001_1237
     unit gg_unit_u01Q_3871
+    unit gg_unit_h026_1207
+    unit gg_unit_h02Z_0726
+    unit gg_unit_o00Q_0989
+    unit gg_unit_e014_3083
+    unit gg_unit_o018_0017
+    unit gg_unit_h01F_1161
+    unit gg_unit_h05I_0313
+    unit gg_unit_h04P_1732
+    unit gg_unit_o00V_2194
+    unit gg_unit_o00N_0704
   endglobals
 
 endlibrary FakeGlobals

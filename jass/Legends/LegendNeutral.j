@@ -17,6 +17,7 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_ETHELRETHOR
     Legend LEGEND_NEXUS
     Legend LEGEND_KARAZHAN
+    Legend LEGEND_ZULFARRAK
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -32,7 +33,7 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_DRAKTHARONKEEP.Unit = gg_unit_o016_0771
 
     set LEGEND_OSHUGUN = Legend.create()
-    set LEGNED_OSHUGUN.Capturable = true
+    set LEGEND_OSHUGUN.Capturable = true
     set LEGEND_OSHUGUN.Unit = gg_unit_h02Z_0726
 
     set LEGEND_JINTHAALOR = Legend.create()
@@ -78,9 +79,9 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_KARAZHAN.Unit = gg_unit_h001_0180
     set LEGEND_KARAZHAN.Capturable = true
 
-    set LEGEND_ZULFURRAK = Legend.create()
-    set LEGEND_ZULFURRAK.Capturable = true
-    set LEGEND_ZULFURRAK.Unit = gg_unit_o00K_0150
+    set LEGEND_ZULFARRAK = Legend.create()
+    set LEGEND_ZULFARRAK.Capturable = true
+    set LEGEND_ZULFARRAK.Unit = gg_unit_o00K_0150
   endfunction
 
 endlibrary
