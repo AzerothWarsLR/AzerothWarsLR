@@ -3,6 +3,8 @@ library LegendStormwind initializer OnInit requires Legend
   globals
     Legend LEGEND_VARIAN
     Legend LEGEND_MEDIVH
+
+    Legend LEGEND_STORMWINDKEEP
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -12,6 +14,10 @@ library LegendStormwind initializer OnInit requires Legend
     set LEGEND_VARIAN.DeathMessage = "The King of Stormwind dies a warrior’s death, defending hearth and family. The Wrynn Dynasty crumbles with his passing."
   
     set LEGEND_MEDIVH = Legend.create()
+
+    set LEGEND_STORMWINDKEEP = Legend.create()
+    set LEGEND_STORMWINDKEEP.Unit = gg_unit_h00X_0007
+    set LEGEND_STORMWINDKEEP.DeathMessage = "Stormwind Keep, the capitol of the nation of Stormwind, has been destroyed!"
   endfunction
 
 endlibrary
