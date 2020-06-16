@@ -1,7 +1,7 @@
 library PathSoloLegion initializer OnInit requires LegionConfig, LegendLegion, Display
 
   globals
-    private constant integer RESEARCH_ID = 'R014'
+    private constant integer RESEARCH_ID = 'R05F'
   endglobals
 
   private function Research takes nothing returns nothing
