@@ -12,8 +12,6 @@ library QuestSlashAndBurn requires QuestData, WarsongConfig
       if FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL1) != QUEST_PROGRESS_COMPLETE then
         call AdjustPlayerStateBJ(LUMBER_REWARD, FACTION_WARSONG.Person.p, PLAYER_STATE_RESOURCE_LUMBER)
         call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL1, QUEST_PROGRESS_COMPLETE, true)
-        call TriggerSleepAction(4)
-        call PlayDialogue(FACTION_WARSONG.Person.p, gg_snd_O04Grom26, "Grom Hellscream", "You see? The great tree provided us with an abundance of lumber! If we find any more, then we'll hack them apart as well.")
       elseif FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL2) != QUEST_PROGRESS_COMPLETE then
         call AdjustPlayerStateBJ(LUMBER_REWARD, FACTION_WARSONG.Person.p, PLAYER_STATE_RESOURCE_LUMBER)
         call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL2, QUEST_PROGRESS_COMPLETE, true)
