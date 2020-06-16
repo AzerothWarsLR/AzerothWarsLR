@@ -1,6 +1,6 @@
 //Garithos is spawned spawns after a timer expires.
 
-library EventGarithosSpawn initializer OnInit requires QuestData, LordaeronConfig, DetermineLevel
+library EventGarithosSpawn initializer OnInit requires QuestData, LordaeronConfig, LegendLordaeron
 
   globals
     private constant real TIMER = 960.
@@ -8,44 +8,11 @@ library EventGarithosSpawn initializer OnInit requires QuestData, LordaeronConfi
     private QuestItemData QUESTITEM_GARITHOS
   endglobals
 
-  private function GarithosSpawn takes nothing returns nothing
-    local unit garithos = null
-    local real x = 18713
-    local real y = 8027
-    local Person tempPerson = PersonsByFaction[FACTION_LORDAERON]
-    local player p = tempPerson.p
-    local integer i = 0       
-    set garithos = CreateUnit(p, 'Hlgr', x, y, 270)      //Garithos
-    call UnitDetermineLevel(garithos, 1.00)     
-
-    set i = 0
-    loop
-    exitwhen i > 12
-      call CreateUnit(p, 'n03K', x, y, 270)   //Chaplain
-      call CreateUnit(p, 'nchp', x, y, 270)   //Cleric
-      call CreateUnit(p, 'h01C', x, y, 270)   //Longbowman
-      call CreateUnit(p, 'hkni', x, y, 270)   //Knight
-      call CreateUnit(p, 'hkni', x, y, 270)   //Knight
-      set i = i + 1
-    endloop
-
-    set i = 0
-    loop
-    exitwhen i > 4
-      call CreateUnit(p, 'hpea', x, y, 270)   //Peasant
-      set i = i + 1
-    endloop   
-
-    call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_GARITHOS, QUEST_PROGRESS_COMPLETE, true)
-
-    //Cleanup
-    set garithos = null
-  endfunction
-
   private function TimerEnds takes nothing returns nothing
-    local Person lordaeron = PersonsByFaction[FACTION_LORDAERON]
-    if lordaeron != 0 then
-      call GarithosSpawn()
+    if FACTION_LORDAERON.Person != 0 then
+      call LEGEND_GARITHOS.Spawn(FACTION_LORDAERON.Person.p, GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270)
+      call CreateUnits(FACTION_LORDAERON.Person.p, 'hkni', GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270, 24)
+      call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_GARITHOS, QUEST_PROGRESS_COMPLETE, true)
     else
       call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_GARITHOS, QUEST_PROGRESS_UNDISCOVERED, false)
     endif
