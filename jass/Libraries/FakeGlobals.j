@@ -54,6 +54,13 @@ library FakeGlobals
     unit gg_unit_o00V_2194
     unit gg_unit_o00N_0704
     unit gg_unit_Orex_0312
+    unit gg_unit_O024_0567
+    unit gg_unit_O026_1705
+    unit gg_unit_O025_3426
+    unit gg_unit_N09I_2740
+    unit gg_unit_H00Q_0630
+    unit gg_unit_O023_0517
+    unit gg_unit_O02C_2437
   endglobals
 
 endlibrary FakeGlobals
