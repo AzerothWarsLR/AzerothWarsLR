@@ -10,6 +10,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private Legend TriggerLegend = 0
     Event OnLegendChangeOwner
+    Event OnLegendPermaDeath
   endglobals
 
   struct Legend
@@ -68,7 +69,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call DestroyTrigger(damageTrig)
         set damageTrig = CreateTrigger()
         call TriggerRegisterUnitEvent(damageTrig, unit, EVENT_UNIT_DAMAGING)
-        call TriggerAddAction(castTrig, function thistype.onUnitDamaging)
+        call TriggerAddAction(damageTrig, function thistype.onUnitDamaging)
         //Ownership change trig
         call DestroyTrigger(ownerTrig)
         set ownerTrig = CreateTrigger()
@@ -177,17 +178,22 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     private method permaDeath takes nothing returns nothing
-      local effect tempEffect = AddSpecialEffect(deathSfx, GetUnitX(unit), GetUnitY(unit))
-      call BlzSetSpecialEffectScale(tempEffect, 2.0)
-      call DestroyEffect(tempEffect)
-      call UnitDropAllItems(unit)
-      call RemoveUnit(unit)
+      local effect tempEffect
+      if IsUnitType(unit, UNIT_TYPE_HERO) then
+        set tempEffect = AddSpecialEffect(deathSfx, GetUnitX(unit), GetUnitY(unit))
+        call BlzSetSpecialEffectScale(tempEffect, 2.0)
+        call DestroyEffect(tempEffect)
+        call UnitDropAllItems(unit)
+        call RemoveUnit(unit)
+      endif
       if this.deathMessage != "" then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
       endif
       if hivemind then
         call OwningPerson.obliterate()
       endif
+      set TriggerLegend = this
+      call OnLegendPermaDeath.fire()
     endmethod
 
     private method onChangeOwner takes nothing returns nothing
@@ -290,6 +296,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
   private function OnInit takes nothing returns nothing
     set OnLegendChangeOwner = Event.create()
+    set OnLegendPermaDeath = Event.create()
   endfunction
 
 endlibrary
