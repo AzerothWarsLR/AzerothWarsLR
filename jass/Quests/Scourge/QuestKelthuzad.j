@@ -1,42 +1,16 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, EventKelthuzadDeath, QuelthalasConfig
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
 
   globals
-    QuestData QUEST_KELTHUZAD
-    QuestItemData QUESTITEM_KELTHUZAD
+    private QuestData QUEST_KELTHUZAD
+    private QuestItemData QUESTITEM_KELTHUZAD
+    private constant integer LICH_ID = 'Uktl'
   endglobals
 
-  private function CreateLich takes nothing returns nothing
-    local unit Necromancer = GetTriggerUnit()
-    local unit Lich = null
-    local item tempItem = null
-    local integer i = 0
-
-    call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
-    set Lich = CreateUnit(GetOwningPlayer(GetTriggerUnit()), 'Uktl', 18560, 21261, 270) 
-    if GetUnitTypeId(GetTriggerUnit()) == 'U001' then   //Normal necromancer
-      call SetHeroXP(Lich, GetHeroXP(GetTriggerUnit()), false)
-    else                                                //Ghost
-      call SetHeroXP(Lich, KelthuzadExp, false)
-    endif
-    loop
-    exitwhen i > 6
-      call UnitAddItem(Lich, UnitItemInSlot(Necromancer, i))
-      set i = i + 1
-    endloop
-    call RemoveUnit(GetTriggerUnit())
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KELTHUZAD, QUEST_PROGRESS_COMPLETE, true)
-    //Cleanup
-    set Necromancer = null
-    set Lich = null     
-    set tempItem = null 
-    call DestroyTrigger(GetTriggeringTrigger())
-  endfunction
-
   private function EntersRegion takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(gg_unit_n001_0165))]
-    local Person scourgePerson = PersonsByFaction[FACTION_SCOURGE]
-    if (GetUnitTypeId(GetTriggerUnit()) == 'U001' or GetUnitTypeId(GetTriggerUnit()) == 'uktg') and triggerPerson.team.containsPlayer(scourgePerson.p) then
-      call CreateLich()
+    if GetTriggerUnit() == LEGEND_KELTHUZAD.Unit and FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) then
+      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KELTHUZAD, QUEST_PROGRESS_COMPLETE, true)
+      set LEGEND_KELTHUZAD.UnitType = LICH_ID
+      call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 
