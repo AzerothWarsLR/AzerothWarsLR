@@ -19,7 +19,7 @@ library QuestKillRagnaros initializer OnInit requires QuestData, IronforgeConfig
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     local QuestData tempQuest
-    call TriggerRegisterUnitEvent(trig, gg_unit_u000_0649, EVENT_UNIT_DEATH)    
+    call TriggerRegisterUnitEvent(trig, gg_unit_N00D_1457, EVENT_UNIT_DEATH)    
     call TriggerAddAction(trig, function FrozenThroneDies)
 
     //Quest setup
