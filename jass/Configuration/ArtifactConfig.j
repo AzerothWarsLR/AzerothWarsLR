@@ -1,14 +1,15 @@
 library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, PlayerConfig
 
   globals
-      private constant real DUMMY_X = 22700
-      private constant real DUMMY_Y = 23735
+      private constant real DUMMY_X = 20195
+      private constant real DUMMY_Y = 24177
 
       Artifact ARTIFACT_GHANIR
       Artifact ARTIFACT_SKULLOFGULDAN
       Artifact ARTIFACT_CROWNLORDAERON
       Artifact ARTIFACT_BELTOFGIANTSTRENGTH
       Artifact ARTIFACT_HELMOFDOMINATION
+      Artifact ARTIFACT_DREKTHARSSPELLBOOK
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -27,7 +28,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set ARTIFACT_BELTOFGIANTSTRENGTH = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))    //Belt of Giant Strength
     call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Inside the Great Forge")
+    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Fel Horde Quest")
 
     set ARTIFACT_HELMOFDOMINATION = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  
@@ -94,9 +95,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_O025_3426, ARTIFACT_HOLDER_ABIL_ID)             //Occulus
     call UnitAddItem(gg_unit_O025_3426, tempArtifact.item)  
 
-    set tempArtifact = Artifact.create(CreateItem('dtsb', DUMMY_X, DUMMY_Y))    //Drek'thar's Spellbook
-    call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call tempArtifact.setDescription("From the World Tree")
+    set ARTIFACT_DREKTHARSSPELLBOOK = Artifact.create(CreateItem('dtsb', DUMMY_X, DUMMY_Y))    //Drek'thar's Spellbook
+    call ARTIFACT_DREKTHARSSPELLBOOK.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_DREKTHARSSPELLBOOK.setDescription("Frostwolf Quest")
 
     set tempArtifact = Artifact.create(CreateItem('ktrm', DUMMY_X, DUMMY_Y))    //Urn of Kings
     call UnitAddItem(gg_unit_Huth_1343, tempArtifact.item)                      //Uther

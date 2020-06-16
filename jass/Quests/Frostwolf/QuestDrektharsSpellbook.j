@@ -1,4 +1,4 @@
-library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig
+library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids
 
   globals
     private QuestData QUEST_DREKTHAR
@@ -6,11 +6,8 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    local Artifact tempArtifact = 0
-    if GetUnitTypeId(GetTriggerUnit()) == 'Othr' then
-      set tempArtifact = Artifact.artifactsByType['dtsb']
-      call UnitAddItem(GetTriggerUnit(), tempArtifact.item)
-      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement.")
+    if LEGEND_THRALL.Unit == GetTriggerUnit() and FACTION_FROSTWOLF.Person.Team.containsPlayer(LEGEND_NORDRASSIL.OwningPlayer) then
+      call UnitAddItem(GetTriggerUnit(), ARTIFACT_DREKTHARSSPELLBOOK.item)
       call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
