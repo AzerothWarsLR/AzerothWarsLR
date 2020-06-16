@@ -14,8 +14,6 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
       endif
       set LEGEND_CENARIUS.PermaDies = false
       call LEGEND_CENARIUS.AddUnitDependency(gg_unit_n002_0130)
-      call UnitTransferItems(LEGEND_FANDRAL.Unit, LEGEND_TYRANDE.Unit)
-      set LEGEND_FANDRAL.Unit = null 
       //Mod object limits
       call FACTION_DRUIDS.modObjectLimit('edry', -UNLIMITED+24) //Dryad
       call FACTION_DRUIDS.modObjectLimit('earc', UNLIMITED)     //Archer
