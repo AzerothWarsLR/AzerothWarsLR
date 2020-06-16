@@ -1,3 +1,4 @@
+
 library DalaranConfig initializer OnInit requires Faction
 
   globals
@@ -7,7 +8,7 @@ library DalaranConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_LIGHT_GRAY, "|c00959697","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
+    set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
     set f = FACTION_DALARAN 
     set f.AbsenceResearch = 'R060'
 
