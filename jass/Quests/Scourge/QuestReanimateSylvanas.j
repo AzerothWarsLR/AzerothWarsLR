@@ -1,9 +1,8 @@
-library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeConfig, QuelthalasConfig
+library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
 
   globals
     private constant integer SYLVANAS_RESEARCH = 'R02D'
     private constant integer SYLVANAS_ID = 'uswb'
-    private constant integer JENALLA_ID = 'H02B'
 
     private QuestData QUEST_KILL_SYLVANAS
     private QuestData QUESTITEM_KILL_SYLVANAS
@@ -12,22 +11,15 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
   endglobals
 
   private function Dies takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
-    local Person scourgePerson = PersonsByFaction[FACTION_SCOURGE]
-    local Person quelPerson = PersonsByFaction[FACTION_QUELTHALAS]
-    local unit jenalla = null
-    local unit sylvanas = gg_unit_Hvwd_1515
-    if triggerPerson.team.containsPlayer(scourgePerson.p) then
-      call SetPlayerTechResearched(scourgePerson.p, SYLVANAS_RESEARCH, 1)
+    if FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
+      call SetPlayerTechResearched(FACTION_SCOURGE.Person.p, SYLVANAS_RESEARCH, 1)
       call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KILL_SYLVANAS, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_PROTECT_SYLVANAS, QUEST_PROGRESS_FAILED, true)
-      set jenalla = CreateUnit(quelPerson.p, JENALLA_ID, 18509, 18073, 295)
-      call CreateUnit(scourgePerson.p, SYLVANAS_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetHeroXP(jenalla, GetHeroXP(sylvanas), true)
-      call RemoveUnit(gg_unit_Hvwd_1515)
+      call LEGEND_JENNALLA.Spawn(FACTION_QUELTHALAS.Person.p, 18509, 18073, 295)
+      call CreateUnit(FACTION_SCOURGE.Person.p, SYLVANAS_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
+      call SetHeroXP(LEGEND_JENNALLA.Unit, GetHeroXP(LEGEND_SYLVANAS.Unit), true)
+      set LEGEND_SYLVANAS.Unit = null
     endif
-    set sylvanas = null
-    set jenalla = null
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 

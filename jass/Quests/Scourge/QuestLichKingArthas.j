@@ -9,29 +9,14 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
     private QuestItemData QUESTITEM_LICHKINGARTHAS_GOTHRONE
   endglobals
 
-  private function CreateLichKing takes nothing returns nothing
-    local item tempItem = null
-    local integer i = 0
-    local Artifact tempArtifact = Artifact.artifactsByType['I01Y']
-
-    call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
-    set LEGEND_ARTHAS.UnitType = 'N023'
-    set LEGEND_ARTHAS.Hivemind = true
-    set LEGEND_ARTHAS.PermaDies = true
-    set LEGEND_ARTHAS.DeathMessage = "The indomitable Lich King has fallen. Without a central mind to dominate them, the forces of the Scourge have become feral."
-    if tempArtifact != 0 then
-      call UnitAddItem(LEGEND_ARTHAS.Unit, tempArtifact.item)
-    endif
-    call RemoveUnit(gg_unit_u000_0649)      //The Frozen Throne
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_GOTHRONE, QUEST_PROGRESS_COMPLETE, true)
-    //Cleanup
-    set tempItem = null 
-    call DestroyTrigger(GetTriggeringTrigger())
-  endfunction
-
   private function EntersRegion takes nothing returns nothing
     if LEGEND_ARTHAS.OwningFaction == FACTION_SCOURGE and GetTriggerUnit() == LEGEND_ARTHAS.Unit and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
-      call CreateLichKing()
+      call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
+      set LEGEND_ARTHAS.UnitType = 'N023'
+      set LEGEND_LICHKING.Unit = LEGEND_ARTHAS.Unit
+      call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
+      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_GOTHRONE, QUEST_PROGRESS_COMPLETE, true)
+      call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 

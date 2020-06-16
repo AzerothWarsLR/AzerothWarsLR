@@ -2,6 +2,8 @@ library LegendQuelthalas initializer OnInit requires Legend
 
   globals
     Legend LEGEND_ROMMATH
+    Legend LEGEND_JENNALLA
+    Legend LEGEND_SYLVANAS
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
@@ -10,6 +12,12 @@ library LegendQuelthalas initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
+
+    set LEGEND_JENNALLA = Legend.create()
+    set LEGEND_JENNALLA.UnitType = 'H02B'
+    
+    set LEGEND_SYLVANAS = Legend.create()
+    set LEGEND_SYLVANAS.Unit = gg_unit_Hvwd_1515
 
     set LEGEND_SILVERMOON = Legend.create()
     set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418

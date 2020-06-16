@@ -5,38 +5,17 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
     private QuestItemData QUESTITEM_DESTROY_STRATHOLME
     private QuestItemData QUESTITEM_DESTROY_TYRSHAND
     private QuestItemData QUESTITEM_DESTROY_CAPITAL_PALACE
-
-    private unit UNIT_MALGANIS = null
   endglobals
-
-  private function CorruptArthas takes nothing returns nothing
-    local Person scourge = PersonsByFaction[FACTION_SCOURGE]
-    local Person legion = PersonsByFaction[FACTION_LEGION]
-    local unit malganis = null
-    local group tempGroup = null
-    if scourge != 0 then
-      set LEGEND_ARTHAS.UnitType = 'Uear'
-      call UnitDropAllItems(LEGEND_ARTHAS.Unit)
-      call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
-      call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
-      if legion != 0 then
-        set tempGroup = CreateGroup()
-        call GroupEnumUnitsOfType(tempGroup, "Mal'Ganis", null)
-        set malganis = GroupPickRandomUnit(tempGroup)
-        call UnitTransferItems(malganis, LEGEND_ARTHAS.Unit)
-        call RemoveUnit(malganis)
-        //cleanup
-        set malganis = null
-        call DestroyGroup(tempGroup)
-        set tempGroup = null
-      endif
-    endif
-    call FACTION_SCOURGE.setQuestItemStatus(QuestLichKingArthas_QUESTITEM_LICHKINGARTHAS_GETARTHAS, QUEST_PROGRESS_COMPLETE, true)
-  endfunction
 
   private function AnyCapitalDies takes nothing returns nothing
     if not IsUnitAliveBJ(gg_unit_h000_0406) and not IsUnitAliveBJ(gg_unit_h01G_0885) and not IsUnitAliveBJ(gg_unit_h030_0839) then
-      call CorruptArthas()
+      if FACTION_SCOURGE.Person != 0 then
+        set LEGEND_ARTHAS.UnitType = 'Uear'
+        call UnitDropAllItems(LEGEND_ARTHAS.Unit)
+        call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
+        call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
+      endif
+      call FACTION_SCOURGE.setQuestItemStatus(QuestLichKingArthas_QUESTITEM_LICHKINGARTHAS_GETARTHAS, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
