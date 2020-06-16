@@ -3,7 +3,7 @@ library EventWildhammer requires IronforgeConfig, LegendIronforge
   //Ironforge gains Falstad Wildhammer, access to the Wildhammer FactionMod, and all units in Aerie Peak.
 
   globals
-    private constant integer RESEARCH = 'A0UC'
+    private constant integer RESEARCH = 'R01T'
   endglobals
 
   private function Cast takes nothing returns nothing

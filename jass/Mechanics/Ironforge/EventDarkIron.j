@@ -10,22 +10,12 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
     local group tempGroup
     local unit u
 
-    if GetSpellAbilityId() == 0 then  //FILL THIS IN
+    if GetSpellAbilityId() == 'A0UZ' then
       call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Person.p, -24540, -30728, 45)
       call SetHeroXP(LEGEND_DAGRAN.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
       call FACTION_IRONFORGE.modObjectLimit('n02D', UNLIMITED)      //Dark Iron War Golem
       call FACTION_IRONFORGE.modObjectLimit('h041', 12)             //Fire Tank
       call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)                     
-
-      //Remove pathing blockers obstructing Shadowforge City
-      call RemoveDestructable( gg_dest_YTpc_9638 )
-      call RemoveDestructable( gg_dest_YTpc_9639 )
-      call RemoveDestructable( gg_dest_YTpc_9637 )
-      call RemoveDestructable( gg_dest_YTpc_9363 )
-      call RemoveDestructable( gg_dest_YTpc_9372 )
-      call RemoveDestructable( gg_dest_YTpc_9371 )
-      call RemoveDestructable( gg_dest_YTpc_2452 )
-      call RemoveDestructable( gg_dest_YTpc_9364 )
 
       //Transfer all Neutral Passive units in region to Ironforge
       set tempGroup = CreateGroup()
