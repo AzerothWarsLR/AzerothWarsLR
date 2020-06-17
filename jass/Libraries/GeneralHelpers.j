@@ -62,6 +62,21 @@ library GeneralHelpers
     call SetUnitOwner(whichUnit, whichPlayer, true)
   endfunction
 
+  function RescueNeutralUnitsInRect takes rect whichRect, player whichPlayer returns nothing
+    local group tempGroup = CreateGroup()
+    local unit u
+    call GroupEnumUnitsInRect(tempGroup, whichRect, null)
+    loop
+      set u = FirstOfGroup(tempGroup)
+      exitwhen u == null
+      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+        call UnitRescue(u, whichPlayer)
+      endif
+      call GroupRemoveUnit(tempGroup, u)
+    endloop
+    call DestroyGroup(tempGroup)
+  endfunction  
+
   function UnitDropAllItems takes unit u returns nothing
     local integer i = 0
     local item dropItem = null
