@@ -10,6 +10,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       Artifact ARTIFACT_BELTOFGIANTSTRENGTH
       Artifact ARTIFACT_HELMOFDOMINATION
       Artifact ARTIFACT_DREKTHARSSPELLBOOK
+      Artifact ARTIFACT_SCEPTEROFTHEQUEEN
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -51,7 +52,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
     call UnitAddItem(gg_unit_H00Z_1936, tempArtifact.item)                      //Galen Trollbane
 
-    set tempArtifact = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))    //Scepter of the Queen
+    set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
     call UnitAddItem(gg_unit_n085_2846, tempArtifact.item)    
 
