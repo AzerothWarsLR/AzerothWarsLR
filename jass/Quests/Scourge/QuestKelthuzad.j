@@ -1,4 +1,4 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, EventKelthuzadDeath
 
   globals
     private QuestData QUEST_KELTHUZAD
@@ -10,6 +10,9 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
     if GetTriggerUnit() == LEGEND_KELTHUZAD.Unit and FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) then
       call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KELTHUZAD, QUEST_PROGRESS_COMPLETE, true)
       set LEGEND_KELTHUZAD.UnitType = LICH_ID
+      call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_LIFE))
+      call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_MANA))
+      call SetHeroXP(LEGEND_KELTHUZAD.Unit, KelthuzadExp, false)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
