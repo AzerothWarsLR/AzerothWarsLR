@@ -46,6 +46,7 @@ library DalaranConfig initializer OnInit requires Faction
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
     call f.registerObjectLimit('u01R', UNLIMITED)   //Sanctioned Necromancer 
     call f.registerObjectLimit('h02C', 1)           //Flagship 
+    call f.registerObjectLimit('n0AC', 6)           //Blue Dragon
 
 
     call f.registerObjectLimit('njks', 1)           //Jailor Kassan
