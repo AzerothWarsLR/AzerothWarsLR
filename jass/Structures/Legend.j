@@ -210,19 +210,22 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     private method onCast takes nothing returns nothing
-      local group tempGroup = CreateGroup()
+      local group tempGroup
       local unit u
-      call BlzGroupAddGroupFast(diesWithout, tempGroup)
-      loop
-        set u = FirstOfGroup(tempGroup)
-        exitwhen u == null
-        if GetLocalPlayer() == GetTriggerPlayer() then
-          call PingMinimap(GetUnitX(u), GetUnitY(u), 5)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
+      if GetSpellAbilityId() == DUMMY_DIESWITHOUT then
+        set tempGroup = CreateGroup()
+        call BlzGroupAddGroupFast(diesWithout, tempGroup)
+        loop
+          set u = FirstOfGroup(tempGroup)
+          exitwhen u == null
+          if GetLocalPlayer() == GetTriggerPlayer() then
+            call PingMinimap(GetUnitX(u), GetUnitY(u), 5)
+          endif
+          call GroupRemoveUnit(tempGroup, u)
+        endloop
+        call DestroyGroup(tempGroup)
+        set tempGroup = null
+      endif
     endmethod
 
     private method onDeath takes nothing returns nothing
