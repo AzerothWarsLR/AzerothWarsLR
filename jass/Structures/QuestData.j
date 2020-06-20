@@ -57,7 +57,7 @@ library QuestData requires Set
       local string display = ""
       local integer triggerPlayerNumber = S2I(SubString(BlzGetTriggerSyncPrefix(), StringLength(SYNC_PREFIX), StringLength(BlzGetTriggerSyncPrefix())))
       local Faction triggerFaction = Persons[triggerPlayerNumber].faction
-      set display = display + "|cffffcc00MAJOR EVENT - " + triggerFaction.prefixCol + title + "|r\n" + completionDesc + "\n"
+      set display = display + "\n|cffffcc00MAJOR EVENT - " + triggerFaction.prefixCol + title + "|r\n" + completionDesc + "\n"
       if GetLocalPlayer() != Player(triggerPlayerNumber) then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
         if Person(Persons[GetPlayerId(GetLocalPlayer())]).team.containsPlayer(triggerFaction.whichPerson.p) then
@@ -72,7 +72,7 @@ library QuestData requires Set
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
-      set display = display + "|cffffcc00QUEST FAILED - " + title + "|r\n"
+      set display = display + "\n|cffffcc00QUEST FAILED - " + title + "|r\n"
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
@@ -93,7 +93,7 @@ library QuestData requires Set
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
-      set display = display + "|cffffcc00QUEST COMPLETED - " + title + "|r\n" + completionDesc + "\n"
+      set display = display + "\n|cffffcc00QUEST COMPLETED - " + title + "|r\n" + completionDesc + "\n"
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
@@ -114,7 +114,7 @@ library QuestData requires Set
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
-      set display = display + "|cffffcc00QUEST DISCOVERED - " + title + "|r\n" + desc + "\n"
+      set display = display + "\n|cffffcc00QUEST DISCOVERED - " + title + "|r\n" + desc + "\n"
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
@@ -133,7 +133,7 @@ library QuestData requires Set
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
-      set display = display + "|cffffcc00QUEST UPDATED - " + title + "|r\n" + desc + "\n"
+      set display = display + "\n|cffffcc00QUEST UPDATED - " + title + "|r\n" + desc + "\n"
       loop 
         exitwhen i == questItems.size
         set tempQuestItemData = questItems[i]
