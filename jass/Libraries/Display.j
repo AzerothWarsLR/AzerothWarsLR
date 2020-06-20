@@ -1,8 +1,14 @@
 library Display
 
+  function DisplayResearchAcquired takes player whichPlayer, integer researchId, integer researchLevel returns nothing
+    call DisplayTextToPlayer(whichPlayer, 0, 0, "\n|cff00ff00RESEARCH ACQUIRED - " + GetObjectName(researchId) + "|r\n" + BlzGetAbilityExtendedTooltip(researchId, researchLevel))
+    if GetLocalPlayer() == whichPlayer then
+      call StartSound(bj_questHintSound)
+    endif
+  endfunction
+
   function DisplayUnitTypeAcquired takes player whichPlayer, integer unitId, string flavor returns nothing
-    call DisplayTextToPlayer(whichPlayer, 0, 0, "\n|cff00ff00NEW UNIT ACQUIRED|r - " + GetObjectName(unitId))
-    call DisplayTextToPlayer(whichPlayer, 0, 0, flavor)
+    call DisplayTextToPlayer(whichPlayer, 0, 0, "\n|cff00ff00NEW UNIT ACQUIRED - " + GetObjectName(unitId) + "|r" + flavor)
     if GetLocalPlayer() == whichPlayer then
       call StartSound(bj_questHintSound)
     endif
