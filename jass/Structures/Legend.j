@@ -77,6 +77,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call TriggerAddAction(ownerTrig, function thistype.onUnitChangeOwner)
         //
         set thistype.ByHandle[GetHandleId(unit)] = this
+        call refreshDummy()
       endif
     endmethod
 
@@ -96,7 +97,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     public method operator Hivemind= takes boolean b returns nothing
-      set hivemind = true
+      set hivemind = b
     endmethod
 
     public method operator UnitType takes nothing returns integer
@@ -113,7 +114,6 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call SetUnitState(newUnit, UNIT_STATE_MANA, GetUnitState(unit, UNIT_STATE_MANA))
         call SetHeroXP(newUnit, GetHeroXP(unit), false)
         call UnitTransferItems(unit, newUnit)
-        call refreshDummy()
         set oldX = GetUnitX(this.unit)
         set oldY = GetUnitY(this.unit)
         call RemoveUnit(unit)
@@ -187,9 +187,9 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call RemoveUnit(unit)
       endif
       if this.deathMessage != "" then
-        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
       endif
-      if hivemind then
+      if hivemind and OwningPerson != 0 then
         call OwningPerson.obliterate()
       endif
       set TriggerLegend = this
