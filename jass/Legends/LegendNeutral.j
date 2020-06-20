@@ -76,7 +76,7 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_NEXUS.Capturable = true
 
     set LEGEND_KARAZHAN = Legend.create()
-    set LEGEND_KARAZHAN.Unit = gg_unit_h001_0180
+    set LEGEND_KARAZHAN.Unit = gg_unit_h00G_0084
     set LEGEND_KARAZHAN.Capturable = true
 
     set LEGEND_ZULFARRAK = Legend.create()

@@ -1,8 +1,7 @@
-library QuestKarazhan requires DalaranConfig, LegendNeutral
+library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
 
   globals
     private QuestItemData QUESTITEM_CAPTURE
-    private constant integer RESEARCH_ID = 0
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
@@ -18,7 +17,7 @@ library QuestKarazhan requires DalaranConfig, LegendNeutral
     call OnLegendChangeOwner.register(trig)
     call TriggerAddCondition(trig, Condition(function LegendOwnerChanges))
 
-    set tempQuest = QuestData.create("Ivory Spire of Karazhan", "The mysterious spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "Karazhan has been captured. Dalaran's archivists scour its halls for arcane resources." , "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
+    set tempQuest = QuestData.create("Secrets of Karazhan", "The spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "Karazhan has been captured. Dalaran's archivists scour its halls for arcane resources." , "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
     set QUESTITEM_CAPTURE = tempQuest.addItem("Capture Karazhan")
     call FACTION_DALARAN.addQuest(tempQuest) 
   endfunction

@@ -61,6 +61,9 @@ library DalaranConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
+    call f.registerObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
+    call f.registerObjectLimit('R03M', UNLIMITED)   //Methods of Control
+    call f.registerObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
 
     //Masteries
     call f.registerObjectLimit('R00L', UNLIMITED)   //Arcane Mastery
