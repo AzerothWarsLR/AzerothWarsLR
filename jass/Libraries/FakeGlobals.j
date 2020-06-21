@@ -62,6 +62,7 @@ library FakeGlobals
     unit gg_unit_O023_0517
     unit gg_unit_O02C_2437
     unit gg_unit_h00G_0084
+    unit gg_unit_Ewrd_1259
   endglobals
 
 endlibrary FakeGlobals
