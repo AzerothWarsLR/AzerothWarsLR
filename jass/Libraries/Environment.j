@@ -1,7 +1,7 @@
 library Environment initializer OnInit
 
   globals
-    constant integer MAX_PLAYERS = 24
+    constant integer MAX_PLAYERS = 28
     private unit PosUnit
   endglobals
   
