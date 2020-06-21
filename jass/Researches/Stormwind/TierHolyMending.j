@@ -1,7 +1,7 @@
 library TierHolyMending initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'r02x' then
+    if GetResearched() == 'R02X' then
       call FACTION_STORMWIND.modObjectLimit('R03R', UNLIMITED)       //Reginald Windsor 
       call FACTION_STORMWIND.modObjectLimit('R03P', UNLIMITED)       //Archbishop Benedictus   
     endif

@@ -1,7 +1,7 @@
 library TierFocusInTheLight initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'r03a' then
+    if GetResearched() == 'R03A' then
       call FACTION_STORMWIND.modObjectLimit('R02X', UNLIMITED)       //Holy Mending   
       call FACTION_STORMWIND.modObjectLimit('R03C', UNLIMITED)       //Runic Constitution  
     endif

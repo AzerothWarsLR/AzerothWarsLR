@@ -1,7 +1,7 @@
 library TierKatranaPrestor initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'r037' then
+    if GetResearched() == 'R03Y' then
       call FACTION_STORMWIND.modObjectLimit('n05L', 6)               //Conjurer
     endif
   endfunction

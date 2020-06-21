@@ -1,7 +1,7 @@
 library TierCodeOfChivalry initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'r030' then
+    if GetResearched() == 'R030' then
       call FACTION_STORMWIND.modObjectLimit('h01B', -UNLIMITED)      //Outrider
       call FACTION_STORMWIND.modObjectLimit('h054', UNLIMITED)       //Stormwind Knight  
     endif

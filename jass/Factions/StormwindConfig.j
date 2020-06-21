@@ -73,6 +73,14 @@ library StormwindConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R02U', UNLIMITED)   //SI:7 Headquarters            
     call f.registerObjectLimit('R02K', UNLIMITED)   //Wizard's Sanctum
     call f.registerObjectLimit('R02V', UNLIMITED)   //Champion's Hall
+    call f.registerObjectLimit('R038', UNLIMITED)   //Enforcer Training
+    call f.registerObjectLimit('R03E', UNLIMITED)   //Saboteur Training
+    call f.registerObjectLimit('R02Y', UNLIMITED)   //Battle Tactics
+    call f.registerObjectLimit('R03D', UNLIMITED)   //Veteran Guard
+    call f.registerObjectLimit('R02W', UNLIMITED)   //Sanctuary of Light
+    call f.registerObjectLimit('R03A', UNLIMITED)   //Focus In The Light
+    call f.registerObjectLimit('R03T', UNLIMITED)   //Electric Strike Ritual
+    call f.registerObjectLimit('R03U', UNLIMITED)   //Solar Flare Ritual
     
     //Masteries
     call f.registerObjectLimit('R01C', UNLIMITED)   //Arcane Mastery
