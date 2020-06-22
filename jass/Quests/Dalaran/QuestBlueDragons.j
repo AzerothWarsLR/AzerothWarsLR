@@ -23,6 +23,7 @@ library QuestBlueDragons initializer OnInit requires DalaranConfig, LegendNeutra
     set tempQuest = QuestData.create("The Blue Dragonflight", "The Blue Dragons of Northrend are the wardens of magic on Azeroth. They might be convinced to willingly join the mages of Dalaran.", "The Nexus has been captured. The Blue Dragonflight fights for Dalaran." , "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
     set QUESTITEM_CAPTURE = tempQuest.addItem("Capture the Nexus in Northrend")
     call FACTION_DALARAN.addQuest(tempQuest) 
+    call FACTION_DALARAN.registerObjectLimit('n0AC', 6) //Blue Dragon
   endfunction
 
 endlibrary
