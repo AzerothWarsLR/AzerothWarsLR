@@ -10,8 +10,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
     constant integer HERO_COST = 100    //For refunding
 
-    private constant real REFUND_PERCENT = 0.75          //How much gold and lumber is refunded from units that get refunded on leav
-    private constant real XP_TRANSFER_PERCENT = 0.75     //How much experience is transferred from heroes that leave the game
+    private constant real REFUND_PERCENT = 1.00          //How much gold and lumber is refunded from units that get refunded on leave
+    private constant real XP_TRANSFER_PERCENT = 1.00     //How much experience is transferred from heroes that leave the game
 
     Event OnPersonFactionChange
     Event OnPersonTeamLeave
