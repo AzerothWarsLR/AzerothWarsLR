@@ -27,7 +27,6 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('o01M', UNLIMITED)   //Goblin Laboratory
 
     call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
-    call f.registerObjectLimit('o01Q', -UNLIMITED)   //Warsong Grunt
     call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
     call f.registerObjectLimit('orai', UNLIMITED)   //Raider
     call f.registerObjectLimit('nw2w', -UNLIMITED)  //Orc Warlock
@@ -36,7 +35,6 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('otbk', UNLIMITED)   //Troll Berseker
     call f.registerObjectLimit('nogo', UNLIMITED)   //Stonemaul SOldier
     call f.registerObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
-    call f.registerObjectLimit('noga', -UNLIMITED)  //Orc Champion
     call f.registerObjectLimit('o00I', 6)           //Horde War Machine
     call f.registerObjectLimit('n061', 12)          //Goblin Sapper
     call f.registerObjectLimit('n062', 8)           //Goblin Shredder
@@ -45,7 +43,6 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
     call f.registerObjectLimit('o00G', 6)           //Blademaster
     call f.registerObjectLimit('n03F', 6)           //Ogre Lord
-    call f.registerObjectLimit('okod', 0)           //Kodo
     call f.registerObjectLimit('nzep', 2)           //Goblin Zeppelin
 
     call f.registerObjectLimit('n065', 1)           //Drazilb
@@ -56,12 +53,10 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
-    call f.registerObjectLimit('Rwdm', 0)           //War Drums
     call f.registerObjectLimit('R02I', UNLIMITED)   //Ogre Magi Adept Training
     call f.registerObjectLimit('R03Q', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('Rorb', UNLIMITED)   //Reinforced Defenses
     call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
-    call f.registerObjectLimit('Rolf', 0)           //Liquid Fire
 
     call f.registerObjectLimit('R00X', UNLIMITED)   //Bloodfury Mastery
     call f.registerObjectLimit('R015', UNLIMITED)   //Ogre Might Mastery

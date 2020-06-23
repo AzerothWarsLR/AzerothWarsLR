@@ -186,7 +186,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
       endif
-      if this.deathMessage != "" then
+      if this.deathMessage != null then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
       endif
       if hivemind and OwningPerson != 0 then

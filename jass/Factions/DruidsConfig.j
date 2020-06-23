@@ -38,8 +38,6 @@ library DruidsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
     call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
-    call f.registerObjectLimit('e00X', 0)  	    //Elemental Guardian
-    call f.registerObjectLimit('e012', 6)           //Siege Ancient
 
     call f.registerObjectLimit('e015', 1)           //Broll
 

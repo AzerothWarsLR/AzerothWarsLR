@@ -5,6 +5,9 @@ library LegendSentinels initializer OnInit requires Legend
     Legend LEGEND_TYRANDE
     Legend LEGEND_SHANDRIS
     Legend LEGEND_JALIN
+
+    Legend LEGEND_AUBERDINE
+    Legend LEGEND_FEATHERMOON
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -19,6 +22,12 @@ library LegendSentinels initializer OnInit requires Legend
 
     set LEGEND_JALIN = Legend.create()
     set LEGEND_JALIN.UnitType = 'E00S'
+
+    set LEGEND_AUBERDINE = Legend.create()
+    set LEGEND_AUBERDINE.Unit = gg_unit_e00J_0320
+
+    set LEGEND_FEATHERMOON = Legend.create()
+    set LEGEND_FEATHERMOON.Unit = gg_unit_e00M_2545
   endfunction
 
 endlibrary

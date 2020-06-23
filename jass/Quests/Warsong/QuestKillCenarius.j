@@ -27,7 +27,7 @@ library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig
     call TriggerAddAction(trig, function Dies)
 
     //Quest setup
-    set QUEST_CENARIUS = QuestData.create("Thorn in Our Side", "The Night Elves are protected by a towering stag-like creature they call a demigod. Even he cannot stand against the might of the Warsong.", "The Demigod has fallen! Warsong is supreme!", "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
+    set QUEST_CENARIUS = QuestData.create("The Hunter of Shadows", "The Night Elves are protected by a towering stag-like creature they call a demigod. Even he cannot stand against the might of the Warsong.", "The Demigod has fallen! Warsong is supreme!", "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
     set QUESTITEM_KILL = QUEST_CENARIUS.addItem("Kill Cenarius")
     call FACTION_WARSONG.addQuest(QUEST_CENARIUS)
   endfunction
