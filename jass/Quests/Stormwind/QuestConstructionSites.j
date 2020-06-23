@@ -32,6 +32,7 @@ library QuestConstructionSites initializer OnInit requires QuestData, StormwindC
     set QUESTITEM_WAIT = tempQuest.addItem("Survive until turn " + I2S(R2I((TIMER / 60)+1)))
     call FACTION_STORMWIND.addQuest(tempQuest) 
     call FACTION_STORMWIND.registerObjectLimit(RESEARCH_ID, UNLIMITED)
+    set FACTION_STORMWIND.StartingQuest = tempQuest
   endfunction
 
 endlibrary

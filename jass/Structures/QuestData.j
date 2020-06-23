@@ -110,7 +110,7 @@ library QuestData requires Set
       call StartSound(bj_questCompletedSound)
     endmethod
 
-    private method displayDiscovered takes nothing returns nothing
+    public method displayDiscovered takes nothing returns nothing
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""

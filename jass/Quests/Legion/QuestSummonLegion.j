@@ -38,6 +38,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     set QUEST_LEGIONSUMMONLEGION.Global = true
     set QUESTITEM_LEGIONSUMMONLEGION = QUEST_LEGIONSUMMONLEGION.addItem("Summon the Burning Legion")
     call FACTION_LEGION.addQuest(QUEST_LEGIONSUMMONLEGION)
+    set FACTION_LEGION.StartingQuest = QUEST_LEGIONSUMMONLEGION
 
     call OnPersonTeamJoin.register(trig)
     call OnPersonTeamLeave.register(trig)

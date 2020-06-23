@@ -67,6 +67,7 @@ library QuestMalfurionAwakens initializer OnInit requires QuestData, DruidsConfi
     set QUESTITEM_ARTIFACT = QUEST_MALFURION.addItem("Acquire the Horn of Cenarius")
     set QUESTITEM_VISIT = QUEST_MALFURION.addItem("Bring the Horn of Cenarius to the Barrow Den")
     call FACTION_DRUIDS.addQuest(QUEST_MALFURION)
+    set FACTION_DRUIDS.StartingQuest = QUEST_MALFURION
   endfunction
 
 endlibrary

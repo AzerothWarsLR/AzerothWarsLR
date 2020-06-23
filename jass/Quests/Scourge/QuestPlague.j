@@ -34,6 +34,7 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
     set QUESTITEM_PLAGUETIME = QUEST_PLAGUE.addItem("Survive until turn 6")
     set QUESTITEM_PLAGUESTART = QUEST_PLAGUE.addItem("Type -plague OR wait until turn 11")
     call FACTION_SCOURGE.addQuest(QUEST_PLAGUE)
+    set FACTION_SCOURGE.StartingQuest = QUEST_PLAGUE
 
     //Command to start the Plague after it's enabled
     set trig = CreateTrigger()

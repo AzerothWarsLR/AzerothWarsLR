@@ -49,6 +49,7 @@ library QuestSeaWitch initializer OnInit requires QuestData, FrostwolfConfig
     set QUEST_SEAWITCH = QuestData.create("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "The sea witch Zar'jira has been slain. Thrall and Vol'jin can now set sail.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
     set QUESTITEM_KILL = QUEST_SEAWITCH.addItem("Kill the Sea Witch at Darkspear Isles")
     call FACTION_FROSTWOLF.addQuest(QUEST_SEAWITCH)
+    set FACTION_FROSTWOLF.StartingQuest = QUEST_SEAWITCH
 
     set Storm = AddWeatherEffect(gg_rct_Darkspear_Island, 'RAhr')
     call EnableWeatherEffect(Storm, true)

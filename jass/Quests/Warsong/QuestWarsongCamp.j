@@ -1,6 +1,6 @@
 //If Grom enters the Warsong Camp area, OR a time elapses, OR someone becomes a solo Horde Path, give the Camp to a Horde player.
 
-library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfConfig, GeneralHelpers
+library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfConfig, LegendWarsong, GeneralHelpers
 
   globals
     private QuestData QUEST_CAMP
@@ -42,7 +42,7 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if GetUnitTypeId(GetTriggerUnit()) == 'Opgh' or GetUnitTypeId(GetTriggerUnit()) == 'Ogrh' then   //Grom or Grom Bloodpact
+    if LEGEND_GROM.Unit == GetTriggerUnit() then
       call Build()
     endif
   endfunction    
@@ -55,7 +55,7 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
   endfunction
 
   private function Conditions takes nothing returns boolean
-    return FACTION_WARSONG.getQuestItemProgress(QUEST_CAMP) == QUEST_PROGRESS_INCOMPLETE
+    return FACTION_WARSONG.getQuestItemProgress(QUESTITEM_BUILD) == QUEST_PROGRESS_INCOMPLETE
   endfunction
 
   private function OnInit takes nothing returns nothing
@@ -80,6 +80,7 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
     set QUEST_CAMP = QuestData.create("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "Grommash has established a foothold in Ashenvale and is now ready to begin harvesting supplies in earnest.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
     set QUESTITEM_BUILD = QUEST_CAMP.addItem("Survive until turn 4 OR bring Grom to Ashenvale")
     call FACTION_WARSONG.addQuest(QUEST_CAMP)
+    set FACTION_WARSONG.StartingQuest = QUEST_CAMP
   endfunction
 
 endlibrary
