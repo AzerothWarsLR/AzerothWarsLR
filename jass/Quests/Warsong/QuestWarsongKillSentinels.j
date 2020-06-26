@@ -40,6 +40,7 @@ library WarsongKillSentinels initializer OnInit requires WarsongConfig, LegendSe
     set QUESTITEM_AUBERDINE = tempQuest.addItem("Auberdine is destroyed")
     set QUESTITEM_FEATHERMOON = tempQuest.addItem("Feathermoon Stronghold is destroyed")
     call FACTION_WARSONG.addQuest(tempQuest)
+    call FACTION_WARSONG.modObjectLimit(RESEARCH_ID, UNLIMITED)
   endfunction
 
 endlibrary

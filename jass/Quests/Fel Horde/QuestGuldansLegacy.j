@@ -22,7 +22,7 @@ library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
     set tempQuest = QuestData.create("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "Gul'dan's remains have been located within the Tomb of Sargeras. His eldritch knowledge may now be put to purpose.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
     set QUESTITEM_VISIT = tempQuest.addItem("Bring a Fel Horde hero to Gul'dan's corpse in the Tomb of Sargeras")
     call FACTION_FEL_HORDE.addQuest(tempQuest)
-    call FACTION_FEL_HORDE.registerObjectLimit(RESEARCH_ID, 1)
+    call FACTION_FEL_HORDE.modObjectLimit(RESEARCH_ID, 1)
   endfunction
 
 

@@ -39,8 +39,8 @@ library DruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFros
     set tempQuest = QuestData.create("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of powerful nature spirits that now heed the call of the Druids.","ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
     set QUESTITEM_THUNDERBLUFF = tempQuest.addItem("Thunderbluff is destroyed")
     set QUESTITEM_ORGRIMMAR = tempQuest.addItem("Orgrimmar is destroyed")
-    call FACTION_DRUIDS.registerObjectLimit(ELEMENTAL_GUARDIAN_ID, 1)
-    call FACTION_DRUIDS.registerObjectLimit(RESEARCH_ID, UNLIMITED)
+    call FACTION_DRUIDS.modObjectLimit(ELEMENTAL_GUARDIAN_ID, 1)
+    call FACTION_DRUIDS.modObjectLimit(RESEARCH_ID, UNLIMITED)
     call FACTION_DRUIDS.addQuest(tempQuest)
   endfunction
 

@@ -36,7 +36,7 @@ library DruidsKillWarsong initializer OnInit requires DruidsConfig, LegendWarson
     call TriggerAddAction(trig, function EncampmentDies)
 
     set tempQuest = QuestData.create("Enemies at the Gate", "Arriving from another planet and across the seas of Azeroth, the Orcs of the Warsong Clan have arrived to ravage the wilderness and consume its bounty. They must be stopped.", "The Warsong presence on Kalimdor has been eliminated. The sacred lands are safe from their hatchets.","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
-    call FACTION_DRUIDS.registerObjectLimit('e012', 6) //Siege Ancient
+    call FACTION_DRUIDS.modObjectLimit('e012', 6) //Siege Ancient
     set QUESTITEM_STONEMAUL = tempQuest.addItem("Stonemaul Keep is destroyed")
     set QUESTITEM_ENCAMPMENT = tempQuest.addItem("The Warsong Encampment on the Echo Isles is destroyed")
     call FACTION_DRUIDS.addQuest(tempQuest)

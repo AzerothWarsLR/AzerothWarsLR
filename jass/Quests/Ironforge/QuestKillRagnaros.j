@@ -26,7 +26,7 @@ library QuestKillRagnaros initializer OnInit requires QuestData, IronforgeConfig
     set tempQuest = QuestData.create("Harness the Inferno", "The Firelord Ragnaros resides deep within the Molten Core. With his death, the elemental smiths of Ironforge could leverage his primal fire to enhance their creations.", "Ragnaros has been slain. His essence has been harvested and will be put to use immediately.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfFire.blp")
     set QUESTITEM_KILL = tempQuest.addItem("Kill Ragnaros")
     call FACTION_IRONFORGE.addQuest(tempQuest)
-    call FACTION_IRONFORGE.registerObjectLimit(RESEARCH_ID, UNLIMITED)
+    call FACTION_IRONFORGE.modObjectLimit(RESEARCH_ID, UNLIMITED)
   endfunction
 
 endlibrary

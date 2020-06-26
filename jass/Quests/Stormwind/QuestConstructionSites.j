@@ -31,7 +31,7 @@ library QuestConstructionSites initializer OnInit requires QuestData, StormwindC
     set tempQuest = QuestData.create("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "Stormwind's Construction Sites are now ready to be upgraded.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
     set QUESTITEM_WAIT = tempQuest.addItem("Survive until turn " + I2S(R2I((TIMER / 60)+1)))
     call FACTION_STORMWIND.addQuest(tempQuest) 
-    call FACTION_STORMWIND.registerObjectLimit(RESEARCH_ID, UNLIMITED)
+    call FACTION_STORMWIND.modObjectLimit(RESEARCH_ID, UNLIMITED)
     set FACTION_STORMWIND.StartingQuest = tempQuest
   endfunction
 

@@ -49,6 +49,7 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
     set QUESTITEM_KILL = QUEST_ANDRASSIL.addItem("The Frozen Throne is destroyed")
     set QUESTITEM_CAPTURE = QUEST_ANDRASSIL.addItem("Capture Grizzly Hills")
     call FACTION_DRUIDS.addQuest(QUEST_ANDRASSIL)
+    call FACTION_DRUIDS.modObjectLimit('R05X', UNLIMITED)
   endfunction
 
 endlibrary

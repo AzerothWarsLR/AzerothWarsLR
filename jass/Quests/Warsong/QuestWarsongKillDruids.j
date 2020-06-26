@@ -24,6 +24,7 @@ library WarsongKillDruids initializer OnInit requires WarsongConfig, LegendDruid
     set tempQuest = QuestData.create("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple the Druids and supply the Warsong with an incredible source of lumber.", "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
     set QUESTITEM_NORDRASSIL = tempQuest.addItem("Nordrassil is destroyed")
     call FACTION_WARSONG.addQuest(tempQuest)
+    call FACTION_WARSONG.modObjectLimit(RESEARCH_ID, UNLIMITED)
   endfunction
 
 endlibrary
