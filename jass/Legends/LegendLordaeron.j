@@ -6,6 +6,8 @@ library LegendLordaeron initializer OnInit requires Legend
     Legend LEGEND_MOGRAINE
     Legend LEGEND_GARITHOS
 
+    Legend LEGEND_CAPITALPALACE
+    Legend LEGEND_STRATHOLME
     Legend LEGEND_TYRSHAND
   endglobals
 
@@ -23,6 +25,12 @@ library LegendLordaeron initializer OnInit requires Legend
 
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
+
+    set LEGEND_CAPITALPALACE = Legend.create()
+    set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406
+
+    set LEGEND_STRATHOLME = Legend.create()
+    set LEGEND_STRATHOLME.Unit = gg_unit_h01G_0885
 
     set LEGEND_TYRSHAND = Legend.create()
     set LEGEND_TYRSHAND.Unit = gg_unit_h030_0839

@@ -3,12 +3,16 @@ library QuestCorruptSunwell initializer OnInit requires ScourgeConfig, LegendQue
   globals
     private QuestItemData QUESTITEM_CAPTURE
     private constant integer CORRUPTED_SUNWELL_ID = 'n029'
+    private constant integer RESEARCH_ID = 'R04K'
+    private constant integer DARKFALLEN_ID = 'h04A'
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_SUNWELL and FACTION_SCOURGE.Person.p == GetOwningPlayer(LEGEND_SUNWELL.Unit) and FACTION_SCOURGE.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
+    if GetTriggerLegend() == LEGEND_SUNWELL and FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) and FACTION_SCOURGE.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
       set LEGEND_SUNWELL.UnitType = CORRUPTED_SUNWELL_ID
       call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+      call SetPlayerTechResearched(FACTION_SCOURGE.Person.p, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_SCOURGE.Person.p, DARKFALLEN_ID, "You can now train " + GetObjectName(DARKFALLEN_ID) + " from the Temple of the Damned.")
     endif
   endfunction
 

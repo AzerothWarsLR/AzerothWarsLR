@@ -3,6 +3,7 @@ library LegendLegion initializer OnInit requires Legend
   globals
     Legend LEGEND_ARCHIMONDE
     Legend LEGEND_ANETHERON
+    Legend LEGEND_TICHONDRIUS
 
     Legend LEGEND_LEGIONNEXUS
   endglobals
@@ -15,6 +16,9 @@ library LegendLegion initializer OnInit requires Legend
     
     set LEGEND_ANETHERON = Legend.create()
     set LEGEND_ANETHERON.UnitType = 'U00L'
+
+    set LEGEND_TICHONDRIUS = Legend.create()
+    set LEGEND_TICHONDRIUS.Unit = gg_unit_Utic_1234
 
     set LEGEND_LEGIONNEXUS = Legend.create()
     set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871

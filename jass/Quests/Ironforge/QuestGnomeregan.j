@@ -35,6 +35,7 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig
     set QUEST_GNOMEREGAN = QuestData.create("The City of Invention", "The people of Gnomeregan have long been unable to assist the Alliance in its wars due an infestation of troggs and Ice Trolls. Resolve their conflicts for them to gain their services.", "Gnomeregan has been literated, and its military is now free to assist the South Alliance.", "ReplaceableTextures\\CommandButtons\\BTNFlyingMachine.blp")
     set QUESTITEM_GNOMEREGAN = QUEST_GNOMEREGAN.addItem("Kill the Ice Trolls at Gnomeregan")
     call FACTION_IRONFORGE.addQuest(QUEST_GNOMEREGAN) 
+    set FACTION_IRONFORGE.StartingQuest = QUEST_GNOMEREGAN
   endfunction        
 
 endlibrary

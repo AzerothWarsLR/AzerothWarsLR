@@ -23,7 +23,7 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
     call TriggerRegisterEnterRectSimple(trig, gg_rct_Sunwell)
     call TriggerAddCondition(trig, Condition(function EntersRegion))     
 
-    set QUEST_KELTHUZAD = QuestData.create("Death Means Little", "Kel'thuzad is the leader of the Cult of the Damned and an extraordinarily powerful necromancer. If he were to be brought to the Sunwell and submerged in its waters, he would be reanimated as an immortal Lich.", "Kel'thuzad has been reanimated and empowered through the unlimited magical energies of the Sunwell. He now has the ability to summon the Burning Legion.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
+    set QUEST_KELTHUZAD = QuestData.create("Life Beyond Death", "Kel'thuzad is the leader of the Cult of the Damned and an extraordinarily powerful necromancer. If he were to be brought to the Sunwell and submerged in its waters, he would be reanimated as an immortal Lich.", "Kel'thuzad has been reanimated and empowered through the unlimited magical energies of the Sunwell. He now has the ability to summon the Burning Legion.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
     set QUESTITEM_KELTHUZAD = QUEST_KELTHUZAD.addItem("Bring Kel'thuzad to the Sunwell")
     call FACTION_SCOURGE.addQuest(QUEST_KELTHUZAD)           
   endfunction
