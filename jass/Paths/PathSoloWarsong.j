@@ -1,7 +1,7 @@
 library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong, Display
 
   globals
-    private constant integer RESEARCH_ID = 'R02N'
+    private constant integer RESEARCH_ID = 'R02M'
   endglobals
 
   private function Research takes nothing returns nothing
