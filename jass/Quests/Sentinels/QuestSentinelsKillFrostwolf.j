@@ -10,7 +10,7 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
   private function TryComplete takes nothing returns nothing
     if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_THUNDERBLUFF) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_ORGRIMMAR) == QUEST_PROGRESS_COMPLETE then
       call SetPlayerTechResearched(FACTION_SENTINELS.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_SENTINELS.Person.p, AMARA_ID, "You can now train Amara from the Altar of Elders and from your capitals.")
+      call DisplayUnitTypeAcquired(FACTION_SENTINELS.Person.p, AMARA_ID, "You can now revive Amara from the Altar of Elders.")
     endif
   endfunction
 
