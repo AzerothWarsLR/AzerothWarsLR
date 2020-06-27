@@ -62,7 +62,7 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
   endfunction
 
   private function Conditions takes nothing returns boolean
-    return FACTION_FROSTWOLF.getQuestItemProgress(QUEST_ORGRIMMAR) == QUEST_PROGRESS_INCOMPLETE
+    return FACTION_FROSTWOLF.getQuestItemProgress(QUESTITEM_VISIT) == QUEST_PROGRESS_INCOMPLETE
   endfunction
 
   private function OnInit takes nothing returns nothing
