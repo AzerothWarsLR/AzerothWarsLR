@@ -10,7 +10,7 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
   private function TryComplete takes nothing returns nothing
     if FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_KILL) == QUEST_PROGRESS_COMPLETE and FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_COMPLETE then
       call SetPlayerTechResearched(FACTION_LORDAERON.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DALARAN.Person.p, 'n0AC', "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")
+      call DisplayUnitTypeAcquired(FACTION_LORDAERON.Person.p, THUNDER_EAGLE_ID, "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")
     endif
   endfunction
 
