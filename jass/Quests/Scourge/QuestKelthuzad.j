@@ -1,4 +1,4 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, EventKelthuzadDeath
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, EventKelthuzadDeath, SortScourgeLegends
 
   globals
     private QuestData QUEST_KELTHUZAD
@@ -14,6 +14,7 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
       call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_LIFE))
       call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_MANA))
       call SetHeroXP(LEGEND_KELTHUZAD.Unit, KelthuzadExp, false)
+      call SortScourgeLegends()
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
