@@ -1,7 +1,7 @@
 library Display requires Faction
 
   function DisplayHeroReward takes unit whichUnit, integer strength, integer agility, integer intelligence, integer experience returns nothing
-    local string display = "\n|cff00ff00HERO REWARD EARNED -" + GetUnitName(whichUnit)
+    local string display = "\n|cff00ff00HERO REWARD EARNED -" + GetHeroProperName(whichUnit) + "|r"
     if strength > 0 then
       set display = display + "\n+" + I2S(strength) + " Strength"
     endif
@@ -14,6 +14,7 @@ library Display requires Faction
     if experience > 0 then
       set display = display + "\n+" + I2S(experience) + " Experience"
     endif
+    call DisplayTextToPlayer(GetOwningPlayer(whichUnit), 0, 0, display)
     if GetLocalPlayer() == GetOwningPlayer(whichUnit) then
       call StartSound(bj_questHintSound)
     endif
