@@ -12,6 +12,7 @@ library EventKelthuzadDeath initializer OnInit requires LegendScourge
 
   private function Dies takes nothing returns nothing
     if LEGEND_KELTHUZAD == GetTriggerLegend() and GetUnitTypeId(GetTriggerLegend().Unit) == NECROMANCER_ID then
+      set KelthuzadExp = GetHeroXP(LEGEND_KELTHUZAD.Unit)
       call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_LIFE))
       set LEGEND_KELTHUZAD.UnitType = GHOST_ID
       call DestroyTrigger(GetTriggeringTrigger())         
