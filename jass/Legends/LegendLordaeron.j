@@ -28,9 +28,11 @@ library LegendLordaeron initializer OnInit requires Legend
 
     set LEGEND_CAPITALPALACE = Legend.create()
     set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406
+    set LEGEND_CAPITALPALACE.DeathMessage = "The capital city of Lordaeron has been razed, and King Terenas is dead."
 
     set LEGEND_STRATHOLME = Legend.create()
     set LEGEND_STRATHOLME.Unit = gg_unit_h01G_0885
+    set LEGEND_STRATHOLME.DeathMessage = "The majestic city of Stratholme has been destroyed."
 
     set LEGEND_TYRSHAND = Legend.create()
     set LEGEND_TYRSHAND.Unit = gg_unit_h030_0839
