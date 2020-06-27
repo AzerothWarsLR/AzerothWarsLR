@@ -326,6 +326,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         if IsUnitType(u, UNIT_TYPE_HERO) == true then
           call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) + HERO_COST)
           set this.xp = this.xp + GetHeroXP(u)
+          //Subtract hero's starting XP from refunded XP
+          if Legend.fromHandle(u) != 0 then
+            set this.xp = this.xp - Legend.fromHandle(u).StartingXP
+          endif
           call UnitDropAllItems(u)  
           call RemoveUnit(u)
         elseif tempUnitType.Refund == true then

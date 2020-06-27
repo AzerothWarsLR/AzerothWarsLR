@@ -28,6 +28,11 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private trigger castTrig
     private trigger damageTrig
     private boolean capturable
+    private integer startingXP //How much experience this Legend had when it was first registered
+
+    public method operator StartingXP takes nothing returns integer
+      return this.startingXP
+    endmethod
 
     public method operator PermaDies= takes boolean b returns nothing
       set permaDies = b
@@ -75,6 +80,10 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         set ownerTrig = CreateTrigger()
         call TriggerRegisterUnitEvent(ownerTrig, unit, EVENT_UNIT_CHANGE_OWNER)
         call TriggerAddAction(ownerTrig, function thistype.onUnitChangeOwner)
+        //Set starting experience
+        if IsUnitType(unit, UNIT_TYPE_HERO) and startingXP == 0 then
+          set startingXP = GetHeroXP(unit)
+        endif
         //
         set thistype.ByHandle[GetHandleId(unit)] = this
         call refreshDummy()
@@ -255,6 +264,10 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call DestroyGroup(tempGroup)
         set tempGroup = null
       endif
+    endmethod
+
+    static method fromHandle takes unit whichUnit returns thistype
+      return thistype.ByHandle[GetHandleId(whichUnit)]
     endmethod
 
     private static method onUnitChangeOwner takes nothing returns nothing
