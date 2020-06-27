@@ -10,7 +10,7 @@ library DruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFros
   private function TryComplete takes nothing returns nothing
     if FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_THUNDERBLUFF) == QUEST_PROGRESS_COMPLETE and FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_ORGRIMMAR) == QUEST_PROGRESS_COMPLETE then
       call SetPlayerTechResearched(FACTION_DRUIDS.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Person.p, ELEMENTAL_GUARDIAN_ID, "You can now train Elemental Guardians from upgraded Trees of Life and from your capitals.")
+      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Person.p, ELEMENTAL_GUARDIAN_ID, "You can now train the Elemental Guardian from the Altar of Elders.")
     endif
   endfunction
 
@@ -36,7 +36,7 @@ library DruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFros
     call TriggerRegisterUnitEvent( trig, LEGEND_ORGRIMMAR.Unit, EVENT_UNIT_DEATH )
     call TriggerAddAction(trig, function OrgrimmarDies)
 
-    set tempQuest = QuestData.create("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of powerful nature spirits that now heed the call of the Druids.","ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
+    set tempQuest = QuestData.create("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of a powerful nature spirit that now heed the calls of the Druids.","ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
     set QUESTITEM_THUNDERBLUFF = tempQuest.addItem("Thunderbluff is destroyed")
     set QUESTITEM_ORGRIMMAR = tempQuest.addItem("Orgrimmar is destroyed")
     call FACTION_DRUIDS.modObjectLimit(ELEMENTAL_GUARDIAN_ID, 1)
