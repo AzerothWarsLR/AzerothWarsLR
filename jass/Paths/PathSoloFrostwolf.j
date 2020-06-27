@@ -9,7 +9,8 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
     if GetResearched() == RESEARCH_ID then
       set frostwolfPlayer = FACTION_FROSTWOLF.Person.p
       call DisplaySoloPath(FACTION_FROSTWOLF, "Thrall has reformed the Horde of Kalimdor, and has united the various races into a uniform force.")
-      call LEGEND_GAZLOWE.Spawn(frostwolfPlayer, GetRectCenterX(gg_rct_Orgrimmar), GetRectCenterY(gg_rct_Orgrimmar), 0)
+      call LEGEND_GAZLOWE.Spawn(frostwolfPlayer, GetRectCenterX(gg_rct_Gazlowe), GetRectCenterY(gg_rct_Gazlowe), 235)
+      call UnitDetermineLevel(LEGEND_GAZLOWE.Unit, 1.00)
       call FACTION_FROSTWOLF.modObjectLimit('o009', UNLIMITED)   //Horde Embassy
       call FACTION_FROSTWOLF.modObjectLimit('otto', -UNLIMITED)  //Tauren Totem
       call FACTION_FROSTWOLF.modObjectLimit('nzep', 2)           //Goblin Zeppelin

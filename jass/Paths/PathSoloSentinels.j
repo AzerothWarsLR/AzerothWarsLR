@@ -10,6 +10,7 @@ library PathSoloSentinels initializer OnInit requires SentinelsConfig, LegendSen
       set sentinelsPlayer = FACTION_SENTINELS.Person.p
       call DisplaySoloPath(FACTION_SENTINELS, "Without the guidance of the Druids, the Sentinels decide to unleash the full extent of their fury against their enemies.")
       call LEGEND_JALIN.Spawn(sentinelsPlayer, GetRectCenterX(gg_rct_AstanaarCap), GetRectCenterY(gg_rct_AstanaarCap), 270)
+      call UnitDetermineLevel(LEGEND_JALIN.Unit, 1.00)
       call FACTION_SENTINELS.modObjectLimit('e00T', UNLIMITED)   //Sentinel Rise
       call FACTION_SENTINELS.modObjectLimit('n06E', 6)           //Shadowleaf Sentinel
       call FACTION_SENTINELS.modObjectLimit('n08H', UNLIMITED)   //Panther

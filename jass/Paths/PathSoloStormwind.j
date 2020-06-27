@@ -10,6 +10,7 @@ library PathSoloStormwind initializer OnInit requires StormwindConfig, Display
       set tempPlayer = FACTION_STORMWIND.Person.p
       call FACTION_STORMWIND.modWeight(2)
       call LEGEND_MEDIVH.Spawn(tempPlayer, GetRectCenterX(gg_rct_Cathedral_of_Light), GetRectCenterY(gg_rct_Cathedral_of_Light), 0)
+      call UnitDetermineLevel(LEGEND_MEDIVH.Unit, 1.00)
       call DisplaySoloPath(FACTION_STORMWIND, "Now isolated, the men of the South find a new inner courage and fight their enemies with all their might. Medivh returns and joins mankind in their struggles.")
     endif
   endfunction

@@ -10,6 +10,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
     if GetResearched() == RESEARCH_SCARLET or GetResearched() == RESEARCH_SILVER then
       set tempPlayer = FACTION_LORDAERON.Person.p
       call LEGEND_MOGRAINE.Spawn(tempPlayer, 12186, 10967, 322)
+      call UnitDetermineLevel(LEGEND_MOGRAINE.Unit, 1.00)
       call FACTION_LORDAERON.modWeight(1)
       if GetResearched() == RESEARCH_SCARLET then
         call DisplaySoloPath(FACTION_LORDAERON, "The Scarlet Crusade was granted the power of the Lordaeron military.")
@@ -44,8 +45,6 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
       endif
       call DisableTrigger( gg_trg_Lordaeron_East )
       call DisableTrigger( gg_trg_Lordaeron_West )
-      call EnableTrigger( gg_trg_Lordaeron_West_post_tier )
-      call EnableTrigger( gg_trg_Lordaeron_East_post_tier )
     endif
   endfunction
 
