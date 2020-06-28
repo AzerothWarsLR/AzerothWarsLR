@@ -27,10 +27,6 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_N00D_1457, ARTIFACT_HOLDER_ABIL_ID)             //Ragnaros
     call UnitAddItem(gg_unit_N00D_1457, tempArtifact.item)   
 
-    set ARTIFACT_BELTOFGIANTSTRENGTH = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))    //Belt of Giant Strength
-    call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Fel Horde Quest")
-
     set ARTIFACT_HELMOFDOMINATION = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  
     call UnitAddItem(gg_unit_u000_0649, ARTIFACT_HELMOFDOMINATION.item)                            
@@ -128,6 +124,10 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set tempArtifact = Artifact.create(CreateItem('I00K', DUMMY_X, DUMMY_Y))    //Essence
     call UnitAddItem(gg_unit_n03T_0555, tempArtifact.item)                      //Murmur
+
+    set ARTIFACT_BELTOFGIANTSTRENGTH = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))    //Belt of Giant Strength
+    call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Fel Horde Quest")
 
   endfunction
 
