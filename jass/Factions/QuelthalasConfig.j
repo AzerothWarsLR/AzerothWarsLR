@@ -36,7 +36,6 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('hhes', UNLIMITED)   //Elven Warrior
     call f.registerObjectLimit('hmpr', UNLIMITED)   //Priest
     call f.registerObjectLimit('hsor', UNLIMITED)   //Sorceress
-    call f.registerObjectLimit('n0A2', UNLIMITED)   //Warlock
     call f.registerObjectLimit('hdhw', 6)           //Dragonhawk Rider
     call f.registerObjectLimit('nhea', UNLIMITED)   //Archer
     call f.registerObjectLimit('e008', 6)           //Elven Ballista
@@ -48,6 +47,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('u00J', 2)           //Arcane Wagon
     call f.registerObjectLimit('h02C', 0)           //Flagship 
 
+    //Demi-heroes
     call f.registerObjectLimit('h052', 1)           //Dar'kan
     call f.registerObjectLimit('n075', 1)           //Vareesa 
 
@@ -64,9 +64,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
     call f.registerObjectLimit('Rhpt', UNLIMITED)   //Priest Adept Training
     call f.registerObjectLimit('Rhst', UNLIMITED)   //Sorceress Adept Training
-    call f.registerObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
     
-
     //Masteries
     call f.registerObjectLimit('R01A', UNLIMITED)   //Arcane Empowerment
     call f.registerObjectLimit('R00T', UNLIMITED)   //Archery Mastery
