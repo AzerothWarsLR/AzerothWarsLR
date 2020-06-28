@@ -53,6 +53,8 @@ library FrostwolfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Rowt', UNLIMITED)   //Spirit Walker Adept Training
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
     call f.registerObjectLimit('Rolf', UNLIMITED)   //Liquid Fire
+    call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
+    call f.registerObjectLimit('Rorb', UNLIMITED)   //reinforced Defenses
 
     call f.registerObjectLimit('R00R', UNLIMITED)   //Spiritual Mastery
     call f.registerObjectLimit('R00W', UNLIMITED)   //Tauren Mastery
@@ -62,7 +64,6 @@ library FrostwolfConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R02T', UNLIMITED)   //Season of Thunder
     call f.registerObjectLimit('R02R', UNLIMITED)   //Voodic Command
 
-    
     call f.registerObjectLimit('R021', UNLIMITED)   //Horde War Machine
     call f.registerObjectLimit('R02N', UNLIMITED)   //New Horde
   endfunction
