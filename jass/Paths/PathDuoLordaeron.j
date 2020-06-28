@@ -1,8 +1,10 @@
 library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLordaeron, Display
 
   globals
-    private constant integer RESEARCH_SCARLET = 'R01F'
-    private constant integer RESEARCH_SILVER = 'R01G'
+    private constant integer RESEARCH_SCARLET = 'R040'
+    private constant integer RESEARCH_SILVER = 'R03Z'
+    private constant integer CHAOS_SCARLET = 'R01F'
+    private constant integer CHAOS_SILVER = 'R01G'
   endglobals
 
   private function Research takes nothing returns nothing
@@ -26,8 +28,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call FACTION_LORDAERON.modObjectLimit('e011', 8)               //Gryphon Knight
         call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
         call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
-        call SetPlayerTechResearched(tempPlayer, 'R01F', 1)            //Scarlet Crusade
-        call SetPlayerAbilityAvailable(tempPlayer, 'A0TL', true)
+        call SetPlayerTechResearched(tempPlayer, CHAOS_SCARLET, 1)
       else
         call DisplaySoloPath(FACTION_LORDAERON, "The Silver Hand was granted the power of the Lordaeron military.")
         call FACTION_LORDAERON.modObjectLimit('h06C', UNLIMITED)       //Halls of Glory 
@@ -40,8 +41,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call FACTION_LORDAERON.modObjectLimit('e011', 8)               //Gryphon Knight
         call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
         call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin 
-        call SetPlayerTechResearched(tempPlayer, 'R01G', 1)            //Silver Hand
-        call SetPlayerAbilityAvailable(tempPlayer, 'A0TE', true)
+        call SetPlayerTechResearched(tempPlayer, CHAOS_SILVER, 1)
       endif
       call DisableTrigger( gg_trg_Lordaeron_East )
       call DisableTrigger( gg_trg_Lordaeron_West )
@@ -52,6 +52,10 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
     local trigger trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
     call TriggerAddCondition(trig, Condition(function Research))    
+    call FACTION_LORDAERON.modObjectLimit(RESEARCH_SCARLET, UNLIMITED)
+    call FACTION_LORDAERON.modObjectLimit(RESEARCH_SILVER, UNLIMITED)
+    call FACTION_LORDAERON.modObjectLimit(CHAOS_SCARLET, UNLIMITED)
+    call FACTION_LORDAERON.modObjectLimit(CHAOS_SILVER, UNLIMITED)
   endfunction
 
 endlibrary

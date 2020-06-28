@@ -23,6 +23,7 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
       call FACTION_DRUIDS.modObjectLimit('Reib', UNLIMITED)     //Improved Bows
       call FACTION_DRUIDS.modObjectLimit('Remg', UNLIMITED)     //Upgraded Moon Glaive
       call FACTION_DRUIDS.modObjectLimit('Roen', UNLIMITED)     //Ensnare
+      call FACTION_DRUIDS.modObjectLimit('eaom', UNLIMITED)     //Ancient of War
       //Apply free technologies
       call SetPlayerTechResearched(druidsPlayer, 'R00V', 1)  //Balance Mastery
       call SetPlayerTechResearched(druidsPlayer, 'R04O', 1)  //Sentinel Buff
