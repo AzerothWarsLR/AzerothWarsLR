@@ -44,8 +44,9 @@ library DalaranConfig initializer OnInit requires Faction
     call f.registerObjectLimit('n007', 6)           //Kirin Tor
     call f.registerObjectLimit('n096', 6)           //Earth Golem
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
-    call f.registerObjectLimit('u01R', UNLIMITED)   //Sanctioned Necromancer 
     call f.registerObjectLimit('h02C', 1)           //Flagship 
+
+    //Demi-heroes
     call f.registerObjectLimit('njks', 1)           //Jailor Kassan
 
     //Upgrades
@@ -57,10 +58,6 @@ library DalaranConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R00D', UNLIMITED)   //Pyromancer Adept Training
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
-    call f.registerObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
-    call f.registerObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
-    call f.registerObjectLimit('R03M', UNLIMITED)   //Methods of Control
-    call f.registerObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
 
     //Masteries
     call f.registerObjectLimit('R00L', UNLIMITED)   //Arcane Mastery

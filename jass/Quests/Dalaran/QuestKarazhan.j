@@ -20,6 +20,9 @@ library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
     set tempQuest = QuestData.create("Secrets of Karazhan", "The spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "Karazhan has been captured. Dalaran's archivists scour its halls for arcane resources." , "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
     set QUESTITEM_CAPTURE = tempQuest.addItem("Capture Karazhan")
     call FACTION_DALARAN.addQuest(tempQuest) 
+    call FACTION_DALARAN.modObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
+    call FACTION_DALARAN.modObjectLimit('R03M', UNLIMITED)   //Methods of Control
+    call FACTION_DALARAN.modObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
   endfunction
 
 endlibrary
