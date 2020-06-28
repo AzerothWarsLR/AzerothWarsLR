@@ -242,6 +242,10 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       local boolean anyOwned = false
       local unit u
       
+      if GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and deathMessage != "" then
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00LEGENDARY CREEP DEATH|r\n" + deathMessage)
+      endif
+
       if permaDies or not IsUnitType(this.unit, UNIT_TYPE_HERO) then
         call permaDeath()
         return
