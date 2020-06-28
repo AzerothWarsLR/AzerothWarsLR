@@ -64,14 +64,6 @@ library LordaeronConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R01B', UNLIMITED)   //Dwarven Refugees
     call f.registerObjectLimit('R01Q', UNLIMITED)   //Empowerment Mastery
     call f.registerObjectLimit('R00B', UNLIMITED)   //Soldier Mastery
-    
-    //Paths
-    call f.registerObjectLimit('R040', UNLIMITED)   //Order of the Scarlet Crusade
-    call f.registerObjectLimit('R03Z', UNLIMITED)   //Order of the Silver Hand
-
-    //ChaosUpgrades
-    call f.registerObjectLimit('R01F', UNLIMITED)   //Scarlet Crusade
-    call f.registerObjectLimit('R01G', UNLIMITED)   //Silver Hand
   endfunction
     
 endlibrary
