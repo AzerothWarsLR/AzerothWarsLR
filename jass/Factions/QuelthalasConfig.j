@@ -48,7 +48,6 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('h02C', 0)           //Flagship 
 
     //Demi-heroes
-    call f.registerObjectLimit('h052', 1)           //Dar'kan
     call f.registerObjectLimit('n075', 1)           //Vareesa 
 
     //Upgrades
