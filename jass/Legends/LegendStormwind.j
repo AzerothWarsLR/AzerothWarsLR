@@ -14,7 +14,7 @@ library LegendStormwind initializer OnInit requires Legend
     set LEGEND_VARIAN.DeathMessage = "The King of Stormwind dies a warrior’s death, defending hearth and family. The Wrynn Dynasty crumbles with his passing."
   
     set LEGEND_MEDIVH = Legend.create()
-    set LEGEND_MEDIVH.UnitType = 'nmed'
+    set LEGEND_MEDIVH.UnitType = 'H05Y'
 
     set LEGEND_STORMWINDKEEP = Legend.create()
     set LEGEND_STORMWINDKEEP.Unit = gg_unit_h00X_0007
