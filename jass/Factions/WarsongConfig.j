@@ -43,7 +43,6 @@ library WarsongConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
     call f.registerObjectLimit('o00G', 6)           //Blademaster
     call f.registerObjectLimit('n03F', 6)           //Ogre Lord
-    call f.registerObjectLimit('nzep', 2)           //Goblin Zeppelin
 
     call f.registerObjectLimit('n065', 1)           //Drazilb
     call f.registerObjectLimit('o01R', 1)           //Nazgrel

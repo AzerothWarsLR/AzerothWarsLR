@@ -21,6 +21,8 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
       call FACTION_FROSTWOLF.modObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
       call FACTION_FROSTWOLF.modObjectLimit('Rhfs', UNLIMITED)   //Dragmentation Shards
       call FACTION_FROSTWOLF.modObjectLimit('R01T', UNLIMITED)   //Move your arse
+      call FACTION_FROSTWOLF.modObjectLimit('R058', UNLIMITED)   //Warsong Quest to enable Zeppelins (this is pretty dumb)
+      call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R058', 1)
     endif
   endfunction
 
