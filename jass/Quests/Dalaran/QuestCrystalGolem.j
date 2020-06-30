@@ -27,8 +27,6 @@ library QuestCrystalGolem initializer OnInit requires QuestData, ControlPoint, D
       call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       call TryComplete()
       call DestroyTrigger(GetTriggeringTrigger())
-    else
-      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
   endfunction
 

@@ -26,8 +26,6 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       call TryComplete()
       call DestroyTrigger(GetTriggeringTrigger())
-    else
-      call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
   endfunction
 
