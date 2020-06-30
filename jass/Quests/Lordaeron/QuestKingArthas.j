@@ -15,7 +15,7 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
       if not UnitAlive(gg_unit_u000_0649) then
         set LEGEND_ARTHAS.UnitType = 'Harf'
          //Give Crown of Lordaeron
-        if ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.whichPerson then
+        if ARTIFACT_CROWNLORDAERON.status < ARTIFACT_STATUS_SPECIAL and ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.whichPerson then
           call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
           call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
         endif

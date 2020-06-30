@@ -7,17 +7,19 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       Artifact ARTIFACT_GHANIR
       Artifact ARTIFACT_SKULLOFGULDAN
       Artifact ARTIFACT_CROWNLORDAERON
+      Artifact ARTIFACT_CROWNSTORMWIND
       Artifact ARTIFACT_BELTOFGIANTSTRENGTH
       Artifact ARTIFACT_HELMOFDOMINATION
       Artifact ARTIFACT_DREKTHARSSPELLBOOK
       Artifact ARTIFACT_SCEPTEROFTHEQUEEN
+      Artifact ARTIFACT_CROWNEASTERNKINGDOMS
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Artifact tempArtifact = 0
 
-    set tempArtifact = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))    //The Crown of Stormwind
-    call UnitAddItem(gg_unit_H00R_1875, tempArtifact.item)                      //Variann
+    set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))
+    call UnitAddItem(gg_unit_H00R_1875, ARTIFACT_CROWNSTORMWIND.item)                      //Variann
 
     set tempArtifact = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
     call UnitAddAbility(gg_unit_n04O_1571, ARTIFACT_HOLDER_ABIL_ID)             //Doom Guard
@@ -106,11 +108,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set ARTIFACT_GHANIR = Artifact.create(CreateItem('I00C', DUMMY_X, DUMMY_Y))    //G'hanir
     call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)                //Barrow Den  
-    call UnitAddItem(gg_unit_nbwd_0737, ARTIFACT_GHANIR.item)  
-
-    set tempArtifact = Artifact.create(CreateItem('thdm', DUMMY_X, DUMMY_Y))    //Thunderfury
-    call UnitAddAbility(gg_unit_N09I_2740, ARTIFACT_HOLDER_ABIL_ID)             //Al'akir
-    call UnitAddItem(gg_unit_N09I_2740, tempArtifact.item)     
+    call UnitAddItem(gg_unit_nbwd_0737, ARTIFACT_GHANIR.item)     
 
     set tempArtifact = Artifact.create(CreateItem('cnhn', DUMMY_X, DUMMY_Y))    //Horn of Cenarius
     call UnitAddAbility(gg_unit_nhcn_2597, ARTIFACT_HOLDER_ABIL_ID)             //Horn of Cenarius Pedestal
@@ -129,6 +127,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Fel Horde Quest")
 
+    set ARTIFACT_CROWNEASTERNKINGDOMS = Artifact.create(CreateItem('I00U', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_CROWNEASTERNKINGDOMS.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("Stormwind and Lordaeron Quest")
   endfunction
 
 endlibrary
