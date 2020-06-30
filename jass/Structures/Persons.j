@@ -377,6 +377,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       call this.deallocate()
     endmethod
 
+    static method fromHandle takes player whichPlayer returns thistype
+      return Persons[GetPlayerId(whichPlayer)]
+    endmethod
+
     static method create takes player p returns Person
       local Person this = Person.allocate()
       
