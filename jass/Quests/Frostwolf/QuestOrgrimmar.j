@@ -7,6 +7,7 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     private constant integer GOLD = 100
     private constant integer LUMBER = 350
 
+    private constant integer RESEARCH_ID = 'R06A'
     private QuestData QUEST_ORGRIMMAR
     private QuestItemData QUESTITEM_VISIT
   endglobals
@@ -39,6 +40,7 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     call AdjustPlayerStateBJ(LUMBER, recipient, PLAYER_STATE_RESOURCE_LUMBER )  
     //Complete quests
     call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, RESEARCH_ID, 1)
     //Cleanup
     call DestroyGroup (tempGroup)
     set recipient = null
@@ -87,6 +89,7 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     set QUEST_ORGRIMMAR = QuestData.create("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "At the northern edge of Durotar, the Horde has finally found a place to call home. They name it Orgrimmar in honour of Orgrim Doomhammer.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
     set QUESTITEM_VISIT = QUEST_ORGRIMMAR.addItem("Survive until turn 10 OR bring Thrall to Orgrimmar")
     call FACTION_FROSTWOLF.addQuest(QUEST_ORGRIMMAR)
+    call FACTION_FROSTWOLF.modObjectLimit(RESEARCH_ID, 1)
   endfunction
 
 endlibrary
