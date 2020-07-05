@@ -4,6 +4,7 @@ library LegendDruids initializer OnInit requires Legend
     Legend LEGEND_CENARIUS
     Legend LEGEND_MALFURION
     Legend LEGEND_FANDRAL
+    Legend LEGEND_URSOC
 
     Legend LEGEND_NORDRASSIL
   endglobals
@@ -24,6 +25,10 @@ library LegendDruids initializer OnInit requires Legend
     set LEGEND_NORDRASSIL = Legend.create()
     set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
     set LEGEND_NORDRASSIL.Capturable = true
+
+    set LEGEND_URSOC = Legend.create()
+    set LEGEND_URSOC.UnitType = 0
+    call LEGEND_URSOC.AddUnitDependency(LEGEND_NORDRASSIL.Unit)
   endfunction
 
 endlibrary
