@@ -2,7 +2,10 @@ library LegendFelHorde initializer OnInit requires Legend
 
   globals
     Legend LEGEND_MAGTHERIDON
+    
     Legend LEGEND_BLACKROCKSPIRE
+    Legend LEGEND_BLACKTEMPLE
+    Legend LEGEND_HELLFIRECITADEL
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -14,6 +17,10 @@ library LegendFelHorde initializer OnInit requires Legend
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507
     set LEGEND_BLACKROCKSPIRE.DeathMessage = "Blackrock Spire has been razed."
+
+    set LEGEND_BLACKTEMPLE = Legend.create()
+    
+    set LEGEND_HELLFIRECITADEL = Legend.create()
   endfunction
 
 endlibrary
