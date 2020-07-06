@@ -8,11 +8,11 @@ library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong
     local player warsongPlayer
     if GetResearched() == RESEARCH_ID then
       set warsongPlayer = FACTION_WARSONG.Person.p
-      call DisplaySoloPath(FACTION_WARSONG, "Without the guidance of the shamans and Thrall, the remaining forces of the Horde have succumbed to the Blood pact of Mannoroth once more.")
+      call DisplaySoloPath(FACTION_WARSONG, "Without the guidance of the shamans and Thrall, the remaining forces of the Horde have succumbed to the Blood Pact of Mannoroth once more.")
       set LEGEND_GROM.UnitType = 'Opgh'
-      call LEGEND_JERGOSH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Mannoroth), GetRectCenterY(gg_rct_Mannoroth), 0)
+      call LEGEND_JERGOSH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Jergosh), GetRectCenterY(gg_rct_Jergosh), 0)
       call UnitDetermineLevel(LEGEND_JERGOSH.Unit, 1.00)
-      call LEGEND_MANNOROTH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Mannoroth), GetRectCenterY(gg_rct_Mannoroth), 0)
+      call LEGEND_MANNOROTH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Mannoroth), GetRectCenterY(gg_rct_Mannoroth), 237)
       call UnitDetermineLevel(LEGEND_MANNOROTH.Unit, 1.00)
       set LEGEND_REXXAR.Unit = null
       //Techtree subtractions

@@ -7,7 +7,7 @@ library DruidsConfig initializer OnInit requires Faction
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BLUE, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
+    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
   
     set f.AbsenceResearch = 'R05T' 

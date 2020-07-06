@@ -21,7 +21,7 @@ library Display requires Faction
   endfunction
 
   function DisplayUnitLimit takes Faction whichFaction, integer unitTypeId returns nothing
-    call DisplayTextToPlayer(whichFaction.Person.p, 0, 0, "\n|cff00ff00UNIT LIMIT CHANGED - " + GetObjectName(unitTypeId) + "|r\nYou can now train up to " + I2S(whichFaction.objectLimits[unitTypeId]) + " " + GetObjectName(unitTypeId) + "s .")
+    call DisplayTextToPlayer(whichFaction.Person.p, 0, 0, "\n|cff00ff00UNIT LIMIT CHANGED - " + GetObjectName(unitTypeId) + "|r\nYou can now train up to " + I2S(whichFaction.objectLimits[unitTypeId]) + " " + GetObjectName(unitTypeId) + "s.")
     if GetLocalPlayer() == whichFaction.Person.p then
       call StartSound(bj_questHintSound)
     endif
