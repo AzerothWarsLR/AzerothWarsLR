@@ -45,6 +45,7 @@ library LordaeronConfig initializer OnInit requires Faction
     call f.registerObjectLimit('n03K', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('hcth', UNLIMITED)   //Silver Hand Squire
 
+    //Demis
     call f.registerObjectLimit('h012', 1)           //Falric
     call f.registerObjectLimit('h04W', 1)           //Crowley
 
