@@ -19,8 +19,10 @@ library LegendFelHorde initializer OnInit requires Legend
     set LEGEND_BLACKROCKSPIRE.DeathMessage = "Blackrock Spire has been razed."
 
     set LEGEND_BLACKTEMPLE = Legend.create()
+    set LEGEND_BLACKTEMPLE.Unit = gg_unit_o00F_0659
     
     set LEGEND_HELLFIRECITADEL = Legend.create()
+    set LEGEND_HELLFIRECITADEL.Unit = gg_unit_o008_0168
   endfunction
 
 endlibrary
