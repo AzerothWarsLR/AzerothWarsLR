@@ -18,7 +18,6 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call DisplaySoloPath(FACTION_LORDAERON, "The Scarlet Crusade was granted the power of the Lordaeron military.")
         call FACTION_LORDAERON.modObjectLimit('h06C', UNLIMITED)       //Halls of Glory 
         call FACTION_LORDAERON.modObjectLimit('h066', UNLIMITED)       //Scarlet Zealot
-        call FACTION_LORDAERON.modObjectLimit('h069', UNLIMITED)       //Scarlet Battlemage
         call FACTION_LORDAERON.modObjectLimit('h065', UNLIMITED)       //Scarlet Crusader Knight
         call FACTION_LORDAERON.modObjectLimit('h067', 8)               //Scarlet Paladin
         call FACTION_LORDAERON.modObjectLimit('h00T', UNLIMITED)       //Scarlet Monastery
@@ -28,6 +27,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call FACTION_LORDAERON.modObjectLimit('e011', 8)               //Gryphon Knight
         call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
         call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
+        call FACTION_LORDAERON.modObjectLimit('hcth', -UNLIMITED)      //Silver Hand Squire
         call SetPlayerTechResearched(tempPlayer, CHAOS_SCARLET, 1)
       else
         call DisplaySoloPath(FACTION_LORDAERON, "The Silver Hand was granted the power of the Lordaeron military.")
