@@ -5,7 +5,7 @@
 library Score initializer OnInit requires Environment, FileIO, Savecode
 
   globals
-    private integer array Scores
+    private real array Scores
 
     private constant string FOLDER = "AzerothWarsReforged"
     private constant string FILENAME = "PlayerScore"
@@ -30,7 +30,7 @@ library Score initializer OnInit requires Environment, FileIO, Savecode
   private function SaveScore takes player whichPlayer returns nothing
     local Savecode savecode = Savecode.create()
     local string savestring
-    call savecode.Encode(Scores[GetPlayerId(whichPlayer)], MAX_SCORE)
+    call savecode.Encode(R2I(Scores[GetPlayerId(whichPlayer)]), MAX_SCORE)
     set savestring = savecode.Save(whichPlayer, 1)
     if whichPlayer == GetLocalPlayer() then
       call FileIO_Write(FOLDER + "\\" + FILENAME + EXTENSION, savestring)
@@ -38,7 +38,11 @@ library Score initializer OnInit requires Environment, FileIO, Savecode
     call savecode.destroy()
   endfunction
 
-  function PlayerAddScore takes player whichPlayer, integer add returns nothing
+  function PlayerGetScore takes player whichPlayer returns real
+    return Scores[GetPlayerId(whichPlayer)]
+  endfunction
+
+  function PlayerAddScore takes player whichPlayer, real add returns nothing
     set Scores[GetPlayerId(whichPlayer)] = Scores[GetPlayerId(whichPlayer)] + add
     call SaveScore(whichPlayer)
   endfunction  
@@ -67,7 +71,7 @@ library Score initializer OnInit requires Environment, FileIO, Savecode
     loop
       exitwhen i == MAX_PLAYERS
       if GetPlayerController(Player(i)) == MAP_CONTROL_USER then
-        set display = display + "|cffC3C1C3" + GetPlayerName(Player(i)) + ":|r " + I2S(Scores[i]) + "\n"
+        set display = display + "|cffC3C1C3" + GetPlayerName(Player(i)) + ":|r " + R2S(Scores[i]) + "\n"
       endif
       set i = i + 1
     endloop
