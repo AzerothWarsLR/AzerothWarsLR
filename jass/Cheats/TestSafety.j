@@ -1,7 +1,7 @@
-library TestSafety initializer OnInit
+library TestSafety initializer OnInit requires Event
   
   globals
-    private constant boolean IS_TEST_VERSION = true  //Change this to false for live release
+    private constant boolean IS_TEST_VERSION = false  //Change this to false for live release
   endglobals
 
   globals
