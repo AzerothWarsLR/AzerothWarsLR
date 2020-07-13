@@ -7,6 +7,7 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
   private function Research takes nothing returns nothing
     local player druidsPlayer
     if GetResearched() == RESEARCH_ID then
+      call FACTION_DRUIDS.modWeight(3)
       set druidsPlayer = FACTION_DRUIDS.Person.p
       call DisplaySoloPath(FACTION_DRUIDS, "The Night Elves have united under one banner!")
       if not UnitAlive(LEGEND_CENARIUS.Unit) then
