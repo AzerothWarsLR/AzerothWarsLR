@@ -7,6 +7,8 @@ library LegendScourge initializer OnInit requires Legend
 
     Legend LEGEND_SCHOLOMANCE
     Legend LEGEND_LICHKING
+
+    Legend LEGEND_NERZHUL
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -29,6 +31,10 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_LICHKING.Unit = gg_unit_u000_0649
     set LEGEND_LICHKING.Hivemind = true
     set LEGEND_LICHKING.DeathMessage = "The great Lich King has been destroyed. With no central mind to command them, the forces of the Undead have gone rogue."
-  endfunction
+      
+    set LEGEND_NERZHUL = Legend.create()
+    set LEGEND_NERZHUL.UnitType = 'N09I'
+
+endfunction
 
 endlibrary
