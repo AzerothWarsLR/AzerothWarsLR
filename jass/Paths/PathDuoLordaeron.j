@@ -14,6 +14,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
       call LEGEND_MOGRAINE.Spawn(tempPlayer, 12186, 10967, 322)
       call UnitDetermineLevel(LEGEND_MOGRAINE.Unit, 1.00)
       call FACTION_LORDAERON.modWeight(1)
+      call LEGEND_UTHER.ClearUnitDependencies()
       if GetResearched() == RESEARCH_SCARLET then
         call DisplaySoloPath(FACTION_LORDAERON, "The Scarlet Crusade was granted the power of the Lordaeron military.")
         call FACTION_LORDAERON.modObjectLimit('h06C', UNLIMITED)       //Halls of Glory 
@@ -45,6 +46,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
       endif
       call DisableTrigger( gg_trg_Lordaeron_East )
       call DisableTrigger( gg_trg_Lordaeron_West )
+      call EnableTrigger( gg_trg_Lordaeron_West_post_tier)
     endif
   endfunction
 

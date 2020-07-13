@@ -68,6 +68,7 @@ library FakeGlobals
     rect gg_rct_Gazlowe
     rect gg_rct_Anetheron
     rect gg_rct_Jergosh
+    trigger gg_trg_CinematicSkip
   endglobals
 
 endlibrary

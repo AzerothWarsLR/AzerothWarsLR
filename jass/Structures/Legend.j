@@ -97,6 +97,12 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       return unit
     endmethod
 
+    public method ClearUnitDependencies takes nothing returns nothing
+      call DestroyGroup(diesWithout)
+      set diesWithout = null
+      call refreshDummy()
+    endmethod
+
     public method AddUnitDependency takes unit u returns nothing
       if diesWithout == null then
         set diesWithout = CreateGroup()
