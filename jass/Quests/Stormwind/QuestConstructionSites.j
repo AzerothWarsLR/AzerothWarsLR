@@ -3,7 +3,7 @@
 library QuestConstructionSites initializer OnInit requires QuestData, StormwindConfig
 
   globals
-    private constant real TIMER = 360.
+    private constant real TIMER = 420.
     private QuestItemData QUESTITEM_WAIT
     private constant integer RESEARCH_ID = 'R022'
   endglobals
