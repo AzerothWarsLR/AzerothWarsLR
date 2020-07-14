@@ -1,0 +1,40 @@
+Frame "BACKDROP" "PathBackdrop" {
+	Height 0.3,  //default Height
+    Width  0.3,  //default Width
+	
+    DecorateFileNames,
+    BackdropTileBackground,
+    BackdropBackground  "EscMenuButtonBackground",
+    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize  0.0125,
+    BackdropBackgroundSize  0.256,
+    BackdropBackgroundInsets 0.005 0.005 0.005 0.005,
+    BackdropEdgeFile  "EscMenuBorder",
+}
+
+Frame "TEXT" "PathDescriptionText" {
+    DecorateFileNames,  //Inside this Frame Filenames are lookups in a string table like GameInterface etc.
+    FrameFont "EscMenuTextFont", 0.010, "",
+    FontJustificationH JUSTIFYLEFT,   //Place the Text in the left < > in regards left right
+    FontJustificationV JUSTIFYMIDDLE,    //place the Text in the middle in regards up down
+    FontFlags "FIXEDSIZE",
+    FontColor 1.0 1.0 1.0 1.0,
+    FontHighlightColor 1.0 1.0 1.0 1.0,
+    FontDisabledColor 0.5 0.5 0.5 1.0,
+    FontShadowColor 0.0 0.0 0.0 0.9,
+    FontShadowOffset 0.002 -0.002,
+}
+
+Frame "BACKDROP" "PathDescriptionBackdrop" {
+	Height 0.3,  //default Height
+    Width  0.3,  //default Width
+	
+    DecorateFileNames,
+    BackdropTileBackground,
+    BackdropBackground  "EscMenuEditBoxBackground",
+    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize  0.0125,
+    BackdropBackgroundSize  0.256,
+    BackdropBackgroundInsets 0.005 0.005 0.005 0.005,
+    BackdropEdgeFile  "EscMenuButtonBorder",
+}
