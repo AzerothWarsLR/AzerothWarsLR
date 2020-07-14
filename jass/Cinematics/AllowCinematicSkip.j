@@ -4,6 +4,7 @@ library AllowCinematicSkip initializer OnInit requires TestSafety
     if AreCheatsActive then
       call EnableTrigger(gg_trg_CinematicSkip)
     else
+      set bj_cineSceneBeingSkipped = CreateTrigger()
       call DisableTrigger(gg_trg_CinematicSkip)
     endif
   endfunction
