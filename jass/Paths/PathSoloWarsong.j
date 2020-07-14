@@ -1,3 +1,4 @@
+
 library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong, Display
 
   globals
@@ -7,8 +8,8 @@ library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong
   private function Research takes nothing returns nothing
     local player warsongPlayer
     if GetResearched() == RESEARCH_ID then
-      set warsongPlayer = FACTION_WARSONG.Person.p
       call FACTION_WARSONG.modWeight(3)
+      set warsongPlayer = FACTION_WARSONG.Person.p
       call DisplaySoloPath(FACTION_WARSONG, "Without the guidance of the shamans and Thrall, the remaining forces of the Horde have succumbed to the Blood Pact of Mannoroth once more.")
       set LEGEND_GROM.UnitType = 'Opgh'
       call LEGEND_JERGOSH.Spawn(warsongPlayer, GetRectCenterX(gg_rct_Jergosh), GetRectCenterY(gg_rct_Jergosh), 0)
@@ -26,6 +27,7 @@ library PathSoloWarsong initializer OnInit requires WarsongConfig, LegendWarsong
       call FACTION_WARSONG.modObjectLimit('o00P', UNLIMITED)   //Warsong Grunt
       call FACTION_WARSONG.modObjectLimit('o00S', UNLIMITED)   //Raider
       call FACTION_WARSONG.modObjectLimit('o005', 6)           //Blademaster
+      call FACTION_WARSONG.modObjectLimit('nckb', 1)   //Kodo
       //Free researches
       call SetPlayerTechMaxAllowed(warsongPlayer, 'R02O', 1)
       call SetPlayerTechMaxAllowed(warsongPlayer, 'R02Q', 1)
