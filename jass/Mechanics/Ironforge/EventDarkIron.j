@@ -1,6 +1,6 @@
 library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronforge
 
-  //Ironforge gains Dagran, access to the Darl Iron FactionMod, and all units in Shadowforge City.
+  //Ironforge gains Dagran, new units enabled, and control of all units in Shadowforge City.
 
   globals
     private constant integer RESEARCH = 'R04R'
@@ -11,7 +11,7 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
     local unit u
 
     if GetSpellAbilityId() == 'A0UZ' then
-      call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Person.p, -24540, -30728, 45)
+      call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Person.p, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 44)
       call SetHeroXP(LEGEND_DAGRAN.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
       call FACTION_IRONFORGE.modObjectLimit('n02D', UNLIMITED)      //Dark Iron War Golem
       call FACTION_IRONFORGE.modObjectLimit('h041', 12)             //Fire Tank

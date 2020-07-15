@@ -1,6 +1,6 @@
-library EventWildhammer requires IronforgeConfig, LegendIronforge
+library EventWildhammer initializer OnInit requires IronforgeConfig, LegendIronforge
 
-  //Ironforge gains Falstad Wildhammer, access to the Wildhammer FactionMod, and all units in Aerie Peak.
+  //Ironforge gains Falstad Wildhammer, new units enabled, and all units in Aerie Peak.
 
   globals
     private constant integer RESEARCH = 'R01T'
@@ -26,14 +26,14 @@ library EventWildhammer requires IronforgeConfig, LegendIronforge
       //Transfer all Neutral Passive units in region to Ironforge
       set tempGroup = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Aerie_Peak, null)
-      set u = FirstOfGroup(tempGroup)
+      
       loop
-      exitwhen u == null
+        set u = FirstOfGroup(tempGroup)
+        exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
           call UnitRescue(u, FACTION_IRONFORGE.Person.p)
         endif
         call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null

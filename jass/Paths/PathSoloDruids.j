@@ -13,6 +13,8 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
       if not UnitAlive(LEGEND_CENARIUS.Unit) then
         call LEGEND_CENARIUS.Spawn(FACTION_DRUIDS.Person.p, -11679, 6904, 255)
       endif
+      call LEGEND_URSOC.Spawn(FACTION_DRUIDS.Person.p, -11679, 6904, 255)
+      call UnitDetermineLevel(LEGEND_URSOC.Unit, 1.00)
       set LEGEND_CENARIUS.PermaDies = false
       call LEGEND_CENARIUS.AddUnitDependency(gg_unit_n002_0130)
       //Mod object limits
