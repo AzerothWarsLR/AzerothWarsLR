@@ -18,19 +18,19 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   endglobals
 
   private function Reward takes Faction whichFaction returns nothing
+    local unit crownHolder = ARTIFACT_CROWNLORDAERON.owningUnit
     if whichFaction == FACTION_LORDAERON then
       set RewardedLordaeron = true
-      call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNEASTERNKINGDOMS.item)
       call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CROWNLORDAERON, QUEST_PROGRESS_FAILED, false)
       call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CROWNSTORMWIND, QUEST_PROGRESS_FAILED, false)
     elseif whichFaction == FACTION_STORMWIND then
       set RewardedStormwind = true
-      call UnitAddItem(LEGEND_VARIAN.Unit, ARTIFACT_CROWNEASTERNKINGDOMS.item)
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNLORDAERON, QUEST_PROGRESS_FAILED, false)
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNSTORMWIND, QUEST_PROGRESS_FAILED, false)
     endif
     call RemoveItem(ARTIFACT_CROWNLORDAERON.item)
     call RemoveItem(ARTIFACT_CROWNSTORMWIND.item)
+    call UnitAddItem(crownHolder, ARTIFACT_CROWNEASTERNKINGDOMS.item)
     call ARTIFACT_CROWNLORDAERON.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_CROWNLORDAERON.setDescription("Melted down")
     call ARTIFACT_CROWNSTORMWIND.setStatus(ARTIFACT_STATUS_HIDDEN)
