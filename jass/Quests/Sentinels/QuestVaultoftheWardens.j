@@ -14,8 +14,8 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
 
   private function TombChangesOwnership takes nothing returns nothing
     if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREINSIDE) == QUEST_PROGRESS_INCOMPLETE and FACTION_SENTINELS.Person.p == GetOwningPlayer(GetTriggerUnit()) then
-      call TryComplete()
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_COMPLETE, true)
+      call TryComplete()
     else
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
@@ -23,8 +23,8 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
 
   private function IslesChangesOwnership takes nothing returns nothing
     if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE) == QUEST_PROGRESS_INCOMPLETE and FACTION_SENTINELS.Person.p == GetOwningPlayer(GetTriggerUnit()) then
-      call TryComplete()
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_COMPLETE, true)
+      call TryComplete()
     else
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
