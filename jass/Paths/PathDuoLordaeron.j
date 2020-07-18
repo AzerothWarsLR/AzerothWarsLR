@@ -23,9 +23,8 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call FACTION_LORDAERON.modObjectLimit('h067', 8)               //Scarlet Paladin
         call FACTION_LORDAERON.modObjectLimit('h00T', UNLIMITED)       //Scarlet Monastery
         call FACTION_LORDAERON.modObjectLimit('h06A', UNLIMITED)       //Inquisitor
-        call FACTION_LORDAERON.modObjectLimit('h06B', UNLIMITED+6)     //Grand Crusader
+        call FACTION_LORDAERON.modObjectLimit('h06B', UNLIMITED+6)     //Scarlet Templar
         call FACTION_LORDAERON.modObjectLimit('R04F', UNLIMITED)       //Scarlet Mage Initiate Training
-        call FACTION_LORDAERON.modObjectLimit('e011', 8)               //Gryphon Knight
         call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
         call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
         call FACTION_LORDAERON.modObjectLimit('hcth', -UNLIMITED)      //Silver Hand Squire
@@ -38,8 +37,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
         call FACTION_LORDAERON.modObjectLimit('R04C', UNLIMITED)       //Silver Hand Initiate Training
         call FACTION_LORDAERON.modObjectLimit('h06E', UNLIMITED)       //Silver Hand Cleric
         call FACTION_LORDAERON.modObjectLimit('h06D', UNLIMITED+6)     //Silver Hand Veteran Paladin
-        call FACTION_LORDAERON.modObjectLimit('h068', 8)               //Silver Hand Cleric
-        call FACTION_LORDAERON.modObjectLimit('e011', 8)               //Gryphon Knight
+        call FACTION_LORDAERON.modObjectLimit('h068', 8)               //Silver Hand Novice Paladin
         call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
         call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin 
         call SetPlayerTechResearched(tempPlayer, CHAOS_SILVER, 1)
