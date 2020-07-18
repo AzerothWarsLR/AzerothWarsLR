@@ -26,6 +26,7 @@ library QuestMalfurionAwakens initializer OnInit requires QuestData, DruidsConfi
         call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
         if LEGEND_MALFURION.Unit == null then
           call LEGEND_MALFURION.Spawn(druidsPerson.p, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)
+          call SetHeroLevel(LEGEND_MALFURION.Unit, 3, false)
           call UnitAddItem(LEGEND_MALFURION.Unit, ARTIFACT_GHANIR.item)
         else
           call SetItemPosition(ARTIFACT_GHANIR.item, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
