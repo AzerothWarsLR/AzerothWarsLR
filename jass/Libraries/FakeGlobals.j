@@ -69,6 +69,7 @@ library FakeGlobals
     rect gg_rct_Anetheron
     rect gg_rct_Jergosh
     trigger gg_trg_CinematicSkip
+    rect gg_rct_DagranSpawn
   endglobals
 
 endlibrary

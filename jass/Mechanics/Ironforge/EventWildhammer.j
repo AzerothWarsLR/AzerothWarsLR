@@ -16,6 +16,7 @@ library EventWildhammer initializer OnInit requires IronforgeConfig, LegendIronf
       call FACTION_IRONFORGE.modObjectLimit('n04F', UNLIMITED)      //Wildhammer War Golem
       call FACTION_IRONFORGE.modObjectLimit('hgry', 3)              //Gryphon Rider
       call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)
+      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Person.p, 'A0UC', false)     
 
       //Remove pathing blockers obstructing Aerie Peak
       call RemoveDestructable( gg_dest_YTpc_7559 )

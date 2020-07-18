@@ -14,10 +14,7 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
       call SetPlayerTechResearched(FACTION_QUELTHALAS.Person.p, DARKHAN_RESEARCH, 1)
       call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Person.p, DARKHAN_ID, "You have acquired the demi-hero Dar'Khan Drakthir, and can revive him from the Altar of Kings if he dies.")
       call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
-    else
-      call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_FAILED, true)
     endif
-    call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function OnInit takes nothing returns nothing

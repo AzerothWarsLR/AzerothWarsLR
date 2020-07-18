@@ -15,7 +15,8 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
       call SetHeroXP(LEGEND_DAGRAN.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
       call FACTION_IRONFORGE.modObjectLimit('n02D', UNLIMITED)      //Dark Iron War Golem
       call FACTION_IRONFORGE.modObjectLimit('h041', 12)             //Fire Tank
-      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)                     
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)     
+      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Person.p, 'A0UZ', false)                
 
       //Transfer all Neutral Passive units in region to Ironforge
       set tempGroup = CreateGroup()
