@@ -37,7 +37,7 @@ library SentinelsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
     call f.registerObjectLimit('nnmg', 12)          //Redeemed Highborne 
 
-    call f.registerObjectLimit('ensh', 1)           //Naisha
+    call f.registerObjectLimit('e009', 1)           //Naisha
 
     call f.registerObjectLimit('R00S', UNLIMITED)   //Priestess Adept Training
     call f.registerObjectLimit('R064', UNLIMITED)   //Sentinel Fortifications
