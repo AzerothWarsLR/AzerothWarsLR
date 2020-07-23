@@ -1,4 +1,3 @@
-
 library IronforgeConfig initializer OnInit requires Faction
 
   globals
@@ -10,7 +9,6 @@ library IronforgeConfig initializer OnInit requires Faction
     
     set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
     set f = FACTION_IRONFORGE
-    set f.AbsenceResearch = 'R01B'
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

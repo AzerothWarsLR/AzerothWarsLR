@@ -9,7 +9,6 @@ library ScourgeConfig initializer OnInit requires Faction
     
     set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
     set f = FACTION_SCOURGE
-    set f.AbsenceResearch = 'R05V'
 
     //Buildings
     call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
@@ -72,6 +71,8 @@ library ScourgeConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R01X', UNLIMITED)   //Plague Engineering Mastery
 
     call f.registerObjectLimit('R01E', UNLIMITED)   //Gilneas Captured
+
+    call f.registerObjectLimit('R01D', UNLIMITED)   //Scourge Solo Path
   endfunction
     
 endlibrary

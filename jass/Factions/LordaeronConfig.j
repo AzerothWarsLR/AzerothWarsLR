@@ -8,7 +8,6 @@ library LordaeronConfig initializer OnInit requires Faction
     local Faction f
     set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
-    set f.AbsenceResearch = 'R045'
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -62,7 +61,7 @@ library LordaeronConfig initializer OnInit requires Faction
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
 
     //Masteries
-    call f.registerObjectLimit('R01B', UNLIMITED)   //Dwarven Refugees
+    call f.registerObjectLimit('R04A', UNLIMITED)   //Huntsmen mastery
     call f.registerObjectLimit('R01Q', UNLIMITED)   //Empowerment Mastery
     call f.registerObjectLimit('R00B', UNLIMITED)   //Soldier Mastery
   endfunction

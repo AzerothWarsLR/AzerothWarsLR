@@ -8,7 +8,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     local Faction f
     set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
     set f = FACTION_QUELTHALAS
-    set f.AbsenceResearch = 'R04L'
+ 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
     call f.registerObjectLimit('hkee', UNLIMITED)   //Keep

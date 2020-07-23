@@ -10,8 +10,6 @@ library LegionConfig initializer OnInit requires Faction
     set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
     set f = FACTION_LEGION
 
-    call f.setPresenceResearch('R04T')
-    set f.AbsenceResearch = 'R00U'
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
     call f.registerObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon
@@ -45,11 +43,11 @@ library LegionConfig initializer OnInit requires Faction
     call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
     call f.registerObjectLimit('n04U', 4)           //Dragon
    
-    call f.registerObjectLimit('umtw', 6)           //Meat Wagon
-    call f.registerObjectLimit('uobs', 2)           //Obsidian Statue
-    call f.registerObjectLimit('nfgl', 2)           //Plague Titan
-    call f.registerObjectLimit('n04T', 4)           //Sky Barge
-    call f.registerObjectLimit('u00K', UNLIMITED)   //Ghouls
+     call f.registerObjectLimit('umtw', 6)           //Meat Wagon
+     call f.registerObjectLimit('uobs', 2)           //Obsidian Statue
+     call f.registerObjectLimit('nfgl', 2)           //Plague Titan
+     call f.registerObjectLimit('n04T', 4)           //Sky Barge
+     call f.registerObjectLimit('u00K', UNLIMITED)   //Ghouls
 
     //Upgrades
     call f.registerObjectLimit('R02C', UNLIMITED)   //Acute Sensors

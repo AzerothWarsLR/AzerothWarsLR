@@ -1,3 +1,4 @@
+
 library DruidsConfig initializer OnInit requires Faction
 
   globals
@@ -9,8 +10,6 @@ library DruidsConfig initializer OnInit requires Faction
     
     set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
-  
-    set f.AbsenceResearch = 'R05T' 
 
     call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
     call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages

@@ -10,7 +10,6 @@ library SentinelsConfig initializer OnInit requires Faction
     set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
     set f = FACTION_SENTINELS
 
-    set f.AbsenceResearch = 'R05U'
     call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
     call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   
     call f.registerObjectLimit('eaom', UNLIMITED)   //Ancient of War
@@ -52,7 +51,7 @@ library SentinelsConfig initializer OnInit requires Faction
     call f.registerObjectLimit('R04E', UNLIMITED)   //Ysera's Gift (World Tree upgrade)
     call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
 
-    call f.registerObjectLimit('R01J', UNLIMITED)   //Warden Mastery
+    call f.registerObjectLimit('R042', UNLIMITED)   //Huntress Mastery
     call f.registerObjectLimit('R007', UNLIMITED)   //Lost Heritage Mastery
     call f.registerObjectLimit('R03J', UNLIMITED)   //Wind COntrol Mastery
     
