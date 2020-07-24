@@ -24,6 +24,13 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
       call FACTION_FROSTWOLF.modObjectLimit('R01T', UNLIMITED)   //Move your arse
       call FACTION_FROSTWOLF.modObjectLimit('R058', UNLIMITED)   //Warsong Quest to enable Zeppelins (this is pretty dumb)
       call FACTION_FROSTWOLF.modWeight(3)
+      //Free researches
+      call SetPlayerTechMaxAllowed(frostwolfPlayer, 'R0wd', 2)
+      call SetPlayerTechMaxAllowed(frostwolfPlayer, 'Rost', 2)
+      call SetPlayerTechMaxAllowed(frostwolfPlayer, 'Rowt', 2)
+      call SetPlayerTechResearched(frostwolfPlayer, 'R0wd', 2)
+      call SetPlayerTechResearched(frostwolfPlayer, 'R0st', 2)
+      call SetPlayerTechResearched(frostwolfPlayer, 'Rowt', 2)
       call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R058', 1)
       call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Person.p, 'R01O', 1)
       call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Person.p, 'R02R', 1)
@@ -31,6 +38,7 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
       call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R01O', 1)
       call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R02R', 1)
       call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R02T', 1)
+
     endif
   endfunction
 
