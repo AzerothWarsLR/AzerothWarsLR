@@ -101,6 +101,9 @@ library Team initializer OnInit requires Table, Event, Persons
     method invite takes player whichPlayer returns nothing
       local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
       if IsPlayerInForce(whichPlayer, this.invitees) == false and IsPlayerInForce(whichPlayer, this.players) == false then
+        if GetLocalPlayer() == whichPlayer or IsPlayerInForce(GetLocalPlayer(), this.players) then
+          call StartSound(gg_snd_ArrangedTeamInvitation)
+        endif
         call DisplayTextToForce(this.players, whichPerson.faction.prefixCol + whichPerson.faction.name + "|r has been invited to join the " + this.name + ".")
         call DisplayTextToPlayer(whichPerson.p, 0, 0, "You have been invited to join the " + this.name + ". Type -join " + this.name + " to accept.")
         call ForceAddPlayer(this.invitees, whichPlayer)
