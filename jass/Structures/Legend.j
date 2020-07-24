@@ -29,6 +29,18 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private trigger damageTrig
     private boolean capturable
     private integer startingXP //How much experience this Legend had when it was first registered
+    private playercolor playerColor
+
+    public method operator PlayerColor takes nothing returns playercolor
+      return this.playerColor
+    endmethod
+
+    public method operator PlayerColor= takes playercolor playerColor returns nothing
+      set this.playerColor = playerColor
+      if this.unit != null then
+        call SetUnitColor(this.unit, playerColor)
+      endif
+    endmethod
 
     public method operator StartingXP takes nothing returns integer
       return this.startingXP
