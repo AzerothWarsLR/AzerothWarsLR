@@ -25,7 +25,7 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
     set QUEST_DRAKTHARON = QuestData.create("Drak'tharon Keep", "Some time ago, Magister Dar'Khan Drakthir set sail to Northrend and hasn't been since. Perhaps if he can be found, he can be convinced to rejoin his people.", "Dar'Khan Drathir, a revered member of the Convocation of Silvermoon, has returned to serve the High Elves after his mysterious disappearance.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
     set QUESTITEM_CAPTURE = QUEST_DRAKTHARON.addItem("Capture Drak'tharon Keep")
     call FACTION_QUELTHALAS.addQuest(QUEST_DRAKTHARON) 
-    call FACTION_QUELTHALAS.modObjectLimit(DARKHAN_ID, UNLIMITED)
+    call FACTION_QUELTHALAS.modObjectLimit(DARKHAN_ID, 1)
     call FACTION_QUELTHALAS.modObjectLimit(DARKHAN_RESEARCH, UNLIMITED)
   endfunction
 
