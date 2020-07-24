@@ -16,6 +16,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     
     readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
+    private sound victoryMusic
 
     readonly trigger enterTrigger = null  //Commenced when this faction is added to any player
     readonly trigger exitTrigger = null   //Commenced when this faction is removed from any player
@@ -43,6 +44,14 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
     method operator StartingQuest= takes QuestData questData returns nothing
       set startingQuest = questData
+    endmethod
+
+    method operator VictoryMusic= takes sound whichSound returns nothing
+      set this.victoryMusic= whichSound
+    endmethod
+
+    method operator VictoryMusic takes nothing returns sound
+      return this.victoryMusic
     endmethod
 
     method getQuestItemProgress takes QuestItemData questItemData returns integer
