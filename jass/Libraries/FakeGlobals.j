@@ -70,6 +70,12 @@ library FakeGlobals
     rect gg_rct_Jergosh
     trigger gg_trg_CinematicSkip
     rect gg_rct_DagranSpawn
+    sound gg_snd_HumanVictory
+    sound gg_snd_OrcVictory
+    sound gg_snd_NightElfVictory
+    sound gg_snd_DarkVictory
+    sound gg_snd_UndeadVictory
+    sound gg_snd_HeroicVictory
   endglobals
 
 endlibrary
