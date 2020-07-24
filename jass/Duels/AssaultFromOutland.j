@@ -12,13 +12,12 @@ library AssaultFromOutland initializer OnInit requires Duel, FelHordeConfig, Sto
     call felHorde.addCapital(LEGEND_BLACKTEMPLE.Unit)
     call felHorde.addCapital(LEGEND_HELLFIRECITADEL.Unit)
 
-    call southAlliance.addFaction(FACTION_LORDAERON)
-    call southAlliance.addFaction(FACTION_DALARAN)
-    call southAlliance.addFaction(FACTION_QUELTHALAS)
+    call southAlliance.addFaction(FACTION_STORMWIND)
+    call southAlliance.addFaction(FACTION_IRONFORGE)
     call southAlliance.addCapital(LEGEND_STORMWINDKEEP.Unit)
     call southAlliance.addCapital(LEGEND_GREATFORGE.Unit)
 
-    set DUEL_SOUTHALLIANCE = Duel.create("Assault From Outland", "The Dark Portal has opened once again. From it pours a renewed Fel Horde, this time led by the Pit Lord Magtheridon. The great kingdoms of Stormwind and Ironforge are the first vanguard against this threat.", "ReplaceableTextures\\CommandButtons\\BTNHeroPitLord.blp")
+    set DUEL_SOUTHALLIANCE = Duel.create("Assault From Outland", "The Dark Portal has opened once again. From it pours a renewed Fel Horde, this time led by the Pit Lord Magtheridon. The great kingdoms of Stormwind and Ironforge are the first vanguard against this threat.", "ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
     call DUEL_SOUTHALLIANCE.addBelligerent(felHorde)
     call DUEL_SOUTHALLIANCE.addBelligerent(southAlliance)
   endfunction
