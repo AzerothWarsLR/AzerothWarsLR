@@ -13,18 +13,16 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
 
     private constant integer RESEARCH_ID = 'R01N'
 
-    private boolean RewardedLordaeron = false
-    private boolean RewardedStormwind = false
+    private boolean Rewarded = false
   endglobals
 
   private function Reward takes Faction whichFaction returns nothing
     local unit crownHolder = ARTIFACT_CROWNLORDAERON.owningUnit
+    set Rewarded = true
     if whichFaction == FACTION_LORDAERON then
-      set RewardedLordaeron = true
       call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CROWNLORDAERON, QUEST_PROGRESS_FAILED, false)
       call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CROWNSTORMWIND, QUEST_PROGRESS_FAILED, false)
     elseif whichFaction == FACTION_STORMWIND then
-      set RewardedStormwind = true
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNLORDAERON, QUEST_PROGRESS_FAILED, false)
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNSTORMWIND, QUEST_PROGRESS_FAILED, false)
     endif
@@ -48,7 +46,7 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   endfunction
 
   private function TryComplete takes Faction whichFaction returns nothing
-    if not RewardedLordaeron and not RewardedStormwind then
+    if not Rewarded then
       if whichFaction == FACTION_LORDAERON and IsCompleteLordaeron() then
         call Reward(FACTION_LORDAERON)
       elseif whichFaction == FACTION_STORMWIND and IsCompleteStormwind() then
@@ -58,16 +56,15 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   endfunction
 
   private function OnLegendChangesOwner takes nothing returns nothing
-    if not IsCompleteLordaeron() then
+    if not Rewarded then
+      //Lordaeron
       if LEGEND_ARTHAS.OwningFaction == FACTION_LORDAERON then
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_ARTHAS, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_LORDAERON)
       else
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_ARTHAS, QUEST_PROGRESS_FAILED, false)
       endif
-    endif
-
-    if not IsCompleteStormwind() then
+      //Stormwind
       if LEGEND_VARIAN.OwningFaction == FACTION_STORMWIND then
         call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_VARIAN, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_STORMWIND)
@@ -78,7 +75,8 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   endfunction
 
   private function Acquire takes nothing returns nothing
-    if not IsCompleteLordaeron() then
+    if not Rewarded then
+      //Lordaeron
       if ARTIFACT_CROWNLORDAERON.owningPerson.Faction == FACTION_LORDAERON then
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNLORDAERON, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_LORDAERON)
@@ -92,9 +90,8 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
       else
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CROWNSTORMWIND, QUEST_PROGRESS_INCOMPLETE, true)
       endif
-    endif
 
-    if not IsCompleteStormwind() then
+      //Stormwind
       if ARTIFACT_CROWNLORDAERON.owningPerson.Faction == FACTION_STORMWIND then
         call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CROWNLORDAERON, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_STORMWIND)
@@ -112,16 +109,16 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   endfunction
 
   private function Capture takes nothing returns nothing
-    if not IsCompleteLordaeron() then
+    if not Rewarded then
+      //Lordaeron
       if GetUnitTypeId(GetTriggerControlPoint().u) == 'n010' and FACTION_LORDAERON.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CAPTURE_STORMWIND, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_LORDAERON)
       else
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CAPTURE_STORMWIND, QUEST_PROGRESS_INCOMPLETE, true)
       endif
-    endif
 
-    if not IsCompleteStormwind() then
+      //Stormwind
       if GetUnitTypeId(GetTriggerControlPoint().u) == 'n01G' and FACTION_STORMWIND.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
         call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CAPTURE_CAPITALPALACE, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_STORMWIND)
