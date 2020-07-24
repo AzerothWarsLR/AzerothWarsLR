@@ -42,7 +42,8 @@ library Display requires Faction
   endfunction
 
   function DisplaySoloPath takes Faction whichFaction, string flavour returns nothing
-    local string display = "\n|cffffcc00SOLO PATH - " + whichFaction.prefixCol + whichFaction.name + "|r\n" + flavour + "\n"
+    local string display = "\n|cffffcc00PATH - " + whichFaction.prefixCol + whichFaction.name + "|r\n" + flavour + "\n"
+    call StartSound(bj_rescueSound)
     call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
   endfunction
 
