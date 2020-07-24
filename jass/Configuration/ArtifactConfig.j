@@ -52,7 +52,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
-    call UnitAddItem(gg_unit_n085_2846, tempArtifact.item)    
+    call UnitAddItem(gg_unit_n085_2846, ARTIFACT_SCEPTEROFTHEQUEEN.item)    
 
     set tempArtifact = Artifact.create(CreateItem('I006', DUMMY_X, DUMMY_Y))    //Book of Medivh
     call UnitAddAbility(gg_unit_nbsm_1188, ARTIFACT_HOLDER_ABIL_ID)             //Book of Medivh Pedestal
