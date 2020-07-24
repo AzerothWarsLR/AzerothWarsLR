@@ -1,7 +1,7 @@
 library TierRunicConstitution initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'R02C' then
+    if GetResearched() == 'R03C' then
       call FACTION_STORMWIND.modObjectLimit('R03R', UNLIMITED)       //Reginald Windsor 
       call FACTION_STORMWIND.modObjectLimit('R03P', UNLIMITED)       //Archbishop Benedictus   
     endif
