@@ -9,6 +9,7 @@ library IronforgeConfig initializer OnInit requires Faction
     
     set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
     set f = FACTION_IRONFORGE
+    set f.VictoryMusic = gg_snd_HeroicVictory
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

@@ -9,7 +9,8 @@ library DalaranConfig initializer OnInit requires Faction
     
     set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
     set f = FACTION_DALARAN 
-
+    set f.VictoryMusic = gg_snd_HumanVictory
+    
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
     call f.registerObjectLimit('hkee', UNLIMITED)   //Keep

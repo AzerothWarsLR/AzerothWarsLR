@@ -8,6 +8,7 @@ library WarsongConfig initializer OnInit requires Faction
 
     set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp", 3)
     set f = FACTION_WARSONG
+    set f.VictoryMusic = gg_snd_OrcVictory
 
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

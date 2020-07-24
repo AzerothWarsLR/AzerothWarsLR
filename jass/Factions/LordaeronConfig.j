@@ -8,6 +8,7 @@ library LordaeronConfig initializer OnInit requires Faction
     local Faction f
     set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
+    set f.VictoryMusic = gg_snd_HumanVictory
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
