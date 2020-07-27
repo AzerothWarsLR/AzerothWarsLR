@@ -6,27 +6,22 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
     private QuestItemData QUESTITEM_CAPTUREINSIDE
   endglobals
 
-  private function TryComplete takes nothing returns nothing
-    if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREINSIDE) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE) == QUEST_PROGRESS_COMPLETE then
-      call CreateUnit(FACTION_SENTINELS.Person.p, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
+  private function ChangesOwnership takes nothing returns nothing
+    if FACTION_SENTINELS.Person.Team.containsPlayer(GetOwningPlayer(gg_unit_n05Y_0805)) then
+      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_COMPLETE, false)
+    else
+      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
-  endfunction
 
-  private function TombChangesOwnership takes nothing returns nothing
-    if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREINSIDE) == QUEST_PROGRESS_INCOMPLETE and FACTION_SENTINELS.Person.p == GetOwningPlayer(GetTriggerUnit()) then
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_COMPLETE, true)
-      call TryComplete()
+    if FACTION_SENTINELS.Person.Team.containsPlayer(GetOwningPlayer(gg_unit_n00J_3344)) then
+      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_COMPLETE, false)
     else
       call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
-  endfunction
 
-  private function IslesChangesOwnership takes nothing returns nothing
-    if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE) == QUEST_PROGRESS_INCOMPLETE and FACTION_SENTINELS.Person.p == GetOwningPlayer(GetTriggerUnit()) then
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_COMPLETE, true)
-      call TryComplete()
-    else
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_INCOMPLETE, false)
+    if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREINSIDE) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE) == QUEST_PROGRESS_COMPLETE then
+      call CreateUnit(FACTION_SENTINELS.Person.p, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
+      call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 
@@ -37,11 +32,11 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
 
     set trig = CreateTrigger()
     call TriggerRegisterUnitEvent( trig, gg_unit_n05Y_0805, EVENT_UNIT_CHANGE_OWNER )
-    call TriggerAddAction(trig, function IslesChangesOwnership)
+    call TriggerAddAction(trig, function ChangesOwnership)
 
     set trig = CreateTrigger()
     call TriggerRegisterUnitEvent( trig, gg_unit_n00J_3344, EVENT_UNIT_CHANGE_OWNER )
-    call TriggerAddAction(trig, function TombChangesOwnership)
+    call TriggerAddAction(trig, function ChangesOwnership)
 
     //Quest setup
     set QUEST_VAULT = QuestData.create("Vault of the Wardens", "In millenia past, the most vile entities of Azeroth were imprisoned in a facility near Zin-Ashari. The Broken Isles, now raised from the sea floor, would be a strategic location for a newer edition of such a prison.", "With the Broken Isles and the Tomb of Sargeras secured, work has begun on a maximum security prison named the Vault of the Wardens.", "ReplaceableTextures\\CommandButtons\\BTNReincarnationWarden.blp")
