@@ -10,6 +10,7 @@ library TierKatranaPrestor initializer OnInit requires StormwindConfig
     local trigger trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
     call TriggerAddCondition(trig, Condition(function Research))    
+    call FACTION_STORMWIND.modObjectLimit('n06F', 1)
   endfunction
 
 endlibrary

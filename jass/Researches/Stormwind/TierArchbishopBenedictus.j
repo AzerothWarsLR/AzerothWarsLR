@@ -9,7 +9,8 @@ library TierArchbishopBenedictus initializer OnInit requires StormwindConfig
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
-    call TriggerAddCondition(trig, Condition(function Research))    
+    call TriggerAddCondition(trig, Condition(function Research)) 
+    call FACTION_STORMWIND.modObjectLimit('h05W', 1)   
   endfunction
 
 endlibrary
