@@ -14,14 +14,16 @@ library Victory initializer OnInit requires ControlPoint
 
   private function TeamVictory takes Team whichTeam returns nothing
     local integer i = 0
+    local boolean playedMusic = false
     set GameWon = true
     call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "TEAM VICTORY!|r\n" + whichTeam.name + " has won the game! You may continue playing, but no further winners will be determined.")
     //Play victory music from first player in winning team
     loop
-      exitwhen i == MAX_PLAYERS
+      exitwhen i == MAX_PLAYERS or playedMusic
       if whichTeam.playerArray[i] != null then
-        call StartSound(Persons[GetPlayerId(whichTeam.playerArray[i])].Faction.VictoryMusic)
-        set i = MAX_PLAYERS
+        call StopMusic(true)
+        call PlayThematicMusic(Persons[GetPlayerId(whichTeam.playerArray[i])].Faction.VictoryMusic)
+        set playedMusic = true
       endif
       set i = i + 1
     endloop
