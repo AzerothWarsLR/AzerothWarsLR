@@ -2,7 +2,7 @@
 //Once one side loses all of their capitals, or a member of one faction allies a member of the other faction, their duel ends.
 //Ending a duel updates a global research and a quest.
 
-library Duel requires Environment
+library Duel initializer OnInit requires Environment
 
   globals
     constant integer DUEL_STATUS_UNFINISHED = 0
@@ -80,7 +80,7 @@ library Duel requires Environment
     endmethod
 
     method operator Alive takes nothing returns boolean
-      //Any of this belligerent's factions control any of this belligerent's capitals
+      //Any of this belligerent's factions control any of that belligerent's capitals
       local integer i = 0
       local integer j = 0
       loop
@@ -88,7 +88,7 @@ library Duel requires Environment
         set j = 0
         loop
           exitwhen j == BlzGroupGetSize(capitals)
-          if UnitAlive(BlzGroupUnitAt(capitals, j)) == true and GetOwningPlayer(BlzGroupUnitAt(capitals, j)) == factions[i].Person.p then
+          if BlzGroupUnitAt(capitals, j) != null and UnitAlive(BlzGroupUnitAt(capitals, j)) == true and GetOwningPlayer(BlzGroupUnitAt(capitals, j)) == factions[i].Person.p then
             return true
           endif
           set j = j + 1
@@ -141,6 +141,7 @@ library Duel requires Environment
     readonly integer status
     readonly quest quest
     readonly thistype next
+    private boolean ongoing = true
 
     method operator Research= takes integer newResearch returns nothing
       if this.research == 0 then
@@ -180,7 +181,7 @@ library Duel requires Environment
       endif
     endmethod
 
-    method operator Ongoing takes nothing returns boolean
+    method UpdateOngoing takes nothing returns boolean
       local integer aliveCount = 0
       local integer i = 0
       loop
@@ -190,22 +191,28 @@ library Duel requires Environment
         endif
         set i = i + 1
       endloop
-      if aliveCount > 1 then
-        return true
+      if aliveCount < 2 then
+        set ongoing = false
       endif
-      return false
+      return ongoing
     endmethod
 
+    method operator Ongoing takes nothing returns boolean
+      return ongoing
+    endmethod
+      
     private static method unitLost takes nothing returns nothing
       local thistype nextDuel
       if IsUnitInGroup(GetTriggerUnit(), thistype.allCapitals) then
         set nextDuel = thistype.first
         loop
           exitwhen nextDuel == 0
-          if not nextDuel.Ongoing then
-            set nextDuel.Status = DUEL_STATUS_FINISHED
-            set triggerDuel = nextDuel
-            call OnDuelEnd.fire()
+          if nextDuel.Ongoing == true then
+            if nextDuel.UpdateOngoing() == false then
+              set nextDuel.Status = DUEL_STATUS_FINISHED
+              set triggerDuel = nextDuel
+              call OnDuelEnd.fire()
+            endif
           endif
           set nextDuel = nextDuel.next
         endloop
@@ -222,6 +229,7 @@ library Duel requires Environment
 
     static method create takes string title, string desc, string icon returns thistype
       local thistype this = thistype.allocate()
+      set this.ongoing = true
       set this.title = title
       set this.quest = CreateQuest()
       call QuestSetTitle(this.quest, title)
