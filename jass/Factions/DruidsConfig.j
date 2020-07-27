@@ -10,7 +10,7 @@ library DruidsConfig initializer OnInit requires Faction
     
     set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
-    set f.VictoryMusic = gg_snd_NightElfVictory
+    set f.VictoryMusic = "NightElfVictory"
 
     call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
     call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages

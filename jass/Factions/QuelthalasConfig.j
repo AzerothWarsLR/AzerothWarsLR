@@ -8,7 +8,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     local Faction f
     set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
     set f = FACTION_QUELTHALAS
-    set f.VictoryMusic = gg_snd_HumanVictory
+    set f.VictoryMusic = "HumanVictory"
  
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

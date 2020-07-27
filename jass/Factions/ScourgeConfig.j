@@ -9,7 +9,7 @@ library ScourgeConfig initializer OnInit requires Faction
     
     set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
     set f = FACTION_SCOURGE
-    set f.VictoryMusic = gg_snd_UndeadVictory
+    set f.VictoryMusic = "UndeadVictory"
 
     //Buildings
     call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   

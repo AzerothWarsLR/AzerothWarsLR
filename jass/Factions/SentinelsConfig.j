@@ -9,7 +9,7 @@ library SentinelsConfig initializer OnInit requires Faction
     
     set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
     set f = FACTION_SENTINELS
-    set f.VictoryMusic = gg_snd_NightElfVictory
+    set f.VictoryMusic = "NightElfVictory"
 
     call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
     call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   

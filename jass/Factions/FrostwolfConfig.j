@@ -8,7 +8,7 @@ library FrostwolfConfig initializer OnInit requires Faction
     local Faction f
     set FACTION_FROSTWOLF = Faction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp", 3)
     set f = FACTION_FROSTWOLF
-    set f.VictoryMusic = gg_snd_OrcVictory
+    set f.VictoryMusic = "OrcVictory"
 
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

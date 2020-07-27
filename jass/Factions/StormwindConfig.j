@@ -9,7 +9,7 @@ library StormwindConfig initializer OnInit requires Faction
     
     set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
     set f = FACTION_STORMWIND
-    set f.VictoryMusic = gg_snd_HeroicVictory
+    set f.VictoryMusic = "HeroicVictory"
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -53,10 +53,6 @@ library StormwindConfig initializer OnInit requires Faction
 
     call f.registerObjectLimit('h04W', 1)           //Crowley
     call f.registerObjectLimit('h03W', 1)           //Danath
-    call f.registerObjectLimit('h03F', 1)           //Reginald
-    call f.registerObjectLimit('h05W', 1)           //Benedictus  
-    call f.registerObjectLimit('n06F', 1)           //Katrana
-    call f.registerObjectLimit('h05X', 1)           //Crowley      
 
     //Upgrades
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training
