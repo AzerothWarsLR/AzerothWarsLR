@@ -76,6 +76,12 @@ library FakeGlobals
     sound gg_snd_DarkVictory
     sound gg_snd_UndeadVictory
     sound gg_snd_HeroicVictory
+    rect gg_rct_WaygateStormwindToStromgarde
+    rect gg_rct_WaygateStromgardeToStormwind
+    destructable gg_dest_B017_11949
+    destructable gg_dest_B017_8051
+    destructable gg_dest_B017_11954
+    destructable gg_dest_B017_8950
   endglobals
 
 endlibrary
