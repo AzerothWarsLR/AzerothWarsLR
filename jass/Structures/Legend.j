@@ -85,8 +85,8 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         //Damage trig
         call DestroyTrigger(damageTrig)
         set damageTrig = CreateTrigger()
-        call TriggerRegisterUnitEvent(damageTrig, unit, EVENT_UNIT_DAMAGING)
-        call TriggerAddAction(damageTrig, function thistype.onUnitDamaging)
+        call TriggerRegisterUnitEvent(damageTrig, unit, EVENT_UNIT_DAMAGED)
+        call TriggerAddAction(damageTrig, function thistype.onUnitDamaged)
         //Ownership change trig
         call DestroyTrigger(ownerTrig)
         set ownerTrig = CreateTrigger()
@@ -296,7 +296,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onChangeOwner()
     endmethod
 
-    private static method onUnitDamaging takes nothing returns nothing
+    private static method onUnitDamaged takes nothing returns nothing
       call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDamaging()
     endmethod
 
