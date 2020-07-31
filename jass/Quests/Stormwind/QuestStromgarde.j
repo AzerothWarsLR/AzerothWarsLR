@@ -45,7 +45,7 @@ library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, 
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) and GetOwningPlayer(GetTriggerUnit()) == FACTION_STORMWIND.whichPerson.p then
+    if GetOwningPlayer(GetTriggerUnit()) == FACTION_STORMWIND.whichPerson.p then
       call Build()
     endif
   endfunction    
