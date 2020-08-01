@@ -4,6 +4,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     Legend LEGEND_ROMMATH
     Legend LEGEND_JENNALLA
     Legend LEGEND_SYLVANAS
+    Legend LEGEND_KORIALSTRASZ
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
@@ -26,6 +27,10 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_SUNWELL = Legend.create()
     set LEGEND_SUNWELL.Unit = gg_unit_n001_0165
     set LEGEND_SUNWELL.Capturable = true
+
+    set LEGEND_KORIALSTRASZ = Legend.create()
+    set LEGEND_KORIALSTRASZ.UnitType = 'Edem'
+    set LEGEND_KORIALSTRASZ.PlayerColor = PLAYER_COLOR_RED
   endfunction
 
 endlibrary
