@@ -22,7 +22,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     readonly static thistype triggerPerson = 0         //Used in event response triggers
     readonly static Team triggerPersonPrevTeam = 0
     readonly static Faction prevFaction = 0            //Used in OnPersonFactionChange event response for the previous faction 
-    //readonly static group allCapitals = null
 
     readonly Faction faction                  //Controls name, available objects, color, and icon
     readonly Team team                        //The team this person is on
@@ -34,6 +33,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
      
     private real partialGold = 0              //Just used for income calculations
     readonly group cpGroup                    //Group of control point units this person owns  
+
+    method operator Player takes nothing returns player
+      return this.p
+    endmethod
 
     method operator Faction takes nothing returns Faction
       return this.faction
@@ -173,8 +176,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
       call hideQuests()
 
-      //Run the exit trigger
-      call this.faction.executeExitTrigger()
       set this.faction = 0 
     endmethod
 
@@ -214,8 +215,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
               call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 1)
             endif
             set i = i + 1
-          endloop 
-          call this.faction.executeEnterTrigger()                    
+          endloop                 
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
         endif

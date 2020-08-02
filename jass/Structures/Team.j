@@ -1,10 +1,10 @@
 library Team initializer OnInit requires Table, Event, Persons
   globals
-    private integer ALLY_LEFT_GAME_UPG = 'R04I'
     private integer DEFAULT_MAX_WEIGHT = 6  //All Teams have this much maximum weight
 
     Event OnTeamCreate = 0
     Event OnTeamSizeChange = 0
+    Event OnTeamWeightChange = 0
   endglobals
 
   struct Team     
@@ -61,30 +61,14 @@ library Team initializer OnInit requires Table, Event, Persons
     method getPlayerById takes integer id returns player
       return this.playerArray[id]
     endmethod
-    
-    method refreshUpgrades takes nothing returns nothing
-      local integer i = 0
-      local integer upgradeLevel = 0
-    
-      if this.weight < this.maxWeight or this.size == 1 then
-        set upgradeLevel = 1
-      endif
-
-      loop
-        exitwhen i > MAX_PLAYERS
-        if this.containsPlayer(Player(i)) then
-          call SetPlayerTechResearched(this.playerArray[i], ALLY_LEFT_GAME_UPG, upgradeLevel)
-        endif
-        set i = i + 1
-      endloop
-    endmethod
 
     method modWeight takes integer mod returns nothing
       if (this.weight + mod) < 0 then
         call BJDebugMsg("Attempted to reduce weight of Team " + this.name + " to " + I2S(this.weight + mod)) 
       endif
       set this.weight = this.weight + mod
-      call this.refreshUpgrades()
+      set triggerTeam = this
+      call OnTeamWeightChange.fire()
     endmethod
 
     //Revokes an invite sent to a player
@@ -119,7 +103,6 @@ library Team initializer OnInit requires Table, Event, Persons
       set this.size = this.size+1
       call ForceRemovePlayer(this.invitees, p)
       call this.modWeight(whichPerson.faction.weight)
-      call this.refreshUpgrades()
 
       set triggerTeam = this
       call OnTeamSizeChange.fire()
@@ -132,9 +115,7 @@ library Team initializer OnInit requires Table, Event, Persons
       call ForceRemovePlayer(this.players, p)
       set this.playerArray[GetPlayerId(p)] = null
       set this.size = this.size-1
-      call SetPlayerTechResearched(p, ALLY_LEFT_GAME_UPG, 1)      //If the player is not in a team they cerainly have no allies
       call this.modWeight(-whichPerson.faction.weight)
-      call this.refreshUpgrades()
 
       set triggerTeam = this
       call OnTeamSizeChange.fire()
@@ -208,6 +189,7 @@ library Team initializer OnInit requires Table, Event, Persons
   private function OnInit takes nothing returns nothing
     set OnTeamCreate = Event.create()
     set OnTeamSizeChange = Event.create()
+    set OnTeamWeightChange = Event.create()
   endfunction
 
 endlibrary

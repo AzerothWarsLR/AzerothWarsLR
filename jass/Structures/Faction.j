@@ -17,9 +17,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
     private string victoryMusic
-
-    readonly trigger enterTrigger = null  //Commenced when this faction is added to any player
-    readonly trigger exitTrigger = null   //Commenced when this faction is removed from any player
     
     readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
     readonly integer array objectList[100] //An index for objectLimits
@@ -28,6 +25,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly Set quests
     readonly Table questItemProgress
     private QuestData startingQuest
+
+    method operator Player takes nothing returns player
+      return this.Person.Player
+    endmethod
 
     method operator Person takes nothing returns Person
       return PersonsByFaction[this]
@@ -149,35 +150,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       else
         call BJDebugMsg("ERROR: attempted to set absence research for faction " + this.name + " but one is already set")
       endif
-    endmethod
-
-    method setEnterTrigger takes trigger trig returns nothing
-      if this.enterTrigger == null then
-        set this.enterTrigger = trig
-      else
-        call BJDebugMsg("ERROR: Attempted to set enter trigger for faction " + this.name + " but one is already set.")
-      endif
-    endmethod
-
-    method setExitTrigger takes trigger trig returns nothing
-      if this.exitTrigger == null then
-        set this.exitTrigger = trig
-      else
-        call BJDebugMsg("ERROR: Attempted to set exit trigger for faction " + this.name + " but one is already set.")
-      endif
-    endmethod
-
-    method executeEnterTrigger takes nothing returns nothing
-      if this.enterTrigger != null then
-        call TriggerEvaluate(this.enterTrigger)
-      endif
-    endmethod
-
-    method executeExitTrigger takes nothing returns nothing
-      if this.exitTrigger != null then
-        call TriggerEvaluate(this.exitTrigger)
-      endif
-    endmethod                        
+    endmethod                   
 
     method registerObjectLimit takes integer id, integer limit returns nothing
       if not this.objectLimits.exists(id) then
