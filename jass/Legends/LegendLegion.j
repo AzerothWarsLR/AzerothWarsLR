@@ -4,6 +4,7 @@ library LegendLegion initializer OnInit requires Legend
     Legend LEGEND_ARCHIMONDE
     Legend LEGEND_ANETHERON
     Legend LEGEND_TICHONDRIUS
+    Legend LEGEND_MALGANIS
 
     Legend LEGEND_LEGIONNEXUS
   endglobals
@@ -19,6 +20,11 @@ library LegendLegion initializer OnInit requires Legend
 
     set LEGEND_TICHONDRIUS = Legend.create()
     set LEGEND_TICHONDRIUS.Unit = gg_unit_Utic_1234
+    set LEGEND_TICHONDRIUS.PlayerColor = PLAYER_COLOR_RED
+
+    set LEGEND_MALGANIS = Legend.create()
+    set LEGEND_MALGANIS.Unit = gg_unit_Umal_0675
+    set LEGEND_MALGANIS.PlayerColor = PLAYER_COLOR_GREEN
 
     set LEGEND_LEGIONNEXUS = Legend.create()
     set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871

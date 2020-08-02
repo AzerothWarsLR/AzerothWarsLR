@@ -1,6 +1,7 @@
 library LegendQuelthalas initializer OnInit requires Legend
 
   globals
+    Legend LEGEND_ANASTERIAN
     Legend LEGEND_ROMMATH
     Legend LEGEND_JENNALLA
     Legend LEGEND_SYLVANAS
@@ -11,6 +12,10 @@ library LegendQuelthalas initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
+    set LEGEND_ANASTERIAN = Legend.create()
+    set LEGEND_ANASTERIAN.Unit = gg_unit_H00Q_0630
+    set LEGEND_ANASTERIAN.PlayerColor = PLAYER_COLOR_MAROON
+
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
 
@@ -19,6 +24,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     
     set LEGEND_SYLVANAS = Legend.create()
     set LEGEND_SYLVANAS.Unit = gg_unit_Hvwd_1515
+    set LEGEND_SYLVANAS.PlayerColor = PLAYER_COLOR_GREEN
 
     set LEGEND_SILVERMOON = Legend.create()
     set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418
