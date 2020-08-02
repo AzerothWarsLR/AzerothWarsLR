@@ -11,7 +11,6 @@ library HintConfig initializer OnInit requires Hint
     call Hint.create("We have a welcoming Discord community at https://discord.gg//4eGZn")
     call Hint.create("When a player leaves, their gold, lumber, units and hero experience are spread among their remaining allies.")
     call Hint.create("There are water passageways at the edge of the map you can use to instantly move to the other side of the map.")
-    call Hint.create("Trigger a win condition and claim your victory by conquering 80% of all Control Points on the map.")
   endfunction
 
 endlibrary
