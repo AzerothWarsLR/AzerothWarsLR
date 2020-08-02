@@ -17,7 +17,7 @@ library StartingQuestPopup initializer OnInit requires Faction
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, 65., false)
+    call TriggerRegisterTimerEvent(trig, 63., false)
     call TriggerAddCondition(trig, Condition(function Actions))
   endfunction
 
