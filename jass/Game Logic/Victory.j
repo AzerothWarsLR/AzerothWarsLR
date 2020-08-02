@@ -1,16 +1,24 @@
 //When a Team gets a certain number of Control Points they win. 
 //This doesn't end the game, they just gain an increase to their score.
 
-library Victory initializer OnInit requires ControlPoint
+library Victory initializer OnInit requires ControlPoint, Hint
 
   globals
-    private constant integer CPS_VICTORY = 7 //This many Control Points gives an instant win
-    private constant integer CPS_WARNING = 5 //How many Control Points to start the warning at
+    private constant integer CPS_VICTORY = 80 //This many Control Points gives an instant win
+    private constant integer CPS_WARNING = 70 //How many Control Points to start the warning at
     private constant string VICTORY_COLOR = "|cff911499"
     private boolean GameWon = false
 
     private trigger ControlPointTrig
   endglobals
+
+  function GetControlPointsRequiredVictory takes nothing returns integer
+    return CPS_VICTORY
+  endfunction
+
+  function GetControlPointsRequiredWarning takes nothing returns integer
+    return CPS_WARNING
+  endfunction
 
   private function TeamVictory takes Team whichTeam returns nothing
     local integer i = 0
