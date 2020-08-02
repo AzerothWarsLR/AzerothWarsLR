@@ -1,4 +1,4 @@
-library Hint initializer OnInit requires Set
+library Hint initializer OnInit requires Set, Display
 
   globals
     private constant real HINT_INTERVAL = 180
@@ -10,8 +10,7 @@ library Hint initializer OnInit requires Set
     private string msg
 
     method display takes nothing returns nothing
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cff00ff00HINT|r - " + msg)
-      call StartSound(bj_questHintSound)
+      call DisplayHint(GetLocalPlayer(), msg)
       call unread.remove(this)
     endmethod
 

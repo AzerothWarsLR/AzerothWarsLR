@@ -1,5 +1,12 @@
 library Display requires Faction
 
+  function DisplayHint takes player whichPlayer, string msg returns nothing
+    call DisplayTextToPlayer(whichPlayer, 0, 0, "\n|cff00ff00HINT|r - " + msg)
+    if GetLocalPlayer() == whichPlayer then
+      call StartSound(bj_questHintSound)
+    endif
+  endfunction
+
   function DisplayHeroReward takes unit whichUnit, integer strength, integer agility, integer intelligence, integer experience returns nothing
     local string display = "\n|cff00ff00HERO REWARD EARNED -" + GetHeroProperName(whichUnit) + "|r"
     if strength > 0 then
