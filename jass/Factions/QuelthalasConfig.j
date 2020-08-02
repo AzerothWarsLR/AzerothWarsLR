@@ -42,7 +42,8 @@ library QuelthalasConfig initializer OnInit requires Faction
     call f.registerObjectLimit('e008', 6)           //Elven Ballista
     call f.registerObjectLimit('n00A', 6)           //Farstrider
     call f.registerObjectLimit('n063', 12)          //Magus 
-    call f.registerObjectLimit('n048', 6)           //Blood Mage 
+    call f.registerObjectLimit('n048', 6)           //Blood Mage
+    call f.registerObjectLimit('h03S', 6)           //Blood Knight
     call f.registerObjectLimit('hspt', 12)          //Spell Breaker   
     call f.registerObjectLimit('nggr', 4)           //Granite Golem    
     call f.registerObjectLimit('u00J', 2)           //Arcane Wagon
@@ -72,6 +73,7 @@ library QuelthalasConfig initializer OnInit requires Faction
     
     //Paths
     call f.registerObjectLimit('R046', UNLIMITED)   //Quel'thelas Full Mobilization
+    call f.registerObjectLimit('R04U', UNLIMITED)   //Solo Path
   endfunction
     
 endlibrary
