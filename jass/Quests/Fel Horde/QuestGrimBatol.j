@@ -96,6 +96,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     set QUESTITEM_GRIMBATOL_DARKSHIRE = QUEST_GRIMBATOL.addItem("Destroy Darkshire")
     set QUESTITEM_GRIMBATOL_VISIT = QUEST_GRIMBATOL.addItem("Bring a unit to Grim Batol")
     call FACTION_FEL_HORDE.addQuest(QUEST_GRIMBATOL)
+    set FACTION_FEL_HORDE.StartingQuest = QUEST_GRIMBATOL
   endfunction
 
 endlibrary

@@ -50,6 +50,7 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
     set QUESTITEM_KINGARTHAS_VISIT = QUEST_KINGARTHAS.addItem("Bring Arthas to the Frozen Throne")
     call FACTION_LORDAERON.addQuest(QUEST_KINGARTHAS) 
     call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_PROTECT, QUEST_PROGRESS_COMPLETE, false)
+    set FACTION_LORDAERON.StartingQuest = QUEST_KINGARTHAS
 
     set trig = CreateTrigger()
     call TriggerRegisterUnitEvent(trig, gg_unit_u000_0649, EVENT_UNIT_DEATH)    

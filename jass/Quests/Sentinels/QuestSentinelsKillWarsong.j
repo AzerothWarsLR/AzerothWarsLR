@@ -38,6 +38,7 @@ library SentinelsKillWarsong initializer OnInit requires SentinelsConfig, Legend
     set QUESTITEM_STONEMAUL = tempQuest.addItem("Stonemaul Keep is destroyed")
     set QUESTITEM_ENCAMPMENT = tempQuest.addItem("The Warsong Encampment on the Darkspear Isles is destroyed")
     call FACTION_SENTINELS.addQuest(tempQuest)
+    set FACTION_SENTINELS.StartingQuest = tempQuest
   endfunction
 
 endlibrary

@@ -31,6 +31,7 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig
     set QUEST_QUELDANIL = QuestData.create("Quel'danil Lodge", "Quel'danil Lodge is a High Elven outpost situated in the Hinterlands. It's been some time since the rangers there have been in contact with Quel'thalas.", "Quel'thalas has finally reunited with its lost rangers in the Hinterlands.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
     set QUESTITEM_VISIT = QUEST_QUELDANIL.addItem("Bring a unit to Quel'danil Lodge")
     call FACTION_QUELTHALAS.addQuest(QUEST_QUELDANIL) 
+    set FACTION_QUELTHALAS.StartingQuest = QUEST_QUELDANIL
   endfunction
 
 endlibrary

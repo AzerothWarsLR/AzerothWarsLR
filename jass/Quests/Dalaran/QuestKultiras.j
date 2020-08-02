@@ -60,6 +60,7 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
     set QUEST_KULTIRAS = QuestData.create("The City at Sea", "The independent nation of Kul'tiras is conspicuously absent from the Second War. Hopefully they arrive soon.", "Admiral Daelin Prodmoore has finally mobilized Kul'tiras for war, and is now ready to aid Alliance forces on the mainland.", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp")
     set QUESTITEM_KULTIRAS = QUEST_KULTIRAS.addItem("Survive until turn 9")
     call FACTION_DALARAN.addQuest(QUEST_KULTIRAS) 
+    set FACTION_DALARAN.StartingQuest = QUEST_KULTIRAS
   endfunction
 
 endlibrary
