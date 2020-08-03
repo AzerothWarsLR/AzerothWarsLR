@@ -82,6 +82,8 @@ library FakeGlobals
     destructable gg_dest_B017_8051
     destructable gg_dest_B017_11954
     destructable gg_dest_B017_8950
+    unit gg_unit_Umal_0675
+    rect gg_rct_Khadgar
   endglobals
 
 endlibrary
