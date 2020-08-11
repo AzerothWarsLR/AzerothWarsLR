@@ -124,7 +124,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif        
     endmethod
 
-    method setPresenceResearch takes integer research returns nothing
+    method operator PresenceResearch= takes integer research returns nothing
       local integer i = 0
       if this.presenceResearch == 0 then
         set this.presenceResearch = research
