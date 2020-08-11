@@ -37,7 +37,7 @@ library Score requires Environment, FileIO, Savecode, Table
       local string display = "\n" + SCORE_COLOR + this.name + " Scores" + "|r\n"
       loop
         exitwhen i == MAX_PLAYERS
-        if GetPlayerController(Player(i)) == MAP_CONTROL_USER then
+        if values[i] != 0 then
           set display = display + "|cffC3C1C3" + GetPlayerName(Player(i)) + ":|r " + R2S(this.values[i]) + "\n"
         endif
         set i = i + 1
@@ -106,6 +106,10 @@ library Score requires Environment, FileIO, Savecode, Table
     //Global response; takes in sync event with prefix e.g "ScoreDuel" and passes the event on to Score with filename "Duel"
     private static method OnAnySyncScore takes nothing returns nothing
       call thistype(byFileName[SubString(BlzGetTriggerSyncPrefix(), StringLength(SYNC_PREFIX), 1000)]).OnSyncScore()
+    endmethod
+
+    static method ByFileName takes string s returns thistype
+      return thistype.byFileName[s]
     endmethod
 
     static method create takes string name, string fileName returns thistype
