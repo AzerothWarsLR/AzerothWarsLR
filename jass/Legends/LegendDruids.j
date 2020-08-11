@@ -7,6 +7,9 @@ library LegendDruids initializer OnInit requires Legend
     Legend LEGEND_URSOC
 
     Legend LEGEND_NORDRASSIL
+
+    constant integer UNITTYPE_CENARIUS_ALIVE = 'Ecen'
+    constant integer UNITTYPE_CENARIUS_GHOST = 'E00H'
   endglobals
 
   private function OnInit takes nothing returns nothing

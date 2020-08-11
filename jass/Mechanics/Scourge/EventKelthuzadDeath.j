@@ -1,4 +1,4 @@
-library EventKelthuzadDeath initializer OnInit requires LegendScourge
+library EventKelthuzadDeath initializer OnInit requires LegendScourge, SortScourgeLegends
 
   //When Kel'thuzad (Necromancer) is permanently killed
   //Record his experience, and create Kel'thuzad (Ghost) as a replacement
@@ -6,15 +6,15 @@ library EventKelthuzadDeath initializer OnInit requires LegendScourge
 
   globals
     integer KelthuzadExp = 0
-    private constant integer NECROMANCER_ID = 'U001'
     private constant integer GHOST_ID = 'uktg'
   endglobals
 
   private function Dies takes nothing returns nothing
-    if LEGEND_KELTHUZAD == GetTriggerLegend() and GetUnitTypeId(GetTriggerLegend().Unit) == NECROMANCER_ID then
+    if LEGEND_KELTHUZAD == GetTriggerLegend() and GetUnitTypeId(GetTriggerLegend().Unit) == UNITTYPE_KELTHUZAD_NECROMANCER then
       set KelthuzadExp = GetHeroXP(LEGEND_KELTHUZAD.Unit)
-      call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_LIFE))
-      set LEGEND_KELTHUZAD.UnitType = GHOST_ID
+      set LEGEND_KELTHUZAD.UnitType = UNITTYPE_KELTHUZAD_GHOST
+      set LEGEND_KELTHUZAD.PermaDies = false
+      call SortScourgeLegends()
       call DestroyTrigger(GetTriggeringTrigger())         
     endif
   endfunction

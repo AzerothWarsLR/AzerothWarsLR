@@ -2,6 +2,7 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
 
   globals
     private constant integer RESEARCH_ID = 'R04H'
+    private constant integer UNITTYPE_CENARIUS = 'Ecen'
   endglobals
 
   private function Research takes nothing returns nothing
@@ -15,6 +16,9 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
       endif
       call LEGEND_URSOC.Spawn(FACTION_DRUIDS.Person.p, -11679, 6904, 255)
       call UnitDetermineLevel(LEGEND_URSOC.Unit, 1.00)
+      if GetUnitTypeId(LEGEND_CENARIUS.Unit) == UNITTYPE_CENARIUS_GHOST then
+        set LEGEND_CENARIUS.UnitType = UNITTYPE_CENARIUS_ALIVE
+      endif
       set LEGEND_CENARIUS.PermaDies = false
       call LEGEND_CENARIUS.AddUnitDependency(gg_unit_n002_0130)
       //Mod object limits

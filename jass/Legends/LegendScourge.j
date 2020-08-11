@@ -9,6 +9,10 @@ library LegendScourge initializer OnInit requires Legend
     Legend LEGEND_LICHKING
 
     Legend LEGEND_NERZHUL
+
+    constant integer UNITTYPE_KELTHUZAD_NECROMANCER = 'U001'
+    constant integer UNITTYPE_KELTHUZAD_GHOST = 'U00M'
+    constant integer UNITTYPE_KELTHUZAD_LICH = 'Uktl'
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -16,6 +20,7 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_KELTHUZAD.Unit = gg_unit_U001_1237
     set LEGEND_KELTHUZAD.PermaDies = true
     set LEGEND_KELTHUZAD.DeathMessage = "Kel'thuzad has been slain. He lives on in spectral form, and may yet return if he is brought to the Sunwell."
+    set LEGEND_KELTHUZAD.DeathSfx = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"
 
     set LEGEND_ANUBARAK = Legend.create()
     set LEGEND_ANUBARAK.Unit = gg_unit_Uanb_0755
