@@ -48,6 +48,10 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     set trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_SPELL_FINISH)
     call TriggerAddAction(trig, function Cast)
+
+    if FACTION_LEGION.presenceResearch == 0 then
+      call BJDebugMsg("ERROR: " + FACTION_LEGION.name + " has no presence research. QuestSummonLegion won't work")
+    endif
   endfunction
 
 endlibrary
