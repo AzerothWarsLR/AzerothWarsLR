@@ -1,16 +1,23 @@
 //When a Team gets a certain number of Control Points they win. 
 //This doesn't end the game, they just gain an increase to their score.
 
-library Victory initializer OnInit requires ControlPoint, Hint
+library Victory initializer OnInit requires ControlPoint, Event
 
   globals
     private constant integer CPS_VICTORY = 80 //This many Control Points gives an instant win
     private constant integer CPS_WARNING = 70 //How many Control Points to start the warning at
     private constant string VICTORY_COLOR = "|cff911499"
     private boolean GameWon = false
+    private Team VictoriousTeam = 0
 
     private trigger ControlPointTrig
+
+    Event OnTeamVictory
   endglobals
+
+  function GetVictoriousTeam takes nothing returns Team
+    return VictoriousTeam
+  endfunction
 
   function GetControlPointsRequiredVictory takes nothing returns integer
     return CPS_VICTORY
@@ -35,13 +42,8 @@ library Victory initializer OnInit requires ControlPoint, Hint
       endif
       set i = i + 1
     endloop
-    //Update scores
-    set i = 0
-    loop
-      exitwhen i == MAX_PLAYERS
-      //call PlayerAddScore(whichTeam.playerArray[i], 5)
-      set i = i + 1
-    endloop
+    set VictoriousTeam = whichTeam
+    call OnTeamVictory.fire()
   endfunction
 
   private function TeamWarning takes Team whichTeam, integer controlPoints returns nothing
@@ -80,6 +82,7 @@ library Victory initializer OnInit requires ControlPoint, Hint
     set ControlPointTrig = CreateTrigger()
     call OnControlPointOwnerChange.register(ControlPointTrig)
     call TriggerAddAction(ControlPointTrig, function ControlPointOwnerChanges)
+    set OnTeamVictory = Event.create()
   endfunction
 
 endlibrary

@@ -22,7 +22,7 @@ library Duel initializer OnInit requires Environment
         set j = 0
         loop
           exitwhen j == nextDuel.belligerentCount
-          if nextDuel.belligerents[j].containsFaction(whichFaction) then
+          if nextDuel.belligerents[j].ContainsFaction(whichFaction) then
             return DUEL_STATUS_UNFINISHED
           endif
           set j = j + 1
@@ -41,6 +41,7 @@ library Duel initializer OnInit requires Environment
     readonly Faction array factions[5]
     readonly group capitals
     readonly integer factionCount
+    readonly boolean alive = true
     public questitem questitem
 
     method updateDesc takes nothing returns nothing
@@ -80,26 +81,36 @@ library Duel initializer OnInit requires Environment
     endmethod
 
     method operator Alive takes nothing returns boolean
+      return alive
+    endmethod
+
+    method UpdateAlive takes nothing returns boolean
       //Any of this belligerent's factions control any of that belligerent's capitals
       local integer i = 0
       local integer j = 0
+      set this.alive = false
       loop
         exitwhen i == factionCount
         set j = 0
         loop
           exitwhen j == BlzGroupGetSize(capitals)
           if BlzGroupUnitAt(capitals, j) != null and UnitAlive(BlzGroupUnitAt(capitals, j)) == true and GetOwningPlayer(BlzGroupUnitAt(capitals, j)) == factions[i].Person.p then
-            return true
+            set this.alive = true
+            return alive
           endif
           set j = j + 1
         endloop
         set i = i + 1
       endloop
-      call QuestItemSetCompleted(this.questitem, true)
-      return false
+      call QuestItemSetCompleted(this.questitem, not this.alive)
+      return this.alive
     endmethod
 
-    method containsFaction takes Faction whichFaction returns boolean
+    method ContainsPlayer takes player whichPlayer returns boolean
+      return ContainsFaction(Persons[GetPlayerId(whichPlayer)].Faction)
+    endmethod
+
+    method ContainsFaction takes Faction whichFaction returns boolean
       local integer i = 0
       loop
         exitwhen i == factionCount
@@ -136,6 +147,7 @@ library Duel initializer OnInit requires Environment
 
     readonly string title
     readonly Belligerent array belligerents[5]
+    private Belligerent winners = 0
     readonly integer belligerentCount = 0
     readonly integer research
     readonly integer status
@@ -143,12 +155,32 @@ library Duel initializer OnInit requires Environment
     readonly thistype next
     private boolean ongoing = true
 
+    method GetBelligerent takes integer i returns Belligerent
+      return belligerents[i]
+    endmethod
+
+    method operator Winners takes nothing returns Belligerent
+      return this.winners
+    endmethod
+
     method operator Research= takes integer newResearch returns nothing
       if this.research == 0 then
         set this.research = newResearch
       else
         call BJDebugMsg("ERROR: Attempted to set research of duel " + this.title + " more than once")
       endif
+    endmethod
+
+    method ContainsPlayer takes player whichPlayer returns boolean
+      local integer i = 0
+      loop
+        exitwhen i == belligerentCount
+        if belligerents[i].ContainsPlayer(whichPlayer) then
+          return true
+        endif
+        set i = i + 1
+      endloop
+      return false
     endmethod
 
     private method updateDesc takes nothing returns nothing
@@ -184,17 +216,20 @@ library Duel initializer OnInit requires Environment
     method UpdateOngoing takes nothing returns boolean
       local integer aliveCount = 0
       local integer i = 0
+      local Belligerent lastAlive = 0
       loop
         exitwhen i == belligerentCount
-        if belligerents[i].Alive then
+        if belligerents[i].UpdateAlive() then
+          set lastAlive = belligerents[i]
           set aliveCount = aliveCount + 1
         endif
         set i = i + 1
       endloop
       if aliveCount < 2 then
-        set ongoing = false
+        set this.ongoing = false
+        set this.winners = lastAlive
       endif
-      return ongoing
+      return this.ongoing
     endmethod
 
     method operator Ongoing takes nothing returns boolean

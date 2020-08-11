@@ -56,7 +56,7 @@ library FileIO
         //
         // This setting is really only intended for those who were already using the system in their map
         // prior to patch 1.31 and want to keep old files created with this system to still work.
-        private constant boolean BACKWARDS_COMPATABILITY = true
+        private constant boolean BACKWARDS_COMPATABILITY = false
     endglobals
     
     private keyword FileInit
