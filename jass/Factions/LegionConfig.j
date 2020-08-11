@@ -10,6 +10,7 @@ library LegionConfig initializer OnInit requires Faction
     set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
     set f = FACTION_LEGION
     set f.VictoryMusic = "UndeadVictory"
+    set f.PresenceResearch = 'R04T'
 
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
