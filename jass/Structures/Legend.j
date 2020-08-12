@@ -97,6 +97,11 @@ library Legend initializer OnInit requires GeneralHelpers, Event
           set startingXP = GetHeroXP(unit)
         endif
         //
+        if this.playerColor == null then
+          call SetUnitColor(unit, GetPlayerColor(GetOwningPlayer(unit)))
+        else
+          call SetUnitColor(unit, this.playerColor)
+        endif
         set thistype.ByHandle[GetHandleId(unit)] = this
         call refreshDummy()
       endif
