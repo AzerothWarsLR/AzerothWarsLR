@@ -1,4 +1,4 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, EventKelthuzadDeath, SortScourgeLegends
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, SortScourgeLegends
 
   globals
     private QuestData QUEST_KELTHUZAD

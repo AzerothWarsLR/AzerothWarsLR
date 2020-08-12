@@ -15,6 +15,7 @@ library EventKelthuzadDeath initializer OnInit requires LegendScourge, SortScour
       set LEGEND_KELTHUZAD.UnitType = UNITTYPE_KELTHUZAD_GHOST
       set LEGEND_KELTHUZAD.PermaDies = false
       call SortScourgeLegends()
+      call ReviveHero(LEGEND_KELTHUZAD.Unit, GetUnitX(LEGEND_KELTHUZAD.Unit), GetUnitY(LEGEND_KELTHUZAD.Unit), false)
       call DestroyTrigger(GetTriggeringTrigger())         
     endif
   endfunction
