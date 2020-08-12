@@ -20,6 +20,8 @@ library ReapingHour initializer OnInit requires T32, Set
     private constant real EFFECT_SCALE_HIT = 0.7
     private constant string EFFECT_SPAWN = "Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl"
     private constant real EFFECT_SCALE_SPAWN = 0.5
+
+    private group TempGroup = CreateGroup()
   endglobals
 
   private struct ReapProjectile
@@ -110,14 +112,13 @@ library ReapingHour initializer OnInit requires T32, Set
     endmethod
 
     method hit takes ReapProjectile reapProjectile returns nothing
-      local group tempGroup = CreateGroup()
       local integer i = 0
       local unit u = null
       local effect tempEffect = null
       local real damageMult = 0
-      call GroupEnumUnitsInRange(tempGroup, reapProjectile.X, reapProjectile.Y, RADIUS, null)
+      call GroupEnumUnitsInRange(TempGroup, reapProjectile.X, reapProjectile.Y, RADIUS, null)
       loop
-        set u = FirstOfGroup(tempGroup)
+        set u = FirstOfGroup(TempGroup)
         exitwhen u == null
         if not IsUnitInGroup(u, this.hitGroup) and not IsUnitAlly(u, GetOwningPlayer(this.caster)) and IsUnitAlive(u) and not BlzIsUnitInvulnerable(u) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) then
           set damageMult = 1 + ((GetUnitState(u, UNIT_STATE_MAX_LIFE) - GetUnitState(u, UNIT_STATE_LIFE))/GetUnitState(u, UNIT_STATE_MAX_LIFE))*EXECUTE_PERC
@@ -128,10 +129,9 @@ library ReapingHour initializer OnInit requires T32, Set
           set tempEffect = null
           call GroupAddUnit(this.hitGroup, u)
         endif
-        call GroupRemoveUnit(tempGroup, u)
+        call GroupRemoveUnit(TempGroup, u)
       endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
+      call GroupClear(TempGroup)
     endmethod
 
     method periodic takes nothing returns nothing

@@ -16,6 +16,8 @@ library SolarJudgement initializer OnInit requires T32, Filters
 
     private constant string EFFECT = "Shining Flare.mdx"
     private constant string EFFECT_HEAL = "Abilities\\Spells\\Human\\Heal\\HealTarget.mdl"
+
+    private group TempGroup = CreateGroup()
   endglobals
 
   struct SolarJudgement
@@ -33,7 +35,6 @@ library SolarJudgement initializer OnInit requires T32, Filters
     endmethod
 
     private method bolt takes real x, real y returns nothing
-      local group tempGroup = CreateGroup()
       local real damageMult = 1.
       local unit u
 
@@ -41,9 +42,9 @@ library SolarJudgement initializer OnInit requires T32, Filters
 
       set P = GetOwningPlayer(caster)  
       //Damage enemies
-      call GroupEnumUnitsInRange(tempGroup,x,y,BOLT_RADIUS,Condition(function EnemyAliveFilter))
+      call GroupEnumUnitsInRange(TempGroup,x,y,BOLT_RADIUS,Condition(function EnemyAliveFilter))
       loop
-        set u = FirstOfGroup(tempGroup)
+        set u = FirstOfGroup(TempGroup)
         exitwhen u == null
         if IsUnitType(u, UNIT_TYPE_UNDEAD) == true then
           set damageMult = EVIL_MULT
@@ -51,26 +52,25 @@ library SolarJudgement initializer OnInit requires T32, Filters
           set damageMult = 1.
         endif
         call UnitDamageTarget(caster, u, damage*damageMult, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
-        call GroupRemoveUnit(tempGroup,u)
+        call GroupRemoveUnit(TempGroup,u)
       endloop
 
       //Heal allies
-      call GroupEnumUnitsInRange(tempGroup,x,y,BOLT_RADIUS,Condition(function AllyAliveFilter))
+      call GroupEnumUnitsInRange(TempGroup,x,y,BOLT_RADIUS,Condition(function AllyAliveFilter))
       loop
-        set u = FirstOfGroup(tempGroup)
+        set u = FirstOfGroup(TempGroup)
         exitwhen u == null
         if IsUnitType(u, UNIT_TYPE_UNDEAD) == false then
           set damageMult = HEAL_MULT
           call SetUnitState(u, UNIT_STATE_LIFE, GetUnitState(u, UNIT_STATE_LIFE) + damage * damageMult)
           call DestroyEffect(AddSpecialEffectTarget(EFFECT_HEAL, u, "origin"))
         endif
-        call GroupRemoveUnit(tempGroup,u)
+        call GroupRemoveUnit(TempGroup,u)
       endloop      
 
-      call DestroyGroup(tempGroup)
+      call GroupClear(TempGroup)
       set P = null
       set u = null
-      set tempGroup = null
     endmethod
 
     private method randomBolt takes nothing returns nothing
