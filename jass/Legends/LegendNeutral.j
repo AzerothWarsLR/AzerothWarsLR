@@ -18,6 +18,7 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_NEXUS
     Legend LEGEND_KARAZHAN
     Legend LEGEND_ZULFARRAK
+    Legend LEGEND_FOUNTAINOFHEALTH
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -83,6 +84,10 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_ZULFARRAK = Legend.create()
     set LEGEND_ZULFARRAK.Capturable = true
     set LEGEND_ZULFARRAK.Unit = gg_unit_o00K_0150
+
+    set LEGEND_FOUNTAINOFHEALTH = Legend.create()
+    set LEGEND_FOUNTAINOFHEALTH.Capturable = true
+    set LEGEND_FOUNTAINOFHEALTH.Unit = gg_unit_nfoh_0212
   endfunction
 
 endlibrary
