@@ -162,6 +162,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif       
     endmethod
     
+    static method ByName takes string s returns thistype
+      return thistype.factionsByName[s]
+    endmethod
+
     static method create takes string name, playercolor playCol, string prefixCol, string icon, integer weight returns Faction
       local Faction this = Faction.allocate()
     
