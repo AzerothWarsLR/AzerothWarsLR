@@ -327,8 +327,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) + HERO_COST)
           set this.xp = this.xp + GetHeroXP(u)
           //Subtract hero's starting XP from refunded XP
-          if Legend.fromHandle(u) != 0 then
-            set this.xp = this.xp - Legend.fromHandle(u).StartingXP
+          if Legend.ByHandle(u) != 0 then
+            set this.xp = this.xp - Legend.ByHandle(u).StartingXP
           endif
           call UnitDropAllItems(u)  
           call RemoveUnit(u)
@@ -377,7 +377,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       call this.deallocate()
     endmethod
 
-    static method fromHandle takes player whichPlayer returns thistype
+    static method ByHandle takes player whichPlayer returns thistype
       return Persons[GetPlayerId(whichPlayer)]
     endmethod
 

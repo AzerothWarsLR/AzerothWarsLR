@@ -1,7 +1,7 @@
 library HeroGlowFix initializer OnInit requires Legend
 
   private function Revived takes nothing returns nothing
-    local Legend revivedLegend = Legend.fromHandle(GetTriggerUnit())
+    local Legend revivedLegend = Legend.ByHandle(GetTriggerUnit())
     if revivedLegend.PlayerColor != null then
       call SetUnitColor(GetTriggerUnit(), revivedLegend.PlayerColor)
     else
