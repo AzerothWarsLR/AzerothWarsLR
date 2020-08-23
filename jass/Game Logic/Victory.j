@@ -56,7 +56,7 @@ library Victory initializer OnInit requires ControlPoint, Event
     loop
       exitwhen i == MAX_PLAYERS
       if whichTeam.playerArray[i] != null then
-        set total = total + Person.fromHandle(whichTeam.playerArray[i]).controlPoints
+        set total = total + Person.ByHandle(whichTeam.playerArray[i]).controlPoints
       endif
       set i = i + 1
     endloop
@@ -68,7 +68,7 @@ library Victory initializer OnInit requires ControlPoint, Event
     local integer teamControlPoints
 
     if not GameWon then
-      set team = Person.fromHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Team
+      set team = Person.ByHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Team
       set teamControlPoints = GetTeamControlPoints(team)
       if teamControlPoints >= CPS_VICTORY then
         call TeamVictory(team)
