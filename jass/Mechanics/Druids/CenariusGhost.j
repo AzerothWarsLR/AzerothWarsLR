@@ -5,7 +5,7 @@ library CenariusGhost initializer OnInit requires LegendDruids
       set LEGEND_CENARIUS.UnitType = UNITTYPE_CENARIUS_GHOST
       set LEGEND_CENARIUS.PermaDies = false
       call LEGEND_CENARIUS.ClearUnitDependencies()
-      call ReviveHero(LEGEND_CENARIUS.Unit, GetUnitX(LEGEND_CENARIUS.Unit), GetUnitY(LEGEND_CENARIUS.Unit), false)
+      call ReviveHero(LEGEND_CENARIUS.Unit, GetRectCenterX(gg_rct_Cenarius), GetRectCenterY(gg_rct_Cenarius), false)
       call DestroyTrigger(GetTriggeringTrigger())         
     endif
   endfunction
