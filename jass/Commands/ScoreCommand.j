@@ -7,7 +7,9 @@ library ScoreCommand initializer OnInit requires Score
   private function Actions takes nothing returns nothing
     local string enteredString = GetEventPlayerChatString()
     local string content = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
-    call Score.ByFileName(content).Display()
+    if Score.ByFileName(content) != 0 then
+      call Score.ByFileName(content).Display()
+    endif
   endfunction
 
   private function OnInit takes nothing returns nothing
