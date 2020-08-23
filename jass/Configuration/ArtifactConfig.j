@@ -13,6 +13,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       Artifact ARTIFACT_DREKTHARSSPELLBOOK
       Artifact ARTIFACT_SCEPTEROFTHEQUEEN
       Artifact ARTIFACT_CROWNEASTERNKINGDOMS
+      Artifact ARTIFACT_BOOKOFMEDIVH
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -54,9 +55,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
     call UnitAddItem(gg_unit_n085_2846, ARTIFACT_SCEPTEROFTHEQUEEN.item)    
 
-    set tempArtifact = Artifact.create(CreateItem('I006', DUMMY_X, DUMMY_Y))    //Book of Medivh
+    set ARTIFACT_BOOKOFMEDIVH = Artifact.create(CreateItem('I006', DUMMY_X, DUMMY_Y))    //Book of Medivh
     call UnitAddAbility(gg_unit_nbsm_1188, ARTIFACT_HOLDER_ABIL_ID)             //Book of Medivh Pedestal
-    call UnitAddItem(gg_unit_nbsm_1188, tempArtifact.item) 
+    call UnitAddItem(gg_unit_nbsm_1188, ARTIFACT_BOOKOFMEDIVH.item) 
 
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', DUMMY_X, DUMMY_Y))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_HIDDEN)
