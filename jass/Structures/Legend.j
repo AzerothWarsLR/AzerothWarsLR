@@ -10,11 +10,12 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private Legend TriggerLegend = 0
     Event OnLegendChangeOwner
+    Event OnLegendPrePermaDeath //Fired before the unit is removed
     Event OnLegendPermaDeath
   endglobals
 
   struct Legend
-    private static Table ByHandle
+    private static Table byHandle
 
     private unit unit
     private integer unitType
@@ -65,7 +66,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     public method operator Unit= takes unit u returns nothing
       if Unit != null then
-        set thistype.ByHandle[GetHandleId(unit)] = 0
+        set thistype.byHandle[GetHandleId(unit)] = 0
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
       endif
@@ -102,7 +103,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         else
           call SetUnitColor(unit, this.playerColor)
         endif
-        set thistype.ByHandle[GetHandleId(unit)] = this
+        set thistype.byHandle[GetHandleId(unit)] = this
         call refreshDummy()
       endif
     endmethod
@@ -211,6 +212,8 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private method permaDeath takes nothing returns nothing
       local effect tempEffect
+      set TriggerLegend = this
+      call OnLegendPrePermaDeath.fire()
       if IsUnitType(unit, UNIT_TYPE_HERO) then
         set tempEffect = AddSpecialEffect(deathSfx, GetUnitX(unit), GetUnitY(unit))
         call BlzSetSpecialEffectScale(tempEffect, 2.0)
@@ -293,24 +296,24 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       endif
     endmethod
 
-    static method fromHandle takes unit whichUnit returns thistype
-      return thistype.ByHandle[GetHandleId(whichUnit)]
+    static method ByHandle takes unit whichUnit returns thistype
+      return thistype.byHandle[GetHandleId(whichUnit)]
     endmethod
 
     private static method onUnitChangeOwner takes nothing returns nothing
-      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onChangeOwner()
+      call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onChangeOwner()
     endmethod
 
     private static method onUnitDamaged takes nothing returns nothing
-      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDamaging()
+      call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onDamaging()
     endmethod
 
     private static method onUnitDeath takes nothing returns nothing
-      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onDeath()
+      call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onDeath()
     endmethod
 
     private static method onUnitCast takes nothing returns nothing
-      call thistype(thistype.ByHandle[GetHandleId(GetTriggerUnit())]).onCast()
+      call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onCast()
     endmethod
 
     private method destroy takes nothing returns nothing
@@ -322,7 +325,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     private static method onInit takes nothing returns nothing
-      set thistype.ByHandle = Table.create()
+      set thistype.byHandle = Table.create()
     endmethod
 
     static method create takes nothing returns thistype
@@ -340,6 +343,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
   private function OnInit takes nothing returns nothing
     set OnLegendChangeOwner = Event.create()
     set OnLegendPermaDeath = Event.create()
+    set OnLegendPrePermaDeath = Event.create()
   endfunction
 
 endlibrary
