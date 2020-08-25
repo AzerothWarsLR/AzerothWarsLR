@@ -30,7 +30,12 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private trigger damageTrig
     private boolean capturable
     private integer startingXP //How much experience this Legend had when it was first registered
+    private boolean hasCustomColor = false
     private playercolor playerColor
+
+    public method operator HasCustomColor takes nothing returns boolean
+      return this.hasCustomColor
+    endmethod
 
     public method operator PlayerColor takes nothing returns playercolor
       return this.playerColor
@@ -38,6 +43,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     public method operator PlayerColor= takes playercolor playerColor returns nothing
       set this.playerColor = playerColor
+      set this.hasCustomColor = true
       if this.unit != null then
         call SetUnitColor(this.unit, playerColor)
       endif
