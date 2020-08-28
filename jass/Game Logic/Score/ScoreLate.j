@@ -3,7 +3,22 @@ library ScoreVictory initializer OnInit requires Score, Victory
   globals
     private Score SCORE_LATE
     private constant real TRUE_GAMES = 0.05 //How may games are expected to end with a victor; elo losses are multiplied by this
+    private constant integer AVERAGE_PLAYERS_ON_STARTING_TEAM = 2
   endglobals
+
+  //Returns the number of players that have a Late Elo registered
+  private function PlayersWithLateEloCount takes nothing returns integer
+    local integer i = 0
+    local integer count = 0
+    loop
+      exitwhen i == MAX_PLAYERS
+      if SCORE_LATE.Get(Player(i)) != 0 then
+        set count = count + 1 
+      endif
+      set i = i + 1
+    endloop
+    return count
+  endfunction
 
   private function TeamVictory takes nothing returns nothing
     local integer i = 0
@@ -36,7 +51,7 @@ library ScoreVictory initializer OnInit requires Score, Victory
     loop
       exitwhen i == MAX_PLAYERS
       if GetVictoriousTeam().containsPlayer(Player(i)) then
-        call SCORE_LATE.Set(Player(i), Elo_DetermineRating(averageAllyElo, averageLoserElo, true))
+        call SCORE_LATE.Set(Player(i), Elo_DetermineRating(averageAllyElo, averageLoserElo, true) * ((PlayersWithLateEloCount() - AVERAGE_PLAYERS_ON_STARTING_TEAM) / AVERAGE_PLAYERS_ON_STARTING_TEAM))
       endif
       set i = i + 1
     endloop

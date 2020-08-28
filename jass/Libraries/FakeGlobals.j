@@ -87,6 +87,7 @@ library FakeGlobals
     unit gg_unit_nfoh_0212
     rect gg_rct_Cenarius
     rect gg_rct_Kiljaeden
+    unit gg_unit_nfoh_2299
   endglobals
 
 endlibrary
