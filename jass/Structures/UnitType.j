@@ -1,11 +1,8 @@
 
-library UnitType initializer OnInit requires Environment
-
-  globals
-    Table UnitTypes
-  endglobals
+library UnitType requires Environment
 
   struct UnitType
+    private static Table byId
     readonly integer unitId = 0
     readonly boolean refund = false      //When the player leaves this unit gets deleted, cost refunded, and given to allies
     readonly boolean meta = false        //When the player leaves this unit is exempted from being affected
@@ -35,29 +32,24 @@ library UnitType initializer OnInit requires Environment
       return refund
     endmethod        
 
+    static method ByHandle takes unit whichUnit returns thistype
+      return thistype.byId[GetHandleId(whichUnit)]
+    endmethod
+
+    static method ById takes integer id returns thistype
+      return thistype.byId[id]
+    endmethod
+
     static method create takes integer unitId returns UnitType
       local UnitType this = UnitType.allocate()
       set this.unitId = unitId
-      set UnitTypes[unitId] = this
+      set thistype.byId[unitId] = this
       return this                
     endmethod     
-  endstruct
 
-  function GetUnitTypeIconPath takes integer unitType returns string
-    local UnitType tempUnitType = UnitTypes[unitType]
-    if tempUnitType != 0 then
-      return tempUnitType.iconPath
-    else
-      return null
-    endif
-  endfunction   
-
-  function GetUnitIconPath takes unit whichUnit returns string
-    return GetUnitTypeIconPath(GetUnitTypeId(whichUnit))
-  endfunction
-
-  private function OnInit takes nothing returns nothing
-    set UnitTypes = Table.create()
-  endfunction
+    private static method onInit takes nothing returns nothing
+      set thistype.byId = Table.create()
+    endmethod
+  endstruct 
 
 endlibrary

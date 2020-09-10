@@ -7,13 +7,13 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
   endglobals
 
   private function TryComplete takes nothing returns nothing
-    if not UnitAlive(gg_unit_u000_0649) and GetOwningPlayer(gg_unit_n03U_0281) == FACTION_DRUIDS.Person.p then
-      call CreateUnit(FACTION_DRUIDS.Person.p, 'n04F', GetRectCenterX(gg_rct_Andrassil), GetRectCenterY(gg_rct_Andrassil), 0)
+    if not UnitAlive(gg_unit_u000_0649) and GetOwningPlayer(gg_unit_n03U_0281) == FACTION_DRUIDS.Player then
+      call CreateUnit(FACTION_DRUIDS.Player, 'n04F', GetRectCenterX(gg_rct_Andrassil), GetRectCenterY(gg_rct_Andrassil), 0)
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
@@ -21,12 +21,12 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
   private function Capture takes nothing returns nothing
     local Person capturePerson
     if GetUnitTypeId(GetTriggerControlPoint().u) == 'n03U' then
-      set capturePerson = Persons[GetPlayerId(GetTriggerControlPoint().owner)]
-      if capturePerson.faction == FACTION_DRUIDS then
+      set capturePerson = Person.ByHandle(GetTriggerControlPoint().owner)
+      if capturePerson.Faction == FACTION_DRUIDS then
         call TryComplete()
-        call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+        call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       else
-        call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
+        call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_INCOMPLETE, false)
       endif
     endif
   endfunction

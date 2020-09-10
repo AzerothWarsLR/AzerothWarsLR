@@ -6,12 +6,12 @@ library QuestKillRagnaros initializer OnInit requires QuestData, IronforgeConfig
   endglobals
 
   private function RagnarosDies takes nothing returns nothing
-    if FACTION_IRONFORGE.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
-      call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_IRONFORGE.Person.p, RESEARCH_ID, 1)
+    if FACTION_IRONFORGE.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
+      call FACTION_IRONFORGE.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(FACTION_IRONFORGE.Player, RESEARCH_ID, 1)
     else
-      call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
+      call FACTION_IRONFORGE.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

@@ -15,15 +15,15 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig
     loop
     exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-        call UnitRescue(u, FACTION_IRONFORGE.Person.p)
+        call UnitRescue(u, FACTION_IRONFORGE.Player)
       endif
       call GroupRemoveUnit(tempGroup, u)
       set u = FirstOfGroup(tempGroup)
     endloop
     call DestroyGroup(tempGroup)
     set tempGroup = null
-    call FACTION_IRONFORGE.setQuestItemStatus(QUESTITEM_GNOMEREGAN, QUEST_PROGRESS_COMPLETE, true)    
-    call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, 'R05Q', 1) 
+    call FACTION_IRONFORGE.setQuestItemProgress(QUESTITEM_GNOMEREGAN, QUEST_PROGRESS_COMPLETE, true)    
+    call SetPlayerTechResearched(FACTION_IRONFORGE.Player, 'R05Q', 1) 
     call DestroyTrigger(GetTriggeringTrigger())            
   endfunction
 

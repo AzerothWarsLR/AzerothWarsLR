@@ -10,8 +10,8 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
 
   private function Build takes nothing returns nothing
     local group tempGroup = CreateGroup()
-    local Person tempPerson = PersonsByFaction[FACTION_STORMWIND]  //Stormwind
-    local player recipient = tempPerson.p 
+    local Person tempPerson = FACTION_STORMWIND.Person
+    local player recipient = tempPerson.Player 
 
     //Transfer all Neutral Passive units in HonorHold to one of the above factions
     call UnitRescue(gg_unit_h05Z_3325, recipient)  //Honor Hold
@@ -21,7 +21,7 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
     call UnitRescue(gg_unit_hars_3321, recipient)  //Arcane Sanctum
 
     //Display message
-    call FACTION_STORMWIND.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)  
+    call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)  
 
     //Set animations of doodads within Honor Hold
     call SetDoodadAnimationRectBJ( "hide", 'ISrb', gg_rct_HonorHold )
@@ -36,7 +36,7 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
   endfunction
 
   private function Dies takes nothing returns nothing
-    if GetUnitTypeId(GetTriggerUnit()) == 'o008' and PersonsByFaction[FACTION_STORMWIND] != 0 then
+    if GetUnitTypeId(GetTriggerUnit()) == 'o008' and FACTION_STORMWIND.Person != 0 then
       call Build()
     endif
   endfunction

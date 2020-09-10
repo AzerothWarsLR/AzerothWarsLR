@@ -13,16 +13,16 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
   endglobals
 
   private function Plague takes nothing returns nothing
-    local Person scourgePerson = FACTION_SCOURGE.whichPerson
+    local Person scourgePerson = FACTION_SCOURGE.Person
     if scourgePerson != 0 and Enabled then
       call TriggerExecute( gg_trg_Plague_Actions )
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_PLAGUESTART, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_PLAGUESTART, QUEST_PROGRESS_COMPLETE, true)
     endif
     set Enabled = false
   endfunction
 
   private function Enable takes nothing returns nothing
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_PLAGUETIME, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_PLAGUETIME, QUEST_PROGRESS_COMPLETE, true)
     set Enabled = true
   endfunction
 

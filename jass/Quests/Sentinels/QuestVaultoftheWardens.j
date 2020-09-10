@@ -7,20 +7,20 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
   endglobals
 
   private function ChangesOwnership takes nothing returns nothing
-    if FACTION_SENTINELS.Person.Team.containsPlayer(GetOwningPlayer(gg_unit_n05Y_0805)) then
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_COMPLETE, false)
+    if FACTION_SENTINELS.Team.ContainsPlayer(GetOwningPlayer(gg_unit_n05Y_0805)) then
+      call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_COMPLETE, false)
     else
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_INCOMPLETE, false)
+      call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
 
-    if FACTION_SENTINELS.Person.Team.containsPlayer(GetOwningPlayer(gg_unit_n00J_3344)) then
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_COMPLETE, false)
+    if FACTION_SENTINELS.Team.ContainsPlayer(GetOwningPlayer(gg_unit_n00J_3344)) then
+      call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_COMPLETE, false)
     else
-      call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_INCOMPLETE, false)
+      call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_CAPTUREINSIDE, QUEST_PROGRESS_INCOMPLETE, false)
     endif
 
     if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREINSIDE) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_CAPTUREOUTSIDE) == QUEST_PROGRESS_COMPLETE then
-      call CreateUnit(FACTION_SENTINELS.Person.p, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
+      call CreateUnit(FACTION_SENTINELS.Player, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction

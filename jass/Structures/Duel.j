@@ -50,7 +50,7 @@ library Duel initializer OnInit requires Environment
       local string desc = ""
       loop
         exitwhen i == factionCount
-        set desc = desc + factions[i].prefixCol + factions[i].name + "|r"
+        set desc = desc + factions[i].prefixCol + factions[i].Name + "|r"
         if factions[i + 1] != 0 then
           if factions[i + 2] == 0 then
             set desc = desc + " and "
@@ -94,7 +94,7 @@ library Duel initializer OnInit requires Environment
         set j = 0
         loop
           exitwhen j == BlzGroupGetSize(capitals)
-          if BlzGroupUnitAt(capitals, j) != null and UnitAlive(BlzGroupUnitAt(capitals, j)) == true and GetOwningPlayer(BlzGroupUnitAt(capitals, j)) == factions[i].Person.p then
+          if BlzGroupUnitAt(capitals, j) != null and UnitAlive(BlzGroupUnitAt(capitals, j)) == true and GetOwningPlayer(BlzGroupUnitAt(capitals, j)) == factions[i].Player then
             set this.alive = true
             return alive
           endif
@@ -107,7 +107,7 @@ library Duel initializer OnInit requires Environment
     endmethod
 
     method ContainsPlayer takes player whichPlayer returns boolean
-      return ContainsFaction(Persons[GetPlayerId(whichPlayer)].Faction)
+      return ContainsFaction(Person.ByHandle(whichPlayer).Faction)
     endmethod
 
     method ContainsFaction takes Faction whichFaction returns boolean

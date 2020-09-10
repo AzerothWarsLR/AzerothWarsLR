@@ -5,7 +5,7 @@ library HeroGlowFix initializer OnInit requires Legend
     if revivedLegend.HasCustomColor then
       call SetUnitColor(GetTriggerUnit(), revivedLegend.PlayerColor)
     else
-      call SetUnitColor(GetTriggerUnit(), Persons[GetPlayerId(GetTriggerPlayer())].Faction.playCol)
+      call SetUnitColor(GetTriggerUnit(), Person.ByHandle(GetTriggerPlayer()).Faction.playCol)
     endif
   endfunction
 

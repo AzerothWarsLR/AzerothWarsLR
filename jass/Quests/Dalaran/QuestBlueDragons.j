@@ -7,10 +7,10 @@ library QuestBlueDragons initializer OnInit requires DalaranConfig, LegendNeutra
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_NEXUS and FACTION_DALARAN.Person.p == GetOwningPlayer(LEGEND_NEXUS.Unit) and FACTION_DALARAN.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_DALARAN.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DALARAN.Person.p, DRAGON_ID, "You can now train Blue Dragons from the Nexus.")
+    if GetTriggerLegend() == LEGEND_NEXUS and FACTION_DALARAN.Player == GetOwningPlayer(LEGEND_NEXUS.Unit) and FACTION_DALARAN.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+      call SetPlayerTechResearched(FACTION_DALARAN.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_DALARAN.Player, DRAGON_ID, "You can now train Blue Dragons from the Nexus.")
     endif
   endfunction
 

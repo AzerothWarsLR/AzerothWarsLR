@@ -9,14 +9,14 @@ library QuestSapphiron initializer OnInit requires QuestData, ScourgeConfig
   endglobals
 
   private function SapphironDies takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
-    local Person scourgePerson = PersonsByFaction[FACTION_SCOURGE]
-    if triggerPerson.team.containsPlayer(scourgePerson.p) then
-      call CreateUnit(scourgePerson.p, SAPPHIRON_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetPlayerTechResearched(scourgePerson.p, SAPPHIRON_RESEARCH, 1)
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_COMPLETE, true)
+    local Person triggerPerson = Person.ByHandle(GetOwningPlayer(GetKillingUnit()))
+    local Person scourgePerson = FACTION_SCOURGE.Person
+    if triggerPerson.Faction.Team.ContainsPlayer(scourgePerson.Player) then
+      call CreateUnit(scourgePerson.Player, SAPPHIRON_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
+      call SetPlayerTechResearched(scourgePerson.Player, SAPPHIRON_RESEARCH, 1)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_FAILED, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

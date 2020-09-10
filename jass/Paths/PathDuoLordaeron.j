@@ -8,7 +8,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_LORDAERON.Person.p
+      set tempPlayer = FACTION_LORDAERON.Player
       call LEGEND_MOGRAINE.Spawn(tempPlayer, 12186, 10967, 322)
       call UnitDetermineLevel(LEGEND_MOGRAINE.Unit, 1.00)
       call FACTION_LORDAERON.modWeight(1)

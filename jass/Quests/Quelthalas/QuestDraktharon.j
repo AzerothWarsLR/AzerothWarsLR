@@ -9,11 +9,11 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_DRAKTHARONKEEP and FACTION_QUELTHALAS.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_DRAKTHARONKEEP.Unit)) and FACTION_QUELTHALAS.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call CreateUnit(FACTION_QUELTHALAS.Person.p, DARKHAN_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetPlayerTechResearched(FACTION_QUELTHALAS.Person.p, DARKHAN_RESEARCH, 1)
-      call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Person.p, DARKHAN_ID, "You have acquired the demi-hero Dar'Khan Drakthir, and can revive him from the Altar of Kings if he dies.")
-      call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+    if GetTriggerLegend() == LEGEND_DRAKTHARONKEEP and FACTION_QUELTHALAS.Team.ContainsPlayer(GetOwningPlayer(LEGEND_DRAKTHARONKEEP.Unit)) and FACTION_QUELTHALAS.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
+      call CreateUnit(FACTION_QUELTHALAS.Player, DARKHAN_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
+      call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, DARKHAN_RESEARCH, 1)
+      call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Player, DARKHAN_ID, "You have acquired the demi-hero Dar'Khan Drakthir, and can revive him from the Altar of Kings if he dies.")
+      call FACTION_QUELTHALAS.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 

@@ -33,8 +33,8 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
     call ARTIFACT_CROWNLORDAERON.setDescription("Melted down")
     call ARTIFACT_CROWNSTORMWIND.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_CROWNSTORMWIND.setDescription("Melted down")
-    call SetPlayerTechResearched(whichFaction.Person.p, RESEARCH_ID, 1)
-    call DisplayResearchAcquired(whichFaction.Person.p, RESEARCH_ID, 1)
+    call SetPlayerTechResearched(whichFaction.Player, RESEARCH_ID, 1)
+    call DisplayResearchAcquired(whichFaction.Player, RESEARCH_ID, 1)
   endfunction
 
   private function IsCompleteStormwind takes nothing returns boolean
@@ -111,7 +111,7 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
   private function Capture takes nothing returns nothing
     if not Rewarded then
       //Lordaeron
-      if GetUnitTypeId(GetTriggerControlPoint().u) == 'n010' and FACTION_LORDAERON.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
+      if GetUnitTypeId(GetTriggerControlPoint().u) == 'n010' and FACTION_LORDAERON.Team.ContainsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
         call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_LORDAERON_CAPTURE_STORMWIND, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_LORDAERON)
       else
@@ -119,7 +119,7 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
       endif
 
       //Stormwind
-      if GetUnitTypeId(GetTriggerControlPoint().u) == 'n01G' and FACTION_STORMWIND.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
+      if GetUnitTypeId(GetTriggerControlPoint().u) == 'n01G' and FACTION_STORMWIND.Team.ContainsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
         call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_STORMWIND_CAPTURE_CAPITALPALACE, QUEST_PROGRESS_COMPLETE, true)
         call TryComplete(FACTION_STORMWIND)
       else

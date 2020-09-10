@@ -14,8 +14,8 @@ library CheatFaction initializer OnInit requires Faction, TestSafety
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     set f = Faction.factionsByName[parameter]
     
-    call Persons[pId].setFaction(f)
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set faction to " + f.name + ".")
+    set Person.ById(pId).Faction = f
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set faction to " + f.Name + ".")
   endfunction
 
   //===========================================================================

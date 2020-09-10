@@ -13,19 +13,17 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
     local integer noAlliesLevel = 0
     local integer i = 0
 
-    if triggerTeam.weight < triggerTeam.maxWeight then
+    if triggerTeam.Weight < triggerTeam.MaxWeight then
       set weightBelowMaximumLevel = 1
     endif
-    if triggerTeam.size == 1 then
+    if triggerTeam.PlayerCount == 1 then
       set noAlliesLevel = 1
     endif
 
     loop
-      exitwhen i == MAX_PLAYERS
-      if triggerTeam.playerArray[i] != null then
-        call SetPlayerTechResearched(triggerTeam.playerArray[i], RESEARCH_WEIGHTBELOWMAXIMUM, weightBelowMaximumLevel)
-        call SetPlayerTechResearched(triggerTeam.playerArray[i], RESEARCH_NOALLIES, noAlliesLevel)
-      endif
+      exitwhen i == triggerTeam.FactionCount
+      call SetPlayerTechResearched(triggerTeam.GetFactionByIndex(i).Player, RESEARCH_WEIGHTBELOWMAXIMUM, weightBelowMaximumLevel)
+      call SetPlayerTechResearched(triggerTeam.GetFactionByIndex(i).Player, RESEARCH_NOALLIES, noAlliesLevel)
       set i = i + 1
     endloop
   endfunction

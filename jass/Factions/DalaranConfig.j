@@ -1,7 +1,7 @@
-library DalaranConfig initializer OnInit requires Faction
+library DalaranConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_DALARAN
+    LiegeFaction FACTION_DALARAN
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -10,6 +10,7 @@ library DalaranConfig initializer OnInit requires Faction
     set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
     set f = FACTION_DALARAN 
     set f.VictoryMusic = "HumanVictory"
+    set f.Team = TEAM_NORTH_ALLIANCE
     
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -65,7 +66,6 @@ library DalaranConfig initializer OnInit requires Faction
     
     //Paths
     call f.registerObjectLimit('R03O', UNLIMITED)   //Path of Steel
-    call f.registerObjectLimit('R03S', UNLIMITED)   //Path of Stone
   endfunction
     
 endlibrary

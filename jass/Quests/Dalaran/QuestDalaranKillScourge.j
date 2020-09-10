@@ -9,10 +9,10 @@ library QuestDalaranKillScourge initializer OnInit requires DalaranConfig, Legen
   endglobals
 
   private function LichKingDies takes nothing returns nothing
-    call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-    call SetPlayerTechResearched(FACTION_DALARAN.Person.p, QUEST_RESEARCH_ID, 1)
-    call SetPlayerTechResearched(FACTION_DALARAN.Person.p, CASTER_RESEARCH_ID, 3)
-    call DisplayUnitTypeAcquired(FACTION_DALARAN.Person.p, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the Arcane Sanctum.")
+    call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_DALARAN.Player, QUEST_RESEARCH_ID, 1)
+    call SetPlayerTechResearched(FACTION_DALARAN.Player, CASTER_RESEARCH_ID, 3)
+    call DisplayUnitTypeAcquired(FACTION_DALARAN.Player, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the Arcane Sanctum.")
   endfunction
 
   private function OnInit takes nothing returns nothing

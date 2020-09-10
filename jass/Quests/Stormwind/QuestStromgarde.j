@@ -11,16 +11,12 @@ library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, 
     local Person tempPerson = 0
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-    if PersonsByFaction[FACTION_STORMWIND] != 0 then
-      set tempPerson = PersonsByFaction[FACTION_STORMWIND]
-      set recipient = tempPerson.p                         
-    endif
-
-    //If recipient is Stormwind, level Galen, otherwise delete him
-    if Persons[GetPlayerId(recipient)].faction == FACTION_STORMWIND then
-      call UnitDetermineLevel( gg_unit_H00Z_1936, 1.0 )
+    if FACTION_STORMWIND.Person != 0 then
+      set tempPerson = FACTION_STORMWIND.Person
+      set recipient = tempPerson.Player
+      call UnitDetermineLevel(gg_unit_H00Z_1936, 1.0)
     else
-      call RemoveUnit(gg_unit_H00Z_1936)           
+      call RemoveUnit(gg_unit_H00Z_1936)  
     endif
 
     //Transfer all Neutral Passive units in Stromgarde to one of the above factions
@@ -35,7 +31,7 @@ library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, 
       call GroupRemoveUnit(tempGroup, u)
     endloop
     //Update quest
-    call FACTION_STORMWIND.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)      
+    call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)      
 
     //Cleanup
     call DestroyGroup(tempGroup)
@@ -45,7 +41,7 @@ library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, 
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) and GetOwningPlayer(GetTriggerUnit()) == FACTION_STORMWIND.whichPerson.p then
+    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) and GetOwningPlayer(GetTriggerUnit()) == FACTION_STORMWIND.Player then
       call Build()
     endif
   endfunction    

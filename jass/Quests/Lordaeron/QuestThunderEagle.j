@@ -9,8 +9,8 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
 
   private function TryComplete takes nothing returns nothing
     if FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_KILL) == QUEST_PROGRESS_COMPLETE and FACTION_LORDAERON.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_LORDAERON.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_LORDAERON.Person.p, THUNDER_EAGLE_ID, "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")
+      call SetPlayerTechResearched(FACTION_LORDAERON.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_LORDAERON.Player, THUNDER_EAGLE_ID, "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")
     endif
   endfunction
 
@@ -22,7 +22,7 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
 
   private function Capture takes nothing returns nothing
     local Person capturePerson
-    if GetUnitTypeId(GetTriggerControlPoint().u) == 'n02S' and FACTION_LORDAERON.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
+    if GetUnitTypeId(GetTriggerControlPoint().u) == 'n02S' and FACTION_LORDAERON.Team.ContainsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
       call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       call TryComplete()
       call DestroyTrigger(GetTriggeringTrigger())

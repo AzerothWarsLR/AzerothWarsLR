@@ -1,14 +1,15 @@
-library QuelthalasConfig initializer OnInit requires Faction
+library QuelthalasConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_QUELTHALAS
+    LiegeFaction FACTION_QUELTHALAS
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
+    set FACTION_QUELTHALAS = LiegeFaction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
     set f = FACTION_QUELTHALAS
     set f.VictoryMusic = "HumanVictory"
+    set f.Team = TEAM_NORTH_ALLIANCE
  
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

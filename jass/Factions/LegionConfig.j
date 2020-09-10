@@ -1,16 +1,17 @@
-library LegionConfig initializer OnInit requires Faction
+library LegionConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_LEGION
+    LiegeFaction FACTION_LEGION
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
+    set FACTION_LEGION = LiegeFaction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
     set f = FACTION_LEGION
     set f.VictoryMusic = "UndeadVictory"
     set f.PresenceResearch = 'R04T'
+    set f.Team = TEAM_SCOURGE
 
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon

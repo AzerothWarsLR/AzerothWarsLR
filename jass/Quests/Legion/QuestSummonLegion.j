@@ -12,7 +12,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
   endglobals
 
   private function CheckAlliance takes nothing returns nothing
-    if FACTION_SCOURGE.whichPerson.team.containsPlayer(FACTION_LEGION.whichPerson.p) then
+    if FACTION_SCOURGE.Person.Faction.Team.ContainsPlayer(FACTION_LEGION.Player) then
       call QUESTITEM_SCOURGEALLYLEGION.setProgress(QUEST_PROGRESS_COMPLETE, false)
     else
       call QUESTITEM_SCOURGEALLYLEGION.setProgress(QUEST_PROGRESS_FAILED, false)
@@ -21,8 +21,8 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
 
   private function Cast takes nothing returns nothing
     if GetSpellAbilityId() == RITUAL_ID then
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_SCOURGESUMMONLEGION, QUEST_PROGRESS_COMPLETE, false) //Not needed because they can see the global completion
-      call FACTION_LEGION.setQuestItemStatus(QUESTITEM_LEGIONSUMMONLEGION, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SCOURGESUMMONLEGION, QUEST_PROGRESS_COMPLETE, false) //Not needed because they can see the global completion
+      call FACTION_LEGION.setQuestItemProgress(QUESTITEM_LEGIONSUMMONLEGION, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
@@ -40,8 +40,8 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     call FACTION_LEGION.addQuest(QUEST_LEGIONSUMMONLEGION)
     set FACTION_LEGION.StartingQuest = QUEST_LEGIONSUMMONLEGION
 
-    call OnPersonTeamJoin.register(trig)
-    call OnPersonTeamLeave.register(trig)
+    call OnFactionTeamJoin.register(trig)
+    call OnFactionTeamLeave.register(trig)
     call OnPersonFactionChange.register(trig)
     call TriggerAddAction(trig, function CheckAlliance)
 
@@ -50,7 +50,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     call TriggerAddAction(trig, function Cast)
 
     if FACTION_LEGION.presenceResearch == 0 then
-      call BJDebugMsg("ERROR: " + FACTION_LEGION.name + " has no presence research. QuestSummonLegion won't work")
+      call BJDebugMsg("ERROR: " + FACTION_LEGION.Name + " has no presence research. QuestSummonLegion won't work")
     endif
   endfunction
 

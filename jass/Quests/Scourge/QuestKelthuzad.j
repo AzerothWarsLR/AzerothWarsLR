@@ -6,8 +6,8 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    if GetTriggerUnit() == LEGEND_KELTHUZAD.Unit and FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) then
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KELTHUZAD, QUEST_PROGRESS_COMPLETE, true)
+    if GetTriggerUnit() == LEGEND_KELTHUZAD.Unit and FACTION_SCOURGE.Team.ContainsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) then
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_KELTHUZAD, QUEST_PROGRESS_COMPLETE, true)
       set LEGEND_KELTHUZAD.UnitType = UNITTYPE_KELTHUZAD_LICH
       set LEGEND_KELTHUZAD.PermaDies = false
       call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_LIFE))

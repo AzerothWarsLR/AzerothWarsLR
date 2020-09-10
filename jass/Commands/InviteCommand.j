@@ -10,8 +10,7 @@ library InviteCommand initializer OnInit requires Team
   	local string enteredString = GetEventPlayerChatString()
     local string content = null
     local Faction targetFaction = 0
-    local Person targetPerson = 0	
-    local Person senderPerson = Persons[GetPlayerId(GetTriggerPlayer())]
+    local Person senderPerson = Person.ByHandle(GetTriggerPlayer())
   
   	if SubString( enteredString, 0, StringLength(COMMAND) ) == COMMAND then
     	set content = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
@@ -19,23 +18,26 @@ library InviteCommand initializer OnInit requires Team
       set targetFaction = Faction.factionsByName[content]
 
       if targetFaction == 0 then
-        call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no Faction with the name " + content + ".")
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
         return
       endif
 
-      if senderPerson.faction == targetFaction then
-        call DisplayTextToPlayer(senderPerson.p, 0, 0, "You cannot invite yourself to your own team.")
+      if targetFaction.CanBeInvited == false then
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, targetFaction.prefixCol + targetFaction.Name + " can't voluntarily change teams.")
+      endif
+
+      if senderPerson.Faction == targetFaction then
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "You cannot invite yourself to your own team.")
         return
       endif
 
-      set targetPerson = PersonsByFaction[targetFaction]
-      if targetPerson == 0 then
-        call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.name + "|r.")
+      if targetFaction.Person == 0 then
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.Name + "|r.")
         return
       endif
 
-      if targetPerson != 0 then
-        call senderPerson.team.invite(targetPerson.p)
+      if targetFaction.Person != 0 then
+        call senderPerson.Faction.Team.Invite(targetFaction)
       endif
       
     endif

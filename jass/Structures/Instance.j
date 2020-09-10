@@ -38,7 +38,15 @@ library Instance requires Math
       readonly region whichRegion
       readonly integer gateCount = 0
       readonly Gate array gatesByIndex[10]
-      readonly string name = null
+      private string name = null
+
+      method operator Name takes nothing returns string
+        return this.name
+      endmethod
+
+      method operator Name= takes string value returns nothing
+        set this.name = value
+      endmethod
 
       method getNearestGate takes real x1, real y2 returns Gate
         local integer i = 0
@@ -64,10 +72,6 @@ library Instance requires Math
 
       method addRect takes rect whichRect returns nothing
         call RegionAddRect(this.whichRegion, whichRect)
-      endmethod
-
-      method setName takes string name returns nothing
-        set this.name = name
       endmethod
 
       static method create takes nothing returns thistype

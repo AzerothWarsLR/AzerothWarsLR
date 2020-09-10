@@ -6,7 +6,7 @@ library PathSoloLegion initializer OnInit requires LegionConfig, LegendLegion, D
   endglobals
 
   private function EnableNorthrendVision takes nothing returns nothing
-    local player whichPlayer = FACTION_LEGION.Person.p
+    local player whichPlayer = FACTION_LEGION.Player
     local integer i = 0
     set NorthrendFogModifiers[0] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Storm_Peaks, true, true)
     set NorthrendFogModifiers[1] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Central_Northrend, true, true)
@@ -43,7 +43,7 @@ library PathSoloLegion initializer OnInit requires LegionConfig, LegendLegion, D
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_LEGION.Person.p
+      set tempPlayer = FACTION_LEGION.Player
       call FACTION_LEGION.modObjectLimit('R01X', UNLIMITED) //Plague Engineering Mastery
       call FACTION_LEGION.modWeight(3)
       call DisplaySoloPath(FACTION_LEGION, "With Ner'zhul's failure, the Legion has brought forth Anetheron to instead reign in control of the remnants of the Undead.")

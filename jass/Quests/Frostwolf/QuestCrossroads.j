@@ -15,9 +15,9 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
     if FACTION_FROSTWOLF.Person != 0 then                    
-      set recipient = FACTION_FROSTWOLF.Person.p  
+      set recipient = FACTION_FROSTWOLF.Player  
     elseif FACTION_WARSONG.Person != 0 then
-      set recipient = FACTION_WARSONG.Person.p
+      set recipient = FACTION_WARSONG.Player
     endif
 
     //Transfer all Neutral Passive units in Crossroads to one of the above factions
@@ -37,7 +37,7 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
     call CreateUnit(recipient, 'oeye', -11922, -824, 0)   
 
     //Complete quests
-    call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
 
     //Cleanup
     call DestroyGroup (TempGroup)
@@ -50,7 +50,7 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if FACTION_FROSTWOLF.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) then   //Any Horde faction
+    if FACTION_FROSTWOLF.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then   //Any Horde faction
       call Build()
     endif
   endfunction    

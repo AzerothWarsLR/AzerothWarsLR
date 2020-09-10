@@ -10,7 +10,7 @@ library ShareCommand initializer OnInit requires Faction
     local string enteredString = GetEventPlayerChatString()
     local string content = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
     local player triggerPlayer = GetTriggerPlayer()
-    local player targetPlayer = Faction.ByName(content).Person.Player
+    local player targetPlayer = Faction.ByName(content).Player
 
     if IsPlayerAlly(triggerPlayer, targetPlayer) then
       call SetPlayerAlliance(triggerPlayer, targetPlayer, ALLIANCE_SHARED_CONTROL, true)

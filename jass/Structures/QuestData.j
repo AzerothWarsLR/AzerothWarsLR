@@ -56,11 +56,11 @@ library QuestData requires Set
     private method displayGlobal takes nothing returns nothing
       local string display = ""
       local integer triggerPlayerNumber = S2I(SubString(BlzGetTriggerSyncPrefix(), StringLength(SYNC_PREFIX), StringLength(BlzGetTriggerSyncPrefix())))
-      local Faction triggerFaction = Persons[triggerPlayerNumber].faction
+      local Faction triggerFaction = Person.ById(triggerPlayerNumber).Faction
       set display = display + "\n|cffffcc00MAJOR EVENT - " + triggerFaction.prefixCol + title + "|r\n" + completionDesc + "\n"
       if GetLocalPlayer() != Player(triggerPlayerNumber) then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
-        if Person(Persons[GetPlayerId(GetLocalPlayer())]).team.containsPlayer(triggerFaction.whichPerson.p) then
+        if Person.ByHandle(GetLocalPlayer()).Faction.Team.ContainsPlayer(triggerFaction.Player) then
           call StartSound(bj_questCompletedSound)
         else
           call StartSound(bj_questWarningSound)

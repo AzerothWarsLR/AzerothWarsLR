@@ -186,9 +186,9 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
       endif
 
       //Change the owner Person if needed
-      if this.owningPerson != Persons[GetPlayerId(GetOwningPlayer(u))] then
+      if this.owningPerson != Person.ByHandle(GetOwningPlayer(u)) then
         if u != null then
-          call this.setOwningPerson(Persons[GetPlayerId(GetOwningPlayer(u))])
+          call this.setOwningPerson(Person.ByHandle(GetOwningPlayer(u)))
         else
           call this.setOwningPerson(0)
         endif
@@ -197,11 +197,11 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
 
     method setOwningPerson takes Person p returns nothing
       if this.owningPerson != 0 then
-        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(this.owningPerson.p)].remove(this) //Remove this from the old owner's Artifact group
+        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(this.owningPerson.Player)].remove(this) //Remove this from the old owner's Artifact group
       endif
 
       if p != 0 then
-        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(p.p)].add(this) //Add this to the new owner's Artifact Group
+        call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(p.Player)].add(this) //Add this to the new owner's Artifact Group
       endif
 
       set this.owningPerson = p
@@ -308,14 +308,14 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
   endfunction
 
   private function OnPersonFactionChanged takes nothing returns nothing
-    call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(GetTriggerPerson().p)].updateFactions()
+    call ArtifactGroup.artifactGroupsByPlayerId[GetPlayerId(GetTriggerPerson().Player)].updateFactions()
   endfunction
 
   private function UnitChangeOwner takes nothing returns nothing
     local ArtifactGroup tempArtifactGroup = ArtifactGroup.artifactGroupsByOwningUnit[GetHandleId(GetTriggerUnit())]
     if tempArtifactGroup != 0 then
       if GetTriggerUnit() != null then
-        call tempArtifactGroup.setOwningPersons( Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))] )
+        call tempArtifactGroup.setOwningPersons(Person.ByHandle(GetOwningPlayer(GetTriggerUnit())))
       else
         call tempArtifactGroup.setOwningPersons(0)
       endif

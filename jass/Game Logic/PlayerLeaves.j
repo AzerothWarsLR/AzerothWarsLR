@@ -3,17 +3,18 @@ library PlayerLeaves initializer OnInit requires Persons
   private function PlayerLeaves takes nothing returns nothing
     local player p = GetTriggerPlayer()
     local integer pId = GetPlayerId(p)
+    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
 
-    if Persons[pId].faction != 0 then
-      call BJDebugMsg( Persons[pId].faction.name + " has left the game." )
+    if triggerPerson.Faction != 0 then
+      call BJDebugMsg( triggerPerson.Faction.Name + " has left the game." )
     else
       call BJDebugMsg( GetPlayerName(p) + " has left the game." )        
     endif
 
-    if Persons[pId] != 0 then
-      call Persons[pId].leave()
-      call Persons[pId].setFaction(0)
-      call Persons[pId].setTeam(0)
+    if triggerPerson != 0 then
+      call triggerPerson.Faction.Leave()
+      set triggerPerson.Faction.Team = 0
+      set triggerPerson.Faction = 0
     endif
   endfunction
 

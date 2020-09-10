@@ -11,13 +11,13 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
     local group tempGroup = CreateGroup()
     local unit u = null
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-    local Person dalaranPerson = FACTION_DALARAN.whichPerson
+    local Person dalaranPerson = FACTION_DALARAN.Person
 
     if dalaranPerson != 0 then
-      set recipient = dalaranPerson.p
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_KULTIRAS, QUEST_PROGRESS_COMPLETE, true)
+      set recipient = dalaranPerson.Player
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_KULTIRAS, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_KULTIRAS, QUEST_PROGRESS_FAILED, true)
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_KULTIRAS, QUEST_PROGRESS_FAILED, true)
     endif
 
     //Level Admiral Proudmoore

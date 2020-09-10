@@ -28,8 +28,8 @@ library Display requires Faction
   endfunction
 
   function DisplayUnitLimit takes Faction whichFaction, integer unitTypeId returns nothing
-    call DisplayTextToPlayer(whichFaction.Person.p, 0, 0, "\n|cff00ff00UNIT LIMIT CHANGED - " + GetObjectName(unitTypeId) + "|r\nYou can now train up to " + I2S(whichFaction.objectLimits[unitTypeId]) + " " + GetObjectName(unitTypeId) + "s.")
-    if GetLocalPlayer() == whichFaction.Person.p then
+    call DisplayTextToPlayer(whichFaction.Player, 0, 0, "\n|cff00ff00UNIT LIMIT CHANGED - " + GetObjectName(unitTypeId) + "|r\nYou can now train up to " + I2S(whichFaction.objectLimits[unitTypeId]) + " " + GetObjectName(unitTypeId) + "s.")
+    if GetLocalPlayer() == whichFaction.Player then
       call StartSound(bj_questHintSound)
     endif
   endfunction
@@ -49,7 +49,7 @@ library Display requires Faction
   endfunction
 
   function DisplaySoloPath takes Faction whichFaction, string flavour returns nothing
-    local string display = "\n|cffffcc00PATH - " + whichFaction.prefixCol + whichFaction.name + "|r\n" + flavour + "\n"
+    local string display = "\n|cffffcc00PATH - " + whichFaction.prefixCol + whichFaction.Name + "|r\n" + flavour + "\n"
     call StartSound(bj_rescueSound)
     call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
   endfunction

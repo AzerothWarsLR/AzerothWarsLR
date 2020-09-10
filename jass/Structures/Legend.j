@@ -163,11 +163,11 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     public method operator OwningFaction takes nothing returns Faction
-      return Persons[GetPlayerId(GetOwningPlayer(unit))].Faction
+      return this.OwningPerson.Faction
     endmethod
 
     public method operator OwningPerson takes nothing returns Person
-      return Persons[GetPlayerId(GetOwningPlayer(unit))]
+      return Person.ByHandle(GetOwningPlayer(this.unit))
     endmethod
 
     public method operator OwningPlayer takes nothing returns player
@@ -231,7 +231,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
       endif
       if hivemind and OwningPerson != 0 then
-        call OwningPerson.obliterate()
+        call OwningPerson.Faction.obliterate()
       endif
       set TriggerLegend = this
       call OnLegendPermaDeath.fire()

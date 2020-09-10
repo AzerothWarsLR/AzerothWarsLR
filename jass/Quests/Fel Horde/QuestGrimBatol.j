@@ -32,24 +32,24 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     call EnableWaygate(gg_unit_n08R_2214) //Grim Batol Tunnels
     call IssueImmediateOrderBJ( gg_unit_o02O_3247, "battlestations" ) //Orc Burrow
     call IssueImmediateOrderBJ( gg_unit_o02O_3248, "battlestations" ) //Orc Burrow
-    call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_GRIMBATOL_VISIT, QUEST_PROGRESS_COMPLETE, true)
-    call SetPlayerTechResearched(FACTION_FEL_HORDE.whichPerson.p, RESEARCH_ID, 1)
+    call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_GRIMBATOL_VISIT, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
     call DestroyGroup(GrimBatolUnits)
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if GetOwningPlayer(GetTriggerUnit()) == FACTION_FEL_HORDE.whichPerson.p and not IsUnitAliveBJ(gg_unit_nrwm_1981) and not IsUnitAliveBJ(gg_unit_h05H_1847) and not IsUnitAliveBJ(gg_unit_h03Y_0077) then
-      call GiveGrimBatol(FACTION_FEL_HORDE.whichPerson.p)
+    if GetOwningPlayer(GetTriggerUnit()) == FACTION_FEL_HORDE.Player and not IsUnitAliveBJ(gg_unit_nrwm_1981) and not IsUnitAliveBJ(gg_unit_h05H_1847) and not IsUnitAliveBJ(gg_unit_h03Y_0077) then
+      call GiveGrimBatol(FACTION_FEL_HORDE.Player)
     endif
   endfunction
 
   private function ThelsamarDies takes nothing returns nothing
-    call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_GRIMBATOL_THELSAMAR, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_GRIMBATOL_THELSAMAR, QUEST_PROGRESS_COMPLETE, true)
   endfunction
 
   private function DarkshireDies takes nothing returns nothing
-    call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_GRIMBATOL_DARKSHIRE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_GRIMBATOL_DARKSHIRE, QUEST_PROGRESS_COMPLETE, true)
   endfunction
 
   private function OnInit takes nothing returns nothing

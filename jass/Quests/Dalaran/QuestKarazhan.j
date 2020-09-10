@@ -5,8 +5,8 @@ library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_KARAZHAN and FACTION_DALARAN.Person.p == GetOwningPlayer(LEGEND_KARAZHAN.Unit) and FACTION_DALARAN.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+    if GetTriggerLegend() == LEGEND_KARAZHAN and FACTION_DALARAN.Player == GetOwningPlayer(LEGEND_KARAZHAN.Unit) and FACTION_DALARAN.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 

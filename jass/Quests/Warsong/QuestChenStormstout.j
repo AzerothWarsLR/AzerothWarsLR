@@ -10,9 +10,9 @@ library EventChenStormstout initializer OnInit requires WarsongConfig
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    if FACTION_WARSONG.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) then
-      call SetPlayerTechResearched(FACTION_WARSONG.Person.p, CHEN_RESEARCH, 1)
-      call UnitRescue(gg_unit_h04E_2670, FACTION_WARSONG.Person.p)
+    if FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then
+      call SetPlayerTechResearched(FACTION_WARSONG.Player, CHEN_RESEARCH, 1)
+      call UnitRescue(gg_unit_h04E_2670, FACTION_WARSONG.Player)
     endif
   endfunction
 
@@ -20,7 +20,7 @@ library EventChenStormstout initializer OnInit requires WarsongConfig
   private function PersonFactionChanges takes nothing returns nothing
     if GetChangingPersonPrevFaction() == FACTION_WARSONG then
       call RemoveUnit(gg_unit_h04E_2670)
-      call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
+      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

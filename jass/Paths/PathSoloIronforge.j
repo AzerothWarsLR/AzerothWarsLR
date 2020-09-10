@@ -7,7 +7,7 @@ library PathSoloIronforge initializer OnInit requires IronforgeConfig, Display
   private function Research takes nothing returns nothing
     local player ironforgePlayer
     if GetResearched() == RESEARCH_ID then
-      set ironforgePlayer = FACTION_IRONFORGE.Person.p
+      set ironforgePlayer = FACTION_IRONFORGE.Player
       call FACTION_IRONFORGE.modWeight(3)
       call DisplaySoloPath(FACTION_IRONFORGE, "Now alone in their fight, the Dwarves of Ironforge reaffirm their old Empire and reforge the various clans together.")
       call SetUnitManaBJ( gg_unit_h03Q_0191, ( GetUnitStateSwap(UNIT_STATE_MANA, gg_unit_h03Q_0191) + 1000.00 ) ) //Hall of Explorers

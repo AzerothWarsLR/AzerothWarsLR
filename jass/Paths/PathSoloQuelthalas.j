@@ -7,7 +7,7 @@ library PathSoloQuelthalas initializer OnInit requires QuelthalasConfig, Display
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_QUELTHALAS.Person.p
+      set tempPlayer = FACTION_QUELTHALAS.Player
       call DisplaySoloPath(FACTION_QUELTHALAS, "As the enemies close in, the use of Fel Magic grows within the kingdom and the use of shadier talents come forth. The Elven Mage Krasus reveals himself as Korialstrasz of the Red Dragonflight. To repay the shame of their involvement in the first invasion, he and his brethren have come to Quel’thalas’ aid.")
       call LEGEND_KORIALSTRASZ.Spawn(tempPlayer, GetRectCenterX(gg_rct_Sunwell), GetRectCenterY(gg_rct_Sunwell), 0)
       call UnitDetermineLevel(LEGEND_KORIALSTRASZ.Unit, 1.2)

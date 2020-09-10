@@ -8,8 +8,8 @@ library QuestCrystalGolem initializer OnInit requires QuestData, ControlPoint, D
 
   private function TryComplete takes nothing returns nothing
     if FACTION_DALARAN.getQuestItemProgress(QUESTITEM_KILL) == QUEST_PROGRESS_COMPLETE and FACTION_DALARAN.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_DALARAN.Person.p, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_DALARAN.Person.p, RESEARCH_ID, 1)
+      call SetPlayerTechResearched(FACTION_DALARAN.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(FACTION_DALARAN.Player, RESEARCH_ID, 1)
       call FACTION_DALARAN.modObjectLimit('n096', -6)
       call FACTION_DALARAN.modObjectLimit('n0AD', 6)
     endif
@@ -23,7 +23,7 @@ library QuestCrystalGolem initializer OnInit requires QuestData, ControlPoint, D
 
   private function Capture takes nothing returns nothing
     local Person capturePerson
-    if GetUnitTypeId(GetTriggerControlPoint().u) == 'n02R' and FACTION_DALARAN.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
+    if GetUnitTypeId(GetTriggerControlPoint().u) == 'n02R' and FACTION_DALARAN.Team.ContainsPlayer(GetOwningPlayer(GetTriggerControlPoint().u)) then
       call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
       call TryComplete()
       call DestroyTrigger(GetTriggeringTrigger())

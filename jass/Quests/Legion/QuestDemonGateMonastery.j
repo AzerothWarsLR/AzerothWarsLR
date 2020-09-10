@@ -8,11 +8,11 @@ library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionCon
   endglobals
 
   private function Dies takes nothing returns nothing
-    local Person legionPerson = FACTION_LEGION.whichPerson
-    local Person killingPerson = Persons[GetPlayerId(GetOwningPlayer(GetKillingUnit()))]
+    local Person legionPerson = FACTION_LEGION.Person
+    local Person killingPerson = Person.ByHandle(GetOwningPlayer(GetKillingUnit()))
 
-    if killingPerson.team.containsPlayer(legionPerson.p) then
-      call CreateUnit(legionPerson.p, DEMONGATE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 270.)
+    if killingPerson.Faction.Team.ContainsPlayer(legionPerson.Player) then
+      call CreateUnit(legionPerson.Player, DEMONGATE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 270.)
       call SetDoodadAnimationRectBJ( "hide", 'YObb', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'ZSab', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'YOsw', gg_rct_ScarletMonastery )
@@ -21,9 +21,9 @@ library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionCon
       call SetDoodadAnimationRectBJ( "hide", 'ZCv2', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'ZCv1', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "show", 'ZCv1', gg_rct_ScarletMonastery )
-      call FACTION_LEGION.setQuestItemStatus(QUESTITEM_DEMONGATEMONASTERY, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_LEGION.setQuestItemProgress(QUESTITEM_DEMONGATEMONASTERY, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_LEGION.setQuestItemStatus(QUESTITEM_DEMONGATEMONASTERY, QUEST_PROGRESS_FAILED, true)
+      call FACTION_LEGION.setQuestItemProgress(QUESTITEM_DEMONGATEMONASTERY, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

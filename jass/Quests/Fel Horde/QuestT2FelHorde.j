@@ -11,17 +11,17 @@ library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig
 
   private function TryComplete takes nothing returns nothing
     if not UnitAlive(gg_unit_h001_0180) and not UnitAlive(gg_unit_h00X_0007) then
-      call SetPlayerTechResearched(FACTION_FEL_HORDE.whichPerson.p, RESEARCH, 1)
+      call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH, 1)
     endif
   endfunction
 
   private function StormwindDies takes nothing returns nothing
-    call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_KILLSTORMWIND, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_KILLSTORMWIND, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function IronforgeDies takes nothing returns nothing
-    call FACTION_FEL_HORDE.setQuestItemStatus(QUESTITEM_KILLIRONFORGE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_KILLIRONFORGE, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

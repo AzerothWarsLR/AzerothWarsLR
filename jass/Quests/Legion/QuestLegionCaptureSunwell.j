@@ -6,10 +6,10 @@ library QuestLegionCaptureSunwell initializer OnInit requires LegionConfig, Lege
   endglobals
 
   private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_SUNWELL and FACTION_LEGION.Person.Team.containsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) and FACTION_LEGION.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call FACTION_LEGION.setQuestItemStatus(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_LEGION.Person.p, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_LEGION.Person.p, RESEARCH_ID, 1)
+    if GetTriggerLegend() == LEGEND_SUNWELL and FACTION_LEGION.Team.ContainsPlayer(GetOwningPlayer(LEGEND_SUNWELL.Unit)) and FACTION_LEGION.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
+      call FACTION_LEGION.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+      call SetPlayerTechResearched(FACTION_LEGION.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(FACTION_LEGION.Player, RESEARCH_ID, 1)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction

@@ -1,15 +1,16 @@
-library IronforgeConfig initializer OnInit requires Faction
+library IronforgeConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_IRONFORGE
+    LiegeFaction FACTION_IRONFORGE
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
+    set FACTION_IRONFORGE = LiegeFaction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)
     set f = FACTION_IRONFORGE
     set f.VictoryMusic = "HeroicVictory"
+    set f.Team = TEAM_SOUTH_ALLIANCE
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

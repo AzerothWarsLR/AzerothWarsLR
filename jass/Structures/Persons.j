@@ -1,35 +1,20 @@
 library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters, QuestData
 
   globals   
-    Person array Persons    //Indexed by player ID number
-    StringTable PersonsByName
-    Table PersonsByFaction
-    
     force Observers
-    
-    constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
-    constant integer HERO_COST = 100    //For refunding
-
-    private constant real REFUND_PERCENT = 1.00          //How much gold and lumber is refunded from units that get refunded on leave
-    private constant real XP_TRANSFER_PERCENT = 1.00     //How much experience is transferred from heroes that leave the game
 
     Event OnPersonFactionChange
-    Event OnPersonTeamLeave
-    Event OnPersonTeamJoin
   endglobals
 
   struct Person
+    private static thistype array byId
     readonly static thistype triggerPerson = 0         //Used in event response triggers
-    readonly static Team triggerPersonPrevTeam = 0
     readonly static Faction prevFaction = 0            //Used in OnPersonFactionChange event response for the previous faction 
 
-    readonly Faction faction                  //Controls name, available objects, color, and icon
-    readonly Team team                        //The team this person is on
-    readonly integer controlPoints = 0        //Count of control points
-    readonly real income = 0                  //Gold per minute 
-    readonly Table objectLimits               //A limit of how many objects of each type this person can build. Indexed by ID, value is limit               
-    readonly player p                         //The player this struct is indexed to  
-    readonly integer xp = 0                   //Stored by DistributeUnits and given out again by DistributeResources
+    private Faction faction                  //Controls name, available objects, color, and icon
+    private integer controlPointCount = 0
+    private real controlPointValue = 0        //Gold per minute           
+    private player p                         //The player this struct is indexed to  
      
     private real partialGold = 0              //Just used for income calculations
     readonly group cpGroup                    //Group of control point units this person owns  
@@ -42,30 +27,123 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       return this.faction
     endmethod
 
-    method operator Team takes nothing returns Team
-      return this.team
-    endmethod
+    method operator Faction= takes Faction newFaction returns nothing
+      local integer i = 0
+      local Faction prevFaction
 
-    method modObjectLimit takes integer id, integer limit returns nothing
-      if this.objectLimits.exists(id) then
-        set this.objectLimits[id] = this.objectLimits[id] + limit
-      else
-        set this.objectLimits[id] = limit                
-      endif
-      
-      if this.objectLimits[id] < 0 then
-        call SetPlayerTechMaxAllowed(this.p, id, 0) 
-      else
-        if this.objectLimits[id] >= UNLIMITED then
-          call SetPlayerTechMaxAllowed(this.p, id, -1) 
-        else
-          call SetPlayerTechMaxAllowed(this.p, id, this.objectLimits[id]) 
+      set this.prevFaction = this.faction
+      set thistype.prevFaction = this.faction
+
+      //Unapply old faction if necessary
+      if this.faction != 0 then
+        if this.faction == 0 then
+          call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
+          return
+        endif
+        //Unapply object limits
+        loop 
+        exitwhen i > faction.objectCount
+          call this.ModObjectLimit(this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]])
+          set i = i + 1
+        endloop       
+        //Toggle absence and presence researches for this faction
+        set i = 0
+        loop
+        exitwhen i > MAX_PLAYERS
+          call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
+          set i = i + 1
+        endloop
+        call hideQuests()
+        set this.faction = 0 
+        if this.prevFaction != 0 then
+          set this.prevFaction.Person = 0 //Referential integrity
         endif
       endif
-      
-      if this.objectLimits[id] == 0 then
-        call this.objectLimits.flush(id)
-      endif        
+
+      //Apply new faction if necessary
+      if newFaction != 0 then
+        if newFaction.Person == 0 then
+          set i = 0
+          //Apply object limits
+          loop
+          exitwhen i > newFaction.objectCount
+            call this.ModObjectLimit(newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]])
+            set i = i + 1
+          endloop             
+          call SetPlayerColorBJ(this.p, newFaction.playCol, true)
+          set this.faction = newFaction 
+          //Enforce referential integrity
+          if newFaction.Person != this then
+            set newFaction.Person = this 
+          endif
+          //Toggle absence and presence researches for this faction
+          set i = 0
+          loop
+          exitwhen i > MAX_PLAYERS
+            if this.faction.absenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 0)
+            endif
+            if this.faction.presenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 1)
+            endif
+            set i = i + 1
+          endloop
+          
+        else
+          call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
+          call BJDebugMsg(I2S(newFaction.Person))
+        endif
+      endif
+
+      call showQuests()
+
+      set thistype.triggerPerson = this
+      call OnPersonFactionChange.fire()
+    endmethod
+
+    method operator ControlPointValue takes nothing returns real
+      return this.controlPointValue
+    endmethod
+
+    method operator ControlPointValue= takes real value returns nothing
+      if (value < 0) then
+        call BJDebugMsg("ERROR: Tried to assign a negative ControlPointValue value to " + GetPlayerName(this.p))
+      endif
+      set this.controlPointValue = value
+    endmethod
+
+    method operator ControlPointCount takes nothing returns integer
+      return this.controlPointCount
+    endmethod
+
+    method operator ControlPointCount= takes integer value returns nothing
+      if (value < 0) then
+        call BJDebugMsg("ERROR: Tried to assign a negative ControlPoint counter to " + GetPlayerName(this.p))
+      endif
+      set this.controlPointCount = value
+    endmethod
+
+    method GetObjectLimit takes integer id returns integer
+      local integer blizzardLimit = GetPlayerTechMaxAllowed(this.Player, id)
+      if blizzardLimit == -1 then
+        return UNLIMITED
+      endif
+      return blizzardLimit
+    endmethod
+
+    method SetObjectLimit takes integer id, integer limit returns nothing
+      if limit >= UNLIMITED then
+        call SetPlayerTechMaxAllowed(this.Player, id, -1)
+      elseif limit < 0 then
+        call SetPlayerTechMaxAllowed(this.Player, id, 0)
+      else
+        call SetPlayerTechMaxAllowed(this.Player, id, limit)
+      endif
+    endmethod
+
+    method ModObjectLimit takes integer id, integer limit returns nothing
+      call SetObjectLimit(id, GetObjectLimit(id) + limit)     
     endmethod
     
     method addGold takes real x returns nothing
@@ -80,31 +158,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set this.partialGold = this.partialGold - 1
         call SetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD) + 1)
       endloop
-    endmethod
-    
-    method modControlPoints takes integer mod returns nothing
-      set this.controlPoints = this.controlPoints + mod
-    endmethod
-    
-    method modIncome takes real mod returns nothing
-      set this.income = this.income + mod
-    endmethod    
-    
-    method setTeam takes Team team returns nothing
-      if this.team > 0 then
-        set thistype.triggerPerson = this
-        call this.team.removePlayer(this.p)
-        set this.triggerPersonPrevTeam = this.team
-        set this.team = 0
-        call OnPersonTeamLeave.fire()
-      endif  
-
-      if team > 0 then
-        call team.addPlayer(this.p) 
-        set this.team = team
-        set thistype.triggerPerson = this
-        call OnPersonTeamJoin.fire()
-      endif
     endmethod
 
     //Goes through all Quests and hides them, then goes through all child Quest Items and hide them
@@ -148,237 +201,25 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     endmethod
 
     private method nullFaction takes nothing returns nothing
-      local integer i = 0
-
-      if this.faction == 0 then
-        call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
-        return
-      endif
-
-      //Unapply object limits
-      loop 
-      exitwhen i > faction.objectCount
-        call this.modObjectLimit( this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]] )
-        set i = i + 1
-      endloop       
-
-      set PersonsByFaction[this.faction] = 0 //Free up existing faction slot
-      call this.team.modWeight(-this.faction.weight) //Remove faction's weight from team
-
-      //Toggle absence and presence researches for this faction
-      set i = 0
-      loop
-      exitwhen i > MAX_PLAYERS
-        call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
-        call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
-        set i = i + 1
-      endloop
-
-      call hideQuests()
-
-      set this.faction = 0 
-    endmethod
-
-    method setFaction takes Faction newFaction returns nothing
-      local integer i = 0
-
-      set thistype.prevFaction = this.faction
-
-      if this.faction > 0 then
-        call this.nullFaction() 
-      endif
-
-      if newFaction > 0 then
-        if PersonsByFaction[newFaction] == 0 then
-          set i = 0
-          //Apply object limits
-          loop
-          exitwhen i > newFaction.objectCount
-            call this.modObjectLimit( newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]] )
-            set i = i + 1
-          endloop             
-          call SetPlayerColorBJ(this.p, newFaction.playCol, true)
-          set PersonsByFaction[newFaction] = this   
-          set this.faction = newFaction 
-          //Add new faction's weight to current team
-          if this.team > 0 then
-            call this.team.modWeight(newFaction.weight)
-          endif
-          //Toggle absence and presence researches for this faction
-          set i = 0
-          loop
-          exitwhen i > MAX_PLAYERS
-            if this.faction.absenceResearch != 0 then
-              call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 0)
-            endif
-            if this.faction.presenceResearch != 0 then
-              call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 1)
-            endif
-            set i = i + 1
-          endloop                 
-        else
-          call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
-        endif
-      endif
-
-      call showQuests()
-
-      set thistype.triggerPerson = this
-      call OnPersonFactionChange.fire()
-    endmethod
-
-    //Any time the player loses the game. E.g. Frozen Throne loss, Kil'jaeden loss
-    method obliterate takes nothing returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u = null
-      local UnitType tempUnitType = 0
-
-      //Take away resources
-      call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, 0)
-      call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER, 0)
-
-      //Give all units to Neutral Victim
-      call GroupEnumUnitsOfPlayer(tempGroup, this.p, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null 
-        set tempUnitType = UnitTypes[GetUnitTypeId(u)]               
-        if not tempUnitType.Meta then
-          call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-
-      //Cleanup
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
-    endmethod
-
-    private method distributeExperience takes nothing returns nothing
-      local integer i = 0
-      local group tempGroup = CreateGroup()
-      local unit u = null
-      local integer heroCount = 0
-
-      loop
-      exitwhen i == MAX_PLAYERS
-        if this.p != this.team.playerArray[i] and this.team.playerArray[i] != null then
-          //Identify all heroes for a given ally
-          call GroupEnumUnitsOfPlayer(tempGroup, this.team.playerArray[i], function IsUnitHeroEnum)
-          set heroCount = BlzGroupGetSize(tempGroup)
-          loop
-            set u = FirstOfGroup(tempGroup)
-            exitwhen u == null
-            call AddHeroXP(u, R2I((this.xp / (this.team.size-1) / heroCount) * XP_TRANSFER_PERCENT), true)
-            call GroupRemoveUnit(tempGroup, u)
-          endloop
-        endif
-        set i = i + 1
-      endloop
-
-      //Cleanup
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
-    endmethod
-
-    private method distributeResources takes nothing returns nothing
-      local integer i = 0
-      local integer gold = GetPlayerState(this.p,PLAYER_STATE_RESOURCE_GOLD)
-      local integer lumber = GetPlayerState(this.p,PLAYER_STATE_RESOURCE_LUMBER)
-      local force eligiblePlayers = CreateForce()
-
-      call ForceAddForce(this.team.players, eligiblePlayers)
-      call ForceRemovePlayer(eligiblePlayers, this.p)
-
-      loop
-      exitwhen i == MAX_PLAYERS
-        if this.team.playerArray[i] != null then
-          call SetPlayerState(this.team.playerArray[i], PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.team.playerArray[i], PLAYER_STATE_RESOURCE_GOLD) + gold/(this.team.size-1))
-          call SetPlayerState(this.team.playerArray[i], PLAYER_STATE_RESOURCE_LUMBER, GetPlayerState(this.team.playerArray[i], PLAYER_STATE_RESOURCE_LUMBER) + lumber/(this.team.size-1))
-        endif
-        set i = i + 1
-      endloop
       
-      call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, 0)
-      call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER, 0)
-
-      //Cleanup
-      call DestroyForce(eligiblePlayers)
-      set eligiblePlayers = null
     endmethod
-
-    private method distributeUnits takes nothing returns nothing
-      local group g = CreateGroup()
-      local unit u = null
-      local UnitType tempUnitType = 0
-      local force eligiblePlayers = CreateForce()
-      local player recipient = null
-
-      call ForceAddForce(this.team.players, eligiblePlayers)
-      call ForceRemovePlayer(eligiblePlayers, this.p)
-      call GroupEnumUnitsOfPlayer(g, this.p, null)
-
-      loop
-        set u = FirstOfGroup(g) 
-        exitwhen u == null
-        set tempUnitType = UnitTypes[GetUnitTypeId(u)]
-        if IsUnitType(u, UNIT_TYPE_HERO) == true then
-          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) + HERO_COST)
-          set this.xp = this.xp + GetHeroXP(u)
-          //Subtract hero's starting XP from refunded XP
-          if Legend.ByHandle(u) != 0 then
-            set this.xp = this.xp - Legend.ByHandle(u).StartingXP
-          endif
-          call UnitDropAllItems(u)  
-          call RemoveUnit(u)
-        elseif tempUnitType.Refund == true then
-          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_GOLD) +  R2I(tempUnitType.GoldCost*REFUND_PERCENT))
-          call SetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER, GetPlayerState(this.p, PLAYER_STATE_RESOURCE_LUMBER) + R2I(tempUnitType.LumberCost*REFUND_PERCENT))
-          call UnitDropAllItems(u)  
-          call RemoveUnit(u)
-        elseif tempUnitType.Meta == false or tempUnitType == 0 then
-          set recipient = ForcePickRandomPlayer(eligiblePlayers)
-          if recipient == null then
-            set recipient = Player(bj_PLAYER_NEUTRAL_VICTIM)
-          endif
-          call SetUnitOwner(u, recipient, false)
-        endif
-        call GroupRemoveUnit(g, u)
-      endloop
-
-      //Cleanup
-      call DestroyForce(eligiblePlayers)
-      set eligiblePlayers = null
-      call DestroyGroup(g)
-      set g = null
-      set recipient = null
-    endmethod
-
-    //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
-    method leave takes nothing returns nothing
-      if team.size > 1 then
-        call distributeUnits()
-        call distributeResources()
-        call distributeExperience()
-      else
-        call obliterate()
-      endif
-    endmethod                                   
 
     method destroy takes nothing returns nothing
       call DestroyGroup(this.cpGroup)
-      call this.objectLimits.destroy()
 
-      set Persons[GetPlayerId(this.p)] = 0
+      set thistype.byId[GetPlayerId(this.p)] = 0
       set this.p = null
       set this.cpGroup = null 
 
       call this.deallocate()
     endmethod
 
+    static method ById takes integer id returns thistype
+      return thistype.byId[id]
+    endmethod
+
     static method ByHandle takes player whichPlayer returns thistype
-      return Persons[GetPlayerId(whichPlayer)]
+      return thistype.byId[GetPlayerId(whichPlayer)]
     endmethod
 
     static method create takes player p returns Person
@@ -386,8 +227,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       
       set this.p = p
       set this.cpGroup = CreateGroup()
-      set this.objectLimits = Table.create()
-      set Persons[GetPlayerId(p)] = this
+      set thistype.byId[GetPlayerId(p)] = this
       
       return this           
     endmethod
@@ -398,25 +238,17 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     return Person.prevFaction
   endfunction
 
-  function GetTriggerPersonPrevTeam takes nothing returns Team
-    return Person.triggerPersonPrevTeam
-  endfunction
-
   function GetTriggerPerson takes nothing returns Person
+    if Person.triggerPerson == 0 then
+      call BJDebugMsg("ERROR: GetTriggerPerson() returning 0")
+      return 0
+    endif
     return Person.triggerPerson
   endfunction
 
-  function GetOwningPerson takes unit whichUnit returns Person
-    return Persons[GetPlayerId(GetOwningPlayer(whichUnit))]
-  endfunction
-
   private function OnInit takes nothing returns nothing
-    set PersonsByName = StringTable.create()
-    set PersonsByFaction = Table.create()
     set Observers = CreateForce()
     set OnPersonFactionChange = Event.create()
-    set OnPersonTeamLeave = Event.create()
-    set OnPersonTeamJoin = Event.create()
   endfunction
 
 endlibrary

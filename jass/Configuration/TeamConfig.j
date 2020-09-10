@@ -1,4 +1,4 @@
-library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
+library TeamConfig initializer OnInit requires Team
 
   globals
     Team TEAM_SCOURGE
@@ -13,12 +13,12 @@ library TeamConfig initializer OnInit requires Team, ScourgeConfig, LegionConfig
     //Starting teams
     local Team t = 0
     
-    set TEAM_SCOURGE = Team.create("Scourge","ReplaceableTextures\\CommandButtons\\BTNUndeadCaptureFlag.blp")
-    set TEAM_NORTH_ALLIANCE = Team.create("North Alliance","ReplaceableTextures\\CommandButtons\\BTNHumanCaptureFlag.blp")
-    set TEAM_HORDE = Team.create("Horde","ReplaceableTextures\\CommandButtons\\BTNOrcCaptureFlag.blp")
-    set TEAM_NIGHT_ELVES = Team.create("Night Elves","ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp")
-    set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance","ReplaceableTextures\\CommandButtons\\BTNHelmutPurple.blp")
-    set TEAM_FEL_HORDE = Team.create("Fel Horde","")
+    set TEAM_SCOURGE = Team.create("Scourge")
+    set TEAM_NORTH_ALLIANCE = Team.create("North Alliance")
+    set TEAM_HORDE = Team.create("Horde")
+    set TEAM_NIGHT_ELVES = Team.create("Night Elves")
+    set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance")
+    set TEAM_FEL_HORDE = Team.create("Fel Horde")
   endfunction
 
 endlibrary

@@ -10,22 +10,20 @@ library UninviteCommand initializer OnInit requires Team
   	local string enteredString = GetEventPlayerChatString()
     local string content = null
     local Faction targetFaction = 0
-    local Person targetPerson = 0	
-    local Person senderPerson = Persons[GetPlayerId(GetTriggerPlayer())]
+    local Person senderPerson = Person.ByHandle(GetTriggerPlayer())
   
   	if SubString( enteredString, 0, StringLength(COMMAND) ) == COMMAND then
     	set content = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
       set content = StringCase(content, false)
       set targetFaction = Faction.factionsByName[content]
       if targetFaction != 0 then
-      	set targetPerson = PersonsByFaction[targetFaction]
-        if targetPerson != 0 then
-        	call senderPerson.team.uninvite(targetPerson.p)
+        if targetFaction.Person != 0 then
+        	call senderPerson.Faction.Team.Uninvite(targetFaction)
         else
-          call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.name + "|r.")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.Name + "|r.")
       	endif
       else
-        call DisplayTextToPlayer(senderPerson.p, 0, 0, "There is no Faction with the name " + content + ".")
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
       endif
     endif
   endfunction

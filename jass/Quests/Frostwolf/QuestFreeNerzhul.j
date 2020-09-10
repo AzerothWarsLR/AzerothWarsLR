@@ -6,11 +6,11 @@ library FreeNerzhul initializer OnInit requires QuestData, LegendFrostwolf, Fros
   endglobals
 
   private function FrozenThroneDies takes nothing returns nothing
-    if FACTION_FROSTWOLF.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
+    if FACTION_FROSTWOLF.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
       call AddHeroAttributes(LEGEND_THRALL.Unit, 10, 10, 10)
-      call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
+      call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

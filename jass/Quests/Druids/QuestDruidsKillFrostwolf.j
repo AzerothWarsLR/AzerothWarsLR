@@ -9,18 +9,18 @@ library DruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFros
 
   private function TryComplete takes nothing returns nothing
     if FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_THUNDERBLUFF) == QUEST_PROGRESS_COMPLETE and FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_ORGRIMMAR) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_DRUIDS.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Person.p, ELEMENTAL_GUARDIAN_ID, "You can now train the Elemental Guardian from the Altar of Elders.")
+      call SetPlayerTechResearched(FACTION_DRUIDS.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Player, ELEMENTAL_GUARDIAN_ID, "You can now train the Elemental Guardian from the Altar of Elders.")
     endif
   endfunction
 
   private function ThunderBluffDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_THUNDERBLUFF, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_THUNDERBLUFF, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function OrgrimmarDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_ORGRIMMAR, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_ORGRIMMAR, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

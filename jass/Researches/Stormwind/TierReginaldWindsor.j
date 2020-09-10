@@ -6,7 +6,7 @@ library TierReginaldWindsor initializer OnInit requires StormwindConfig
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03R' then
-      call CreateUnit(FACTION_STORMWIND.Person.p, DEMI_UNITTYPE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0)
+      call CreateUnit(FACTION_STORMWIND.Player, DEMI_UNITTYPE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0)
       call FACTION_STORMWIND.modObjectLimit('n09N', 6)               //Bishop of Light
     endif
   endfunction

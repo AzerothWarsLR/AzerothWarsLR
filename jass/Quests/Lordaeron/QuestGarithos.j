@@ -10,12 +10,12 @@ library EventGarithosSpawn initializer OnInit requires QuestData, LordaeronConfi
 
   private function TimerEnds takes nothing returns nothing
     if FACTION_LORDAERON.Person != 0 then
-      call LEGEND_GARITHOS.Spawn(FACTION_LORDAERON.Person.p, GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270)
+      call LEGEND_GARITHOS.Spawn(FACTION_LORDAERON.Player, GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270)
       call UnitDetermineLevel(LEGEND_GARITHOS.Unit, 1.00)
-      call CreateUnits(FACTION_LORDAERON.Person.p, 'hkni', GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270, 24)
-      call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_GARITHOS, QUEST_PROGRESS_COMPLETE, true)
+      call CreateUnits(FACTION_LORDAERON.Player, 'hkni', GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270, 24)
+      call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_GARITHOS, QUEST_PROGRESS_COMPLETE, true)
     else
-      call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_GARITHOS, QUEST_PROGRESS_UNDISCOVERED, false)
+      call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_GARITHOS, QUEST_PROGRESS_UNDISCOVERED, false)
     endif
   endfunction
 

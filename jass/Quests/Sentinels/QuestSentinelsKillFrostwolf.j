@@ -9,18 +9,18 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
 
   private function TryComplete takes nothing returns nothing
     if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_THUNDERBLUFF) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_ORGRIMMAR) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_SENTINELS.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_SENTINELS.Person.p, AMARA_ID, "You can now revive Amara from the Altar of Elders.")
+      call SetPlayerTechResearched(FACTION_SENTINELS.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_SENTINELS.Player, AMARA_ID, "You can now revive Amara from the Altar of Elders.")
     endif
   endfunction
 
   private function ThunderBluffDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_THUNDERBLUFF, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_THUNDERBLUFF, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function OrgrimmarDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_ORGRIMMAR, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_ORGRIMMAR, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

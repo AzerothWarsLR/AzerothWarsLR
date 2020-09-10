@@ -31,13 +31,13 @@ library Victory initializer OnInit requires ControlPoint, Event
     local integer i = 0
     local boolean playedMusic = false
     set GameWon = true
-    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "TEAM VICTORY!|r\n" + whichTeam.name + " has won the game! You may continue playing, but no further winners will be determined.")
+    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "TEAM VICTORY!|r\n" + whichTeam.Name + " has won the game! You may continue playing, but no further winners will be determined.")
     //Play victory music from first player in winning team
     loop
-      exitwhen i == MAX_PLAYERS or playedMusic
-      if whichTeam.playerArray[i] != null then
+      exitwhen i == whichTeam.FactionCount or playedMusic
+      if whichTeam.GetFactionByIndex(i).Person != 0 then
         call StopMusic(true)
-        call PlayThematicMusic(Persons[GetPlayerId(whichTeam.playerArray[i])].Faction.VictoryMusic)
+        call PlayThematicMusic(whichTeam.GetFactionByIndex(i).VictoryMusic)
         set playedMusic = true
       endif
       set i = i + 1
@@ -47,16 +47,16 @@ library Victory initializer OnInit requires ControlPoint, Event
   endfunction
 
   private function TeamWarning takes Team whichTeam, integer controlPoints returns nothing
-    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n" + VICTORY_COLOR + "TEAM VICTORY IMMINENT|r\n" + whichTeam.name + " has captured " + I2S(controlPoints) + " out of " + I2S(CPS_VICTORY) + " Control Points required to win the game!")
+    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n" + VICTORY_COLOR + "TEAM VICTORY IMMINENT|r\n" + whichTeam.Name + " has captured " + I2S(controlPoints) + " out of " + I2S(CPS_VICTORY) + " Control Points required to win the game!")
   endfunction
 
   private function GetTeamControlPoints takes Team whichTeam returns integer
     local integer total = 0
     local integer i = 0
     loop
-      exitwhen i == MAX_PLAYERS
-      if whichTeam.playerArray[i] != null then
-        set total = total + Person.ByHandle(whichTeam.playerArray[i]).controlPoints
+      exitwhen i == whichTeam.FactionCount
+      if whichTeam.GetFactionByIndex(i).Person != 0 then
+        set total = total + whichTeam.GetFactionByIndex(i).Person.ControlPointCount
       endif
       set i = i + 1
     endloop
@@ -68,7 +68,7 @@ library Victory initializer OnInit requires ControlPoint, Event
     local integer teamControlPoints
 
     if not GameWon then
-      set team = Person.ByHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Team
+      set team = Person.ByHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Faction.Team
       set teamControlPoints = GetTeamControlPoints(team)
       if teamControlPoints >= CPS_VICTORY then
         call TeamVictory(team)

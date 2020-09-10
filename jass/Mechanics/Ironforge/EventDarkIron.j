@@ -11,12 +11,12 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
     local unit u
 
     if GetSpellAbilityId() == 'A0UZ' then
-      call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Person.p, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 44)
+      call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Player, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 44)
       call SetHeroXP(LEGEND_DAGRAN.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
       call FACTION_IRONFORGE.modObjectLimit('n02D', UNLIMITED)      //Dark Iron War Golem
       call FACTION_IRONFORGE.modObjectLimit('h041', 12)             //Fire Tank
-      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)     
-      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Person.p, 'A0UZ', false)                
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Player, RESEARCH, 1)     
+      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Player, 'A0UZ', false)                
 
       //Transfer all Neutral Passive units in region to Ironforge
       set tempGroup = CreateGroup()
@@ -25,7 +25,7 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
       loop
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, FACTION_IRONFORGE.Person.p)
+          call UnitRescue(u, FACTION_IRONFORGE.Player)
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)

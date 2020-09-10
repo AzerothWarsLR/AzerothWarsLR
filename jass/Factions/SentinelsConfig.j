@@ -1,15 +1,16 @@
-library SentinelsConfig initializer OnInit requires Faction
+library SentinelsConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_SENTINELS
+    LiegeFaction FACTION_SENTINELS
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
+    set FACTION_SENTINELS = LiegeFaction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
     set f = FACTION_SENTINELS
     set f.VictoryMusic = "NightElfVictory"
+    set f.Team = TEAM_NIGHT_ELVES
 
     call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
     call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   

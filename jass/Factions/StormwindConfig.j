@@ -1,15 +1,16 @@
-library StormwindConfig initializer OnInit requires Faction
+library StormwindConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_STORMWIND
+    LiegeFaction FACTION_STORMWIND
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
+    set FACTION_STORMWIND = LiegeFaction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
     set f = FACTION_STORMWIND
     set f.VictoryMusic = "HeroicVictory"
+    set f.Team = TEAM_SOUTH_ALLIANCE
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

@@ -1,15 +1,16 @@
-library ScourgeConfig initializer OnInit requires Faction
+library ScourgeConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_SCOURGE
+    LiegeFaction FACTION_SCOURGE
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
+    set FACTION_SCOURGE = LiegeFaction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
     set f = FACTION_SCOURGE
     set f.VictoryMusic = "UndeadVictory"
+    set f.Team = TEAM_SCOURGE
 
     //Buildings
     call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   

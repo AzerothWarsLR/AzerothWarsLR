@@ -1,14 +1,15 @@
-library LordaeronConfig initializer OnInit requires Faction
+library LordaeronConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_LORDAERON
+    LiegeFaction FACTION_LORDAERON
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
+    set FACTION_LORDAERON = LiegeFaction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
     set f.VictoryMusic = "HumanVictory"
+    set f.Team = TEAM_NORTH_ALLIANCE
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

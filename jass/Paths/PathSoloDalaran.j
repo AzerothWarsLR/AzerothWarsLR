@@ -7,7 +7,7 @@ library PathSoloDalaran initializer OnInit requires DalaranConfig, Display, Lege
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_DALARAN.Person.p
+      set tempPlayer = FACTION_DALARAN.Player
       call DisplaySoloPath(FACTION_DALARAN, "The nation of Dalaran, now alone, resorts to militarising the Kul'tirans into a proper standing army.")
       call LEGEND_MEDIVH.Spawn(tempPlayer, GetRectCenterX(gg_rct_Dalaran_Dungeons_Entrance), GetRectCenterY(gg_rct_Dalaran_Dungeons_Entrance), 331.92)
       call UnitDetermineLevel(LEGEND_MEDIVH.Unit, 1.2)

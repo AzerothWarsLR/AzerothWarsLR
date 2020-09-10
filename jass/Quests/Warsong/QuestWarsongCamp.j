@@ -15,9 +15,9 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
     if FACTION_WARSONG.Person != 0 then
-      set recipient = FACTION_WARSONG.Person.p
+      set recipient = FACTION_WARSONG.Player
     elseif FACTION_FROSTWOLF.Person != 0 then
-      set recipient = FACTION_FROSTWOLF.Person.p
+      set recipient = FACTION_FROSTWOLF.Player
     endif
 
     //Transfer all Neutral Passive units in Orgrimmar to one of the above factions
@@ -33,7 +33,7 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
     endloop      
 
     //Update quest (silently because Horde War Machine will kick in instead)
-    call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_BUILD, QUEST_PROGRESS_COMPLETE, false)
+    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_BUILD, QUEST_PROGRESS_COMPLETE, false)
 
     //Cleanup
     call DestroyGroup (TempGroup)

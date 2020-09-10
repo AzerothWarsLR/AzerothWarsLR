@@ -8,7 +8,7 @@ library PathSoloLordaeron initializer OnInit requires LordaeronConfig, Display
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_LORDAERON.Person.p
+      set tempPlayer = FACTION_LORDAERON.Player
       call DisplaySoloPath(FACTION_LORDAERON, "The Scarlet Crusade was granted the power of the Lordaeron military.")
       call FACTION_LORDAERON.modObjectLimit('h06C', UNLIMITED)       //Halls of Glory 
       call FACTION_LORDAERON.modObjectLimit('h066', UNLIMITED)       //Scarlet Zealot

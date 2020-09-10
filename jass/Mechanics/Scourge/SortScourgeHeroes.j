@@ -7,7 +7,7 @@ library SortScourgeLegends initializer OnInit requires LegendScourge
   endglobals
 
   private function In takes unit whichUnit returns nothing
-    if GetOwningPlayer(whichUnit) == FACTION_SCOURGE.Person.p then
+    if GetOwningPlayer(whichUnit) == FACTION_SCOURGE.Player then
       call SetUnitOwner(whichUnit, Player(PLAYER_NEUTRAL_PASSIVE), false)
       call GroupAddUnit(ScourgeLegends, whichUnit)
     endif
@@ -15,7 +15,7 @@ library SortScourgeLegends initializer OnInit requires LegendScourge
 
   private function Out takes unit whichUnit returns nothing
     if IsUnitInGroup(whichUnit, ScourgeLegends) then
-      call SetUnitOwner(whichUnit, FACTION_SCOURGE.Person.p, false)
+      call SetUnitOwner(whichUnit, FACTION_SCOURGE.Player, false)
       call GroupRemoveUnit(ScourgeLegends, whichUnit)
     endif
   endfunction

@@ -12,27 +12,27 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       if FACTION_SCOURGE.Person != 0 then
         set LEGEND_ARTHAS.UnitType = 'Uear'
         call UnitDropAllItems(LEGEND_ARTHAS.Unit)
-        call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.whichPerson.p, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
+        call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.Player, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
         call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
       endif
-      call FACTION_SCOURGE.setQuestItemStatus(QuestLichKingArthas_QUESTITEM_LICHKINGARTHAS_GETARTHAS, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QuestLichKingArthas_QUESTITEM_LICHKINGARTHAS_GETARTHAS, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
   private function StratholmeDies takes nothing returns nothing
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_DESTROY_STRATHOLME, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_DESTROY_STRATHOLME, QUEST_PROGRESS_COMPLETE, true)
     call AnyCapitalDies()
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function TyrsHandDies takes nothing returns nothing
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_DESTROY_TYRSHAND, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_DESTROY_TYRSHAND, QUEST_PROGRESS_COMPLETE, true)
     call AnyCapitalDies()
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
   private function CapitalPalaceDies takes nothing returns nothing
-    call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_DESTROY_CAPITAL_PALACE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_DESTROY_CAPITAL_PALACE, QUEST_PROGRESS_COMPLETE, true)
     call AnyCapitalDies()
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction

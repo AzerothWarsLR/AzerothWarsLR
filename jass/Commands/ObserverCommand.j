@@ -7,23 +7,23 @@ library ObserverCommand initializer OnInit
   //*ENDCONFIG
   
   private function Actions takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetTriggerPlayer())]
+    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
     local group tempGroup = CreateGroup()
 
     call ForceAddPlayer(Observers, GetTriggerPlayer())
     call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_OBSERVER, 1)
     call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
 
-    if triggerPerson.faction != 0 then
-      call BJDebugMsg( triggerPerson.faction.name + " has become an observer." )
+    if triggerPerson.Faction != 0 then
+      call BJDebugMsg( triggerPerson.Faction.Name + " has become an observer." )
     else
-      call BJDebugMsg( GetPlayerName(triggerPerson.p) + " has become an observer." )        
+      call BJDebugMsg( GetPlayerName(triggerPerson.Player) + " has become an observer." )        
     endif        
 
     if triggerPerson != 0 then         
-      call triggerPerson.leave()
-      call triggerPerson.setFaction(0)
-      call triggerPerson.setTeam(0)
+      call triggerPerson.Faction.Leave()
+      set triggerPerson.Faction = 0
+      set triggerPerson.Faction.Team = 0
       call triggerPerson.destroy()
     endif
   endfunction

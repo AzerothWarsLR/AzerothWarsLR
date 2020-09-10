@@ -2,17 +2,30 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
   globals
     Event OnFactionCreate = 0
+    Event OnFactionTeamLeave
+    Event OnFactionTeamJoin
+    Event OnFactionGameLeave
+
+    constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
+    constant integer HERO_COST = 100    //For refunding
+    private constant real REFUND_PERCENT = 1.00          //How much gold and lumber is refunded from units that get refunded on leave
+    private constant real XP_TRANSFER_PERCENT = 1.00     //How much experience is transferred from heroes that leave the game
   endglobals
 
   struct Faction
     readonly static StringTable factionsByName
     readonly static thistype triggerFaction = 0
+    readonly static thistype triggerFactionPrevTeam = 0
     
     readonly string name = null
     readonly playercolor playCol = null
     readonly string prefixCol = null
     readonly string icon = null
-    readonly integer weight //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
+    private integer weight //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
+
+    private Person person = 0 //One-to-one relationship
+    private Team team = 0 //The team this Faction is in
+    readonly integer xp = 0 //Stored by DistributeUnits and given out again by DistributeResources
     
     readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
@@ -26,17 +39,93 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly Table questItemProgress
     private QuestData startingQuest
 
+    method operator Weight takes nothing returns integer
+      return this.weight
+    endmethod
+
+    method operator Gold takes nothing returns real
+      return I2R(GetPlayerState(this.Player, PLAYER_STATE_RESOURCE_GOLD))
+    endmethod
+
+    method operator Gold= takes real value returns nothing
+      call SetPlayerState(this.Player, PLAYER_STATE_RESOURCE_GOLD, R2I(value))
+    endmethod
+
+    method operator Lumber takes nothing returns real
+      return I2R(GetPlayerState(this.Player, PLAYER_STATE_RESOURCE_LUMBER))
+    endmethod
+
+    method operator Lumber= takes real value returns nothing
+      call SetPlayerState(this.Player, PLAYER_STATE_RESOURCE_LUMBER, R2I(value))
+    endmethod
+
+    method operator Team takes nothing returns Team
+      return this.team
+    endmethod
+
+    private stub method OnTeamChange takes nothing returns nothing
+
+    endmethod
+
+    method operator Team= takes Team team returns nothing
+      if this.team != 0 then
+        set thistype.triggerFaction = this
+        call this.team.RemoveFaction(this)
+        set this.triggerFactionPrevTeam = this.team
+        set this.team = 0
+        call OnFactionTeamLeave.fire()
+      endif  
+
+      if team != 0 then
+        call team.AddFaction(this)
+        set this.team = team
+        set thistype.triggerFaction = this
+        call OnFactionTeamJoin.fire()
+      endif
+      call OnTeamChange()
+    endmethod
+
+    stub method operator ControlPointCountAsString takes nothing returns string
+      return I2S(this.Person.ControlPointCount)
+    endmethod
+
+    stub method operator Income takes nothing returns real
+      return this.Person.ControlPointValue
+    endmethod
+
+    method operator ColoredName takes nothing returns string
+      return this.prefixCol + this.name + "|r"
+    endmethod
+
+    method operator Name takes nothing returns string
+      return this.name
+    endmethod
+
     method operator Player takes nothing returns player
       return this.Person.Player
     endmethod
 
     method operator Person takes nothing returns Person
-      return PersonsByFaction[this]
+      return this.person
     endmethod
 
-    //DEPRECATED
-    method operator whichPerson takes nothing returns Person
-      return this.Person
+    stub method OnPersonChange takes nothing returns nothing
+    
+    endmethod
+
+    method operator Person= takes Person value returns nothing
+      if this.Player != null then
+        call this.Team.UnallyPlayer(this.Player)
+      endif
+      set this.person = value
+      //Maintan referential integrity
+      if value == 0 then
+        return
+      endif
+      if value.Faction != this then
+        set value.Faction = this
+      endif
+      call this.Team.AllyPlayer(value.Player)
     endmethod
 
     method operator StartingQuest takes nothing returns QuestData
@@ -55,6 +144,23 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return this.victoryMusic
     endmethod
 
+    stub method operator CanBeInvited takes nothing returns boolean
+      return true
+    endmethod
+
+    stub method Unally takes nothing returns nothing
+      local string newTeamName = this.Name + " Pact"
+      local Team newTeam = 0
+
+      if this.Team.PlayerCount > 1 then
+        set newTeam = Team.teamsByName[newTeamName]
+        if newTeam == 0 then
+          set newTeam = Team.create(newTeamName)
+        endif
+        set this.Team = newTeam
+      endif
+    endmethod
+
     method getQuestItemProgress takes QuestItemData questItemData returns integer
       return questItemProgress[questItemData]
     endmethod
@@ -62,44 +168,34 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     method setQuestItemProgress takes QuestItemData questItemData, integer progress, boolean display returns nothing
       if quests.contains(questItemData.parent) then
         set questItemProgress[questItemData] = progress
-        if whichPerson != 0 and GetLocalPlayer() == whichPerson.p then
+        if this.Person != 0 and GetLocalPlayer() == this.Player then
           call questItemData.setProgress(progress, display)
         endif
       endif
-    endmethod
-
-    //DEPRECATED
-    method setQuestItemStatus takes QuestItemData questItemData, integer progress, boolean display returns nothing
-      call setQuestItemProgress(questItemData, progress, display)
     endmethod
 
     method addQuest takes QuestData questData returns nothing
       local integer i = 0
       local QuestItemData tempQuestItemData
       call quests.add(questData)
-      if GetLocalPlayer() == whichPerson.p then
+      if GetLocalPlayer() == this.Player then
         set questData.Enabled = true
       endif
       //Set quest progression of child quest items to a default value
       loop
         exitwhen i == questData.questItems.size
         set tempQuestItemData = questData.questItems[i]
-        call setQuestItemStatus(tempQuestItemData, QUEST_PROGRESS_INCOMPLETE, false)
+        call setQuestItemProgress(tempQuestItemData, QUEST_PROGRESS_INCOMPLETE, false)
         set i = i + 1
       endloop
     endmethod
 
-    method modWeight takes integer mod returns nothing
-      local Person affectedPerson = 0
-      if this.weight + mod < 0 then
-        call BJDebugMsg("ERROR: Attempted to reduce weight of Faction " + this.name + " to " + I2S(this.weight + mod)) 
+    method modWeight takes integer value returns nothing
+      if value < 0 then
+        call BJDebugMsg("ERROR: Attempted to reduce weight of Faction " + this.name + " to " + I2S(value)) 
         return
       endif
-      set this.weight = this.weight + mod
-      if PersonsByFaction[this] != 0 then
-        set affectedPerson = PersonsByFaction[this]
-      endif
-      call affectedPerson.team.modWeight(mod)
+      set this.weight = value
     endmethod
 
     method modObjectLimit takes integer id, integer limit returns nothing
@@ -114,9 +210,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
 
       //If a Person has this Faction, adjust their techtree as well
-      if PersonsByFaction[this] != 0 then
-        set affectedPerson = PersonsByFaction[this]
-        call affectedPerson.modObjectLimit(id, limit)
+      if this.Person != 0 then
+        call this.Person.ModObjectLimit(id, limit)
       endif
 
       if this.objectLimits[id] == 0 then
@@ -161,7 +256,145 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         call BJDebugMsg("ERROR: attempted to register already registered id " + I2S(id) + " to faction " + this.name)
       endif       
     endmethod
-    
+
+    //Any time the player loses the game. E.g. Frozen Throne loss, Kil'jaeden loss
+    method obliterate takes nothing returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u = null
+      local UnitType tempUnitType = 0
+
+      //Take away resources
+      call SetPlayerState(this.Player, PLAYER_STATE_RESOURCE_GOLD, 0)
+      call SetPlayerState(this.Player, PLAYER_STATE_RESOURCE_LUMBER, 0)
+
+      //Give all units to Neutral Victim
+      call GroupEnumUnitsOfPlayer(tempGroup, this.Player, null)
+      loop
+        set u = FirstOfGroup(tempGroup)
+        exitwhen u == null 
+        set tempUnitType = UnitType.ByHandle(u)           
+        if not tempUnitType.Meta then
+          call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+      endloop
+
+      //Cleanup
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
+    endmethod
+
+    private method distributeExperience takes nothing returns nothing
+      local integer i = 0
+      local group tempGroup = CreateGroup()
+      local unit u = null
+      local integer heroCount = 0
+
+      loop
+        exitwhen i == this.team.FactionCount
+        if this.team.GetFactionByIndex(i).Person != 0 then
+          call GroupEnumUnitsOfPlayer(tempGroup, this.team.GetFactionByIndex(i).Player, function IsUnitHeroEnum)
+          set heroCount = BlzGroupGetSize(tempGroup)
+          loop
+            set u = FirstOfGroup(tempGroup)
+            exitwhen u == null
+            call AddHeroXP(u, R2I((this.xp / (this.team.PlayerCount-1) / heroCount) * XP_TRANSFER_PERCENT), true)
+            call GroupRemoveUnit(tempGroup, u)
+          endloop
+        endif
+        set i = i + 1
+      endloop
+      set this.xp = 0
+
+      //Cleanup
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
+    endmethod
+
+    private method distributeResources takes nothing returns nothing
+      local integer i = 0
+      local Faction loopFaction
+      loop
+        exitwhen i == this.team.FactionCount
+        set loopFaction = this.team.GetFactionByIndex(i)
+        if loopFaction.Person != 0 then
+          set loopFaction.Gold = loopFaction.Gold + this.Gold / this.team.PlayerCount-1
+          set loopFaction.Lumber = loopFaction.Lumber + this.Lumber / this.team.PlayerCount-1
+        endif
+        set i = i + 1
+      endloop
+      set this.Gold = 0
+      set this.Lumber = 0
+    endmethod
+
+    private method distributeUnits takes nothing returns nothing
+      local group g = CreateGroup()
+      local unit u = null
+      local UnitType loopUnitType = 0
+      local force eligiblePlayers = this.Team.CreateForceFromPlayers()
+
+      call ForceRemovePlayer(eligiblePlayers, this.Player)
+      call GroupEnumUnitsOfPlayer(g, this.Player, null)
+
+      loop
+        set u = FirstOfGroup(g)
+        set loopUnitType = UnitType.ByHandle(u)
+        exitwhen u == null
+        //Refund gold and experience of heroes
+        if IsUnitType(u, UNIT_TYPE_HERO) == true then
+          call this.Person.addGold(HERO_COST)
+          set this.xp = this.xp + GetHeroXP(u)
+          //Subtract hero's starting XP from refunded XP
+          if Legend.ByHandle(u) != 0 then
+            set this.xp = this.xp - Legend.ByHandle(u).StartingXP
+          endif
+          call UnitDropAllItems(u)
+          call RemoveUnit(u)
+        //Refund gold and lumber of refundable units
+        elseif UnitType.ByHandle(u).Refund == true then
+          set this.Gold = this.Gold + loopUnitType.GoldCost * REFUND_PERCENT
+          set this.Lumber = this.Lumber + loopUnitType.LumberCost * REFUND_PERCENT
+          call UnitDropAllItems(u)
+          call RemoveUnit(u)
+        //Remove meta units entirely
+        elseif UnitType.ByHandle(u).Refund == true then
+          call RemoveUnit(u)
+        //Transfer the ownership of everything else
+        else
+          if this.Team.PlayerCount > 1 then
+            call SetUnitOwner(u, ForcePickRandomPlayer(eligiblePlayers), false)
+          else
+            call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
+          endif
+        endif
+        call GroupRemoveUnit(g, u)
+      endloop
+
+      //Cleanup
+      call DestroyForce(eligiblePlayers)
+      call DestroyGroup(g)
+      set eligiblePlayers = null
+      set g = null
+    endmethod
+
+    stub method OnLeave takes nothing returns nothing
+
+    endmethod
+
+    //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
+    method Leave takes nothing returns nothing
+      if team.PlayerCount > 1 then
+        call distributeUnits()
+        call distributeResources()
+        call distributeExperience()
+      else
+        call obliterate()
+      endif
+      set thistype.triggerFaction = this
+      call OnFactionGameLeave.fire()
+      call OnLeave()
+    endmethod 
+
     static method ByName takes string s returns thistype
       return thistype.factionsByName[s]
     endmethod
@@ -192,11 +425,18 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
     private static method onInit takes nothing returns nothing
       set Faction.factionsByName = StringTable.create()
+      set OnFactionTeamLeave = Event.create()
+      set OnFactionTeamJoin = Event.create()
+      set OnFactionGameLeave = Event.create()
     endmethod 
   endstruct
 
   function GetTriggerFaction takes nothing returns Faction
     return Faction.triggerFaction
+  endfunction
+
+  function GetTriggerFactionPrevTeam takes nothing returns Team
+    return Faction.triggerFactionPrevTeam
   endfunction
 
   private function OnInit takes nothing returns nothing

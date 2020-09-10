@@ -27,6 +27,8 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
   endglobals
   
   struct ControlPoint
+    private static thistype array byIndex
+    private static integer count = 0
     static thistype triggerControlPoint = 0
 
     static boolean initialized = false
@@ -35,16 +37,32 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
     
     real x
     real y
-    real value
+    real value = 0
     unit u
     player owner
-    
+
+    method operator X takes nothing returns real
+      return GetUnitX(this.u)
+    endmethod
+
+    method operator Y takes nothing returns real
+      return GetUnitY(this.u)
+    endmethod
+
+    method operator Unit takes nothing returns unit
+      return this.u
+    endmethod
+
+    method operator OwningPerson takes nothing returns Person
+      return Person.ByHandle(this.owner)
+    endmethod
+
     method changeOwner takes player p returns nothing
-      local Person person = Persons[GetPlayerId(this.owner)]
+      local Person person = Person.ByHandle(this.owner)
   
       if person != 0 then
-        call person.modIncome(this.value*-1)
-        call person.modControlPoints(-1)
+        set person.ControlPointValue = person.ControlPointValue - value
+        set person.ControlPointCount = person.ControlPointCount - 1
         call GroupRemoveUnit(person.cpGroup, this.u)
       endif
   
@@ -52,11 +70,11 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
       call OnControlPointLoss.fire()
 
       set this.owner = p
-      set person = Persons[GetPlayerId(this.owner)]
+      set person = Person.ByHandle(this.owner)
       
       if person != 0 then
-        call person.modIncome(this.value)
-        call person.modControlPoints(1)
+        set person.ControlPointValue = person.ControlPointValue + value
+        set person.ControlPointCount = person.ControlPointCount + 1
         call GroupAddUnit(person.cpGroup, this.u)
       endif
 
@@ -64,6 +82,19 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
       call OnControlPointOwnerChange.fire()
     endmethod
     
+    static method GetHighestValueCP takes Person person returns thistype
+      local integer i = 0
+      local ControlPoint highestValueCP = 0
+      loop
+      exitwhen i == thistype.count
+        if thistype.byIndex[i].OwningPerson == person and thistype.byIndex[i].value > highestValueCP.value then
+          set highestValueCP = thistype.byIndex[i]
+        endif
+        set i = i + 1
+      endloop
+      return highestValueCP
+    endmethod
+
     static method initializeCP takes nothing returns nothing
       local unit u = GetEnumUnit()
       local integer i = 0
@@ -101,7 +132,7 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
 
     static method create takes unit u, real value returns ControlPoint
       local ControlPoint this = ControlPoint.allocate()
-      local Person person = Persons[GetPlayerId(GetOwningPlayer(u))]
+      local Person person = Person.ByHandle(GetOwningPlayer(u))
       
       set this.x = GetUnitX(u)
       set this.y = GetUnitY(u)
@@ -113,17 +144,20 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
       
       call GroupAddUnit(ControlPoints,u)
       call GroupAddUnit(person.cpGroup, u)
-      
-      call person.modIncome(value)
-      call person.modControlPoints(1)
+
+      set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue + this.value
+      set OwningPerson.ControlPointCount = OwningPerson.ControlPointCount + 1
+
+      set thistype.byIndex[thistype.count] = this
+      set thistype.count = count + 1
       
       return this           
     endmethod        
     
     method destroy takes nothing returns nothing
       call RemoveUnit(this.u)
-      call Persons[GetPlayerId(this.owner)].modIncome(this.value*-1)
-      call Persons[GetPlayerId(this.owner)].modControlPoints(-1)
+      set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue - this.value*-1
+      set OwningPerson.ControlPointCount = OwningPerson.ControlPointCount - 1
       call this.deallocate()
     endmethod  
   endstruct

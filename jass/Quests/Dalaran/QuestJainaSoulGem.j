@@ -13,13 +13,13 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
     if GetUnitTypeId(GetTriggerUnit()) == 'Hjai' and not IsUnitAliveBJ(gg_unit_u012_1149) then
       set tempArtifact = Artifact.artifactsByType['gsou']
       call UnitAddItem(GetTriggerUnit(), tempArtifact.item)
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)   
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)   
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
-    call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_DESTROY, QUEST_PROGRESS_COMPLETE, true)   
+    call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_DESTROY, QUEST_PROGRESS_COMPLETE, true)   
   endfunction
 
   private function OnInit takes nothing returns nothing

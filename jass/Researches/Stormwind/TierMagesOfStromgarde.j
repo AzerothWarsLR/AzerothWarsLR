@@ -6,8 +6,8 @@ library TierMagesOfStromgarde initializer OnInit requires StormwindConfig, Math
   endglobals
 
   private function EnablePortals takes nothing returns nothing
-    local unit waygateA = CreateUnit(FACTION_STORMWIND.Person.p, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_11949), GetDestructableY(gg_dest_B017_11949), 94.14)
-    local unit waygateB = CreateUnit(FACTION_STORMWIND.Person.p, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_8051), GetDestructableY(gg_dest_B017_8051), 91.71)
+    local unit waygateA = CreateUnit(FACTION_STORMWIND.Player, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_11949), GetDestructableY(gg_dest_B017_11949), 94.14)
+    local unit waygateB = CreateUnit(FACTION_STORMWIND.Player, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_8051), GetDestructableY(gg_dest_B017_8051), 91.71)
     call SetUnitPathing(waygateA, false)
     call SetUnitPathing(waygateB, false)
     call SetUnitPosition(waygateA, GetDestructableX(gg_dest_B017_11949), GetDestructableY(gg_dest_B017_11949))

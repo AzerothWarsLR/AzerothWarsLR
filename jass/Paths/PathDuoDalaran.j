@@ -2,13 +2,12 @@ library PathDuoDalaran initializer OnInit requires DalaranConfig, Display
 
   globals
     private constant integer RESEARCH_ID_STEEL = 'R03O'
-    private constant integer RESEARCH_ID_STONE = 'R03S'
   endglobals
 
   private function Research takes nothing returns nothing
     local player tempPlayer
-    if GetResearched() == RESEARCH_ID_STEEL or GetResearched() == RESEARCH_ID_STONE then
-      set tempPlayer = FACTION_DALARAN.Person.p
+    if GetResearched() == RESEARCH_ID_STEEL then
+      set tempPlayer = FACTION_DALARAN.Player
       call FACTION_DALARAN.modObjectLimit('h06F', UNLIMITED)   //Kul Tiras Rifleman
       call FACTION_DALARAN.modObjectLimit('h034', -UNLIMITED)  //Harpooner
       call FACTION_DALARAN.modObjectLimit('o01A', 6)           //Naval Cannon  

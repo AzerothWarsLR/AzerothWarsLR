@@ -22,11 +22,11 @@ library IncompatibleResearchSet initializer OnInit
 
         method disableResearches takes nothing returns nothing
             local integer i = 0
-            local Person p = Persons[GetPlayerId(GetTriggerPlayer())]
+            local Person p = Person.ByHandle(GetTriggerPlayer())
             loop
             exitwhen this.researches[i] == 0
                 if this.researches[i] != GetResearched() then
-                    call p.modObjectLimit(this.researches[i], -BIG_NUMBER)
+                    call p.ModObjectLimit(this.researches[i], -BIG_NUMBER)
                 endif
                 set i = i + 1
             endloop
@@ -34,11 +34,11 @@ library IncompatibleResearchSet initializer OnInit
         
         method enableResearches takes nothing returns nothing
             local integer i = 0
-            local Person p = Persons[GetPlayerId(GetTriggerPlayer())]
+            local Person p = Person.ByHandle(GetTriggerPlayer())
             loop
             exitwhen this.researches[i] == 0
                 if this.researches[i] != GetResearched() then
-                    call p.modObjectLimit(this.researches[i], BIG_NUMBER)
+                    call p.ModObjectLimit(this.researches[i], BIG_NUMBER)
                 endif
                 set i = i + 1
             endloop        

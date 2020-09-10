@@ -7,7 +7,7 @@ library NorthrendVision initializer OnInit requires ScourgeConfig
   endglobals
 
   private function Enable takes nothing returns nothing
-    local player whichPlayer = FACTION_SCOURGE.Person.p
+    local player whichPlayer = FACTION_SCOURGE.Player
     local integer i = 0
     set ScourgeFogModifiers[0] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Storm_Peaks, true, true)
     set ScourgeFogModifiers[1] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Central_Northrend, true, true)

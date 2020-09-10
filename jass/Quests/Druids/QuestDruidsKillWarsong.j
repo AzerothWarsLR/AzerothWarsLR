@@ -8,18 +8,18 @@ library DruidsKillWarsong initializer OnInit requires DruidsConfig, LegendWarson
 
   private function TryComplete takes nothing returns nothing
     if FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_STONEMAUL) == QUEST_PROGRESS_COMPLETE and FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_ENCAMPMENT) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_DRUIDS.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Person.p, 'e012', "You can now train Siege Ancients at your Tree of Eternity, Tree of Ages and from your capitals.")
+      call SetPlayerTechResearched(FACTION_DRUIDS.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Player, 'e012', "You can now train Siege Ancients at your Tree of Eternity, Tree of Ages and from your capitals.")
     endif
   endfunction
 
   private function StonemaulDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function EncampmentDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_ENCAMPMENT, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_ENCAMPMENT, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

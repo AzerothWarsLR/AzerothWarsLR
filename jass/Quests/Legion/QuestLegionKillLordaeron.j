@@ -14,17 +14,17 @@ library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, Legen
   endfunction
 
   private function CapitalPalaceDies takes nothing returns nothing
-    call FACTION_LEGION.setQuestItemStatus(QUESTITEM_CAPITALPALACE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_LEGION.setQuestItemProgress(QUESTITEM_CAPITALPALACE, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function StratholmeDies takes nothing returns nothing
-    call FACTION_LEGION.setQuestItemStatus(QUESTITEM_STRATHOLME, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_LEGION.setQuestItemProgress(QUESTITEM_STRATHOLME, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function TyrsHandDies takes nothing returns nothing
-    call FACTION_LEGION.setQuestItemStatus(QUESTITEM_TYRSHAND, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_LEGION.setQuestItemProgress(QUESTITEM_TYRSHAND, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

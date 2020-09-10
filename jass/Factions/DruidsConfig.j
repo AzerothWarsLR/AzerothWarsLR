@@ -1,16 +1,17 @@
 
-library DruidsConfig initializer OnInit requires Faction
+library DruidsConfig initializer OnInit requires Faction, TeamConfig
 
   globals
-    Faction FACTION_DRUIDS
+    LiegeFaction FACTION_DRUIDS
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
+    set FACTION_DRUIDS = LiegeFaction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
     set f.VictoryMusic = "NightElfVictory"
+    set f.Team = TEAM_NIGHT_ELVES
 
     call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
     call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages

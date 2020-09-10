@@ -6,17 +6,17 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-    local Person quelPerson = PersonsByFaction[FACTION_QUELTHALAS]
+    local Person triggerPerson = Person.ByHandle(GetOwningPlayer(GetTriggerUnit()))
+    local Person quelPerson = FACTION_QUELTHALAS.Person
     local unit u
-    if triggerPerson.team.containsPlayer(quelPerson.p) then
+    if triggerPerson.Faction.Team.ContainsPlayer(quelPerson.Player) then
       loop
         set u = FirstOfGroup(udg_QuelDanilLodge)
         exitwhen u == null
-        call UnitRescue(u, quelPerson.p)
+        call UnitRescue(u, quelPerson.Player)
         call GroupRemoveUnit(udg_QuelDanilLodge, u)
       endloop
-      call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_QUELTHALAS.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
       //Cleanup
       call DestroyGroup(udg_QuelDanilLodge)
       call DestroyTrigger(GetTriggeringTrigger())

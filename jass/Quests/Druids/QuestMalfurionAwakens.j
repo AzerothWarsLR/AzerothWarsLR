@@ -15,17 +15,17 @@ library QuestMalfurionAwakens initializer OnInit requires QuestData, DruidsConfi
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    local Person druidsPerson = PersonsByFaction[FACTION_DRUIDS]
-    local player druidsPlayer = druidsPerson.p
+    local Person druidsPerson = FACTION_DRUIDS.Person
+    local player druidsPlayer = druidsPerson.Player
     local Person triggerPerson = 0
     local Artifact tempArtifact = 0
 
     if UnitHasItemOfTypeBJ(GetTriggerUnit(), HORN_OF_CENARIUS) and IsUnitAliveBJ(gg_unit_nbwd_0737) then
-      set triggerPerson = Persons[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]
-      if triggerPerson.team.containsPlayer(druidsPerson.p) then
-        call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+      set triggerPerson = Person.ByHandle(GetOwningPlayer(GetTriggerUnit()))
+      if triggerPerson.Faction.Team.ContainsPlayer(druidsPerson.Player) then
+        call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
         if LEGEND_MALFURION.Unit == null then
-          call LEGEND_MALFURION.Spawn(druidsPerson.p, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)
+          call LEGEND_MALFURION.Spawn(druidsPerson.Player, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)
           call SetHeroLevel(LEGEND_MALFURION.Unit, 3, false)
           call UnitAddItem(LEGEND_MALFURION.Unit, ARTIFACT_GHANIR.item)
         else
@@ -40,14 +40,14 @@ library QuestMalfurionAwakens initializer OnInit requires QuestData, DruidsConfi
   endfunction
 
   private function PickupItem takes nothing returns nothing
-    if GetItemTypeId(GetTriggerArtifact().item) == HORN_OF_CENARIUS and GetTriggerArtifact().owningPerson == FACTION_DRUIDS.whichPerson then
-      call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_ARTIFACT, QUEST_PROGRESS_COMPLETE, true)
+    if GetItemTypeId(GetTriggerArtifact().item) == HORN_OF_CENARIUS and GetTriggerArtifact().owningPerson == FACTION_DRUIDS.Person then
+      call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_ARTIFACT, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
     if not Complete then
-      call FACTION_DRUIDS.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
+      call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
     endif
   endfunction
 

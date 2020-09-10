@@ -13,12 +13,12 @@ library SentinelsKillWarsong initializer OnInit requires SentinelsConfig, Legend
   endfunction
 
   private function StonemaulDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function EncampmentDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemStatus(QUESTITEM_ENCAMPMENT, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_ENCAMPMENT, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

@@ -6,12 +6,12 @@ library LimitedCommand initializer OnInit requires Team, Persons, Faction
   endglobals
 
 	private function Actions takes nothing returns nothing
-    local Person triggerPerson = Persons[GetPlayerId(GetTriggerPlayer())]
-    local Faction triggerFaction = triggerPerson.faction
+    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
+    local Faction triggerFaction = triggerPerson.Faction
     local group tempGroup = CreateGroup()
     local integer i = 0
     local unit u
-    call GroupEnumUnitsOfPlayer(tempGroup, triggerPerson.p, null)
+    call GroupEnumUnitsOfPlayer(tempGroup, triggerPerson.Player, null)
 
     loop
       set u = FirstOfGroup(tempGroup)
@@ -20,7 +20,7 @@ library LimitedCommand initializer OnInit requires Team, Persons, Faction
       loop
         exitwhen i == triggerFaction.objectCount
         if GetUnitTypeId(u) == triggerFaction.objectList[i] and triggerFaction.objectLimits[triggerFaction.objectList[i]] < UNLIMITED then
-          call PingMinimapForPlayer(triggerPerson.p, GetUnitX(u), GetUnitY(u), 5.)
+          call PingMinimapForPlayer(triggerPerson.Player, GetUnitX(u), GetUnitY(u), 5.)
         endif
         set i = i + 1
       endloop

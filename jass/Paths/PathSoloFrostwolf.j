@@ -7,7 +7,7 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
   private function Research takes nothing returns nothing
     local player frostwolfPlayer
     if GetResearched() == RESEARCH_ID then
-      set frostwolfPlayer = FACTION_FROSTWOLF.Person.p
+      set frostwolfPlayer = FACTION_FROSTWOLF.Player
       call DisplaySoloPath(FACTION_FROSTWOLF, "Thrall has reformed the Horde of Kalimdor, and has united the various races into a uniform force.")
       call LEGEND_GAZLOWE.Spawn(frostwolfPlayer, GetRectCenterX(gg_rct_Gazlowe), GetRectCenterY(gg_rct_Gazlowe), 235)
       call UnitDetermineLevel(LEGEND_GAZLOWE.Unit, 1.00)
@@ -31,13 +31,13 @@ library PathSoloFrostwolf initializer OnInit requires FrostwolfConfig, LegendFro
       call SetPlayerTechResearched(frostwolfPlayer, 'Rowd', 2)
       call SetPlayerTechResearched(frostwolfPlayer, 'Rost', 2)
       call SetPlayerTechResearched(frostwolfPlayer, 'Rowt', 2)
-      call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R058', 1)
-      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Person.p, 'R01O', 1)
-      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Person.p, 'R02R', 1)
-      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Person.p, 'R02T', 1)
-      call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R01O', 1)
-      call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R02R', 1)
-      call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, 'R02T', 1)
+      call SetPlayerTechResearched(FACTION_FROSTWOLF.Player, 'R058', 1)
+      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Player, 'R01O', 1)
+      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Player, 'R02R', 1)
+      call SetPlayerTechMaxAllowed(FACTION_FROSTWOLF.Player, 'R02T', 1)
+      call SetPlayerTechResearched(FACTION_FROSTWOLF.Player, 'R01O', 1)
+      call SetPlayerTechResearched(FACTION_FROSTWOLF.Player, 'R02R', 1)
+      call SetPlayerTechResearched(FACTION_FROSTWOLF.Player, 'R02T', 1)
 
     endif
   endfunction

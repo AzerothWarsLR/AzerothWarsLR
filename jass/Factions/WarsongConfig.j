@@ -1,14 +1,15 @@
-library WarsongConfig initializer OnInit requires Faction
+library WarsongConfig initializer OnInit requires Faction, TeamConfig
   globals
-    Faction FACTION_WARSONG
+    LiegeFaction FACTION_WARSONG
   endglobals
 
   private function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp", 3)
+    set FACTION_WARSONG = LiegeFaction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp", 3)
     set f = FACTION_WARSONG
     set f.VictoryMusic = "OrcVictory"
+    set f.Team = TEAM_HORDE
 
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

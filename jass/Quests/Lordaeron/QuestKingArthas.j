@@ -15,13 +15,13 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
       if not UnitAlive(gg_unit_u000_0649) then
         set LEGEND_ARTHAS.UnitType = 'Harf'
          //Give Crown of Lordaeron
-        if ARTIFACT_CROWNLORDAERON.status < ARTIFACT_STATUS_SPECIAL and ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.whichPerson then
+        if ARTIFACT_CROWNLORDAERON.status < ARTIFACT_STATUS_SPECIAL and ARTIFACT_CROWNLORDAERON.owningPerson == FACTION_LORDAERON.Person then
           call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
           call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
         endif
 
         //Update quest
-        call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_VISIT, QUEST_PROGRESS_COMPLETE, true)
+        call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_KINGARTHAS_VISIT, QUEST_PROGRESS_COMPLETE, true)
         
         //Kill Terenas
         call KillUnit(gg_unit_nemi_0019)
@@ -35,7 +35,7 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
   endfunction    
 
   private function FrozenThroneDies takes nothing returns nothing
-    call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_DESTROY, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_KINGARTHAS_DESTROY, QUEST_PROGRESS_COMPLETE, true)
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
 
@@ -49,7 +49,7 @@ library QuestKingArthas initializer OnInit requires QuestData, Artifact, General
     set QUESTITEM_KINGARTHAS_DESTROY = QUEST_KINGARTHAS.addItem("Destroy the Frozen Throne")
     set QUESTITEM_KINGARTHAS_VISIT = QUEST_KINGARTHAS.addItem("Bring Arthas to the Frozen Throne")
     call FACTION_LORDAERON.addQuest(QUEST_KINGARTHAS) 
-    call FACTION_LORDAERON.setQuestItemStatus(QUESTITEM_KINGARTHAS_PROTECT, QUEST_PROGRESS_COMPLETE, false)
+    call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_KINGARTHAS_PROTECT, QUEST_PROGRESS_COMPLETE, false)
     set FACTION_LORDAERON.StartingQuest = QUEST_KINGARTHAS
 
     set trig = CreateTrigger()

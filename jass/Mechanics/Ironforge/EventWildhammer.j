@@ -11,12 +11,12 @@ library EventWildhammer initializer OnInit requires IronforgeConfig, LegendIronf
     local unit u
 
     if GetSpellAbilityId() == 'A0UC' then
-      call LEGEND_FALSTAD.Spawn(FACTION_IRONFORGE.Person.p, 14081, 4580, 35)
+      call LEGEND_FALSTAD.Spawn(FACTION_IRONFORGE.Player, 14081, 4580, 35)
       call SetHeroXP(LEGEND_FALSTAD.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
       call FACTION_IRONFORGE.modObjectLimit('n04F', UNLIMITED)      //Wildhammer War Golem
       call FACTION_IRONFORGE.modObjectLimit('hgry', 3)              //Gryphon Rider
-      call SetPlayerTechResearched(FACTION_IRONFORGE.Person.p, RESEARCH, 1)
-      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Person.p, 'A0UC', false)     
+      call SetPlayerTechResearched(FACTION_IRONFORGE.Player, RESEARCH, 1)
+      call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Player, 'A0UC', false)     
 
       //Remove pathing blockers obstructing Aerie Peak
       call RemoveDestructable( gg_dest_YTpc_7559 )
@@ -32,7 +32,7 @@ library EventWildhammer initializer OnInit requires IronforgeConfig, LegendIronf
         set u = FirstOfGroup(tempGroup)
         exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, FACTION_IRONFORGE.Person.p)
+          call UnitRescue(u, FACTION_IRONFORGE.Player)
         endif
         call GroupRemoveUnit(tempGroup, u)
       endloop

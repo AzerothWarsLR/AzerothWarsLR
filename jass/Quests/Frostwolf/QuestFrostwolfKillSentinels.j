@@ -13,12 +13,12 @@ library FrostwolfKillSentinels initializer OnInit requires FrostwolfConfig, Lege
   endfunction
 
   private function AuberdineDies takes nothing returns nothing
-    call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_AUBERDINE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_AUBERDINE, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function FeathermoonDies takes nothing returns nothing
-    call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 

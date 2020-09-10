@@ -6,10 +6,10 @@ library WarsongKillDruids initializer OnInit requires WarsongConfig, LegendDruid
   endglobals
 
   private function NodrassilCaptured takes nothing returns nothing
-    if FACTION_WARSONG.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) then
-      call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_NORDRASSIL, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_WARSONG.Person.p, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_WARSONG.Person.p, RESEARCH_ID, 1)
+    if FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then
+      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_NORDRASSIL, QUEST_PROGRESS_COMPLETE, true)
+      call SetPlayerTechResearched(FACTION_WARSONG.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(FACTION_WARSONG.Player, RESEARCH_ID, 1)
     endif
   endfunction
 

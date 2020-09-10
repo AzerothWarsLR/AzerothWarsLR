@@ -6,9 +6,9 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    if LEGEND_THRALL.Unit == GetTriggerUnit() and FACTION_FROSTWOLF.Person.Team.containsPlayer(LEGEND_NORDRASSIL.OwningPlayer) then
+    if LEGEND_THRALL.Unit == GetTriggerUnit() and FACTION_FROSTWOLF.Team.ContainsPlayer(LEGEND_NORDRASSIL.OwningPlayer) then
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_DREKTHARSSPELLBOOK.item)
-      call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction

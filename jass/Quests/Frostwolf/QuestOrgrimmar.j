@@ -18,9 +18,9 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
     if FACTION_FROSTWOLF.Person != 0 then                 
-      set recipient = FACTION_FROSTWOLF.Person.p
+      set recipient = FACTION_FROSTWOLF.Player
     elseif FACTION_WARSONG.Person != 0 then
-      set recipient = FACTION_WARSONG.Person.p
+      set recipient = FACTION_WARSONG.Player
     endif
 
     //Transfer all Neutral Passive units in Orgrimmar to one of the above factions
@@ -39,8 +39,8 @@ library QuestOrgrimmar initializer OnInit requires QuestData, Persons, WarsongCo
     call AdjustPlayerStateBJ(GOLD, recipient, PLAYER_STATE_RESOURCE_GOLD )
     call AdjustPlayerStateBJ(LUMBER, recipient, PLAYER_STATE_RESOURCE_LUMBER )  
     //Complete quests
-    call FACTION_FROSTWOLF.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-    call SetPlayerTechResearched(FACTION_FROSTWOLF.Person.p, RESEARCH_ID, 1)
+    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_FROSTWOLF.Player, RESEARCH_ID, 1)
     //Cleanup
     call DestroyGroup (tempGroup)
     set recipient = null

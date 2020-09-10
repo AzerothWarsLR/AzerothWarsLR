@@ -10,14 +10,14 @@ library QuestConstructionSites initializer OnInit requires QuestData, StormwindC
 
   private function TimerEnds takes nothing returns nothing
     if FACTION_STORMWIND.Person != 0 then
-      call FACTION_STORMWIND.setQuestItemStatus(QUESTITEM_WAIT, QUEST_PROGRESS_COMPLETE, true)
-      if GetLocalPlayer() == FACTION_STORMWIND.Person.p then
+      call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_WAIT, QUEST_PROGRESS_COMPLETE, true)
+      if GetLocalPlayer() == FACTION_STORMWIND.Player then
         call PingMinimap(GetUnitX(gg_unit_h053_1121), GetUnitY(gg_unit_h053_1121), 5)
         call PingMinimap(GetUnitX(gg_unit_h055_0035), GetUnitY(gg_unit_h055_0035), 5)
       endif
-      call SetPlayerTechResearched(FACTION_STORMWIND.Person.p, RESEARCH_ID, 1)
+      call SetPlayerTechResearched(FACTION_STORMWIND.Player, RESEARCH_ID, 1)
     else
-      call FACTION_STORMWIND.setQuestItemStatus(QUESTITEM_WAIT, QUEST_PROGRESS_UNDISCOVERED, false)
+      call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_WAIT, QUEST_PROGRESS_UNDISCOVERED, false)
     endif
   endfunction
 

@@ -3,25 +3,23 @@ library Income initializer OnInit requires Persons
   //**CONFIG**
   globals
     public constant real PERIOD = 1.           //Note that changing this will not change the amount of gold players receive over time
-    public constant real OVERWEIGHT_PENALTY = 0.15  //Percentage of income lost per Faction weight over the Team's weight limit
   endglobals
   //**ENDCONFIG
 
   private function AddPersonIncome takes Person whichPerson returns nothing
-    local real goldPerSecond = whichPerson.income * PERIOD / 60
-    local real teamMult = (1 - (RMaxBJ(I2R(whichPerson.team.weight - whichPerson.team.maxWeight), 0))*OVERWEIGHT_PENALTY)
-    local real upkeepMult = (100.0 - GetPlayerState(whichPerson.p, PLAYER_STATE_GOLD_UPKEEP_RATE))/100.0
-    call whichPerson.addGold(goldPerSecond * teamMult * upkeepMult)
+    local real goldPerSecond = whichPerson.Faction.Income * PERIOD / 60
+    local Faction personFaction = whichPerson.Faction
+    call whichPerson.addGold(goldPerSecond)
   endfunction
 
   private function IncomeTimer takes nothing returns nothing
     local integer i = 0
+    local Person loopPerson
     loop
     exitwhen i > MAX_PLAYERS
-      if not (Persons[i] == 0) then
-        if Persons[i].income > 0 then
-          call AddPersonIncome(Persons[i])
-        endif
+      set loopPerson = Person.ById(i)
+      if loopPerson != 0 then
+        call AddPersonIncome(loopPerson)
       endif
       set i = i + 1
     endloop

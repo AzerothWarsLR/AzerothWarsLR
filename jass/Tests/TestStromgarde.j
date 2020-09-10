@@ -1,16 +1,18 @@
-library TestStromgarde initializer OnInit requires Test, StormwindConfig, LegendStormwind
+//Moves a Stormwind hero to Stromgarde and expects the Stromgarde quest to be completed.
 
-  private function TestFunction takes nothing returns boolean
-    local unit testUnit = CreateUnit(FACTION_STORMWIND.Person.p, 'Hpal', 0, 0, 0)
-    call SetUnitPosition(testUnit, GetRectCenterX(gg_rct_Stromgarde), GetRectCenterY(gg_rct_Stromgarde))
-    if GetOwningPlayer(gg_unit_H00Z_1936) == FACTION_STORMWIND.Person.p then
-      return true
-    endif
-    return false
-  endfunction
+library TestStromgarde requires Test, StormwindConfig, LegendStormwind
 
-  private function OnInit takes nothing returns nothing
-    local Test newTest = Test.create("TestStromgarde", TestFunction)
-  endfunction
+  struct TestStromgarde extends Test
+    private method Run takes nothing returns nothing
+      local unit testUnit = CreateUnit(FACTION_STORMWIND.Player, 'Hpal', 0, 0, 0)
+      call SetUnitPosition(testUnit, GetRectCenterX(gg_rct_Stromgarde), GetRectCenterY(gg_rct_Stromgarde))
+      call RemoveUnit(testUnit)
+      call this.Assert(GetOwningPlayer(gg_unit_H00Z_1936) == FACTION_STORMWIND.Player, "Expected Danath Trollbane to be owned by Stormwind player")
+    endmethod
+
+    private static method onInit takes nothing returns nothing
+      call thistype.create("stromgarde")
+    endmethod
+  endstruct
 
 endlibrary

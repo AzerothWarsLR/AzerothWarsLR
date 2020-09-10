@@ -4,15 +4,17 @@ library CleanPersons initializer OnInit requires Persons, TestSafety
 
   private function Actions takes nothing returns nothing
     local integer i = 0
+    local Person loopPerson = 0
 
     if not AreCheatsActive then
       loop
       exitwhen i > MAX_PLAYERS
-        if Persons[i] != 0 and GetPlayerSlotState(Persons[i].p) != PLAYER_SLOT_STATE_PLAYING then
-          call Persons[i].leave()
-          call Persons[i].setFaction(0)
-          call Persons[i].setTeam(0)
-          call Persons[i].destroy()
+        set loopPerson = Person.ById(i)
+        if loopPerson != 0 and GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_PLAYING then
+          call loopPerson.Faction.Leave()
+          set loopPerson.Faction.Team = 0
+          set loopPerson.Faction = 0
+          call loopPerson.destroy()
         endif
         set i = i + 1
       endloop

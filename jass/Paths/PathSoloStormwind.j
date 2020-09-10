@@ -7,7 +7,7 @@ library PathSoloStormwind initializer OnInit requires StormwindConfig, Display
   private function Research takes nothing returns nothing
     local player tempPlayer
     if GetResearched() == RESEARCH_ID then
-      set tempPlayer = FACTION_STORMWIND.Person.p
+      set tempPlayer = FACTION_STORMWIND.Player
       call FACTION_STORMWIND.modWeight(3)
       call LEGEND_KHADGAR.Spawn(tempPlayer, GetRectCenterX(gg_rct_Khadgar), GetRectCenterY(gg_rct_Khadgar), 0)
       call UnitDetermineLevel(LEGEND_KHADGAR.Unit, 1.00)

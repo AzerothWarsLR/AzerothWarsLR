@@ -16,11 +16,11 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
     local unit u
     local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
     set Completed = true
-    if FACTION_DALARAN.whichPerson != 0 then
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-      set recipient = FACTION_DALARAN.whichPerson.p
+    if FACTION_DALARAN.Person != 0 then
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+      set recipient = FACTION_DALARAN.Player
     else
-      call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
+      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_FAILED, true)
     endif
     loop
       set u = FirstOfGroup(TheramoreUnits)
@@ -33,14 +33,14 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
   endfunction
 
   private function EntersRegion takes nothing returns nothing
-    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) and GetOwningPerson(GetTriggerUnit()).faction == FACTION_DALARAN and TimerEnded and not Completed then
+    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) and Person.ByHandle(GetOwningPlayer(GetTriggerUnit())).Faction == FACTION_DALARAN and TimerEnded and not Completed then
       call Complete()
     endif
   endfunction
 
   private function TimerEnds takes nothing returns nothing
     set TimerEnded = true
-    call FACTION_DALARAN.setQuestItemStatus(QUESTITEM_TIME, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_TIME, QUEST_PROGRESS_COMPLETE, true)
   endfunction
 
   private function OnPersonFactionChanged takes nothing returns nothing

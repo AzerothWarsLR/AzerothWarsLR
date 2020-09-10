@@ -2,7 +2,7 @@ library RiteOfStrength initializer OnInit requires WarsongConfig
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R02Q' then
-      call CreateUnit(FACTION_WARSONG.Person.p, 'n065', -10448, -9078, 237)
+      call CreateUnit(FACTION_WARSONG.Player, 'n065', -10448, -9078, 237)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction

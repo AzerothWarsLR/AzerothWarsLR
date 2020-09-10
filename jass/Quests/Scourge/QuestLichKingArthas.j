@@ -23,14 +23,14 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_LIFE))
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_MANA))
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_GOTHRONE, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_LICHKINGARTHAS_GOTHRONE, QUEST_PROGRESS_COMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 
   private function UnitGainsLevel takes nothing returns nothing
     if LEGEND_ARTHAS.OwningFaction == FACTION_SCOURGE and GetTriggerUnit() == LEGEND_ARTHAS.Unit and GetHeroLevel(GetTriggerUnit()) >= LEVEL_REQUIREMENT then
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_LICHKINGARTHAS_LEVELARTHAS, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_LICHKINGARTHAS_LEVELARTHAS, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction
 

@@ -33,7 +33,7 @@ library ScoreVictory initializer OnInit requires Score, Victory
     loop
       exitwhen i == MAX_PLAYERS
       if  SCORE_LATE.Get(Player(i)) != 0 then
-        if not GetVictoriousTeam().containsPlayer(Player(i)) then
+        if not GetVictoriousTeam().ContainsPlayer(Player(i)) then
           set totalLoserElo = totalLoserElo + SCORE_LATE.Get(Player(i))
           set totalLoserCount = totalLoserCount + 1
         else
@@ -50,7 +50,7 @@ library ScoreVictory initializer OnInit requires Score, Victory
     set i = 0
     loop
       exitwhen i == MAX_PLAYERS
-      if GetVictoriousTeam().containsPlayer(Player(i)) then
+      if GetVictoriousTeam().ContainsPlayer(Player(i)) then
         call SCORE_LATE.Set(Player(i), Elo_DetermineRating(averageAllyElo, averageLoserElo, true) * ((PlayersWithLateEloCount() - AVERAGE_PLAYERS_ON_STARTING_TEAM) / AVERAGE_PLAYERS_ON_STARTING_TEAM))
       endif
       set i = i + 1

@@ -1,14 +1,15 @@
+//Displays each Faction's starting quest after the cinematic phase ends
 library StartingQuestPopup initializer OnInit requires Faction
-
-  //Displays each Faction's starting quest after the cinematic phase ends
 
   private function Actions takes nothing returns nothing
     local integer i = 0
+    local Person loopPerson
     loop
     exitwhen i > MAX_PLAYERS
-      if Persons[i].Faction.StartingQuest != 0 then
-        if GetLocalPlayer() == Persons[i].p then
-          call Persons[i].Faction.StartingQuest.displayDiscovered()
+      set loopPerson = Person.ById(i)
+      if loopPerson.Faction.StartingQuest != 0 then
+        if GetLocalPlayer() == loopPerson.Player then
+          call loopPerson.Faction.StartingQuest.displayDiscovered()
         endif
       endif
       set i = i + 1

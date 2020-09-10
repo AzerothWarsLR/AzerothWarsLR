@@ -7,12 +7,12 @@ library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig
 
   private function Dies takes nothing returns nothing
     if LEGEND_CENARIUS.Unit != null and GetTriggerUnit() == LEGEND_CENARIUS.Unit and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL) != QUEST_PROGRESS_COMPLETE then 
-      if FACTION_WARSONG.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
+      if FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
         call AddHeroXP(LEGEND_GROM.Unit, 2000, true)
         call AddHeroAttributes(LEGEND_GROM.Unit, 5, 5, 5)
-        call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+        call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       else
-        call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
+        call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
       endif
     endif
   endfunction

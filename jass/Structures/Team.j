@@ -1,4 +1,4 @@
-library Team initializer OnInit requires Table, Event, Persons
+library Team initializer OnInit requires Table, Event, Persons, Set
   globals
     private integer DEFAULT_MAX_WEIGHT = 6  //All Teams have this much maximum weight
 
@@ -8,152 +8,187 @@ library Team initializer OnInit requires Table, Event, Persons
   endglobals
 
   struct Team     
-    static StringTable teamsByName
-    readonly static Table teamsByIndex
-    readonly static integer teamCount = 0
-    private static player enumPlayer
+    readonly static StringTable teamsByName
+    private static Table teamsByIndex
+    private static integer teamCount = 0
     readonly static thistype triggerTeam = 0
-    
-    readonly string name = null
-    readonly string icon = null
-    readonly force players = null
-    readonly force invitees = null                    //Players that have been invited to join this Team
-    readonly player array playerArray[MAX_PLAYERS]    //Just a different way of storing "players". Indexed by player number
-    readonly integer size = 0
-    readonly Faction array factions[10]       //These are the Factions that can join this team using a TeamButton
-    readonly integer factionCount = 0
-    readonly integer weight //The combined weight of all Factions in this Team
-    readonly integer maxWeight //When the Faction has more weight than this, it begins to incur penalties
 
-    //For allying everybody in a team when a player leaves, called by addPlayer
-    private static method enumAlly takes nothing returns nothing
-      call SetPlayerAllianceStateBJ( thistype.enumPlayer, GetEnumPlayer(), bj_ALLIANCE_ALLIED_VISION )
-      call SetPlayerAllianceStateBJ( GetEnumPlayer(), thistype.enumPlayer, bj_ALLIANCE_ALLIED_VISION )    
-    endmethod
-    
-    //For unallying everybody in a team when a player leaves, called by removePlayer
-    private static method enumUnally takes nothing returns nothing
-      call SetPlayerAllianceStateBJ( thistype.enumPlayer, GetEnumPlayer(), bj_ALLIANCE_UNALLIED )
-      call SetPlayerAllianceStateBJ( GetEnumPlayer(), thistype.enumPlayer, bj_ALLIANCE_UNALLIED )            
+    private string name = null
+    private Set invitees //Factions invited to join this Team
+    private Set factions
+
+    method operator Name takes nothing returns string
+      return this.name
     endmethod
 
-    method addFaction takes Faction faction returns nothing
-      set this.factions[factionCount] = faction
-      set this.factionCount = this.factionCount + 1
+    method operator FactionCount takes nothing returns integer
+      return this.factions.size
     endmethod
 
-    method getFactionBySlot takes integer slot returns Faction
-      return this.factions[slot]
+    //Only includes filled Factions
+    method operator PlayerCount takes nothing returns integer
+      local integer i = 0
+      local integer total = 0
+      loop
+        exitwhen i == factions.size
+        if Faction(factions[i]).Person != 0 then
+          set total = total + 1
+        endif
+        set i = i + 1
+      endloop
+      return total
     endmethod
 
-    method getFactionCount takes nothing returns integer
-      return this.factionCount
+    method operator MaxWeight takes nothing returns integer
+      return DEFAULT_MAX_WEIGHT
     endmethod
 
-    method getPersonById takes integer id returns Person
-      if this.playerArray[id] != null then
-        return Persons[GetPlayerId(this.playerArray[id])]
-      else
-        return 0
+    method operator Weight takes nothing returns integer
+      local integer i = 0
+      local integer total = 0
+      loop
+        exitwhen i == factions.size
+        if Faction(factions[i]).Person != 0 then
+          set total = total + Faction(factions[i]).Weight
+        endif
+        set i = i + 1
+      endloop
+      return total
+    endmethod
+
+    method GetFactionByIndex takes integer index returns Faction
+      return this.factions[index]
+    endmethod
+
+    method RemoveFaction takes Faction faction returns nothing
+      local integer i = 0
+      if not this.factions.contains(faction) then
+        call BJDebugMsg("Attempted to remove non-present faction " + faction.Name + " from team " + this.name)
       endif
-    endmethod
-    
-    method getPlayerById takes integer id returns player
-      return this.playerArray[id]
+      call this.factions.remove(faction)
+      //Make all present factions ally the new faction and visa-versa
+      if faction.Person != 0 then
+        call this.UnallyPlayer(faction.Player)
+      endif
+      //
+      call OnTeamSizeChange.fire()
     endmethod
 
-    method modWeight takes integer mod returns nothing
-      if (this.weight + mod) < 0 then
-        call BJDebugMsg("Attempted to reduce weight of Team " + this.name + " to " + I2S(this.weight + mod)) 
+    method AddFaction takes Faction faction returns nothing
+      local integer i = 0
+      if this.factions.contains(faction) then
+        call BJDebugMsg("Attempted to add already present faction " + faction.Name + " to team " + this.name)
       endif
-      set this.weight = this.weight + mod
-      set triggerTeam = this
-      call OnTeamWeightChange.fire()
+      call this.factions.add(faction)
+      //Make all present factions ally the new faction and visa-versa
+      if faction.Person != 0 then
+        call this.AllyPlayer(faction.Player)
+      endif
+      //
+      call OnTeamSizeChange.fire()
+    endmethod
+
+    method AllyPlayer takes player whichPlayer returns nothing
+      local integer i = 0
+      loop
+        exitwhen i == this.FactionCount
+        call SetPlayerAllianceStateBJ(whichPlayer, this.GetFactionByIndex(i).Player, bj_ALLIANCE_ALLIED_VISION)
+        call SetPlayerAllianceStateBJ(this.GetFactionByIndex(i).Player, whichPlayer, bj_ALLIANCE_ALLIED_VISION)
+        set i = i + 1
+      endloop
+    endmethod
+
+    method UnallyPlayer takes player whichPlayer returns nothing
+      local integer i = 0
+      loop
+        exitwhen i == this.FactionCount
+        call SetPlayerAllianceStateBJ(whichPlayer, this.GetFactionByIndex(i).Player, bj_ALLIANCE_UNALLIED)
+        call SetPlayerAllianceStateBJ(this.GetFactionByIndex(i).Player, whichPlayer, bj_ALLIANCE_UNALLIED)
+        set i = i + 1
+      endloop
     endmethod
 
     //Revokes an invite sent to a player
-    method uninvite takes player whichPlayer returns nothing
-      local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
-      if not IsPlayerInForce(whichPlayer, this.invitees) then
-        call DisplayTextToForce(this.players, whichPerson.faction.prefixCol + whichPerson.faction.name + "|r is no longer invited to join the " + this.name + ".")
-        call DisplayTextToPlayer(whichPerson.p, 0, 0, "You are no longer invited to join the " + this.name + ".")
-        call ForceRemovePlayer(this.invitees, whichPlayer)
+    method Uninvite takes Faction whichFaction returns nothing
+      if this.invitees.contains(whichFaction) then
+        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r is no longer invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "You are no longer invited to join the " + this.name + ".")
+        call this.invitees.remove(whichFaction)
       endif
     endmethod
 
     //Sends an invite to this team to a player, which they can choose to accept at a later date
-    method invite takes player whichPlayer returns nothing
-      local Person whichPerson = Persons[GetPlayerId(whichPlayer)]
-      if IsPlayerInForce(whichPlayer, this.invitees) == false and IsPlayerInForce(whichPlayer, this.players) == false then
-        if GetLocalPlayer() == whichPlayer or IsPlayerInForce(GetLocalPlayer(), this.players) then
+    method Invite takes Faction whichFaction returns nothing
+      if not this.factions.contains(whichFaction) and not this.invitees.contains(whichFaction) and whichFaction.CanBeInvited == true then
+        if GetLocalPlayer() == whichFaction.Player or this.factions.contains(Person.ByHandle(GetLocalPlayer())) then
           call StartSound(gg_snd_ArrangedTeamInvitation)
         endif
-        call DisplayTextToForce(this.players, whichPerson.faction.prefixCol + whichPerson.faction.name + "|r has been invited to join the " + this.name + ".")
-        call DisplayTextToPlayer(whichPerson.p, 0, 0, "You have been invited to join the " + this.name + ". Type -join " + this.name + " to accept.")
-        call ForceAddPlayer(this.invitees, whichPlayer)
+        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r has been invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "You have been invited to join the " + this.name + ". Type -join " + this.name + " to accept.")
+        call this.invitees.add(whichFaction)
       endif
     endmethod
-
-    method addPlayer takes player p returns nothing
-      local Person whichPerson = Persons[GetPlayerId(p)]
-      set thistype.enumPlayer = p
-      call ForForce(this.players, function thistype.enumAlly)    
-      call ForceAddPlayer(this.players, p)
-      set this.playerArray[GetPlayerId(p)] = p
-      set this.size = this.size+1
-      call ForceRemovePlayer(this.invitees, p)
-      call this.modWeight(whichPerson.faction.weight)
-
-      set triggerTeam = this
-      call OnTeamSizeChange.fire()
-    endmethod
     
-    method removePlayer takes player p returns nothing
-      local Person whichPerson = Persons[GetPlayerId(p)]
-      set thistype.enumPlayer = p
-      call ForForce(this.players, function thistype.enumUnally)        
-      call ForceRemovePlayer(this.players, p)
-      set this.playerArray[GetPlayerId(p)] = null
-      set this.size = this.size-1
-      call this.modWeight(-whichPerson.faction.weight)
-
-      set triggerTeam = this
-      call OnTeamSizeChange.fire()
-    endmethod
-    
-    method containsPlayer takes player p returns boolean
-      return IsPlayerInForce(p, this.players)
-    endmethod        
-
-    method containsFaction takes Faction f returns boolean
+    method DisplayText takes string text returns nothing
       local integer i = 0
-      loop 
-      exitwhen i == this.factionCount
-        if this.factions[i] == f then
+      loop
+      exitwhen i == factions.size
+        call DisplayTextToPlayer(Faction(this.factions[i]).Player, 0, 0, text)
+        set i = i + 1
+      endloop
+    endmethod
+
+    method CreateForceFromPlayers takes nothing returns force
+      local integer i = 0
+      local force newForce = CreateForce()
+      loop
+        exitwhen i == factions.size
+        if Faction(factions[i]).Person != 0 then
+          call ForceAddPlayer(newForce, Faction(factions[i]).Player)
+        endif
+        set i = i + 1
+      endloop
+      return newForce
+    endmethod
+
+    method IsFactionInvited takes Faction whichFaction returns boolean
+      return this.invitees.contains(whichFaction)
+    endmethod
+
+    method ContainsPlayer takes player whichPlayer returns boolean
+      local integer i = 0
+      loop
+      exitwhen i == factions.size
+        if Faction(this.factions[i]).Player == whichPlayer then
           return true
         endif
-      set i = i + 1
+        set i = i + 1
       endloop
       return false
     endmethod
 
-    //When a Person inside this Team has their Faction changed, the Team's weight needs to be changed to accomodate
-    private static method onPersonFactionChanged takes nothing returns nothing
-      local Person triggerPerson = GetTriggerPerson()
-      local Faction prevFaction = GetChangingPersonPrevFaction()
-      set triggerPerson.team.weight = triggerPerson.team.weight - prevFaction.weight
-      set triggerPerson.team.weight = triggerPerson.team.weight + triggerPerson.faction.weight
+    method ContainsFaction takes Faction faction returns boolean
+      return this.factions.contains(faction)
     endmethod
 
-    static method create takes string name, string icon returns Team
+    static method operator Count takes nothing returns integer
+      return thistype.teamCount
+    endmethod
+
+    static method ByName takes string name returns thistype
+      return thistype.teamsByName[name]
+    endmethod
+
+    static method ByIndex takes integer index returns thistype
+      return thistype.teamsByIndex[index]
+    endmethod
+
+    static method create takes string name returns Team
       local Team this = Team.allocate()
       
       set this.name = name
-      set this.icon = icon
-      set this.weight = 0
-      set this.maxWeight = DEFAULT_MAX_WEIGHT
-      set this.players = CreateForce()
-      set this.invitees = CreateForce()
+      set this.factions = Set.create()
+      set this.invitees = Set.create()
       
       if thistype.teamsByName[StringCase(name, false)] == 0 then
         set thistype.teamsByName[StringCase(name, false)] = this
@@ -172,13 +207,8 @@ library Team initializer OnInit requires Table, Event, Persons
     endmethod
       
     private static method onInit takes nothing returns nothing
-      local trigger trig
       set thistype.teamsByName = StringTable.create()
       set thistype.teamsByIndex = Table.create()
-
-      set trig = CreateTrigger()
-      call OnPersonFactionChange.register(trig)
-      call TriggerAddAction(trig, function Team.onPersonFactionChanged)
     endmethod     
   endstruct        
     

@@ -7,7 +7,7 @@ library PathSoloSentinels initializer OnInit requires SentinelsConfig, LegendSen
   private function Research takes nothing returns nothing
     local player sentinelsPlayer
     if GetResearched() == RESEARCH_ID then
-      set sentinelsPlayer = FACTION_SENTINELS.Person.p
+      set sentinelsPlayer = FACTION_SENTINELS.Player
       call FACTION_SENTINELS.modWeight(3)
       call DisplaySoloPath(FACTION_SENTINELS, "Without the guidance of the Druids, the Sentinels decide to unleash the full extent of their fury against their enemies.")
       call LEGEND_JALIN.Spawn(sentinelsPlayer, GetRectCenterX(gg_rct_AstanaarCap), GetRectCenterY(gg_rct_AstanaarCap), 270)

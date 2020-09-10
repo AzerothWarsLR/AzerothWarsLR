@@ -11,12 +11,12 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, Environmen
   endglobals
 
   private function EntersRegion takes nothing returns nothing
-    if FACTION_SENTINELS.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_KILL_STONEMAUL) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_VISIT_NE) != QUEST_PROGRESS_COMPLETE then
+    if FACTION_SENTINELS.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_KILL_STONEMAUL) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_VISIT_NE) != QUEST_PROGRESS_COMPLETE then
       call SetItemPosition(ARTIFACT_SCEPTEROFTHEQUEEN.item, GetRectCenterX(gg_rct_HighBourne), GetRectCenterY(gg_rct_HighBourne))
-      call RescueNeutralUnitsInRect(gg_rct_HighBourne, FACTION_SENTINELS.Person.p)
+      call RescueNeutralUnitsInRect(gg_rct_HighBourne, FACTION_SENTINELS.Player)
       call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_VISIT_NE, QUEST_PROGRESS_COMPLETE, true)
       call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_FAILED, true)
-    elseif FACTION_WARSONG.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL_FEATHERMOON) == QUEST_PROGRESS_COMPLETE and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_VISIT_HORDE) != QUEST_PROGRESS_COMPLETE then
+    elseif FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL_FEATHERMOON) == QUEST_PROGRESS_COMPLETE and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_VISIT_HORDE) != QUEST_PROGRESS_COMPLETE then
       call SetItemPosition(ARTIFACT_SCEPTEROFTHEQUEEN.item, GetRectCenterX(gg_rct_HighBourne), GetRectCenterY(gg_rct_HighBourne))
       call RescueNeutralUnitsInRect(gg_rct_HighBourne, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_VISIT_HORDE, QUEST_PROGRESS_COMPLETE, true)

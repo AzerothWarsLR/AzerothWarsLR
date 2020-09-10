@@ -7,7 +7,7 @@ library PathSoloScourge initializer OnInit requires ScourgeConfig, LegendScourge
 
   private function Research takes nothing returns nothing
     if GetResearched() == RESEARCH_ID then
-      call LEGEND_NERZHUL.Spawn(FACTION_SCOURGE.Person.p, -3328, 20390, 370)
+      call LEGEND_NERZHUL.Spawn(FACTION_SCOURGE.Player, -3328, 20390, 370)
       call UnitDetermineLevel(LEGEND_NERZHUL.Unit, 1.00)
       call FACTION_SCOURGE.modWeight(3)
       call DisplaySoloPath(FACTION_SCOURGE, "Ner'zhul has stepped forth from his prison.")

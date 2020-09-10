@@ -10,26 +10,30 @@ library JoinCommand initializer OnInit requires Team
   	local string enteredString = GetEventPlayerChatString()
     local string content = null
     local Team targetTeam = 0
-    local Person triggerPerson = Persons[GetPlayerId(GetTriggerPlayer())]
+    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
   
+    if triggerPerson.Faction.CanBeInvited == false then
+      call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You can't voluntarily change teams.")
+    endif
+
   	if SubString( enteredString, 0, StringLength(COMMAND) ) == COMMAND then
     	set content = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
       set content = StringCase(content, false)
       set targetTeam = Team.teamsByName[content]
       if targetTeam != 0 then
-        if IsPlayerInForce(triggerPerson.p, targetTeam.invitees) then
-          if targetTeam.maxWeight >= targetTeam.weight + triggerPerson.faction.weight then
-            call triggerPerson.setTeam(targetTeam)
-            call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have joined " + targetTeam.name + ".")
-            call DisplayTextToForce(targetTeam.players, triggerPerson.faction.prefixCol + triggerPerson.faction.name + "|r has joined the " + targetTeam.name + ".")
+        if targetTeam.IsFactionInvited(triggerPerson.Faction) then
+          if targetTeam.MaxWeight >= targetTeam.Weight + triggerPerson.Faction.Weight then
+            set triggerPerson.Faction.Team = targetTeam
+            call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have joined " + targetTeam.Name + ".")
+            call targetTeam.DisplayText(triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has joined the " + targetTeam.Name + ".")
           else
-            call DisplayTextToPlayer(triggerPerson.p, 0, 0, "That team is already full.")
+            call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "That team is already full.")
           endif
         else
-          call DisplayTextToPlayer(triggerPerson.p, 0, 0, "You have not been invited to join " + targetTeam.name + ".")
+          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have not been invited to join " + targetTeam.Name + ".")
         endif
       else
-        call DisplayTextToPlayer(triggerPerson.p, 0, 0, "There is no Team with the name " + targetTeam.name + ".")
+        call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "There is no Team with the name " + targetTeam.Name + ".")
       endif
     endif
   endfunction

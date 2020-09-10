@@ -6,10 +6,10 @@ library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
   endglobals
 
   private function OnEnterRegion takes nothing returns nothing
-    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true and FACTION_FEL_HORDE.getQuestItemProgress(QUESTITEM_VISIT) != QUEST_PROGRESS_COMPLETE and FACTION_FEL_HORDE.Person.Team.containsPlayer(GetOwningPlayer(GetTriggerUnit())) then
+    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true and FACTION_FEL_HORDE.getQuestItemProgress(QUESTITEM_VISIT) != QUEST_PROGRESS_COMPLETE and FACTION_FEL_HORDE.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then
       call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_FEL_HORDE.Person.p, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_FEL_HORDE.Person.p, RESEARCH_ID, 1)
+      call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
     endif
   endfunction
 

@@ -16,14 +16,14 @@ library QuestWarMachine initializer OnInit requires QuestData, WarsongConfig
 
   private function ChangesOwnership takes nothing returns nothing
     if GetOwningPlayer(GetTriggerUnit()) != Player(PLAYER_NEUTRAL_PASSIVE) and Progress == QUEST_PROGRESS_UNDISCOVERED then
-      call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_RESEARCH, QUEST_PROGRESS_INCOMPLETE, true)
+      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_INCOMPLETE, true)
       call DestroyTrigger(GetTriggeringTrigger())
     endif
   endfunction
 
   private function Dies takes nothing returns nothing
     if Progress < QUEST_PROGRESS_COMPLETE then
-      call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_RESEARCH, QUEST_PROGRESS_FAILED, true)
+      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_FAILED, true)
     endif
     call DestroyTrigger(GetTriggeringTrigger())
   endfunction
@@ -34,12 +34,12 @@ library QuestWarMachine initializer OnInit requires QuestData, WarsongConfig
       set Progress = QUEST_PROGRESS_COMPLETE
       loop
         exitwhen i == MAX_PLAYERS
-        if FACTION_WARSONG.Person.Team.containsPlayer(Player(i)) then
+        if FACTION_WARSONG.Team.ContainsPlayer(Player(i)) then
           call BlessPlayer(Player(i))
         endif
         set i = i + 1
       endloop
-      call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_RESEARCH, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_COMPLETE, true)
     endif
   endfunction  
 
@@ -59,7 +59,7 @@ library QuestWarMachine initializer OnInit requires QuestData, WarsongConfig
     set QUEST_WARMACHINE = QuestData.create("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "The massive exploitation of Ashenvale has bolstered the entire Horde's weapons, armour and defenses.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
     set QUESTITEM_RESEARCH = QUEST_WARMACHINE.addItem("Research Horde War Machine")
     call FACTION_WARSONG.addQuest(QUEST_WARMACHINE)
-    call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_RESEARCH, QUEST_PROGRESS_UNDISCOVERED, false)
+    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_UNDISCOVERED, false)
   endfunction
 
 endlibrary

@@ -1,34 +1,52 @@
-library Test
+library Test requires Environment, Table
 
-  private function interface TestFunction takes nothing returns boolean
+  globals
+    private constant string COMMAND = "-test "
+  endglobals
 
   struct Test
-    private static thistype first
-    private static thistype last
-    private thistype next
+    private static StringTable byName
     private string name
-    private TestFunction testFunction
 
-    method run takes nothing returns nothing
-      if not testFunction.evaluate() then
-        call BJDebugMsg("TEST FAILED: " + this.name)
+    private stub method Run takes nothing returns nothing
+
+    endmethod
+
+    method Assert takes boolean bool, string errormsg returns nothing
+      if not bool then
+        call BJDebugMsg("Test" + this.name + " failed. " + errormsg)
       endif
     endmethod
 
-    static method create takes string name, TestFunction testFunctioon returns thistype
-      local thistype this = thistype.allocate()
-      set this.name = name
-      set this.testFunction = testFunction
+    static method ExecuteTestCommand takes nothing returns nothing
+      local string enteredString = GetEventPlayerChatString()
+      local string parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))
+      if not AreCheatsActive then
+        return
+      endif
+      call Test(thistype.byName[parameter]).Run()
+    endmethod
 
-      if thistype.first == null then
-        set thistype.first = this
-      endif
-      if thistype.last != null then
-        set thistype.last.next = this
-      endif
-      set thistype.last = this
+    static method create takes string name returns thistype
+      local thistype this = thistype.allocate()
+      local trigger trig
+      local integer i = 0
+      set this.name = name
+
+      set trig = CreateTrigger()
+      loop
+      exitwhen i > MAX_PLAYERS
+        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND + this.name, false )
+        set i = i + 1
+      endloop   
+      call TriggerAddCondition( trig, Condition(function thistype.ExecuteTestCommand) )
+      set thistype.byName[name] = this
 
       return this
+    endmethod
+
+    private static method onInit takes nothing returns nothing
+      set thistype.byName = StringTable.create()
     endmethod
   endstruct
 

@@ -5,10 +5,10 @@ library RefundZeroLimitUnits initializer OnInit requires Persons, UnitType
   private function Trained takes nothing returns nothing
     local unit u = GetTrainedUnit()
     local player p = GetOwningPlayer(u)
-    local Person tempPerson = Persons[GetPlayerId(p)]
+    local Person tempPerson = Person.ByHandle(p)
     local UnitType tempUnitType = 0
-    if tempPerson.objectLimits[GetUnitTypeId(u)] == 0 then
-      set tempUnitType = UnitTypes[GetUnitTypeId(u)]
+    if tempPerson.GetObjectLimit(GetUnitTypeId(u)) == 0 then
+      set tempUnitType = UnitType.ByHandle(u)
       if tempUnitType != 0 then
         call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_GOLD, tempUnitType.GoldCost)
         call AdjustPlayerStateSimpleBJ(p, PLAYER_STATE_RESOURCE_LUMBER, tempUnitType.LumberCost)

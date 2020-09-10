@@ -9,12 +9,12 @@ library PathSoloDruids initializer OnInit requires DruidsConfig, LegendDruids, D
     local player druidsPlayer
     if GetResearched() == RESEARCH_ID then
       call FACTION_DRUIDS.modWeight(3)
-      set druidsPlayer = FACTION_DRUIDS.Person.p
+      set druidsPlayer = FACTION_DRUIDS.Player
       call DisplaySoloPath(FACTION_DRUIDS, "The Night Elves have united under one banner!")
       if not UnitAlive(LEGEND_CENARIUS.Unit) then
-        call LEGEND_CENARIUS.Spawn(FACTION_DRUIDS.Person.p, -11679, 6904, 255)
+        call LEGEND_CENARIUS.Spawn(FACTION_DRUIDS.Player, -11679, 6904, 255)
       endif
-      call LEGEND_URSOC.Spawn(FACTION_DRUIDS.Person.p, -11679, 6904, 255)
+      call LEGEND_URSOC.Spawn(FACTION_DRUIDS.Player, -11679, 6904, 255)
       call UnitDetermineLevel(LEGEND_URSOC.Unit, 1.00)
       if GetUnitTypeId(LEGEND_CENARIUS.Unit) == UNITTYPE_CENARIUS_GHOST then
         set LEGEND_CENARIUS.UnitType = UNITTYPE_CENARIUS_ALIVE

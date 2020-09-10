@@ -200,7 +200,7 @@
 
     method setOwner takes Person p returns nothing
       if p != 0 then
-        call this.setText("Owned by|n" + p.faction.prefixCol + p.faction.name + "|r")   
+        call this.setText("Owned by|n" + p.Faction.prefixCol + p.Faction.Name + "|r")   
       endif    
     endmethod        
 

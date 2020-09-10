@@ -9,10 +9,10 @@ library QuestQuelthalasKillLegion initializer OnInit requires QuelthalasConfig, 
   endglobals
 
   private function LegionNexusDies takes nothing returns nothing
-    call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-    call SetPlayerTechResearched(FACTION_QUELTHALAS.Person.p, QUEST_RESEARCH_ID, 1)
-    call SetPlayerTechResearched(FACTION_QUELTHALAS.Person.p, CASTER_RESEARCH_ID, 3)
-    call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Person.p, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the Arcane Sanctum.")
+    call FACTION_QUELTHALAS.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
+    call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, QUEST_RESEARCH_ID, 1)
+    call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, CASTER_RESEARCH_ID, 3)
+    call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Player, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the Arcane Sanctum.")
   endfunction
 
   private function OnInit takes nothing returns nothing

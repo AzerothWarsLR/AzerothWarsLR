@@ -6,8 +6,8 @@ library TierKnowledgeOfHonorHold initializer OnInit requires StormwindConfig
   endglobals
 
   private function EnablePortals takes nothing returns nothing
-    local unit waygateA = CreateUnit(FACTION_STORMWIND.Person.p, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_11954), GetDestructableY(gg_dest_B017_11954), 0)
-    local unit waygateB = CreateUnit(FACTION_STORMWIND.Person.p, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_8950), GetDestructableY(gg_dest_B017_8950), 130.80)
+    local unit waygateA = CreateUnit(FACTION_STORMWIND.Player, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_11954), GetDestructableY(gg_dest_B017_11954), 0)
+    local unit waygateB = CreateUnit(FACTION_STORMWIND.Player, UNITTYPE_PORTAL, GetDestructableX(gg_dest_B017_8950), GetDestructableY(gg_dest_B017_8950), 130.80)
     call SetUnitPathing(waygateA, false)
     call SetUnitPathing(waygateB, false)
     call SetUnitPosition(waygateA, GetDestructableX(gg_dest_B017_11954), GetDestructableY(gg_dest_B017_11954))

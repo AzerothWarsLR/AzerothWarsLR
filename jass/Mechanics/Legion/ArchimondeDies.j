@@ -3,7 +3,7 @@ library ArchimondeKiljaeden initializer OnInit requires LegionConfig, LegendLegi
 
   private function Dies takes nothing returns nothing
     if LEGEND_ARCHIMONDE == GetTriggerLegend() then
-      call LEGEND_KILJAEDEN.Spawn(FACTION_LEGION.Person.Player, GetRectCenterX(gg_rct_Kiljaeden), GetRectCenterY(gg_rct_Kiljaeden), 244)
+      call LEGEND_KILJAEDEN.Spawn(FACTION_LEGION.Player, GetRectCenterX(gg_rct_Kiljaeden), GetRectCenterY(gg_rct_Kiljaeden), 244)
       call SetHeroXP(LEGEND_KILJAEDEN.Unit, GetHeroXP(LEGEND_ARCHIMONDE.Unit), true)
       set LEGEND_ARCHIMONDE.DeathMessage = "Archimonde the Defiler has been banished from Azeroth, marking the end of his second failed invasion. Kil'jaeden the Deceiver has descended from the Twisting Nether to succeed where his brother could not."
       call DestroyTrigger(GetTriggeringTrigger())         

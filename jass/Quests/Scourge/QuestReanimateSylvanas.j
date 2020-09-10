@@ -11,12 +11,12 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
   endglobals
 
   private function Dies takes nothing returns nothing
-    if FACTION_SCOURGE.Person.Team.containsPlayer(GetOwningPlayer(GetKillingUnit())) then
-      call SetPlayerTechResearched(FACTION_SCOURGE.Person.p, SYLVANAS_RESEARCH, 1)
-      call FACTION_SCOURGE.setQuestItemStatus(QUESTITEM_KILL_SYLVANAS, QUEST_PROGRESS_COMPLETE, true)
-      call FACTION_QUELTHALAS.setQuestItemStatus(QUESTITEM_PROTECT_SYLVANAS, QUEST_PROGRESS_FAILED, true)
-      call LEGEND_JENNALLA.Spawn(FACTION_QUELTHALAS.Person.p, 18509, 18073, 295)
-      call CreateUnit(FACTION_SCOURGE.Person.p, SYLVANAS_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
+    if FACTION_SCOURGE.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
+      call SetPlayerTechResearched(FACTION_SCOURGE.Player, SYLVANAS_RESEARCH, 1)
+      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_KILL_SYLVANAS, QUEST_PROGRESS_COMPLETE, true)
+      call FACTION_QUELTHALAS.setQuestItemProgress(QUESTITEM_PROTECT_SYLVANAS, QUEST_PROGRESS_FAILED, true)
+      call LEGEND_JENNALLA.Spawn(FACTION_QUELTHALAS.Player, 18509, 18073, 295)
+      call CreateUnit(FACTION_SCOURGE.Player, SYLVANAS_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
       call SetHeroXP(LEGEND_JENNALLA.Unit, GetHeroXP(LEGEND_SYLVANAS.Unit), true)
       set LEGEND_SYLVANAS.Unit = null
     endif

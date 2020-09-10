@@ -10,18 +10,18 @@ library WarsongKillSentinels initializer OnInit requires WarsongConfig, LegendSe
 
   private function TryComplete takes nothing returns nothing
     if FACTION_WARSONG.getQuestItemProgress(QUESTITEM_AUBERDINE) == QUEST_PROGRESS_COMPLETE and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_FEATHERMOON) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_WARSONG.Person.p, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_WARSONG.Person.p, ZEPPELIN_ID, "You can now train " + GetObjectName(ZEPPELIN_ID) + "s from the " + GetObjectName('o01M') + ".")
+      call SetPlayerTechResearched(FACTION_WARSONG.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(FACTION_WARSONG.Player, ZEPPELIN_ID, "You can now train " + GetObjectName(ZEPPELIN_ID) + "s from the " + GetObjectName('o01M') + ".")
     endif
   endfunction
 
   private function AuberdineDies takes nothing returns nothing
-    call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_AUBERDINE, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_AUBERDINE, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
   private function FeathermoonDies takes nothing returns nothing
-    call FACTION_WARSONG.setQuestItemStatus(QUESTITEM_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
+    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
     call TryComplete()
   endfunction
 
