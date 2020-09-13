@@ -16,13 +16,13 @@ library LiegeFaction requires Faction, Set
     endmethod
 
     //Make vassals leave too
-    private method OnLeave takes nothing returns nothing
+    private method OnPreLeave takes nothing returns nothing
       local integer i = 0
       loop
         exitwhen i == vassals.size
         if vassals[i] != 0 then
           call VassalFaction(vassals[i]).Leave()
-          set VassalFaction(vassals[i]).Person = 0
+          set VassalFaction(vassals[i]).Person.Faction = 0
         endif
         set i = i + 1
       endloop
