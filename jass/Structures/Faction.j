@@ -356,11 +356,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
           set this.Lumber = this.Lumber + loopUnitType.LumberCost * REFUND_PERCENT
           call UnitDropAllItems(u)
           call RemoveUnit(u)
-        //Remove meta units entirely
-        elseif UnitType.ByHandle(u).Refund == true then
-          call RemoveUnit(u)
         //Transfer the ownership of everything else
-        else
+        elseif UnitType.ByHandle(u).Meta == false then
           if this.Team.PlayerCount > 1 then
             call SetUnitOwner(u, ForcePickRandomPlayer(eligiblePlayers), false)
           else
@@ -377,12 +374,17 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set g = null
     endmethod
 
+    stub method OnPreLeave takes nothing returns nothing
+
+    endmethod
+
     stub method OnLeave takes nothing returns nothing
 
     endmethod
 
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
     method Leave takes nothing returns nothing
+      call OnPreLeave()
       if team.PlayerCount > 1 then
         call distributeUnits()
         call distributeResources()
