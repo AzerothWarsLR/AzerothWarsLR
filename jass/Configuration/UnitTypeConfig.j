@@ -1,4 +1,3 @@
-
 library UnitTypeConfig initializer OnInit requires UnitType
 
   private function OnInit takes nothing returns nothing
@@ -211,7 +210,10 @@ library UnitTypeConfig initializer OnInit requires UnitType
 
     set unitType = UnitType.create('uktg')      //Kel'thuzad (Ghost)
     set unitType.Refund = true         
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-  endfunction    
+    
+    set unitType = UnitType.create('ncop')      //Tavern selector
+    set unitType.Meta = true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+ 
+ endfunction    
 
 endlibrary
