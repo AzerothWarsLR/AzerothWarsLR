@@ -63,7 +63,7 @@ library VassalFaction requires Faction
     endmethod
 
     private method operator SelectionMessage takes nothing returns string
-      return this.prefixCol + this.name + "|r now serves the " + Liege.prefixCol + liege.Name + "|r."
+      return this.prefixCol + this.name + "|r now serves " + Liege.prefixCol + liege.Name + "|r."
     endmethod
 
     private method DisplaySelection takes nothing returns nothing
@@ -76,7 +76,7 @@ library VassalFaction requires Faction
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You can't become your own vassal.")
         return
       endif
-      if whichPerson.Faction.getType() == VassalFaction.typeid then
+      if whichPerson.Faction!= 0 and whichPerson.Faction.getType() == VassalFaction.typeid then
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You are already a vassal.")
         return
       endif
@@ -93,8 +93,8 @@ library VassalFaction requires Faction
       call DisplaySelection()
       call this.legend.Spawn(whichPerson.Player, highestValueCP.X, highestValueCP.Y, 0)
       call UnitDetermineLevel(this.legend.Unit, 0.9)
-      call UnitAddItemById(this.legend.Unit, this.workerItemType)
       call UnitAddItemById(this.legend.Unit, this.teleportItemType)
+      call UnitAddItemById(this.legend.Unit, this.workerItemType)
       if GetLocalPlayer() == whichPerson.Player then
         call PanCameraToTimed(GetUnitX(this.legend.Unit), GetUnitY(this.legend.Unit), 0)
         call ClearSelection()
