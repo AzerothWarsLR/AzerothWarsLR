@@ -19,6 +19,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     private real partialGold = 0              //Just used for income calculations
     readonly group cpGroup                    //Group of control point units this person owns  
 
+    private Table objectLimits
+
     method operator Player takes nothing returns player
       return this.p
     endmethod
@@ -34,12 +36,8 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set this.prevFaction = this.faction
       set thistype.prevFaction = this.faction
 
-      //Unapply old faction if necessary
+      //Unapply old faction
       if this.faction != 0 then
-        if this.faction == 0 then
-          call BJDebugMsg("ERROR: attempted to null Faction of Person " + GetPlayerName(this.p) + " but they have no Faction")
-          return
-        endif
         //Unapply object limits
         loop 
         exitwhen i > faction.objectCount
@@ -61,7 +59,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         endif
       endif
 
-      //Apply new faction if necessary
+      //Apply new faction
       if newFaction != 0 then
         if newFaction.Person == 0 then
           set i = 0
@@ -125,14 +123,11 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     endmethod
 
     method GetObjectLimit takes integer id returns integer
-      local integer blizzardLimit = GetPlayerTechMaxAllowed(this.Player, id)
-      if blizzardLimit == -1 then
-        return UNLIMITED
-      endif
-      return blizzardLimit
+      return this.objectLimits[id]
     endmethod
 
     method SetObjectLimit takes integer id, integer limit returns nothing
+      set this.objectLimits[id] = limit
       if limit >= UNLIMITED then
         call SetPlayerTechMaxAllowed(this.Player, id, -1)
       elseif limit < 0 then
@@ -143,7 +138,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     endmethod
 
     method ModObjectLimit takes integer id, integer limit returns nothing
-      call SetObjectLimit(id, GetObjectLimit(id) + limit)     
+      call this.SetObjectLimit(id, this.objectLimits[id] + limit)
     endmethod
     
     method addGold takes real x returns nothing
@@ -228,6 +223,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set this.p = p
       set this.cpGroup = CreateGroup()
       set thistype.byId[GetPlayerId(p)] = this
+      set this.objectLimits = Table.create()
       
       return this           
     endmethod
@@ -239,10 +235,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
   endfunction
 
   function GetTriggerPerson takes nothing returns Person
-    if Person.triggerPerson == 0 then
-      call BJDebugMsg("ERROR: GetTriggerPerson() returning 0")
-      return 0
-    endif
     return Person.triggerPerson
   endfunction
 
