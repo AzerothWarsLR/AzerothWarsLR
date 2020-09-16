@@ -37,13 +37,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set thistype.prevFaction = this.faction
 
       //Unapply old faction
-      if this.faction != 0 then
-        //Unapply object limits
-        loop 
-        exitwhen i > faction.objectCount
-          call this.ModObjectLimit(this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]])
-          set i = i + 1
-        endloop       
+      if this.faction != 0 then   
         //Toggle absence and presence researches for this faction
         set i = 0
         loop
@@ -61,14 +55,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
       //Apply new faction
       if newFaction != 0 then
-        if newFaction.Person == 0 then
-          set i = 0
-          //Apply object limits
-          loop
-          exitwhen i > newFaction.objectCount
-            call this.ModObjectLimit(newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]])
-            set i = i + 1
-          endloop             
+        if newFaction.Person == 0 then    
           call SetPlayerColorBJ(this.p, newFaction.playCol, true)
           set this.faction = newFaction 
           //Enforce referential integrity
@@ -87,7 +74,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
             endif
             set i = i + 1
           endloop
-          
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
           call BJDebugMsg(I2S(newFaction.Person))
@@ -120,6 +106,15 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         call BJDebugMsg("ERROR: Tried to assign a negative ControlPoint counter to " + GetPlayerName(this.p))
       endif
       set this.controlPointCount = value
+    endmethod
+
+    method GetObjectLevel takes integer object returns integer
+      return this.objectLevels[object]
+    endmethod
+
+    method SetObjectLevel takes integer object, integer level returns nothing
+      set this.objectLevels[object] = level
+      call SetPlayerTechResearched(object, this.objectLevels[object])
     endmethod
 
     method GetObjectLimit takes integer id returns integer

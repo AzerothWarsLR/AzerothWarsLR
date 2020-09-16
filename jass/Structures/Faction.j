@@ -31,9 +31,13 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
     private string victoryMusic
     
-    readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
-    readonly integer array objectList[100] //An index for objectLimits
-    readonly integer objectCount = 0
+    private Table objectLimits //This is how many units, researches or structures of a given type this faction can build
+    private integer array objectList[100] //An index for objectLimits
+    private integer objectCount = 0
+
+    private Table objectLevels
+    private integer array objectLevelList [100]
+    private integer objectLevelCount = 0
 
     readonly Set quests
     readonly Table questItemProgress
@@ -116,6 +120,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     method operator Person= takes Person value returns nothing
       if this.Player != null then
         call this.Team.UnallyPlayer(this.Player)
+        call this.UnapplyObjects()
       endif
       set this.person = value
       //Maintan referential integrity
@@ -126,6 +131,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         set value.Faction = this
       endif
       call this.Team.AllyPlayer(value.Player)
+      call ApplyObjects()
     endmethod
 
     method operator StartingQuest takes nothing returns QuestData
@@ -146,6 +152,44 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
     stub method operator CanBeInvited takes nothing returns boolean
       return true
+    endmethod
+
+    //Adds this Faction's object limits and levels to its active Person
+    private method ApplyObjects takes nothing returns nothing
+      local Person person = this.Person
+      local integer i = 0
+      //Limits
+      loop
+        exitwhen i == this.objectCount
+        call this.ModObjectLimit(newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]])
+        set i = i + 1
+      endloop             
+      //Levels
+      set i = 0
+      loop
+      exitwhen i == faction.objectLevelCount
+        call this.SetObjectLevel(this.objectLevelList[i], this.objectLevels[this.objectLevelList[i]])
+        set i = i + 1
+      endloop
+    endmethod
+
+    //Removes this Faction's object limits and levels from its active Person
+    private method UnapplyObjects takes nothing returns nothing
+      local Person person = this.person
+      local integer i = 0
+      //Limits
+      loop 
+      exitwhen i == faction.objectCount
+        call this.ModObjectLimit(this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]])
+        set i = i + 1
+      endloop    
+      //Levels
+      loop
+      exitwhen i == faction.objectLevelCount
+        call this.SetObjectLevel(this.objectLevelList[i], 0)
+        set i = i + 1
+      endloop
+      set i = 0
     endmethod
 
     stub method Unally takes nothing returns nothing
@@ -196,6 +240,21 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         return
       endif
       set this.weight = value
+    endmethod
+
+    method GetObjectLevel takes integer object returns integer
+      return this.objectLevels[object]
+    endmethod
+
+    method SetObjectLevel takes integer object, integer level returns nothing
+      if not this.objectLevels.exists(object) then
+        set this.objectLevelList[this.objectLevelCount] = object
+        set this.objectLevelCount = this.objectLevelCount + 1
+      endif
+      set this.objectLevels[object] = level
+      if this.Person != 0 then
+        this.Person.SetObjectLevel(object, level)
+      endif
     endmethod
 
     method modObjectLimit takes integer id, integer limit returns nothing
@@ -410,6 +469,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set this.icon = icon
       set this.weight = weight
       set this.objectLimits = Table.create()
+      set this.objectLevels = Table.create()
       set this.quests = Set.create()
       set this.questItemProgress = Table.create()
       
