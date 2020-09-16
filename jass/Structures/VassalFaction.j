@@ -2,6 +2,7 @@ library VassalFaction requires Faction
 
   globals
     private constant real VASSAL_INCOME_PER_MINUTE = 60
+    private constant real VASSAL_STARTING_GOLD = 150
   endglobals
 
   struct VassalFaction extends Faction
@@ -100,6 +101,7 @@ library VassalFaction requires Faction
         call ClearSelection()
         call SelectUnit(this.legend.Unit, true)
       endif
+      call whichPerson.addGold(VASSAL_STARTING_GOLD)
     endmethod
 
     private static method OnResearch takes nothing returns nothing
