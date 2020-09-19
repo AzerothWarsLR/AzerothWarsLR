@@ -71,6 +71,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
         call this.UnallyPlayer(faction.Player)
       endif
       //
+      set thistype.triggerTeam = this
       call OnTeamSizeChange.fire()
     endmethod
 
@@ -85,6 +86,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
         call this.AllyPlayer(faction.Player)
       endif
       //
+      set thistype.triggerTeam = this
       call OnTeamSizeChange.fire()
     endmethod
 
@@ -96,6 +98,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
         call SetPlayerAllianceStateBJ(this.GetFactionByIndex(i).Player, whichPlayer, bj_ALLIANCE_ALLIED_VISION)
         set i = i + 1
       endloop
+      set thistype.triggerTeam = this
     endmethod
 
     method UnallyPlayer takes player whichPlayer returns nothing
@@ -106,6 +109,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
         call SetPlayerAllianceStateBJ(this.GetFactionByIndex(i).Player, whichPlayer, bj_ALLIANCE_UNALLIED)
         set i = i + 1
       endloop
+      set thistype.triggerTeam = this
     endmethod
 
     //Revokes an invite sent to a player
