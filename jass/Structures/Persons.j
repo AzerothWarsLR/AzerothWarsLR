@@ -20,6 +20,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
     readonly group cpGroup                    //Group of control point units this person owns  
 
     private Table objectLimits
+    private Table objectLevels
 
     method operator Player takes nothing returns player
       return this.p
@@ -114,7 +115,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     method SetObjectLevel takes integer object, integer level returns nothing
       set this.objectLevels[object] = level
-      call SetPlayerTechResearched(object, this.objectLevels[object])
+      call SetPlayerTechResearched(this.Player, object, this.objectLevels[object])
     endmethod
 
     method GetObjectLimit takes integer id returns integer
@@ -219,6 +220,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
       set this.cpGroup = CreateGroup()
       set thistype.byId[GetPlayerId(p)] = this
       set this.objectLimits = Table.create()
+      set this.objectLevels = Table.create()
       
       return this           
     endmethod

@@ -31,9 +31,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
     private string victoryMusic
     
-    private Table objectLimits //This is how many units, researches or structures of a given type this faction can build
-    private integer array objectList[100] //An index for objectLimits
-    private integer objectCount = 0
+    readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
+    readonly integer array objectList[100] //An index for objectLimits
+    readonly integer objectCount = 0
 
     private Table objectLevels
     private integer array objectLevelList [100]
@@ -42,6 +42,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly Set quests
     readonly Table questItemProgress
     private QuestData startingQuest
+
+    method operator ObjectLimitCount takes nothing returns integer
+      return this.objectCount
+    endmethod
 
     method operator Weight takes nothing returns integer
       return this.weight
@@ -161,14 +165,14 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       //Limits
       loop
         exitwhen i == this.objectCount
-        call this.ModObjectLimit(newFaction.objectList[i], newFaction.objectLimits[newFaction.objectList[i]])
+        call this.Person.ModObjectLimit(this.objectList[i], this.objectLimits[this.objectList[i]])
         set i = i + 1
       endloop             
       //Levels
       set i = 0
       loop
-      exitwhen i == faction.objectLevelCount
-        call this.SetObjectLevel(this.objectLevelList[i], this.objectLevels[this.objectLevelList[i]])
+      exitwhen i == this.objectLevelCount
+        call this.Person.SetObjectLevel(this.objectLevelList[i], this.objectLevels[this.objectLevelList[i]])
         set i = i + 1
       endloop
     endmethod
@@ -179,14 +183,15 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       local integer i = 0
       //Limits
       loop 
-      exitwhen i == faction.objectCount
-        call this.ModObjectLimit(this.faction.objectList[i], -this.faction.objectLimits[this.faction.objectList[i]])
+      exitwhen i == this.objectCount
+        call this.Person.ModObjectLimit(this.objectList[i], -this.objectLimits[this.objectList[i]])
         set i = i + 1
       endloop    
       //Levels
+      set i = 0
       loop
-      exitwhen i == faction.objectLevelCount
-        call this.SetObjectLevel(this.objectLevelList[i], 0)
+      exitwhen i == this.objectLevelCount
+        call this.Person.SetObjectLevel(this.objectLevelList[i], 0)
         set i = i + 1
       endloop
       set i = 0
@@ -246,6 +251,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return this.objectLevels[object]
     endmethod
 
+    private stub method OnSetObjectLevel takes integer object, integer level returns nothing
+
+    endmethod
+
     method SetObjectLevel takes integer object, integer level returns nothing
       if not this.objectLevels.exists(object) then
         set this.objectLevelList[this.objectLevelCount] = object
@@ -253,8 +262,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
       set this.objectLevels[object] = level
       if this.Person != 0 then
-        this.Person.SetObjectLevel(object, level)
+        call this.Person.SetObjectLevel(object, level)
       endif
+      call this.OnSetObjectLevel(object, level)
     endmethod
 
     method modObjectLimit takes integer id, integer limit returns nothing
@@ -456,6 +466,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       call OnLeave()
     endmethod 
 
+    static method ByHandle takes player whichPlayer returns thistype
+      return Person.ByHandle(whichPlayer).Faction
+    endmethod
+
     static method ByName takes string s returns thistype
       return thistype.factionsByName[s]
     endmethod
@@ -485,11 +499,23 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return this                
     endmethod       
 
+    private static method OnAnyResearch takes nothing returns nothing
+      local Faction faction = Faction.ByHandle(GetTriggerPlayer())
+      if faction != 0 then
+        call faction.SetObjectLevel(GetResearched(), GetPlayerTechCount(GetTriggerPlayer(), GetResearched(), false))
+      endif
+    endmethod
+
     private static method onInit takes nothing returns nothing
+      local trigger trig = CreateTrigger()
+
       set Faction.factionsByName = StringTable.create()
       set OnFactionTeamLeave = Event.create()
       set OnFactionTeamJoin = Event.create()
       set OnFactionGameLeave = Event.create()
+      
+      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
+      call TriggerAddAction(trig, function thistype.OnAnyResearch)
     endmethod 
   endstruct
 
