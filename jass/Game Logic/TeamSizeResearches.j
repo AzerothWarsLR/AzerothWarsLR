@@ -7,25 +7,33 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
     private constant integer RESEARCH_NOALLIES = 'RNAL'
   endglobals
 
-  private function TeamSizeChanged takes nothing returns nothing
-    local Team triggerTeam = GetTriggerTeam()
+  private function RefreshTeam takes Team team returns nothing
     local integer weightBelowMaximumLevel = 0
     local integer noAlliesLevel = 0
     local integer i = 0
 
-    if triggerTeam.Weight < triggerTeam.MaxWeight then
+    if team.Weight < team.MaxWeight then
       set weightBelowMaximumLevel = 1
     endif
-    if triggerTeam.PlayerCount == 1 then
+    if team.PlayerCount == 1 then
       set noAlliesLevel = 1
     endif
 
     loop
-      exitwhen i == triggerTeam.FactionCount
-      call SetPlayerTechResearched(triggerTeam.GetFactionByIndex(i).Player, RESEARCH_WEIGHTBELOWMAXIMUM, weightBelowMaximumLevel)
-      call SetPlayerTechResearched(triggerTeam.GetFactionByIndex(i).Player, RESEARCH_NOALLIES, noAlliesLevel)
+      exitwhen i == team.FactionCount
+      call SetPlayerTechResearched(team.GetFactionByIndex(i).Player, RESEARCH_WEIGHTBELOWMAXIMUM, weightBelowMaximumLevel)
+      call SetPlayerTechResearched(team.GetFactionByIndex(i).Player, RESEARCH_NOALLIES, noAlliesLevel)
       set i = i + 1
     endloop
+  endfunction
+
+  private function TeamSizeChanged takes nothing returns nothing
+    call RefreshTeam(GetTriggerTeam())
+  endfunction
+
+  private function PersonFactionChanged takes nothing returns nothing
+    call RefreshTeam(GetTriggerPerson().Faction.Team)
+    call RefreshTeam(GetChangingPersonPrevFaction().Team)
   endfunction
 
   private function OnInit takes nothing returns nothing
@@ -33,6 +41,10 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
     call OnTeamSizeChange.register(trig)
     call OnTeamWeightChange.register(trig)
     call TriggerAddAction(trig, function TeamSizeChanged)
+
+    set trig = CreateTrigger()
+    call OnPersonFactionChange.register(trig)
+    call TriggerAddAction(trig, function PersonFactionChanged)
   endfunction
 
 endlibrary
