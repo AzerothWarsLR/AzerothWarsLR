@@ -3,6 +3,15 @@ library QuestItemKillUnit requires QuestItemData
   struct QuestItemKillUnit extends QuestItemData
     private static trigger unitDies = CreateTrigger()
     private static thistype array byHandleId
+    private unit target = null
+
+    method operator X takes nothing returns real
+      return GetUnitX(target)
+    endmethod
+
+    method operator Y takes nothing returns real
+      return GetUnitY(target)
+    endmethod
 
     private static method OnUnitDeath takes nothing returns nothing
       if this.Holder.Team.ContainsFaction(Person.ByHandle.GetOwningPlayer(GetKillingUnit()).Faction)
@@ -17,7 +26,8 @@ library QuestItemKillUnit requires QuestItemData
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, unitToKill, EVENT_UNIT_DEATH)    
       call TriggerAddAction(trig, function thistype.OnUnitDeath)
-      set this.desc = "Kill " + GetUnitName(unitToKill)
+      set this.desc = GetUnitName(unitToKill) + " is dead"
+      set this.target = unitToKill
       set thistype.byHandleId[GetHandleId(unitToKill)] = this
       return this
     endmethod

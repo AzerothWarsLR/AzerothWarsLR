@@ -17,6 +17,31 @@ library QuestData
       return this.title
     endmethod
 
+    stub method operator Global takes nothing returns boolean
+      return false
+    endmethod
+
+    //Describes to the player what will happen when the quest is completed
+    stub method operator CompletionDescription takes nothing returns string
+      return null
+    endmethod
+
+    //Describes to the player what will happen when the quest is failed
+    stub method operator FailureDescription takes nothing returns string
+      return null
+    endmethod
+
+    //Displayed to the player when the quest is completed
+    stub method operator CompletionPopup takes nothing returns string
+      return null
+    endmethod
+
+    //Displayed to the player when the quest is failed
+    stub method operator FailurePopup takes nothing returns string
+      return null
+    endmethod
+
+    //Describes the background and flavour of this quest
     stub method operator Description takes nothing returns string
       return this.description
     endmethod
@@ -28,6 +53,11 @@ library QuestData
       elseif value == QUEST_PROGRESS_FAILED
         call OnFailed()
       endif
+    endmethod
+
+    //The faction that can complete this quest
+    method operator Holder takes nothing returns Faction
+      return this.holder
     endmethod
 
     stub method OnComplete takes nothing returns nothing
@@ -42,7 +72,7 @@ library QuestData
 
     endmethod
 
-    static method create takes string title, string desc, string completionDesc, string icon returns thistype
+    static method create takes string title, string desc, string icon returns thistype
       local thistype this = thistype.create()
       return this
     endmethod

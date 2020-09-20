@@ -1,12 +1,20 @@
 library QuestItemData
 
   struct QuestItemData
-    private QuestData questData
+    private QuestData parent
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private string description = ""
 
-    method operator Holder takes nothing returns nothing
+    stub method operator X takes nothing returns real
+      return 0.
+    endmethod
 
+    stub method operator Y takes nothing returns real
+      return 0.
+    endmethod
+
+    method operator Holder takes nothing returns Faction
+      return this.parent.Holder
     endmethod
 
     stub method operator Progress takes nothing returns nothing

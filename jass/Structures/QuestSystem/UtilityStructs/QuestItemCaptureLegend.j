@@ -5,6 +5,14 @@ library QuestItemCaptureLegend requires QuestItemData
     private static thistype array byLegend
     private Legend legend = 0
 
+    method operator X takes nothing returns real
+      return GetUnitX(legend.Unit)
+    endmethod
+
+    method operator Y takes nothing returns real
+      return GetUnitY(legend.Unit)
+    endmethod
+
     private static method OnUnitChangeOwner takes nothing returns nothing
       if this.Holder.Team.ContainsFaction(legend.OwningFaction)
         set thistype.byHandleId[GetHandleId(GetTriggerUnit())].Progress = QUEST_PROGRESS_COMPLETE
