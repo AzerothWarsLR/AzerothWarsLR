@@ -1,40 +1,25 @@
 //Jaina goes to Scholomance while Scholomance building is destroyed and retrieves the Soul Gem
+library QuestJainaSoulGem requires QuestData, Artifact, DalaranConfig
 
-library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, DalaranConfig
+  struct QuestJainaSoulGem extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Jaina Proudmoore has discovered the Soul Gem within the ruined vaults at Scholomance."
+    endmethod
 
-  globals
-    private QuestData QUEST_SOULGEM
-    private QuestItemData QUESTITEM_DESTROY
-    private QuestItemData QUESTITEM_VISIT
-  endglobals
+    private method OnComplete takes nothing returns nothing
+      call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item) 
+    endmethod
 
-  private function EntersRegion takes nothing returns nothing
-    local Artifact tempArtifact = 0
-    if GetUnitTypeId(GetTriggerUnit()) == 'Hjai' and not IsUnitAliveBJ(gg_unit_u012_1149) then
-      set tempArtifact = Artifact.artifactsByType['gsou']
-      call UnitAddItem(GetTriggerUnit(), tempArtifact.item)
-      call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)   
-      call DestroyTrigger(GetTriggeringTrigger())
-    endif
-  endfunction
+    private static method create takes nothing returns nothing
+      local thistype this = thistype.allocate("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem))
+      call this.AddQuestItem(QuestItemUnitDead.create(gg_unit_u012_1149))
+      return this
+    endmethod
 
-  private function Dies takes nothing returns nothing
-    call FACTION_DALARAN.setQuestItemProgress(QUESTITEM_DESTROY, QUEST_PROGRESS_COMPLETE, true)   
-  endfunction
-
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterEnterRectSimple( trig, gg_rct_Jaina_soul_gem )
-    call TriggerAddCondition( trig, Condition( function EntersRegion ) )
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent(trig, gg_unit_u012_1149, EVENT_UNIT_DEATH)        //Scholomance interior
-    call TriggerAddCondition(trig, Condition(function Dies))
-
-    set QUEST_SOULGEM = QuestData.create("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "Jaina Proudmoore has discovered the Soul Gem within the ruined vaults at Scholomance.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
-    set QUESTITEM_DESTROY = QUEST_SOULGEM.addItem("Scholomance is destroyed")
-    set QUESTITEM_VISIT = QUEST_SOULGEM.addItem("Bring Jaina to Scholomance")
-    call FACTION_DALARAN.addQuest(QUEST_SOULGEM) 
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_DALARAN.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

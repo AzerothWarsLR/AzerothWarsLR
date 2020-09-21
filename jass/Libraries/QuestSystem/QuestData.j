@@ -46,6 +46,14 @@ library QuestData
       return this.description
     endmethod
 
+    method operator ProgressLocked takes nothing returns boolean
+      return this.progress == QUEST_PROGRESS_COMPLETE or this.progress == QUEST_PROGRESS_FAILED
+    endmethod
+
+    method operator Progress takes nothing returns integer
+      return this.progress
+    endmethod
+
     stub method operator Progress= takes integer value returns nothing
       set this.progress = value
       if value == QUEST_PROGRESS_COMPLETE then
@@ -65,6 +73,10 @@ library QuestData
     endmethod
 
     stub method OnFailed takes nothing returns nothing
+
+    endmethod
+
+    private method OnQuestItemProgressChanged takes nothing returns nothing
 
     endmethod
 

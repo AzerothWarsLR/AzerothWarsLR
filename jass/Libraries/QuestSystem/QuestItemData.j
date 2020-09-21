@@ -4,6 +4,11 @@ library QuestItemData
     private QuestData parent
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private string description = ""
+    private Event eventProgressChanged
+
+    method operator EventProgressChanged takes nothing returns Event
+      return this.eventProgressChanged
+    endmethod
 
     stub method operator X takes nothing returns real
       return 0.
@@ -22,7 +27,11 @@ library QuestItemData
     endmethod
 
     stub method operator Progress= takes integer value returns nothing
+      if this.parent.ProgressLocked then
+        return
+      endif
       set this.progress = value
+      call this.progressChanged.fire()
     endmethod
 
     stub method operator Description takes nothing returns string
@@ -35,6 +44,7 @@ library QuestItemData
 
     static method create takes nothing returns thistype
       local thistype this = thistype.create()
+      set this.eventProgressChanged = Event.create()
       return this
     endmethod
   endstruct
