@@ -6,7 +6,7 @@ library QuestDalaranKillScourge requires QuestItemKillUnit, QuestItemControlUnit
     private constant integer CASTER_RESEARCH_ID = 'Rune'
   endglobals
 
-  struct QuestBlueDragons extends QuestData
+  struct QuestDalaranKillScourge extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "The Lich King has been slain. The practice of necromancy slowly returns to the academies of Dalaran."
     endmethod
@@ -22,9 +22,9 @@ library QuestDalaranKillScourge requires QuestItemKillUnit, QuestItemControlUnit
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call FACTION_DALARAN.modObjectLimit(QUEST_RESEARCH_ID, UNLIMITED)
-      call FACTION_DALARAN.modObjectLimit(UNITTYPE_ID, UNLIMITED)
-      call FACTION_DALARAN.modObjectLimit(CASTER_RESEARCH_ID, UNLIMITED)
+      call this.Holder.modObjectLimit(QUEST_RESEARCH_ID, UNLIMITED)
+      call this.Holder.modObjectLimit(UNITTYPE_ID, UNLIMITED)
+      call this.Holder.modObjectLimit(CASTER_RESEARCH_ID, UNLIMITED)
     endmethod
 
     private static method create takes nothing returns nothing

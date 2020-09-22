@@ -1,47 +1,39 @@
-library DruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFrostwolf, Display
+library QuestDruidsKillFrostwolf requires DruidsConfig, LegendFrostwolf, Display
 
   globals
-    private QuestItemData QUESTITEM_THUNDERBLUFF
-    private QuestItemData QUESTITEM_ORGRIMMAR
     private constant integer RESEARCH_ID = 'R044'
     private constant integer ELEMENTAL_GUARDIAN_ID = 'e00X'
   endglobals
 
-  private function TryComplete takes nothing returns nothing
-    if FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_THUNDERBLUFF) == QUEST_PROGRESS_COMPLETE and FACTION_DRUIDS.getQuestItemProgress(QUESTITEM_ORGRIMMAR) == QUEST_PROGRESS_COMPLETE then
-      call SetPlayerTechResearched(FACTION_DRUIDS.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(FACTION_DRUIDS.Player, ELEMENTAL_GUARDIAN_ID, "You can now train the Elemental Guardian from the Altar of Elders.")
-    endif
-  endfunction
+  struct QuestDruidsKillFrostwolf extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of a powerful nature spirit that now heeds the call of the Druids."
+    endmethod
 
-  private function ThunderBluffDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_THUNDERBLUFF, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train the " + GetObjectName(ELEMENTAL_GUARDIAN_ID) + " from the Altar of Elders"
+    endmethod
 
-  private function OrgrimmarDies takes nothing returns nothing
-    call FACTION_DRUIDS.setQuestItemProgress(QUESTITEM_ORGRIMMAR, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(this.Holder.Player, ELEMENTAL_GUARDIAN_ID, "You can now train the Elemental Guardian from the Altar of Elders.")
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(ELEMENTAL_GUARDIAN_ID, 1)
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
 
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_THUNDERBLUFF.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function ThunderBluffDies)
+    private static method create takes nothing returns nothing
+      local thistype this = thistype.allocate("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ORGRIMMAR))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THUNDERBLUFF))
+      return this
+    endmethod
 
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_ORGRIMMAR.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function OrgrimmarDies)
-
-    set tempQuest = QuestData.create("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of a powerful nature spirit that now heed the calls of the Druids.","ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
-    set QUESTITEM_THUNDERBLUFF = tempQuest.addItem("Thunderbluff is destroyed")
-    set QUESTITEM_ORGRIMMAR = tempQuest.addItem("Orgrimmar is destroyed")
-    call FACTION_DRUIDS.modObjectLimit(ELEMENTAL_GUARDIAN_ID, 1)
-    call FACTION_DRUIDS.modObjectLimit(RESEARCH_ID, UNLIMITED)
-    call FACTION_DRUIDS.addQuest(tempQuest)
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_DRUIDS.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary
