@@ -1,4 +1,4 @@
-library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, StormwindConfig, ControlPoint, ArtifactConfig
+library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoint, ArtifactConfig
 
   globals
     private constant integer RESEARCH_ID = 'R01N'

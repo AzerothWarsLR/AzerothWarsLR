@@ -25,7 +25,7 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsConfig
     endmethod
 
     private static method onInit takes nothing returns nothing
-      call FACTION_DALARAN.AddQuest(thistype.create())
+      call FACTION_DRUIDS.AddQuest(thistype.create())
     endmethod
   endstruct
 
