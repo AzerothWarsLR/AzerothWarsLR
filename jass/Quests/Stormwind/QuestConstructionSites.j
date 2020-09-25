@@ -1,38 +1,36 @@
 //Stormwind's Construction sites are enabled after a delay.
-
-library QuestConstructionSites initializer OnInit requires QuestData, StormwindConfig
+library QuestConstructionSites requires QuestData, StormwindConfig
 
   globals
-    private constant real TIMER = 420.
-    private QuestItemData QUESTITEM_WAIT
     private constant integer RESEARCH_ID = 'R022'
   endglobals
 
-  private function TimerEnds takes nothing returns nothing
-    if FACTION_STORMWIND.Person != 0 then
-      call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_WAIT, QUEST_PROGRESS_COMPLETE, true)
-      if GetLocalPlayer() == FACTION_STORMWIND.Player then
+  struct QuestConstructionSites extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Stormwind's Construction Sites are now ready to be upgraded."
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      if GetLocalPlayer() == this.Holder.Player then
         call PingMinimap(GetUnitX(gg_unit_h053_1121), GetUnitY(gg_unit_h053_1121), 5)
         call PingMinimap(GetUnitX(gg_unit_h055_0035), GetUnitY(gg_unit_h055_0035), 5)
       endif
-      call SetPlayerTechResearched(FACTION_STORMWIND.Player, RESEARCH_ID, 1)
-    else
-      call FACTION_STORMWIND.setQuestItemProgress(QUESTITEM_WAIT, QUEST_PROGRESS_UNDISCOVERED, false)
-    endif
-  endfunction
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig = CreateTrigger(  )
-    set trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, TIMER, false)
-    call TriggerAddAction(trig, function TimerEnds)  
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
 
-    set tempQuest = QuestData.create("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "Stormwind's Construction Sites are now ready to be upgraded.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
-    set QUESTITEM_WAIT = tempQuest.addItem("Survive until turn " + I2S(R2I((TIMER / 60)+1)))
-    call FACTION_STORMWIND.addQuest(tempQuest) 
-    call FACTION_STORMWIND.modObjectLimit(RESEARCH_ID, UNLIMITED)
-    set FACTION_STORMWIND.StartingQuest = tempQuest
-  endfunction
+    private static method create takes nothing returns nothing
+      local thistype this = thistype.allocate("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
+      call this.AddQuestItem(QuestItemTime.create(360))
+      return this
+    endmethod
+
+    private static method onInit takes nothing returns nothing
+      call FACTION_STORMWIND.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

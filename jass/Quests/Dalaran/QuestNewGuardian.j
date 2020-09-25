@@ -1,5 +1,5 @@
 //Jaina goes to Scholomance while Scholomance building is destroyed and retrieves the Soul Gem
-library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalaran, Display, ArtifactConfig
+library QuestNewGuardian requires DalaranConfig, LegendDalaran, Display, ArtifactConfig
 
   globals
     private constant integer ABIL_ID = 'A0BW'
