@@ -1,28 +1,24 @@
-library QuestScourgeKillDalaran initializer OnInit requires ScourgeConfig, LegendDalaran, Display
+library QuestScourgeKillDalaran requires QuestData, ScourgeConfig, QuestItemKillUnit
 
-  globals
-    private QuestItemData QUESTITEM_DALARAN
-  endglobals
+  struct QuestScourgeKillDalaran extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Dalaran has been razed, and its libraries plundered."
+    endmethod
 
-  private function DalaranDies takes nothing returns nothing
-    if FACTION_SCOURGE.getQuestItemProgress(QUESTITEM_DALARAN) == QUEST_PROGRESS_INCOMPLETE then
-      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_DALARAN, QUEST_PROGRESS_COMPLETE, true)
-      call FACTION_SCOURGE.modObjectLimit('uobs', 2)
-      call DisplayUnitLimit(FACTION_SCOURGE, 'uobs')
-    endif
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call this.Holder.modObjectLimit('uobs', 2)
+      call DisplayUnitLimit(this.Holder, 'uobs')
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Forbidden Knowledge", "The libraries of Dalaran are filled with magical secrets that could be used to educate the Cult of the Damned, enabling them to repair more Obsidian Statues.", "ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_DALARAN.Unit))
+      return this
+    endmethod
 
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_DALARAN.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function DalaranDies)
-
-    set tempQuest = QuestData.create("Forbidden Knowledge", "The libraries of Dalaran are filled with magical secrets that could be used to educate the Cult of the Damned, enabling them to repair more Obsidian Statues.", "Dalaran has been razed, and its libraries plundered.","ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
-    set QUESTITEM_DALARAN = tempQuest.addItem("The Violet Citadel is destroyed")
-    call FACTION_SCOURGE.addQuest(tempQuest)
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_SCOURGE.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

@@ -10,7 +10,7 @@ library QuestJainaSoulGem requires QuestData, Artifact, DalaranConfig
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item) 
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem))
       call this.AddQuestItem(QuestItemUnitDead.create(gg_unit_u012_1149))

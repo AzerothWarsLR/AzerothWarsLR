@@ -1,35 +1,24 @@
-library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig
+library QuestKillCenarius requires QuestData, WarsongConfig
 
-  globals
-    private QuestData QUEST_CENARIUS
-    private QuestItemData QUESTITEM_KILL
-  endglobals
+  struct QuestKillCenarius extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The Demigod has fallen! Warsong is supreme!"
+    endmethod
 
-  private function Dies takes nothing returns nothing
-    if LEGEND_CENARIUS.Unit != null and GetTriggerUnit() == LEGEND_CENARIUS.Unit and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_KILL) != QUEST_PROGRESS_COMPLETE then 
-      if FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
-        call AddHeroXP(LEGEND_GROM.Unit, 2000, true)
-        call AddHeroAttributes(LEGEND_GROM.Unit, 5, 5, 5)
-        call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
-      else
-        call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_FAILED, true)
-      endif
-    endif
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call AddHeroXP(LEGEND_GROM.Unit, 2000, true)
+      call AddHeroAttributes(LEGEND_GROM.Unit, 5, 5, 5)
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local trigger trig
-    local integer i = 0
-    local unit u = null
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("The Hunter of Shadows", "The Night Elves are protected by a towering stag-like creature they call a demigod. Even he cannot stand against the might of the Warsong.", "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
+      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_CENARIUS))
+      return this
+    endmethod
 
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_DEATH)
-    call TriggerAddAction(trig, function Dies)
-
-    //Quest setup
-    set QUEST_CENARIUS = QuestData.create("The Hunter of Shadows", "The Night Elves are protected by a towering stag-like creature they call a demigod. Even he cannot stand against the might of the Warsong.", "The Demigod has fallen! Warsong is supreme!", "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp")
-    set QUESTITEM_KILL = QUEST_CENARIUS.addItem("Kill Cenarius")
-    call FACTION_WARSONG.addQuest(QUEST_CENARIUS)
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_WARSONG.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

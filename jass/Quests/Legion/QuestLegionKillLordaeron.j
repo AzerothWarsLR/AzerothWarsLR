@@ -10,7 +10,7 @@ library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendL
       call AddHeroAttributes(LEGEND_TICHONDRIUS.Unit, 15, 15, 15)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", FACTION_LORDAERON.Icon)
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))

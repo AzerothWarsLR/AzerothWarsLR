@@ -23,7 +23,7 @@ library QuestTheramore requires QuestData, DetermineLevel, DalaranConfig
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Theramore", "The distant lands of Kalimdor remain untouched by human civilization. If the Third War proceeds poorly, it may become necessary to establish a forward base there.", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
       call this.AddQuestItem(QuestItemTime.create(630))
       call this.AddQuestItem(QuestItemHeroInRect.create(gg_rct_Theramore))

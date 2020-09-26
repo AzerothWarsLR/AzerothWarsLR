@@ -1,32 +1,35 @@
-library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestDraktharon requires QuestData, QuelthalasConfig, LegendNeutral
 
   globals
-    private QuestData QUEST_DRAKTHARON
-    private QuestItemData QUESTITEM_CAPTURE
-
     private constant integer DARKHAN_ID = 'h052'
     private constant integer DARKHAN_RESEARCH = 'R02H'
   endglobals
 
-  private function LegendOwnerChanges takes nothing returns nothing
-    if GetTriggerLegend() == LEGEND_DRAKTHARONKEEP and FACTION_QUELTHALAS.Team.ContainsPlayer(GetOwningPlayer(LEGEND_DRAKTHARONKEEP.Unit)) and FACTION_QUELTHALAS.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call CreateUnit(FACTION_QUELTHALAS.Player, DARKHAN_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, DARKHAN_RESEARCH, 1)
-      call DisplayUnitTypeAcquired(FACTION_QUELTHALAS.Player, DARKHAN_ID, "You have acquired the demi-hero Dar'Khan Drakthir, and can revive him from the Altar of Kings if he dies.")
-      call FACTION_QUELTHALAS.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
-    endif
-  endfunction
+  struct QuestDraktharon extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Dar'Khan Drathir, a revered member of the Convocation of Silvermoon, has returned to serve the High Elves after his mysterious disappearance."
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger(  )
-    call OnLegendChangeOwner.register(trig)
-    call TriggerAddAction(trig, function LegendOwnerChanges)
+    private method OnComplete takes nothing returns nothing
+      call CreateUnit(this.Holder.Player, DARKHAN_ID, GetUnitX(LEGEND_DRAKTHARONKEEP.Unit), GetUnitY(LEGEND_DRAKTHARONKEEP.Unit), GetUnitFacing(LEGEND_DRAKTHARONKEEP.Unit))
+      call SetPlayerTechResearched(this.Holder.Player, DARKHAN_RESEARCH, 1)
+      call DisplayUnitTypeAcquired(this.Holder.Player, DARKHAN_ID, "You have acquired the demi-hero Dar'Khan Drakthir, and can revive him from the Altar of Kings if he dies.")
+    endmethod
 
-    set QUEST_DRAKTHARON = QuestData.create("Drak'tharon Keep", "Some time ago, Magister Dar'Khan Drakthir set sail to Northrend and hasn't been since. Perhaps if he can be found, he can be convinced to rejoin his people.", "Dar'Khan Drathir, a revered member of the Convocation of Silvermoon, has returned to serve the High Elves after his mysterious disappearance.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
-    set QUESTITEM_CAPTURE = QUEST_DRAKTHARON.addItem("Capture Drak'tharon Keep")
-    call FACTION_QUELTHALAS.addQuest(QUEST_DRAKTHARON) 
-    call FACTION_QUELTHALAS.modObjectLimit(DARKHAN_ID, 1)
-    call FACTION_QUELTHALAS.modObjectLimit(DARKHAN_RESEARCH, UNLIMITED)
-  endfunction
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(DARKHAN_ID, 1)
+      call this.Holder.modObjectLimit(DARKHAN_RESEARCH, UNLIMITED)
+    endmethod
+
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Drak'tharon Keep", "Some time ago, Magister Dar'Khan Drakthir set sail to Northrend and hasn't been since. Perhaps if he can be found, he can be convinced to rejoin his people.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
+      call this.AddQuestItem(QuestItemLegendCapture.create(LEGEND_DRAKTHARONKEEP))
+      return this
+    endmethod
+
+    private static method onInit takes nothing returns nothing
+      call FACTION_QUELTHALAS.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

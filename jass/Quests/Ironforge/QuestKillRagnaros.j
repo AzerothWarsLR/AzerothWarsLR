@@ -14,7 +14,7 @@ library QuestKillRagnaros requires QuestItemKillUnit, IronforgeConfig
       return "Ragnaros has been slain. His essence has been harvested and will be put to use immediately."
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate(unitToKill)
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_N00D_1457))
       return this

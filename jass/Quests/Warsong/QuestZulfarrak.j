@@ -1,14 +1,17 @@
-library QuestZulfarrak initializer OnInit requires WarsongConfig, LegendNeutral
+library QuestZulfarrak requires WarsongConfig, LegendNeutral
 
-  globals
-    private QuestItemData QUESTITEM_CAPTURE
-  endglobals
+  struct QuestZulfarrak extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + "."
+    endmethod
 
-  private function LegendOwnerChanges takes nothing returns nothing
-    local unit u
-    local group tempGroup
-    if GetTriggerLegend() == LEGEND_ZULFARRAK and FACTION_WARSONG.Player == GetOwningPlayer(LEGEND_ZULFARRAK.Unit) and FACTION_WARSONG.getQuestItemProgress(QUESTITEM_CAPTURE) == QUEST_PROGRESS_INCOMPLETE then
-      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_CAPTURE, QUEST_PROGRESS_COMPLETE, true)
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of Zul'farrak and gain an army of Sandfury trolls"
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      local unit u
+      local group tempGroup
       set tempGroup = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Zulfarrak, null)
       set u = FirstOfGroup(tempGroup)
@@ -18,28 +21,26 @@ library QuestZulfarrak initializer OnInit requires WarsongConfig, LegendNeutral
           if IsUnitType(u, UNIT_TYPE_HERO) == true then
             call KillUnit(u)
           else
-            call UnitRescue(u, FACTION_WARSONG.Player)
+            call UnitRescue(u, this.Holder.Player)
           endif
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
       endloop   
       call DestroyGroup(tempGroup)
-      call CreateUnits(FACTION_WARSONG.Player, 'ndtb', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
-      call CreateUnits(FACTION_WARSONG.Player, 'ndtp', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
-    endif
-  endfunction
+      call CreateUnits(this.Holder.Player, 'ndtb', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
+      call CreateUnits(this.Holder.Player, 'ndtp', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger(  )
-    local QuestData tempQuest
-    set trig = CreateTrigger()
-    call OnLegendChangeOwner.register(trig)
-    call TriggerAddCondition(trig, Condition(function LegendOwnerChanges))
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Darkspear Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
+      call this.AddQuestItem(QuestItemCaptureLegend.create(LEGEND_ZULFARRAK))
+      return this
+    endmethod
 
-    set tempQuest = QuestData.create("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Darkspear Trolls. An adequate display of force could bring them around.", "Zul'farrak has fallen. The Sandfury trolls lend their might to the Horde." , "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
-    set QUESTITEM_CAPTURE = tempQuest.addItem("Capture Zul'farrak")
-    call FACTION_WARSONG.addQuest(tempQuest) 
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_WARSONG.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

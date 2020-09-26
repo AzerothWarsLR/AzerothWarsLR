@@ -1,86 +1,57 @@
 //If Grom enters the Warsong Camp area, OR a time elapses, OR someone becomes a solo Horde Path, give the Camp to a Horde player.
+library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong, GeneralHelpers
 
-library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfConfig, LegendWarsong, GeneralHelpers
+  struct QuestWarsongCamp extends QuestData
+    private Faction fallbackFaction = 0
 
-  globals
-    private QuestData QUEST_CAMP
-    private QuestItemData QUESTITEM_BUILD
+    private method operator CompletionPopup takes nothing returns string
+      return "Grommash has established a foothold in Ashenvale and is now ready to begin harvesting supplies in earnest."
+    endmethod
 
-    private constant real TIMER = 240.     //How long it takes for Warsong Lumber Camp to be built instantly
-  endglobals
-
-  private function Build takes nothing returns nothing
-    local group tempGroup = CreateGroup()
-    local unit u
-    local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-
-    if FACTION_WARSONG.Person != 0 then
-      set recipient = FACTION_WARSONG.Player
-    elseif FACTION_FROSTWOLF.Person != 0 then
-      set recipient = FACTION_FROSTWOLF.Player
-    endif
-
-    //Transfer all Neutral Passive units in Orgrimmar to one of the above factions
-    call GroupEnumUnitsInRect(tempGroup, gg_rct_WarsongCamp, null)
-    set u = FirstOfGroup(tempGroup)
-    loop
-    exitwhen u == null
-      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-        call UnitRescue(u, recipient)
-      endif
-      call GroupRemoveUnit(tempGroup, u)
+    private method GiveCamp takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+      //Transfer all Neutral Passive units in the camp
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_WarsongCamp, null)
       set u = FirstOfGroup(tempGroup)
-    endloop      
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop      
+      //Cleanup
+      call DestroyGroup (tempGroup)
+      set tempGroup = null
+    endmethod
 
-    //Update quest (silently because Horde War Machine will kick in instead)
-    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_BUILD, QUEST_PROGRESS_COMPLETE, false)
+    private method OnFail takes nothing returns nothing
+      if this.FallbackFaction != 0 then
+        call this.GiveCamp(this.FallbackFaction.Player)
+      else
+        call this.GiveCamp(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      endif
+    endmethod
 
-    //Cleanup
-    call DestroyGroup (TempGroup)
-    set recipient = null
-    set tempGroup = null
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call this.GiveCamp(this.Holder.Player)
+    endmethod
 
-  private function EntersRegion takes nothing returns nothing
-    if LEGEND_GROM.Unit == GetTriggerUnit() then
-      call Build()
-    endif
-  endfunction    
+    private static method create takes Faction fallbackFaction returns nothing
+      local thistype this = thistype.allocate("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
+      set this.fallbackFaction = fallbackFaction
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(180), QuestItemAnyHeroInRect.create(gg_rct_WarsongCamp)))
+      call this.AddQuestItem(QuestItemSelfExists.create())
+      return this
+    endmethod
 
-  private function PersonFactionChanges takes nothing returns nothing
-    if GetChangingPersonPrevFaction() == FACTION_WARSONG then
-      call Build()
-      call DestroyTrigger(GetTriggeringTrigger())
-    endif
-  endfunction
-
-  private function Conditions takes nothing returns boolean
-    return FACTION_WARSONG.getQuestItemProgress(QUESTITEM_BUILD) == QUEST_PROGRESS_INCOMPLETE
-  endfunction
-
-  private function OnInit takes nothing returns nothing
-    local trigger trig = null
-
-    set trig = CreateTrigger()
-    call TriggerRegisterEnterRectSimple(trig, gg_rct_WarsongCamp)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function EntersRegion)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, TIMER, false)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function Build)    
-
-    set trig = CreateTrigger()
-    call OnPersonFactionChange.register(trig)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function PersonFactionChanges)
-
-    //Quest setup
-    set QUEST_CAMP = QuestData.create("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "Grommash has established a foothold in Ashenvale and is now ready to begin harvesting supplies in earnest.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
-    set QUESTITEM_BUILD = QUEST_CAMP.addItem("Survive until turn 4 OR bring Grom to Ashenvale")
-    call FACTION_WARSONG.addQuest(QUEST_CAMP)
-    set FACTION_WARSONG.StartingQuest = QUEST_CAMP
-  endfunction
+    private static method onInit takes nothing returns nothing
+      local QuestData newQuest = thistype.create(FACTION_FROSTWOLF)
+      call FACTION_WARSONG.AddQuest(newQuest)
+      set FACTION_WARSONG.StartingQuest = newQuest
+    endmethod
+  endstruct
 
 endlibrary

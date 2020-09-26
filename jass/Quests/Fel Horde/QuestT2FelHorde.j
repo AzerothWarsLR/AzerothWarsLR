@@ -21,7 +21,7 @@ library QuestT2FelHorde requires QuestData, FelHordeConfig, QuestItemUnitDead
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Savage Negotations", "Diplomatic negotations amongst the Fel Orcish clans are prolonged, deadly engagements. Only the destruction of Stormwind and Ironforge will truly rally the clans, for it would signal the beginning of Magtheridon's ultimate invasion.", "ReplaceableTextures\\CommandButtons\\BTNChaosGrunt.blp")
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_STORMWINDKEEP.Unit))
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_GREATFORGE.Unit))

@@ -19,7 +19,7 @@ library QuestFrostwolfKillSentinels requires FrostwolfConfig, LegendSentinels, D
       call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))

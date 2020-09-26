@@ -9,7 +9,7 @@ library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfConfig, L
       call UnitAddItem(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemCaptureLegend.create(LEGEND_NORDRASSIL))

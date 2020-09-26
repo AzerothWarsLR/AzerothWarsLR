@@ -24,7 +24,7 @@ library QuestCrystalGolem requires QuestItemCaptureLegend, DalaranConfig, Legend
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Crystalsong Forest", "The living crystal of the Crystalsong Forest suffers from its proximity to the Legion. Freed from that corruption, it could be used to empower Dalaran's constructs.", "ReplaceableTextures\\CommandButtons\\BTNRockGolem.blp")
       call this.AddQuestItem(QuestItemCaptureUnitType.create('n02R'))
       call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_LEGIONNEXUS))

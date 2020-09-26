@@ -34,7 +34,7 @@ library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoin
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Kingdom of Man", "Before the First War, all of humanity was united under the banner of the Arathorian Empire. Reclaim its greatness by uniting mankind once again.", "ReplaceableTextures\\CommandButtons\\BTNFireKingCrown.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNOFLORDAERON))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNOFSTORMWIND))

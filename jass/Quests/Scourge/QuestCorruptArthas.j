@@ -12,7 +12,7 @@ library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionCo
       call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Culling", "When the last bastion of Lordaeron falls, Prince Arthas will abandon his people and join the Scourge as their champion.", "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))

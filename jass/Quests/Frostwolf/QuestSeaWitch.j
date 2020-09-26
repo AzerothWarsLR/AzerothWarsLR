@@ -38,7 +38,7 @@ library QuestSeaWitch requires FrostwolfConfig, LegendSentinels, Display, QuestI
       call RemoveWeatherEffectBJ(Storm)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SEAWITCH.Unit))
       return this

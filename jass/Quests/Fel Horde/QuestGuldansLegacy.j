@@ -22,7 +22,7 @@ library QuestGuldansLegacy requires QuestData, FelHordeConfig
       call Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
       call this.AddQuestItem(QuestItemAnyHeroInRect.create(gg_rct_Guldan))
       return this

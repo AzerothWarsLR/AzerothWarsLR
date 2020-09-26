@@ -23,7 +23,7 @@ library QuestDruidsKillWarsong requires DruidsConfig, LegendWarsong, Display
       call this.Holder.modObjectLimit(UNITTYPE_ID, 6) //Siege Ancient
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Enemies at the Gate", "Arriving from another planet and across the seas of Azeroth, the Orcs of the Warsong Clan have arrived to ravage the wilderness and consume its bounty. They must be stopped.", "The Warsong presence on Kalimdor has been eliminated. The sacred lands are safe from their hatchets.","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ENCAMPMENT))

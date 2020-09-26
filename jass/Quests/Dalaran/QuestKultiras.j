@@ -46,7 +46,7 @@ library QuestKultiras requires QuestData, DetermineLevel, DalaranConfig
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The City at Sea", "The independent nation of Kul'tiras is conspicuously absent from the Second War. Hopefully they arrive soon.", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp")
       call this.AddQuestItem(QuestItemTime.create(480))
       call this.AddQuestItem(QuestItemSelfExists.create())

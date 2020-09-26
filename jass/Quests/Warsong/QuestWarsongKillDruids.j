@@ -1,30 +1,29 @@
-library WarsongKillDruids initializer OnInit requires WarsongConfig, LegendDruids, Display
+library QuestFrostwolfKillSentinels requires WarsongConfig, LegendDruids, Display
 
   globals
-    private QuestItemData QUESTITEM_NORDRASSIL
     private constant integer RESEARCH_ID = 'R059'
   endglobals
 
-  private function NodrassilCaptured takes nothing returns nothing
-    if FACTION_WARSONG.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then
-      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_NORDRASSIL, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_WARSONG.Player, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_WARSONG.Player, RESEARCH_ID, 1)
-    endif
-  endfunction
+  struct QuestFrostwolfKillSentinels extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment."
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig
+    private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(this.Holder.Player, RESEARCH_ID, 1)
+    endmethod
 
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_NORDRASSIL.Unit, EVENT_UNIT_CHANGE_OWNER )
-    call TriggerAddAction(trig, function NodrassilCaptured)
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple the Druids and supply the Warsong with an incredible source of lumber.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
+      return this
+    endmethod
 
-    set tempQuest = QuestData.create("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple the Druids and supply the Warsong with an incredible source of lumber.", "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
-    set QUESTITEM_NORDRASSIL = tempQuest.addItem("Nordrassil is captured")
-    call FACTION_WARSONG.addQuest(tempQuest)
-    call FACTION_WARSONG.modObjectLimit(RESEARCH_ID, UNLIMITED)
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_WARSONG.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

@@ -22,7 +22,7 @@ library QuestConstructionSites requires QuestData, StormwindConfig
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
       call this.AddQuestItem(QuestItemTime.create(360))
       return this

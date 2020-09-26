@@ -1,34 +1,33 @@
-library QuestSapphiron initializer OnInit requires QuestData, ScourgeConfig
+library QuestSapphiron requires QuestData, ScourgeConfig
 
   globals
     private constant integer SAPPHIRON_ID = 'ubdd'
     private constant integer SAPPHIRON_RESEARCH = 'R025'
-
-    private QuestData QUEST_SAPPHIRON
-    private QuestItemData QUESTITEM_SAPPHIRON
   endglobals
 
-  private function SapphironDies takes nothing returns nothing
-    local Person triggerPerson = Person.ByHandle(GetOwningPlayer(GetKillingUnit()))
-    local Person scourgePerson = FACTION_SCOURGE.Person
-    if triggerPerson.Faction.Team.ContainsPlayer(scourgePerson.Player) then
-      call CreateUnit(scourgePerson.Player, SAPPHIRON_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetPlayerTechResearched(scourgePerson.Player, SAPPHIRON_RESEARCH, 1)
-      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_COMPLETE, true)
-    else
-      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SAPPHIRON, QUEST_PROGRESS_FAILED, true)
-    endif
-    call DestroyTrigger(GetTriggeringTrigger())
-  endfunction
+  struct QuestReanimateSylvanas extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Sapphiron has been slain, and has been reanimated as a mighty Frost Worm under the command of the Scourge."
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterUnitEvent(trig, gg_unit_ubdr_0668, EVENT_UNIT_DEATH)
-    call TriggerAddAction(trig, function SapphironDies)
+    private method OnComplete takes nothing returns nothing
+      call CreateUnit(this.Holder.Player, SAPPHIRON_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
+      call SetPlayerTechResearched(this.Holder.Player, SAPPHIRON_RESEARCH, 1)
+    endmethod
 
-    set QUEST_SAPPHIRON = QuestData.create("Sapphiron", "Kill Sapphiron the Blue Dragon to reanimate her as a Frost Wyrm. Sapphiron can be found in Northrend.", "Sapphiron has been slain, and has been reanimated as a mighty Frost Worm under the command of the Scourge.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
-    set QUESTITEM_SAPPHIRON = QUEST_SAPPHIRON.addItem("Kill Sapphiron")
-    call FACTION_SCOURGE.addQuest(QUEST_SAPPHIRON)
-  endfunction
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(SAPPHIRON_RESEARCH, UNLIMITED)
+    endmethod
+
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Sapphiron", "Kill Sapphiron the Blue Dragon to reanimate her as a Frost Wyrm. Sapphiron can be found in Northrend.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
+      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ubdr_0668))
+      return this
+    endmethod
+
+    private static method onInit takes nothing returns nothing
+      call FACTION_SCOURGE.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

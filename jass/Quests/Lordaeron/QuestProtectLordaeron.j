@@ -1,44 +1,29 @@
-//When Capital Palace, Stratholme and Tyr's Hand Citadel all die, Arthas is removed and EventArthasExpedition begins.
+//When Capital Palace, Stratholme and Tyr's Hand Citadel all die, Arthas is removed.
+library QuestProtectLordaeron requires QuestData, LordaeronConfig, QuestKingArthas, QuestCorruptArthas
 
-library QuestProtectLordaeron initializer OnInit requires QuestData, LordaeronConfig, QuestKingArthas, QuestCorruptArthas
+  struct QuestProtectLordaeron extends QuestData
+    private method FailurePopup takes nothing returns string
+      return ""
+    endmethod
 
-  globals
-    private QuestData QUEST_PROTECTLORDAERON
-    private QuestItemData QUESTITEM_PROTECTLORDAERON
-  endglobals
-
-  private function Abandon takes nothing returns nothing
-    local unit arthas = gg_unit_Hart_1342
-    local Person tempPerson = FACTION_LORDAERON.Person       
-    call KillUnit(arthas)
-    call RemoveUnit(arthas)
-
-    //Cleanup
-    set arthas = null
-  endfunction
-
-  private function Dies takes nothing returns nothing
-    local Person lordaeron = FACTION_LORDAERON.Person       
-    if not IsUnitAliveBJ(gg_unit_h000_0406) and not IsUnitAliveBJ(gg_unit_h01G_0885) and not IsUnitAliveBJ(gg_unit_h030_0839) then
-      if lordaeron != 0 then
-        call Abandon()
+    private method OnFail takes nothing returns nothing
+      if LEGEND_ARTHAS.OwningFaction == this.Holder then
+        call KillUnit(LEGEND_ARTHAS.Unit)
+        call LEGEND_ARTHAS.Unit == null
       endif
-      call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_PROTECTLORDAERON, QUEST_PROGRESS_FAILED, true)
-      call FACTION_LORDAERON.setQuestItemProgress(QuestKingArthas_QUESTITEM_KINGARTHAS_PROTECT, QUEST_PROGRESS_FAILED, false)
-    endif
-  endfunction
+    endmethod
 
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger(  )
-    call TriggerRegisterUnitEvent( trig, gg_unit_h000_0406, EVENT_UNIT_DEATH )  //Capital Palace
-    call TriggerRegisterUnitEvent( trig, gg_unit_h01G_0885, EVENT_UNIT_DEATH )  //Stratholme
-    call TriggerRegisterUnitEvent( trig, gg_unit_h030_0839, EVENT_UNIT_DEATH )  //Tyr's Hand Citadel
-    call TriggerAddCondition( trig, Condition(function Dies) )
+    private static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Bastion of Humanity", "The Kingdom of Lordaeron faces threats from all sides. If all of its capitals fall, Prince Arthas will abandon his people on a mission of revenge.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_CAPITALPALACE))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_STRATHOLME))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_TYRSHAND))
+      return this
+    endmethod
 
-    set QUEST_PROTECTLORDAERON = QuestData.create("Bastion of Humanity", "The Kingdom of Lordaeron faces threats from all sides. If all of its capitals fall, Prince Arthas will abandon his people on a mission of revenge.", "", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
-    set QUESTITEM_PROTECTLORDAERON = QUEST_PROTECTLORDAERON.addItem("Stratholme, Tyr's Hand or Capital Palace must survive")
-    call FACTION_LORDAERON.addQuest(QUEST_PROTECTLORDAERON)  
-    call FACTION_LORDAERON.setQuestItemProgress(QUESTITEM_PROTECTLORDAERON, QUEST_PROGRESS_COMPLETE, false)
-  endfunction
+    private static method onInit takes nothing returns nothing
+      call FACTION_LORDAERON.AddQuest(thistype.create())
+    endmethod
+  endstruct
 
 endlibrary

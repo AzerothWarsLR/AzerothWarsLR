@@ -18,7 +18,7 @@ library QuestKingArthas requires QuestData, LordaeronConfig, LegendLordaeron
       call KillUnit(gg_unit_nemi_0019) //Terenas
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Crown Prince", "Arthas Menethil is the one true heir of the Kingdom of Lordaeron. The only thing standing in the way of his coronation is the world-ending threat of the Scourge.", "ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FROZENTHRONE))

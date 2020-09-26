@@ -26,7 +26,7 @@ library QuestMalfurionAwakens requires DruidsConfig, LegendDruids, Displayg
       endif
     endmethod
 
-    private static method create takes nothing returns nothing
+    private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Awakening of Stormrage", "Ever since the War of the Ancients ten thousand years ago, Malfurion Stormrage and his druids have slumbered within the Barrow Den. Now, their help is required once again.", "ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_GHANIR))
       call this.AddQuestItem(QuestItemAnyUnitInRectWithArtifact.create(ARTIFACT_GHANIR))
