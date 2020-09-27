@@ -16,7 +16,7 @@ library QuestScepterOfTheQueen requires QuestData
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Royal Plunder", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Feathermoon Stronghold falls, it would become a simple matter to slaughter the Highborne and plunder their artifacts.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_FEATHERMOONSTRONGHOLD.Unit))
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_FEATHERMOON.Unit))
       return this
     endmethod
 
@@ -41,7 +41,7 @@ library QuestScepterOfTheQueen requires QuestData
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Return to the Fold", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Stonemaul falls, it would be safe for them to come out.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_STONEMAULKEEP.Unit))
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_STONEMAUL.Unit))
       return this
     endmethod
 

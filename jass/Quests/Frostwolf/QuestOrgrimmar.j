@@ -55,7 +55,7 @@ library QuestOrgrimmar requires Persons, FrostwolfConfig, WarsongConfig, General
       call Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns nothing
+    private static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(540), QuestItemAnyHeroInRect.create(gg_rct_Crossroads)))

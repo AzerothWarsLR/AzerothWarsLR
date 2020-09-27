@@ -5,7 +5,7 @@ library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoin
   endglobals
 
   struct QuestKingdomOfMan extends QuestData
-    private operator Global takes nothing returns boolean
+    private method operator Global takes nothing returns boolean
       return true
     endmethod
 

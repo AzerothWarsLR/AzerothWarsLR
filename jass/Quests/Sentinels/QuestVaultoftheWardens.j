@@ -1,6 +1,6 @@
 library QuestVaultoftheWardens requires QuestData, SentinelsConfig
 
-  struct QuestSentinelsKillWarsong extends QuestData
+  struct QuestVaultoftheWardens extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "With the Broken Isles and the Tomb of Sargeras secured, work has begun on a maximum security prison named the Vault of the Wardens."
     endmethod

@@ -10,7 +10,7 @@ library QuestWarMachine requires QuestData, ScourgeConfig
       call SetPlayerTechResearched(whichPlayer, 'Rhar', GetPlayerTechCount(whichPlayer, 'Rhar', true) + 1)
       call SetPlayerTechResearched(whichPlayer, 'Rorb', 3)
       call SetPlayerTechResearched(whichPlayer, 'Rosp', 3)
-    endfunction
+    endmethod
 
     private method OnComplete takes nothing returns nothing
       loop

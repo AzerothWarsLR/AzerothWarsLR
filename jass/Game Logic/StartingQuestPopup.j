@@ -9,7 +9,7 @@ library StartingQuestPopup initializer OnInit requires Faction
       set loopPerson = Person.ById(i)
       if loopPerson.Faction.StartingQuest != 0 then
         if GetLocalPlayer() == loopPerson.Player then
-          call loopPerson.Faction.StartingQuest.displayDiscovered()
+          call loopPerson.Faction.StartingQuest.DisplayDiscovered()
         endif
       endif
       set i = i + 1

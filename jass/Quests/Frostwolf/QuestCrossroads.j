@@ -46,7 +46,7 @@ library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, Genera
       call this.GiveCrossroads(this.Holder.Player)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns nothing
+    private static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("The Crossroads", "The Horde still needs to establish a strong strategic foothold into Kalimdor. There is an opportune crossroads nearby.", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(360), QuestItemAnyHeroInRect.create(gg_rct_Crossroads)))

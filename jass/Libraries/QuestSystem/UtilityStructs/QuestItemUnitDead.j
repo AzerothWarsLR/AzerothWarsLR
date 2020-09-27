@@ -17,12 +17,12 @@ library QuestItemUnitDead requires QuestItemData
       set thistype.byHandleId[GetHandleId(GetTriggerUnit())].Progress = QUEST_PROGRESS_COMPLETE
     endmethod
 
-    static method create takes unit unitToKill returns nothing
+    static method create takes unit unitToKill returns thistype
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, unitToKill, EVENT_UNIT_DEATH)    
       call TriggerAddAction(trig, function thistype.OnUnitDeath)
-      set this.desc = GetUnitName(unitToKill) + " is dead"
+      set this.Description = GetUnitName(unitToKill) + " is dead"
       set this.target = unitToKill
       set thistype.byHandleId[GetHandleId(unitToKill)] = this
       return this

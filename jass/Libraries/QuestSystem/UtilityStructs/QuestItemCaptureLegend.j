@@ -13,20 +13,27 @@ library QuestItemCaptureLegend requires QuestItemData
       return GetUnitY(legend.Unit)
     endmethod
 
-    private static method OnUnitChangeOwner takes nothing returns nothing
-      if this.Holder.Team.ContainsFaction(legend.OwningFaction)
-        set thistype.byHandleId[GetHandleId(GetTriggerUnit())].Progress = QUEST_PROGRESS_COMPLETE
+    private method OnUnitChangeOwner takes nothing returns nothing
+      if this.Holder.Team.ContainsFaction(legend.OwningFaction) then
+        set this.Progress = QUEST_PROGRESS_COMPLETE
       else
-        set thistype.byHandleId[GetHandleId(GetTriggerUnit())].Progress = QUEST_PROGRESS_FAILED
+        set this.Progress = QUEST_PROGRESS_FAILED
       endif
     endmethod
 
-    static method create takes Legend whichLegend returns nothing
+    private static method OnAnyUnitChangeOwner takes nothing returns nothing
+      local thistype triggerLegend = Legend.ByHandle(GetTriggerUnit())
+      if triggerLegend != 0 then
+        call thistype.byLegend[triggerLegend].OnUnitChangeOwner()
+      endif
+    endmethod
+
+    static method create takes Legend whichLegend returns thistype
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       call OnLegendChangeOwner.register(trig) 
-      call TriggerAddAction(trig, function thistype.OnUnitChangeOwner)
-      set this.desc = "Capture " + whichLegend.Name
+      call TriggerAddAction(trig, function thistype.OnAnyUnitChangeOwner)
+      set this.Description = "Capture " + GetHeroProperName(whichLegend.Unit)
       set thistype.byLegend[whichLegend] = this
       return this
     endmethod

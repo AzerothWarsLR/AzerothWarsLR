@@ -1,10 +1,10 @@
-library QuestFrostwolfKillSentinels requires WarsongConfig, LegendDruids, Display
+library QuestWarsongKillDruids requires WarsongConfig, LegendDruids, Display
 
   globals
     private constant integer RESEARCH_ID = 'R059'
   endglobals
 
-  struct QuestFrostwolfKillSentinels extends QuestData
+  struct QuestWarsongKillDruids extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment."
     endmethod

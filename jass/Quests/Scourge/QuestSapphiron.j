@@ -5,7 +5,7 @@ library QuestSapphiron requires QuestData, ScourgeConfig
     private constant integer SAPPHIRON_RESEARCH = 'R025'
   endglobals
 
-  struct QuestReanimateSylvanas extends QuestData
+  struct QuestSapphiron extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Sapphiron has been slain, and has been reanimated as a mighty Frost Worm under the command of the Scourge."
     endmethod

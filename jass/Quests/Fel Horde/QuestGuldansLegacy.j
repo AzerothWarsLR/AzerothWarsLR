@@ -4,7 +4,7 @@ library QuestGuldansLegacy requires QuestData, FelHordeConfig
     private integer RESEARCH_ID = 'R041'
   endglobals
 
-  struct QuestMalfurionAwakens extends QuestData
+  struct QuestGuldansLegacy extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Gul'dan's remains have been located within the Tomb of Sargeras. His eldritch knowledge may now be put to purpose."
     endmethod

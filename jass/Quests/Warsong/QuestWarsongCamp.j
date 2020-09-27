@@ -39,7 +39,7 @@ library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong,
       call this.GiveCamp(this.Holder.Player)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns nothing
+    private static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(180), QuestItemAnyHeroInRect.create(gg_rct_WarsongCamp)))

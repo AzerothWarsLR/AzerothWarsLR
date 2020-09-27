@@ -5,7 +5,7 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
   endglobals
 
   struct QuestGrimBatol extends QuestData
-    private static GrimBatolUnits
+    private static group GrimBatolUnits
 
     private method operator CompletionPopup takes nothing returns string
       return "Zuluhed the Whacked and his followers join the Fel Horde once more. Near the Black Temple, the great Nether Dragon Neltharaku awakens."
@@ -44,7 +44,7 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
       call ShowUnit(u, true)
       call SetUnitInvulnerable(u, true)
       call SetUnitOwner(u, Player(PLAYER_NEUTRAL_PASSIVE), true)
-    endfunction
+    endmethod
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Recruit the Dragonmaw Clan", "The Dragonmaw Clan are old allies of the Fel Horde. With an adequate show of strength, they could be recruited to Magtheridon's cause once more.", "ReplaceableTextures\\CommandButtons\\BTNBlackDragon.blp")

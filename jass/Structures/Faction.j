@@ -36,7 +36,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer objectCount = 0
 
     readonly Set quests
-    readonly Table questItemProgress
     private QuestData startingQuest
 
     method operator Weight takes nothing returns integer
@@ -161,33 +160,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
     endmethod
 
-    method getQuestItemProgress takes QuestItemData questItemData returns integer
-      return questItemProgress[questItemData]
-    endmethod
-
-    method setQuestItemProgress takes QuestItemData questItemData, integer progress, boolean display returns nothing
-      if quests.contains(questItemData.parent) then
-        set questItemProgress[questItemData] = progress
-        if this.Person != 0 and GetLocalPlayer() == this.Player then
-          call questItemData.setProgress(progress, display)
-        endif
-      endif
-    endmethod
-
-    method addQuest takes QuestData questData returns nothing
-      local integer i = 0
-      local QuestItemData tempQuestItemData
+    method AddQuest takes QuestData questData returns nothing
       call quests.add(questData)
-      if GetLocalPlayer() == this.Player then
-        set questData.Enabled = true
-      endif
-      //Set quest progression of child quest items to a default value
-      loop
-        exitwhen i == questData.questItems.size
-        set tempQuestItemData = questData.questItems[i]
-        call setQuestItemProgress(tempQuestItemData, QUEST_PROGRESS_INCOMPLETE, false)
-        set i = i + 1
-      endloop
     endmethod
 
     method modWeight takes integer value returns nothing
@@ -409,7 +383,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set this.weight = weight
       set this.objectLimits = Table.create()
       set this.quests = Set.create()
-      set this.questItemProgress = Table.create()
       
       if not factionsByName.exists(StringCase(name,false)) then
         set factionsByName[StringCase(name,false)] = this

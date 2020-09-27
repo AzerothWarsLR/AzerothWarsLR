@@ -13,7 +13,7 @@ library QuestNewGuardian requires DalaranConfig, LegendDalaran, Display, Artifac
       return "Dalaran has empowered " + GetUnitName(questItemCastEmpowerGuardian.Caster) + " as the new Guardian of Tirisfal, endowing them with a portion of the Council of Tirisfal's power."
     endmethod
 
-    private function EmpowerGuardian takes unit whichUnit returns nothing
+    private method EmpowerGuardian takes unit whichUnit returns nothing
       local Legend whichLegend = Legend.ByHandle(whichUnit)
       call AddSpecialEffectTarget("war3mapImported\\Soul Armor Cosmic.mdx", whichUnit, "chest")
       call BlzSetUnitName(whichUnit, "Guardian of Tirisfal")
@@ -26,7 +26,7 @@ library QuestNewGuardian requires DalaranConfig, LegendDalaran, Display, Artifac
       call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + 20, true)
       call whichLegend.ClearUnitDependencies()
       set whichLegend.PermaDies = false
-    endfunction
+    endmethod
 
     private method OnComplete takes nothing returns nothing
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item)

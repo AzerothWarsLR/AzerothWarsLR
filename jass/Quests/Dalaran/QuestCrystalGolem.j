@@ -4,7 +4,7 @@ library QuestCrystalGolem requires QuestItemCaptureLegend, DalaranConfig, Legend
     private constant integer RESEARCH_ID = 'R045'
   endglobals
 
-  struct QuestBlueDragons extends QuestData
+  struct QuestCrystalGolem extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return this.Holder.ColoredName + "'s Earth Golems have been infused with living crystal."
     endmethod

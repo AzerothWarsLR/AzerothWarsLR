@@ -13,6 +13,9 @@ library QuestData
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private Faction holder
 
+    private QuestItemData array questItems[10]
+    private integer questItemCount = 0
+
     stub method operator Title takes nothing returns string
       return this.title
     endmethod
@@ -58,7 +61,7 @@ library QuestData
       set this.progress = value
       if value == QUEST_PROGRESS_COMPLETE then
         call OnComplete()
-      elseif value == QUEST_PROGRESS_FAILED
+      elseif value == QUEST_PROGRESS_FAILED then
         call OnFailed()
       endif
     endmethod
@@ -76,6 +79,17 @@ library QuestData
 
     endmethod
 
+    //Pops up to tell the holder about this quest (that they should be reading for the first time)
+    method DisplayDiscovered takes nothing returns nothing
+
+    endmethod
+
+    method AddQuestItem takes QuestItemData value returns QuestItemData
+      set this.questItems[this.questItemCount] = value
+      set this.questItemCount = value + 1
+      return value
+    endmethod
+
     private method OnQuestItemProgressChanged takes nothing returns nothing
 
     endmethod
@@ -85,7 +99,7 @@ library QuestData
     endmethod
 
     static method create takes string title, string desc, string icon returns thistype
-      local thistype this = thistype.create()
+      local thistype this = thistype.allocate()
       return this
     endmethod
   endstruct
