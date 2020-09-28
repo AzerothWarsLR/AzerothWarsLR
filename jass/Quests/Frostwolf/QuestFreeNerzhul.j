@@ -11,7 +11,6 @@ library QuestFreeNerzhul requires QuestData, LegendFrostwolf, FrostwolfConfig
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Jailor of the Damned", "Before he became the Lich King, Ner'zhul was the chieftain and elder shaman of the Shadowmoon Clan. Perhaps something of his former self still survives within the Frozen Throne.", "ReplaceableTextures\\CommandButtons\\BTNShaman.blp")
-      set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_FROZENTHRONE.Unit))
       return this
     endmethod
