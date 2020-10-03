@@ -3,6 +3,7 @@ library VassalFaction requires Faction
   globals
     private constant real VASSAL_INCOME_PER_MINUTE = 60
     private constant real VASSAL_STARTING_GOLD = 150
+    private constant integer VASSAL_STARTING_LUMBER = 150
   endglobals
 
   struct VassalFaction extends Faction
@@ -102,6 +103,7 @@ library VassalFaction requires Faction
         call SelectUnit(this.legend.Unit, true)
       endif
       call whichPerson.addGold(VASSAL_STARTING_GOLD)
+      call AdjustPlayerStateBJ(VASSAL_STARTING_LUMBER, whichPerson.Player, PLAYER_STATE_RESOURCE_LUMBER)
     endmethod
 
     private static method OnResearch takes nothing returns nothing
