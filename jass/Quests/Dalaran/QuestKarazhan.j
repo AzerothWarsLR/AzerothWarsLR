@@ -1,4 +1,4 @@
-library QuestKarazhan requires DalaranConfig, LegendNeutral
+library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
 
   struct QuestKarazhan extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -11,15 +11,15 @@ library QuestKarazhan requires DalaranConfig, LegendNeutral
       call Holder.modObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Secrets of Karazhan", "The spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_DALARAN.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DALARAN.AddQuest(QuestKarazhan.create())
+  endfunction
 
 endlibrary

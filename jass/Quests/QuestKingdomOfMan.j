@@ -1,4 +1,4 @@
-library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoint, ArtifactConfig
+library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, StormwindConfig, ControlPoint, ArtifactConfig
 
   globals
     private constant integer RESEARCH_ID = 'R01N'
@@ -34,7 +34,7 @@ library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoin
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Kingdom of Man", "Before the First War, all of humanity was united under the banner of the Arathorian Empire. Reclaim its greatness by uniting mankind once again.", "ReplaceableTextures\\CommandButtons\\BTNFireKingCrown.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNLORDAERON))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNSTORMWIND))
@@ -42,11 +42,11 @@ library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, ControlPoin
       call this.AddQuestItem(QuestItemControlUnitType.create('n01G'))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LORDAERON.AddQuest(thistype.create())
-      call FACTION_STORMWIND.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LORDAERON.AddQuest(QuestKingdomOfMan.create())
+    call FACTION_STORMWIND.AddQuest(QuestKingdomOfMan.create())
+  endfunction
 
 endlibrary

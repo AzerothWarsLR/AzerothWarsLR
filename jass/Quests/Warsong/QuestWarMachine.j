@@ -1,4 +1,4 @@
-library QuestWarMachine requires QuestData, ScourgeConfig
+library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
 
   struct QuestWarMachine extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -23,16 +23,16 @@ library QuestWarMachine requires QuestData, ScourgeConfig
       endloop
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
       call this.AddQuestItem(QuestItemResearch.create('R021'))
       call this.AddQuestItem(QuestItemControlUnit.create(gg_unit_o01I_0449))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_WARSONG.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
+  endfunction
 
 endlibrary

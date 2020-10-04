@@ -1,5 +1,5 @@
 //Stormwind's Construction sites are enabled after a delay.
-library QuestConstructionSites requires QuestData, StormwindConfig
+library QuestConstructionSites initializer OnInit requires QuestData, StormwindConfig
 
   globals
     private constant integer RESEARCH_ID = 'R022'
@@ -22,15 +22,15 @@ library QuestConstructionSites requires QuestData, StormwindConfig
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
       call this.AddQuestItem(QuestItemTime.create(360))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_STORMWIND.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_STORMWIND.AddQuest(QuestConstructionSites.create())
+  endfunction
 
 endlibrary

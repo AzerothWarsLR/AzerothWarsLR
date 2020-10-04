@@ -1,4 +1,4 @@
-library QuestSummonLegion requires QuestData, ScourgeConfig, LegionConfig
+library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, LegionConfig
 
   globals
     private constant integer RITUAL_ID = 'A00J'
@@ -19,15 +19,15 @@ library QuestSummonLegion requires QuestData, ScourgeConfig, LegionConfig
       endif
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
       call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LEGION.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LEGION.AddQuest(QuestSummonLegion.create())
+  endfunction
 
 endlibrary

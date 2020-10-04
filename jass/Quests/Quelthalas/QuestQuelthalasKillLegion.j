@@ -1,4 +1,4 @@
-library QuestQuelthalasKillLegion requires QuelthalasConfig, LegendLegion, Display
+library QuestQuelthalasKillLegion initializer OnInit requires QuelthalasConfig, LegendLegion, Display
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R04Q'
@@ -27,15 +27,15 @@ library QuestQuelthalasKillLegion requires QuelthalasConfig, LegendLegion, Displ
       call Holder.modObjectLimit(CASTER_RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Illicit Practices", "Ever since Sargeras caught scent of Azeroth's magic overuse, demonology has been forbidden in Quel'thalas.", "ReplaceableTextures\\CommandButtons\\BTNHighElvenCleric.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_LEGIONNEXUS.Unit))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_QUELTHALAS.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_QUELTHALAS.AddQuest(QuestQuelthalasKillLegion.create())
+  endfunction
 
 endlibrary

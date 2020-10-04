@@ -1,4 +1,4 @@
-library QuestTheramore requires QuestData, DetermineLevel, DalaranConfig
+library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, DalaranConfig
 
   struct QuestTheramore extends QuestData
     private static group theramoreUnits = CreateGroup()
@@ -28,7 +28,7 @@ library QuestTheramore requires QuestData, DetermineLevel, DalaranConfig
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Theramore", "The distant lands of Kalimdor remain untouched by human civilization. If the Third War proceeds poorly, it may become necessary to establish a forward base there.", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
       call this.AddQuestItem(QuestItemTime.create(630))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Theramore, "Theramore", true))
@@ -51,9 +51,11 @@ library QuestTheramore requires QuestData, DetermineLevel, DalaranConfig
         call GroupRemoveUnit(tempGroup, u)
       endloop
       call DestroyGroup(tempGroup)
-
-      call FACTION_DALARAN.AddQuest(thistype.create())
     endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DALARAN.AddQuest(QuestTheramore.create())
+  endfunction
 
 endlibrary

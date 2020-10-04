@@ -1,4 +1,4 @@
-library QuestGnomeregan requires QuestData, IronforgeConfig, QuestItemKillUnit
+library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig, QuestItemKillUnit
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R05Q'
@@ -37,15 +37,15 @@ library QuestGnomeregan requires QuestData, IronforgeConfig, QuestItemKillUnit
       call this.Holder.modObjectLimit(QUEST_RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The City of Invention", "The people of Gnomeregan have long been unable to assist the Alliance in its wars due an infestation of troggs and Ice Trolls. Resolve their conflicts for them to gain their services.", "ReplaceableTextures\\CommandButtons\\BTNFlyingMachine.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nitw_1513)) //Ice Troll Warlord
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_IRONFORGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_IRONFORGE.AddQuest(QuestGnomeregan.create())
+  endfunction
 
 endlibrary

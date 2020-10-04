@@ -1,4 +1,4 @@
-library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendLegion, Display
+library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, LegendLordaeron, LegendLegion, Display
 
   struct QuestLegionKillLordaeron extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -10,17 +10,17 @@ library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendL
       call AddHeroAttributes(LEGEND_TICHONDRIUS.Unit, 15, 15, 15)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", FACTION_LORDAERON.icon)
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TYRSHAND))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LORDAERON.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LORDAERON.AddQuest(QuestLegionKillLordaeron.create())
+  endfunction
 
 endlibrary

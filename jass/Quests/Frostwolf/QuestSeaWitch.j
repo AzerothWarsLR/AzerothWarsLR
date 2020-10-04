@@ -1,6 +1,6 @@
 //Frostwolf kills the Sea Witch. Thrall gets some boats to leave the Darkspear Isles.
 //Presently this ONLY deals with the final component of the event. The rest is done in GUI. 
-library QuestSeaWitch requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
+library QuestSeaWitch initializer OnInit requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
 
   globals
     private weathereffect Storm
@@ -38,18 +38,21 @@ library QuestSeaWitch requires FrostwolfConfig, LegendSentinels, Display, QuestI
       call RemoveWeatherEffectBJ(Storm)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SEAWITCH.Unit))
       return this
     endmethod
 
     private static method onInit takes nothing returns nothing
-      local QuestData newQuest = FACTION_FROSTWOLF.AddQuest(thistype.create())
-      set FACTION_FROSTWOLF.StartingQuest = newQuest
       set Storm = AddWeatherEffect(gg_rct_Darkspear_Island, 'RAhr')
       call EnableWeatherEffect(Storm, true)
     endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    local QuestData newQuest = FACTION_FROSTWOLF.AddQuest(QuestSeaWitch.create())
+    set FACTION_FROSTWOLF.StartingQuest = newQuest
+  endfunction
 
 endlibrary

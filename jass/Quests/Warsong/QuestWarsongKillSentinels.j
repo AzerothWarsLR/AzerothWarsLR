@@ -1,4 +1,4 @@
-library QuestWarsongKillSentinels requires WarsongConfig, LegendSentinels, Display
+library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, LegendSentinels, Display
 
   globals
     private constant integer RESEARCH_ID = 'R058'
@@ -16,16 +16,16 @@ library QuestWarsongKillSentinels requires WarsongConfig, LegendSentinels, Displ
       call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Perfect Warriors", "The prowess and savagery of the Sentinels is to be respected - and feared. They must be eliminated.", "ReplaceableTextures\\CommandButtons\\BTNGoblinZeppelin.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_WARSONG.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_WARSONG.AddQuest(QuestWarsongKillSentinels.create())
+  endfunction
 
 endlibrary

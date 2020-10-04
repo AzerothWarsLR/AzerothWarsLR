@@ -1,6 +1,6 @@
 //When Hellfire Citadel is destroyed, give Honor Hold to Stormwind if they are in the game, and modify doodads for visuals.
 //If Stormwind is not in the game, do nothing.
-library QuestHonorHold requires QuestData, StormwindConfig, GeneralHelpers
+library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, GeneralHelpers
 
   struct QuestHonorHold extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -24,15 +24,15 @@ library QuestHonorHold requires QuestData, StormwindConfig, GeneralHelpers
       set tempGroup = null
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Honor Hold", "Despite Outland's incredibly harsh climate, some Alliance forces have managed to make a home there - a town called Honor Hold. If the threat of Hellfire Citadel were to be eliminated, Honor Hold could become a useful forward base.", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_HONORHOLD.Unit))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_STORMWIND.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
+  endfunction
 
 endlibrary

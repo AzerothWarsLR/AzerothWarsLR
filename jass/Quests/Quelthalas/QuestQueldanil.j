@@ -1,4 +1,4 @@
-library QuestQueldanil requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
 
   struct QuestQueldanil extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -16,17 +16,17 @@ library QuestQueldanil requires QuestData, QuelthalasConfig, LegendNeutral
       call DestroyGroup(udg_QuelDanilLodge)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Quel'danil Lodge", "Quel'danil Lodge is a High Elven outpost situated in the Hinterlands. It's been some time since the rangers there have been in contact with Quel'thalas.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge, "Quel'danil Lodge", true))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      local QuestData newQuest = thistype.create()
-      call FACTION_QUELTHALAS.AddQuest(newQuest)
-      set FACTION_QUELTHALAS.StartingQuest = newQuest
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    local QuestData newQuest = QuestQueldanil.create()
+    call FACTION_QUELTHALAS.AddQuest(newQuest)
+    set FACTION_QUELTHALAS.StartingQuest = newQuest
+  endfunction
 
 endlibrary

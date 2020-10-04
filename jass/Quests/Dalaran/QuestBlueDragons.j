@@ -1,4 +1,4 @@
-library QuestBlueDragons requires QuestItemControlLegend, DalaranConfig
+library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, DalaranConfig
 
   globals
     private constant integer RESEARCH_ID = 'R00U'
@@ -19,15 +19,15 @@ library QuestBlueDragons requires QuestItemControlLegend, DalaranConfig
       call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "You can now train Blue Dragons from the Nexus.")
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Blue Dragonflight", "The Blue Dragons of Northrend are the wardens of magic on Azeroth. They might be convinced to willingly join the mages of Dalaran.", "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_DALARAN.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DALARAN.AddQuest(QuestBlueDragons.create())
+  endfunction
 
 endlibrary

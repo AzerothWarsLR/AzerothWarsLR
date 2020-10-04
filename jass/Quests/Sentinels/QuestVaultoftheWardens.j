@@ -1,4 +1,4 @@
-library QuestVaultoftheWardens requires QuestData, SentinelsConfig
+library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsConfig
 
   struct QuestVaultoftheWardens extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -9,16 +9,16 @@ library QuestVaultoftheWardens requires QuestData, SentinelsConfig
       call CreateUnit(this.Holder.Player, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Vault of the Wardens", "In millenia past, the most vile entities of Azeroth were imprisoned in a facility near Zin-Ashari. The Broken Isles, now raised from the sea floor, would be a strategic location for a newer edition of such a prison.", "ReplaceableTextures\\CommandButtons\\BTNReincarnationWarden.blp")
       call this.AddQuestItem(QuestItemControlUnit.create(gg_unit_n05Y_0805))
       call this.AddQuestItem(QuestItemControlUnit.create(gg_unit_n00J_3344))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SENTINELS.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SENTINELS.AddQuest(QuestVaultoftheWardens.create())
+  endfunction
 
 endlibrary

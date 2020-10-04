@@ -1,5 +1,5 @@
 //When Capital Palace, Stratholme and Tyr's Hand Citadel all die, Arthas is removed.
-library QuestProtectLordaeron requires QuestData, LordaeronConfig, QuestKingArthas, QuestCorruptArthas
+library QuestProtectLordaeron initializer OnInit requires QuestData, LordaeronConfig, QuestKingArthas, QuestCorruptArthas
 
   struct QuestProtectLordaeron extends QuestData
     private method FailurePopup takes nothing returns string
@@ -13,17 +13,17 @@ library QuestProtectLordaeron requires QuestData, LordaeronConfig, QuestKingArth
       endif
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Bastion of Humanity", "The Kingdom of Lordaeron faces threats from all sides. If all of its capitals fall, Prince Arthas will abandon his people on a mission of revenge.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_TYRSHAND))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LORDAERON.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LORDAERON.AddQuest(QuestProtectLordaeron.create())
+  endfunction
 
 endlibrary

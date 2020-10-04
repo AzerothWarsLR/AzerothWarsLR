@@ -1,4 +1,4 @@
-library QuestFrostwolfKillSentinels requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
+library QuestFrostwolfKillSentinels initializer OnInit requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
 
   globals
     private constant integer UNITTYPE_ID = 'owyv'
@@ -19,16 +19,16 @@ library QuestFrostwolfKillSentinels requires FrostwolfConfig, LegendSentinels, D
       call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_DRUIDS.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DRUIDS.AddQuest(QuestFrostwolfKillSentinels.create())
+  endfunction
 
 endlibrary

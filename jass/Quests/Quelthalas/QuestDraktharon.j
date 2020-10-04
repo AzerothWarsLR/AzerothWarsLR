@@ -1,4 +1,4 @@
-library QuestDraktharon requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
 
   globals
     private constant integer DARKHAN_ID = 'h052'
@@ -21,15 +21,15 @@ library QuestDraktharon requires QuestData, QuelthalasConfig, LegendNeutral
       call this.Holder.modObjectLimit(DARKHAN_RESEARCH, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drak'tharon Keep", "Some time ago, Magister Dar'Khan Drakthir set sail to Northrend and hasn't been since. Perhaps if he can be found, he can be convinced to rejoin his people.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_QUELTHALAS.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_QUELTHALAS.AddQuest(QuestDraktharon.create())
+  endfunction
 
 endlibrary

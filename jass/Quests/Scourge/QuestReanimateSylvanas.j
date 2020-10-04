@@ -1,4 +1,4 @@
-library QuestReanimateSylvanas requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
+library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
 
   globals
     private constant integer SYLVANAS_RESEARCH = 'R02D'
@@ -22,15 +22,15 @@ library QuestReanimateSylvanas requires QuestData, ScourgeConfig, QuelthalasConf
       call this.Holder.modObjectLimit(SYLVANAS_RESEARCH, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Slay her, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
       call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_SYLVANAS))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(QuestReanimateSylvanas.create())
+  endfunction
 
 endlibrary

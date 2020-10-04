@@ -1,5 +1,5 @@
 //If Thrall enters the Orgrimmar area, OR a time elapses, OR Frostwolf leaves, give Orgrimmar to a Horde player.
-library QuestOrgrimmar requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
+library QuestOrgrimmar initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
 
   globals
     private constant integer GOLD = 100
@@ -55,17 +55,17 @@ library QuestOrgrimmar requires Persons, FrostwolfConfig, WarsongConfig, General
       call Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns thistype
+    public static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(540), QuestItemAnyUnitInRect.create(gg_rct_Orgrimmar, "Orgrimmar", true)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_FROSTWOLF.AddQuest(thistype.create(FACTION_WARSONG))
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_FROSTWOLF.AddQuest(QuestOrgrimmar.create(FACTION_WARSONG))
+  endfunction
 
 endlibrary

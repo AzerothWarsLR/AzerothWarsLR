@@ -1,4 +1,4 @@
-library QuestZulfarrak requires WarsongConfig, LegendNeutral
+library QuestZulfarrak initializer OnInit requires WarsongConfig, LegendNeutral
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -32,15 +32,15 @@ library QuestZulfarrak requires WarsongConfig, LegendNeutral
       call CreateUnits(this.Holder.Player, 'ndtp', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Darkspear Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULFARRAK))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_WARSONG.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_WARSONG.AddQuest(QuestZulfarrak.create())
+  endfunction
 
 endlibrary

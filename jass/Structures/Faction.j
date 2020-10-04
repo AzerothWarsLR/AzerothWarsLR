@@ -39,7 +39,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     private integer array objectLevelList [100]
     private integer objectLevelCount = 0
 
-    readonly Set quests
     private QuestData startingQuest
 
     method operator ObjectLimitCount takes nothing returns integer
@@ -210,7 +209,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     endmethod
 
     method AddQuest takes QuestData questData returns QuestData
-      call quests.add(questData)
       return questData
     endmethod
 
@@ -459,7 +457,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set this.weight = weight
       set this.objectLimits = Table.create()
       set this.objectLevels = Table.create()
-      set this.quests = Set.create()
       
       if not factionsByName.exists(StringCase(name,false)) then
         set factionsByName[StringCase(name,false)] = this

@@ -1,4 +1,4 @@
-library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, QuestItemUnitDead
+library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, DetermineLevel, QuestItemUnitDead
 
   globals
     private constant integer RESEARCH_ID = 'R069'
@@ -45,7 +45,7 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
       call SetUnitOwner(u, Player(PLAYER_NEUTRAL_PASSIVE), true)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Recruit the Dragonmaw Clan", "The Dragonmaw Clan are old allies of the Fel Horde. With an adequate show of strength, they could be recruited to Magtheridon's cause once more.", "ReplaceableTextures\\CommandButtons\\BTNBlackDragon.blp")
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_THELSAMAR.Unit))
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_DARKSHIRE.Unit))
@@ -74,9 +74,11 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null
-
-      call FACTION_FEL_HORDE.AddQuest(thistype.create())
     endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_FEL_HORDE.AddQuest(QuestGrimBatol.create())
+  endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library QuestGuldansLegacy requires QuestData, FelHordeConfig
+library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
 
   globals
     private integer RESEARCH_ID = 'R041'
@@ -22,15 +22,15 @@ library QuestGuldansLegacy requires QuestData, FelHordeConfig
       call Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Guldan, "Tomb of Sargeras interior", true))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_FEL_HORDE.AddQuest(thistype.create())
-    endmethod
   endstruct
 
+  private function OnInit takes nothing returns nothing
+    call FACTION_FEL_HORDE.AddQuest(QuestGuldansLegacy.create())
+  endfunction
+  
 endlibrary

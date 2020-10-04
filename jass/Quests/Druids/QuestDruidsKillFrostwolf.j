@@ -1,4 +1,4 @@
-library QuestDruidsKillFrostwolf requires DruidsConfig, LegendFrostwolf, Display
+library QuestDruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R044'
@@ -24,16 +24,16 @@ library QuestDruidsKillFrostwolf requires DruidsConfig, LegendFrostwolf, Display
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ORGRIMMAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THUNDERBLUFF))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_DRUIDS.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DRUIDS.AddQuest(QuestDruidsKillFrostwolf.create())
+  endfunction
 
 endlibrary

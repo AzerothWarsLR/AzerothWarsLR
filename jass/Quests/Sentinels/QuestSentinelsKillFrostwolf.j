@@ -1,4 +1,4 @@
-library SentinelsKillFrostwolf requires SentinelsConfig, LegendFrostwolf, Display
+library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R052'
@@ -20,16 +20,16 @@ library SentinelsKillFrostwolf requires SentinelsConfig, LegendFrostwolf, Displa
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drive Them Back", "The Frostwolf Clan is beginning to seize a firm foothold within the Barrens and on the plains of Mulgore. They must be driven back.", "ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_ORGRIMMAR.Unit))
       call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_THUNDERBLUFF.Unit))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(SentinelsKillFrostwolf.create())
+  endfunction
 
 endlibrary

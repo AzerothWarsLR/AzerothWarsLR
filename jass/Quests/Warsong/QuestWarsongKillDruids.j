@@ -1,4 +1,4 @@
-library QuestWarsongKillDruids requires WarsongConfig, LegendDruids, Display
+library QuestWarsongKillDruids initializer OnInit requires WarsongConfig, LegendDruids, Display
 
   globals
     private constant integer RESEARCH_ID = 'R059'
@@ -14,16 +14,16 @@ library QuestWarsongKillDruids requires WarsongConfig, LegendDruids, Display
       call DisplayResearchAcquired(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple the Druids and supply the Warsong with an incredible source of lumber.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_WARSONG.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_WARSONG.AddQuest(QuestWarsongKillDruids.create())
+  endfunction
 
 endlibrary

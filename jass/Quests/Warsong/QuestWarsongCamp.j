@@ -1,5 +1,5 @@
 //If Grom enters the Warsong Camp area, OR a time elapses, OR someone becomes a solo Horde Path, give the Camp to a Horde player.
-library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong, GeneralHelpers
+library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfConfig, LegendWarsong, GeneralHelpers
 
   struct QuestWarsongCamp extends QuestData
     private Faction fallbackFaction = 0
@@ -39,19 +39,19 @@ library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong,
       call this.GiveCamp(this.Holder.Player)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns thistype
+    public static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(180), QuestItemAnyUnitInRect.create(gg_rct_WarsongCamp, "Warsong Camp", true)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      local QuestData newQuest = thistype.create(FACTION_FROSTWOLF)
-      call FACTION_WARSONG.AddQuest(newQuest)
-      set FACTION_WARSONG.StartingQuest = newQuest
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    local QuestData newQuest = QuestWarsongCamp.create(FACTION_FROSTWOLF)
+    call FACTION_WARSONG.AddQuest(newQuest)
+    set FACTION_WARSONG.StartingQuest = newQuest
+  endfunction
 
 endlibrary

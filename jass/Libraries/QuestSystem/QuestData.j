@@ -12,6 +12,7 @@ library QuestData
     private string description = "DEFAULTDESC"
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private Faction holder
+    private quest quest
 
     private QuestItemData array questItems[10]
     private integer questItemCount = 0
@@ -100,6 +101,11 @@ library QuestData
 
     static method create takes string title, string desc, string icon returns thistype
       local thistype this = thistype.allocate()
+      set this.quest = CreateQuest()
+      call QuestSetTitle(this.quest, title)
+      call QuestSetDescription(this.quest, desc)
+      call QuestSetIconPath(this.quest, icon)
+      call QuestSetRequired(this.quest, false)
       return this
     endmethod
   endstruct

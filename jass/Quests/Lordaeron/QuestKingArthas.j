@@ -1,5 +1,5 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
-library QuestKingArthas requires QuestData, LordaeronConfig, LegendLordaeron
+library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, LegendLordaeron
 
   struct QuestKingArthas extends QuestData
     private integer CROWN_ID = 'I001'
@@ -18,17 +18,17 @@ library QuestKingArthas requires QuestData, LordaeronConfig, LegendLordaeron
       call KillUnit(gg_unit_nemi_0019) //Terenas
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Crown Prince", "Arthas Menethil is the one true heir of the Kingdom of Lordaeron. The only thing standing in the way of his coronation is the world-ending threat of the Scourge.", "ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_LichKing))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LORDAERON.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
+  endfunction
 
 endlibrary

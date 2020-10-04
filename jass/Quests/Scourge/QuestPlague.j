@@ -1,4 +1,4 @@
-library QuestPlague requires QuestData, ScourgeConfig
+library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
 
   struct QuestPlague extends QuestData
     private method Global takes nothing returns boolean
@@ -13,16 +13,16 @@ library QuestPlague requires QuestData, ScourgeConfig
       call TriggerExecute( gg_trg_Plague_Actions )
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(660), QuestItemCommand.create("-plague")))
       call this.AddQuestItem(QuestItemTime.create(360))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(QuestPlague.create())
+  endfunction
 
 endlibrary

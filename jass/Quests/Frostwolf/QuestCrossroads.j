@@ -1,6 +1,6 @@
 //If any Horde unit enters the Crossroads area, OR a time elapses, OR someone becomes a solo Horde Path, give the Crossroads to a Horde player.
 
-library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
+library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
 
   struct QuestCrossroads extends QuestData
     private Faction fallbackFaction = 0
@@ -46,7 +46,7 @@ library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, Genera
       call this.GiveCrossroads(this.Holder.Player)
     endmethod
 
-    private static method create takes Faction fallbackFaction returns thistype
+    public static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("The Crossroads", "The Horde still needs to establish a strong strategic foothold into Kalimdor. There is an opportune crossroads nearby.", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(360), QuestItemAnyUnitInRect.create(gg_rct_Crossroads, "The Crossroads", true)))
@@ -54,10 +54,10 @@ library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, Genera
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_FROSTWOLF.AddQuest(thistype.create(FACTION_WARSONG))
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_FROSTWOLF.AddQuest(QuestCrossroads.create(FACTION_WARSONG))
+  endfunction
 
 endlibrary

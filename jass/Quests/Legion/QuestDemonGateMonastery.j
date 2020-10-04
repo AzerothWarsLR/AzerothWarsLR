@@ -1,4 +1,4 @@
-library QuestDemonGateMonastery requires QuestData, LegionConfig
+library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionConfig
 
   globals
     private constant integer DEMONGATE_ID = 'ndmg'
@@ -27,15 +27,15 @@ library QuestDemonGateMonastery requires QuestData, LegionConfig
       call SetDoodadAnimationRectBJ( "show", 'ZCv1', gg_rct_ScarletMonastery )
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("A Scarlet Rift", "The energies surrounding the Scarlet Monastery are extraordinary. Destroy this bastion of light to fabricate a Demon Gate in its place.", "ReplaceableTextures\\CommandButtons\\BTNMaskOfDeath.blp")
       set this.questItemKillMonastery = this.AddQuestItem(QuestItemKillUnit.create(gg_unit_h00T_0786))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_LEGION.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_LEGION.AddQuest(QuestDemonGateMonastery.create())
+  endfunction
 
 endlibrary

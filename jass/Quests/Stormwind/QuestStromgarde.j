@@ -1,4 +1,4 @@
-library QuestStromgarde requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestStromgarde initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
 
   struct QuestStromgarde extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -37,16 +37,16 @@ library QuestStromgarde requires QuestData, QuelthalasConfig, LegendNeutral
       call this.GiveStromgarde(this.Holder.Player)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Stromgarde", "Although Stromgarde's strength has dwindled since the days of the Arathorian Empire, it remains a significant bastion of humanity. They could be convinced to mobilize their forces for Stormwind.", "ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp")
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Stromgarde, "Stromgarde", true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_STORMWIND.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
+  endfunction
 
 endlibrary

@@ -1,5 +1,5 @@
 //Jaina goes to Scholomance while Scholomance building is destroyed and retrieves the Soul Gem
-library QuestJainaSoulGem requires QuestData, Artifact, DalaranConfig
+library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, DalaranConfig
 
   struct QuestJainaSoulGem extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -10,16 +10,16 @@ library QuestJainaSoulGem requires QuestData, Artifact, DalaranConfig
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item) 
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem))
       call this.AddQuestItem(QuestItemUnitDead.create(gg_unit_u012_1149))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_DALARAN.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_DALARAN.AddQuest(QuestJainaSoulGem.create())
+  endfunction
 
 endlibrary

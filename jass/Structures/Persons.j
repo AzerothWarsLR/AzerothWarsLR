@@ -74,8 +74,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
             endif
             set i = i + 1
           endloop
-          //Show quests
-          call showQuests()
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
           call BJDebugMsg(I2S(newFaction.Person))

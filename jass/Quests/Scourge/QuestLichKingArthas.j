@@ -1,4 +1,4 @@
-library QuestLichKingArthas requires QuestData, ScourgeConfig, Artifact
+library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig, Artifact
 
   globals
     private constant integer LEVEL_REQUIREMENT = 15
@@ -24,17 +24,17 @@ library QuestLichKingArthas requires QuestData, ScourgeConfig, Artifact
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Ascension", "From within the depths of the Frozen Throne, the Lich King Ner'zhul cries out for his champion. Release the Helm of Domination from its confines and merge its power with that of the Scourge's greatest Death Knight.", "ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS))
       call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_ARTHAS, 15))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_LichKing))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(QuestLichKingArthas.create())
+  endfunction
 
 endlibrary

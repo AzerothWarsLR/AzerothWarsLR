@@ -1,4 +1,4 @@
-library QuestScourgeKillDalaran requires QuestData, ScourgeConfig, QuestItemKillUnit
+library QuestScourgeKillDalaran initializer OnInit requires QuestData, ScourgeConfig, QuestItemKillUnit
 
   struct QuestScourgeKillDalaran extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -10,15 +10,15 @@ library QuestScourgeKillDalaran requires QuestData, ScourgeConfig, QuestItemKill
       call DisplayUnitLimit(this.Holder, 'uobs')
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Forbidden Knowledge", "The libraries of Dalaran are filled with magical secrets that could be used to educate the Cult of the Damned, enabling them to repair more Obsidian Statues.", "ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_DALARAN.Unit))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(QuestScourgeKillDalaran.create())
+  endfunction
 
 endlibrary

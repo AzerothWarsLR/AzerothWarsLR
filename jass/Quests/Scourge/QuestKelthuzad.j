@@ -1,4 +1,4 @@
-library QuestKelthuzad requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, SortScourgeLegends
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, SortScourgeLegends
 
   struct QuestKelthuzad extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -23,16 +23,16 @@ library QuestKelthuzad requires QuestData, ScourgeConfig, LegendScourge, LegendQ
       call SortScourgeLegends()
     endmethod
 
-    private static method create takes nothing returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Life Beyond Death", "Kel'thuzad is the leader of the Cult of the Damned and an extraordinarily powerful necromancer. If he were to be brought to the Sunwell and submerged in its waters, he would be reanimated as an immortal Lich.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_Sunwell))
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      call FACTION_SCOURGE.AddQuest(thistype.create())
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    call FACTION_SCOURGE.AddQuest(QuestKelthuzad.create())
+  endfunction
 
 endlibrary
