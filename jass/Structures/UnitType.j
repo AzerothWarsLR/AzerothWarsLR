@@ -33,7 +33,7 @@ library UnitType requires Environment
     endmethod        
 
     static method ByHandle takes unit whichUnit returns thistype
-      return thistype.byId[GetHandleId(whichUnit)]
+      return thistype.byId[GetUnitTypeId(whichUnit)]
     endmethod
 
     static method ById takes integer id returns thistype

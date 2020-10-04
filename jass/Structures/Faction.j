@@ -35,8 +35,16 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer array objectList[100] //An index for objectLimits
     readonly integer objectCount = 0
 
+    private Table objectLevels
+    private integer array objectLevelList [100]
+    private integer objectLevelCount = 0
+
     readonly Set quests
     private QuestData startingQuest
+
+    method operator ObjectLimitCount takes nothing returns integer
+      return this.objectCount
+    endmethod
 
     method operator Weight takes nothing returns integer
       return this.weight
@@ -115,6 +123,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     method operator Person= takes Person value returns nothing
       if this.Player != null then
         call this.Team.UnallyPlayer(this.Player)
+        call this.UnapplyObjects()
       endif
       set this.person = value
       //Maintan referential integrity
@@ -125,6 +134,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         set value.Faction = this
       endif
       call this.Team.AllyPlayer(value.Player)
+      call ApplyObjects()
     endmethod
 
     method operator StartingQuest takes nothing returns QuestData
@@ -145,6 +155,45 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
 
     stub method operator CanBeInvited takes nothing returns boolean
       return true
+    endmethod
+
+    //Adds this Faction's object limits and levels to its active Person
+    private method ApplyObjects takes nothing returns nothing
+      local Person person = this.Person
+      local integer i = 0
+      //Limits
+      loop
+        exitwhen i == this.objectCount
+        call this.Person.ModObjectLimit(this.objectList[i], this.objectLimits[this.objectList[i]])
+        set i = i + 1
+      endloop             
+      //Levels
+      set i = 0
+      loop
+      exitwhen i == this.objectLevelCount
+        call this.Person.SetObjectLevel(this.objectLevelList[i], this.objectLevels[this.objectLevelList[i]])
+        set i = i + 1
+      endloop
+    endmethod
+
+    //Removes this Faction's object limits and levels from its active Person
+    private method UnapplyObjects takes nothing returns nothing
+      local Person person = this.person
+      local integer i = 0
+      //Limits
+      loop 
+      exitwhen i == this.objectCount
+        call this.Person.ModObjectLimit(this.objectList[i], -this.objectLimits[this.objectList[i]])
+        set i = i + 1
+      endloop    
+      //Levels
+      set i = 0
+      loop
+      exitwhen i == this.objectLevelCount
+        call this.Person.SetObjectLevel(this.objectLevelList[i], 0)
+        set i = i + 1
+      endloop
+      set i = 0
     endmethod
 
     stub method Unally takes nothing returns nothing
@@ -171,6 +220,26 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
         return
       endif
       set this.weight = value
+    endmethod
+
+    method GetObjectLevel takes integer object returns integer
+      return this.objectLevels[object]
+    endmethod
+
+    private stub method OnSetObjectLevel takes integer object, integer level returns nothing
+
+    endmethod
+
+    method SetObjectLevel takes integer object, integer level returns nothing
+      if not this.objectLevels.exists(object) then
+        set this.objectLevelList[this.objectLevelCount] = object
+        set this.objectLevelCount = this.objectLevelCount + 1
+      endif
+      set this.objectLevels[object] = level
+      if this.Person != 0 then
+        call this.Person.SetObjectLevel(object, level)
+      endif
+      call this.OnSetObjectLevel(object, level)
     endmethod
 
     method modObjectLimit takes integer id, integer limit returns nothing
@@ -331,11 +400,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
           set this.Lumber = this.Lumber + loopUnitType.LumberCost * REFUND_PERCENT
           call UnitDropAllItems(u)
           call RemoveUnit(u)
-        //Remove meta units entirely
-        elseif UnitType.ByHandle(u).Refund == true then
-          call RemoveUnit(u)
         //Transfer the ownership of everything else
-        else
+        elseif UnitType.ByHandle(u).Meta == false then
           if this.Team.PlayerCount > 1 then
             call SetUnitOwner(u, ForcePickRandomPlayer(eligiblePlayers), false)
           else
@@ -352,12 +418,17 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set g = null
     endmethod
 
+    stub method OnPreLeave takes nothing returns nothing
+
+    endmethod
+
     stub method OnLeave takes nothing returns nothing
 
     endmethod
 
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
     method Leave takes nothing returns nothing
+      call OnPreLeave()
       if team.PlayerCount > 1 then
         call distributeUnits()
         call distributeResources()
@@ -369,6 +440,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       call OnFactionGameLeave.fire()
       call OnLeave()
     endmethod 
+
+    static method ByHandle takes player whichPlayer returns thistype
+      return Person.ByHandle(whichPlayer).Faction
+    endmethod
 
     static method ByName takes string s returns thistype
       return thistype.factionsByName[s]
@@ -383,6 +458,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       set this.icon = icon
       set this.weight = weight
       set this.objectLimits = Table.create()
+      set this.objectLevels = Table.create()
       set this.quests = Set.create()
       
       if not factionsByName.exists(StringCase(name,false)) then
@@ -397,11 +473,23 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return this                
     endmethod       
 
+    private static method OnAnyResearch takes nothing returns nothing
+      local Faction faction = Faction.ByHandle(GetTriggerPlayer())
+      if faction != 0 then
+        call faction.SetObjectLevel(GetResearched(), GetPlayerTechCount(GetTriggerPlayer(), GetResearched(), false))
+      endif
+    endmethod
+
     private static method onInit takes nothing returns nothing
+      local trigger trig = CreateTrigger()
+
       set Faction.factionsByName = StringTable.create()
       set OnFactionTeamLeave = Event.create()
       set OnFactionTeamJoin = Event.create()
       set OnFactionGameLeave = Event.create()
+      
+      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
+      call TriggerAddAction(trig, function thistype.OnAnyResearch)
     endmethod 
   endstruct
 

@@ -18,7 +18,7 @@ library LimitedCommand initializer OnInit requires Team, Persons, Faction
       exitwhen u == null
       set i = 0
       loop
-        exitwhen i == triggerFaction.objectCount
+        exitwhen i == triggerFaction.ObjectLimitCount
         if GetUnitTypeId(u) == triggerFaction.objectList[i] and triggerFaction.objectLimits[triggerFaction.objectList[i]] < UNLIMITED then
           call PingMinimapForPlayer(triggerPerson.Player, GetUnitX(u), GetUnitY(u), 5.)
         endif

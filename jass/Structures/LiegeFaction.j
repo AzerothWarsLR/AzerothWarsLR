@@ -5,6 +5,24 @@ library LiegeFaction requires Faction, Set
     private integer vassalCount = 0
     private force vassalBannedPlayers
 
+    //Apply object level changes to vassals too
+    private method OnSetObjectLevel takes integer object, integer level returns nothing
+      local integer i = 0
+      local Faction vassalFaction
+      if not (object == 'Rhme' or object == 'Rhar') then //Probably shouldn't be hardcoded like this
+        return
+      endif
+      loop
+        exitwhen i == vassals.size
+        if vassals[i] != 0 then
+          set vassalFaction = vassals[i]
+          call vassalFaction.modObjectLimit(object, level - vassalFaction.objectLimits[object]) //Should be using Faction.SetObjectLimit, ideally
+          call vassalFaction.SetObjectLevel(object, level)
+        endif
+        set i = i + 1
+      endloop
+    endmethod
+
     private method OnTeamChange takes nothing returns nothing
       local integer i = 0
       //Change team of vassals too
@@ -16,13 +34,13 @@ library LiegeFaction requires Faction, Set
     endmethod
 
     //Make vassals leave too
-    private method OnLeave takes nothing returns nothing
+    private method OnPreLeave takes nothing returns nothing
       local integer i = 0
       loop
         exitwhen i == vassals.size
         if vassals[i] != 0 then
           call VassalFaction(vassals[i]).Leave()
-          set VassalFaction(vassals[i]).Person = 0
+          set VassalFaction(vassals[i]).Person.Faction = 0
         endif
         set i = i + 1
       endloop
