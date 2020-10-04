@@ -2,7 +2,7 @@ library QuestItemLegendDead requires QuestItemData
 
   struct QuestItemLegendDead extends QuestItemData
     private static thistype array byLegend
-    private Legend target = null
+    private Legend target = 0
 
     method operator X takes nothing returns real
       return GetUnitX(target.Unit)
@@ -39,8 +39,8 @@ library QuestItemLegendDead requires QuestItemData
 
     private static method onInit takes nothing returns nothing
       local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_UNIT_DEATH)    
-      call TriggerAddAction(trig, thistype.OnAnyUnitDeath)
+      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_DEATH)    
+      call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
     endmethod
 
   endstruct

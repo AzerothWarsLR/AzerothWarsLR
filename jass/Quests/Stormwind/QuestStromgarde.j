@@ -20,7 +20,7 @@ library QuestStromgarde requires QuestData, QuelthalasConfig, LegendNeutral
         set u = FirstOfGroup(tempGroup)
         exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, recipient)
+          call UnitRescue(u, this.Holder.Person.Player)
         endif
         call GroupRemoveUnit(tempGroup, u)
       endloop
@@ -39,7 +39,7 @@ library QuestStromgarde requires QuestData, QuelthalasConfig, LegendNeutral
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Stromgarde", "Although Stromgarde's strength has dwindled since the days of the Arathorian Empire, it remains a significant bastion of humanity. They could be convinced to mobilize their forces for Stormwind.", "ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Stromgarde, "Stromgarde", true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

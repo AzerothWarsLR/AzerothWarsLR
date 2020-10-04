@@ -2,7 +2,8 @@ library QuestWarsongKillSentinels requires WarsongConfig, LegendSentinels, Displ
 
   globals
     private constant integer RESEARCH_ID = 'R058'
-    private constant integer ZEPPELIN_ID = 'nzep'
+    private constant integer UNITTYPE_ID = 'nzep'
+    private constant integer LIMIT_CHANGE = 2
   endglobals
 
   struct QuestWarsongKillSentinels extends QuestData

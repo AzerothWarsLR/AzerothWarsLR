@@ -13,6 +13,7 @@ library QuestWarMachine requires QuestData, ScourgeConfig
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      local integer i = 0
       loop
         exitwhen i == MAX_PLAYERS
         if this.Holder.Team.ContainsPlayer(Player(i)) then
@@ -30,7 +31,7 @@ library QuestWarMachine requires QuestData, ScourgeConfig
     endmethod
 
     private static method onInit takes nothing returns nothing
-      call WARSONG.AddQuest(thistype.create())
+      call FACTION_WARSONG.AddQuest(thistype.create())
     endmethod
   endstruct
 

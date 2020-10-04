@@ -16,7 +16,6 @@ library QuestQuelthalasKillLegion requires QuelthalasConfig, LegendLegion, Displ
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call Holder.setQuestItemProgress(QUESTITEM_KILL, QUEST_PROGRESS_COMPLETE, true)
       call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
       call SetPlayerTechResearched(Holder.Player, CASTER_RESEARCH_ID, 3)
       call DisplayUnitTypeAcquired(Holder.Player, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the Arcane Sanctum.")

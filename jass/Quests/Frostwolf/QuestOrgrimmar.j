@@ -40,8 +40,8 @@ library QuestOrgrimmar requires Persons, FrostwolfConfig, WarsongConfig, General
     endmethod
 
     private method OnFail takes nothing returns nothing
-      if this.FallbackFaction != 0 then
-        call this.GiveOrgrimmar(this.FallbackFaction.Player)
+      if this.fallbackFaction != 0 then
+        call this.GiveOrgrimmar(this.fallbackFaction.Player)
       else
         call this.GiveOrgrimmar(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       endif
@@ -58,7 +58,7 @@ library QuestOrgrimmar requires Persons, FrostwolfConfig, WarsongConfig, General
     private static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       set this.fallbackFaction = fallbackFaction
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(540), QuestItemAnyHeroInRect.create(gg_rct_Crossroads)))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(540), QuestItemAnyUnitInRect.create(gg_rct_Orgrimmar, "Orgrimmar", true)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

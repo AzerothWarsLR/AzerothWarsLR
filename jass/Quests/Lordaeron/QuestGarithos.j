@@ -9,7 +9,7 @@ library QuestGarithos requires QuestData, LordaeronConfig, LegendLordaeron
     private method OnComplete takes nothing returns nothing
       call LEGEND_GARITHOS.Spawn(this.Holder.Player, GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270)
       call UnitDetermineLevel(LEGEND_GARITHOS.Unit, 1.00)
-      call CreateUnits((this.Holder.Player, 'hkni', GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270, 24)
+      call CreateUnits(this.Holder.Player, 'hkni', GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270, 24)
     endmethod
 
     private static method create takes nothing returns thistype

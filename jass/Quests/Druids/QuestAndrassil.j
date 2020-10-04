@@ -19,8 +19,8 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsConfig
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Crown of the Snow", "Long ago, Fandral Staghelm cut a sapling from Nordrassil and used it to grow Andrassil in Northrend. Without the blessing of the Aspects, it fell to the Old Gods' corruption. If Northrend were to be reclaimed, Andrassil's growth could begin anew.", "ReplaceableTextures\\CommandButtons\\BTNTreant.blp")
-      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_LICHKNG))
-      call this.AddQuestItem(QuestItemCaptureUnitType.create('n03U'))
+      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_LICHKING))
+      call this.AddQuestItem(QuestItemControlUnitType.create('n03U'))
       return this
     endmethod
 

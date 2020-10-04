@@ -34,7 +34,7 @@ library QuestZulfarrak requires WarsongConfig, LegendNeutral
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Darkspear Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
-      call this.AddQuestItem(QuestItemCaptureLegend.create(LEGEND_ZULFARRAK))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULFARRAK))
       return this
     endmethod
 

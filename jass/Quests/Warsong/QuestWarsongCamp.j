@@ -28,8 +28,8 @@ library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong,
     endmethod
 
     private method OnFail takes nothing returns nothing
-      if this.FallbackFaction != 0 then
-        call this.GiveCamp(this.FallbackFaction.Player)
+      if this.fallbackFaction != 0 then
+        call this.GiveCamp(this.fallbackFaction.Player)
       else
         call this.GiveCamp(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       endif
@@ -42,7 +42,7 @@ library QuestWarsongCamp requires WarsongConfig, FrostwolfConfig, LegendWarsong,
     private static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("Warsong Camp", "The forests of Ashenvale seem to be an untapped resource. Establish a foothold there.", "ReplaceableTextures\\CommandButtons\\BTNMercenaryCamp.blp")
       set this.fallbackFaction = fallbackFaction
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(180), QuestItemAnyHeroInRect.create(gg_rct_WarsongCamp)))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(180), QuestItemAnyUnitInRect.create(gg_rct_WarsongCamp, "Warsong Camp", true)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

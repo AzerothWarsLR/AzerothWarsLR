@@ -7,7 +7,7 @@ library QuestDruidsKillWarsong requires DruidsConfig, LegendWarsong, Display
 
   struct QuestDruidsKillWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Frostwolves have been driven from Kalimdor. Their departure reveals the existence of a powerful nature spirit that now heeds the call of the Druids."
+      return "The Warsong presence on Kalimdor has been eliminated. The sacred lands are safe from their hatchets."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -24,7 +24,7 @@ library QuestDruidsKillWarsong requires DruidsConfig, LegendWarsong, Display
     endmethod
 
     private static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Enemies at the Gate", "Arriving from another planet and across the seas of Azeroth, the Orcs of the Warsong Clan have arrived to ravage the wilderness and consume its bounty. They must be stopped.", "The Warsong presence on Kalimdor has been eliminated. The sacred lands are safe from their hatchets.","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+      local thistype this = thistype.allocate("Enemies at the Gate", "Arriving from another planet and across the seas of Azeroth, the Orcs of the Warsong Clan have arrived to ravage the wilderness and consume its bounty. They must be stopped.", "ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ENCAMPMENT))
       return this

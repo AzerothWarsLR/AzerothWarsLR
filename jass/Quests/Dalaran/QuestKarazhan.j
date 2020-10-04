@@ -5,7 +5,7 @@ library QuestKarazhan requires DalaranConfig, LegendNeutral
       return "Karazhan has been captured. " + this.Holder.ColoredName + "'s  archivists scour its halls for arcane resources."
     endmethod
 
-    private static method OnAdd takes nothing returns nothing
+    private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
       call Holder.modObjectLimit('R03M', UNLIMITED)   //Methods of Control
       call Holder.modObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
@@ -13,7 +13,7 @@ library QuestKarazhan requires DalaranConfig, LegendNeutral
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Secrets of Karazhan", "The spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
-      call this.AddQuestItem(QuestItemCaptureLegend.create(LEGEND_KARAZHAN))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN))
       return this
     endmethod
 

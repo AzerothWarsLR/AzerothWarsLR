@@ -36,7 +36,7 @@ library QuestScepterOfTheQueen requires QuestData
 
     private method OnComplete takes nothing returns nothing
       call SetItemPosition(ARTIFACT_SCEPTEROFTHEQUEEN.item, GetRectCenterX(gg_rct_HighBourne), GetRectCenterY(gg_rct_HighBourne))
-      call RescueNeutralUnitsInRect(gg_rct_HighBourne, Player(this.Holder.Player))
+      call RescueNeutralUnitsInRect(gg_rct_HighBourne, this.Holder.Player)
     endmethod
 
     private static method create takes nothing returns thistype
@@ -53,6 +53,7 @@ library QuestScepterOfTheQueen requires QuestData
   private function OnInit takes nothing returns nothing
     //Make the Shen'dralar starting units invulnerable
     local group tempGroup = CreateGroup()
+    local unit u
     call GroupEnumUnitsInRect(tempGroup, gg_rct_HighBourne, null)
     loop
       set u = FirstOfGroup(tempGroup)

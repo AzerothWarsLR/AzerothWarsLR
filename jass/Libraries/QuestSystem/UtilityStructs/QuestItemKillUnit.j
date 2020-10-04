@@ -12,6 +12,10 @@ library QuestItemKillUnit requires QuestItemData
       return GetUnitY(target)
     endmethod
 
+    method operator Target takes nothing returns unit
+      return this.target
+    endmethod
+
     private method OnUnitDeath takes nothing returns nothing
       if this.Holder.Team.ContainsFaction(Person.ByHandle(GetOwningPlayer(GetKillingUnit())).Faction) then
         set thistype.byHandleId[GetHandleId(GetTriggerUnit())].Progress = QUEST_PROGRESS_COMPLETE

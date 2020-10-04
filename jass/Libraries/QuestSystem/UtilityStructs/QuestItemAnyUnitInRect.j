@@ -1,10 +1,11 @@
-library QuestItemAnyHeroInRect requires QuestItemData
+library QuestItemAnyUnitInRect requires QuestItemData
 
-  struct QuestItemAnyHeroInRect extends QuestItemData
+  struct QuestItemAnyUnitInRect extends QuestItemData
     private static trigger entersRectTrig = CreateTrigger()
     private static trigger exitsRectTrig = CreateTrigger()
     private static thistype array byHandleId
     private rect targetRect = null
+    private boolean heroOnly = false
 
     method operator X takes nothing returns real
       return GetRectCenterX(this.targetRect)
@@ -15,7 +16,7 @@ library QuestItemAnyHeroInRect requires QuestItemData
     endmethod
 
     private method OnRectEnter takes unit enteringUnit returns nothing
-      if IsUnitType(enteringUnit, UNIT_TYPE_HERO) then
+      if IsUnitType(enteringUnit, UNIT_TYPE_HERO) or not this.heroOnly then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       endif
     endmethod
@@ -25,22 +26,27 @@ library QuestItemAnyHeroInRect requires QuestItemData
     endmethod
 
     private static method OnAnyRectEnter takes nothing returns nothing
-      call thistype.byHandleId[GetTriggeringRegion()].OnRectEnter(GetEnteringUnit())
+      call thistype.byHandleId[GetHandleId(GetTriggeringRegion())].OnRectEnter(GetEnteringUnit())
     endmethod
 
     private static method OnAnyRectExit takes nothing returns nothing
-      call thistype.byHandleId[GetTriggeringRegion()].OnRectExit(GetLeavingUnit())
+      call thistype.byHandleId[GetHandleId(GetTriggeringRegion())].OnRectExit(GetLeavingUnit())
     endmethod
 
-    static method create takes rect targetRect, string rectName returns thistype
+    static method create takes rect targetRect, string rectName, boolean heroOnly returns thistype
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       call TriggerRegisterGameEvent(thistype.entersRectTrig, EVENT_GAME_ENTER_REGION) 
       call TriggerRegisterGameEvent(thistype.exitsRectTrig, EVENT_GAME_LEAVE_REGION) 
       call TriggerAddAction(thistype.entersRectTrig, function thistype.OnAnyRectEnter)
       call TriggerAddAction(thistype.exitsRectTrig, function thistype.OnAnyRectExit)
-      set this.Description = "You have a hero at " + rectName
+      if heroOnly then
+        set this.Description = "You have a hero at " + rectName
+      else
+        set this.Description = "You have a unit at " + rectName
+      endif
       set this.targetRect = targetRect
+      set this.heroOnly = heroOnly
       set thistype.byHandleId[GetHandleId(targetRect)] = this
       return this
     endmethod

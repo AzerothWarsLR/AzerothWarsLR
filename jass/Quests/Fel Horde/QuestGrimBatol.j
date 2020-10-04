@@ -17,23 +17,22 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
 
     private method OnComplete takes nothing returns nothing
       local unit u
+      local player holderPlayer = this.Holder.Person.Player
       loop
         set u = FirstOfGroup(thistype.GrimBatolUnits)
         exitwhen u == null
-        call UnitRescue(u, whichPlayer)
+        call UnitRescue(u, holderPlayer)
         call GroupRemoveUnit(thistype.GrimBatolUnits, u)
       endloop
-      call UnitRescue(gg_unit_n08A_3097, whichPlayer)  //Neltharauku
-      call SetUnitOwner(gg_unit_h01Z_0618, whichPlayer, true)
+      call UnitRescue(gg_unit_n08A_3097, holderPlayer)  //Neltharauku
+      call SetUnitOwner(gg_unit_h01Z_0618, holderPlayer, true)
       call UnitDetermineLevel(gg_unit_O00Y_3094, 1.) //Zuluhed
       call EnableWaygate(gg_unit_n08R_2209) //Grim Batol Tunnels
       call EnableWaygate(gg_unit_n08R_2214) //Grim Batol Tunnels
       call IssueImmediateOrderBJ( gg_unit_o02O_3247, "battlestations" ) //Orc Burrow
       call IssueImmediateOrderBJ( gg_unit_o02O_3248, "battlestations" ) //Orc Burrow
-      call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_GRIMBATOL_VISIT, QUEST_PROGRESS_COMPLETE, true)
       call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
       call DestroyGroup(thistype.GrimBatolUnits)
-      call DestroyTrigger(GetTriggeringTrigger())
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -55,6 +54,9 @@ library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, Quest
 
     private static method onInit takes nothing returns nothing
       //Setup initially invulnerable and hidden group at Grim Batol
+      local group tempGroup = CreateGroup()
+      local unit u
+      local integer i = 0
       set thistype.GrimBatolUnits = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
       loop

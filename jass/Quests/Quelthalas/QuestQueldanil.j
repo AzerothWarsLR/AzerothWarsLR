@@ -18,7 +18,7 @@ library QuestQueldanil requires QuestData, QuelthalasConfig, LegendNeutral
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Quel'danil Lodge", "Quel'danil Lodge is a High Elven outpost situated in the Hinterlands. It's been some time since the rangers there have been in contact with Quel'thalas.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge, "Quel'danil Lodge", true))
       return this
     endmethod
 

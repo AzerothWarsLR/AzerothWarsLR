@@ -11,7 +11,7 @@ library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendL
     endmethod
 
     private static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", FACTION_LORDAERON.Icon)
+      local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", FACTION_LORDAERON.icon)
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TYRSHAND))

@@ -6,7 +6,7 @@ library QuestPlague requires QuestData, ScourgeConfig
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies.",
+      return "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies."
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -15,7 +15,7 @@ library QuestPlague requires QuestData, ScourgeConfig
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(660), QuestItemCommand("-plague")))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(660), QuestItemCommand.create("-plague")))
       call this.AddQuestItem(QuestItemTime.create(360))
       return this
     endmethod

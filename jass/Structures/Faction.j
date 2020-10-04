@@ -160,8 +160,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
     endmethod
 
-    method AddQuest takes QuestData questData returns nothing
+    method AddQuest takes QuestData questData returns QuestData
       call quests.add(questData)
+      return questData
     endmethod
 
     method modWeight takes integer value returns nothing

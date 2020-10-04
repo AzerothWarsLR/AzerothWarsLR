@@ -1,4 +1,4 @@
-library QuestBlueDragons requires QuestItemCaptureLegend, DalaranConfig
+library QuestBlueDragons requires QuestItemControlLegend, DalaranConfig
 
   globals
     private constant integer RESEARCH_ID = 'R00U'
@@ -21,7 +21,7 @@ library QuestBlueDragons requires QuestItemCaptureLegend, DalaranConfig
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Blue Dragonflight", "The Blue Dragons of Northrend are the wardens of magic on Azeroth. They might be convinced to willingly join the mages of Dalaran.", "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
-      call this.AddQuestItem(QuestItemCaptureLegend.create(LEGEND_NEXUS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS))
       return this
     endmethod
 

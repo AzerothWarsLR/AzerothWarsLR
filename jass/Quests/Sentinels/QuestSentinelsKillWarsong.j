@@ -2,7 +2,7 @@ library QuestSentinelsKillWarsong requires SentinelsConfig, LegendWarsong, Displ
 
   struct QuestSentinelsKillWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Warsong presence on Kalimdor has been eliminated. The land has been protected from their misbegotten race.", 
+      return "The Warsong presence on Kalimdor has been eliminated. The land has been protected from their misbegotten race."
     endmethod
 
     private method OnComplete takes nothing returns nothing

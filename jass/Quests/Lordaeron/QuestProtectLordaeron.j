@@ -9,7 +9,7 @@ library QuestProtectLordaeron requires QuestData, LordaeronConfig, QuestKingArth
     private method OnFail takes nothing returns nothing
       if LEGEND_ARTHAS.OwningFaction == this.Holder then
         call KillUnit(LEGEND_ARTHAS.Unit)
-        call LEGEND_ARTHAS.Unit == null
+        set LEGEND_ARTHAS.Unit = null
       endif
     endmethod
 

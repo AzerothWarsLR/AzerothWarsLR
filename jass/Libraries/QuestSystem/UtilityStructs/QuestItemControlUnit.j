@@ -21,7 +21,7 @@ library QuestItemControlUnit requires QuestItemData
     endmethod
 
     private static method OnAnyUnitChangeOwner takes nothing returns nothing
-      call thistype.byHandleId[GetTriggerUnit()].OnUnitChangeOwner()
+      call thistype.byHandleId[GetHandleId(GetTriggerUnit())].OnUnitChangeOwner()
     endmethod
 
     static method create takes unit target returns thistype

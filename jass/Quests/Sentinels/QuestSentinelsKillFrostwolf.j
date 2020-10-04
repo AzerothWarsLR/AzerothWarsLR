@@ -22,8 +22,8 @@ library SentinelsKillFrostwolf requires SentinelsConfig, LegendFrostwolf, Displa
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drive Them Back", "The Frostwolf Clan is beginning to seize a firm foothold within the Barrens and on the plains of Mulgore. They must be driven back.", "ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_ORGRIMMAR))
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_THUNDERBLUFF))
+      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_ORGRIMMAR.Unit))
+      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_THUNDERBLUFF.Unit))
       return this
     endmethod
 

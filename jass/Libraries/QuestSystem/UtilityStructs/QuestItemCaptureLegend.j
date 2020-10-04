@@ -1,6 +1,6 @@
-library QuestItemCaptureLegend requires QuestItemData
+library QuestItemControlLegend requires QuestItemData
 
-  struct QuestItemCaptureLegend extends QuestItemData
+  struct QuestItemControlLegend extends QuestItemData
     private static trigger unitDies = CreateTrigger()
     private static thistype array byLegend
     private Legend legend = 0

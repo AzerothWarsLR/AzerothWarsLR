@@ -16,7 +16,7 @@ library QuestDemonGateMonastery requires QuestData, LegionConfig
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call CreateUnit(Holder.Player, DEMONGATE_ID, GetUnitX(this.questItemKillMonastery.TargetUnit), GetUnitY(this.questItemKillMonastery.TargetUnit), 270.)
+      call CreateUnit(Holder.Player, DEMONGATE_ID, GetUnitX(this.questItemKillMonastery.Target), GetUnitY(this.questItemKillMonastery.Target), 270.)
       call SetDoodadAnimationRectBJ( "hide", 'YObb', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'ZSab', gg_rct_ScarletMonastery )
       call SetDoodadAnimationRectBJ( "hide", 'YOsw', gg_rct_ScarletMonastery )

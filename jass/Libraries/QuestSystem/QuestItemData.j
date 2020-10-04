@@ -47,7 +47,7 @@ library QuestItemData
     endmethod
 
     static method create takes nothing returns thistype
-      local thistype this = thistype.create()
+      local thistype this = thistype.allocate()
       set this.progressChanged = Event.create()
       return this
     endmethod

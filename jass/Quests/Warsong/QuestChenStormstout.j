@@ -7,7 +7,7 @@ library QuestChenStormstout requires QuestData, StormwindConfig, GeneralHelpers
 
   struct QuestChenStormstout extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Chen Stormstout has joined the " + this.Holder.Team + "."
+      return "Chen Stormstout has joined the " + this.Holder.Team.Name + "."
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestChenStormstout requires QuestData, StormwindConfig, GeneralHelpers
 
     private static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Wandering Brewmaster", "Rumours tell of a strange white-furred creature from a foreign land. Perhaps it could be convinced to join the Horde.", "ReplaceableTextures\\CommandButtons\\BTNPandarenBrewmaster.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen, "Chen Stormstout", true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

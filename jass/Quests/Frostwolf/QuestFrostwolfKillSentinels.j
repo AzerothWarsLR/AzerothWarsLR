@@ -11,7 +11,7 @@ library QuestFrostwolfKillSentinels requires FrostwolfConfig, LegendSentinels, D
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + I2S(LIMIT_CHANGE) " additional " + GetObjectName(ELEMENTAL_GUARDIAN_ID) + "s"
+      return "Learn to train " + I2S(LIMIT_CHANGE) + " additional " + GetObjectName(UNITTYPE_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -14,6 +14,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
       Artifact ARTIFACT_SCEPTEROFTHEQUEEN
       Artifact ARTIFACT_CROWNEASTERNKINGDOMS
       Artifact ARTIFACT_BOOKOFMEDIVH
+      Artifact ARTIFACT_SOULGEM
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -90,7 +91,6 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_O00O_1933, ARTIFACT_HOLDER_ABIL_ID)             //Zul'jin
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)
 
-
     set tempArtifact = Artifact.create(CreateItem('arsh', DUMMY_X, DUMMY_Y))    //Shroud of Nozdormuru
     call UnitAddAbility(gg_unit_O025_3426, ARTIFACT_HOLDER_ABIL_ID)             //Occulus
     call UnitAddItem(gg_unit_O025_3426, tempArtifact.item)  
@@ -102,10 +102,10 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('ktrm', DUMMY_X, DUMMY_Y))    //Urn of Kings
     call UnitAddItem(gg_unit_Huth_1343, tempArtifact.item)                      //Uther
 
-    set tempArtifact = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))    //Soul Gem
-    call tempArtifact.setStatus(ARTIFACT_STATUS_SPECIAL)
-    set tempArtifact.falseX = -14269
-    set tempArtifact.falseY = 22281
+    set ARTIFACT_SOULGEM = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))    //Soul Gem
+    call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_SPECIAL)
+    set ARTIFACT_SOULGEM.falseX = -14269
+    set ARTIFACT_SOULGEM.falseY = 22281
 
     set ARTIFACT_GHANIR = Artifact.create(CreateItem('I00C', DUMMY_X, DUMMY_Y))    //G'hanir
     call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)                //Barrow Den  
