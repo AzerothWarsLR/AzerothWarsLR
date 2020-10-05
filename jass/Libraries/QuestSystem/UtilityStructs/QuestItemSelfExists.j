@@ -22,6 +22,7 @@ library QuestItemSelfExists requires QuestItemData, Persons
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       set this.Progress = QUEST_PROGRESS_COMPLETE
+      set this.Description = "You exist"
       return this
     endmethod
 

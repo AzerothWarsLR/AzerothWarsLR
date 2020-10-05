@@ -27,7 +27,7 @@ library QuestItemLegendDead requires QuestItemData
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       set this.target = target
-      set this.Description = GetHeroProperName(target.Unit)
+      set this.Description = target.Name + " is dead"
       set thistype.byLegend[target] = this
       if target.Unit == null then
         set this.Progress = QUEST_PROGRESS_UNDISCOVERED

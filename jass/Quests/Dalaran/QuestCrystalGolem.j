@@ -27,7 +27,7 @@ library QuestCrystalGolem initializer OnInit requires QuestItemControlLegend, Da
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Crystalsong Forest", "The living crystal of the Crystalsong Forest suffers from its proximity to the Legion. Freed from that corruption, it could be used to empower Dalaran's constructs.", "ReplaceableTextures\\CommandButtons\\BTNRockGolem.blp")
       call this.AddQuestItem(QuestItemControlUnitType.create('n02R'))
-      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_LEGIONNEXUS))
+      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_LEGIONNEXUS.Unit))
       return this
     endmethod
   endstruct

@@ -23,6 +23,7 @@ library LegendStormwind initializer OnInit requires Legend
     set LEGEND_STORMWINDKEEP.DeathMessage = "Stormwind Keep, the capitol of the nation of Stormwind, has been destroyed!"
 
     set LEGEND_DARKSHIRE = Legend.create()
+    set LEGEND_DARKSHIRE.Unit = gg_unit_h03Y_0077
 
     set LEGEND_HONORHOLD = Legend.create()
   endfunction

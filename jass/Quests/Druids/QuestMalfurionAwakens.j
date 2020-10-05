@@ -1,6 +1,6 @@
 //Anyone on the Night Elves team approaches Moonglade with a unit with the Horn of Cenarius,
 //Causing Malfurion to spawn.
-library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDruids, Display
+library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDruids, Display, ArtifactConfig
 
   globals
     private constant integer HORN_OF_CENARIUS = 'cnhn'
@@ -28,8 +28,8 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDr
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Awakening of Stormrage", "Ever since the War of the Ancients ten thousand years ago, Malfurion Stormrage and his druids have slumbered within the Barrow Den. Now, their help is required once again.", "ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
-      call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_GHANIR))
-      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_GHANIR, gg_rct_Moonglade))
+      call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_HORNOFCENARIUS))
+      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_HORNOFCENARIUS, gg_rct_Moonglade, "The Barrow Den"))
       return this
     endmethod
   endstruct

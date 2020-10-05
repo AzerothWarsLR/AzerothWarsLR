@@ -7,6 +7,7 @@ library QuestItemCastSpell requires QuestItemData
 
     static method create takes integer spellId returns thistype
       local thistype this = thistype.allocate()
+      set this.Description = "Cast " + GetObjectName(spellId)
       return this
     endmethod
   endstruct

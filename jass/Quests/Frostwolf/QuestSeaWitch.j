@@ -1,6 +1,6 @@
 //Frostwolf kills the Sea Witch. Thrall gets some boats to leave the Darkspear Isles.
 //Presently this ONLY deals with the final component of the event. The rest is done in GUI. 
-library QuestSeaWitch initializer OnInit requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
+library QuestSeaWitch initializer OnInit requires FrostwolfConfig, LegendNeutral, Display, QuestItemLegendDead
 
   globals
     private weathereffect Storm

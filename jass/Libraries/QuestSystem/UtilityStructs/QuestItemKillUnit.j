@@ -33,7 +33,7 @@ library QuestItemKillUnit requires QuestItemData
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, unitToKill, EVENT_UNIT_DEATH)    
       call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
-      set this.Description = "You have killed " + GetUnitName(unitToKill)
+      set this.Description = "Kill " + GetUnitName(unitToKill)
       set this.target = unitToKill
       set thistype.byHandleId[GetHandleId(unitToKill)] = this
       return this

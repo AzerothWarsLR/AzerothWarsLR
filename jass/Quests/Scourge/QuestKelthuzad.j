@@ -26,7 +26,7 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Life Beyond Death", "Kel'thuzad is the leader of the Cult of the Damned and an extraordinarily powerful necromancer. If he were to be brought to the Sunwell and submerged in its waters, he would be reanimated as an immortal Lich.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL))
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_Sunwell))
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_Sunwell, "The Sunwell"))
       return this
     endmethod
   endstruct

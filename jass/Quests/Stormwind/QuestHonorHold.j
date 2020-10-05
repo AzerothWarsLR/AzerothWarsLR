@@ -29,8 +29,8 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Honor Hold", "Despite Outland's incredibly harsh climate, some Alliance forces have managed to make a home there - a town called Honor Hold. If the threat of Hellfire Citadel were to be eliminated, Honor Hold could become a useful forward base.", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_HONORHOLD.Unit))
+      local thistype this = thistype.allocate("Honor Hold", "Despite Outland's incredibly harsh climate, some Alliance forces have managed to make a home there - a town called Honor Hold", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_HELLFIRECITADEL.Unit))
       return this
     endmethod
   endstruct

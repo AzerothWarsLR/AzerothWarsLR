@@ -29,7 +29,7 @@ library QuestDalaranKillScourge initializer OnInit requires QuestItemKillUnit, Q
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Legitimate Necromancy", "The heinous actions of the Cult of the Damned have illegitimized necromancy in the eyes of the Council of Six.", "ReplaceableTextures\\CommandButtons\\BTNNecromancer.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_LICHKING.Unit))
+      call this.AddQuestItem(QuestItemKUnitDead.create(LEGEND_LICHKING.Unit))
       return this
     endmethod
   endstruct

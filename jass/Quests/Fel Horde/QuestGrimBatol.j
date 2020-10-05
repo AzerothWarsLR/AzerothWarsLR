@@ -1,4 +1,4 @@
-library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, DetermineLevel, QuestItemUnitDead
+library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, DetermineLevel, LegendIronforge, LegendStormwind
 
   globals
     private constant integer RESEARCH_ID = 'R069'
