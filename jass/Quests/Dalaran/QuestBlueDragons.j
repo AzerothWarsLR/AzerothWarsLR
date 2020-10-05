@@ -11,7 +11,7 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Ability to train Blue Dragons from the Nexus."
+      return "Ability to train Blue Dragons from the Nexus"
     endmethod
 
     private method OnComplete takes nothing returns nothing
