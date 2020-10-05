@@ -9,6 +9,10 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
       return "Arthas has ascended the Frozen Throne itself and shattered Ner'zhul's frozen prison. Ner'zhul and Arthas are now joined, body and soul, into one being: the god-like Lich King."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Arthas becomes the Lich King"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
       set LEGEND_LICHKING.Hivemind = false

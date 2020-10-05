@@ -209,6 +209,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     endmethod
 
     method AddQuest takes QuestData questData returns QuestData
+      set questData.Holder = this
       return questData
     endmethod
 

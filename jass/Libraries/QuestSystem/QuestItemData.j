@@ -5,6 +5,15 @@ library QuestItemData
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private string description = ""
     private Event progressChanged
+    private questitem questItem
+
+    method operator QuestItem takes nothing returns questitem
+      return this.questItem
+    endmethod
+
+    method operator QuestItem= takes questitem value returns nothing
+      set this.questItem = value
+    endmethod
 
     method operator ProgressChanged takes nothing returns Event
       return this.progressChanged

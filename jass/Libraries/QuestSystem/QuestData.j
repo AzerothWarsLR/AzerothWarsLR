@@ -72,6 +72,15 @@ library QuestData
       return this.holder
     endmethod
 
+    method operator Holder= takes Faction value returns nothing
+      if this.holder != 0 then
+        call BJDebugMsg("Attempted to set Holder of quest " + this.title + " to " + value.name + " but it is already set to " + this.holder.name)
+        return
+      endif
+      set this.holder = value
+      call QuestSetDescription(this.quest, this.description + "\n|cffffcc00Reward:|r " + this.CompletionDescription)
+    endmethod
+
     stub method OnComplete takes nothing returns nothing
 
     endmethod
@@ -88,6 +97,8 @@ library QuestData
     method AddQuestItem takes QuestItemData value returns QuestItemData
       set this.questItems[this.questItemCount] = value
       set this.questItemCount = value + 1
+      set value.QuestItem = QuestCreateItem(this.quest)
+      call QuestItemSetDescription(value.QuestItem, value.Description)
       return value
     endmethod
 
@@ -102,8 +113,8 @@ library QuestData
     static method create takes string title, string desc, string icon returns thistype
       local thistype this = thistype.allocate()
       set this.quest = CreateQuest()
+      set this.description = desc
       call QuestSetTitle(this.quest, title)
-      call QuestSetDescription(this.quest, desc)
       call QuestSetIconPath(this.quest, icon)
       call QuestSetRequired(this.quest, false)
       return this
