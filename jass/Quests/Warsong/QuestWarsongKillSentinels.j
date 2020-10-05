@@ -12,7 +12,7 @@ library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, Leg
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(UNITTYPE_ID)
+      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -12,7 +12,7 @@ library QuestDalaranKillScourge initializer OnInit requires QuestItemKillUnit, Q
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName('hars')
+      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

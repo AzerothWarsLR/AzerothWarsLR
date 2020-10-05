@@ -7,7 +7,7 @@ library QuestGarithos initializer OnInit requires QuestData, LordaeronConfig, Le
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of Garithos and 24 Knights"
+      return "The hero Garithos and 24 Knights"
     endmethod
 
     private method OnComplete takes nothing returns nothing

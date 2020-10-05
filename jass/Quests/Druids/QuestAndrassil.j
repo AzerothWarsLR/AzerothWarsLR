@@ -6,7 +6,7 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain a new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw"
+      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw"
     endmethod
 
     private method OnComplete takes nothing returns nothing

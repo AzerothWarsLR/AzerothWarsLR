@@ -10,7 +10,7 @@ library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain a research improving all of your demon units"
+      return "A research improving all of your demon units"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -6,7 +6,7 @@ library QuestZulfarrak initializer OnInit requires WarsongConfig, LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of Zul'farrak and gain an army of Sandfury trolls"
+      return "Control of Zul'farrak and an army of Sandfury trolls"
     endmethod
 
     private method OnComplete takes nothing returns nothing

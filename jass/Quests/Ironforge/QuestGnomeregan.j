@@ -10,7 +10,7 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig, 
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of all units in Gnomeregan"
+      return "Control of all units in Gnomeregan"
     endmethod
 
     private method OnComplete takes nothing returns nothing

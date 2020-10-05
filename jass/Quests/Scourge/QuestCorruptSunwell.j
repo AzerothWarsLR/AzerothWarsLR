@@ -11,7 +11,7 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(DARKFALLEN_ID) + "s"
+      return "Learn to train " + GetObjectName(DARKFALLEN_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -27,7 +27,7 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Fall of Silvermoon", "The Sunwell is the source of the High Elves' immortality and magical prowess. Under control of the Scourge, it would be the source of immense necromantic power.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+      local thistype this = thistype.allocate("Fall of Silvermoon", "The Sunwell is the source of the High Elves' immortality and magical prowess. Under control of the Scourge, it would a the source of immense necromantic power.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL))
       return this
     endmethod

@@ -10,7 +10,7 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of the Crossroads"
+      return "Control of the Crossroads"
     endmethod    
 
     private method GiveCrossroads takes player whichPlayer returns nothing

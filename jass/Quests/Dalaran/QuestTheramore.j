@@ -8,7 +8,7 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of all units at Theramore"
+      return "Control of all units at Theramore"
     endmethod
 
     private static method GrantToPlayer takes player whichPlayer returns nothing

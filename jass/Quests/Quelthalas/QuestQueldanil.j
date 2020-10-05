@@ -6,7 +6,7 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig, 
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control Quel'danil Lodge"
+      return "Control of Quel'danil Lodge"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -6,7 +6,7 @@ library QuestStromgarde initializer OnInit requires QuestData, QuelthalasConfig,
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Galen Trollbane, and all units at Stromgarde"
+      return "The hero Galen Trollbane, and control of all units at Stromgarde"
     endmethod
 
     private method GiveStromgarde takes player whichPlayer returns nothing

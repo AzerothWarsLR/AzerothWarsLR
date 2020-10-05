@@ -11,7 +11,7 @@ library QuestDruidsKillFrostwolf initializer OnInit requires DruidsConfig, Legen
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train the " + GetObjectName(ELEMENTAL_GUARDIAN_ID) + " from the Altar of Elders"
+      return "The demihero " + GetObjectName(ELEMENTAL_GUARDIAN_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing

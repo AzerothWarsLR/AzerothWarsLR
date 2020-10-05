@@ -12,7 +12,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain the hero Zuluhed the Whacked, the demihero Nelrathaku, and control of all units at Grim Batol"
+      return "The hero Zuluhed the Whacked, the demihero Nelrathaku, and control of all units at Grim Batol"
     endmethod
 
     private method OnComplete takes nothing returns nothing

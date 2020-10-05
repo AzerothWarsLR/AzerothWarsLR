@@ -14,7 +14,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of Archimonde and all other units in the Twisting Nether, and learn to train Greater Demons"
+      return "The hero Archimonde, control of all units in the Twisting Nether, and learn to train Greater Demons"
     endmethod
 
     private method OnAdd takes nothing returns nothing

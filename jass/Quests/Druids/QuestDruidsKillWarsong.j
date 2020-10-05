@@ -11,7 +11,7 @@ library QuestDruidsKillWarsong initializer OnInit requires DruidsConfig, LegendW
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s at your Tree of Eternity, Tree of Ages and at your capitals."
+      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -6,7 +6,7 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain the hero Daein Proudmoore and control of all units at Kul'tiras"
+      return "The hero Daein Proudmoore and control of all units at Kul'tiras"
     endmethod
 
     private static method GrantToPlayer takes player whichPlayer returns nothing

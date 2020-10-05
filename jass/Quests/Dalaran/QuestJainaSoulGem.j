@@ -7,7 +7,7 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Soul Gem artifact"
+      return "The Soul Gem"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -14,7 +14,7 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain a research improving all of your units, and merge the Crowns of Lordaeron and Stormwind"
+      return "A research improving all of your units, and the Crowns of Lordaeron and Stormwind are merged"
     endmethod
 
     private method OnComplete takes nothing returns nothing
