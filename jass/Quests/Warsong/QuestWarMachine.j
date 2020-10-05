@@ -5,6 +5,10 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
       return "The massive exploitation of Ashenvale has bolstered the entire Horde's weapons, armour and defenses."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "You and all of your allies gain the researches " + GetObjectName(Rhme) + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", and " + GetObjectName('Rosp')
+    endmethod
+
     private method BlessPlayer takes player whichPlayer returns nothing
       call SetPlayerTechResearched(whichPlayer, 'Rhme', GetPlayerTechCount(whichPlayer, 'Rhme', true) + 1)
       call SetPlayerTechResearched(whichPlayer, 'Rhar', GetPlayerTechCount(whichPlayer, 'Rhar', true) + 1)

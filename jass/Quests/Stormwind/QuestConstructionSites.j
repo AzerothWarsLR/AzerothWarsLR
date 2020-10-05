@@ -10,6 +10,10 @@ library QuestConstructionSites initializer OnInit requires QuestData, StormwindC
       return "Stormwind's Construction Sites are now ready to be upgraded."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Your Construction Sites can be upgraded"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       if GetLocalPlayer() == this.Holder.Player then
         call PingMinimap(GetUnitX(gg_unit_h053_1121), GetUnitY(gg_unit_h053_1121), 5)

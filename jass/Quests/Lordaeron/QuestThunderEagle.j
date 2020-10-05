@@ -10,6 +10,10 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
       return "The Thunder Eagles, now in safe hands " + this.Holder.ColoredName + "."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train " + GetUnitName(THUNDER_EAGLE_ID) + "s"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call DisplayUnitTypeAcquired(this.Holder.Player, THUNDER_EAGLE_ID, "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")

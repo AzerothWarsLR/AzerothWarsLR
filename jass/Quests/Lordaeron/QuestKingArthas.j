@@ -8,6 +8,10 @@ library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, 
       return "With the Lich King eliminated, the Kingdom of Lordaeron is free of its greatest threat. King Terenas Menethil passes peacefully into the night, and Arthas is crowned the new King."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Arthas becomes King"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       set LEGEND_ARTHAS.UnitType = 'Harf'
       //Give Crown of Lordaeron

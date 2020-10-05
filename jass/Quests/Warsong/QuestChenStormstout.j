@@ -10,6 +10,10 @@ library QuestChenStormstout initializer OnInit requires QuestData, StormwindConf
       return "Chen Stormstout has joined the " + this.Holder.Team.Name + "."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero Chen Stormstout"
+    endmethod
+
     private method OnFail takes nothing returns nothing
       call RemoveUnit(gg_unit_h04E_2670)
     endmethod

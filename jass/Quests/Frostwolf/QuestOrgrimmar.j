@@ -15,6 +15,10 @@ library QuestOrgrimmar initializer OnInit requires Persons, FrostwolfConfig, War
       return "At the northern edge of Durotar, the Horde has finally found a place to call home. They name it Orgrimmar in honour of Orgrim Doomhammer."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of Orgrimmar"
+    endmethod   
+
     private method GiveOrgrimmar takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u

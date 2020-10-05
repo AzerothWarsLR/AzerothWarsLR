@@ -5,7 +5,7 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
       return "With Northrend finally free of the Lich King's influence, the time is ripe to regrow Andrassil in the hope that it can help reclaim this barren land."
     endmethod
 
-    private method operator RewardDescription takes nothing returns string
+    private method operator CompletionDescription takes nothing returns string
       return "Gain a new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw"
     endmethod
 

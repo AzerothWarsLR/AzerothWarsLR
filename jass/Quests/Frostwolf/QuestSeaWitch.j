@@ -12,7 +12,7 @@ library QuestSeaWitch initializer OnInit requires FrostwolfConfig, LegendSentine
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of a few ships with which to sail to Kalimdor"
+      return "Gain control of a few ships and all unrescued units on the Darkspear Isles"
     endmethod
 
     private method OnComplete takes nothing returns nothing

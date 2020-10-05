@@ -5,6 +5,10 @@ library QuestKillCenarius initializer OnInit requires QuestData, WarsongConfig
       return "The Demigod has fallen! Warsong is supreme!"
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Grom Hellscream gains 5 Strength, 5 Agility, 5 Intelligence, and 2000 Experience"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call AddHeroXP(LEGEND_GROM.Unit, 2000, true)
       call AddHeroAttributes(LEGEND_GROM.Unit, 5, 5, 5)

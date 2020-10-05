@@ -12,7 +12,7 @@ library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionCon
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain a new Demon Gate"
+      return "A new Demon Gate at the Monastery's location"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -9,6 +9,10 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
       return "The Crossroads have been constructed."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of the Crossroads"
+    endmethod    
+
     private method GiveCrossroads takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u

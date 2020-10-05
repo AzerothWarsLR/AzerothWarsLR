@@ -5,6 +5,10 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
       return "With the Broken Isles and the Tomb of Sargeras secured, work has begun on a maximum security prison named the Vault of the Wardens."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The Vault of the Wardens"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call CreateUnit(this.Holder.Player, 'n04G', GetRectCenterX(gg_rct_VaultoftheWardens), GetRectCenterY(gg_rct_VaultoftheWardens), 220)
     endmethod

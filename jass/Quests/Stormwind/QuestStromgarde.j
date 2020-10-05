@@ -5,6 +5,10 @@ library QuestStromgarde initializer OnInit requires QuestData, QuelthalasConfig,
       return "Galen Trollbane has pleged his forces to Stormwind's cause."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The hero Galen Trollbane, and all units at Stromgarde"
+    endmethod
+
     private method GiveStromgarde takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u

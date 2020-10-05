@@ -9,6 +9,10 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
       return "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "A plague is unleashed upon the lands of Lordaeron"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call TriggerExecute( gg_trg_Plague_Actions )
     endmethod

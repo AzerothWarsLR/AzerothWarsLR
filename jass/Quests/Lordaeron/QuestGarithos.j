@@ -6,6 +6,10 @@ library QuestGarithos initializer OnInit requires QuestData, LordaeronConfig, Le
       return "Grand General Othmar Garithos has finally arrived with reinforcements."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of Garithos and 24 Knights"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call LEGEND_GARITHOS.Spawn(this.Holder.Player, GetRectCenterX(gg_rct_Garithos), GetRectCenterY(gg_rct_Garithos), 270)
       call UnitDetermineLevel(LEGEND_GARITHOS.Unit, 1.00)

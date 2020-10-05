@@ -9,6 +9,10 @@ library QuestLegionCaptureSunwell initializer OnInit requires QuestData, LegionC
       return "The Sunwell has been captured by the Scourge. It now writhes with necromantic energy."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "A research improving your Dreadlords"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call DisplayResearchAcquired(this.Holder.Player, RESEARCH_ID, 1)

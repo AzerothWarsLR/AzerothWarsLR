@@ -9,6 +9,10 @@ library QuestWarsongKillDruids initializer OnInit requires WarsongConfig, Legend
       return "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "A research allowing your Goblin Shredders to use Emergency Repairs, Pocket Factory, and Saw Bombardment"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call DisplayResearchAcquired(this.Holder.Player, RESEARCH_ID, 1)

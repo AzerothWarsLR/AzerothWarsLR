@@ -5,6 +5,10 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
       return "Admiral Daelin Prodmoore has finally mobilized Kul'tiras for war, and is now ready to aid " + this.Holder.Team.Name + " forces on the mainland."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain the hero Daein Proudmoore and control of all units at Kul'tiras"
+    endmethod
+
     private static method GrantToPlayer takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u = null

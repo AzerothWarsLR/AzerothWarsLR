@@ -10,6 +10,10 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
       return "Dar'Khan Drathir, a revered member of the Convocation of Silvermoon, has returned to serve the High Elves after his mysterious disappearance."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero " + GetObjectName(DARKHAN_ID)
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call CreateUnit(this.Holder.Player, DARKHAN_ID, GetUnitX(LEGEND_DRAKTHARONKEEP.Unit), GetUnitY(LEGEND_DRAKTHARONKEEP.Unit), GetUnitFacing(LEGEND_DRAKTHARONKEEP.Unit))
       call SetPlayerTechResearched(this.Holder.Player, DARKHAN_RESEARCH, 1)

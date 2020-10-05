@@ -13,6 +13,10 @@ library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalara
       return "Dalaran has empowered " + GetUnitName(questItemCastEmpowerGuardian.Caster) + " as the new Guardian of Tirisfal, endowing them with a portion of the Council of Tirisfal's power."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Grant the empowered hero Chaos Damage, Divine Armor, 20 additional Intelligence, and an array of new spells"
+    endmethod
+
     private method EmpowerGuardian takes unit whichUnit returns nothing
       local Legend whichLegend = Legend.ByHandle(whichUnit)
       call AddSpecialEffectTarget("war3mapImported\\Soul Armor Cosmic.mdx", whichUnit, "chest")

@@ -5,6 +5,10 @@ library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
       return "Karazhan has been captured. " + this.Holder.ColoredName + "'s  archivists scour its halls for arcane resources."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to research three powerful upgrades at Karazhan"
+    endmethod
+
     private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
       call Holder.modObjectLimit('R03M', UNLIMITED)   //Methods of Control

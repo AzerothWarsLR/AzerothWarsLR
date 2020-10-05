@@ -5,6 +5,10 @@ library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, Legen
       return "The Kingdom of Lordaeron has fallen, eliminating Azeroth's vanguard against the Legion."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Tichondrius gains 15 Strength, Agility and Intelligence"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call DisplayHeroReward(LEGEND_TICHONDRIUS.Unit, 15, 15, 15, 0)
       call AddHeroAttributes(LEGEND_TICHONDRIUS.Unit, 15, 15, 15)

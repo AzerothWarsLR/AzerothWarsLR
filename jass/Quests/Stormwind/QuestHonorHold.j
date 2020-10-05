@@ -7,6 +7,10 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
       return "Honor Hold is now free from the constant looming threat of Hellfire Citadel. Danath Trollbane and his people elect to rejoin the Alliance."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero Danath Trollbane, and control of all units at Honor Hold"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       local group tempGroup = CreateGroup()
       //Transfer all Neutral Passive units in HonorHold to one of the above factions

@@ -7,6 +7,10 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
       return "A sizeable isle off the coast of Dustwallow Marsh has been colonized and dubbed Theramore, marking the first human settlement to be established on Kalimdor."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of all units at Theramore"
+    endmethod
+
     private static method GrantToPlayer takes player whichPlayer returns nothing
       local unit u
       loop

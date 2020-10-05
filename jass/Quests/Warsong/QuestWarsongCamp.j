@@ -8,6 +8,10 @@ library QuestWarsongCamp initializer OnInit requires WarsongConfig, FrostwolfCon
       return "Grommash has established a foothold in Ashenvale and is now ready to begin harvesting supplies in earnest."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Control of all units at Warsong Camp"
+    endmethod
+
     private method GiveCamp takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u

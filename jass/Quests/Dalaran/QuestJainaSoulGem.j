@@ -6,6 +6,10 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
       return "Jaina Proudmoore has discovered the Soul Gem within the ruined vaults at Scholomance."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The Soul Gem artifact"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item) 
     endmethod

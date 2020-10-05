@@ -5,6 +5,10 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       return "Having failed to protect his people, Arthas seizes the cursed runeblade Frostmourne as the instrument of his vengeance. The malevolence of the blade overwhelms him. Arthas is now a loyal Death Knight of the Scourge, and will soon become its greatest champion."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of Arthas as a Death Knight"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       set LEGEND_ARTHAS.UnitType = 'Uear'
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)

@@ -9,7 +9,7 @@ library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, Q
       return "The sheer brutality of Magtheridon's conquest has reached the ears of each of the Fel Horde clans. The Shadowmoon Clan and the Dragonmaw Clan offer up their allegiances, demanding participation in the coming bloodshed."
     endmethod
 
-    private method operator RewardDescription takes nothing returns string
+    private method operator CompletionDescription takes nothing returns string
       return "Unlock tier 2 researches"
     endmethod
 

@@ -5,6 +5,10 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
       return "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Drek'thar's Spellbook"
+    endmethod   
+
     private method OnComplete takes nothing returns nothing
       call UnitAddItem(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
     endmethod

@@ -10,6 +10,10 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
       return "The Frostwolves have been ousted from Kalimdor, along with their Tauren allies. They will not be missed."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero Amara"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call DisplayUnitTypeAcquired(this.Holder.Player, AMARA_ID, "You can now revive Amara from the Altar of Elders.")

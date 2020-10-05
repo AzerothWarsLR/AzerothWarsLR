@@ -11,6 +11,10 @@ library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, Leg
       return "The Sentinels have been slain. With their Hippogryphs no longer terrorizing the skies, the Horde can field its refurbished Zeppelins."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train " + GetObjectName(UNITTYPE_ID)
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call this.Holder.modObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
       call DisplayUnitLimit(this.Holder, UNITTYPE_ID)

@@ -10,6 +10,10 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
       return "The Sunwell has been captured by the Scourge. It now writhes with necromantic energy."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train " + GetUnitName(DARKFALLEN_ID) + "s"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand second")
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand third")

@@ -10,6 +10,10 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
       return "Sylvanas has been slain. Her soul is ripped from her body, and she becomes the first of the High Elven Banshees."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero Sylvanas"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, SYLVANAS_RESEARCH, 1)
       call LEGEND_JENNALLA.Spawn(FACTION_QUELTHALAS.Player, 18509, 18073, 295)

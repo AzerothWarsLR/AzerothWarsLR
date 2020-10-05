@@ -11,7 +11,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
       return "Zuluhed the Whacked and his followers join the Fel Horde once more. Near the Black Temple, the great Nether Dragon Neltharaku awakens."
     endmethod
 
-    private method operator RewardDescription takes nothing returns string
+    private method operator CompletionDescription takes nothing returns string
       return "Gain the hero Zuluhed the Whacked, the demihero Nelrathaku, and control of all units at Grim Batol"
     endmethod
 

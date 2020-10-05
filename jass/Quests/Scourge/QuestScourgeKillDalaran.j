@@ -5,6 +5,10 @@ library QuestScourgeKillDalaran initializer OnInit requires QuestData, ScourgeCo
       return "Dalaran has been razed, and its libraries plundered."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train 2 additional " + GetObjectName('uobs') + "s"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call this.Holder.modObjectLimit('uobs', 2)
       call DisplayUnitLimit(this.Holder, 'uobs')

@@ -13,6 +13,10 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
       return "Tremble, mortals, and despair. Doom has come to this world."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control of Archimonde and all other units in the Twisting Nether, and learn to train Greater Demons"
+    endmethod
+
     private method OnAdd takes nothing returns nothing
       if Holder.presenceResearch == 0 then
         call BJDebugMsg("ERROR: " + Holder.Name + " has no presence research. QuestSummonLegion won't work")

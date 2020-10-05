@@ -5,6 +5,10 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig, 
       return "Quel'thalas has finally reunited with its lost rangers in the Hinterlands."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "Gain control Quel'danil Lodge"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       local unit u
       loop

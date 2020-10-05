@@ -10,6 +10,10 @@ library QuestSapphiron initializer OnInit requires QuestData, ScourgeConfig
       return "Sapphiron has been slain, and has been reanimated as a mighty Frost Worm under the command of the Scourge."
     endmethod
 
+    private method operator CompletionDescription takes nothing returns string
+      return "The demihero Sapphiron"
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call CreateUnit(this.Holder.Player, SAPPHIRON_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
       call SetPlayerTechResearched(this.Holder.Player, SAPPHIRON_RESEARCH, 1)

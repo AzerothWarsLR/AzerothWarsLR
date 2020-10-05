@@ -10,7 +10,7 @@ library QuestCrystalGolem initializer OnInit requires QuestItemControlLegend, Da
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Transform your Earth Golems into Crystal Golems."
+      return "Transform your Earth Golems into Crystal Golems"
     endmethod
 
     private method OnComplete takes nothing returns nothing
