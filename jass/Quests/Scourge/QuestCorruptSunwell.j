@@ -11,7 +11,7 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetUnitName(DARKFALLEN_ID) + "s"
+      return "Learn to train " + GetObjectName(DARKFALLEN_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

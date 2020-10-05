@@ -11,7 +11,7 @@ library QuestThunderEagle initializer OnInit requires QuestData, ControlPoint, L
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetUnitName(THUNDER_EAGLE_ID) + "s"
+      return "Learn to train " + GetObjectName(THUNDER_EAGLE_ID) + "s"
     endmethod
 
     private method OnComplete takes nothing returns nothing

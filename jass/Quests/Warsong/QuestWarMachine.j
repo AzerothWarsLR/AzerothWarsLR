@@ -6,7 +6,7 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You and all of your allies gain the researches " + GetObjectName(Rhme) + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", and " + GetObjectName('Rosp')
+      return "You and all of your allies gain the researches " + GetObjectName('Rhme') + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", and " + GetObjectName('Rosp')
     endmethod
 
     private method BlessPlayer takes player whichPlayer returns nothing
