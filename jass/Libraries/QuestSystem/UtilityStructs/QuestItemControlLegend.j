@@ -33,7 +33,7 @@ library QuestItemControlLegend requires QuestItemData
       local trigger trig = CreateTrigger()
       call OnLegendChangeOwner.register(trig) 
       call TriggerAddAction(trig, function thistype.OnAnyUnitChangeOwner)
-      set this.Description = "Capture " + GetHeroProperName(whichLegend.Unit)
+      set this.Description = "Capture " + whichLegend.Name
       set thistype.byLegend[whichLegend] = this
       return this
     endmethod

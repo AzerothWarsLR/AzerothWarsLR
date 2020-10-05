@@ -1,4 +1,4 @@
-library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, DalaranConfig
+library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, DalaranConfig, LegendDalaran
 
   globals
     private constant integer RESEARCH_ID = 'R00U'

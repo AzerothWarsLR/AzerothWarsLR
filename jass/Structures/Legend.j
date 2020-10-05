@@ -18,7 +18,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private static Table byHandle
 
     private unit unit
-    private integer unitType
+    private integer unitType = 0
     private string deathMessage
     private string deathSfx
     private boolean permaDies = false
@@ -32,6 +32,18 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private integer startingXP //How much experience this Legend had when it was first registered
     private boolean hasCustomColor = false
     private playercolor playerColor
+
+    public method operator Name takes nothing returns string
+      if this.unit == null and this.unitType != 0 then
+        return GetObjectName(this.unitType)
+      endif
+      if IsUnitType(this.unit, UNIT_TYPE_HERO) == true then
+        return GetHeroProperName(this.unit)
+      else
+        return GetUnitName(this.unit)
+      endif
+      return "NONAME"
+    endmethod
 
     public method operator HasCustomColor takes nothing returns boolean
       return this.hasCustomColor
