@@ -13,7 +13,6 @@ library PlayerLeaves initializer OnInit requires Persons
 
     if triggerPerson != 0 then
       call triggerPerson.Faction.Leave()
-      set triggerPerson.Faction.Team = 0
       set triggerPerson.Faction = 0
     endif
   endfunction

@@ -15,7 +15,7 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
     if team.Weight < team.MaxWeight then
       set weightBelowMaximumLevel = 1
     endif
-    if team.PlayerCount == 1 then
+    if team.Weight < 3 then
       set noAlliesLevel = 1
     endif
 

@@ -6,6 +6,55 @@ library VassalFaction requires Faction
     private constant integer VASSAL_STARTING_LUMBER = 150
   endglobals
 
+  function GetTeamVassalCount takes Team whichTeam returns integer
+    local integer i = 0
+    local integer count = 0
+    loop
+      exitwhen i == whichTeam.FactionCount
+      if whichTeam.GetFactionByIndex(i).Person != 0 and whichTeam.GetFactionByIndex(i).getType() == VassalFaction.typeid then
+        set count = count + 1
+      endif
+      set i = i + 1
+    endloop
+    return count
+  endfunction
+
+  //The number of vassals on the team with the most vassals
+  function GetVassalMaximum takes nothing returns integer
+    local integer maximum = 0
+    local integer i = 0
+    local Team loopTeam
+    local Faction loopFaction
+    local integer teamActiveVassalCount
+    loop
+      exitwhen i == Team.Count
+      set teamActiveVassalCount = GetTeamVassalCount(Team.ByIndex(i))
+      if teamActiveVassalCount > maximum then
+        set maximum = teamActiveVassalCount
+      endif
+      set i = i + 1
+    endloop
+    return maximum
+  endfunction
+
+  //The number of vassals on the team with the fewest vassals
+  function GetVassalMinimum takes nothing returns integer
+    local integer minimum = MAX_PLAYERS
+    local integer i = 0
+    local Team loopTeam
+    local Faction loopFaction
+    local integer teamActiveVassalCount
+    loop
+      exitwhen i == Team.Count
+      set teamActiveVassalCount = GetTeamVassalCount(Team.ByIndex(i))
+      if teamActiveVassalCount < minimum then
+        set minimum = teamActiveVassalCount
+      endif
+      set i = i + 1
+    endloop
+    return minimum
+  endfunction
+
   struct VassalFaction extends Faction
     private static thistype array byIndex
     private static integer count = 0
@@ -74,6 +123,7 @@ library VassalFaction requires Faction
 
     private method SelectForPerson takes Person whichPerson returns nothing
       local ControlPoint highestValueCP
+      local integer vassalMaximum = 0
       if whichPerson.Faction == this.Liege then
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You can't become your own vassal.")
         return
@@ -84,6 +134,11 @@ library VassalFaction requires Faction
       endif
       if this.Liege.IsPlayerBannedFromBecomingVassal(whichPerson.Player) then
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You're permanently banned from becoming a vassal of " + this.prefixCol + this.name + "|r.")
+        return
+      endif
+      set vassalMaximum = GetVassalMaximum()
+      if GetTeamVassalCount(this.Liege.Team) == vassalMaximum and vassalMaximum != GetVassalMinimum() then
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, this.Liege.prefixCol + this.Liege.name + "|r team has too many vassals already. Try picking a different vassal.")
         return
       endif
       set highestValueCP = ControlPoint.GetHighestValueCP(this.Liege.Person)
@@ -108,9 +163,10 @@ library VassalFaction requires Faction
 
     private static method OnResearch takes nothing returns nothing
       local integer i = 0
+      local integer soldUnitId = GetUnitTypeId(GetSoldUnit())
       loop
         exitwhen i == thistype.count
-        if thistype.byIndex[i].legend.UnitType == GetUnitTypeId(GetSoldUnit()) then
+        if thistype.byIndex[i].legend.UnitType == soldUnitId then
           call thistype.byIndex[i].SelectForPerson(Person.ByHandle(GetOwningPlayer(GetSoldUnit())))
           call RemoveUnit(GetSoldUnit())
         endif

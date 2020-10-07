@@ -218,6 +218,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private method permaDeath takes nothing returns nothing
       local effect tempEffect
+      local string displayString
       set TriggerLegend = this
       call OnLegendPrePermaDeath.fire()
       if IsUnitType(unit, UNIT_TYPE_HERO) then
@@ -228,7 +229,12 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call RemoveUnit(unit)
       endif
       if this.deathMessage != null then
-        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00PERMANENT DEATH|r\n" + deathMessage)
+        if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then
+          set displayString = "\n|cffffcc00CAPITAL DESTROYED|r\n"
+        else
+          set displayString = "\n|cffffcc00HERO SLAIN|r\n"
+        endif
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, displayString + deathMessage)
       endif
       if hivemind and OwningPerson != 0 then
         call OwningPerson.Faction.obliterate()

@@ -9,7 +9,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
 
   struct Team     
     readonly static StringTable teamsByName
-    private static Table teamsByIndex
+    private static thistype array teamsByIndex
     private static integer teamCount = 0
     readonly static thistype triggerTeam = 0
 
@@ -212,7 +212,6 @@ library Team initializer OnInit requires Table, Event, Persons, Set
       
     private static method onInit takes nothing returns nothing
       set thistype.teamsByName = StringTable.create()
-      set thistype.teamsByIndex = Table.create()
     endmethod     
   endstruct        
     
