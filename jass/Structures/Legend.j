@@ -53,6 +53,10 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       return this.startingXP
     endmethod
 
+    public method operator StartingXP= takes integer value returns nothing
+      set this.startingXP = value
+    endmethod
+
     public method operator PermaDies= takes boolean b returns nothing
       set permaDies = b
       call refreshDummy()

@@ -150,6 +150,7 @@ library VassalFaction requires Faction
       call DisplaySelection()
       call this.legend.Spawn(whichPerson.Player, highestValueCP.X, highestValueCP.Y, 0)
       call UnitDetermineLevel(this.legend.Unit, 0.9)
+      set this.legend.StartingXP = GetHeroXP(this.legend.Unit)
       call UnitAddItemById(this.legend.Unit, this.teleportItemType)
       call UnitAddItemById(this.legend.Unit, this.workerItemType)
       if GetLocalPlayer() == whichPerson.Player then
