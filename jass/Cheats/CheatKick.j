@@ -11,7 +11,7 @@ library CheatKick initializer OnInit requires TestSafety
     local player p = GetTriggerPlayer()
     local integer pId = GetPlayerId(p)
     local integer kickId = 0 
-    
+
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     set kickId = (S2I(parameter))
     
@@ -23,14 +23,13 @@ library CheatKick initializer OnInit requires TestSafety
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
     local integer i = 0
-    if AreCheatsActive == true then
-      loop
-      exitwhen i > MAX_PLAYERS
-        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
-        set i = i + 1
-      endloop   
-      call TriggerAddAction( trig, function Actions )
-    endif
+    loop
+    exitwhen i > MAX_PLAYERS
+      call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
+      set i = i + 1
+    endloop   
+    call TriggerAddCondition(trig, Condition(function CheatCondition))
+    call TriggerAddAction( trig, function Actions )
   endfunction
 
 endlibrary

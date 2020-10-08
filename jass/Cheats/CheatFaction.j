@@ -18,18 +18,17 @@ library CheatFaction initializer OnInit requires Faction, TestSafety
     call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set faction to " + f.Name + ".")
   endfunction
 
-  //===========================================================================
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
     local integer i = 0
-    if AreCheatsActive == true then
-      loop
-      exitwhen i > MAX_PLAYERS
-        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
-        set i = i + 1
-      endloop   
-      call TriggerAddAction( trig, function Actions )
-    endif
+
+    loop
+    exitwhen i > MAX_PLAYERS
+      call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
+      set i = i + 1
+    endloop   
+    call TriggerAddCondition(trig, Condition(function CheatCondition))
+    call TriggerAddAction( trig, function Actions )
   endfunction
 
 endlibrary

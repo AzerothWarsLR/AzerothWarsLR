@@ -3,7 +3,7 @@ library CheatUncontrol initializer OnInit requires Persons, Persons, TestSafety
 
   //**CONFIG
   globals
-      private constant string COMMAND = "-uncontrol "
+    private constant string COMMAND = "-uncontrol "
   endglobals
   //*ENDCONFIG
 
@@ -33,14 +33,13 @@ library CheatUncontrol initializer OnInit requires Persons, Persons, TestSafety
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
     local integer i = 0
-    if AreCheatsActive == true then
-      loop
-      exitwhen i > MAX_PLAYERS
-        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
-        set i = i + 1
-      endloop   
-      call TriggerAddAction( trig, function Actions )
-    endif
+    loop
+    exitwhen i > MAX_PLAYERS
+      call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
+      set i = i + 1
+    endloop   
+    call TriggerAddCondition(trig, Condition(function CheatCondition))
+    call TriggerAddAction( trig, function Actions )
   endfunction
     
 endlibrary

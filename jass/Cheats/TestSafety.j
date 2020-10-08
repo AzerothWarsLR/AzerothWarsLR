@@ -8,6 +8,14 @@ library TestSafety initializer OnInit requires Event
     boolean AreCheatsActive
   endglobals
 
+  function CheatCondition takes nothing returns boolean
+    local string triggerPlayerName = GetPlayerName(GetTriggerPlayer())
+    if triggerPlayerName == "YakaryBovine6863" or triggerPlayerName == "DaveRolf#2229" or triggerPlayerName == "Richard#2862" or triggerPlayerName == "Lordsebas#11619" then
+      return true
+    endif
+    return AreCheatsActive
+  endfunction
+
   private function Warning takes nothing returns nothing
     call DisplayTextToForce(GetPlayersAll(), "This map is in test mode and contains |cffD27575CHEATS|r.")
     call DisplayTextToForce(GetPlayersAll(), "To use these |cffD27575CHEATS|r, refer to the Quest menu.")

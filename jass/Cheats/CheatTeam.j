@@ -13,7 +13,6 @@ library CheatTeam initializer OnInit requires Team, TestSafety
     local Team t
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     set t = Team.teamsByName[parameter]
-    
     set Person.ById(pId).Faction.Team = t
     call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set team to " + t.Name + ".")
   endfunction
@@ -22,14 +21,13 @@ library CheatTeam initializer OnInit requires Team, TestSafety
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
     local integer i = 0
-    if AreCheatsActive == true then
-      loop
-      exitwhen i > MAX_PLAYERS
-        call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
-        set i = i + 1
-      endloop   
-      call TriggerAddAction( trig, function Actions )
-    endif
+    loop
+    exitwhen i > MAX_PLAYERS
+      call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
+      set i = i + 1
+    endloop   
+    call TriggerAddCondition(trig, Condition(function CheatCondition))
+    call TriggerAddAction( trig, function Actions )
   endfunction
 
 endlibrary
