@@ -5,7 +5,25 @@ library VassalBrann initializer OnInit requires Faction, IronforgeConfig
   endglobals
 
   private function OnInit takes nothing returns nothing
-    set VASSAL_XAVIUS = VassalFaction.create("Brann", PLAYER_COLOR_EMERALD, "|CFF00781E","ReplaceableTextures\\CommandButtons\\BTNSatyr.blp", FACTION_IRONFORGE, 0)
-  endfunction
+    set VASSAL_BRANN = VassalFaction.create("Brann", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNRifleman.blp", FACTION_IRONFORGE, LEGEND_BRANN)
+    set VASSAL_BRANN.AbsenceResearch = 'R05I'
+    set VASSAL_BRANN.WorkerItemType = 'I00A'
+    set VASSAL_BRANN.TeleportItemType = 'I00V'  
+
+    //Units
+    call VASSAL_BRANN.registerObjectLimit('h019', UNLIMITED)   //Masons
+    call VASSAL_BRANN.registerObjectLimit('hrif', UNLIMITED)   //Rifleman
+    call VASSAL_BRANN.registerObjectLimit('hmtm', 5)           //Mortar Team
+    call VASSAL_BRANN.registerObjectLimit('h02X', UNLIMITED)   //Explorer
+
+    //Building
+    call VASSAL_BRANN.registerObjectLimit('h057', UNLIMITED)   //Explorers Tavern
+    call VASSAL_BRANN.registerObjectLimit('h02P', UNLIMITED)   //Farm
+    call VASSAL_BRANN.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
+
+    call VASSAL_BRANN.registerObjectLimit('Rhme', 0)   //Attack Upgrade
+    call VASSAL_BRANN.registerObjectLimit('Rhar', 0)   //defense Upgrade
+
+endfunction
     
 endlibrary
