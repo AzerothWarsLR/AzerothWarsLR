@@ -7,7 +7,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
+    set FACTION_DALARAN = LiegeFaction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
     set f = FACTION_DALARAN 
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE
