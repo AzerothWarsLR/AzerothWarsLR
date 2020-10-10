@@ -28,7 +28,7 @@ library QuestFrostwolfKillSentinels initializer OnInit requires FrostwolfConfig,
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_DRUIDS.AddQuest(QuestFrostwolfKillSentinels.create())
+    call FACTION_FROSTWOLF.AddQuest(QuestFrostwolfKillSentinels.create())
   endfunction
 
 endlibrary

@@ -30,7 +30,7 @@ library QuestLegionCaptureSunwell initializer OnInit requires QuestData, LegionC
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestLegionCaptureSunwell.create())
+    call FACTION_LEGION.AddQuest(QuestLegionCaptureSunwell.create())
   endfunction
 
 endlibrary

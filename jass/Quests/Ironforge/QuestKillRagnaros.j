@@ -20,7 +20,7 @@ library QuestKillRagnaros initializer OnInit requires QuestItemKillUnit, Ironfor
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Harness the Inferno", "The Firelord Ragnaros resides deep within the Molten Core. With his death, the elemental smiths of Ironforge could leverage his primal fire to enhance their creations.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfFire.blp")
-      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_RAGNAROS.Unit))
+      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_RAGNAROS))
       return this
     endmethod
   endstruct

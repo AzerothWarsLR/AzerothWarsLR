@@ -50,6 +50,10 @@ library QuestData
       return this.description
     endmethod
 
+    method operator Quest takes nothing returns quest
+      return this.quest
+    endmethod
+
     method operator ProgressLocked takes nothing returns boolean
       return this.progress == QUEST_PROGRESS_COMPLETE or this.progress == QUEST_PROGRESS_FAILED
     endmethod
@@ -89,21 +93,49 @@ library QuestData
 
     endmethod
 
+    method Show takes nothing returns nothing
+      local integer i = 0
+      call QuestSetEnabled(this.quest, true)
+      loop
+        exitwhen i == this.questItemCount
+        call questItems[i].Show()
+        set i = i + 1
+      endloop
+    endmethod
+
+    method Hide takes nothing returns nothing
+      local integer i = 0
+      call QuestSetEnabled(this.quest, false)
+      loop
+        exitwhen i == this.questItemCount
+        call questItems[i].Hide()
+        set i = i + 1
+      endloop
+    endmethod
+
     //Pops up to tell the holder about this quest (that they should be reading for the first time)
     method DisplayDiscovered takes nothing returns nothing
 
     endmethod
 
+    private method OnQuestItemProgressChanged takes nothing returns nothing
+
+    endmethod
+
     method AddQuestItem takes QuestItemData value returns QuestItemData
+      local trigger trig = CreateTrigger()
       set this.questItems[this.questItemCount] = value
-      set this.questItemCount = value + 1
+      set this.questItemCount = this.questItemCount + 1
       set value.QuestItem = QuestCreateItem(this.quest)
+      set value.Parent = this
       call QuestItemSetDescription(value.QuestItem, value.Description)
+      call value.ProgressChanged.register(trig)
+      call TriggerAddAction(trig, function thistype.OnAnyQuestItemProgressChanged)
       return value
     endmethod
 
-    private method OnQuestItemProgressChanged takes nothing returns nothing
-
+    private static method OnAnyQuestItemProgressChanged takes nothing returns nothing
+    
     endmethod
 
     private method destroy takes nothing returns nothing
@@ -117,6 +149,7 @@ library QuestData
       call QuestSetTitle(this.quest, title)
       call QuestSetIconPath(this.quest, icon)
       call QuestSetRequired(this.quest, false)
+      call QuestSetEnabled(this.quest, false)
       return this
     endmethod
   endstruct

@@ -36,10 +36,12 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     readonly integer objectCount = 0
 
     private Table objectLevels
-    private integer array objectLevelList [100]
+    private integer array objectLevelList[100]
     private integer objectLevelCount = 0
 
     private QuestData startingQuest
+    private integer questCount = 0
+    private QuestData array quests[100]
 
     method operator ObjectLimitCount takes nothing returns integer
       return this.objectCount
@@ -122,6 +124,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     method operator Person= takes Person value returns nothing
       if this.Player != null then
         call this.Team.UnallyPlayer(this.Player)
+        call HideAllQuests()
         call this.UnapplyObjects()
       endif
       set this.person = value
@@ -134,6 +137,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
       call this.Team.AllyPlayer(value.Player)
       call ApplyObjects()
+      call ShowAllQuests()
     endmethod
 
     method operator StartingQuest takes nothing returns QuestData
@@ -208,8 +212,35 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       endif
     endmethod
 
+    method ShowAllQuests takes nothing returns nothing
+      local integer i = 0
+      if GetLocalPlayer() == this.Player then
+        loop
+          exitwhen i == this.questCount
+          call this.quests[i].Show()
+          set i = i + 1
+        endloop
+      endif
+    endmethod
+
+    method HideAllQuests takes nothing returns nothing
+      local integer i = 0
+      if GetLocalPlayer() == this.Player then
+        loop
+          exitwhen i == this.questCount
+          call quests[i].Hide()
+          set i = i + 1
+        endloop
+      endif
+    endmethod
+
     method AddQuest takes QuestData questData returns QuestData
       set questData.Holder = this
+      set this.quests[this.questCount] = questData
+      set this.questCount = this.questCount + 1
+      if GetLocalPlayer() == this.Player then
+        call questData.Show()
+      endif
       return questData
     endmethod
 

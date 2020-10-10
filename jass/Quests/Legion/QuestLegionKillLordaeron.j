@@ -15,7 +15,7 @@ library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, Legen
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", FACTION_LORDAERON.icon)
+      local thistype this = thistype.allocate("Token Resistance", "The Kingdom of Lordaeron must be eliminated to pave the way for the Legion's arrival.", "ReplaceableTextures\\CommandButtons\\BTNTichondrius.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TYRSHAND))
@@ -24,7 +24,7 @@ library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, Legen
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestLegionKillLordaeron.create())
+    call FACTION_LEGION.AddQuest(QuestLegionKillLordaeron.create())
   endfunction
 
 endlibrary

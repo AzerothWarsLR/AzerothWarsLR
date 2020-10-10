@@ -33,7 +33,7 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(SentinelsKillFrostwolf.create())
+    call FACTION_SENTINELS.AddQuest(SentinelsKillFrostwolf.create())
   endfunction
 
 endlibrary

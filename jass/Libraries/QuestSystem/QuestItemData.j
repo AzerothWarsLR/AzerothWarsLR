@@ -6,6 +6,16 @@ library QuestItemData
     private string description = ""
     private Event progressChanged
     private questitem questItem
+    private static thistype triggerQuestItemData = 0
+    private minimapicon minimapIcon = null
+
+    static method TriggerQuestItemData takes nothing returns thistype
+      return thistype.triggerQuestItemData
+    endmethod
+
+    method operator Parent= takes QuestData value returns nothing
+      set this.parent = value
+    endmethod
 
     method operator QuestItem takes nothing returns questitem
       return this.questItem
@@ -40,6 +50,15 @@ library QuestItemData
         return
       endif
       set this.progress = value
+      if value == QUEST_PROGRESS_INCOMPLETE then
+        call QuestItemSetCompleted(this.questItem, false)
+      elseif value == QUEST_PROGRESS_COMPLETE then
+        call QuestItemSetCompleted(this.questItem, true)
+      elseif value == QUEST_PROGRESS_UNDISCOVERED then
+        call QuestItemSetCompleted(this.questItem, false)
+      elseif value == QUEST_PROGRESS_FAILED then
+        call QuestItemSetCompleted(this.questItem, false)
+      endif
       call this.progressChanged.fire()
     endmethod
 
@@ -49,6 +68,22 @@ library QuestItemData
 
     stub method operator Description= takes string value returns nothing
       set this.description = value
+    endmethod
+
+    method Show takes nothing returns nothing
+      local integer i = 0
+      if this.minimapIcon == null and this.X != 0 and this.Y != 0 then
+        set this.minimapIcon = CreateMinimapIcon(this.X, this.Y, 255, 255, 255, SkinManagerGetLocalPath("MinimapQuestObjectivePrimary"), FOG_OF_WAR_MASKED)
+      elseif this.minimapIcon != null then
+        call SetMinimapIconVisible(this.minimapIcon, true)
+      endif
+    endmethod
+
+    method Hide takes nothing returns nothing
+      local integer i = 0
+      if this.minimapIcon != null then
+        call SetMinimapIconVisible(this.minimapIcon, false)
+      endif
     endmethod
 
     private method destroy takes nothing returns nothing
