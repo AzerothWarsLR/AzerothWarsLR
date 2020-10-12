@@ -19,6 +19,10 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
       call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "You can now train Blue Dragons from the Nexus.")
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(DRAGON_ID, 6)
+    endmethod
+
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Blue Dragonflight", "The Blue Dragons of Northrend are the wardens of magic on Azeroth. They might be convinced to willingly join the mages of Dalaran.", "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS))

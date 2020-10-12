@@ -33,7 +33,7 @@ library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalara
 
     private method OnComplete takes nothing returns nothing
       call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item)
-      call EmpowerGuardian(questItemCastEmpowerGuardian.Caster) //Should be based on whoever cast the spell; maybe have QuestItemLegendCastSpell fire an event??
+      call EmpowerGuardian(questItemCastEmpowerGuardian.Caster)
     endmethod
 
     public static method create takes nothing returns thistype

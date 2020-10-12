@@ -28,6 +28,8 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
   
   struct ControlPoint
     private static thistype array byIndex
+    private static Table byUnitType
+    private static Table byHandle
     private static integer count = 0
     static thistype triggerControlPoint = 0
 
@@ -40,6 +42,14 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
     real value = 0
     unit u
     player owner
+
+    method operator UnitType takes nothing returns integer
+      return GetUnitTypeId(this.u)
+    endmethod
+
+    method operator Name takes nothing returns string
+      return GetUnitName(this.u)
+    endmethod
 
     method operator X takes nothing returns real
       return GetUnitX(this.u)
@@ -82,6 +92,14 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
       call OnControlPointOwnerChange.fire()
     endmethod
     
+    static method ByHandle takes unit whichUnit returns thistype
+      return thistype.byHandle[GetHandleId(whichUnit)]
+    endmethod
+
+    static method ByUnitType takes integer unitType returns thistype
+      return thistype.byUnitType[unitType]
+    endmethod
+
     static method GetHighestValueCP takes Person person returns thistype
       local integer i = 0
       local ControlPoint highestValueCP = 0
@@ -148,12 +166,19 @@ library ControlPoint initializer OnInit requires AIDS, PlayerConfig
       set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue + this.value
       set OwningPerson.ControlPointCount = OwningPerson.ControlPointCount + 1
 
+      set thistype.byUnitType[GetUnitTypeId(u)] = this
+      set thistype.byHandle[GetHandleId(u)] = this
       set thistype.byIndex[thistype.count] = this
       set thistype.count = count + 1
       
       return this           
     endmethod        
     
+    private static method onInit takes nothing returns nothing
+      set thistype.byUnitType = Table.create()
+      set thistype.byHandle = Table.create()
+    endmethod
+
     method destroy takes nothing returns nothing
       call RemoveUnit(this.u)
       set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue - this.value*-1

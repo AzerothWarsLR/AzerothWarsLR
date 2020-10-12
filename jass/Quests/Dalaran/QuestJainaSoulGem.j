@@ -1,5 +1,5 @@
 //Jaina goes to Scholomance while Scholomance building is destroyed and retrieves the Soul Gem
-library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, DalaranConfig
+library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, DalaranConfig, LegendDalaran, LegendScourge
 
   struct QuestJainaSoulGem extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -17,7 +17,7 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem, "Scholomance"))
-      call this.AddQuestItem(QuestItemUnitDead.create(gg_unit_u012_1149))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SCHOLOMANCE))
       return this
     endmethod
   endstruct

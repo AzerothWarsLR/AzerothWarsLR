@@ -1,4 +1,4 @@
-library QuestDalaranKillScourge initializer OnInit requires QuestItemKillUnit, QuestItemControlUnit, DalaranConfig, LegendLegion
+library QuestDalaranKillScourge initializer OnInit requires QuestItemKillUnit, QuestItemControlLegend, DalaranConfig, LegendScourge
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R053'
@@ -29,7 +29,7 @@ library QuestDalaranKillScourge initializer OnInit requires QuestItemKillUnit, Q
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Legitimate Necromancy", "The heinous actions of the Cult of the Damned have illegitimized necromancy in the eyes of the Council of Six.", "ReplaceableTextures\\CommandButtons\\BTNNecromancer.blp")
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_LICHKING.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       return this
     endmethod
   endstruct

@@ -344,6 +344,9 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private static method onInit takes nothing returns nothing
       set thistype.byHandle = Table.create()
+      set OnLegendChangeOwner = Event.create()
+      set OnLegendPermaDeath = Event.create()
+      set OnLegendPrePermaDeath = Event.create()
     endmethod
 
     static method create takes nothing returns thistype
@@ -359,9 +362,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
   endfunction
 
   private function OnInit takes nothing returns nothing
-    set OnLegendChangeOwner = Event.create()
-    set OnLegendPermaDeath = Event.create()
-    set OnLegendPrePermaDeath = Event.create()
+    
   endfunction
 
 endlibrary

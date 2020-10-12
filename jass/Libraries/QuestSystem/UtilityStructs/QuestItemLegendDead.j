@@ -1,8 +1,9 @@
-library QuestItemLegendDead requires QuestItemData
+library QuestItemLegendDead requires QuestItemData, Legend
 
   struct QuestItemLegendDead extends QuestItemData
-    private static thistype array byLegend
     private Legend target = 0
+    private static integer count = 0
+    private static thistype array byIndex
 
     method operator X takes nothing returns real
       return GetUnitX(target.Unit)
@@ -17,10 +18,16 @@ library QuestItemLegendDead requires QuestItemData
     endmethod
 
     private static method OnAnyUnitDeath takes nothing returns nothing
-      local thistype triggerLegend = Legend.ByHandle(GetTriggerUnit())
-      if triggerLegend != 0 then
-        call thistype.byLegend[triggerLegend].OnDeath()
-      endif
+      local integer i = 0
+      local thistype loopItem
+      loop
+        exitwhen i == thistype.count
+        set loopItem = thistype.byIndex[i]
+        if loopItem.target == GetTriggerLegend() then
+          call loopItem.OnDeath()
+        endif
+        set i = i + 1
+      endloop
     endmethod
 
     static method create takes Legend target returns thistype
@@ -28,18 +35,14 @@ library QuestItemLegendDead requires QuestItemData
       local trigger trig = CreateTrigger()
       set this.target = target
       set this.Description = target.Name + " is dead"
-      set thistype.byLegend[target] = this
-      if target.Unit == null then
-        set this.Progress = QUEST_PROGRESS_UNDISCOVERED
-      elseif UnitAlive(target.Unit) then
-        set this.Progress = QUEST_PROGRESS_COMPLETE
-      endif
+      set thistype.byIndex[thistype.count] = this
+      set thistype.count = thistype.count + 1
       return this
     endmethod
 
     private static method onInit takes nothing returns nothing
       local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_DEATH)    
+      call OnLegendPermaDeath.register(trig)
       call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
     endmethod
 
