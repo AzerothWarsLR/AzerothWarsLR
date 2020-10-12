@@ -40,7 +40,7 @@ library QuestItemControlLegend requires QuestItemData, Legend
       set this.target = target
       call OnLegendChangeOwner.register(trig) 
       call TriggerAddAction(trig, function thistype.OnAnyLegendChangeOwner)
-      set this.Description = "You control " + target.Name
+      set this.Description = "Your team controls " + target.Name
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

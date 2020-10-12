@@ -29,7 +29,7 @@ library QuestItemControlUnit requires QuestItemData
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, target, EVENT_UNIT_CHANGE_OWNER)    
       call TriggerAddAction(trig, function thistype.OnAnyUnitChangeOwner)
-      set this.Description = "You control " + GetUnitName(target)
+      set this.Description = "Your team controls " + GetUnitName(target)
       set this.target = target
       set thistype.byHandleId[GetHandleId(target)] = this
       return this

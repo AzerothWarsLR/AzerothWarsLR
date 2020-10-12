@@ -13,24 +13,32 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig, 
       return "Control of all units in Gnomeregan"
     endmethod
 
-    private method OnComplete takes nothing returns nothing
+    private method GrantGnomeregan takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u
 
-      //Transfer all Neutral Passive units in Gnomeregan to Ironforge
+      //Transfer all Neutral Passive units in Gnomeregan
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Gnomergan, null)
       set u = FirstOfGroup(tempGroup)
       loop
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Holder.Player)
+          call UnitRescue(u, whichPlayer)
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
       endloop
       call DestroyGroup(tempGroup)
-      set tempGroup = null
+      set tempGroup = null      
+    endmethod
+
+    private method OnFail takes nothing returns nothing
+      call this.GrantGnomeregan(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R05Q', 1) 
+      call this.GrantGnomeregan(this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

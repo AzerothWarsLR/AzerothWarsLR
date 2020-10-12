@@ -29,6 +29,7 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_RAGNAROS.DeathMessage = "Ragnaros, the King of Fire and Lord of the Firelands, has been extinguished."
 
     set LEGEND_SEAWITCH = Legend.create()
+    set LEGEND_SEAWITCH.Unit = gg_unit_O02L_0340
 
     set LEGEND_AUCHINDOUN = Legend.create()
     set LEGEND_AUCHINDOUN.Capturable = true

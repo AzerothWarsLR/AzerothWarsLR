@@ -34,7 +34,11 @@ library QuestItemLegendDead requires QuestItemData, Legend
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       set this.target = target
-      set this.Description = target.Name + " is dead"
+      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) then
+        set this.Description = target.Name + " is destroyed"
+      else
+        set this.Description = target.Name + " is dead"
+      endif
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

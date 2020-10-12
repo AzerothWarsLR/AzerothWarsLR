@@ -1,4 +1,4 @@
-library QuestKillRagnaros initializer OnInit requires QuestItemKillUnit, IronforgeConfig
+library QuestKillRagnaros initializer OnInit requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
 
   globals
     private constant integer RESEARCH_ID = 'R043'
@@ -18,9 +18,13 @@ library QuestKillRagnaros initializer OnInit requires QuestItemKillUnit, Ironfor
       return "A research improving your fire based units"
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
+
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Harness the Inferno", "The Firelord Ragnaros resides deep within the Molten Core. With his death, the elemental smiths of Ironforge could leverage his primal fire to enhance their creations.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfFire.blp")
-      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_RAGNAROS))
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_RAGNAROS.Unit))
       return this
     endmethod
   endstruct

@@ -84,14 +84,12 @@ library QuestItemData
 
     method Show takes nothing returns nothing
       local integer i = 0
-      if this.Progress == QUEST_PROGRESS_INCOMPLETE then
+      if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.Parent.Progress == QUEST_PROGRESS_INCOMPLETE then
         if this.minimapIcon == null and this.X != 0 and this.Y != 0 then
           set this.minimapIcon = CreateMinimapIcon(this.X, this.Y, 255, 255, 255, SkinManagerGetLocalPath("MinimapQuestObjectivePrimary"), FOG_OF_WAR_MASKED)
         elseif this.minimapIcon != null then
           call SetMinimapIconVisible(this.minimapIcon, true)
         endif
-      else
-        call BJDebugMsg("tried and failed to show " + this.Description)
       endif
     endmethod
 

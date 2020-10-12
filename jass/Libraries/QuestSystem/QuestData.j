@@ -62,7 +62,8 @@ library QuestData requires QuestItemData, Event
       return this.progress
     endmethod
 
-    stub method operator Progress= takes integer value returns nothing
+    method operator Progress= takes integer value returns nothing
+      local integer i = 0
       if value == QUEST_PROGRESS_COMPLETE then
         call QuestSetCompleted(this.quest, true)
         call QuestSetFailed(this.quest, false)
@@ -77,7 +78,7 @@ library QuestData requires QuestItemData, Event
         call QuestSetFailed(this.quest, true)
         call QuestSetDiscovered(this.quest, true)
         call this.DisplayFailed()
-        call OnFailed()
+        call OnFail()
       elseif value == QUEST_PROGRESS_INCOMPLETE then
         if this.progress == QUEST_PROGRESS_UNDISCOVERED then
           call this.DisplayDiscovered()
@@ -93,6 +94,14 @@ library QuestData requires QuestItemData, Event
         call QuestSetDiscovered(this.quest, false)
       endif
       set this.progress = value
+      //If the quest isn't incomplete, hide all of the quest markers
+      if this.Progress != QUEST_PROGRESS_INCOMPLETE and GetLocalPlayer() == this.Holder.Player then
+        loop
+          exitwhen i == this.questItemCount
+          call questItems[i].Hide()
+          set i = i + 1
+        endloop
+      endif      
     endmethod
 
     //The faction that can complete this quest
@@ -118,7 +127,7 @@ library QuestData requires QuestItemData, Event
 
     endmethod
 
-    stub method OnFailed takes nothing returns nothing
+    stub method OnFail takes nothing returns nothing
 
     endmethod
 

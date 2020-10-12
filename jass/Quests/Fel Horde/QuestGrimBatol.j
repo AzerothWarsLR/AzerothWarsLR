@@ -47,8 +47,9 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Recruit the Dragonmaw Clan", "The Dragonmaw Clan are old allies of the Fel Horde. With an adequate show of strength, they could be recruited to Magtheridon's cause once more.", "ReplaceableTextures\\CommandButtons\\BTNBlackDragon.blp")
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_THELSAMAR.Unit))
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_DARKSHIRE.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THELSAMAR))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_DARKSHIRE))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Grim_Batol, "Grim Batol", true))
       return this
     endmethod
 

@@ -1,15 +1,15 @@
-library QuestItemSelfExists requires QuestItemData, Persons
+library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
 
   struct QuestItemSelfExists extends QuestItemData
     private static integer count = 0
     private static thistype array byIndex
 
-    private static method OnAnyPersonFactionChange takes nothing returns nothing
+    static method OnAnyPersonFactionChange takes nothing returns nothing
       local integer i = 0
-      if GetTriggerPerson().Faction == 0 then
+      if GetChangingPersonPrevFaction() != 0 then
         loop
           exitwhen i == thistype.count
-          if thistype.byIndex[i].Holder == GetTriggerPerson().Faction then
+          if thistype.byIndex[i].Holder == GetChangingPersonPrevFaction() then
             set thistype.byIndex[i].Progress = QUEST_PROGRESS_FAILED
           endif
           set i = i + 1
@@ -25,12 +25,12 @@ library QuestItemSelfExists requires QuestItemData, Persons
       set this.Description = "You exist"
       return this
     endmethod
-
-    private static method onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call OnPersonFactionChange.register(trig) 
-      call TriggerAddAction(trig, function thistype.OnAnyPersonFactionChange)
-    endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    local trigger trig = CreateTrigger()
+    call OnPersonFactionChange.register(trig) 
+    call TriggerAddAction(trig, function QuestItemSelfExists.OnAnyPersonFactionChange)
+  endfunction
 
 endlibrary

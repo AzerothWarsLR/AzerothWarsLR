@@ -1,4 +1,4 @@
-library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, QuestItemUnitDead
+library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, QuestItemUnitDead, LegendStormwind, LegendIronforge
 
   globals
     private constant integer RESEARCH_ID = 'R05Z'
@@ -23,8 +23,8 @@ library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, Q
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Savage Negotations", "Diplomatic negotations amongst the Fel Orcish clans are prolonged, deadly engagements. Only the destruction of Stormwind and Ironforge will truly rally the clans, for it would signal the beginning of Magtheridon's ultimate invasion.", "ReplaceableTextures\\CommandButtons\\BTNChaosGrunt.blp")
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_STORMWINDKEEP.Unit))
-      call this.AddQuestItem(QuestItemUnitDead.create(LEGEND_GREATFORGE.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STORMWINDKEEP))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_GREATFORGE))
       return this
     endmethod
   endstruct
