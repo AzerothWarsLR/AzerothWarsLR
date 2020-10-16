@@ -11,6 +11,7 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
     if not IsUnitAliveBJ(gg_unit_h000_0406) and not IsUnitAliveBJ(gg_unit_h01G_0885) and not IsUnitAliveBJ(gg_unit_h030_0839) then
       if FACTION_SCOURGE.Person != 0 then
         set LEGEND_ARTHAS.UnitType = 'Uear'
+        set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
         call UnitDropAllItems(LEGEND_ARTHAS.Unit)
         call LEGEND_ARTHAS.Spawn(FACTION_SCOURGE.Player, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
         call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)

@@ -240,11 +240,11 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
     endmethod
 
     method modWeight takes integer value returns nothing
-      if value < 0 then
+      if this.weight + value < 0 then
         call BJDebugMsg("ERROR: Attempted to reduce weight of Faction " + this.name + " to " + I2S(value)) 
         return
       endif
-      set this.weight = value
+      set this.weight = this.weight + value
     endmethod
 
     method GetObjectLevel takes integer object returns integer
