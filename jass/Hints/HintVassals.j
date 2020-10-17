@@ -1,4 +1,4 @@
-library HintVictory initializer OnInit requires Hint, VassalFaction
+library HintVassals initializer OnInit requires Hint, VassalFaction
 
   private function OnInit takes nothing returns nothing
     call Hint.create("If you have a misbehaving vassal, you can boot them by typing -boot followed by their faction name, e.g. -boot xavius.")
