@@ -41,7 +41,10 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
     call FACTION_SENTINELS.registerObjectLimit(RESEARCH_ID, UNLIMITED)
     set QUESTITEM_THUNDERBLUFF = tempQuest.addItem("Thunderbluff is destroyed")
     set QUESTITEM_ORGRIMMAR = tempQuest.addItem("Orgrimmar is destroyed")
-        call FACTION_SENTINELS.addQuest(tempQuest)
+    call FACTION_SENTINELS.addQuest(tempQuest)
+
+    call FACTION_SENTINELS.modObjectLimit(RESEARCH_ID, 1)
+    call FACTION_SENTINELS.modObjectLimit(AMARA_ID, 1)
   endfunction
 
 endlibrary
