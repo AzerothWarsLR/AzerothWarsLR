@@ -62,7 +62,7 @@ library QuestOrgrimmar initializer OnInit requires Persons, FrostwolfConfig, War
     public static method create takes Faction fallbackFaction returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "Since arriving on Azeroth, the Orcs have never had a place to call home. The uncharted lands of Kalimdor are ripe for colonization.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       set this.fallbackFaction = fallbackFaction
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemTime.create(540), QuestItemAnyUnitInRect.create(gg_rct_Orgrimmar, "Orgrimmar", true)))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendInRect.create(LEGEND_THRALL, gg_rct_Orgrimmar, "Orgrimmar"), QuestItemTime.create(540)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

@@ -1,7 +1,8 @@
 library QuestItemData
 
   struct QuestItemData
-    private QuestData parent
+    private QuestData parentQuest
+    private QuestItemData parentQuestItem
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private string description = ""
     private questitem questItem
@@ -18,12 +19,16 @@ library QuestItemData
       return thistype.progressChanged
     endmethod
 
-    method operator Parent takes nothing returns QuestData
-      return this.parent
+    method operator ParentQuestItem= takes QuestItemData value returns nothing
+      set this.parentQuestItem = value
     endmethod
 
-    method operator Parent= takes QuestData value returns nothing
-      set this.parent = value
+    method operator ParentQuest takes nothing returns QuestData
+      return this.parentQuest
+    endmethod
+
+    method operator ParentQuest= takes QuestData value returns nothing
+      set this.parentQuest = value
     endmethod
 
     method operator QuestItem takes nothing returns questitem
@@ -43,7 +48,25 @@ library QuestItemData
     endmethod
 
     method operator Holder takes nothing returns Faction
-      return this.parent.Holder
+      if this.parentQuest != 0 then
+        return this.parentQuest.Holder
+      elseif this.parentQuestItem != 0 then
+        return this.parentQuestItem.Holder
+      else
+        call BJDebugMsg("ERROR: " + this.Description + " has no holder")
+        return 0
+      endif
+    endmethod
+
+    method operator ProgressLocked takes nothing returns boolean
+      if this.parentQuest != 0 then
+        return this.parentQuest.ProgressLocked
+      elseif this.parentQuestItem != 0 then
+        return this.parentQuestItem.ProgressLocked
+      else
+        call BJDebugMsg("ERROR: " + this.Description + " has no holder")
+        return true
+      endif
     endmethod
 
     stub method operator Progress takes nothing returns integer
@@ -51,7 +74,7 @@ library QuestItemData
     endmethod
 
     method operator Progress= takes integer value returns nothing
-      if this.parent.ProgressLocked or this.progress == value then
+      if this.ProgressLocked or this.progress == value then
         return
       endif
       set this.progress = value
@@ -82,11 +105,20 @@ library QuestItemData
       set this.description = value
     endmethod
 
+    stub method operator PingPath takes nothing returns string
+      return "MinimapQuestObjectivePrimary"
+    endmethod
+
+    //Run when added to a Quest
+    stub method OnAdd takes nothing returns nothing
+
+    endmethod
+
     method Show takes nothing returns nothing
       local integer i = 0
-      if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.Parent.Progress == QUEST_PROGRESS_INCOMPLETE then
+      if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.ParentQuest.Progress == QUEST_PROGRESS_INCOMPLETE then
         if this.minimapIcon == null and this.X != 0 and this.Y != 0 then
-          set this.minimapIcon = CreateMinimapIcon(this.X, this.Y, 255, 255, 255, SkinManagerGetLocalPath("MinimapQuestObjectivePrimary"), FOG_OF_WAR_MASKED)
+          set this.minimapIcon = CreateMinimapIcon(this.X, this.Y, 255, 255, 0, SkinManagerGetLocalPath(this.PingPath), FOG_OF_WAR_MASKED)
         elseif this.minimapIcon != null then
           call SetMinimapIconVisible(this.minimapIcon, true)
         endif

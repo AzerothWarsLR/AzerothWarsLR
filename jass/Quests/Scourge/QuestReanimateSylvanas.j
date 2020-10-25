@@ -28,7 +28,7 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Slay her, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
-      call this.AddQuestItem(QuestItemKillLegend.create(LEGEND_SYLVANAS))
+      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SYLVANAS.Unit))
       return this
     endmethod
   endstruct

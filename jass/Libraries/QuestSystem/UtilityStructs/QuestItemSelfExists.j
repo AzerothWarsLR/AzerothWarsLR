@@ -4,6 +4,10 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
     private static integer count = 0
     private static thistype array byIndex
 
+    method OnAdd takes nothing returns nothing
+      set this.Progress = QUEST_PROGRESS_COMPLETE
+    endmethod
+
     static method OnAnyPersonFactionChange takes nothing returns nothing
       local integer i = 0
       if GetChangingPersonPrevFaction() != 0 then

@@ -3,8 +3,40 @@ library GeneralHelpers
   globals
     private constant real HERO_DROP_DIST = 50.     //The radius in which heroes spread out items when they drop them
     private force DestForce = null
+    private group TempGroup = CreateGroup()
+    private rect TempRect = Rect(0, 0, 0, 0)
   endglobals
-  
+
+  function KillNeutralHostileUnitsInRadius takes real x, real y, real radius returns nothing
+    local unit u
+    call GroupEnumUnitsInRange(TempGroup, x, y, radius, null)
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and not IsUnitType(u, UNIT_TYPE_SAPPER) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) then
+        call KillUnit(u)
+      endif
+      call GroupRemoveUnit(TempGroup, u)
+    endloop
+  endfunction
+
+  function CreateStructureForced takes player whichPlayer, integer unitId, real x, real y, real face, real size returns unit
+    local unit u = null
+    call SetRect(TempRect, x - size/2, y - size/2, x + size/2, y + size/2)
+    call GroupEnumUnitsInRect(TempGroup, TempRect, null)
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      if IsUnitType(u, UNIT_TYPE_STRUCTURE) then
+        call AdjustPlayerStateBJ(GetUnitGoldCost(GetUnitTypeId(u)), GetOwningPlayer(u), PLAYER_STATE_RESOURCE_GOLD)
+        call AdjustPlayerStateBJ(GetUnitWoodCost(GetUnitTypeId(u)), GetOwningPlayer(u), PLAYER_STATE_RESOURCE_LUMBER)
+        call KillUnit(u)
+      endif
+      call GroupRemoveUnit(TempGroup, u)
+    endloop
+    return CreateUnit(whichPlayer, unitId, x, y, face)
+  endfunction
+
   function PlayDialogue takes player whichPlayer, sound whichSound, string speakerName, string caption returns nothing
     if GetLocalPlayer() == whichPlayer then
       call StartSound(whichSound)

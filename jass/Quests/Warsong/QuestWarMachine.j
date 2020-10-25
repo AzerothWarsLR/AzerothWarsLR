@@ -30,7 +30,7 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
       call this.AddQuestItem(QuestItemResearch.create('R021'))
-      call this.AddQuestItem(QuestItemControlUnit.create(gg_unit_o01I_0449))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_LUMBERCAMP))
       return this
     endmethod
   endstruct

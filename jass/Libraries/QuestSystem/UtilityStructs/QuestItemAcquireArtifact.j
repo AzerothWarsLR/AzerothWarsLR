@@ -5,6 +5,12 @@ library QuestItemAcquireArtifact initializer OnInit requires QuestItemData, Arti
     private static thistype array byIndex
     private Artifact target
 
+    private method OnAdd takes nothing returns nothing
+      if this.target.owningPerson == this.Holder.Person then
+        set this.Progress = QUEST_PROGRESS_COMPLETE
+      endif
+    endmethod
+
     private method OnAcquired takes nothing returns nothing
       if this.target.owningPerson == this.Holder.Person then
         set this.Progress = QUEST_PROGRESS_COMPLETE

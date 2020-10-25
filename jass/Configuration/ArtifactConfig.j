@@ -63,7 +63,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', DUMMY_X, DUMMY_Y))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_SKULLOFGULDAN.setDescription("In a far away land")
+    call ARTIFACT_SKULLOFGULDAN.setDescription("Legion Quest")
 
     set tempArtifact = Artifact.create(CreateItem('I004', DUMMY_X, DUMMY_Y))    //The Doomhammer
     call UnitAddItem(gg_unit_Othr_1598, tempArtifact.item)                      //Thrall

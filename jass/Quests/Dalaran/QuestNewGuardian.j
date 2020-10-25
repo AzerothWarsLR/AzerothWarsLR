@@ -39,7 +39,7 @@ library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalara
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Guardian of Tirisfal", "Medivh's death left Azeroth without a Guardian. The spell book he left behind could be used to empower a new one.", "ReplaceableTextures\\CommandButtons\\BTNAstral Blessing.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_BOOKOFMEDIVH))
-      set this.questItemCastEmpowerGuardian = this.AddQuestItem(QuestItemCastSpell.create(ABIL_ID))
+      set this.questItemCastEmpowerGuardian = this.AddQuestItem(QuestItemCastSpell.create(ABIL_ID, true))
       return this
     endmethod
   endstruct

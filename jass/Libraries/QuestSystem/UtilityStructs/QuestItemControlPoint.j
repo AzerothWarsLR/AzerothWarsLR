@@ -14,6 +14,12 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       return GetUnitY(target.Unit)
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      if this.Holder.Team.ContainsPlayer(GetOwningPlayer(target.Unit)) then
+        set this.Progress = QUEST_PROGRESS_COMPLETE
+      endif
+    endmethod
+
     private method OnTargetChangeOwner takes nothing returns nothing
       if this.Holder.Team.ContainsPlayer(GetOwningPlayer(target.Unit)) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
@@ -38,7 +44,7 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
     static method create takes ControlPoint target returns thistype
       local thistype this = thistype.allocate()
       set this.target = target
-      set this.Description = "You control " + target.Name
+      set this.Description = "Your team controls " + target.Name
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

@@ -17,10 +17,11 @@ library QuestItemResearch requires QuestItemData
     private static method OnAnyResearch takes nothing returns nothing
       local integer i = 0
       local thistype loopQuestItem
+      local integer researched = GetResearched()
       loop
         exitwhen i == thistype.count
         set loopQuestItem = thistype.byIndex[i]
-        if loopQuestItem.researchId == GetResearched() and loopQuestItem.Holder.Player == GetOwningPlayer(GetTriggerUnit()) then
+        if loopQuestItem.researchId == researched and loopQuestItem.Holder.Player == GetOwningPlayer(GetTriggerUnit()) then
           set loopQuestItem.Progress = QUEST_PROGRESS_COMPLETE
         endif
         set i = i + 1

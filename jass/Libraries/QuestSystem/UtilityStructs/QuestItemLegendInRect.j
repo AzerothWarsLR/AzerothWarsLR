@@ -24,6 +24,10 @@ library QuestItemLegendInRect requires QuestItemData, Legend, Environment
       return GetRectCenterY(this.targetRect)
     endmethod
 
+    method operator PingPath takes nothing returns string
+      return "MinimapQuestTurnIn"
+    endmethod    
+
     private method OnRegionExit takes nothing returns nothing
       if UnitAlive(this.legend.Unit) == true and IsUnitInRegion(this.target, this.legend.Unit) then
         set this.Progress = QUEST_PROGRESS_COMPLETE

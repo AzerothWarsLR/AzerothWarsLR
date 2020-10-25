@@ -10,6 +10,7 @@ library QuestItemAnyUnitInRect requires QuestItemData, Environment
     private region target
     private rect targetRect
     private boolean heroOnly = false
+    private unit triggerUnit = null
 
     private static trigger entersRectTrig = CreateTrigger()
     private static trigger exitsRectTrig = CreateTrigger()
@@ -23,6 +24,14 @@ library QuestItemAnyUnitInRect requires QuestItemData, Environment
 
     method operator Y takes nothing returns real
       return GetRectCenterY(this.targetRect)
+    endmethod
+
+    method operator PingPath takes nothing returns string
+      return "MinimapQuestTurnIn"
+    endmethod    
+
+    method operator TriggerUnit takes nothing returns unit
+      return this.triggerUnit
     endmethod
 
     private method IsValidUnitInRect takes nothing returns boolean
@@ -43,6 +52,7 @@ library QuestItemAnyUnitInRect requires QuestItemData, Environment
 
     private method OnRegionEnter takes unit whichUnit returns nothing
       if (GetOwningPlayer(whichUnit) == this.Holder.Player and UnitAlive(whichUnit) and (IsUnitType(whichUnit, UNIT_TYPE_HERO) or not this.heroOnly)) or IsValidUnitInRect() then
+        set this.triggerUnit = whichUnit
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_INCOMPLETE
@@ -99,7 +109,7 @@ library QuestItemAnyUnitInRect requires QuestItemData, Environment
 
     private static method onInit takes nothing returns nothing
       call TriggerAddAction(thistype.entersRectTrig, function thistype.OnAnyRegionEnter)
-      call TriggerAddAction(thistype.exitsRectTrig, function thistype.OnAnyRegionEnter)
+      call TriggerAddAction(thistype.exitsRectTrig, function thistype.OnAnyRegionExit)
     endmethod
 
   endstruct

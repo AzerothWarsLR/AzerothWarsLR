@@ -1,4 +1,4 @@
-library QuestItemControlLegend requires QuestItemData, Legend
+library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
 
   struct QuestItemControlLegend extends QuestItemData
     private Legend target = 0
@@ -6,11 +6,23 @@ library QuestItemControlLegend requires QuestItemData, Legend
     private static thistype array byIndex
 
     method operator X takes nothing returns real
-      return GetUnitX(target.Unit)
+      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target.Unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+        return GetUnitX(target.Unit)
+      endif
+      return 0.
     endmethod
 
     method operator Y takes nothing returns real
-      return GetUnitY(target.Unit)
+      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target.Unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+        return GetUnitY(target.Unit)
+      endif
+      return 0.
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      if this.Holder.Team.ContainsFaction(target.OwningFaction) then
+        set this.Progress = QUEST_PROGRESS_COMPLETE
+      endif
     endmethod
 
     private method OnTargetChangeOwner takes nothing returns nothing
@@ -21,7 +33,7 @@ library QuestItemControlLegend requires QuestItemData, Legend
       endif
     endmethod
 
-    private static method OnAnyLegendChangeOwner takes nothing returns nothing
+    public static method OnAnyLegendChangeOwner takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
       loop
@@ -36,10 +48,7 @@ library QuestItemControlLegend requires QuestItemData, Legend
 
     static method create takes Legend target returns thistype
       local thistype this = thistype.allocate()
-      local trigger trig = CreateTrigger()
       set this.target = target
-      call OnLegendChangeOwner.register(trig) 
-      call TriggerAddAction(trig, function thistype.OnAnyLegendChangeOwner)
       set this.Description = "Your team controls " + target.Name
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
@@ -47,5 +56,11 @@ library QuestItemControlLegend requires QuestItemData, Legend
     endmethod
 
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    local trigger trig = CreateTrigger()
+    call OnLegendChangeOwner.register(trig) 
+    call TriggerAddAction(trig, function QuestItemControlLegend.OnAnyLegendChangeOwner)
+  endfunction  
 
 endlibrary

@@ -7,6 +7,7 @@ library LegendWarsong initializer OnInit requires Legend
     Legend LEGEND_MANNOROTH
     Legend LEGEND_STONEMAUL
     Legend LEGEND_ENCAMPMENT
+    Legend LEGEND_LUMBERCAMP
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -32,6 +33,9 @@ library LegendWarsong initializer OnInit requires Legend
 
     set LEGEND_ENCAMPMENT = Legend.create()
     set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
+
+    set LEGEND_LUMBERCAMP = Legend.create()
+    set LEGEND_LUMBERCAMP.Unit = gg_unit_o01I_0449
   endfunction
 
 endlibrary

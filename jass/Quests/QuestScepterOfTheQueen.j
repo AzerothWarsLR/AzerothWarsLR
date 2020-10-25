@@ -1,4 +1,4 @@
-library QuestScepterOfTheQueen initializer OnInit requires QuestData
+library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongConfig, SentinelsConfig, ArtifactConfig
 
   struct QuestScepterOfTheQueenWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -16,7 +16,9 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Royal Plunder", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Feathermoon Stronghold falls, it would become a simple matter to slaughter the Highborne and plunder their artifacts.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_FEATHERMOON.Unit))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_STONEMAUL))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
       return this
     endmethod
   endstruct
@@ -37,7 +39,9 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Return to the Fold", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Stonemaul falls, it would be safe for them to come out.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_STONEMAUL.Unit))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_FEATHERMOON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
       return this
     endmethod
   endstruct  
@@ -49,11 +53,11 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData
     call GroupEnumUnitsInRect(tempGroup, gg_rct_HighBourne, null)
     loop
       set u = FirstOfGroup(tempGroup)
+      exitwhen u == null
       if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
         call SetUnitInvulnerable(u, true)
       endif
       call GroupRemoveUnit(tempGroup, u)
-      exitwhen u == null
     endloop
     call FACTION_WARSONG.AddQuest(QuestScepterOfTheQueenWarsong.create())
     call FACTION_SENTINELS.AddQuest(QuestScepterOfTheQueenSentinels.create())

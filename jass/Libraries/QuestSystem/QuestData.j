@@ -13,6 +13,7 @@ library QuestData requires QuestItemData, Event
     private integer progress = QUEST_PROGRESS_INCOMPLETE
     private Faction holder
     private quest quest
+    private boolean muted = true //Doesn't display text when updated if true
 
     private QuestItemData array questItems[10]
     private integer questItemCount = 0
@@ -64,26 +65,34 @@ library QuestData requires QuestItemData, Event
 
     method operator Progress= takes integer value returns nothing
       local integer i = 0
+      local integer formerProgress = this.progress
+      set this.progress = value
       if value == QUEST_PROGRESS_COMPLETE then
         call QuestSetCompleted(this.quest, true)
         call QuestSetFailed(this.quest, false)
         call QuestSetDiscovered(this.quest, true)
-        call this.DisplayCompleted()
-        if this.Global then
-          call this.DisplayCompletedGlobal()
+        if not this.muted then
+          call this.DisplayCompleted()
+          if this.Global then
+            call this.DisplayCompletedGlobal()
+          endif
         endif
         call OnComplete()
       elseif value == QUEST_PROGRESS_FAILED then
         call QuestSetCompleted(this.quest, false)
         call QuestSetFailed(this.quest, true)
         call QuestSetDiscovered(this.quest, true)
-        call this.DisplayFailed()
+        if not this.muted then
+          call this.DisplayFailed()
+        endif
         call OnFail()
       elseif value == QUEST_PROGRESS_INCOMPLETE then
-        if this.progress == QUEST_PROGRESS_UNDISCOVERED then
-          call this.DisplayDiscovered()
-        else
-          call this.DisplayUpdated()
+        if not this.muted then
+          if formerProgress == QUEST_PROGRESS_UNDISCOVERED then
+            call this.DisplayDiscovered()
+          else
+            call this.DisplayUpdated()
+          endif
         endif
         call QuestSetCompleted(this.quest, false)
         call QuestSetFailed(this.quest, false)
@@ -93,7 +102,7 @@ library QuestData requires QuestItemData, Event
         call QuestSetFailed(this.quest, false)
         call QuestSetDiscovered(this.quest, false)
       endif
-      set this.progress = value
+      
       //If the quest isn't incomplete, hide all of the quest markers
       if this.Progress != QUEST_PROGRESS_INCOMPLETE and GetLocalPlayer() == this.Holder.Player then
         loop
@@ -101,7 +110,7 @@ library QuestData requires QuestItemData, Event
           call questItems[i].Hide()
           set i = i + 1
         endloop
-      endif      
+      endif
     endmethod
 
     //The faction that can complete this quest
@@ -110,6 +119,7 @@ library QuestData requires QuestItemData, Event
     endmethod
 
     method operator Holder= takes Faction value returns nothing
+      local integer i = 0
       if this.holder != 0 then
         call BJDebugMsg("Attempted to set Holder of quest " + this.title + " to " + value.name + " but it is already set to " + this.holder.name)
         return
@@ -117,6 +127,12 @@ library QuestData requires QuestItemData, Event
       set this.holder = value
       call this.OnAdd()
       call QuestSetDescription(this.quest, this.description + "\n|cffffcc00Reward:|r " + this.CompletionDescription)
+      loop
+        exitwhen i == this.questItemCount
+        call this.questItems[i].OnAdd()
+        set i = i + 1
+      endloop
+      set this.muted = false
     endmethod
 
     stub method OnAdd takes nothing returns nothing
@@ -284,13 +300,13 @@ library QuestData requires QuestItemData, Event
       set this.questItems[this.questItemCount] = value
       set this.questItemCount = this.questItemCount + 1
       set value.QuestItem = QuestCreateItem(this.quest)
-      set value.Parent = this
+      set value.ParentQuest = this
       call QuestItemSetDescription(value.QuestItem, value.Description)
       return value
     endmethod
 
     private static method OnAnyQuestItemProgressChanged takes nothing returns nothing
-      call QuestItemData.TriggerQuestItemData.Parent.OnQuestItemProgressChanged()
+      call QuestItemData.TriggerQuestItemData.ParentQuest.OnQuestItemProgressChanged()
     endmethod
 
     private method destroy takes nothing returns nothing

@@ -196,7 +196,9 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call SetUnitY(Unit, y)
         call SetUnitFacing(Unit, face)
       endif
-      call SetUnitOwner(Unit, owner, true)
+      if GetOwningPlayer(this.unit) != owner then
+        call SetUnitOwner(Unit, owner, true)
+      endif
       call refreshDummy()
     endmethod
 

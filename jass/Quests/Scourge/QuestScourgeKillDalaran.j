@@ -16,7 +16,7 @@ library QuestScourgeKillDalaran initializer OnInit requires QuestData, ScourgeCo
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Forbidden Knowledge", "The libraries of Dalaran are filled with magical secrets that could be used to educate the Cult of the Damned, enabling them to repair more Obsidian Statues.", "ReplaceableTextures\\CommandButtons\\BTNBookOfTheDead.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_DALARAN.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_DALARAN))
       return this
     endmethod
   endstruct

@@ -25,7 +25,7 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
-      call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID))
+      call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, false))
       return this
     endmethod
   endstruct

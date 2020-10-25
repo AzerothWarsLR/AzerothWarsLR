@@ -7,11 +7,17 @@ library QuestItemKillUnit requires QuestItemData, Event
     private static thistype array byIndex
 
     method operator X takes nothing returns real
-      return GetUnitX(target)
+      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+        return GetUnitX(target)
+      endif
+      return 0.
     endmethod
 
     method operator Y takes nothing returns real
-      return GetUnitY(target)
+      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+        return GetUnitY(target)
+      endif
+      return 0.
     endmethod
 
     method operator Target takes nothing returns unit

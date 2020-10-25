@@ -1,4 +1,4 @@
-library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, QuestItemUnitDead, LegendStormwind, LegendIronforge
+library QuestT2FelHorde initializer OnInit requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendStormwind, LegendIronforge
 
   globals
     private constant integer RESEARCH_ID = 'R05Z'

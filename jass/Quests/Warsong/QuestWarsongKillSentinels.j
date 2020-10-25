@@ -15,9 +15,14 @@ library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, Leg
       return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s"
     endmethod
 
-    private method OnComplete takes nothing returns nothing
+    private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
-      call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+      call DisplayUnitTypeAcquired(this.Holder.Player, UNITTYPE_ID, "You can now train Zeppelins from the Goblin Laboratory.")
     endmethod
 
     public static method create takes nothing returns thistype
