@@ -1,27 +1,28 @@
-library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids
+library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
 
-  globals
-    private QuestData QUEST_DREKTHAR
-    private QuestItemData QUESTITEM_VISIT
-  endglobals
+  struct QuestDrektharsSpellbook extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement."
+    endmethod
 
-  private function EntersRegion takes nothing returns nothing
-    if LEGEND_THRALL.Unit == GetTriggerUnit() and FACTION_FROSTWOLF.Team.ContainsPlayer(LEGEND_NORDRASSIL.OwningPlayer) then
-      call UnitAddItem(GetTriggerUnit(), ARTIFACT_DREKTHARSSPELLBOOK.item)
-      call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-      call DestroyTrigger(GetTriggeringTrigger())
-    endif
-  endfunction
+    private method operator CompletionDescription takes nothing returns string
+      return "Drek'thar's Spellbook"
+    endmethod   
+
+    private method OnComplete takes nothing returns nothing
+      call UnitAddItem(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
+    endmethod
+
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL))
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_THRALL, gg_rct_Drekthars_Spellbook, "Nordrassil"))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterEnterRectSimple( trig, gg_rct_Drekthars_Spellbook )
-    call TriggerAddCondition( trig, function EntersRegion)
-
-    //Quest setup
-    set QUEST_DREKTHAR = QuestData.create("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "The World Tree, Nordrassil, has been captured by the forces of the Horde. Drek'thar has gifted Warchief Thrall his magical spellbook for this achievement.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
-    set QUESTITEM_VISIT = QUEST_DREKTHAR.addItem("Bring Thrall to the World Tree")
-    call FACTION_FROSTWOLF.addQuest(QUEST_DREKTHAR)
+    call FACTION_FROSTWOLF.AddQuest(QuestDrektharsSpellbook.create())
   endfunction
 
 endlibrary

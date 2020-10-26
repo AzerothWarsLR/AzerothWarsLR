@@ -1,4 +1,4 @@
-library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters, QuestData
+library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
   globals   
     force Observers
@@ -47,7 +47,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
           set i = i + 1
         endloop
-        call hideQuests()
         set this.faction = 0 
         if this.prevFaction != 0 then
           set this.prevFaction.Person = 0 //Referential integrity
@@ -75,15 +74,11 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
             endif
             set i = i + 1
           endloop
-          //Show quests
-          call showQuests()
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
           call BJDebugMsg(I2S(newFaction.Person))
         endif
       endif
-
-      
 
       set thistype.triggerPerson = this
       call OnPersonFactionChange.fire()
@@ -151,46 +146,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
         set this.partialGold = this.partialGold - 1
         call SetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD) + 1)
       endloop
-    endmethod
-
-    //Goes through all Quests and hides them, then goes through all child Quest Items and hide them
-    private method hideQuests takes nothing returns nothing
-      local integer i = 0
-      local QuestData tempQuestData
-      local QuestItemData tempQuestItemData
-      if GetLocalPlayer() == p then   
-        set i = 0
-        loop
-          exitwhen i == faction.quests.size
-          set tempQuestData = faction.quests[i]
-          set tempQuestData.Enabled = false
-          set i = i + 1
-        endloop
-      endif
-    endmethod
-
-    //Goes through all Quests and locally updates their progress to what this Faction has recorded of them
-    private method showQuests takes nothing returns nothing
-      local integer i = 0
-      local integer j = 0
-      local QuestData tempQuestData
-      local QuestItemData tempQuestItemData
-      if GetLocalPlayer() == p then   
-        set i = 0
-        loop
-          exitwhen i == faction.quests.size
-          set tempQuestData = faction.quests[i]
-          set tempQuestData.Enabled = true
-          set i = i + 1
-          set j = 0
-          loop  
-            exitwhen j == tempQuestData.questItems.size
-            set tempQuestItemData = tempQuestData.questItems[j]
-            call tempQuestItemData.setProgress(faction.questItemProgress[tempQuestItemData], false)
-            set j = j + 1
-          endloop
-        endloop
-      endif
     endmethod
 
     private method nullFaction takes nothing returns nothing

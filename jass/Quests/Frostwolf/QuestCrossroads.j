@@ -2,91 +2,65 @@
 
 library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
 
-  globals
-    private constant real TIMER = 420.     //How long it takes for this event to elapse automatically
+  struct QuestCrossroads extends QuestData
+    private Faction fallbackFaction = 0
 
-    private QuestData QUEST_CROSSROADS
-    private QuestItemData QUESTITEM_VISIT
-  endglobals
+    private method operator CompletionPopup takes nothing returns string
+      return "The Crossroads have been constructed."
+    endmethod
 
-  private function Build takes nothing returns nothing
-    local group tempGroup = CreateGroup()
-    local unit u
-    local player recipient = Player(PLAYER_NEUTRAL_AGGRESSIVE)
+    private method operator CompletionDescription takes nothing returns string
+      return "Control of the Crossroads"
+    endmethod    
 
-    if FACTION_FROSTWOLF.Person != 0 then                    
-      set recipient = FACTION_FROSTWOLF.Player  
-    elseif FACTION_WARSONG.Person != 0 then
-      set recipient = FACTION_WARSONG.Player
-    endif
+    private method GiveCrossroads takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
 
-    //Transfer all Neutral Passive units in Crossroads to one of the above factions
-    call GroupEnumUnitsInRect(tempGroup, gg_rct_CrossroadsOuter, null)
-    set u = FirstOfGroup(tempGroup)
-    loop
-    exitwhen u == null
-      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-        call UnitRescue(u, recipient)
-      endif
-      call GroupRemoveUnit(tempGroup, u)
+      //Transfer all Neutral Passive units in Crossroads to one of the above factions
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_CrossroadsOuter, null)
       set u = FirstOfGroup(tempGroup)
-    endloop
-    //Give resources and display message
-    call CreateUnit(recipient, 'oeye', -12844, -1975, 0)    
-    call CreateUnit(recipient, 'oeye', -10876, -2066, 0)   
-    call CreateUnit(recipient, 'oeye', -11922, -824, 0)   
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      //Give resources and display message
+      call CreateUnit(whichPlayer, 'oeye', -12844, -1975, 0)
+      call CreateUnit(whichPlayer, 'oeye', -10876, -2066, 0)
+      call CreateUnit(whichPlayer, 'oeye', -11922, -824, 0)
 
-    //Complete quests
-    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
+      //Cleanup
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
+    endmethod
 
-    //Cleanup
-    call DestroyGroup (TempGroup)
-    set recipient = null
-    set tempGroup = null
-  endfunction
+    private method OnFail takes nothing returns nothing
+      if this.fallbackFaction != 0 then
+        call this.GiveCrossroads(this.fallbackFaction.Player)
+      else
+        call this.GiveCrossroads(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      endif
+    endmethod
 
-  private function TimerEnds takes nothing returns nothing
-    call Build()
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call this.GiveCrossroads(this.Holder.Player)
+    endmethod
 
-  private function EntersRegion takes nothing returns nothing
-    if FACTION_FROSTWOLF.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then   //Any Horde faction
-      call Build()
-    endif
-  endfunction    
-
-  private function PersonFactionChanges takes nothing returns nothing
-    if GetChangingPersonPrevFaction() == FACTION_FROSTWOLF then
-      call Build()
-    endif
-  endfunction
-
-  private function Conditions takes nothing returns boolean
-    return FACTION_FROSTWOLF.getQuestItemProgress(QUESTITEM_VISIT) == QUEST_PROGRESS_INCOMPLETE
-  endfunction
+    public static method create takes Faction fallbackFaction returns thistype
+      local thistype this = thistype.allocate("The Crossroads", "The Horde still needs to establish a strong strategic foothold into Kalimdor. There is an opportune crossroads nearby.", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
+      set this.fallbackFaction = fallbackFaction
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemAnyUnitInRect.create(gg_rct_CrossroadsOuter, "The Crossroads", true), QuestItemTime.create(360)))
+      call this.AddQuestItem(QuestItemSelfExists.create())
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = null
-
-    set trig = CreateTrigger()
-    call TriggerRegisterEnterRectSimple(trig, gg_rct_Crossroads)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function EntersRegion)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, TIMER, false)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function TimerEnds)   
-
-    set trig = CreateTrigger()
-    call OnPersonFactionChange.register(trig)
-    call TriggerAddCondition(trig, Condition(function Conditions))
-    call TriggerAddAction(trig, function PersonFactionChanges)    
-
-    //Quest setup
-    set QUEST_CROSSROADS = QuestData.create("The Crossroads", "The Horde still needs to establish a strong strategic foothold into Kalimdor. There is an opportune crossroads nearby.", "The Crossroads has been constructed.", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
-    set QUESTITEM_VISIT = QUEST_CROSSROADS.addItem("Survive until turn 7 OR bring a unit to the Crossroads")
-    call FACTION_FROSTWOLF.addQuest(QUEST_CROSSROADS)
+    call FACTION_FROSTWOLF.AddQuest(QuestCrossroads.create(FACTION_WARSONG))
   endfunction
 
 endlibrary

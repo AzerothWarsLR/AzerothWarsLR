@@ -1,19 +1,21 @@
 library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, PlayerConfig
 
   globals
-      private constant real DUMMY_X = 20195
-      private constant real DUMMY_Y = 24177
+    private constant real DUMMY_X = 20195
+    private constant real DUMMY_Y = 24177
 
-      Artifact ARTIFACT_GHANIR
-      Artifact ARTIFACT_SKULLOFGULDAN
-      Artifact ARTIFACT_CROWNLORDAERON
-      Artifact ARTIFACT_CROWNSTORMWIND
-      Artifact ARTIFACT_BELTOFGIANTSTRENGTH
-      Artifact ARTIFACT_HELMOFDOMINATION
-      Artifact ARTIFACT_DREKTHARSSPELLBOOK
-      Artifact ARTIFACT_SCEPTEROFTHEQUEEN
-      Artifact ARTIFACT_CROWNEASTERNKINGDOMS
-      Artifact ARTIFACT_BOOKOFMEDIVH
+    Artifact ARTIFACT_GHANIR
+    Artifact ARTIFACT_SKULLOFGULDAN
+    Artifact ARTIFACT_CROWNLORDAERON
+    Artifact ARTIFACT_CROWNSTORMWIND
+    Artifact ARTIFACT_BELTOFGIANTSTRENGTH
+    Artifact ARTIFACT_HELMOFDOMINATION
+    Artifact ARTIFACT_DREKTHARSSPELLBOOK
+    Artifact ARTIFACT_SCEPTEROFTHEQUEEN
+    Artifact ARTIFACT_CROWNEASTERNKINGDOMS
+    Artifact ARTIFACT_BOOKOFMEDIVH
+    Artifact ARTIFACT_SOULGEM
+    Artifact ARTIFACT_HORNOFCENARIUS
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -61,7 +63,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
 
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', DUMMY_X, DUMMY_Y))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_SKULLOFGULDAN.setDescription("In a far away land")
+    call ARTIFACT_SKULLOFGULDAN.setDescription("Legion Quest")
 
     set tempArtifact = Artifact.create(CreateItem('I004', DUMMY_X, DUMMY_Y))    //The Doomhammer
     call UnitAddItem(gg_unit_Othr_1598, tempArtifact.item)                      //Thrall
@@ -90,7 +92,6 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     call UnitAddAbility(gg_unit_O00O_1933, ARTIFACT_HOLDER_ABIL_ID)             //Zul'jin
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)
 
-
     set tempArtifact = Artifact.create(CreateItem('arsh', DUMMY_X, DUMMY_Y))    //Shroud of Nozdormuru
     call UnitAddAbility(gg_unit_O025_3426, ARTIFACT_HOLDER_ABIL_ID)             //Occulus
     call UnitAddItem(gg_unit_O025_3426, tempArtifact.item)  
@@ -102,18 +103,18 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('ktrm', DUMMY_X, DUMMY_Y))    //Urn of Kings
     call UnitAddItem(gg_unit_Huth_1343, tempArtifact.item)                      //Uther
 
-    set tempArtifact = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))    //Soul Gem
-    call tempArtifact.setStatus(ARTIFACT_STATUS_SPECIAL)
-    set tempArtifact.falseX = -14269
-    set tempArtifact.falseY = 22281
+    set ARTIFACT_SOULGEM = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_SPECIAL)
+    set ARTIFACT_SOULGEM.falseX = -14269
+    set ARTIFACT_SOULGEM.falseY = 22281
 
     set ARTIFACT_GHANIR = Artifact.create(CreateItem('I00C', DUMMY_X, DUMMY_Y))    //G'hanir
     call UnitAddAbility(gg_unit_nbwd_0737, ARTIFACT_HOLDER_ABIL_ID)                //Barrow Den  
     call UnitAddItem(gg_unit_nbwd_0737, ARTIFACT_GHANIR.item)     
 
-    set tempArtifact = Artifact.create(CreateItem('cnhn', DUMMY_X, DUMMY_Y))    //Horn of Cenarius
+    set ARTIFACT_HORNOFCENARIUS = Artifact.create(CreateItem('cnhn', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_nhcn_2597, ARTIFACT_HOLDER_ABIL_ID)             //Horn of Cenarius Pedestal
-    call UnitAddItem(gg_unit_nhcn_2597, tempArtifact.item)
+    call UnitAddItem(gg_unit_nhcn_2597, ARTIFACT_HORNOFCENARIUS.item)
 
     set tempArtifact = Artifact.create(CreateItem('kgal', DUMMY_X, DUMMY_Y))    //Keg of Thunderwater
     call UnitAddItem(gg_unit_Hmbr_0628, tempArtifact.item)  

@@ -1,61 +1,32 @@
 library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
 
-  globals
-    private QuestData QUEST_PLAGUE
-    private QuestItemData QUESTITEM_PLAGUETIME
-    private QuestItemData QUESTITEM_PLAGUESTART
+  struct QuestPlague extends QuestData
+    private method Global takes nothing returns boolean
+      return true
+    endmethod
 
-    private boolean Enabled = false
+    private method operator CompletionPopup takes nothing returns string
+      return "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies."
+    endmethod
 
-    private constant string COMMAND = "-plague"
-    private constant real DELAY_TIMER = 420.
-    private constant real FORCED_TIMER = 720.
-  endglobals
+    private method operator CompletionDescription takes nothing returns string
+      return "A plague is unleashed upon the lands of Lordaeron"
+    endmethod
 
-  private function Plague takes nothing returns nothing
-    local Person scourgePerson = FACTION_SCOURGE.Person
-    if scourgePerson != 0 and Enabled then
+    private method OnComplete takes nothing returns nothing
       call TriggerExecute( gg_trg_Plague_Actions )
-      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_PLAGUESTART, QUEST_PROGRESS_COMPLETE, true)
-    endif
-    set Enabled = false
-  endfunction
+    endmethod
 
-  private function Enable takes nothing returns nothing
-    call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_PLAGUETIME, QUEST_PROGRESS_COMPLETE, true)
-    set Enabled = true
-  endfunction
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create('Ruex'), QuestItemTime.create(660)))
+      call this.AddQuestItem(QuestItemTime.create(360))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig
-    local integer i
-    set QUEST_PLAGUE = QuestData.create("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
-    set QUEST_PLAGUE.Global = true
-    set QUESTITEM_PLAGUETIME = QUEST_PLAGUE.addItem("Survive until turn 6")
-    set QUESTITEM_PLAGUESTART = QUEST_PLAGUE.addItem("Type -plague OR wait until turn 11")
-    call FACTION_SCOURGE.addQuest(QUEST_PLAGUE)
-    set FACTION_SCOURGE.StartingQuest = QUEST_PLAGUE
-
-    //Command to start the Plague after it's enabled
-    set trig = CreateTrigger()
-    set i = 0
-    loop
-    exitwhen i > MAX_PLAYERS
-      call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, true )
-      set i = i + 1
-    endloop   
-    call TriggerAddCondition( trig, Condition(function Plague) )
-
-    //Enable the Plague after timer
-    set trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, DELAY_TIMER, false)
-    call TriggerAddAction(trig, function Enable)  
-
-    //Force the Plague to start after timer
-    set trig = CreateTrigger()
-    call TriggerRegisterTimerEvent(trig, FORCED_TIMER, false)
-    call TriggerAddAction(trig, function Plague)  
-
+    call FACTION_SCOURGE.AddQuest(QuestPlague.create())
   endfunction
 
 endlibrary

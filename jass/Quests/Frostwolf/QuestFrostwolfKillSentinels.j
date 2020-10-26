@@ -1,43 +1,34 @@
-library FrostwolfKillSentinels initializer OnInit requires FrostwolfConfig, LegendSentinels, Display
+library QuestFrostwolfKillSentinels initializer OnInit requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
 
   globals
-    private QuestItemData QUESTITEM_AUBERDINE
-    private QuestItemData QUESTITEM_FEATHERMOON
+    private constant integer UNITTYPE_ID = 'owyv'
+    private constant integer LIMIT_CHANGE = 2
   endglobals
 
-  private function TryComplete takes nothing returns nothing
-    if FACTION_FROSTWOLF.getQuestItemProgress(QUESTITEM_AUBERDINE) == QUEST_PROGRESS_COMPLETE and FACTION_FROSTWOLF.getQuestItemProgress(QUESTITEM_FEATHERMOON) == QUEST_PROGRESS_COMPLETE then
-      call FACTION_FROSTWOLF.modObjectLimit('owyv', 2)
-      call DisplayUnitLimit(FACTION_FROSTWOLF, 'owyv')
-    endif
-  endfunction
+  struct QuestFrostwolfKillSentinels extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The Sentinels have been eliminated. Warchief Thrall breathes a sigh of relief, knowing that his people are safe - for now."
+    endmethod
 
-  private function AuberdineDies takes nothing returns nothing
-    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_AUBERDINE, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
+    private method operator CompletionDescription takes nothing returns string
+      return "Learn to train " + I2S(LIMIT_CHANGE) + " additional " + GetObjectName(UNITTYPE_ID) + "s"
+    endmethod
 
-  private function FeathermoonDies takes nothing returns nothing
-    call FACTION_FROSTWOLF.setQuestItemProgress(QUESTITEM_FEATHERMOON, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
+    private method OnComplete takes nothing returns nothing
+      call this.Holder.modObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
+      call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
+    endmethod
+
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_AUBERDINE.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function AuberdineDies)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_FEATHERMOON.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function FeathermoonDies)
-
-    set tempQuest = QuestData.create("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "The Sentinels have been eliminated. Warchief Thrall breathes a sigh of relief, knowing that his people are safe - for now.","ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
-    set QUESTITEM_AUBERDINE = tempQuest.addItem("Auberdine is destroyed")
-    set QUESTITEM_FEATHERMOON = tempQuest.addItem("Feathermoon Stronghold is destroyed")
-    call FACTION_FROSTWOLF.addQuest(tempQuest)
+    call FACTION_FROSTWOLF.AddQuest(QuestFrostwolfKillSentinels.create())
   endfunction
 
 endlibrary

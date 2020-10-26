@@ -1,29 +1,36 @@
 library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
 
   globals
-    private QuestItemData QUESTITEM_VISIT
     private integer RESEARCH_ID = 'R041'
   endglobals
 
-  private function OnEnterRegion takes nothing returns nothing
-    if IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true and FACTION_FEL_HORDE.getQuestItemProgress(QUESTITEM_VISIT) != QUEST_PROGRESS_COMPLETE and FACTION_FEL_HORDE.Team.ContainsPlayer(GetOwningPlayer(GetTriggerUnit())) then
-      call FACTION_FEL_HORDE.setQuestItemProgress(QUESTITEM_VISIT, QUEST_PROGRESS_COMPLETE, true)
-      call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
-    endif
-  endfunction
+  struct QuestGuldansLegacy extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "Gul'dan's remains have been located within the Tomb of Sargeras. His eldritch knowledge may now be put to purpose."
+    endmethod
+
+    private method operator CompletionDescription takes nothing returns string
+      return "A research improving all of your demon units"
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
+      call DisplayResearchAcquired(Holder.Player, RESEARCH_ID, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(RESEARCH_ID, 1)
+    endmethod
+
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Guldan, "Gul'dan's corpse in the Tomb of Sargeras", true))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    local QuestData tempQuest
-    call TriggerRegisterEnterRectSimple( trig, gg_rct_Guldan )
-    call TriggerAddAction(trig, function OnEnterRegion)
-
-    set tempQuest = QuestData.create("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "Gul'dan's remains have been located within the Tomb of Sargeras. His eldritch knowledge may now be put to purpose.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
-    set QUESTITEM_VISIT = tempQuest.addItem("Bring a Fel Horde hero to Gul'dan's corpse in the Tomb of Sargeras")
-    call FACTION_FEL_HORDE.addQuest(tempQuest)
-    call FACTION_FEL_HORDE.modObjectLimit(RESEARCH_ID, 1)
+    call FACTION_FEL_HORDE.AddQuest(QuestGuldansLegacy.create())
   endfunction
-
-
+  
 endlibrary

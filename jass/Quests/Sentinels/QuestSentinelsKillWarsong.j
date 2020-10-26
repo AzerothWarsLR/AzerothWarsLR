@@ -1,44 +1,29 @@
-library SentinelsKillWarsong initializer OnInit requires SentinelsConfig, LegendWarsong, Display
+library QuestSentinelsKillWarsong initializer OnInit requires SentinelsConfig, LegendWarsong, Display
 
-  globals
-    private QuestItemData QUESTITEM_STONEMAUL
-    private QuestItemData QUESTITEM_ENCAMPMENT
-  endglobals
+  struct QuestSentinelsKillWarsong extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The Warsong presence on Kalimdor has been eliminated. The land has been protected from their misbegotten race."
+    endmethod
 
-  private function TryComplete takes nothing returns nothing
-    if FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_STONEMAUL) == QUEST_PROGRESS_COMPLETE and FACTION_SENTINELS.getQuestItemProgress(QUESTITEM_ENCAMPMENT) == QUEST_PROGRESS_COMPLETE then
+    private method operator CompletionDescription takes nothing returns string
+      return "Shandris gains 10 Strength, 10 Agility and 10 Intelligence"
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
       call DisplayHeroReward(LEGEND_SHANDRIS.Unit, 10, 10, 10, 0)
       call AddHeroAttributes(LEGEND_SHANDRIS.Unit, 10, 10, 10)
-    endif
-  endfunction
+    endmethod
 
-  private function StonemaulDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_STONEMAUL, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
-
-  private function EncampmentDies takes nothing returns nothing
-    call FACTION_SENTINELS.setQuestItemProgress(QUESTITEM_ENCAMPMENT, QUEST_PROGRESS_COMPLETE, true)
-    call TryComplete()
-  endfunction
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Green-skinned Brutes", "The Warsong Clan has arrived near Ashenvale and begun threatening the wilds. These invaders must be repelled.", "ReplaceableTextures\\CommandButtons\\BTNRaider.blp")
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ENCAMPMENT))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local QuestData tempQuest
-    local trigger trig
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_STONEMAUL.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function StonemaulDies)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent( trig, LEGEND_ENCAMPMENT.Unit, EVENT_UNIT_DEATH )
-    call TriggerAddAction(trig, function EncampmentDies)
-
-    set tempQuest = QuestData.create("Green-skinned Brutes", "The Warsong Clan has arrived near Ashenvale and begun threatening the wilds. These invaders must be repelled.", "The Warsong presence on Kalimdor has been eliminated. The land has been protected from their misbegotten race.","ReplaceableTextures\\CommandButtons\\BTNRaider.blp")
-    set QUESTITEM_STONEMAUL = tempQuest.addItem("Stonemaul Keep is destroyed")
-    set QUESTITEM_ENCAMPMENT = tempQuest.addItem("The Warsong Encampment on the Darkspear Isles is destroyed")
-    call FACTION_SENTINELS.addQuest(tempQuest)
-    set FACTION_SENTINELS.StartingQuest = tempQuest
+    call FACTION_SENTINELS.AddQuest(QuestSentinelsKillWarsong.create())
   endfunction
 
 endlibrary

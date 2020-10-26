@@ -1,65 +1,42 @@
-library QuestWarMachine initializer OnInit requires QuestData, WarsongConfig
+library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
 
-  globals
-    private QuestData QUEST_WARMACHINE
-    private QuestItemData QUESTITEM_RESEARCH
+  struct QuestWarMachine extends QuestData
+    private method operator CompletionPopup takes nothing returns string
+      return "The massive exploitation of Ashenvale has bolstered the entire Horde's weapons, armour and defenses."
+    endmethod
 
-    private integer Progress = QUEST_PROGRESS_UNDISCOVERED
-  endglobals
+    private method operator CompletionDescription takes nothing returns string
+      return "You and all of your allies gain the researches " + GetObjectName('Rhme') + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", and " + GetObjectName('Rosp')
+    endmethod
 
-  private function BlessPlayer takes player whichPlayer returns nothing
-    call SetPlayerTechResearched(whichPlayer, 'Rhme', GetPlayerTechCount(whichPlayer, 'Rhme', true) + 1)
-    call SetPlayerTechResearched(whichPlayer, 'Rhar', GetPlayerTechCount(whichPlayer, 'Rhar', true) + 1)
-    call SetPlayerTechResearched(whichPlayer, 'Rorb', 3)
-    call SetPlayerTechResearched(whichPlayer, 'Rosp', 3)
-  endfunction
+    private method BlessPlayer takes player whichPlayer returns nothing
+      call SetPlayerTechResearched(whichPlayer, 'Rhme', GetPlayerTechCount(whichPlayer, 'Rhme', true) + 1)
+      call SetPlayerTechResearched(whichPlayer, 'Rhar', GetPlayerTechCount(whichPlayer, 'Rhar', true) + 1)
+      call SetPlayerTechResearched(whichPlayer, 'Rorb', 3)
+      call SetPlayerTechResearched(whichPlayer, 'Rosp', 3)
+    endmethod
 
-  private function ChangesOwnership takes nothing returns nothing
-    if GetOwningPlayer(GetTriggerUnit()) != Player(PLAYER_NEUTRAL_PASSIVE) and Progress == QUEST_PROGRESS_UNDISCOVERED then
-      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_INCOMPLETE, true)
-      call DestroyTrigger(GetTriggeringTrigger())
-    endif
-  endfunction
-
-  private function Dies takes nothing returns nothing
-    if Progress < QUEST_PROGRESS_COMPLETE then
-      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_FAILED, true)
-    endif
-    call DestroyTrigger(GetTriggeringTrigger())
-  endfunction
-
-  private function Research takes nothing returns nothing
-    local integer i = 0
-    if GetResearched() == 'R021' then
-      set Progress = QUEST_PROGRESS_COMPLETE
+    private method OnComplete takes nothing returns nothing
+      local integer i = 0
       loop
         exitwhen i == MAX_PLAYERS
-        if FACTION_WARSONG.Team.ContainsPlayer(Player(i)) then
+        if this.Holder.Team.ContainsPlayer(Player(i)) then
           call BlessPlayer(Player(i))
         endif
         set i = i + 1
       endloop
-      call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_COMPLETE, true)
-    endif
-  endfunction  
+    endmethod
+
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
+      call this.AddQuestItem(QuestItemResearch.create('R021'))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_LUMBERCAMP))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-    call TriggerAddAction(trig, function Research)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent(trig, gg_unit_o01I_0449, EVENT_UNIT_DEATH)
-    call TriggerAddAction(trig, function Dies)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterUnitEvent(trig, gg_unit_o01I_0449, EVENT_UNIT_CHANGE_OWNER)
-    call TriggerAddAction(trig, function ChangesOwnership)
-
-    set QUEST_WARMACHINE = QuestData.create("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "The massive exploitation of Ashenvale has bolstered the entire Horde's weapons, armour and defenses.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
-    set QUESTITEM_RESEARCH = QUEST_WARMACHINE.addItem("Research Horde War Machine")
-    call FACTION_WARSONG.addQuest(QUEST_WARMACHINE)
-    call FACTION_WARSONG.setQuestItemProgress(QUESTITEM_RESEARCH, QUEST_PROGRESS_UNDISCOVERED, false)
+    call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
   endfunction
 
 endlibrary

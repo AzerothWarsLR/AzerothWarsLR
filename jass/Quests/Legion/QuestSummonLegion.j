@@ -1,57 +1,37 @@
 library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, LegionConfig
 
   globals
-    private QuestData QUEST_SCOURGESUMMONLEGION
-    private QuestItemData QUESTITEM_SCOURGEALLYLEGION
-    private QuestItemData QUESTITEM_SCOURGESUMMONLEGION
-
-    private QuestData QUEST_LEGIONSUMMONLEGION
-    private QuestItemData QUESTITEM_LEGIONSUMMONLEGION
-
     private constant integer RITUAL_ID = 'A00J'
   endglobals
 
-  private function CheckAlliance takes nothing returns nothing
-    if FACTION_SCOURGE.Person.Faction.Team.ContainsPlayer(FACTION_LEGION.Player) then
-      call QUESTITEM_SCOURGEALLYLEGION.setProgress(QUEST_PROGRESS_COMPLETE, false)
-    else
-      call QUESTITEM_SCOURGEALLYLEGION.setProgress(QUEST_PROGRESS_FAILED, false)
-    endif
-  endfunction
+  struct QuestSummonLegion extends QuestData
+    private method operator Global takes nothing returns boolean
+      return true
+    endmethod
 
-  private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == RITUAL_ID then
-      call FACTION_SCOURGE.setQuestItemProgress(QUESTITEM_SCOURGESUMMONLEGION, QUEST_PROGRESS_COMPLETE, false) //Not needed because they can see the global completion
-      call FACTION_LEGION.setQuestItemProgress(QUESTITEM_LEGIONSUMMONLEGION, QUEST_PROGRESS_COMPLETE, true)
-    endif
-  endfunction
+    private method operator CompletionPopup takes nothing returns string
+      return "Tremble, mortals, and despair. Doom has come to this world."
+    endmethod
+
+    private method operator CompletionDescription takes nothing returns string
+      return "The hero Archimonde, control of all units in the Twisting Nether, and learn to train Greater Demons"
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      if Holder.presenceResearch == 0 then
+        call BJDebugMsg("ERROR: " + Holder.Name + " has no presence research. QuestSummonLegion won't work")
+      endif
+    endmethod
+
+    public static method create takes nothing returns thistype
+      local thistype this = thistype.allocate("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
+      call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, false))
+      return this
+    endmethod
+  endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-
-    set QUEST_SCOURGESUMMONLEGION = QuestData.create("Under the Burning Sky", "The Scourge was created for one purpose only: to summon the full might of the Burning Legion into Azeroth. Retrieve the Book of Medivh from Dalaran, or empower Kel'thuzad in the waters of the Sunwell, and then begin the summoning ritual.", "Tremble, mortals, and despair. Doom has come to this world.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
-    set QUESTITEM_SCOURGEALLYLEGION = QUEST_SCOURGESUMMONLEGION.addItem("Ally the Burning Legion")
-    set QUESTITEM_SCOURGESUMMONLEGION = QUEST_SCOURGESUMMONLEGION.addItem("Summon the Burning Legion")
-    call FACTION_SCOURGE.addQuest(QUEST_SCOURGESUMMONLEGION)
-
-    set QUEST_LEGIONSUMMONLEGION = QuestData.create("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "Tremble, mortals, and despair. Doom has come to this world.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
-    set QUEST_LEGIONSUMMONLEGION.Global = true
-    set QUESTITEM_LEGIONSUMMONLEGION = QUEST_LEGIONSUMMONLEGION.addItem("Summon the Burning Legion")
-    call FACTION_LEGION.addQuest(QUEST_LEGIONSUMMONLEGION)
-    set FACTION_LEGION.StartingQuest = QUEST_LEGIONSUMMONLEGION
-
-    call OnFactionTeamJoin.register(trig)
-    call OnFactionTeamLeave.register(trig)
-    call OnPersonFactionChange.register(trig)
-    call TriggerAddAction(trig, function CheckAlliance)
-
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_SPELL_FINISH)
-    call TriggerAddAction(trig, function Cast)
-
-    if FACTION_LEGION.presenceResearch == 0 then
-      call BJDebugMsg("ERROR: " + FACTION_LEGION.Name + " has no presence research. QuestSummonLegion won't work")
-    endif
+    call FACTION_LEGION.AddQuest(QuestSummonLegion.create())
   endfunction
 
 endlibrary
