@@ -1,13 +1,19 @@
 
-library CheatVision initializer OnInit requires Persons, Persons, TestSafety
+library CheatNocd initializer OnInit requires Persons, TestSafety
 
   //**CONFIG
   globals
-    private constant string COMMAND     = "-vision "
-    private fogmodifier array fogs 
+    private constant string COMMAND     = "-nocd "
+    private boolean array Toggle
   endglobals
   //*ENDCONFIG
 
+  private function Spell takes nothing returns nothing
+    if Toggle[GetPlayerId(GetTriggerPlayer())] then
+      call BlzEndUnitAbilityCooldown(GetTriggerUnit(), GetSpellAbilityId())
+    endif
+  endfunction
+  
   private function Actions takes nothing returns nothing
     local integer i = 0
     local string enteredString = GetEventPlayerChatString()
@@ -16,24 +22,29 @@ library CheatVision initializer OnInit requires Persons, Persons, TestSafety
     local string parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     
     if parameter == "on" then
-      set fogs[pId] = CreateFogModifierRectBJ( true, p, FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Whole map revealed.")
+      set Toggle[pId] = true
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r No cooldowns activated.")
     elseif parameter == "off" then
-      call DestroyFogModifier(fogs[pId])
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Whole map unrevealed.")
+      set Toggle[pId] = false
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r No cooldowns deactivated.")
     endif
   endfunction
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
     local integer i = 0
+
     loop
     exitwhen i > MAX_PLAYERS
       call TriggerRegisterPlayerChatEvent( trig, Player(i), COMMAND, false )
       set i = i + 1
     endloop   
     call TriggerAddCondition(trig, Condition(function CheatCondition))
-    call TriggerAddAction( trig, function Actions )
+    call TriggerAddAction(trig, function Actions)
+    
+    set trig = CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_ENDCAST )
+    call TriggerAddCondition(trig, Condition(function Spell))
   endfunction
-  
+    
 endlibrary

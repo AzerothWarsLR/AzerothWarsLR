@@ -5,6 +5,10 @@ library LiegeFaction requires Faction, Set
     private integer vassalCount = 0
     private force vassalBannedPlayers
 
+    method operator VassalCount takes nothing returns integer
+      return this.vassalCount
+    endmethod
+
     //Apply object level changes to vassals too
     private method OnSetObjectLevel takes integer object, integer level returns nothing
       local integer i = 0

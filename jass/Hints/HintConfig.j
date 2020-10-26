@@ -11,7 +11,7 @@ library HintConfig initializer OnInit requires Hint
     call Hint.create("We have a welcoming Discord community at https://discord.gg//4eGZn")
     call Hint.create("When a player leaves, their gold, lumber, units and hero experience are spread among their remaining allies.")
     call Hint.create("There are water passageways at the edge of the map you can use to instantly move to the other side of the map.")
-    call Hint.create("If you have a misbehaving vassal, you can boot them by typing -boot followed by their faction name, e.g. -boot xavius.")
+    call Hint.create("You can type -unally to unally everyone on your team.")
   endfunction
 
 endlibrary
