@@ -1,7 +1,8 @@
 library QuestWarsongHold initializer OnInit requires WarsongConfig, LegendWarsong, GeneralHelpers, QuestItemControlPoint
 
   globals
-    private constant integer RESEARCH_ID = 'Rhme'
+    private constant integer RESEARCH_ID = 'R06G'
+    private constant integer ABILITY_ID = 'A0DZ'
   endglobals
 
   struct QuestWarsongHold extends QuestData
@@ -23,6 +24,7 @@ library QuestWarsongHold initializer OnInit requires WarsongConfig, LegendWarson
       call BlzSetUnitName(warsongHold, "Warsong Hold")
       call BlzSetUnitMaxHP(warsongHold, 4000)
       call SetUnitLifePercentBJ(warsongHold, 100)
+      call UnitAddAbility(warsongHold, ABILITY_ID)
       call CreateStructureForced(this.Holder.Player, 'owtw', -7296, 15680, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'ovln', -7456, 15008, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'otrb', -7808, 16512, 4.712389*bj_RADTODEG, 128)

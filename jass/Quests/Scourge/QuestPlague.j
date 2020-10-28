@@ -1,5 +1,9 @@
 library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
 
+  globals
+    private constant integer RESEARCH_ID = 'R06I'
+  endglobals
+
   struct QuestPlague extends QuestData
     private method Global takes nothing returns boolean
       return true
@@ -14,12 +18,17 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
       call TriggerExecute( gg_trg_Plague_Actions )
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
+
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueCloud.blp")
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create('Ruex'), QuestItemTime.create(660)))
+      local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueBarrel.blp")
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID), QuestItemTime.create(660)))
       call this.AddQuestItem(QuestItemTime.create(360))
       return this
     endmethod

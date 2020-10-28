@@ -4,6 +4,7 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
     private Legend target = 0
     private static integer count = 0
     private static thistype array byIndex
+    private boolean canFail
 
     method operator X takes nothing returns real
       if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target.Unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
@@ -29,7 +30,11 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
       if this.Holder.Team.ContainsFaction(target.OwningFaction) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
-        set this.Progress = QUEST_PROGRESS_INCOMPLETE
+        if this.canFail then
+          set this.Progress = QUEST_PROGRESS_COMPLETE
+        else
+          set this.Progress = QUEST_PROGRESS_INCOMPLETE
+        endif
       endif
     endmethod
 
@@ -46,10 +51,11 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
       endloop
     endmethod
 
-    static method create takes Legend target returns thistype
+    static method create takes Legend target, boolean canFail returns thistype
       local thistype this = thistype.allocate()
       set this.target = target
       set this.Description = "Your team controls " + target.Name
+      set this.canFail = canFail
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

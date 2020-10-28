@@ -24,7 +24,7 @@ library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, 
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Crown Prince", "Arthas Menethil is the one true heir of the Kingdom of Lordaeron. The only thing standing in the way of his coronation is the world-ending threat of the Scourge.", "ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_LichKing, "Icecrown Citadel"))
       return this

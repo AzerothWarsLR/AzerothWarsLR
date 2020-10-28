@@ -30,7 +30,6 @@ library VassalChogall initializer OnInit requires Faction, FelHordeConfig
 
     call VASSAL_CHOGALL.registerObjectLimit('Rhme', 0)   //Attack Upgrade
     call VASSAL_CHOGALL.registerObjectLimit('Rhar', 0)   //defense Upgrade
-
-endfunction
+  endfunction
     
 endlibrary

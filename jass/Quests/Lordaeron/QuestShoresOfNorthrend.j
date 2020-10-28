@@ -1,7 +1,7 @@
 library QuestShoresOfNorthrend initializer OnInit requires LordaeronConfig, LegendLordaeron, GeneralHelpers
 
   globals
-    private constant integer RESEARCH_ID = 'Rhme'
+    private constant integer RESEARCH_ID = 'R06F'
   endglobals
 
   struct QuestShoresOfNorthrend extends QuestData
@@ -11,6 +11,10 @@ library QuestShoresOfNorthrend initializer OnInit requires LordaeronConfig, Lege
 
     private method operator CompletionDescription takes nothing returns string
       return "A new base near Dragonblight in Northrend, and Arthas revives there"
+    endmethod
+
+    private method OnFail takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -53,7 +57,8 @@ library QuestShoresOfNorthrend initializer OnInit requires LordaeronConfig, Lege
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Shores of Northrend", "Mal'ganis' citadel lies somewhere within the arctic wastes of the north. In order to assault the Dreadlord, Arthas must first establish a base camp at the shores of Northrend.", "ReplaceableTextures\\CommandButtons\\BTNHumanTransport.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SCHOLOMANCE))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID))
       return this
     endmethod

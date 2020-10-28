@@ -16,6 +16,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     Artifact ARTIFACT_BOOKOFMEDIVH
     Artifact ARTIFACT_SOULGEM
     Artifact ARTIFACT_HORNOFCENARIUS
+    Artifact ARTIFACT_EYEOFSARGERAS
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -24,9 +25,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))
     call UnitAddItem(gg_unit_H00R_1875, ARTIFACT_CROWNSTORMWIND.item)                      //Variann
 
-    set tempArtifact = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
+    set ARTIFACT_EYEOFSARGERAS = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
     call UnitAddAbility(gg_unit_n04O_1571, ARTIFACT_HOLDER_ABIL_ID)             //Doom Guard
-    call UnitAddItem(gg_unit_n04O_1571, tempArtifact.item)  
+    call UnitAddItem(gg_unit_n04O_1571, ARTIFACT_EYEOFSARGERAS.item)  
 
     set tempArtifact = Artifact.create(CreateItem('I00H', DUMMY_X, DUMMY_Y))    //Sulfuras
     call UnitAddAbility(gg_unit_N00D_1457, ARTIFACT_HOLDER_ABIL_ID)             //Ragnaros

@@ -27,7 +27,7 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drak'tharon Keep", "Some time ago, Magister Dar'Khan Drakthir set sail to Northrend and hasn't been since. Perhaps if he can be found, he can be convinced to rejoin his people.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       return this
     endmethod
   endstruct

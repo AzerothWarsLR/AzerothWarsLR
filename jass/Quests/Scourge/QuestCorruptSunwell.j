@@ -28,7 +28,7 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Fall of Silvermoon", "The Sunwell is the source of the High Elves' immortality and magical prowess. Under control of the Scourge, it would a the source of immense necromantic power.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
       return this
     endmethod
   endstruct

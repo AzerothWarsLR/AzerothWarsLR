@@ -9,7 +9,6 @@ library VassalJarod initializer OnInit requires Faction, SentinelsConfig
     set VASSAL_JAROD.AbsenceResearch = 'R05G'
     set VASSAL_JAROD.WorkerItemType = 'I01G'
     set VASSAL_JAROD.TeleportItemType = 'I00V'  
-
     //Units
     call VASSAL_JAROD.registerObjectLimit('ewsp', UNLIMITED)   //Wisp
     call VASSAL_JAROD.registerObjectLimit('earc', UNLIMITED)   //Archer
@@ -18,10 +17,11 @@ library VassalJarod initializer OnInit requires Faction, SentinelsConfig
     //Building
     call VASSAL_JAROD.registerObjectLimit('e00Y', UNLIMITED)   //Ancient of the Wild
     call VASSAL_JAROD.registerObjectLimit('emow', UNLIMITED)   //Moonwell
-
+    //Research
+    call VASSAL_JAROD.SetObjectLevel('R06H', 1)
+    //Generic
     call VASSAL_JAROD.registerObjectLimit('Rhme', 0)   //Attack Upgrade
     call VASSAL_JAROD.registerObjectLimit('Rhar', 0)   //defense Upgrade
-
-endfunction
+  endfunction
     
 endlibrary

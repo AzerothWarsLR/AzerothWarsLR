@@ -15,7 +15,7 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_THRALL, gg_rct_Drekthars_Spellbook, "Nordrassil"))
       return this
     endmethod
