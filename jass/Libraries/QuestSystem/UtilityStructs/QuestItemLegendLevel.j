@@ -17,6 +17,7 @@ library QuestItemLegendLevel requires QuestItemData, Legend
     endmethod
 
     private method OnLevel takes nothing returns nothing
+      call BJDebugMsg(this.Description + GetUnitName(this.target.Unit) + I2S(this.level))
       if GetHeroLevel(this.target.Unit) >= this.level then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       endif
@@ -25,7 +26,7 @@ library QuestItemLegendLevel requires QuestItemData, Legend
     private static method OnAnyLevel takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
-      local Legend triggerLegend = GetTriggerLegend()
+      local Legend triggerLegend = Legend.ByHandle(GetTriggerUnit())
       loop
         exitwhen i == thistype.count
         set loopItem = thistype.byIndex[i]

@@ -10,6 +10,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     set FACTION_DALARAN = LiegeFaction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)
     set f = FACTION_DALARAN 
     set f.VictoryMusic = "HumanVictory"
+    set f.PresenceResearch = 'R05N'
     set f.Team = TEAM_NORTH_ALLIANCE
     
     //Structures
@@ -29,6 +30,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('ndgt', UNLIMITED)   //Dalaran Tower
     call f.registerObjectLimit('n004', UNLIMITED)   //Dalaran Tower (Improved)
+    call f.registerObjectLimit('h067', UNLIMITED)   //Laboratory
 
     //Units
     call f.registerObjectLimit('h022', UNLIMITED)   //Shaper
@@ -38,13 +40,14 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('nhym', UNLIMITED)   //Hydromancer
     call f.registerObjectLimit('h033', UNLIMITED)   //Militia 
     call f.registerObjectLimit('h032', UNLIMITED)   //Battlemage
-    call f.registerObjectLimit('h034', UNLIMITED)   //Tirasian Archer
     call f.registerObjectLimit('h02D', UNLIMITED)   //Geomancer
     call f.registerObjectLimit('h01I', UNLIMITED)   //Arcanist
     call f.registerObjectLimit('n007', 6)           //Kirin Tor
     call f.registerObjectLimit('n096', 6)           //Earth Golem
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
+    call f.registerObjectLimit('n0AK', UNLIMITED)   //Sludge Flinger
     call f.registerObjectLimit('h02C', 1)           //Flagship 
+    call f.modObjectLimit('o01A', 6)                //Naval Cannon  
 
     //Demi-heroes
     call f.registerObjectLimit('njks', 1)           //Jailor Kassan
@@ -58,6 +61,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R00D', UNLIMITED)   //Pyromancer Adept Training
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
+    call f.registerObjectLimit('R06J', UNLIMITED)   //Improved Ooze
 
     //Masteries
     call f.registerObjectLimit('R00L', UNLIMITED)   //Arcane Mastery
@@ -66,6 +70,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     
     //Paths
     call f.registerObjectLimit('R03O', UNLIMITED)   //Path of Steel
+    call f.registerObjectLimit('R01J', UNLIMITED)   //solo path
   endfunction
     
 endlibrary

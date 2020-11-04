@@ -10,16 +10,18 @@ library QuestPowerOverwhelming initializer OnInit requires QuestData, FelHordeCo
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Eye of Sargeras is consumed. Magtheridon permanently gains twice its stats and all of its abilities, as well as 4000 experience"
+      return "The Eye of Sargeras is consumed. Magtheridon permanently gains twice its stats and all of its abilities, 4000 experience, and Divine Armor"
     endmethod   
 
     private method OnComplete takes nothing returns nothing
-      call ARTIFACT_EYEOFSARGERAS.setStatus(ARTIFACT_STATUS_HIDDEN)
-      call ARTIFACT_EYEOFSARGERAS.setDescription("Consumed")
       call SetItemPosition(ARTIFACT_EYEOFSARGERAS.item, 20195, 24177)
       call UnitAddItem(LEGEND_MAGTHERIDON.Unit, CreateItem('I00Z', 0, 0))
       call AddHeroAttributes(LEGEND_MAGTHERIDON.Unit, 20, 20, 40)
       call AddHeroXP(LEGEND_MAGTHERIDON.Unit, 4000, true)
+      call UnitAddAbility(LEGEND_MAGTHERIDON.Unit, 'ACm2') //Spell Immunity
+      call BlzSetUnitIntegerField(LEGEND_MAGTHERIDON.Unit, UNIT_IF_DEFENSE_TYPE, 6) //Divine
+      call ARTIFACT_EYEOFSARGERAS.setStatus(ARTIFACT_STATUS_HIDDEN)
+      call ARTIFACT_EYEOFSARGERAS.setDescription("Consumed")
     endmethod
 
     public static method create takes nothing returns thistype

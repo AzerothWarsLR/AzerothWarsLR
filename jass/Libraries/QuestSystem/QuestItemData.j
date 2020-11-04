@@ -53,7 +53,7 @@ library QuestItemData
       elseif this.parentQuestItem != 0 then
         return this.parentQuestItem.Holder
       else
-        call BJDebugMsg("ERROR: " + this.Description + " has no holder")
+        //call BJDebugMsg("ERROR: " + this.Description + I2S(this) + " has no holder")
         return 0
       endif
     endmethod
@@ -64,7 +64,7 @@ library QuestItemData
       elseif this.parentQuestItem != 0 then
         return this.parentQuestItem.ProgressLocked
       else
-        call BJDebugMsg("ERROR: " + this.Description + " has no holder")
+        //call BJDebugMsg("ERROR: " + this.Description + I2S(this) + " has no holder")
         return true
       endif
     endmethod

@@ -272,6 +272,7 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
         set thistype.artifactsByType[GetItemTypeId(whichItem)] = this
         set thistype.triggerArtifact = this     //For event response
         set this.item = whichItem
+        set this.status = 0
         call this.setOwningPerson(0)
         call OnArtifactCreate.fire()
         return this

@@ -11,7 +11,7 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call UnitAddItem(GetTriggerUnit(), ARTIFACT_SOULGEM.item) 
+      call UnitAddItem(LEGEND_JAINA.Unit, ARTIFACT_SOULGEM.item) 
     endmethod
 
     public static method create takes nothing returns thistype

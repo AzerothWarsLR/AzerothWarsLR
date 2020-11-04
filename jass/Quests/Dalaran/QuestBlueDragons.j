@@ -11,12 +11,12 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Ability to train Blue Dragons from the Nexus"
+      return "Learn to train Blue Dragons"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "You can now train Blue Dragons from the Nexus.")
+      call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "You can now train Blue Dragons from Laboratories and the Nexus.")
     endmethod
 
     private method OnAdd takes nothing returns nothing

@@ -84,6 +84,10 @@ library VassalFaction requires Faction
       return liege
     endmethod
 
+    method operator Weight takes nothing returns integer
+      return 0
+    endmethod
+
     method operator CanBeInvited takes nothing returns boolean
       return false
     endmethod
@@ -147,6 +151,9 @@ library VassalFaction requires Faction
       endif
       call whichPerson.Faction.Leave()
       set whichPerson.Faction = this
+      if GetLocalPlayer() == whichPerson.Player then
+        call ClearTextMessages()
+      endif
       call DisplaySelection()
       call this.legend.Spawn(whichPerson.Player, highestValueCP.X, highestValueCP.Y, 0)
       call UnitDetermineLevel(this.legend.Unit, 0.9)

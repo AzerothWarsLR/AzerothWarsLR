@@ -28,7 +28,7 @@ library CheatHasResearch initializer OnInit requires TestSafety
 
   private function CheckResearch takes player p, string parameter returns nothing
     local integer object = S2Raw(parameter)
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Level of research " + GetObjectName(object) + ": " + I2S(GetPlayerTechCount(p, object, false)))
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Level of research " + GetObjectName(object) + ": " + I2S(GetPlayerTechCount(p, object, true)))
   endfunction
 
   private function Actions takes nothing returns nothing

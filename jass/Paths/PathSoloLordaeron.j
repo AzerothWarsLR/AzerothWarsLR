@@ -22,7 +22,7 @@ library PathSoloLordaeron initializer OnInit requires LordaeronConfig, Display
       call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin
       call FACTION_LORDAERON.modObjectLimit('h06D', -UNLIMITED)      //Silver Hand Veteran Paladin
       call FACTION_LORDAERON.modObjectLimit('hcth', -UNLIMITED)      //Silver Hand Squire
-      call SetPlayerTechResearched(tempPlayer, CHAOS_SCARLET, 1)
+      call FACTION_LORDAERON.SetObjectLevel(CHAOS_SCARLET, 1)
       call FACTION_LORDAERON.modWeight(3)
     endif
   endfunction

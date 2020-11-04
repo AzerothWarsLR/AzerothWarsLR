@@ -20,7 +20,7 @@ library PathDuoLordaeron initializer OnInit requires LordaeronConfig, LegendLord
       call FACTION_LORDAERON.modObjectLimit('h06D', UNLIMITED+6)     //Silver Hand Veteran Paladin
       call FACTION_LORDAERON.modObjectLimit('hkni', -UNLIMITED)      //Knight
       call FACTION_LORDAERON.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin 
-      call SetPlayerTechResearched(tempPlayer, CHAOS_SILVER, 1)
+      call FACTION_LORDAERON.SetObjectLevel(CHAOS_SILVER, 1)
       call DisableTrigger( gg_trg_Lordaeron_East )
       call DisableTrigger( gg_trg_Lordaeron_West )
       call EnableTrigger( gg_trg_Lordaeron_West_post_tier)

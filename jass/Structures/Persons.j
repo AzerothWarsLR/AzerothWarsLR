@@ -76,7 +76,6 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           endloop
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
-          call BJDebugMsg(I2S(newFaction.Person))
         endif
       endif
 
@@ -112,7 +111,7 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     method SetObjectLevel takes integer object, integer level returns nothing
       set this.objectLevels[object] = level
-      call SetPlayerTechResearched(this.Player, object, this.objectLevels[object])
+      call SetPlayerTechResearched(this.Player, object, level)
     endmethod
 
     method GetObjectLimit takes integer id returns integer
@@ -121,9 +120,10 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
     method SetObjectLimit takes integer id, integer limit returns nothing
       set this.objectLimits[id] = limit
+      call this.SetObjectLevel(id, IMinBJ(GetPlayerTechCount(this.Player, id, true), limit))
       if limit >= UNLIMITED then
         call SetPlayerTechMaxAllowed(this.Player, id, -1)
-      elseif limit < 0 then
+      elseif limit <= 0 then
         call SetPlayerTechMaxAllowed(this.Player, id, 0)
       else
         call SetPlayerTechMaxAllowed(this.Player, id, limit)

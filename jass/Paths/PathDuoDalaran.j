@@ -8,9 +8,6 @@ library PathDuoDalaran initializer OnInit requires DalaranConfig, Display
     local player tempPlayer
     if GetResearched() == RESEARCH_ID_STEEL then
       set tempPlayer = FACTION_DALARAN.Player
-      call FACTION_DALARAN.modObjectLimit('h06F', UNLIMITED)   //Kul Tiras Rifleman
-      call FACTION_DALARAN.modObjectLimit('h034', -UNLIMITED)  //Harpooner
-      call FACTION_DALARAN.modObjectLimit('o01A', 6)           //Naval Cannon  
       call SetPlayerTechResearched(tempPlayer, 'R05E', 1)      //Kul'tiras deployed
       call FACTION_DALARAN.modWeight(1)
       if GetResearched() == RESEARCH_ID_STEEL then

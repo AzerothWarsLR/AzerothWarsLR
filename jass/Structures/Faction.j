@@ -1,4 +1,4 @@
-library Faction initializer OnInit requires Persons, Event, Set, QuestData
+library Faction initializer OnInit requires Persons, Event, Set, QuestData, Environment
 
   globals
     Event OnFactionCreate = 0
@@ -47,7 +47,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       return this.objectCount
     endmethod
 
-    method operator Weight takes nothing returns integer
+    stub method operator Weight takes nothing returns integer
       return this.weight
     endmethod
 
@@ -346,7 +346,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData
       loop
         set u = FirstOfGroup(tempGroup)
         exitwhen u == null 
-        set tempUnitType = UnitType.ByHandle(u)           
+        set tempUnitType = UnitType.ByHandle(u)
+        if not UnitAlive(u) then
+          call RemoveUnit(u)
+        endif
         if not tempUnitType.Meta then
           call SetUnitOwner(u, Player(bj_PLAYER_NEUTRAL_VICTIM), false)
         endif

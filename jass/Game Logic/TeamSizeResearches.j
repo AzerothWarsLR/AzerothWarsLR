@@ -12,6 +12,11 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
     local integer noAlliesLevel = 0
     local integer i = 0
 
+    if team == 0 then
+      call BJDebugMsg("ERROR: Null team given to function RefreshTeam in library TeamSizeResearches")
+      return
+    endif
+
     if team.Weight < team.MaxWeight then
       set weightBelowMaximumLevel = 1
     endif
@@ -28,12 +33,18 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
   endfunction
 
   private function TeamSizeChanged takes nothing returns nothing
-    call RefreshTeam(GetTriggerTeam())
+    if GetTriggerTeam() != 0 then
+      call RefreshTeam(GetTriggerTeam())
+    endif
   endfunction
 
   private function PersonFactionChanged takes nothing returns nothing
-    call RefreshTeam(GetTriggerPerson().Faction.Team)
-    call RefreshTeam(GetChangingPersonPrevFaction().Team)
+    if GetTriggerPerson().Faction.Team != 0 then
+      call RefreshTeam(GetTriggerPerson().Faction.Team)
+    endif
+    if GetChangingPersonPrevFaction().Team != 0 then
+      call RefreshTeam(GetChangingPersonPrevFaction().Team)
+    endif
   endfunction
 
   private function OnInit takes nothing returns nothing

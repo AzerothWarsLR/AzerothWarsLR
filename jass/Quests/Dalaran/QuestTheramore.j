@@ -1,5 +1,9 @@
 library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, DalaranConfig
 
+  globals
+    private constant integer RESEARCH_ID = 'R06K'
+  endglobals
+
   struct QuestTheramore extends QuestData
     private static group theramoreUnits = CreateGroup()
 
@@ -24,18 +28,23 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
       set theramoreUnits = null
     endmethod
 
-    private method OnComplete takes nothing returns nothing
-      call thistype.GrantToPlayer(this.Holder.Player)
-    endmethod
-
     private method OnFail takes nothing returns nothing
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      call thistype.GrantToPlayer(this.Holder.Player)
+      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)  
     endmethod
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Theramore", "The distant lands of Kalimdor remain untouched by human civilization. If the Third War proceeds poorly, it may become necessary to establish a forward base there.", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
-      call this.AddQuestItem(QuestItemTime.create(630))
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Theramore, "Theramore", true))
+      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
