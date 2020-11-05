@@ -10,6 +10,7 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
     endmethod   
 
     private method OnComplete takes nothing returns nothing
+      call SetItemPosition(ARTIFACT_DREKTHARSSPELLBOOK.item, GetUnitX(LEGEND_THRALL.Unit), GetUnitY(LEGEND_THRALL.Unit))
       call UnitAddItem(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
     endmethod
 

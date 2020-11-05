@@ -17,7 +17,6 @@ library QuestItemLegendLevel requires QuestItemData, Legend
     endmethod
 
     private method OnLevel takes nothing returns nothing
-      call BJDebugMsg(this.Description + GetUnitName(this.target.Unit) + I2S(this.level))
       if GetHeroLevel(this.target.Unit) >= this.level then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       endif

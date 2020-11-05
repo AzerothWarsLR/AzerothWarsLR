@@ -51,7 +51,7 @@ library IronforgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('h02X', UNLIMITED)   //Explorer
     call f.registerObjectLimit('n02D', UNLIMITED)   //War Golem
     call f.registerObjectLimit('h03R', UNLIMITED)   //Tinker
-    call f.registerObjectLimit('h041', 12)          //Fire Tank
+    call f.registerObjectLimit('h041', 12)          //Flame Tank
     call f.registerObjectLimit('h01P', 3)           //Steam Tank
     call f.registerObjectLimit('n00C', 6)           //Rune Priest
     call f.registerObjectLimit('nsgg', 2)           //Siege Golem

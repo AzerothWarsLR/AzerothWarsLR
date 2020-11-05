@@ -10,9 +10,10 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetUnitOwner(LEGEND_ARTHAS.Unit, this.Holder.Player, true)
       set LEGEND_ARTHAS.UnitType = 'Uear'
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)
-      call LEGEND_ARTHAS.Spawn(this.Holder.Player, GetRectCenterX(gg_rct_LichKing), GetRectCenterY(gg_rct_LichKing), 135)
+      call LEGEND_ARTHAS.Spawn(this.Holder.Player, -3623, 21213, 135)
       call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
     endmethod
 

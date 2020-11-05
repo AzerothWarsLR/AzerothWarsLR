@@ -21,17 +21,17 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      if this.Holder.Team.ContainsFaction(target.OwningFaction) then
+      if this.Holder.Team.ContainsPlayer(GetOwningPlayer(target.Unit)) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       endif
     endmethod
 
     private method OnTargetChangeOwner takes nothing returns nothing
-      if this.Holder.Team.ContainsFaction(target.OwningFaction) then
+      if this.Holder.Team.ContainsPlayer(GetOwningPlayer(target.Unit)) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         if this.canFail then
-          set this.Progress = QUEST_PROGRESS_COMPLETE
+          set this.Progress = QUEST_PROGRESS_FAILED
         else
           set this.Progress = QUEST_PROGRESS_INCOMPLETE
         endif

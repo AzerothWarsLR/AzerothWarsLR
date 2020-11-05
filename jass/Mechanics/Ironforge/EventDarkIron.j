@@ -13,8 +13,6 @@ library EventDarkIron initializer OnInit requires IronforgeConfig, LegendIronfor
     if GetSpellAbilityId() == 'A0UZ' then
       call LEGEND_DAGRAN.Spawn(FACTION_IRONFORGE.Player, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 44)
       call SetHeroXP(LEGEND_DAGRAN.Unit, GetHeroXP(LEGEND_MAGNI.Unit), false)
-      call FACTION_IRONFORGE.modObjectLimit('n02D', UNLIMITED)      //Dark Iron War Golem
-      call FACTION_IRONFORGE.modObjectLimit('h041', 12)             //Fire Tank
       call SetPlayerTechResearched(FACTION_IRONFORGE.Player, RESEARCH, 1)     
       call SetPlayerAbilityAvailable(FACTION_IRONFORGE.Player, 'A0UZ', false)                
 

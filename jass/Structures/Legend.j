@@ -246,7 +246,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
       endif
-      if this.deathMessage != null then
+      if this.deathMessage != null and this.deathMessage != "" then
         if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then
           set displayString = "\n|cffffcc00CAPITAL DESTROYED|r\n"
         else

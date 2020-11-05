@@ -9,13 +9,13 @@ library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, 
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Arthas becomes King"
+      return "Arthas becomes King and he gains the Crown of Lordaeron"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       set LEGEND_ARTHAS.UnitType = 'Harf'
       //Give Crown of Lordaeron
-      if ARTIFACT_CROWNLORDAERON.status < ARTIFACT_STATUS_SPECIAL and ARTIFACT_CROWNLORDAERON.owningPerson == this.Holder.Person then
+      if ARTIFACT_CROWNLORDAERON.status < ARTIFACT_STATUS_SPECIAL then
         call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
         call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
       endif
