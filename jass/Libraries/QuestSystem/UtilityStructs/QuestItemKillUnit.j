@@ -25,7 +25,7 @@ library QuestItemKillUnit requires QuestItemData, Event
     endmethod
 
     private method OnUnitDeath takes nothing returns nothing
-      if GetOwningPlayer(GetKillingUnit()) == this.Holder.Player then
+      if this.Holder.Team.ContainsPlayer(GetOwningPlayer(GetKillingUnit())) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_FAILED
