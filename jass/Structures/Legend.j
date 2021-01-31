@@ -268,11 +268,9 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private method onDamaging takes nothing returns nothing
       if capturable and GetEventDamage() >= GetUnitState(unit, UNIT_STATE_LIFE) then
-        call UnitAddAbility(unit, 'A0EA')
         call SetUnitOwner(unit, GetOwningPlayer(GetEventDamageSource()), true)
         call BlzSetEventDamage(0)
         call SetUnitState(unit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_MAX_LIFE))
-        call UnitRemoveAbility(unit, 'A0EA')
       endif
     endmethod
 
@@ -300,7 +298,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       local boolean anyOwned = false
       local unit u
       
-      if GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and deathMessage != "" then
+      if GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and deathMessage != "" and deathMessage != null then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00LEGENDARY CREEP DEATH|r\n" + deathMessage)
       endif
 

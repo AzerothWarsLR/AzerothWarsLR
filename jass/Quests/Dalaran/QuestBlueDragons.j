@@ -3,6 +3,7 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
   globals
     private constant integer RESEARCH_ID = 'R00U'
     private constant integer DRAGON_ID = 'n0AC'
+    private constant integer MANADAM_ID = 'R00N'
   endglobals
 
   struct QuestBlueDragons extends QuestData
@@ -21,6 +22,7 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
 
     private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(DRAGON_ID, 6)
+      call this.Holder.modObjectLimit(MANADAM_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

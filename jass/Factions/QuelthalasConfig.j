@@ -12,22 +12,23 @@ library QuelthalasConfig initializer OnInit requires Faction, TeamConfig
     set f.Team = TEAM_NORTH_ALLIANCE
  
     //Structures
-    call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
-    call f.registerObjectLimit('hkee', UNLIMITED)   //Keep
-    call f.registerObjectLimit('hcas', UNLIMITED)   //Castle
-    call f.registerObjectLimit('halt', UNLIMITED)   //Altar of Kings
-    call f.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
-    call f.registerObjectLimit('hbla', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('hars', UNLIMITED)   //Arcane Sanctum
-    call f.registerObjectLimit('hwtw', UNLIMITED)   //Scout Tower
-    call f.registerObjectLimit('hatw', UNLIMITED)   //Arcane Tower
-    call f.registerObjectLimit('h008', UNLIMITED)   //Arcane Tower (Improved)
+    call f.registerObjectLimit('h033', UNLIMITED)   //Steading
+    call f.registerObjectLimit('h03S', UNLIMITED)   //Mansion
+    call f.registerObjectLimit('h03T', UNLIMITED)   //Palace
+    call f.registerObjectLimit('h01H', UNLIMITED)   //Altar of Prowess
+    call f.registerObjectLimit('h02Y', UNLIMITED)   //Artisan's Hall
+    call f.registerObjectLimit('h034', UNLIMITED)   //Arcane Sanctum (Quel'thalas)
+    call f.registerObjectLimit('h073', UNLIMITED)   //Scout Tower
+    call f.registerObjectLimit('h074', UNLIMITED)   //Arcane Tower
+    call f.registerObjectLimit('h075', UNLIMITED)   //Arcane Tower (Improved)
     call f.registerObjectLimit('negt', UNLIMITED)   //High Elven Guard Tower
     call f.registerObjectLimit('n003', UNLIMITED)   //High Elven Guard Tower (Improved)
     call f.registerObjectLimit('h04V', UNLIMITED)   //Arcane Vault (Elven)
-    call f.registerObjectLimit('nheb', UNLIMITED)   //High Elven Barracks
-    call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
-    call f.registerObjectLimit('nefm', UNLIMITED)   //Elven Farm
+    call f.registerObjectLimit('nheb', UNLIMITED)   //Cantonment
+    call f.registerObjectLimit('n0A2', UNLIMITED)   //Consortium
+    call f.registerObjectLimit('h03J', UNLIMITED)   //Academy
+    call f.registerObjectLimit('h077', UNLIMITED)   //Alliance Shipyard
+    call f.registerObjectLimit('nefm', UNLIMITED)   //Residence
     call f.registerObjectLimit('n06Y', 2)           //Healing Spire
 
     //Units
@@ -43,12 +44,8 @@ library QuelthalasConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('e008', 6)           //Elven Ballista
     call f.registerObjectLimit('n00A', 6)           //Farstrider
     call f.registerObjectLimit('n063', 12)          //Magus 
-    call f.registerObjectLimit('n048', 6)           //Blood Mage
-    call f.registerObjectLimit('h03S', 6)           //Blood Knight
-    call f.registerObjectLimit('hspt', 12)          //Spell Breaker   
-    call f.registerObjectLimit('nggr', 4)           //Granite Golem    
+    call f.registerObjectLimit('hspt', UNLIMITED)   //Spell Breaker    
     call f.registerObjectLimit('u00J', 2)           //Arcane Wagon
-    call f.registerObjectLimit('h02C', 0)           //Flagship 
 
     //Demi-heroes
     call f.registerObjectLimit('n075', 1)           //Vareesa 

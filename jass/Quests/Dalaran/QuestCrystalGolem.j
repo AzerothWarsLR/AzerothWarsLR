@@ -16,8 +16,8 @@ library QuestCrystalGolem initializer OnInit requires QuestItemControlPoint, Dal
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
       call DisplayResearchAcquired(Holder.Player, RESEARCH_ID, 1)
-      call Holder.modObjectLimit('n096', -6)
-      call Holder.modObjectLimit('n0AD', 6)
+      call Holder.modObjectLimit('n096', -12)
+      call Holder.modObjectLimit('n0AD', 12)
     endmethod
 
     private method OnAdd takes nothing returns nothing

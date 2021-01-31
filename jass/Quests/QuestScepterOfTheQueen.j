@@ -24,6 +24,8 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongCon
   endstruct
 
   struct QuestScepterOfTheQueenSentinels extends QuestData
+    private static integer researchId = 'R02O'
+
     private method operator CompletionPopup takes nothing returns string
       return "The Shen'dralar, the Highborne survivors of the Sundering, swear allegiance to their fellow Night Elves. As a sign of their loyalty, they offer up an artifact they have guarded for thousands of years: the Scepter of the Queen."
     endmethod
@@ -32,9 +34,18 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongCon
       return "Gain the Scepter of the Queen and control of all units in Dire Maul"
     endmethod
 
+    private method OnFail takes nothing returns nothing
+      call this.Holder.modObjectLimit(thistype.researchId, -UNLIMITED)
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       call SetItemPosition(ARTIFACT_SCEPTEROFTHEQUEEN.item, GetRectCenterX(gg_rct_HighBourne), GetRectCenterY(gg_rct_HighBourne))
       call RescueNeutralUnitsInRect(gg_rct_HighBourne, this.Holder.Player)
+      call SetPlayerTechResearched(this.Holder.Player, thistype.researchId, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(thistype.researchId, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype
@@ -59,7 +70,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongCon
       endif
       call GroupRemoveUnit(tempGroup, u)
     endloop
-    call FACTION_WARSONG.AddQuest(QuestScepterOfTheQueenWarsong.create())
+    call FACTION_FROSTWOLF.AddQuest(QuestScepterOfTheQueenWarsong.create())
     call FACTION_SENTINELS.AddQuest(QuestScepterOfTheQueenSentinels.create())
   endfunction
 

@@ -12,7 +12,7 @@ library LegendSentinels initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing
     set LEGEND_MAIEV = Legend.create()
-    set LEGEND_MAIEV.Unit = gg_unit_Ewrd_1259
+    set LEGEND_MAIEV.Unit = gg_unit_Ewrd_0451
 
     set LEGEND_TYRANDE = Legend.create()
     set LEGEND_TYRANDE.Unit = gg_unit_Etyr_1241

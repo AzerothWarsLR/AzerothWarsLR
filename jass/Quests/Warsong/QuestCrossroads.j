@@ -60,7 +60,7 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestCrossroads.create(FACTION_WARSONG))
+    call FACTION_WARSONG.AddQuest(QuestCrossroads.create(FACTION_FROSTWOLF))
   endfunction
 
 endlibrary

@@ -1,8 +1,7 @@
-library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
+library QuestCorruptSunwell initializer OnInit requires QuestData, ScourgeConfig
 
   globals
     private constant integer RESEARCH_ID = 'R04K'
-    private constant integer DARKFALLEN_ID = 'h04A'
   endglobals
 
   struct QuestCorruptSunwell extends QuestData
@@ -11,19 +10,17 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, LegionConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(DARKFALLEN_ID)
+      return "Necromancers' Raise Dead summons 2 Skeletons instead of 1"
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand second")
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand third")
-      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(this.Holder.Player, DARKFALLEN_ID, "You can now train " + GetObjectName(DARKFALLEN_ID) + " from the Temple of the Damned.")
     endmethod
 
     private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
-      call this.Holder.modObjectLimit(DARKFALLEN_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

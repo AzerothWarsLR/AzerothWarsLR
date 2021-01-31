@@ -3,13 +3,11 @@
 library TeamSizeResearches initializer OnInit requires Environment, Team
 
   globals
-    private constant integer RESEARCH_WEIGHTBELOWMAXIMUM = 'R04I'
-    private constant integer RESEARCH_NOALLIES = 'RNAL'
+    private constant integer RESEARCH_WEIGHTBELOWMAXIMUM = 'Rguv'
   endglobals
 
   private function RefreshTeam takes Team team returns nothing
-    local integer weightBelowMaximumLevel = 0
-    local integer noAlliesLevel = 0
+    local integer researchLevel = 0
     local integer i = 0
 
     if team == 0 then
@@ -17,17 +15,15 @@ library TeamSizeResearches initializer OnInit requires Environment, Team
       return
     endif
 
-    if team.Weight < team.MaxWeight then
-      set weightBelowMaximumLevel = 1
-    endif
     if team.Weight < 3 then
-      set noAlliesLevel = 1
+      set researchLevel = 2
+    elseif team.Weight < team.MaxWeight then
+      set researchLevel = 1   
     endif
 
     loop
       exitwhen i == team.FactionCount
-      call SetPlayerTechResearched(team.GetFactionByIndex(i).Player, RESEARCH_WEIGHTBELOWMAXIMUM, weightBelowMaximumLevel)
-      call SetPlayerTechResearched(team.GetFactionByIndex(i).Player, RESEARCH_NOALLIES, noAlliesLevel)
+      call SetPlayerTechResearched(team.GetFactionByIndex(i).Player, RESEARCH_WEIGHTBELOWMAXIMUM, researchLevel)
       set i = i + 1
     endloop
   endfunction

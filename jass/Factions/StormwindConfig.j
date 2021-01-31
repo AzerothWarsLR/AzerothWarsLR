@@ -11,27 +11,28 @@ library StormwindConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_STORMWIND
     set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTH_ALLIANCE
+    set f.PresenceResearch = 'R060'
 
     //Structures
-    call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
-    call f.registerObjectLimit('hkee', UNLIMITED)   //Keep
-    call f.registerObjectLimit('hcas', UNLIMITED)   //Castle
-    call f.registerObjectLimit('hhou', UNLIMITED)   //Farm
-    call f.registerObjectLimit('halt', UNLIMITED)   //Altar of Kings
-    call f.registerObjectLimit('hbar', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
-    call f.registerObjectLimit('hbla', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('harm', UNLIMITED)   //Workshop (Stormwind)
+    call f.registerObjectLimit('h06K', UNLIMITED)   //Town Hall
+    call f.registerObjectLimit('h06M', UNLIMITED)   //Keep
+    call f.registerObjectLimit('h06N', UNLIMITED)   //Castle
+    call f.registerObjectLimit('h072', UNLIMITED)   //Farm
+    call f.registerObjectLimit('h06T', UNLIMITED)   //Altar of Kings
+    call f.registerObjectLimit('h06E', UNLIMITED)   //Barracks
+    call f.registerObjectLimit('h06G', UNLIMITED)   //Lumber Mill
+    call f.registerObjectLimit('h06F', UNLIMITED)   //Blacksmith
+    call f.registerObjectLimit('h06A', UNLIMITED)   //Workshop (Stormwind)
     call f.registerObjectLimit('hars', UNLIMITED)   //Arcane Sanctum
-    call f.registerObjectLimit('hwtw', UNLIMITED)   //Scout Tower
-    call f.registerObjectLimit('hgtw', UNLIMITED)   //Guard Tower
-    call f.registerObjectLimit('h006', UNLIMITED)   //Guard Tower (Improved)
-    call f.registerObjectLimit('hctw', UNLIMITED)   //Cannon Tower
-    call f.registerObjectLimit('h007', UNLIMITED)   //Cannon Tower (Improved)
+    call f.registerObjectLimit('h06V', UNLIMITED)   //Scout Tower
+    call f.registerObjectLimit('h06W', UNLIMITED)   //Guard Tower
+    call f.registerObjectLimit('h070', UNLIMITED)   //Guard Tower (Improved)
+    call f.registerObjectLimit('h06X', UNLIMITED)   //Cannon Tower
+    call f.registerObjectLimit('h071', UNLIMITED)   //Cannon Tower (Improved)
     call f.registerObjectLimit('n07T', UNLIMITED)   //Marketplace
-    call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
-    call f.registerObjectLimit('hatw', UNLIMITED)   //Arcane Tower
-    call f.registerObjectLimit('h008', UNLIMITED)   //Arcane Tower (Improved)   
+    call f.registerObjectLimit('h06D', UNLIMITED)   //Alliance Shipyard
+    call f.registerObjectLimit('h06Y', UNLIMITED)   //Arcane Tower
+    call f.registerObjectLimit('h06Z', UNLIMITED)   //Arcane Tower (Improved)   
     call f.registerObjectLimit('h024', UNLIMITED)   //Light House         
 
     //Units
@@ -49,8 +50,6 @@ library StormwindConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('h060', 3)           //Arathor Flagship
-    call f.registerObjectLimit('o003', 8)           //War wagon
-    call f.registerObjectLimit('n0A4', 12)   	    //Wizard
 
     call f.registerObjectLimit('h04W', 1)           //Crowley
     call f.registerObjectLimit('h03W', 1)           //Danath
@@ -78,16 +77,6 @@ library StormwindConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R03A', UNLIMITED)   //Focus In The Light
     call f.registerObjectLimit('R03T', UNLIMITED)   //Electric Strike Ritual
     call f.registerObjectLimit('R03U', UNLIMITED)   //Solar Flare Ritual
-    
-    //Masteries
-    call f.registerObjectLimit('R01C', UNLIMITED)   //Arcane Mastery
-    call f.registerObjectLimit('R01U', UNLIMITED)   //Foot Soldier Prowess Mastery
-    call f.registerObjectLimit('R00Z', UNLIMITED)   //Shipwright Guild Mastery
-    
-    //Paths
-    call f.registerObjectLimit('R05O', UNLIMITED)   //Flame of the South
-
-    call f.registerObjectLimit('R039', UNLIMITED)   //Hellfire destroyed
   endfunction
     
 endlibrary

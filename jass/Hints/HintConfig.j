@@ -1,8 +1,7 @@
 library HintConfig initializer OnInit requires Hint
 
   private function OnInit takes nothing returns nothing
-    call Hint.create("If your ally leaves the game, you might be able to select a Solo Path. This option is found at your Path Research building in the top-right corner.")
-    call Hint.create("Masteries are unique researches that specialize your faction. They are found at the Mastery Research building in the top-right corner.")
+    call Hint.create("If your ally leaves the game, you get a bonus to all of your units. If you form another alliance, you'll lose that bonus.")
     call Hint.create("Quests are unique objectives that grant rewards when completed. View the Quest Menu (F9) to see the quests available to your faction.")
     call Hint.create("Artifacts are unique items that can grant major advantages. You can find out where Artifacts are using the Artifact Menu at the top-left of your screen.")
     call Hint.create("Some heroes can't be revived, and some can only be revived if you control certain capitals when they die.")

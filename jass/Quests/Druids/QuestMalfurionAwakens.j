@@ -3,6 +3,8 @@
 library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDruids, Display, ArtifactConfig
 
   globals
+    private group MoongladeUnits
+
     private constant integer HORN_OF_CENARIUS = 'cnhn'
     private constant integer GHANIR = 'I00C'
   endglobals
@@ -14,6 +16,27 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDr
 
     private method operator CompletionDescription takes nothing returns string
       return "Gain the hero Malfurion and the artifact G'hanir"
+    endmethod
+
+    private method GiveMoonglade takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Moonglade
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_MoongladeVillage, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+
+      //Cleanup
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -35,6 +58,25 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDr
   endstruct
 
   private function OnInit takes nothing returns nothing
+    //Setup initially invulnerable and hidden group at Moonglade
+    local group tempGroup = CreateGroup()
+    local unit u
+    local integer i = 0
+    set MoongladeUnits = CreateGroup()
+    call GroupEnumUnitsInRect(tempGroup, gg_rct_MoongladeVillage, null)
+    loop
+      set u = FirstOfGroup(tempGroup)
+      exitwhen u == null
+      if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+        call SetUnitInvulnerable(u, true)
+        call GroupAddUnit(MoongladeUnits, u)
+      endif
+      call GroupRemoveUnit(tempGroup, u)
+      set i = i + 1
+    endloop
+    call DestroyGroup(tempGroup)
+    set tempGroup = null
+    //Add quest
     call FACTION_DRUIDS.AddQuest(QuestMalfurionAwakens.create())
   endfunction
 

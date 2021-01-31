@@ -4,7 +4,6 @@ library LegendDalaran initializer OnInit requires Legend
     Legend LEGEND_ANTONIDAS
     Legend LEGEND_MEDIVH
     Legend LEGEND_JAINA
-    Legend LEGEND_DAELIN
 
     Legend LEGEND_DALARAN
   endglobals
@@ -24,9 +23,6 @@ library LegendDalaran initializer OnInit requires Legend
     set LEGEND_ANTONIDAS.Unit = gg_unit_Hant_1675
     call LEGEND_ANTONIDAS.AddUnitDependency(LEGEND_DALARAN.Unit)
     set LEGEND_ANTONIDAS.DeathMessage = "Archmage Antonidas has been cut down, his vast knowledge forever lost with his death. The mages of Dalaran have lost their brightest mind."
-
-    set LEGEND_DAELIN = Legend.create()
-    set LEGEND_DAELIN.Unit = gg_unit_Hapm_1060
   endfunction
 
 endlibrary

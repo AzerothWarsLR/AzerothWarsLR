@@ -27,10 +27,8 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hctw', UNLIMITED)   //Cannon Tower
     call f.registerObjectLimit('h007', UNLIMITED)   //Cannon Tower (Improved)
     call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
-    call f.registerObjectLimit('nmrk', UNLIMITED)   //Marketplace
-    
-    call f.registerObjectLimit('h06B', -UNLIMITED)  //Grand Crusader
-    call f.registerObjectLimit('h06D', -UNLIMITED)  //Silver Hand Veteran Paladin                
+    call f.registerObjectLimit('nmrk', UNLIMITED)   //Marketplace 
+    call f.registerObjectLimit('h06C', UNLIMITED)   //Aviary           
 
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
@@ -40,11 +38,12 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hfoo', UNLIMITED)   //Footman
     call f.registerObjectLimit('hkni', UNLIMITED)   //Knight
     call f.registerObjectLimit('nchp', UNLIMITED)   //Cleric
-    call f.registerObjectLimit('h00F', 6)           //Lordaeron Paladin 
+    call f.registerObjectLimit('h00F', 6)           //Paladin 
     call f.registerObjectLimit('nwe2', 6)           //Thunder Eagle
     call f.registerObjectLimit('h01C', UNLIMITED)   //Longbowman
     call f.registerObjectLimit('n03K', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('hcth', UNLIMITED)   //Silver Hand Squire
+    call f.registerObjectLimit('h02Q', UNLIMITED)   //Pegasus Knight
 
     //Demis
     call f.registerObjectLimit('h012', 1)           //Falric
@@ -54,18 +53,16 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training
     call f.registerObjectLimit('R00I', UNLIMITED)   //Light's Praise Initiate Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
-    call f.registerObjectLimit('R01P', UNLIMITED)   //Second Chance
     call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
     call f.registerObjectLimit('Rhan', UNLIMITED)   //Animal War Training
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('R04D', UNLIMITED)   //Exorcism
-    call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
-
-    //Masteries
-    call f.registerObjectLimit('R04A', UNLIMITED)   //Huntsmen mastery
-    call f.registerObjectLimit('R01Q', UNLIMITED)   //Empowerment Mastery
-    call f.registerObjectLimit('R00B', UNLIMITED)   //Soldier Mastery
+    call f.registerObjectLimit('R01P', UNLIMITED)   //Ensnare
+    call f.registerObjectLimit('R06Q', UNLIMITED)   //Paladin Adept Training
+    call f.registerObjectLimit('R04A', UNLIMITED)   //Rapid Fire
+    call f.registerObjectLimit('R00B', UNLIMITED)   //Veteran Footmen
+    call f.registerObjectLimit('R01Q', UNLIMITED)   //Pegasus Taming
   endfunction
     
 endlibrary

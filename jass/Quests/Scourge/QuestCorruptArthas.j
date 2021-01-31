@@ -14,6 +14,7 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       set LEGEND_ARTHAS.UnitType = 'Uear'
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)
       call LEGEND_ARTHAS.Spawn(this.Holder.Player, -3623, 21213, 135)
+      set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
       call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
     endmethod
 

@@ -27,7 +27,7 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Plague of Undeath", "From turn 5, you can type -plague to unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueBarrel.blp")
+      local thistype this = thistype.allocate("Plague of Undeath", "You can unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueBarrel.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID), QuestItemTime.create(660)))
       call this.AddQuestItem(QuestItemTime.create(360))
       return this

@@ -1,21 +1,21 @@
 library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, DalaranConfig
 
+  globals
+    private constant integer RESEARCH_ID = 'R00L'
+  endglobals
+
   struct QuestKultiras extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Admiral Daelin Prodmoore has finally mobilized Kul'tiras for war, and is now ready to aid " + this.Holder.Team.Name + " forces on the mainland."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Daein Proudmoore and control of all units at Kul'tiras"
+      return "Control of all units at Kul'tiras, and you can train Cannon Teams from the Workshop"
     endmethod
 
     private static method GrantToPlayer takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u = null
-
-      //Level Admiral Proudmoore
-      call ShowUnit(LEGEND_DAELIN.Unit, true)
-      call UnitDetermineLevel(LEGEND_DAELIN.Unit, 1.0)
 
       //Reveal and grant all units in Kul'tiras
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Kultiras, null)
@@ -43,11 +43,17 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
       call thistype.GrantToPlayer(this.Holder.Player)
     endmethod
 
     private method OnFail takes nothing returns nothing
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit('o01A', 6)           //Naval Cannon 
+      call this.Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
@@ -59,7 +65,7 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestKultiras.create())
+    call FACTION_STORMWIND.AddQuest(QuestKultiras.create())
   endfunction
 
 endlibrary

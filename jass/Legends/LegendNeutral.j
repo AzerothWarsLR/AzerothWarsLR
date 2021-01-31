@@ -24,6 +24,8 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_FOUNTAINOFHEALTH_FERALAS
     Legend LEGEND_FOUNTAINOFHEALTH_TOMB
     Legend LEGEND_FOUNTAINOFHEALTH_DALARAN
+    Legend LEGEND_FOUNTAINOFBLOOD
+    Legend LEGEND_CENTAURKHAN
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -112,6 +114,13 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_FOUNTAINOFHEALTH_DALARAN = Legend.create()
     set LEGEND_FOUNTAINOFHEALTH_DALARAN.Capturable = true
     set LEGEND_FOUNTAINOFHEALTH_DALARAN.Unit = gg_unit_nfoh_1190
+
+    set LEGEND_FOUNTAINOFBLOOD = Legend.create()
+    set LEGEND_FOUNTAINOFBLOOD.Capturable = true
+    set LEGEND_FOUNTAINOFBLOOD.Unit = gg_unit_nbfl_0094
+
+    set LEGEND_CENTAURKHAN = Legend.create()
+    set LEGEND_CENTAURKHAN.Unit = gg_unit_ncnk_0573
   endfunction
 
 endlibrary

@@ -10,16 +10,13 @@ library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A research improving all of your demon units"
+      return "2 new Demon Gates in Outland"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(Holder.Player, RESEARCH_ID, 1)
-    endmethod
-
-    private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, 1)
+      call SetPlayerAbilityAvailableBJ(true, 'A0MZ', FACTION_FEL_HORDE.Player)  //Demonic Construction
+      call UnitRescue(gg_unit_n081_4074, FACTION_FEL_HORDE.Player)
+      call UnitRescue(gg_unit_n081_1585, FACTION_FEL_HORDE.Player)
     endmethod
 
     public static method create takes nothing returns thistype

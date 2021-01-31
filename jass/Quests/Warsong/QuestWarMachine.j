@@ -27,6 +27,10 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
       endloop
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit('R021', UNLIMITED)
+    endmethod
+
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
       call this.AddQuestItem(QuestItemResearch.create('R021'))
@@ -36,7 +40,8 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
   endstruct
 
   private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
+    local QuestData newQuest = FACTION_WARSONG.AddQuest(QuestWarMachine.create())
+    set FACTION_WARSONG.StartingQuest = newQuest
   endfunction
 
 endlibrary

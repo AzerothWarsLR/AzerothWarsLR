@@ -11,13 +11,6 @@ library LegendWarsong initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
-    set LEGEND_GROM = Legend.create()
-    set LEGEND_GROM.Unit = gg_unit_Ogrh_0249
-    call LEGEND_GROM.AddUnitDependency(gg_unit_o00C_1292)
-    call LEGEND_GROM.AddUnitDependency(gg_unit_o02K_0450) 
-    call LEGEND_GROM.AddUnitDependency(gg_unit_o004_0169)
-    set LEGEND_GROM.DeathMessage = "Grom Hellscream lies broken on the battlefield. It is yet to be seen whether or not the Warsong Clan can survive without his strong leadership."
-
     set LEGEND_REXXAR = Legend.create()
     set LEGEND_REXXAR.Unit = gg_unit_Orex_0312
 
@@ -32,10 +25,17 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_STONEMAUL.DeathMessage = "The fortress of the Stonemaul Clan has fallen."
 
     set LEGEND_ENCAMPMENT = Legend.create()
-    set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
+    //set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
 
     set LEGEND_LUMBERCAMP = Legend.create()
-    set LEGEND_LUMBERCAMP.Unit = gg_unit_o01I_0449
+    set LEGEND_LUMBERCAMP.Unit = gg_unit_o01I_1103
+
+    set LEGEND_GROM = Legend.create()
+    set LEGEND_GROM.Unit = gg_unit_Ogrh_0249
+    call LEGEND_GROM.AddUnitDependency(LEGEND_STONEMAUL.Unit)
+    call LEGEND_GROM.AddUnitDependency(LEGEND_LUMBERCAMP.Unit)
+    //call LEGEND_GROM.AddUnitDependency(LEGEND_ENCAMPMENT.Unit)
+    set LEGEND_GROM.DeathMessage = "Grom Hellscream lies broken on the battlefield. It is yet to be seen whether or not the Warsong Clan can survive without his strong leadership."    
   endfunction
 
 endlibrary

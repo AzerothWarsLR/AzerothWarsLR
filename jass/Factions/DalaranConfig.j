@@ -14,20 +14,19 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     set f.Team = TEAM_NORTH_ALLIANCE
     
     //Structures
-    call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
-    call f.registerObjectLimit('hkee', UNLIMITED)   //Keep
-    call f.registerObjectLimit('hcas', UNLIMITED)   //Castle
-    call f.registerObjectLimit('hhou', UNLIMITED)   //Farm
-    call f.registerObjectLimit('halt', UNLIMITED)   //Altar of Kings
-    call f.registerObjectLimit('hbar', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
-    call f.registerObjectLimit('hbla', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('hars', UNLIMITED)   //Arcane Sanctum
-    call f.registerObjectLimit('hwtw', UNLIMITED)   //Scout Tower
-    call f.registerObjectLimit('hatw', UNLIMITED)   //Arcane Tower
-    call f.registerObjectLimit('h008', UNLIMITED)   //Arcane Tower (Improved)
+    call f.registerObjectLimit('h065', UNLIMITED)   //Refuge
+    call f.registerObjectLimit('h066', UNLIMITED)   //Conclave
+    call f.registerObjectLimit('h068', UNLIMITED)   //Observatory
+    call f.registerObjectLimit('h063', UNLIMITED)   //Granary
+    call f.registerObjectLimit('h044', UNLIMITED)   //Altar of Knowledge
+    call f.registerObjectLimit('h069', UNLIMITED)   //Barracks
+    call f.registerObjectLimit('h02N', UNLIMITED)   //Trade Quarters
+    call f.registerObjectLimit('h036', UNLIMITED)   //Arcane Sanctuary
+    call f.registerObjectLimit('h078', UNLIMITED)   //Scout Tower
+    call f.registerObjectLimit('h079', UNLIMITED)   //Arcane Tower
+    call f.registerObjectLimit('h07A', UNLIMITED)   //Arcane Tower (Improved)
     call f.registerObjectLimit('hvlt', UNLIMITED)   //Arcane Vault
-    call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
+    call f.registerObjectLimit('h076', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('ndgt', UNLIMITED)   //Dalaran Tower
     call f.registerObjectLimit('n004', UNLIMITED)   //Dalaran Tower (Improved)
     call f.registerObjectLimit('h067', UNLIMITED)   //Laboratory
@@ -38,16 +37,16 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('nhym', UNLIMITED)   //Hydromancer
-    call f.registerObjectLimit('h033', UNLIMITED)   //Militia 
     call f.registerObjectLimit('h032', UNLIMITED)   //Battlemage
     call f.registerObjectLimit('h02D', UNLIMITED)   //Geomancer
     call f.registerObjectLimit('h01I', UNLIMITED)   //Arcanist
     call f.registerObjectLimit('n007', 6)           //Kirin Tor
-    call f.registerObjectLimit('n096', 6)           //Earth Golem
+    call f.registerObjectLimit('n096', 12)          //Earth Golem
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
     call f.registerObjectLimit('n0AK', UNLIMITED)   //Sludge Flinger
     call f.registerObjectLimit('h02C', 1)           //Flagship 
-    call f.modObjectLimit('o01A', 6)                //Naval Cannon  
+    call f.registerObjectLimit('o02U', 6)           //Crystal Artillery
+
 
     //Demi-heroes
     call f.registerObjectLimit('njks', 1)           //Jailor Kassan
@@ -62,15 +61,9 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('R06J', UNLIMITED)   //Improved Ooze
-
-    //Masteries
-    call f.registerObjectLimit('R00L', UNLIMITED)   //Arcane Mastery
-    call f.registerObjectLimit('R00N', UNLIMITED)   //Elemental Mastery
-    call f.registerObjectLimit('R00J', UNLIMITED)   //Magical Wrath Mastery
-    
-    //Paths
-    call f.registerObjectLimit('R03O', UNLIMITED)   //Path of Steel
-    call f.registerObjectLimit('R01J', UNLIMITED)   //solo path
+    call f.registerObjectLimit('R061', UNLIMITED)   //Improved Forked Lightning
+    call f.registerObjectLimit('R06O', UNLIMITED)   //Improved Phase Blade
+    call f.registerObjectLimit('R00J', UNLIMITED)   //Combat Tomes
   endfunction
     
 endlibrary

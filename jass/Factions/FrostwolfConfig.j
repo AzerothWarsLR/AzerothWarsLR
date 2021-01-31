@@ -37,17 +37,15 @@ library FrostwolfConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('oshm', UNLIMITED)   //Shaman
     call f.registerObjectLimit('ospw', UNLIMITED)   //Spirit Walker
     call f.registerObjectLimit('o00A', 6)           //Far Seer
+    call f.registerObjectLimit('okod', 4)           //Kodo Beast
     call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
     call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
+    call f.registerObjectLimit('oosc', UNLIMITED)   //Pack Kodo
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
-    call f.registerObjectLimit('okod', 1)           //Kodo Beast
 
     call f.registerObjectLimit('Rovs', UNLIMITED)   //Envenomed Spears
-    call f.registerObjectLimit('Rwdm', 0)           //War Drums
-    call f.registerObjectLimit('R065', 0)           //War Armaments
-    call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
     call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training
     call f.registerObjectLimit('Rowd', UNLIMITED)   //Witch Doctor Adept Training
@@ -56,17 +54,11 @@ library FrostwolfConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rolf', UNLIMITED)   //Liquid Fire
     call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
     call f.registerObjectLimit('Rorb', UNLIMITED)   //reinforced Defenses
-
-    call f.registerObjectLimit('R00R', UNLIMITED)   //Spiritual Mastery
-    call f.registerObjectLimit('R00W', UNLIMITED)   //Tauren Mastery
-    call f.registerObjectLimit('R017', UNLIMITED)   //Warrior Spirit Mastery
-
-    call f.registerObjectLimit('R01O', UNLIMITED)   //Age of Prosperity
-    call f.registerObjectLimit('R02T', UNLIMITED)   //Season of Thunder
-    call f.registerObjectLimit('R02R', UNLIMITED)   //Voodic Command
-
-    call f.registerObjectLimit('R021', UNLIMITED)   //Horde War Machine
-    call f.registerObjectLimit('R02N', UNLIMITED)   //New Horde
+    call f.registerObjectLimit('R00H', UNLIMITED)   //Animal Companion
+    call f.registerObjectLimit('R00D', UNLIMITED)   //For the Horde!
+    call f.registerObjectLimit('R00R', UNLIMITED)   //Improved Chain Lightning
+    call f.registerObjectLimit('R00W', UNLIMITED)   //Toughened Hides
+    call f.registerObjectLimit('R017', UNLIMITED)   //Kor'kron Guardsmen
   endfunction
     
 endlibrary

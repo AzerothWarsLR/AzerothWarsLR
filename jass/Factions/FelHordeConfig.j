@@ -11,21 +11,22 @@ library FelHordeConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_FEL_HORDE
     set f.VictoryMusic = "DarkVictory"
     set f.Team = TEAM_FEL_HORDE
+    set f.PresenceResearch = 'R05L'
 
-    call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
-    call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold
-    call f.registerObjectLimit('ofrt', UNLIMITED)   //Fortress
-    call f.registerObjectLimit('oalt', UNLIMITED)   //Altar of Storms
-    call f.registerObjectLimit('obar', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('ofor', UNLIMITED)   //War Mill
-    call f.registerObjectLimit('osld', UNLIMITED)   //Spirit Lodge
-    call f.registerObjectLimit('obea', UNLIMITED)   //Bestiary
-    call f.registerObjectLimit('oshy', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('owtw', UNLIMITED)   //Watch Tower
-    call f.registerObjectLimit('o002', UNLIMITED)   //Improved Watch Tower
+    call f.registerObjectLimit('o02Y', UNLIMITED)   //Great Hall
+    call f.registerObjectLimit('o02Z', UNLIMITED)   //Stronghold
+    call f.registerObjectLimit('o030', UNLIMITED)   //Fortress
+    call f.registerObjectLimit('o02V', UNLIMITED)   //Altar of Storms
+    call f.registerObjectLimit('o02W', UNLIMITED)   //Barracks
+    call f.registerObjectLimit('o031', UNLIMITED)   //War Mill
+    call f.registerObjectLimit('o033', UNLIMITED)   //Spirit Lodge
+    call f.registerObjectLimit('o02X', UNLIMITED)   //Bestiary
+    call f.registerObjectLimit('o032', UNLIMITED)   //Shipyard
+    call f.registerObjectLimit('o034', UNLIMITED)   //Watch Tower
+    call f.registerObjectLimit('o035', UNLIMITED)   //Improved Watch Tower
     call f.registerObjectLimit('u00Q', UNLIMITED)   //Hellforge
-    call f.registerObjectLimit('nbt1', UNLIMITED)   //Boulder Tower
-    call f.registerObjectLimit('nbt2', UNLIMITED)   //Advanced Boulder Tower
+    call f.registerObjectLimit('n0AM', UNLIMITED)   //Boulder Tower
+    call f.registerObjectLimit('n0AN', UNLIMITED)   //Advanced Boulder Tower
     call f.registerObjectLimit('ocbw', UNLIMITED)   //Burrow
     call f.registerObjectLimit('n04C', 1)           //Defiled Fountain of Life
     call f.registerObjectLimit('n06Y', 1)           //Dimensional Gateway
@@ -63,19 +64,9 @@ library FelHordeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R024', UNLIMITED)   //Necrolyte adept Training
     call f.registerObjectLimit('R00M', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('R03I', UNLIMITED)   //Eredar Warlock Adept Training
-
-    call f.registerObjectLimit('R010', UNLIMITED)   //Demonic Mastery
-    call f.registerObjectLimit('R011', UNLIMITED)   //Fel Blood Mastery
-    call f.registerObjectLimit('R00Y', UNLIMITED)   //Fel Strength Mastery
-
-    call f.registerObjectLimit('R02L', UNLIMITED)   //Shattered Hand Clan
-    call f.registerObjectLimit('R03L', UNLIMITED)   //Shadow Council Reformed
-    call f.registerObjectLimit('R047', UNLIMITED)   //Shadowmoon Clan Remnants
-    call f.registerObjectLimit('R036', UNLIMITED)   //Dragonmaw Clan          
-
-    call f.registerObjectLimit('R05Y', UNLIMITED)   //Tier 1
-    call f.registerObjectLimit('R05Z', UNLIMITED)   //Tier 2
-          
+    call f.registerObjectLimit('R00Y', UNLIMITED)   //Improved Self-Bloodlust
+    call f.registerObjectLimit('R036', UNLIMITED)   //Incinerate
+    call f.registerObjectLimit('R02L', UNLIMITED)   //Bloodcraze  
     endfunction
     
 endlibrary

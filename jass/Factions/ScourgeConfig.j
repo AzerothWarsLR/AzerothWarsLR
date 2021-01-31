@@ -48,6 +48,7 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('udes', UNLIMITED)   //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship
     call f.registerObjectLimit('ubsp', 4)           //Destroyer
+    call f.registerObjectLimit('nfgl', 2)           //Plague Titan
     call f.registerObjectLimit('h04A', UNLIMITED)   //Ebon Priest
 
     //Demi-Heroes
@@ -63,18 +64,18 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rufb', UNLIMITED)   //Freezing Breath
     call f.registerObjectLimit('Rugf', UNLIMITED)   //Ghoul Frenzy
     call f.registerObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
-    call f.registerObjectLimit('Rusl', UNLIMITED)   //Skeletal Longevity
-    call f.registerObjectLimit('Rusm', UNLIMITED)   //Skeletal Mastership
     call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web
     call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
-    
-    call f.registerObjectLimit('R00Q', UNLIMITED)   //Frozen Death Mastery
-    call f.registerObjectLimit('R00P', UNLIMITED)   //Necromantic Mastery
-    call f.registerObjectLimit('R01X', UNLIMITED)   //Plague Engineering Mastery
+    call f.registerObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
+    call f.registerObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
+    call f.registerObjectLimit('R01X', UNLIMITED)   //Epidemic
+    call f.registerObjectLimit('R00P', UNLIMITED)   //Cold Arrows
+    call f.registerObjectLimit('R06L', UNLIMITED)   //Mana Flare
+    call f.registerObjectLimit('R06M', UNLIMITED)   //Titanomancy
+    call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
+    call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
 
     call f.registerObjectLimit('R01E', UNLIMITED)   //Gilneas Captured
-
-    call f.registerObjectLimit('R01D', UNLIMITED)   //Scourge Solo Path
   endfunction
     
 endlibrary

@@ -5,7 +5,6 @@ library LegendFrostwolf initializer OnInit requires Legend
     Legend LEGEND_GAZLOWE
     Legend LEGEND_THRALL
 
-    Legend LEGEND_ORGRIMMAR
     Legend LEGEND_THUNDERBLUFF
   endglobals
 
@@ -20,10 +19,6 @@ library LegendFrostwolf initializer OnInit requires Legend
 
     set LEGEND_THRALL = Legend.create()
     set LEGEND_THRALL.Unit = gg_unit_Othr_1598
-
-    set LEGEND_ORGRIMMAR = Legend.create()
-    set LEGEND_ORGRIMMAR.Unit = gg_unit_o00C_1292
-    set LEGEND_ORGRIMMAR.DeathMessage = "Ogrimmar, the new home of the Horde in Kalimdor, has been destroyed. A shadow falls upon the strength of those whom remain."
   
     set LEGEND_THUNDERBLUFF = Legend.create()
     set LEGEND_THUNDERBLUFF.Unit = gg_unit_o00J_1495

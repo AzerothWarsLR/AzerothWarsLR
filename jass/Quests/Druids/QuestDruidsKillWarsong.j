@@ -26,7 +26,7 @@ library QuestDruidsKillWarsong initializer OnInit requires DruidsConfig, LegendW
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Enemies at the Gate", "Arriving from another planet and across the seas of Azeroth, the Orcs of the Warsong Clan have arrived to ravage the wilderness and consume its bounty. They must be stopped.", "ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ENCAMPMENT))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LUMBERCAMP))
       return this
     endmethod
   endstruct

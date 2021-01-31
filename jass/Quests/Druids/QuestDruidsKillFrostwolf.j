@@ -26,7 +26,6 @@ library QuestDruidsKillFrostwolf initializer OnInit requires DruidsConfig, Legen
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Natural Contest", "The Frostwolf Clan has arrived on the shores of Kalimdor. Though their respect of the wild spirits is to be admired, their presence cannot be tolerated.", "ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp")
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ORGRIMMAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THUNDERBLUFF))
       return this
     endmethod

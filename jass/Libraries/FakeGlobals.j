@@ -91,6 +91,14 @@ library FakeGlobals
     unit gg_unit_nfoh_0315
     unit gg_unit_nfoh_1904
     unit gg_unit_nfoh_1190
+    unit gg_unit_Ewrd_0451
+    unit gg_unit_o01I_1103
+    unit gg_unit_nbfl_0094
+    rect gg_rct_ThunderBluff
+    unit gg_unit_ncnk_0573
+    rect gg_rct_ThrallLanding
+    rect gg_rct_CairneStart
+    rect gg_rct_MoongladeVillage
   endglobals
 
 endlibrary

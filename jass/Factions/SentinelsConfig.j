@@ -11,19 +11,21 @@ library SentinelsConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_SENTINELS
     set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES
+    set f.PresenceResearch = 'R05Y'
 
     call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
-    call f.registerObjectLimit('eate', UNLIMITED)   //Altar of Elders   
-    call f.registerObjectLimit('eaom', UNLIMITED)   //Ancient of War
+    call f.registerObjectLimit('e00R', UNLIMITED)   //Altar of Watchers 
+    call f.registerObjectLimit('e00L', UNLIMITED)   //War Academy
     call f.registerObjectLimit('edob', UNLIMITED)   //Hunter's Hall
     call f.registerObjectLimit('eden', UNLIMITED)   //Ancient of Wonders
-    call f.registerObjectLimit('eshy', UNLIMITED)   //Night Elf Shipyard
+    call f.registerObjectLimit('e011', UNLIMITED)   //Night Elf Shipyard
     call f.registerObjectLimit('h03N', UNLIMITED)   //Enchanged Runestone
     call f.registerObjectLimit('h03M', UNLIMITED)   //Runestone
     call f.registerObjectLimit('n06O', UNLIMITED)   //Sentinel Embassy
     call f.registerObjectLimit('n06P', UNLIMITED)   //Sentinel Enclave
     call f.registerObjectLimit('n06J', UNLIMITED)   //Sentinel Outpost
     call f.registerObjectLimit('n06M', UNLIMITED)   //Residence 
+    call f.registerObjectLimit('edos', UNLIMITED)   //Roost 
 
     call f.registerObjectLimit('ewsp', UNLIMITED)   //Wisp 
     call f.registerObjectLimit('e006', UNLIMITED)   //Priestess
@@ -46,18 +48,13 @@ library SentinelsConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R01W', UNLIMITED)   //Trapper Adept Training  
     call f.registerObjectLimit('R026', UNLIMITED)   //Elune's Power Infusion
     call f.registerObjectLimit('Reib', UNLIMITED)   //Improved Bows
-    call f.registerObjectLimit('Resc', -UNLIMITED)   //Sentinel
     call f.registerObjectLimit('Reuv', UNLIMITED)   //Ultravision
     call f.registerObjectLimit('Remg', UNLIMITED)   //Upgraded Moon Glaive
     call f.registerObjectLimit('Roen', UNLIMITED)   //Ensnare
     call f.registerObjectLimit('R04E', UNLIMITED)   //Ysera's Gift (World Tree upgrade)
     call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
-
-    call f.registerObjectLimit('R042', UNLIMITED)   //Huntress Mastery
-    call f.registerObjectLimit('R007', UNLIMITED)   //Lost Heritage Mastery
-    call f.registerObjectLimit('R03J', UNLIMITED)   //Wind COntrol Mastery
-    
-    call f.registerObjectLimit('R04O', UNLIMITED)   //Might of the Sentinels
+    call f.registerObjectLimit('R03J', UNLIMITED)   //Wind Walk
+    call f.registerObjectLimit('R013', UNLIMITED)   //Elune's Blessing
   endfunction
     
 endlibrary

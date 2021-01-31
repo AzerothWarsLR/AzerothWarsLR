@@ -7,6 +7,10 @@ library Income initializer OnInit requires Persons
   //**ENDCONFIG
 
   private function AddPersonIncome takes Person whichPerson returns nothing
+    if whichPerson == 0 then
+      call BJDebugMsg("ERROR: Person of 0 given to function AddPersonIncome")
+    endif
+
     local real goldPerSecond = whichPerson.Faction.Income * PERIOD / 60
     local Faction personFaction = whichPerson.Faction
     call whichPerson.addGold(goldPerSecond)

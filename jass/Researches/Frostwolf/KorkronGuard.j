@@ -1,9 +1,13 @@
-library RiteOfStrength initializer OnInit requires WarsongConfig
+library KorkronGuard initializer OnInit requires FrostwolfConfig
+
+  globals
+    private constant integer RESEARCH_ID = 'R017'
+  endglobals
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'R02Q' then
-      call CreateUnit(FACTION_WARSONG.Player, 'n065', -10448, -9078, 237)
-      call DestroyTrigger(GetTriggeringTrigger())
+    if GetResearched() == RESEARCH_ID then
+      call FACTION_FROSTWOLF.modObjectLimit('ogru', -UNLIMITED)  //Grunt
+      call FACTION_FROSTWOLF.modObjectLimit('o01K', UNLIMITED)   //Korkon Guard
     endif
   endfunction
 
