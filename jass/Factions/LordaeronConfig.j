@@ -10,6 +10,7 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_LORDAERON
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE
+    set f.PresenceResearch = 'R05M'
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall
@@ -43,7 +44,7 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('h01C', UNLIMITED)   //Longbowman
     call f.registerObjectLimit('n03K', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('hcth', UNLIMITED)   //Silver Hand Squire
-    call f.registerObjectLimit('h02Q', UNLIMITED)   //Pegasus Knight
+    call f.registerObjectLimit('h02Q', 6)           //Pegasus Knight
 
     //Demis
     call f.registerObjectLimit('h012', 1)           //Falric

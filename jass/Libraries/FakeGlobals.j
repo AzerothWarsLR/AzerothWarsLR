@@ -99,6 +99,7 @@ library FakeGlobals
     rect gg_rct_ThrallLanding
     rect gg_rct_CairneStart
     rect gg_rct_MoongladeVillage
+    rect gg_rct_GrizzlyHills
   endglobals
 
 endlibrary

@@ -6,16 +6,14 @@ library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalara
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Grant Jaina Chaos Damage, Divine Armor, 20 additional Intelligence, Teleport, and Mana Shield"
+      return "Grant Jaina Chaos Damage, 20 additional Intelligence, Teleport, and Mana Shield"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       local unit whichUnit = LEGEND_JAINA.Unit
       call AddSpecialEffectTarget("war3mapImported\\Soul Armor Cosmic.mdx", whichUnit, "chest")
       call BlzSetUnitName(whichUnit, "Guardian of Tirisfal")
-      call UnitAddAbility(whichUnit, 'ACm2') //Spell Immunity
       call UnitAddAbility(whichUnit, 'A0BX') //Guardian of Tirisfal Spellbook
-      call BlzSetUnitIntegerField(whichUnit, UNIT_IF_DEFENSE_TYPE, 6) //Divine
       call BlzSetUnitWeaponIntegerField(whichUnit, UNIT_WEAPON_IF_ATTACK_ATTACK_TYPE, 0, 5) //Chaos
       call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + 20, true)
       call LEGEND_JAINA.ClearUnitDependencies()

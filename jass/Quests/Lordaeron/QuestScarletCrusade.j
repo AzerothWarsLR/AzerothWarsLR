@@ -1,4 +1,4 @@
-library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron
+library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron, LegendNeutral
 
   globals
     private constant integer RESEARCH_ID = 'R06P'
@@ -35,6 +35,7 @@ library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemCont
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Scarlet Crusade", "Alexandros Mograine, one of the leaders of the Silver Hand, hasn't been seen since the Second War. He must still be somewhere in the south.", "ReplaceableTextures\\CommandButtons\\BTNAshbringer.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0AA')), QuestItemLegendDead.create(LEGEND_UTHER)))
+      call this.AddQuestItem(QuestItemTime.create(1020))
       return this
     endmethod
   endstruct

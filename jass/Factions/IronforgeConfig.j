@@ -1,4 +1,3 @@
-
 library IronforgeConfig initializer OnInit requires Faction, TeamConfig
 
   globals
@@ -50,7 +49,6 @@ library IronforgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('h037', UNLIMITED)   //Mason
     call f.registerObjectLimit('h02X', UNLIMITED)   //Explorer
     call f.registerObjectLimit('n02D', UNLIMITED)   //War Golem
-    call f.registerObjectLimit('h03R', UNLIMITED)   //Tinker
     call f.registerObjectLimit('h01P', 3)           //Steam Tank
     call f.registerObjectLimit('n00C', UNLIMITED)   //Rune Priest
 
@@ -58,7 +56,6 @@ library IronforgeConfig initializer OnInit requires Faction, TeamConfig
 
     //Upgrades
     call f.registerObjectLimit('R03H', UNLIMITED)   //Engineering Adept Training
-    call f.registerObjectLimit('R05P', UNLIMITED)   //Tinker Adept Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.registerObjectLimit('R00F', UNLIMITED)   //Mithril Armor
     call f.registerObjectLimit('Rhfl', UNLIMITED)   //Flare
@@ -72,6 +69,9 @@ library IronforgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rhar', UNLIMITED)   //Copper Armor Plating
     call f.registerObjectLimit('R014', UNLIMITED)   //Deeprun Tram
     call f.registerObjectLimit('R00V', UNLIMITED)   //Rune Priest Adept Training
+    call f.registerObjectLimit('R00Z', UNLIMITED)   //Armor Penetration Rounds
+    call f.registerObjectLimit('R010', UNLIMITED)   //Improved Spell Resistance
+    call f.registerObjectLimit('R00T', UNLIMITED)   //Overclock 
   endfunction
     
 endlibrary

@@ -57,8 +57,8 @@ library WarsongConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rorb', UNLIMITED)   //Reinforced Defenses
     call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
     call f.registerObjectLimit('R015', UNLIMITED)   //Spell Resistance
-    call f.registerObjectLimit('R00T', UNLIMITED)   //Blade Mastery
     call f.registerObjectLimit('R016', UNLIMITED)   //Warlords
+    call f.registerObjectLimit('R019', UNLIMITED)   //Improved Shockwave
   endfunction
 
 endlibrary

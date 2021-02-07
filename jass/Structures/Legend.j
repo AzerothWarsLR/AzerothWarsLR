@@ -267,7 +267,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     private method onDamaging takes nothing returns nothing
-      if capturable and GetEventDamage() >= GetUnitState(unit, UNIT_STATE_LIFE) then
+      if capturable and GetEventDamage() + 1 >= GetUnitState(unit, UNIT_STATE_LIFE) then
         call SetUnitOwner(unit, GetOwningPlayer(GetEventDamageSource()), true)
         call BlzSetEventDamage(0)
         call SetUnitState(unit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_MAX_LIFE))

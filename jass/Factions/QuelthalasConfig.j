@@ -10,6 +10,7 @@ library QuelthalasConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_QUELTHALAS
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE
+    set f.PresenceResearch = 'R05U'
  
     //Structures
     call f.registerObjectLimit('h033', UNLIMITED)   //Steading

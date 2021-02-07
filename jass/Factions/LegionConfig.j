@@ -21,7 +21,6 @@ library LegionConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('u00E', UNLIMITED)   //Generator
     call f.registerObjectLimit('u01N', UNLIMITED)   //Burning Altar
     call f.registerObjectLimit('u015', UNLIMITED)   //Unholy Reliquary
-    call f.registerObjectLimit('demo', UNLIMITED)   //Hell Forge
     call f.registerObjectLimit('u006', UNLIMITED)   //Void Summoning Spire
     call f.registerObjectLimit('ndmg', UNLIMITED)   //Demon Gate
     //Units
@@ -43,13 +42,6 @@ library LegionConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('ninf', 12)          //Infernal
     call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
     call f.registerObjectLimit('n04U', 4)           //Dragon
-    //Solo Path
-    call f.registerObjectLimit('R05F', UNLIMITED)   //Legion Solo Path
-    call f.registerObjectLimit('umtw', 6)           //Meat Wagon
-    call f.registerObjectLimit('uobs', 2)           //Obsidian Statue
-    call f.registerObjectLimit('nfgl', 2)           //Plague Titan
-    call f.registerObjectLimit('n04T', 4)           //Sky Barge
-    call f.registerObjectLimit('u00K', UNLIMITED)   //Ghouls
     //Researches
     call f.registerObjectLimit('R02C', UNLIMITED)   //Acute Sensors
     call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion

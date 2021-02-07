@@ -10,6 +10,7 @@ library FrostwolfConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_FROSTWOLF
     set f.VictoryMusic = "OrcVictory"
     set f.Team = TEAM_HORDE
+    set f.PresenceResearch = 'R05V'
 
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

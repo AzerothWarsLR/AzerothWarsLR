@@ -139,7 +139,7 @@ library AIDS initializer InitAIDS
     // Configurables
     //
     globals
-        private constant boolean USE_PERIODIC_RECYCLER = true
+        private constant boolean USE_PERIODIC_RECYCLER = false
         private constant real PERIOD = 0.03125 // Recycles 32 units/second max.
                                                // Lower to be able to recycle faster.
                                                // Only used if USE_PERIODIC_RECYCLER

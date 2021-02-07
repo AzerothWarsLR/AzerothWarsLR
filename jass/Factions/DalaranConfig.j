@@ -30,6 +30,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('ndgt', UNLIMITED)   //Dalaran Tower
     call f.registerObjectLimit('n004', UNLIMITED)   //Dalaran Tower (Improved)
     call f.registerObjectLimit('h067', UNLIMITED)   //Laboratory
+    call f.registerObjectLimit('n0AO', 2)           //Way Gate
 
     //Units
     call f.registerObjectLimit('h022', UNLIMITED)   //Shaper

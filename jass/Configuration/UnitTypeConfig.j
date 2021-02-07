@@ -185,6 +185,9 @@ library UnitTypeConfig initializer OnInit requires UnitType
         
     set unitType = UnitType.create('h052')      //Dar'Khan Drathir
     set unitType.Refund = true
+
+    set unitType = UnitType.create('n03F')      //Ogre Lord
+    set unitType.Refund = true
         
     set unitType = UnitType.create('ubdd')      //Sapphiron
 

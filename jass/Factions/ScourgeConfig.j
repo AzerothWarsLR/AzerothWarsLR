@@ -11,6 +11,7 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     set f = FACTION_SCOURGE
     set f.VictoryMusic = "UndeadVictory"
     set f.Team = TEAM_SCOURGE
+    set f.PresenceResearch = 'R05K'
 
     //Buildings
     call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
@@ -49,7 +50,6 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship
     call f.registerObjectLimit('ubsp', 4)           //Destroyer
     call f.registerObjectLimit('nfgl', 2)           //Plague Titan
-    call f.registerObjectLimit('h04A', UNLIMITED)   //Ebon Priest
 
     //Demi-Heroes
     call f.registerObjectLimit('n04N', 1)           //Lady Deathwhisper 
