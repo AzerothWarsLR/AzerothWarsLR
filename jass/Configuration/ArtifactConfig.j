@@ -8,15 +8,15 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     Artifact ARTIFACT_SKULLOFGULDAN
     Artifact ARTIFACT_CROWNLORDAERON
     Artifact ARTIFACT_CROWNSTORMWIND
-    Artifact ARTIFACT_BELTOFGIANTSTRENGTH
     Artifact ARTIFACT_HELMOFDOMINATION
     Artifact ARTIFACT_DREKTHARSSPELLBOOK
     Artifact ARTIFACT_SCEPTEROFTHEQUEEN
-    Artifact ARTIFACT_CROWNEASTERNKINGDOMS
+    Artifact ARTIFACT_SCYTHEOFELUNE
     Artifact ARTIFACT_BOOKOFMEDIVH
     Artifact ARTIFACT_SOULGEM
     Artifact ARTIFACT_HORNOFCENARIUS
     Artifact ARTIFACT_EYEOFSARGERAS
+    Artifact ARTIFACT_CROWNEASTERNKINGDOMS
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -51,8 +51,8 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('I01V', DUMMY_X, DUMMY_Y))    //Gorehowl
     call UnitAddItem(gg_unit_Ogrh_0249, tempArtifact.item)                      //Grom
 
-    set tempArtifact = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
-    call UnitAddItem(gg_unit_H00Z_1936, tempArtifact.item)                      //Galen Trollbane
+    //set tempArtifact = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
+    //call UnitAddItem(gg_unit_H00Z_1936, tempArtifact.item)                      //Galen Trollbane
 
     set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
@@ -126,13 +126,13 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('I00K', DUMMY_X, DUMMY_Y))    //Essence
     call UnitAddItem(gg_unit_n03T_0555, tempArtifact.item)                      //Murmur
 
-    set ARTIFACT_BELTOFGIANTSTRENGTH = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))    //Belt of Giant Strength
-    call ARTIFACT_BELTOFGIANTSTRENGTH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_BELTOFGIANTSTRENGTH.setDescription("Fel Horde Quest")
-
     set ARTIFACT_CROWNEASTERNKINGDOMS = Artifact.create(CreateItem('I00U', DUMMY_X, DUMMY_Y))
     call ARTIFACT_CROWNEASTERNKINGDOMS.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("Stormwind and Lordaeron Quest")
+
+    set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
+    call UnitAddAbility(gg_unit_H05B_0308, ARTIFACT_HOLDER_ABIL_ID)             //Darius Crowley
+    call UnitAddItem(gg_unit_H05B_0308, ARTIFACT_SCYTHEOFELUNE.item)            //Darius Crowley
   endfunction
 
 endlibrary
