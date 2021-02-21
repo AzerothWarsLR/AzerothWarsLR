@@ -16,7 +16,7 @@ library QuestDruidsKillWarsong initializer OnInit requires DruidsConfig, LegendW
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(this.Holder.Player, UNITTYPE_ID, "You can now train Siege Ancients at your Tree of Eternity, Tree of Ages and at your capitals.")
+      call DisplayUnitTypeAcquired(this.Holder.Player, UNITTYPE_ID, "You can now train Siege Ancients at the Ancient of War.")
     endmethod
 
     private method OnAdd takes nothing returns nothing
