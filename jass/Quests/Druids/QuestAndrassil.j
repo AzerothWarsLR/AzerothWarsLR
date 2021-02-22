@@ -1,6 +1,7 @@
 library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, DruidsConfig
 
   globals
+    private constant integer RESEARCH_ID = 'R002'
     private constant integer URSOC_ID = 'E00A'
   endglobals
 
@@ -11,16 +12,18 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw, and which can summon the hero Ursoc"
+      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw, and you can train the hero Ursoc from the Altar of Elders"
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
       call CreateUnit(Holder.Player, 'n04F', GetRectCenterX(gg_rct_Andrassil), GetRectCenterY(gg_rct_Andrassil), 0)
     endmethod
 
     private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit('R05X', UNLIMITED)
       call Holder.modObjectLimit(URSOC_ID, 1)
+      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

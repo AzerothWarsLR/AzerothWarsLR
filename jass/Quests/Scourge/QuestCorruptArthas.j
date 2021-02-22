@@ -1,21 +1,31 @@
 library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, GeneralHelpers, LegionConfig, ScourgeConfig, DetermineLevel
 
+  globals
+    private constant integer HERO_ID = 'Uear'
+    private constant integer RESEARCH_ID = 'R01K'
+  endglobals
+
   struct QuestCorruptArthas extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Having failed to protect his people, Arthas seizes the cursed runeblade Frostmourne as the instrument of his vengeance. The malevolence of the blade overwhelms him. Arthas is now a loyal Death Knight of the Scourge, and will soon become its greatest champion."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of Arthas as a Death Knight"
+      return "You can train Arthas Menethil from the Altar of Darkness"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetUnitOwner(LEGEND_ARTHAS.Unit, this.Holder.Player, true)
-      set LEGEND_ARTHAS.UnitType = 'Uear'
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)
-      call LEGEND_ARTHAS.Spawn(this.Holder.Player, -3623, 21213, 135)
+      call RemoveUnit(LEGEND_ARTHAS.Unit)
       set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
-      call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
+      set LEGEND_ARTHAS.StartingXP = 10800
+      set LEGEND_ARTHAS.UnitType = 'Uear'
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

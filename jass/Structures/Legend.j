@@ -2,13 +2,14 @@
 //A Legend might have other units it relies on to survive. If so, when it dies, it gets removed if those units are not under control.
 //There is a dummy ability to represent this.
 
-library Legend initializer OnInit requires GeneralHelpers, Event
+library Legend requires GeneralHelpers, Event
 
   globals
     private constant integer DUMMY_DIESWITHOUT = 'LEgn'
     private constant integer DUMMY_PERMADIES = 'LEgo'
 
     private Legend TriggerLegend = 0
+    private player LegendPreviousOwner
     Event OnLegendChangeOwner
     Event OnLegendPrePermaDeath //Fired before the unit is removed
     Event OnLegendPermaDeath
@@ -16,6 +17,8 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
   struct Legend
     private static Table byHandle
+    private static thistype array byIndex
+    private static integer count = 0
 
     private unit unit
     private integer unitType = 0
@@ -29,7 +32,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     private trigger castTrig
     private trigger damageTrig
     private boolean capturable
-    private integer startingXP //How much experience this Legend had when it was first registered
+    private integer startingXP //A value indicating how much experience a hero should not distribute when refunded. Must be set manually per hero
     private boolean hasCustomColor = false
     private playercolor playerColor
 
@@ -115,16 +118,17 @@ library Legend initializer OnInit requires GeneralHelpers, Event
         set ownerTrig = CreateTrigger()
         call TriggerRegisterUnitEvent(ownerTrig, unit, EVENT_UNIT_CHANGE_OWNER)
         call TriggerAddAction(ownerTrig, function thistype.onUnitChangeOwner)
-        //Set starting experience
-        if IsUnitType(unit, UNIT_TYPE_HERO) and startingXP == 0 then
-          set startingXP = GetHeroXP(unit)
-        endif
         //
         if this.playerColor == null then
           call SetUnitColor(unit, GetPlayerColor(GetOwningPlayer(unit)))
         else
           call SetUnitColor(unit, this.playerColor)
         endif
+        //Set XP to starting XP
+        if GetHeroXP(unit) < this.startingXP then
+          call SetHeroXP(unit, this.startingXP, true)
+        endif
+        //
         set thistype.byHandle[GetHandleId(unit)] = this
         call refreshDummy()
       endif
@@ -263,6 +267,7 @@ library Legend initializer OnInit requires GeneralHelpers, Event
 
     private method onChangeOwner takes nothing returns nothing
       set TriggerLegend = this
+      set LegendPreviousOwner = GetChangingUnitPrevOwner()
       call OnLegendChangeOwner.fire()
     endmethod
 
@@ -346,6 +351,22 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onCast()
     endmethod
 
+    //When any unit is trained, check if it has the unittype of a Legend, and assign it to that Legend if so
+    private static method onUnitTrain takes nothing returns nothing
+      local integer i = 0
+      loop
+        exitwhen i == thistype.count
+        if thistype.byIndex[i].UnitType == GetUnitTypeId(GetTrainedUnit()) then
+          set thistype.byIndex[i].Unit = GetTrainedUnit()
+          set LegendPreviousOwner = null
+          set TriggerLegend = thistype.byIndex[i]
+          call OnLegendChangeOwner.fire()
+          return
+        endif
+        set i = i + 1
+      endloop
+    endmethod
+
     private method destroy takes nothing returns nothing
       call this.deallocate()
       call UnitDropAllItems(unit)
@@ -355,6 +376,10 @@ library Legend initializer OnInit requires GeneralHelpers, Event
     endmethod
 
     private static method onInit takes nothing returns nothing
+      local trigger trig = CreateTrigger()
+      call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_TRAIN_FINISH )
+      call TriggerAddAction(trig, function thistype.onUnitTrain)
+
       set thistype.byHandle = Table.create()
       set OnLegendChangeOwner = Event.create()
       set OnLegendPermaDeath = Event.create()
@@ -365,16 +390,18 @@ library Legend initializer OnInit requires GeneralHelpers, Event
       local thistype this = thistype.allocate()
       set unit = null
       set this.deathSfx = "Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl"
+      set thistype.byIndex[thistype.count] = this
+      set thistype.count = thistype.count + 1
       return this
     endmethod
   endstruct
 
-  function GetTriggerLegend takes nothing returns Legend
-    return TriggerLegend
+  function GetLegendPreviousOwner takes nothing returns player
+    return LegendPreviousOwner
   endfunction
 
-  private function OnInit takes nothing returns nothing
-    
+  function GetTriggerLegend takes nothing returns Legend
+    return TriggerLegend
   endfunction
 
 endlibrary

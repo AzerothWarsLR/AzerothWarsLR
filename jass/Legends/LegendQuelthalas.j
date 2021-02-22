@@ -6,6 +6,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     Legend LEGEND_JENNALLA
     Legend LEGEND_SYLVANAS
     Legend LEGEND_KORIALSTRASZ
+    Legend LEGEND_KAEL
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
@@ -37,6 +38,11 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_KORIALSTRASZ = Legend.create()
     set LEGEND_KORIALSTRASZ.UnitType = 'Edem'
     set LEGEND_KORIALSTRASZ.PlayerColor = PLAYER_COLOR_RED
+
+    set LEGEND_KAEL = Legend.create()
+    set LEGEND_KAEL.PlayerColor = PLAYER_COLOR_RED
+    set LEGEND_KAEL.UnitType = 'Hkal'
+    set LEGEND_KAEL.StartingXP = 10800
   endfunction
 
 endlibrary

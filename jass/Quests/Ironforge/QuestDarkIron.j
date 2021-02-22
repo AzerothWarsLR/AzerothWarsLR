@@ -1,19 +1,22 @@
 library QuestDarkIron initializer OnInit requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
 
+  globals
+    private constant integer HERO_ID = 'H03G'
+    private constant integer RESEARCH_ID = 'R01A'
+  endglobals
+
   struct QuestDarkIron extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Ragnaros has been slain. The Dark Iron are free."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You gain control of Shadowforge City and the hero Dagran Thaurassian"
+      return "You gain control of Shadowforge City and can train the hero Dagran Thaurassian from the Altar of Fortitude"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       local group tempGroup = CreateGroup()
-      local unit u
-      call LEGEND_DAGRAN.Spawn(this.Holder.Player, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 44)
-      call UnitDetermineLevel(LEGEND_DAGRAN.Unit, 1.00)             
+      local unit u          
       //Transfer all Neutral Passive units in region to Ironforge
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Shadowforge_City, null)
       set u = FirstOfGroup(tempGroup)
@@ -27,6 +30,12 @@ library QuestDarkIron initializer OnInit requires QuestItemKillUnit, IronforgeCo
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

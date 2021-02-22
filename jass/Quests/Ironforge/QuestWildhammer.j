@@ -1,20 +1,22 @@
 library QuestWildhammer initializer OnInit requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
 
+  globals
+    private constant integer HERO_ID = 'H028'
+    private constant integer RESEARCH_ID = 'R01C'
+  endglobals
+
   struct QuestWildhammer extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Magni has spoken with Falstad Wildhammer and secured an alliance with the Wildhammer Clan."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You gain control of Aerie Peak and the hero Falstad Wildhammer"
+      return "You gain control of Aerie Peak and you can train the hero Falstad Wildhammer from the Altar of Fortitude"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       local group tempGroup = CreateGroup()
       local unit u
-
-      call LEGEND_FALSTAD.Spawn(this.Holder.Player, 14081, 4580, 35)
-      call UnitDetermineLevel(LEGEND_FALSTAD.Unit, 1.00)
 
       //Remove pathing blockers obstructing Aerie Peak
       call RemoveDestructable( gg_dest_YTpc_7559 )
@@ -35,6 +37,12 @@ library QuestWildhammer initializer OnInit requires QuestItemKillUnit, Ironforge
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

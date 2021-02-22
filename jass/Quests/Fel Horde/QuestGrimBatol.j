@@ -1,6 +1,7 @@
 library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, DetermineLevel, LegendIronforge, LegendStormwind
 
   globals
+    private constant integer ZULUHED_ID = 'O00Y'
     private constant integer RESEARCH_ID = 'R069'
   endglobals
 
@@ -12,7 +13,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Zuluhed the Whacked, the demihero Nelrathaku, and control of all units at Grim Batol"
+      return "The demihero Nelrathaku, control of all units at Grim Batol, and you can summon the hero Zuluhed the Whacked from the Altar of Domination"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -26,17 +27,17 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
       endloop
       call UnitRescue(gg_unit_n08A_3097, holderPlayer)  //Neltharauku
       call SetUnitOwner(gg_unit_h01Z_0618, holderPlayer, true)
-      call UnitDetermineLevel(gg_unit_O00Y_3094, 1.) //Zuluhed
       call EnableWaygate(gg_unit_n08R_2209) //Grim Batol Tunnels
       call EnableWaygate(gg_unit_n08R_2214) //Grim Batol Tunnels
-      call IssueImmediateOrderBJ( gg_unit_o02O_3247, "battlestations" ) //Orc Burrow
-      call IssueImmediateOrderBJ( gg_unit_o02O_3248, "battlestations" ) //Orc Burrow
+      call IssueImmediateOrderBJ( gg_unit_ocbw_3168, "battlestations" ) //Orc Burrow
+      call IssueImmediateOrderBJ( gg_unit_ocbw_3166, "battlestations" ) //Orc Burrow
       call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
       call DestroyGroup(thistype.GrimBatolUnits)
     endmethod
 
     private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.modObjectLimit(ZULUHED_ID, 1)
     endmethod
 
     private static method EnableWaygate takes unit u returns nothing

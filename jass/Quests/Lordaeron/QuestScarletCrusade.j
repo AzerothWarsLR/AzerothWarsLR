@@ -1,6 +1,7 @@
-library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron, LegendNeutral
+library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron
 
   globals
+    private constant integer HERO_ID = 'H01J'
     private constant integer RESEARCH_ID = 'R06P'
   endglobals
 
@@ -13,16 +14,10 @@ library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemCont
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Alexandros Mograine, and your Paladins are replaced with Scarlet Templars"
+      return "Your Paladins are replaced with Scarlet Templars and you can train Alexandros Mograine from the Altar of Kings"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      if GetOwningPlayer(ControlPoint.ByUnitType('n0AA').Unit) == FACTION_LORDAERON.Player then
-        call LEGEND_MOGRAINE.Spawn(this.Holder.Player, 18546, -30320, 93)
-      else
-        call LEGEND_MOGRAINE.Spawn(this.Holder.Player, 9092, 8717, 93)
-      endif
-      call UnitDetermineLevel(LEGEND_MOGRAINE.Unit, 1.00)
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call this.Holder.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin 
       call this.Holder.modObjectLimit('h06B', 6)               //Grand Templar
@@ -30,12 +25,12 @@ library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemCont
 
     private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Scarlet Crusade", "Alexandros Mograine, one of the leaders of the Silver Hand, hasn't been seen since the Second War. He must still be somewhere in the south.", "ReplaceableTextures\\CommandButtons\\BTNAshbringer.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0AA')), QuestItemLegendDead.create(LEGEND_UTHER)))
-      call this.AddQuestItem(QuestItemTime.create(1020))
       return this
     endmethod
   endstruct

@@ -12,9 +12,11 @@ library LegendIronforge initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_DAGRAN = Legend.create()
     set LEGEND_DAGRAN.UnitType = 'H03G'
+    set LEGEND_DAGRAN.StartingXP = 10800
 
     set LEGEND_FALSTAD = Legend.create()
     set LEGEND_FALSTAD.UnitType = 'H028'
+    set LEGEND_FALSTAD.StartingXP = 15400
 
     set LEGEND_MAGNI = Legend.create()
     set LEGEND_MAGNI.Unit = gg_unit_H00S_1948
