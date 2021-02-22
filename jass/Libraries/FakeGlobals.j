@@ -100,6 +100,8 @@ library FakeGlobals
     rect gg_rct_CairneStart
     rect gg_rct_MoongladeVillage
     rect gg_rct_GrizzlyHills
+    unit gg_unit_ocbw_3168
+    unit gg_unit_ocbw_3166
   endglobals
 
 endlibrary
