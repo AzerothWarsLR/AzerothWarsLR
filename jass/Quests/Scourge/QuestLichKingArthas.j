@@ -22,7 +22,6 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
       set LEGEND_ARTHAS.PermaDies = true
       set LEGEND_ARTHAS.Hivemind = true
       set LEGEND_ARTHAS.DeathMessage = "The great Lich King has been destroyed. With no central mind to command them, the forces of the Undead have gone rogue."
-      call UnitDetermineLevel(LEGEND_ARTHAS.Unit, 1.00)
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_LIFE))
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_MANA))
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)

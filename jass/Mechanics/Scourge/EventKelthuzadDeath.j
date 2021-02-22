@@ -1,4 +1,4 @@
-library EventKelthuzadDeath initializer OnInit requires LegendScourge, SortScourgeLegends
+library EventKelthuzadDeath initializer OnInit requires LegendScourge
 
   //When Kel'thuzad (Necromancer) is permanently killed
   //Record his experience, and create Kel'thuzad (Ghost) as a replacement
@@ -14,7 +14,6 @@ library EventKelthuzadDeath initializer OnInit requires LegendScourge, SortScour
       set KelthuzadExp = GetHeroXP(LEGEND_KELTHUZAD.Unit)
       set LEGEND_KELTHUZAD.UnitType = UNITTYPE_KELTHUZAD_GHOST
       set LEGEND_KELTHUZAD.PermaDies = false
-      call SortScourgeLegends()
       call ReviveHero(LEGEND_KELTHUZAD.Unit, GetRectCenterX(gg_rct_FTSummon), GetRectCenterY(gg_rct_FTSummon), false)
       call DestroyTrigger(GetTriggeringTrigger())         
     endif

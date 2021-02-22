@@ -1,4 +1,4 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas, SortScourgeLegends
+library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
 
   struct QuestKelthuzad extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -20,7 +20,6 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
       call SetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_KELTHUZAD.Unit, UNIT_STATE_MAX_MANA))
       call DestroyEffect(AddSpecialEffect("war3mapImported\\Soul Beam Blue.mdx", GetUnitX(LEGEND_KELTHUZAD.Unit), GetUnitY(LEGEND_KELTHUZAD.Unit)))
       call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl", GetUnitX(LEGEND_KELTHUZAD.Unit), GetUnitY(LEGEND_KELTHUZAD.Unit)))
-      call SortScourgeLegends()
     endmethod
 
     public static method create takes nothing returns thistype
