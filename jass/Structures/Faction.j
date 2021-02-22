@@ -1,4 +1,4 @@
-library Faction initializer OnInit requires Persons, Event, Set, QuestData, Environment
+library Faction initializer OnInit requires Persons, Event, Set, QuestData, Environment, UnitType
 
   globals
     Event OnFactionCreate = 0
@@ -9,7 +9,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
     constant integer HERO_COST = 100    //For refunding
     private constant real REFUND_PERCENT = 1.00          //How much gold and lumber is refunded from units that get refunded on leave
-    private constant real XP_TRANSFER_PERCENT = 1.00     //How much experience is transferred from heroes that leave the game
+    private constant real XP_TRANSFER_PERCENT = 1.00     //How much experience is transferred from heroes that leave the game'
   endglobals
 
   struct Faction
@@ -42,6 +42,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     private QuestData startingQuest
     private integer questCount = 0
     private QuestData array quests[100]
+
+    private integer array unitTypeByCategory[100]
 
     method operator ObjectLimitCount takes nothing returns integer
       return this.objectCount
@@ -212,6 +214,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       endif
     endmethod
 
+    method GetUnitTypeByCategory takes integer unitCategory returns integer
+      return this.unitTypeByCategory[unitCategory]
+    endmethod
+
     method ShowAllQuests takes nothing returns nothing
       local integer i = 0
       if GetLocalPlayer() == this.Player then
@@ -290,7 +296,12 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
       if this.objectLimits[id] == 0 then
         call this.objectLimits.flush(id)
-      endif        
+      endif   
+
+      //Index the unit type to a unit category if possible and necessary
+      if UnitType.ById(id) != 0 then
+        set this.unitTypeByCategory[UnitType.ById(id).UnitCategory] = id
+      endif
     endmethod
 
     method operator PresenceResearch= takes integer research returns nothing
@@ -321,14 +332,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       endif
     endmethod                   
 
+    //Depecrated
     method registerObjectLimit takes integer id, integer limit returns nothing
-      if not this.objectLimits.exists(id) then
-        set this.objectLimits[id] = limit
-        set objectList[objectCount] = id
-        set this.objectCount = this.objectCount + 1
-      else
-        call BJDebugMsg("ERROR: attempted to register already registered id " + I2S(id) + " to faction " + this.name)
-      endif       
+      call modObjectLimit(id, limit)     
     endmethod
 
     //Any time the player loses the game. E.g. Frozen Throne loss, Kil'jaeden loss

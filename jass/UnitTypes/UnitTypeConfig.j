@@ -190,20 +190,7 @@ library UnitTypeConfig initializer OnInit requires UnitType
     set unitType.Refund = true
         
     set unitType = UnitType.create('ubdd')      //Sapphiron
-
-    set unitType.Refund = true   
-
-    set unitType = UnitType.create('h03Q')      //Hall of Explorers
-    set unitType.Refund = true               
-        
-    set unitType = UnitType.create('h03V')      //Path Research
-    set unitType.Meta = true    
-        
-    set unitType = UnitType.create('h023')      //Mastery Research
-    set unitType.Meta = true      
-        
-    set unitType = UnitType.create('h06M')      //Alliance Center
-    set unitType.Meta = true  
+    set unitType.Refund = true       
 
     set unitType = UnitType.create('u008')      //Peasant converter
     set unitType.Refund = true         
