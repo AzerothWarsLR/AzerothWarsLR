@@ -1,6 +1,7 @@
 library DummyCast requires DummyCaster
 
-  function DummyCastUnit takes integer abilId, string orderId, integer level, unit u returns nothing
+  function DummyCastUnit takes player whichPlayer, integer abilId, string orderId, integer level, unit u returns nothing
+    call SetUnitOwner(DUMMY, whichPlayer, false)
     call SetUnitX(DUMMY, GetUnitX(u))
     call SetUnitY(DUMMY, GetUnitY(u))
     call UnitAddAbility(DUMMY, abilId)
@@ -9,7 +10,8 @@ library DummyCast requires DummyCaster
     call UnitRemoveAbility(DUMMY,abilId)        
   endfunction
   
-  function DummyCastPoint takes integer abilId, string orderId, integer level, real x, real y returns nothing
+  function DummyCastPoint takes player whichPlayer, integer abilId, string orderId, integer level, real x, real y returns nothing
+    call SetUnitOwner(DUMMY, whichPlayer, false)
     call SetUnitX(DUMMY, x)
     call SetUnitY(DUMMY, y)
     call UnitAddAbility(DUMMY, abilId)
@@ -18,7 +20,8 @@ library DummyCast requires DummyCaster
     call UnitRemoveAbility(DUMMY,abilId)            
   endfunction
   
-  function DummyCastInstant takes integer abilId, string orderId, integer level, real x, real y returns nothing
+  function DummyCastInstant takes player whichPlayer, integer abilId, string orderId, integer level, real x, real y returns nothing
+    call SetUnitOwner(DUMMY, whichPlayer, false)
     call SetUnitX(DUMMY, x)
     call SetUnitY(DUMMY, y)
     call UnitAddAbility(DUMMY, abilId)
@@ -26,10 +29,5 @@ library DummyCast requires DummyCaster
     call IssueImmediateOrder(DUMMY, orderId)
     call UnitRemoveAbility(DUMMY,abilId)            
   endfunction
-
-  function PlayerDummyCastUnit takes player whichPlayer, integer abilId, string orderId, integer level, unit u returns nothing
-    call SetUnitOwner(DUMMY, whichPlayer, false)
-    call DummyCastUnit(abilId, orderId, level, u)
-  endfunction  
 
 endlibrary

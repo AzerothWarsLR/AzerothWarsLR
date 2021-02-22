@@ -24,8 +24,8 @@ library ElectricStrike initializer OnInit requires DummyCast, Environment
 				set u = FirstOfGroup(TempGroup)
 				exitwhen u == null
         if IsUnitType(u, UNIT_TYPE_STRUCTURE) == false and UnitAlive(u) == true then
-          call PlayerDummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, 1, u)
-          call PlayerDummyCastUnit(GetOwningPlayer(caster), PURGE_ID, PURGE_ORDER, 1, u)
+          call DummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, 1, u)
+          call DummyCastUnit(GetOwningPlayer(caster), PURGE_ID, PURGE_ORDER, 1, u)
         endif
 				call GroupRemoveUnit(TempGroup,u)
 			endloop

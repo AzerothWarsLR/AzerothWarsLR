@@ -23,7 +23,7 @@ library WarStompKazzak initializer OnInit requires DummyCast, Filters
 				set u = FirstOfGroup(TempGroup)
 				exitwhen u == null
                 call UnitDamageTarget(caster, u, DAMAGE, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
-				call DummyCastUnit(STUN_ID, STUN_ORDER, DURATION, u)
+				call DummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, DURATION, u)
 				call GroupRemoveUnit(TempGroup,u)
 			endloop
 			call DestroyEffect(AddSpecialEffect(EFFECT,GetUnitX(caster),GetUnitY(caster)))

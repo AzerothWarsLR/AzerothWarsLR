@@ -27,7 +27,7 @@ library WarStompCairne initializer OnInit requires DummyCast, Filters
 				set u = FirstOfGroup(TempGroup)
 				exitwhen u == null
 				call UnitDamageTarget(caster, u, DAMAGE_BASE+DAMAGE_LEVEL*level, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
-				call DummyCastUnit(STUN_ID, STUN_ORDER, DURATION_BASE + DURATION_LEVEL*level, u)
+				call DummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, DURATION_BASE + DURATION_LEVEL*level, u)
 				call GroupRemoveUnit(TempGroup,u)
 			endloop
 			call DestroyEffect(AddSpecialEffect(EFFECT,GetUnitX(caster),GetUnitY(caster)))
