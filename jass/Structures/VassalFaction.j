@@ -46,9 +46,11 @@ library VassalFaction requires Faction
     local integer teamActiveVassalCount
     loop
       exitwhen i == Team.Count
-      set teamActiveVassalCount = GetTeamVassalCount(Team.ByIndex(i))
-      if teamActiveVassalCount < minimum then
-        set minimum = teamActiveVassalCount
+      if Team.ByIndex(i).Weight > 0 then //Only count teams that have real players in them
+        set teamActiveVassalCount = GetTeamVassalCount(Team.ByIndex(i))
+        if teamActiveVassalCount < minimum then
+          set minimum = teamActiveVassalCount
+        endif
       endif
       set i = i + 1
     endloop
