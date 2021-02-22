@@ -42,7 +42,7 @@ library DalaranConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('h02D', UNLIMITED)   //Geomancer
     call f.registerObjectLimit('h01I', UNLIMITED)   //Arcanist
     call f.registerObjectLimit('n007', 6)           //Kirin Tor
-    call f.registerObjectLimit('n096', 12)          //Earth Golem
+    call f.registerObjectLimit('n096', 6)           //Earth Golem
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
     call f.registerObjectLimit('n0AK', UNLIMITED)   //Sludge Flinger
     call f.registerObjectLimit('h02C', 1)           //Flagship 
