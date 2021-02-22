@@ -1,4 +1,4 @@
-library StormwindConfig initializer OnInit requires Faction, TeamConfig
+library StormwindConfig initializer OnInit requires Faction, TeamConfig, UnitTypesStormwind
 
   globals
     LiegeFaction FACTION_STORMWIND
@@ -51,10 +51,9 @@ library StormwindConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('h060', 3)           //Arathor Flagship
 
-    call f.registerObjectLimit('h04W', 1)           //Crowley
     call f.registerObjectLimit('h03W', 1)           //Danath
 
-    //Upgrades
+    //Researches
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training
     call f.registerObjectLimit('R005', UNLIMITED)   //Clergyman Adept Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
@@ -63,6 +62,7 @@ library StormwindConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
+    call f.registerObjectLimit('R014', UNLIMITED)   //Deeprun Tram
     
     //Tier researches
     call f.registerObjectLimit('R02S', UNLIMITED)   //Cathedral of Light

@@ -1,4 +1,4 @@
-library LordaeronConfig initializer OnInit requires Faction, TeamConfig
+library LordaeronConfig initializer OnInit requires Faction, TeamConfig, UnitTypesLordaeron
 
   globals
     LiegeFaction FACTION_LORDAERON
@@ -48,7 +48,6 @@ library LordaeronConfig initializer OnInit requires Faction, TeamConfig
 
     //Demis
     call f.registerObjectLimit('h012', 1)           //Falric
-    call f.registerObjectLimit('h04W', 1)           //Crowley
 
     //Upgrades
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training

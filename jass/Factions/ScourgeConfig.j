@@ -1,4 +1,4 @@
-library ScourgeConfig initializer OnInit requires Faction, TeamConfig
+library ScourgeConfig initializer OnInit requires Faction, TeamConfig, UnitTypesScourge
 
   globals
     LiegeFaction FACTION_SCOURGE
@@ -52,10 +52,8 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('nfgl', 2)           //Plague Titan
 
     //Demi-Heroes
-    call f.registerObjectLimit('n04N', 1)           //Lady Deathwhisper 
     call f.registerObjectLimit('ubdd', 1)           //Sapphiron
     call f.registerObjectLimit('uswb', 1)           //Banshee
-    call f.registerObjectLimit('h04J', 1)           //Crowley  
     
     //Upgrades
     call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
@@ -74,8 +72,6 @@ library ScourgeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('R06M', UNLIMITED)   //Titanomancy
     call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
     call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
-
-    call f.registerObjectLimit('R01E', UNLIMITED)   //Gilneas Captured
   endfunction
     
 endlibrary
