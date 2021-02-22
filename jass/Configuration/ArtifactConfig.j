@@ -17,6 +17,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     Artifact ARTIFACT_HORNOFCENARIUS
     Artifact ARTIFACT_EYEOFSARGERAS
     Artifact ARTIFACT_CROWNEASTERNKINGDOMS
+    Artifact ARTIFACT_TROLKALAR
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -51,8 +52,9 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     set tempArtifact = Artifact.create(CreateItem('I01V', DUMMY_X, DUMMY_Y))    //Gorehowl
     call UnitAddItem(gg_unit_Ogrh_0249, tempArtifact.item)                      //Grom
 
-    //set tempArtifact = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
-    //call UnitAddItem(gg_unit_H00Z_1936, tempArtifact.item)                      //Galen Trollbane
+    set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
+    call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_TROLKALAR.setDescription("Stormwind Quest")
 
     set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
