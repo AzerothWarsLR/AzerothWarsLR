@@ -42,9 +42,9 @@ library BootCommand initializer OnInit requires LiegeFaction, VassalFaction
       endif
 
       if targetFaction.Person != 0 then
+        call LiegeFaction(senderPerson.Faction).BanPlayerFromBecomingVassal(targetFaction.Player)
         call targetFaction.Leave()
         set targetFaction.Person.Faction = 0
-        call LiegeFaction(senderPerson.Faction).BanPlayerFromBecomingVassal(targetFaction.Player)
       endif
       
     endif
