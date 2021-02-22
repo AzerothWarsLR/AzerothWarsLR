@@ -1,4 +1,4 @@
-library DemonGate requires T32, Math, Environment
+library DemonGate requires T32, Math, Environment, FocalDemonGate
 
   globals
     private constant real TICK_RATE = 1.
@@ -80,11 +80,43 @@ library DemonGate requires T32, Math, Environment
       return GetOwningPlayer(u)
     endmethod
 
+    private method operator RallyX takes nothing returns real
+      local location rally
+      local real x
+      if FocalDemonGate.Instance != 0 then
+        return FocalDemonGate.Instance.RallyX
+      endif
+      set rally = GetUnitRallyPoint(u)
+      set x = GetLocationX(rally)
+      call RemoveLocation(rally)
+      set rally = null
+      return x
+    endmethod
+
+    private method operator RallyY takes nothing returns real
+      local location rally
+      local real y
+      if FocalDemonGate.Instance != 0 then
+        return FocalDemonGate.Instance.RallyY
+      endif
+      set rally = GetUnitRallyPoint(u)
+      set y = GetLocationY(rally)
+      call RemoveLocation(rally)
+      set rally = null
+      return y
+    endmethod
+
     private method operator SpawnX takes nothing returns real
+      if FocalDemonGate.Instance != 0 then
+        return FocalDemonGate.Instance.SpawnX
+      endif
       return GetPolarOffsetX(X, SPAWN_DISTANCE, Facing)
     endmethod
 
     private method operator SpawnY takes nothing returns real
+      if FocalDemonGate.Instance != 0 then
+        return FocalDemonGate.Instance.SpawnY
+      endif
       return GetPolarOffsetY(Y, SPAWN_DISTANCE, Facing)
     endmethod
 
@@ -111,18 +143,16 @@ library DemonGate requires T32, Math, Environment
 
     private method spawnUnit takes nothing returns nothing
       local unit newUnit
-      local location rally = GetUnitRallyPoint(u)
       local integer i = 0
       loop
         exitwhen i == gateType.Count
         set newUnit = CreateUnit(Owner, gateType.SpawnUnitType, SpawnX, SpawnY, Facing)
         call GroupAddUnit(spawnedDemons, newUnit)
-        call IssuePointOrder(newUnit, "attackground", GetLocationX(rally), GetLocationY(rally))
+        call IssuePointOrder(newUnit, "attackground", this.RallyX, this.RallyY)
         set i = i + 1
       endloop
       set newUnit = null
       call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", SpawnX, SpawnY))
-      call RemoveLocation(rally)
     endmethod
 
     private method onUpgrade takes nothing returns nothing

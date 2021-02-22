@@ -28,8 +28,7 @@ library FelHordeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('n0AM', UNLIMITED)   //Boulder Tower
     call f.registerObjectLimit('n0AN', UNLIMITED)   //Advanced Boulder Tower
     call f.registerObjectLimit('ocbw', UNLIMITED)   //Burrow
-    call f.registerObjectLimit('n04C', 1)           //Defiled Fountain of Life
-    call f.registerObjectLimit('n06Y', 1)           //Dimensional Gateway
+    call f.registerObjectLimit('n0AP', UNLIMITED)   //Focal Demon Gate
 
     call f.registerObjectLimit('nbdk', 6)           //Black Drake
     call f.registerObjectLimit('odkt', 6)           //Eredar Warlock
