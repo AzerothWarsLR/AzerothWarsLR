@@ -4,6 +4,7 @@ library QuestTheBloodElves initializer OnInit requires QuelthalasConfig, LegendL
     private constant integer QUEST_RESEARCH_ID = 'R04Q'
     private constant integer UNITTYPE_ID = 'n048'
     private constant integer BUILDING_ID = 'n0A2'
+    private constant integer HERO_ID = 'Hkal'
   endglobals
 
   struct QuestTheBloodElves extends QuestData
@@ -15,7 +16,7 @@ library QuestTheBloodElves initializer OnInit requires QuelthalasConfig, LegendL
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium"
+      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium, and you can summon Prince Kael'thas from the Altar of Prowess"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -26,6 +27,7 @@ library QuestTheBloodElves initializer OnInit requires QuelthalasConfig, LegendL
     private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit(QUEST_RESEARCH_ID, UNLIMITED)
       call Holder.modObjectLimit(UNITTYPE_ID, 6)
+      call Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
