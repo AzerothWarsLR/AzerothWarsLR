@@ -38,11 +38,13 @@ library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeConfi
 
   private function ResearchStart takes nothing returns nothing
     local integer i = 0
-    loop
-    exitwhen i > MAX_PLAYERS
-      call Person.ById(i).SetObjectLimit(RESEARCH_ID, 0)
-      set i = i + 1
-    endloop
+    if GetResearched() == RESEARCH_ID then
+      loop
+      exitwhen i > MAX_PLAYERS
+        call Person.ById(i).SetObjectLimit(RESEARCH_ID, 0)
+        set i = i + 1
+      endloop
+    endif
   endfunction
 
   private function ResearchCancel takes nothing returns nothing
