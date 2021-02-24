@@ -20,7 +20,7 @@ ECHO MPQEditor: Extracting war3map.j from source map...
 %toolsdir%\\MPQEditor\\MPQEditor.exe extract %sourcedir%\\%sourcemap% war3map.j %tempdir%
 
 ECHO Merging project .j files into war3map.j...
-pushd jass\
+pushd jass\Main
 for /r %%a in (*.j) do (
   TYPE "%%a" >> "%rootdir%\\%tempdir%\\war3map.j"
   ECHO. >> "%rootdir%\\%tempdir%\\war3map.j"

@@ -7,7 +7,7 @@
           "label": "buildTest",
           "type": "shell",
           "windows": {
-            "command": "cmd.exe /C build.bat AzerothWarsSource.w3x BlankMap.w3x AWBlankTest.w3x",
+            "command": "cmd.exe /C build.bat awr_source_roc.w3x BlankMap.w3x AWBlankTest.w3x",
           },
           "group": {
               "kind": "build",
@@ -18,7 +18,7 @@
         "label": "buildFinal",
         "type": "shell",
         "windows": {
-          "command": "cmd.exe /C build.bat AzerothWarsSource.w3x AzerothWarsSource.w3x AzerothWars2.11.w3x",
+          "command": "cmd.exe /C build.bat awr_source_roc.w3x awr_source_roc.w3x AzerothWars2.11.w3x",
         },
     }      
   ]
