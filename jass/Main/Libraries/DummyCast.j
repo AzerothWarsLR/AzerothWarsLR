@@ -1,5 +1,11 @@
 library DummyCast requires DummyCaster
 
+  globals
+    private group TempGroup = CreateGroup()
+  endglobals
+
+  function interface CastFilter takes unit caster, unit target returns boolean
+
   function DummyCastUnit takes player whichPlayer, integer abilId, string orderId, integer level, unit u returns nothing
     call SetUnitOwner(DUMMY, whichPlayer, false)
     call SetUnitX(DUMMY, GetUnitX(u))
@@ -29,5 +35,18 @@ library DummyCast requires DummyCaster
     call IssueImmediateOrder(DUMMY, orderId)
     call UnitRemoveAbility(DUMMY,abilId)            
   endfunction
+
+  function DummyCastOnUnitsInCircle takes unit caster, integer abilId, string orderId, integer level, real x, real y, real radius, CastFilter castFilter returns nothing
+    local unit u
+    call GroupEnumUnitsInRange(TempGroup, x, y, radius, null)
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      if castFilter.evaluate(caster, u) then
+        call DummyCastUnit(GetOwningPlayer(caster), abilId, orderId, level, u)
+      endif
+      call GroupRemoveUnit(TempGroup, u)
+    endloop
+  endfunction  
 
 endlibrary

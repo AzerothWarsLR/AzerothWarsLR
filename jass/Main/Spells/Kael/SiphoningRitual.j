@@ -65,7 +65,7 @@ library SiphoningRitual initializer OnInit requires T32, DummyCast, Set, SpellHe
       set this.lifedrain = lifedrain
       set this.manadrain = manadrain
       set this.lightning = AddLightning("DRAB", true, GetUnitX(this.caster), GetUnitY(this.caster), GetUnitX(this.target), GetUnitY(this.target))
-      set this.effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Drain\\DrainTarget.mdl", this.caster, "chest")
+      set this.effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Drain\\DrainTarget.mdl", this.target, "chest")
       call startPeriodic()
       return this
     endmethod
