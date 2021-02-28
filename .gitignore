@@ -6,3 +6,4 @@ buildTools/ButtonManager/destination/*
 temp/*
 buildTools/logs/*
 buildTools/temp/*
+buildTools/backups/*

@@ -16,13 +16,13 @@ library TeamConfig initializer OnInit requires Team
     local Team t = 0
     
     set TEAM_SCOURGE = Team.create("Scourge")
-    set TEAM_BLACKEMPIRE = Team.create("Black Empire")
-    set TEAM_SCARLETCRUSADE = Team.create("Scarlet Crusade")
-    set TEAM_KULTIRAS = Team.create("Kul'tiras")
-    set TEAM_ILLIDARI = Team.create("Illidari")
-    set TEAM_WESTALLIANCE = Team.create("West Alliance")
-    set TEAM_SOUTHALLIANCE = Team.create("South Alliance")
     set TEAM_FORSAKEN = Team.create("Forsaken")
+    set TEAM_SCARLETCRUSADE = Team.create("Scarlet Crusade")
+    set TEAM_BLACKEMPIRE = Team.create("Black Empire")
+    set TEAM_WESTALLIANCE = Team.create("West Alliance")
+    set TEAM_ILLIDARI = Team.create("Illidari")
+    set TEAM_SOUTHALLIANCE = Team.create("South Alliance")
+    
   endfunction
 
 endlibrary

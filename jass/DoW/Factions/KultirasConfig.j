@@ -7,7 +7,7 @@ library KultirasConfig initializer OnInit requires Faction, TeamConfig
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_KULTIRAS = LiegeFaction.create("Nightmare", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNForgottenOne.blp", 2)
+    set FACTION_KULTIRAS = LiegeFaction.create("Kul'tiras", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 2)
     set f = FACTION_KULTIRAS 
     set f.VictoryMusic = "HumanVictory"
     set f.PresenceResearch = 'R05N'

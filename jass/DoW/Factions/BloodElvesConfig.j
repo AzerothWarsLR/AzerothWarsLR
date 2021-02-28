@@ -7,7 +7,7 @@ library BloodElvesConfig initializer OnInit requires Faction, TeamConfig
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_BLOODELVES = LiegeFaction.create("Nightmare", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNForgottenOne.blp", 2)
+    set FACTION_BLOODELVES = LiegeFaction.create("Blood Elves", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp", 2)
     set f = FACTION_BLOODELVES 
     set f.VictoryMusic = "HumanVictory"
     set f.PresenceResearch = 'R05N'

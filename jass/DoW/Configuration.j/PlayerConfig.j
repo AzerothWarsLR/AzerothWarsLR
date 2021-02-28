@@ -1,4 +1,4 @@
-library PlayerConfig initializer OnInit requires Persons, Team, TeamConfig
+library PlayerConfig initializer OnInit requires Persons, Team, TeamConfig, ScourgeConfig, EmeraldNightmareConfig, IllidariConfig, ScarletCrusadeConfig, IronforgeConfig, KultirasConfig, BloodElvesConfig, FrostwolfConfig, ForsakenConfig, CthunConfig, StormwindConfig, DruidsConfig
 
   function OnInit takes nothing returns nothing
     local Person p

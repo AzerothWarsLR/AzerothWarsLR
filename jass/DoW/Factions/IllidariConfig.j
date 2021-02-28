@@ -7,7 +7,7 @@ library IllidariConfig initializer OnInit requires Faction, TeamConfig
   private function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_ILLIDARI = LiegeFaction.create("Nightmare", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNForgottenOne.blp", 2)
+    set FACTION_ILLIDARI = LiegeFaction.create("Illidari", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp", 2)
     set f = FACTION_ILLIDARI 
     set f.VictoryMusic = "HumanVictory"
     set f.PresenceResearch = 'R05N'
