@@ -1,4 +1,4 @@
-library ControlPoint initializer OnInit requires AIDS, PlayerConfig
+library ControlPoint initializer OnInit requires AIDS
 
   //*CONFIG*
   globals
