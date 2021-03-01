@@ -1,0 +1,79 @@
+[h05C]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Green)"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Rnsb"
+-- Revives Dead Heroes
+Revive = 1
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "nbee,nhea,n00A"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "Abdl,Argl"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 120
+-- Collision Size
+collision = 100.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.6
+-- Death Time (seconds)
+death = 1.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "buildings\\other\\BarrowDens\\BarrowDens.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 150
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 800
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 1
+-- Attack 1 - Targets Allowed
+targs1 = "air"
+-- Unit Classification
+type = "mechanical,townhall"
+-- Ground Texture
+uberSplat = ""

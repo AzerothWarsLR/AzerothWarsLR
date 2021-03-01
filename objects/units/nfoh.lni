@@ -1,0 +1,20 @@
+[nfoh]
+_parent = "nfoh"
+-- Hit Points Maximum (Base)
+HP = 4000
+-- Normal
+abilList = "ACnr"
+-- Normal Skin
+abilSkinList = "ACnr"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.8
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Neutral Building - Valid As Random Building
+nbrandom = 0
+-- Hit Points Regeneration Rate
+regenHP = 0.5
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,8 @@
+[Nngs]
+_parent = "Nngs"
+-- Model File
+file = "war3mapImported\\DruidOfTheTidesV1.01.mdl"
+-- Scaling Value
+modelScale = 0.6
+-- Type
+movetp = "amph"

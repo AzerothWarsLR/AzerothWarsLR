@@ -1,0 +1,8 @@
+[nenp]
+_parent = "nenp"
+-- Hit Points Maximum (Base)
+HP = 590
+-- Normal
+abilList = "ACvs,Aap3"
+-- Gold Bounty Awarded - Base
+bountyplus = 5

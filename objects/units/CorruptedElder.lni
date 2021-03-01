@@ -1,0 +1,105 @@
+[n09K]
+_parent = "npfm"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNCorruptedTreeOfLife.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "upgrade,second,large"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(yogg)"
+-- Hit Points Maximum (Base)
+HP = 2065
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl"
+-- Tooltip - Basic
+Tip = "Train Corrupted Elder"
+-- Tooltip - Extended
+Ubertip = "Consumed nature elder of Uldular. |n|cfff5962dAbilities:|R Pool of Knowledge, Call Treants, Healing Rain, Thorns Aura|n|n|cff99b4d1Can only train 3 |n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A031,A030,A02Z,ACrk,ACah"
+-- Required Animation Names
+animProps = "Upgrade,Second"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.6
+-- Build Time
+bldtm = 30
+-- Animation - Blend Time (seconds)
+blend = 0.4
+-- Gold Bounty Awarded - Base
+bountyplus = 25
+-- Shadow Texture (Building)
+buildingShadow = "ShadowTreeofLife"
+-- Categorization - Campaign
+campaign = 1
+-- Animation - Cast Point
+castpt = 0.0
+-- Collision Size
+collision = 26.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.6
+-- Death Time (seconds)
+death = 6.0
+-- Attack 1 - Damage Base
+dmgplus1 = 88
+-- Elevation - Sample Radius
+elevRad = 50.0
+-- Model File
+file = "buildings\\demon\\CorruptedTreeofLife\\CorruptedTreeofLife.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 28
+-- Gold Cost
+goldcost = 110
+-- Projectile Impact - Z
+impactZ = 120.0
+-- Projectile Launch - Y
+launchY = 90.0
+-- Projectile Launch - Z
+launchZ = 195.0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.6
+-- Orientation Interpolation
+orientInterp = 3
+-- Race
+race = "nightelf"
+-- Attack 1 - Range
+rangeN1 = 150
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Animation - Run Speed
+run = 125.0
+-- Selection Scale
+scale = 2.0
+-- Shadow Image - Height
+shadowH = 200.0
+-- Shadow Image - Width
+shadowW = 200.0
+-- Shadow Image - Center X
+shadowX = 80.0
+-- Shadow Image - Center Y
+shadowY = 80.0
+-- Speed Base
+spd = 180
+-- Stock Replenish Interval
+stockRegen = 30
+-- Stock Start Delay
+stockStart = 0
+-- Turn Rate
+turnRate = 0.4
+-- Unit Sound Set
+unitSound = "AncientProtector"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 125.0
+-- Attack 1 - Weapon Sound
+weapType1 = "WoodHeavyBash"

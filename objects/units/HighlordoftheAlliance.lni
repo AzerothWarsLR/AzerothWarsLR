@@ -1,0 +1,57 @@
+[H017]
+_parent = "Hlgr"
+-- Starting Agility
+AGI = 14
+-- Agility per Level
+AGIplus = 1.6
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp"
+-- Tooltip - Awaken
+Awakentip = "(|cffffff00S|r) Revive Bolvar Fordragon"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dark Green)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "S"
+-- Starting Intelligence
+INT = 20
+-- Intelligence per Level
+INTplus = 2.0
+-- Name
+-- Proper Names
+Propernames = "Bolvar Fordragon"
+-- Tooltip - Revive
+Revivetip = "(|cffffff00S|r) Revive Bolvar Fordragon"
+-- Tooltip - Extended
+Ubertip = "Veteran warrior of the Alliance. Can learn Holy Light, Divine Shield, Summon Westfall Brigade and Resurrection. |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ACds,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Model File
+file = "Bolvar Fordragon.mdl"
+-- Hero
+heroAbilList = "AHre,A085,Aamk,AHhb,A03C"
+-- Scaling Value
+modelScale = 1.05
+-- Priority
+prio = 20
+-- Selection Scale
+scale = 1.2
+-- Team Color
+teamColor = 10
+-- Unit Sound Set
+unitSound = "Uther"
+-- Upgrades Used
+upgrades = "R05O"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavySlice"

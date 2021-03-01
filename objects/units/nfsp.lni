@@ -1,0 +1,44 @@
+[nfsp]
+_parent = "nfsp"
+-- Hit Points Maximum (Base)
+HP = 580
+-- Normal
+abilList = "A0AO,ACdm,A0EZ"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Hit Points Regeneration Rate
+regenHP = 2.1
+-- Repair Time
+reptm = 10
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Upgrades Used
+upgrades = "Rotr,Rhme,Rhar,Ropm,Rguv"

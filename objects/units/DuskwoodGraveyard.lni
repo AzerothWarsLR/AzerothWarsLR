@@ -1,0 +1,35 @@
+[h01F]
+_parent = "halt"
+-- Hit Points Maximum (Base)
+HP = 2000
+-- Name
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = "Revives Slain Heroes"
+-- Normal
+abilList = "A04E"
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Northrend\\Structures\\NorthrendCrypt\\NorthrendCrypt.mdl"
+-- Food Cost
+fused = 15
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 106
+-- Repair Lumber Cost
+lumberRep = 120
+-- Pathing Map
+pathTex = ""
+-- Placement Requires
+preventPlace = ""
+-- Repair Time
+reptm = 90
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp,R064,Renb,R013,Rhac,Rgfo"

@@ -1,0 +1,89 @@
+[h00C]
+_parent = "hcth"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNOrc.blp"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Demi)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "A"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1200
+-- Name
+-- Tooltip - Basic
+Tip = "Revive Drek'Thar"
+-- Tooltip - Extended
+Ubertip = "The first among the redeemed shaman of the Frostwolf Clan, Drek'thar is a blind, old, but immensely powerful member of the Horde. He was Thrall's mentor and teacher in the ways of shamanism."
+-- Normal
+abilList = "A08H,AInv,ACrk,A0LT,ACmo"
+-- Armor Type
+armor = "Flesh"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.1
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Model File
+file = "units\\orc\\HeroFarSeer\\HeroFarSeer.mdl"
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 150
+-- Mana Initial Amount
+mana0 = 275
+-- Mana Maximum
+manaN = 275
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 16
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 650
+-- Tinting Color 1 (Red)
+red = 75
+-- Hit Points Regeneration Rate
+regenHP = 0.75
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 230
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Classification
+type = "giant,sapper"
+-- Unit Sound Set
+unitSound = "DrekThar"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

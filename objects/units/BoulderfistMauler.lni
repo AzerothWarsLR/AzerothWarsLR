@@ -1,0 +1,39 @@
+[n07Z]
+_parent = "nogm"
+-- Hit Points Maximum (Base)
+HP = 1250
+-- Name
+-- Normal
+abilList = "A06P,ACbh"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 7
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Collision Size
+collision = 36.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Attack 1 - Damage Base
+dmgplus1 = 43
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 25
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 1.4
+-- Attack 1 - Range
+rangeN1 = 150
+-- Mana Regeneration
+regenMana = 0.5
+-- Repair Time
+reptm = 7
+-- Speed Base
+spd = 220

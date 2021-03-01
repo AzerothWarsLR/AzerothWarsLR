@@ -1,0 +1,50 @@
+[hmpr]
+_parent = "hmpr"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 365
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = "Desciple of the Light's protection.  |n|cfff5962dAbilities:|r Heal|n|cfff5962dCan Learn:|R Dispel Magic, Inner Fire|n|n|cffffcc00Attacks land and air units."
+-- Normal
+abilList = "Ahea,Adis,Ainf,Aihn"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 11.0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 16
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 12
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "R00J,R00K,Rhpt,Rguv"

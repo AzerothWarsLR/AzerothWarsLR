@@ -1,0 +1,48 @@
+[nctl]
+_parent = "nctl"
+-- Researches Available
+Researches = "Renb"
+-- Units Trained
+Trains = "o000"
+-- Normal
+abilList = "Arlm,Aeat,Aro1,Atol"
+-- Build Time
+bldtm = 120
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 2 - Damage Base
+dmgplus2 = 50
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 34
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 185
+-- Scaling Value
+modelScale = 0.7
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 6
+-- Hit Points Regeneration Rate
+regenHP = 4.0
+-- Repair Time
+reptm = 90
+-- Speed Base
+spd = 80
+-- Unit Classification
+type = "townhall"
+-- Upgrades Used
+upgrades = "Rgfo,Renb"

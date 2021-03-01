@@ -1,0 +1,26 @@
+[nwlt]
+_parent = "nwlt"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Normal
+abilList = "ACct,ACev"
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 12
+-- Gold Cost
+goldcost = 12
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.7
+-- Stock Replenish Interval
+stockRegen = 50
+-- Stock Start Delay
+stockStart = 0

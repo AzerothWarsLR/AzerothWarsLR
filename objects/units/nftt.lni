@@ -1,0 +1,18 @@
+[nftt]
+_parent = "nftt"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Normal
+abilList = "ACev,ACen"
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Hit Points Regeneration Rate
+regenHP = 2.1

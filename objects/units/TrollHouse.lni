@@ -1,0 +1,33 @@
+[h004]
+_parent = "hhou"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMarketplace.blp"
+-- Name
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\other\\ForestTrollHut0\\ForestTrollHut0.mdl"
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 10
+-- Repair Lumber Cost
+lumberRep = 15
+-- Lumber Cost
+lumbercost = 30
+-- Scaling Value
+modelScale = 0.8
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "orc"
+-- Repair Time
+reptm = 30
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rgfo,Rosp"

@@ -1,0 +1,15 @@
+[net2]
+_parent = "net2"
+-- Name
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 190
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 200
+-- Repair Time
+reptm = 50
+-- Ground Texture
+uberSplat = ""

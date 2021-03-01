@@ -1,0 +1,40 @@
+[ugrm]
+_parent = "ugrm"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Gargoyle)"
+-- Hit Points Maximum (Base)
+HP = 1055
+-- Requirements
+Requires = ""
+-- Normal
+abilList = "S001,Astn,ACmi"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 6.0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 18
+-- Level
+level = 5
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Categorization - Special
+special = 0
+-- Upgrades Used
+upgrades = "R01D,R008,Rhar,Rusf,Rhme,Rguv"

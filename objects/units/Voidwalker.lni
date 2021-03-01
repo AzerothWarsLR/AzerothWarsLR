@@ -1,0 +1,49 @@
+[nvdl]
+_parent = "nvdl"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Hit Points Maximum (Base)
+HP = 640
+-- Name
+-- Tooltip - Basic
+Tip = "Summon Voidwalker"
+-- Tooltip - Extended
+Ubertip = "Etheral demon of void origins.|n|cfff5962dAbilities:|R Frost Attack |n|n|cffffcc00Attacks land and air units.|r"
+-- Acquisition Range
+acquire = 750.0
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 1
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 22
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 10
+-- Level
+level = 2
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 650
+-- Speed Base
+spd = 250
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 3
+-- Stock Replenish Interval
+stockRegen = 15
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"

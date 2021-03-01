@@ -1,0 +1,38 @@
+[ntrh]
+_parent = "ntrh"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Tortolla)"
+-- Hit Points Maximum (Base)
+HP = 350
+-- Hotkey
+Hotkey = "F"
+-- Tooltip - Basic
+Tip = "Breed Sea Turtle Hatchling"
+-- Build Time
+bldtm = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 1
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 2
+-- Gold Cost
+goldcost = 5
+-- Type
+movetp = "foot"
+-- Race
+race = "nightelf"
+-- Speed Base
+spd = 215
+-- Stock Maximum
+stockMax = 10
+-- Stock Replenish Interval
+stockRegen = 45
+-- Stock Start Delay
+stockStart = 35
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"

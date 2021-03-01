@@ -1,0 +1,35 @@
+[E004]
+_parent = "Edmm"
+-- Required Attachment Link Names
+Attachmentlinkprops = ""
+-- Required Bone Names
+Boneprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Dragon Form)"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl"
+-- Name
+-- Normal
+abilList = "AInv"
+-- Required Animation Names
+animProps = ""
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.56
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.94
+-- Model File
+file = "units\\creeps\\RedDragon\\RedDragon.mdl"
+-- Hero
+heroAbilList = "A0W1,A03N"
+-- Projectile Launch - Z
+launchZ = 0.0
+-- Scaling Value
+modelScale = 1.3
+-- Height Minimum
+moveFloor = 90.0
+-- Height
+moveHeight = 220.0
+-- Type
+movetp = "fly"
+-- Race
+race = "human"

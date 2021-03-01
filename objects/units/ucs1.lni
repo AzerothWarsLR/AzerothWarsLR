@@ -1,0 +1,26 @@
+[ucs1]
+_parent = "ucs1"
+-- Name - Editor Suffix
+EditorSuffix = " (Red - Anub'Arak)(Level 1)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Normal
+abilList = "A0GY,A0KG"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 14
+-- Scaling Value
+modelScale = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Upgrades Used
+upgrades = "R008,Rhar,Rhme,Rguv"

@@ -1,0 +1,18 @@
+[Eilm]
+_parent = "Eilm"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 16
+-- Hit Points Regeneration Rate
+regenHP = 1.5
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 250

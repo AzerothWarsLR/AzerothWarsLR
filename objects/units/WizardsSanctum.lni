@@ -1,0 +1,71 @@
+[h05A]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHumanWatchTower.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Dark Green)"
+-- Name
+-- Requirements
+Requires = "R022"
+-- Researches Available
+Researches = "R03T,R03U,R03V,R03W,R03X,R03Y"
+-- Special
+Specialart = ""
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "Avul,A0RG,A0RE,A0RC"
+-- Required Animation Names
+animProps = ""
+-- Build Time
+bldtm = 1
+-- Tinting Color 3 (Blue)
+blue = 225
+-- Shadow Texture (Building)
+buildingShadow = "BuildingShadowSmall"
+-- Collision Size
+collision = 90.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "buildings\\human\\HumanTower\\HumanTower.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 125
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 1.5
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Tinting Color 1 (Red)
+red = 200
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 1.9
+-- Scale Projectiles
+scaleBull = 0
+-- Unit Classification
+type = "ancient,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "ArcaneObservatory"
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

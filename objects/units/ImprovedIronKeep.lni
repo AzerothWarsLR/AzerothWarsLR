@@ -1,0 +1,91 @@
+[n0AL]
+_parent = "nbt2"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIronHordeWatchTower.blp"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 0
+-- Attack 2 - Area of Effect (Full Damage)
+Farea2 = 50
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 0
+-- Attack 2 - Area of Effect (Medium Damage)
+Harea2 = 100
+-- Hotkey
+Hotkey = "Z"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.05
+-- Attack 1 - Projectile Art
+Missileart_1 = "abilities\\weapons\\wyvernspear\\wyvernspearmissile.mdl"
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\BoatMissile\\BoatMissile.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 2000
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 0
+-- Attack 2 - Area of Effect (Small Damage)
+Qarea2 = 125
+-- Tooltip - Basic
+Tip = "Upgrade to Improved Iron Keep"
+-- Tooltip - Extended
+Ubertip = "Launch even larger boulders.|n|n|cffffcc00Attacks land units.|r"
+-- Acquisition Range
+acquire = 1000.0
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Build Time
+bldtm = 25
+-- Categorization - Campaign
+campaign = 0
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Attack 2 - Damage Base
+dmgplus2 = 69
+-- Model File
+file = "war3mapImported\\WatchTowerIronHordeV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 60
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 220
+-- Scaling Value
+modelScale = 1.2
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 1000
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 10
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "_"
+-- Attack 2 - Area of Effect Targets
+splashTargs2 = "ground,nonancient,notself,structure,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "air"
+-- Attack 2 - Targets Allowed
+targs2 = "debris,ground,item,structure,wall,ward"
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rosp"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 2 - Weapon Type
+weapTp2 = "artillery"

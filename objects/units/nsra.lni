@@ -1,0 +1,6 @@
+[nsra]
+_parent = "nsra"
+-- Acquisition Range
+acquire = 900.0
+-- Gold Bounty Awarded - Base
+bountyplus = 2

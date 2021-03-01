@@ -1,0 +1,29 @@
+[h05Q]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran#3)"
+-- Name
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Model File
+file = "Doodads\\Dalaran\\Terrain\\DalaranVioletCitadel\\DalaranVioletCitadel.mdl"
+-- Repair Gold Cost
+goldRep = 5
+-- Tinting Color 2 (Green)
+green = 200
+-- Repair Lumber Cost
+lumberRep = 15
+-- Scaling Value
+modelScale = 0.5
+-- Placement Requires
+preventPlace = ""
+-- Tinting Color 1 (Red)
+red = 230
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 3.8
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""

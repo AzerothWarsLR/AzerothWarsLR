@@ -1,0 +1,6 @@
+[nsqe]
+_parent = "nsqe"
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Food Cost
+fused = 0

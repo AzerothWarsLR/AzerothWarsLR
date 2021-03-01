@@ -1,0 +1,18 @@
+[nepl]
+_parent = "nepl"
+-- Hit Points Maximum (Base)
+HP = 2800
+-- Normal
+abilList = "ACce,Aenr,Aap3"
+-- Gold Bounty Awarded - Base
+bountyplus = 75
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 61
+-- Level
+level = 10
+-- Hit Points Regeneration Rate
+regenHP = 5.0

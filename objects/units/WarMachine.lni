@@ -1,0 +1,49 @@
+[o00I]
+_parent = "ocat"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.45
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build War Machine"
+-- Tooltip - Extended
+Ubertip = "Long-range siege weaponry. Effective against buildings but slow and vulnerable.|n|cff99b4d1Can only build 6.|r|n|cffffcc00Attacks land units and trees.|r"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 12
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 34.0
+-- Attack 1 - Cooldown Time
+cool1 = 4.2
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 23
+-- Gold Cost
+goldcost = 23
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.85
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Attack 1 - Damage Sides per Die
+sides1 = 20
+-- Attack 1 - Targets Allowed
+targs1 = "debris,enemies,ground,item,structure,tree,wall,ward"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+-- Attacks Enabled
+weapsOn = 1

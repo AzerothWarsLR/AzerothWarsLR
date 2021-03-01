@@ -1,0 +1,91 @@
+[h05I]
+_parent = "hwtw"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Hit Points Maximum (Base)
+HP = 2000
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GuardTowerMissile\\GuardTowerMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1800
+-- Name
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Upgrades To
+Upgrade = ""
+-- Normal
+abilList = "A0N4"
+-- Acquisition Range
+acquire = 700.0
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 15
+-- Tinting Color 3 (Blue)
+blue = 245
+-- Collision Size
+collision = 25.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.7
+-- Defense Base
+def = 5
+-- Defense Type
+defType = "fort"
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 32
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "Doodads\\Dalaran\\Terrain\\DalaranBuilding\\DalaranBuilding1.mdl"
+-- Food Produced
+fmade = 15
+-- Gold Cost
+goldcost = 4
+-- Tinting Color 2 (Green)
+green = 235
+-- Repair Lumber Cost
+lumberRep = 120
+-- Lumber Cost
+lumbercost = 15
+-- Mana Initial Amount
+mana0 = 25
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.84
+-- Sight Radius (Night)
+nsight = 2100
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 800
+-- Tinting Color 1 (Red)
+red = 211
+-- Mana Regeneration
+regenMana = 1.2
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Sight Radius (Day)
+sight = 1900
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 3
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Classification
+type = "ancient,mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp,Rhac,R013,Renb,R064"

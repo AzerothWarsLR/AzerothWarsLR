@@ -1,0 +1,30 @@
+[ubdr]
+_parent = "ubdr"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Normal
+abilList = "A0YO"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 40
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Categorization - Campaign
+campaign = 0
+-- Defense Type
+defType = "large"
+-- Level
+level = 8
+-- Scaling Value
+modelScale = 2.0
+-- Height Minimum
+moveFloor = 300.0
+-- Height
+moveHeight = 700.0
+-- Categorization - Special
+special = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Team Color
+teamColor = 13

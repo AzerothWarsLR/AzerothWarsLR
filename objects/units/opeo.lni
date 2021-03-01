@@ -1,0 +1,34 @@
+[opeo]
+_parent = "opeo"
+-- Structures Built
+Builds = "o01M,o009,o01T,n03E,o020,o006,o028,o02T,n03E,o01S,o00C,o02Q,ovln,o02F,otto,oshy,ogre,otrb,npgf,obar,ofor,oalt,obea,osld,owtw"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Warsong)"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Train - Peon"
+-- Tooltip - Extended
+Ubertip = "Hard working, back breaking laborer.|n|cfff5962dAbilities:|r Repair, Gather|n|n|cffffcc00Attacks land units and trees."
+-- Normal
+abilList = "Sca5,Ahar,Arep"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 6.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 7
+-- Gold Cost
+goldcost = 7
+-- Scaling Value
+modelScale = 0.85
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 150
+-- Unit Classification
+type = "sapper,peon"
+-- Upgrades Used
+upgrades = "R021,Ropg,Rguv"

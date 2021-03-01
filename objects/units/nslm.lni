@@ -1,0 +1,6 @@
+[nslm]
+_parent = "nslm"
+-- Gold Bounty Awarded - Base
+bountyplus = 2
+-- Food Cost
+fused = 0

@@ -1,0 +1,10 @@
+[nitr]
+_parent = "nitr"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Food Cost
+fused = 1

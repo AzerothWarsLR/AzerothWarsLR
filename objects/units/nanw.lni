@@ -1,0 +1,12 @@
+[nanw]
+_parent = "nanw"
+-- Hit Points Maximum (Base)
+HP = 525
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 19
+-- Food Cost
+fused = 0

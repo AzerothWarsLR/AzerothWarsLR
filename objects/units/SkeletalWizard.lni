@@ -1,0 +1,53 @@
+[u010]
+_parent = "uskm"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Enhanced Necromancer)"
+-- Hit Points Maximum (Base)
+HP = 350
+-- Hotkey
+Hotkey = "D"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Skeletal Ma|cffffcc00g|re"
+-- Tooltip - Extended
+Ubertip = "Weak ranged skeleton warrior."
+-- Normal
+abilList = "A0PI,Afr2,A07C"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Repair Gold Cost
+goldRep = 8
+-- Gold Cost
+goldcost = 8
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Mana Regeneration
+regenMana = 1.2
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 0
+-- Unit Classification
+type = "summoned,undead"
+-- Upgrades Used
+upgrades = "R01D,R001,Rusl,Rhme,Rhar,Rguv"

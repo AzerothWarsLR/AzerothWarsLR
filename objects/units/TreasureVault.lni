@@ -1,0 +1,53 @@
+[n07U]
+_parent = "nmrk"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendArcaneVault.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Khaz Modan)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "spro,brac,I00A,sreg,pdiv,phea,pman,stwp,tsct,ofro,clfm"
+-- Name
+-- Tooltip - Basic
+Tip = "Build Treasure Vault"
+-- Tooltip - Extended
+Ubertip = "Creates a shop with purchasable items. "
+-- Normal
+abilList = "Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Defense Base
+def = 5
+-- Model File
+file = "war3mapImported\\ArcaneVaultIronforgeV1.01.mdl"
+-- Gold Cost
+goldcost = 13
+-- Lumber Cost
+lumbercost = 30
+-- Scaling Value
+modelScale = 0.7
+-- Sight Radius (Night)
+nsight = 750
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "human"
+-- Selection Scale
+scale = 3.0
+-- Sight Radius (Day)
+sight = 1000
+-- Team Color
+teamColor = -1
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

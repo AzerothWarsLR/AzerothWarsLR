@@ -1,0 +1,63 @@
+[o035]
+_parent = "owtw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hit Points Maximum (Base)
+HP = 1050
+-- Hotkey
+Hotkey = "Z"
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Upgrade to (|cffffcc00Z|r) Improved Watch Tower"
+-- Tooltip - Extended
+Ubertip = "Defensive structure. Can learn the Reinforced Defenses and Spiked Barricades upgrades. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Arbr,Aspi"
+-- Build Time
+bldtm = 35
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 39
+-- Model File
+file = "war3mapImported\\WatchTowerFelOrcV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 40
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 145
+-- Scaling Value
+modelScale = 1.1
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 700
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp,Rorb,Rhme,Rgfo"

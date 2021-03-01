@@ -1,0 +1,46 @@
+[uzg1]
+_parent = "uzg1"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Hotkey
+Hotkey = "Z"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Infuse to the ziggurat to get necromatic magic shards eminating offensive magic.|n|cfff5962dUpgrades Into:|R Improved Spirit Tower|n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "u002"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Attack 1 - Damage Base
+dmgplus1 = 38
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 30
+-- Repair Lumber Cost
+lumberRep = 70
+-- Scaling Value
+modelScale = 0.6
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Placement Prevented By
+requirePlace = ""
+-- Unit Classification
+type = "mechanical,sapper,undead"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rgfo"

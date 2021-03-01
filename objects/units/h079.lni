@@ -1,0 +1,52 @@
+[h079]
+_parent = "hatw"
+-- Name - Editor Suffix
+EditorSuffix = "(dalaran)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "C"
+-- Tooltip - Extended
+Ubertip = "Mage filled defense tower. |n|cfff5962dAbilities:|R Feedback|n|cfff5962dCan Learn:|R Reveal, Magic Sentry|n|cfff5962dUpgrades Into:|R Improved Arcane Tower |n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "h07A"
+-- Normal
+abilList = "A02T,A00E,Afbt,AHta,Adts"
+-- Required Animation Names
+animProps = "upgrade,fourth"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.8
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\TowerDalaranV1.03.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 24
+-- Lumber Cost
+lumbercost = 90
+-- Scaling Value
+modelScale = 0.8
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 14
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 2
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,R03A,Rhac,Rgfo"

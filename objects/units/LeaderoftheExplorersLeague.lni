@@ -1,0 +1,91 @@
+[H04Q]
+_parent = "Hvwd"
+-- Starting Agility
+AGI = 21
+-- Agility per Level
+AGIplus = 2.0
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNRifleman.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Leader of the Explorers' League"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Ironforge Vassal)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "E"
+-- Intelligence per Level
+INTplus = 2.3
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\Rifle\\RifleImpact.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1900
+-- Name
+-- Proper Names
+Propernames = "Brann Bronzebeard"
+-- Requirements
+Requires = "R04J,R05T,R05I"
+-- Tooltip - Revive
+Revivetip = "Revive Leader of the Explorers' League"
+-- Strength per Level
+STRplus = 1.5
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNRifleman.blp"
+-- Tooltip - Basic
+Tip = "Choose Vassal: Brann"
+-- Tooltip - Extended
+Ubertip = "|cffff0000You will lose your current faction and join Ironforge as a new small 1 hero faction|r |n|nRanger Hero, adept at controlling the battlefield from far away. Can train Riflemans, Explorers and Mortar Teams. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "S003,AInv"
+-- Acquisition Range
+acquire = 900.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.7
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Death Time (seconds)
+death = 1.7
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.17
+-- Model File
+file = "units\\human\\Rifleman\\Rifleman.mdl"
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "A0DT,A0D3,Aamk,A0DR,A0FC"
+-- Lumber Cost
+lumbercost = 0
+-- Priority
+prio = 18
+-- Attack 1 - Range
+rangeN1 = 900
+-- Attack 2 - Range
+rangeN2 = 650
+-- Selection Scale
+scale = 1.1
+-- Shadow Image - Center X
+shadowX = 50.0
+-- Shadow Image - Center Y
+shadowY = 50.0
+-- Speed Base
+spd = 255
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 5
+-- Attack 1 - Targets Allowed
+targs1 = "ground,structure,debris,air,item,ward"
+-- Unit Sound Set
+unitSound = "Rifleman"
+-- Attack 1 - Weapon Type
+weapTp1 = "instant"

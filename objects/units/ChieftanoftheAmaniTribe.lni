@@ -1,0 +1,59 @@
+[O00O]
+_parent = "Obla"
+-- Agility per Level
+AGIplus = 2.65
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive |cffffcc00A|rmani Warlord"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep-Zul'Aman)"
+-- Hit Points Maximum (Base)
+HP = 250
+-- Name
+-- Proper Names
+Propernames = "Zul'jin"
+-- Requirements - Tier 2
+Requires1 = ""
+-- Requirements - Tier 3
+Requires2 = ""
+-- Tooltip - Revive
+Revivetip = "Revive Amani Warlord"
+-- Strength per Level
+STRplus = 2.3
+-- Tooltip - Basic
+Tip = "Summon |cffffcc00A|rmani Warlord"
+-- Normal
+abilList = "A0EH"
+-- Gold Bounty Awarded - Base
+bountyplus = 65
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 22.0
+-- Model File
+file = "Zuljin_OneArmed.mdl"
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "A0M2,A0FK,AEar"
+-- Hero Skin
+heroAbilSkinList = ""
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Priority
+prio = 16
+-- Race
+race = "creeps"
+-- Hit Points Regeneration Rate
+regenHP = 2.5
+-- Speed Base
+spd = 240
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Team Color
+teamColor = 14
+-- Unit Sound Set
+unitSound = "ForestTroll"
+-- Upgrades Used
+upgrades = "Rotr"

@@ -1,0 +1,35 @@
+[n05Q]
+_parent = "nnad"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "X"
+-- Name
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00X|r] - Altar of the Betrayers"
+-- Units Trained
+Trains = "n052"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 80
+-- Scaling Value
+modelScale = 0.85
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Ground Texture
+uberSplat = ""

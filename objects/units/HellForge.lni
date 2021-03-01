@@ -1,0 +1,61 @@
+[n040]
+_parent = "ndmg"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDemonCrypt.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 900
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Researches Available
+Researches = "R02A,Rhme,Rhar"
+-- Tooltip - Basic
+Tip = "Summon Hell Forge"
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = "Demonic Forge that produces upgrades for the Legions army. Also is a lumber drop site.|n|cfff5962dResearches:|R Copper Forged Weaponry, Copper Armor Plating, Chaos Infusion"
+-- Normal
+abilList = "Arlm"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 175
+-- Shadow Texture (Building)
+buildingShadow = "BuildingShadowLarge"
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\CryptDemonV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 175
+-- Lumber Cost
+lumbercost = 40
+-- Scaling Value
+modelScale = 0.6
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 175
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 3.2
+-- Unit Classification
+type = "mechanical,neutral,sapper"
+-- Ground Texture
+uberSplat = ""

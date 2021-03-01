@@ -1,0 +1,44 @@
+[owyv]
+_parent = "owyv"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 865
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = "One with the wind, these sky hunters patrol the air.|n|cfff5962dAbilities:|R Weighted Spear, True Sight |n|cfff5962dAbilities:|R Envenomed Spears|n |n|cff99b4d1Can only train 8.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0A5,A069,Adtg,Aven"
+-- Build Time
+bldtm = 10
+-- Transported Size
+cargoSize = 3
+-- Collision Size
+collision = 6.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 38
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 30
+-- Level
+level = 5
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Speed Base
+spd = 300
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rovs,Rguv"

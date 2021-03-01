@@ -1,0 +1,93 @@
+[u000]
+_parent = "unp2"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFrostArmor.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Red)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 250
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R06I"
+-- Revives Dead Heroes
+Revive = 1
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl"
+-- Units Trained
+Trains = "uaco,h00H"
+-- Normal
+abilList = "ACm2,A0C9,A0W8,A0L3,A002,A001"
+-- Required Animation Names
+animProps = ""
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- AI Placement Type
+buffType = ""
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 300.0
+-- Death Time (seconds)
+death = 2.0
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 20
+-- Defense Type
+defType = "divine"
+-- Attack 1 - Damage Number of Dice
+dice1 = 10
+-- Attack 1 - Damage Base
+dmgplus1 = 90
+-- Model File
+file = "doodads\\cinematic\\lichking\\lichking.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 100
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 1000
+-- Mana Maximum
+manaN = 1000
+-- Scaling Value
+modelScale = 0.75
+-- Sight Radius (Night)
+nsight = 1800
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = ""
+-- Attack 1 - Range
+rangeN1 = 1500
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Mana Regeneration
+regenMana = 3.0
+-- Selection Scale
+scale = 4.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 11
+-- Sight Radius (Day)
+sight = 1800
+-- Unit Classification
+type = "ancient,mechanical,undead"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = ""
+-- Attacks Enabled
+weapsOn = 0

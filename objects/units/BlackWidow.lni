@@ -1,0 +1,43 @@
+[n08J]
+_parent = "nsbm"
+-- Name - Editor Suffix
+EditorSuffix = "(Brown - Cenarius Summon)"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Name
+-- Tooltip - Basic
+Tip = "Black Widow"
+-- Tooltip - Extended
+Ubertip = "Heavy melee unit that poisons opponents and carries its young into battle. Can cast Web."
+-- Normal
+abilList = "Ault,ACvs,ACwb"
+-- Default Active Ability
+auto = "ACwb"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Model File
+file = "units\\creeps\\SpiderGreen\\SpiderGreen.mdl"
+-- Race
+race = "nightelf"
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Attack 1 - Targets Allowed
+targs1 = "debris,enemies,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Reuv,Rhme,Rhar,Rguv"

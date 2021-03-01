@@ -1,0 +1,85 @@
+[H047]
+_parent = "Huth"
+-- Starting Agility
+AGI = 30
+-- Agility per Level
+AGIplus = 2.4
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroXaviusSatyr.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Xavius"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Legion Vassal)"
+-- Hit Points Maximum (Base)
+HP = 125
+-- Hotkey
+Hotkey = "W"
+-- Starting Intelligence
+INT = 30
+-- Intelligence per Level
+INTplus = 2.4
+-- Name
+-- Primary Attribute
+Primary = "AGI"
+-- Proper Names
+Propernames = "Xavius"
+-- Requirements
+Requires = "R04J,R04T,R03S"
+-- Tooltip - Revive
+Revivetip = "Revive Xavius"
+-- Starting Strength
+STR = 30
+-- Strength per Level
+STRplus = 2.4
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\SSHHeroXaviusSatyr.blp"
+-- Tooltip - Basic
+Tip = "Choose Vassal: Xavius"
+-- Tooltip - Extended
+Ubertip = "|cffff0000You will lose your current faction and join the Legion as a new small 1 hero faction|r|n|nCruel Hero, adept at destroying opponents. Can train Satyr Warriors, Tricksters and Soul Stealer. |n|n|cffffcc00Attacks land units.|r"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Defense Base
+def = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\SatyrHeadhunter.mdl"
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "A066,A07R,Aamk,AUin,AUcs"
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.0
+-- Priority
+prio = 19
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 120
+-- Repair Time
+reptm = 10
+-- Attack 1 - Damage Sides per Die
+sides1 = 12
+-- Speed Base
+spd = 240
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 5
+-- Unit Sound Set
+unitSound = "Satyr"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavySlice"

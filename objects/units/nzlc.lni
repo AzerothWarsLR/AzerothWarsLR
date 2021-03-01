@@ -1,0 +1,4 @@
+[nzlc]
+_parent = "nzlc"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNLichKing.blp"

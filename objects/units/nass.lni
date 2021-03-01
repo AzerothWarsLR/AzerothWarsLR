@@ -1,0 +1,12 @@
+[nass]
+_parent = "nass"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Collision Size
+collision = 18.0
+-- Attack 1 - Damage Base
+dmgplus1 = 23
+-- Scaling Value
+modelScale = 1.1

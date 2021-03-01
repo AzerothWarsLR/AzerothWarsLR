@@ -1,0 +1,55 @@
+[n06D]
+_parent = "nfv4"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNRockTower.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "ewsp,h04L"
+-- Tooltip - Extended
+Ubertip = "Important Night Elf base in Southern Kalimdor, keeps a watchful eye over Ahn'Qiraj. Can train Wisps and revive heroes."
+-- Armor Type
+armor = "Stone"
+-- Tinting Color 3 (Blue)
+blue = 80
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 5
+-- Defense Upgrade Bonus
+defUp = 3
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Tinting Color 2 (Green)
+green = 125
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 0.85
+-- Sight Radius (Night)
+nsight = 600
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 2.5
+-- Unit Classification
+type = "ancient,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "WarMill"
+-- Upgrades Used
+upgrades = "R064,Rgfo"

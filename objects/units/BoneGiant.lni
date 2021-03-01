@@ -1,0 +1,93 @@
+[e00B]
+_parent = "ebal"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSkeletonWarrior.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Attack 2 - Area of Effect (Full Damage)
+Farea2 = 0
+-- Hit Points Maximum (Base)
+HP = 1875
+-- Attack 2 - Area of Effect (Medium Damage)
+Harea2 = 0
+-- Hotkey
+Hotkey = "R"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.0
+-- Attack 1 - Projectile Art
+Missileart_1 = ".mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 0
+-- Name
+-- Attack 2 - Area of Effect (Small Damage)
+Qarea2 = 0
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = ""
+-- Acquisition Range
+acquire = 500.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.44
+-- Build Time
+bldtm = 12
+-- Animation - Cast Backswing
+castbsw = 1.5
+-- Collision Size
+collision = 36.0
+-- Attack 1 - Cooldown Time
+cool1 = 4.2
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 70
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.56
+-- Model File
+file = "units\\creeps\\SkeletonOrc\\SkeletonOrc.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 130
+-- Gold Cost
+goldcost = 35
+-- Projectile Launch - Z
+launchZ = 150.0
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 2.0
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Scale Projectiles
+scaleBull = 0
+-- Speed Base
+spd = 120
+-- Attack 1 - Damage Spill Radius
+spillRadius1 = 0.0
+-- Attack 2 - Damage Spill Radius
+spillRadius2 = 80.0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,organic,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,tree,wall,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "debris,item,structure,wall,ward"
+-- Unit Classification
+type = "summoned,undead"
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+-- Attack 1 - Weapon Type
+weapTp1 = "normal"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

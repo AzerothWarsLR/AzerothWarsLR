@@ -1,0 +1,14 @@
+[nsrw]
+_parent = "nsrw"
+-- Acquisition Range
+acquire = 900.0
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Defense Base
+def = 12
+-- Attack 1 - Damage Number of Dice
+dice1 = 4
+-- Attack 1 - Range
+rangeN1 = 900
+-- Attack 1 - Damage Sides per Die
+sides1 = 16

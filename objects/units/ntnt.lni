@@ -1,0 +1,18 @@
+[ntnt]
+_parent = "ntnt"
+-- Hit Points Maximum (Base)
+HP = 375
+-- Defense Base
+def = 1
+-- Food Produced
+fmade = 8
+-- Sight Radius (Night)
+nsight = 400
+-- Selection Scale
+scale = 1.0
+-- Sight Radius (Day)
+sight = 800
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp"

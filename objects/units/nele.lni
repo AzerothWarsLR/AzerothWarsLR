@@ -1,0 +1,28 @@
+[nele]
+_parent = "nele"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Normal
+abilList = "ACcv"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 17
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 33
+-- Food Cost
+fused = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Type
+movetp = "amph"
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Mana Regeneration
+regenMana = 3.0

@@ -1,0 +1,6 @@
+[nmam]
+_parent = "nmam"
+-- Gold Bounty Awarded - Base
+bountyplus = 15
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1

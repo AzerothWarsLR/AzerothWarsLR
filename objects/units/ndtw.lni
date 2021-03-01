@@ -1,0 +1,36 @@
+[ndtw]
+_parent = "ndtw"
+-- Hit Points Maximum (Base)
+HP = 915
+-- Normal
+abilList = "ACct,A07G"
+-- Gold Bounty Awarded - Base
+bountyplus = 44
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 27.0
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 49
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 32
+-- Gold Cost
+goldcost = 32
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.4
+-- Hit Points Regeneration Rate
+regenHP = 2.1
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Stock Replenish Interval
+stockRegen = 210
+-- Stock Start Delay
+stockStart = 0

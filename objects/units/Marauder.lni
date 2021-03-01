@@ -1,0 +1,59 @@
+[o01F]
+_parent = "ogru"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNChaosGrunt.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 900
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Marauder"
+-- Tooltip - Extended
+Ubertip = "Brutish orc warrior of the Alterac Blackrock Encampment.|n|cfff5962dAbilities:|R Bloodfury|n|n|cff99b4d1Can only train 12.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0PJ,Aion"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 3
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 24
+-- Model File
+file = "units\\demon\\ChaosGrunt\\ChaosGrunt.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 21
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "undead"
+-- Tinting Color 1 (Red)
+red = 210
+-- Hit Points Regeneration Rate
+regenHP = 0.4
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 235
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"

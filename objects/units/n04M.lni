@@ -1,0 +1,10 @@
+[n04M]
+_parent = "nfa2"
+-- Name - Editor Suffix
+EditorSuffix = " (Level 4)"
+-- Hit Points Maximum (Base)
+HP = 1550
+-- Defense Base
+def = 3
+-- Hit Points Regeneration Rate
+regenHP = 1.5

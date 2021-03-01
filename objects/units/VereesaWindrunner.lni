@@ -1,0 +1,85 @@
+[n075]
+_parent = "nhea"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNVereesa_Windrunner.blp"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas-Demi)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "A"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.05
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.05
+-- Name
+-- Tooltip - Basic
+Tip = "Revive Vareesa"
+-- Tooltip - Extended
+Ubertip = "One of the three sisters of the Windrunners, Vereesa is a skilled Ranger-Lord and keen defender of Silvermoon. She holds the values of the Quel'dorei close to heart."
+-- Normal
+abilList = "A0K8,A071,A02H,A02I,AInv,ACsk"
+-- Acquisition Range
+acquire = 750.0
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 41
+-- Model File
+file = "units\\creeps\\SylvanusWindrunner\\SylvanusWindrunner.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 29
+-- Gold Cost
+goldcost = 100
+-- Projectile Launch - Z
+launchZ = 60.0
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 250
+-- Mana Maximum
+manaN = 250
+-- Scaling Value
+modelScale = 1.1
+-- Priority
+prio = 17
+-- Attack 1 - Range
+rangeN1 = 600
+-- Mana Regeneration
+regenMana = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 2
+-- Selection Scale
+scale = 0.95
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 260
+-- Team Color
+teamColor = 10
+-- Unit Classification
+type = "giant"
+-- Upgrades Used
+upgrades = "Rguv,R01R,R00G,Rhar,Rhme"

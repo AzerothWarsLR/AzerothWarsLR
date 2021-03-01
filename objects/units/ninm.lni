@@ -1,0 +1,32 @@
+[ninm]
+_parent = "ninm"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hit Points Maximum (Base)
+HP = 900
+-- Hotkey
+Hotkey = "F"
+-- Tooltip - Basic
+Tip = "Train In|cffffcc00f|rernal Machine"
+-- Normal
+abilList = "A074"
+-- Build Time
+bldtm = 14
+-- Gold Bounty Awarded - Base
+bountyplus = 35
+-- Collision Size
+collision = 38.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 27
+-- Gold Cost
+goldcost = 27
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Stock Replenish Interval
+stockRegen = 80
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

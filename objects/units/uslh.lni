@@ -1,0 +1,40 @@
+[uslh]
+_parent = "uslh"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Hotkey
+Hotkey = "D"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R06M,R01X,Ruex"
+-- Units Trained
+Trains = "uabo,nfgl,umtw"
+-- Tooltip - Extended
+Ubertip = "Gore filled structure of bodily desecration.|n|cfff5962dTrains:|R Abominations, Meat Wagons, Obsidian Statues, Plague Titans|n|cfff5962dResearches:|R Epidemic, Exhume Corpses, Flesh Shaping"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 18
+-- Placement Prevented By
+requirePlace = ""
+-- Selection Scale
+scale = 3.2
+-- Ground Texture
+uberSplat = ""

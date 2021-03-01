@@ -1,0 +1,81 @@
+[e00L]
+_parent = "eaom"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinel)"
+-- Hit Points Maximum (Base)
+HP = 1200
+-- Hotkey
+Hotkey = "A"
+-- Name
+-- Researches Available
+Researches = "R03J,Remg,Reib,Roen"
+-- Tooltip - Basic
+Tip = "Build War Academy"
+-- Units Trained
+Trains = "ebal,esen,earc"
+-- Tooltip - Extended
+Ubertip = "Training hall for the warrior Sentinels.|n|cfff5962dTrains:|R Archer, Huntress, Glaive Thrower|n|cfff5962dResearches:|R Improved Bows, Sentinel, Improved Ensnare, Moon Glaive"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "ShadowHuntersHall"
+-- Collision Size
+collision = 40.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 4
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Attack 2 - Damage Base
+dmgplus2 = 60
+-- Model File
+file = "buildings\\other\\BarrowDens\\BarrowDens.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Tinting Color 2 (Green)
+green = 200
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 150
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Attack 2 - Range
+rangeN2 = 150
+-- Tinting Color 1 (Red)
+red = 225
+-- Hit Points Regeneration Rate
+regenHP = 0.0
+-- Hit Points Regeneration Type
+regenType = "none"
+-- Speed Base
+spd = 0
+-- Unit Classification
+type = "_"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,Renb,R018,Rhme,R002,Rgfo"
+-- Attacks Enabled
+weapsOn = 0

@@ -1,0 +1,8 @@
+[ndh1]
+_parent = "ndh1"
+-- Sight Radius (Night)
+nsight = 600
+-- Selection Scale
+scale = 1.0
+-- Sight Radius (Day)
+sight = 900

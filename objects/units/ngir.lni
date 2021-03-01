@@ -1,0 +1,38 @@
+[ngir]
+_parent = "ngir"
+-- Name - Editor Suffix
+EditorSuffix = "(Goblin Shop)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Hire (|cffffcc00W|r) Goblin Shredder"
+-- Build Time
+bldtm = 30
+-- Gold Bounty Awarded - Base
+bountyplus = 35
+-- Collision Size
+collision = 40.0
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 38
+-- Level
+level = 3
+-- Lumber Cost
+lumbercost = 50
+-- Stock Maximum
+stockMax = 3
+-- Stock Replenish Interval
+stockRegen = 60
+-- Stock Start Delay
+stockStart = 150
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

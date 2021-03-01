@@ -1,0 +1,35 @@
+[n07Y]
+_parent = "nban"
+-- Hit Points Maximum (Base)
+HP = 1600
+-- Name
+-- Normal
+abilList = "ACbh,Ashm,A0CR,ACpy"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 1 - Cooldown Time
+cool1 = 0.6
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 100
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 250
+-- Scaling Value
+modelScale = 1.3
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Targeted as
+targType = "ancient,ground"

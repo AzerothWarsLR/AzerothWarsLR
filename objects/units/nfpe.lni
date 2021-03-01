@@ -1,0 +1,10 @@
+[nfpe]
+_parent = "nfpe"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 35
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Level
+level = 7

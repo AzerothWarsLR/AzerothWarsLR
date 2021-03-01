@@ -1,0 +1,14 @@
+[nlv3]
+_parent = "nlv3"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Level
+level = 2
+-- Hit Points Regeneration Rate
+regenHP = 4.0

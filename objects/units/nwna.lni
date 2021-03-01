@@ -1,0 +1,10 @@
+[nwna]
+_parent = "nwna"
+-- Normal
+abilList = "ACbh,ACrn"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1

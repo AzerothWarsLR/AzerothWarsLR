@@ -1,0 +1,10 @@
+[ntrd]
+_parent = "ntrd"
+-- Normal
+abilList = "ACdv,Advc,ANt2"
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Food Cost
+fused = 0
+-- Level
+level = 7

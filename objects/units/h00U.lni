@@ -1,0 +1,30 @@
+[h00U]
+_parent = "hwat"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Hydromancer Summon)"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 6.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.8
+-- Type
+movetp = "amph"
+-- Race
+race = "creeps"
+-- Speed Base
+spd = 200
+-- Upgrades Used
+upgrades = "R020,R00N,Rhme,Rhar"

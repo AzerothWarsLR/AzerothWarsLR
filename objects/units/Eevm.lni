@@ -1,0 +1,36 @@
+[Eevm]
+_parent = "Eevm"
+-- Starting Agility
+AGI = 25
+-- Agility per Level
+AGIplus = 4.0
+-- Name - Editor Suffix
+EditorSuffix = " (Evil Morphed)"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Starting Intelligence
+INT = 21
+-- Intelligence per Level
+INTplus = 3.2
+-- Starting Strength
+STR = 22
+-- Strength per Level
+STRplus = 3.3
+-- Normal
+abilList = "ACsk,AInv,Ault,ANcl"
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Hero
+heroAbilList = "Aamk,AEim,AEev,AEvi"
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 16
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 250

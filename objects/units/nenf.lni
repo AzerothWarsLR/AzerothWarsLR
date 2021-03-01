@@ -1,0 +1,14 @@
+[nenf]
+_parent = "nenf"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Normal
+abilList = "A020,ACct,ACev"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Scaling Value
+modelScale = 1.25

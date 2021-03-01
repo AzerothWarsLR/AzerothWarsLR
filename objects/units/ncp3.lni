@@ -1,0 +1,4 @@
+[ncp3]
+_parent = "ncp3"
+-- Unit Classification
+type = "mechanical,sapper,townhall,standon"

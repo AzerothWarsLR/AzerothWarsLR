@@ -1,0 +1,91 @@
+[n008]
+_parent = "nsc3"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Nzoth)"
+-- Hit Points Maximum (Base)
+HP = 1540
+-- Hotkey
+Hotkey = "A"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Naga Myrmidon"
+-- Tooltip - Extended
+Ubertip = "Heavy melee unit. Has Bash and Deep Core Carapace. |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ACbh,A11F,Aihn"
+-- Armor Type
+armor = "Flesh"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.64
+-- Build Time
+bldtm = 4
+-- Tinting Color 3 (Blue)
+blue = 240
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 8
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Death Time (seconds)
+death = 2.67
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 46
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.36
+-- Model File
+file = "units\\naga\\NagaMyrmidon\\NagaMyrmidon.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 24
+-- Lumber Cost
+lumbercost = 50
+-- Maximum Pitch Angle (degrees)
+maxPitch = 10.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 10.0
+-- Scaling Value
+modelScale = 0.8
+-- Type
+movetp = "amph"
+-- Priority
+prio = 9
+-- Race
+race = "naga"
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Repair Time
+reptm = 20
+-- Animation - Run Speed
+run = 220.0
+-- Selection Scale
+scale = 1.4
+-- Attack 1 - Damage Sides per Die
+sides1 = 7
+-- Speed Base
+spd = 220
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Unit Classification
+type = "sapper"
+-- Unit Sound Set
+unitSound = "NagaMyrmidon"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 220.0
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyChop"

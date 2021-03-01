@@ -1,0 +1,8 @@
+[nlrv]
+_parent = "nlrv"
+-- Normal
+abilList = "Amim,ACcv,ACf2"
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

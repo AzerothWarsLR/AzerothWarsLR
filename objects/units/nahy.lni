@@ -1,0 +1,48 @@
+[nahy]
+_parent = "nahy"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "N'zoth"
+-- Hit Points Maximum (Base)
+HP = 1950
+-- Hotkey
+Hotkey = "R"
+-- Tooltip - Basic
+Tip = "Train Ancient Hydra"
+-- Tooltip - Extended
+Ubertip = "Heavy ranged amphibious unit with Devour, Acid Spray, and Slow Poison. When it is slain, smaller Hydras will arise from its corpse. |n|n|cff99b4d1Can only train 2.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0VD,A05T,ACrk,ACdv,Advc,Aspy"
+-- Build Time
+bldtm = 35
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 85
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 120
+-- Level
+level = 8
+-- Lumber Cost
+lumbercost = 120
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Priority
+prio = 14
+-- Race
+race = "naga"
+-- Selection Scale
+scale = 1.75
+-- Speed Base
+spd = 250
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

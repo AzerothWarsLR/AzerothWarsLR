@@ -1,0 +1,36 @@
+[nfgu]
+_parent = "nfgu"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Hit Points Maximum (Base)
+HP = 350
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Train F|cffffcc00e|rlguard"
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 125
+-- Gold Bounty Awarded - Base
+bountyplus = 2
+-- Collision Size
+collision = 12.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 10
+-- Tinting Color 2 (Green)
+green = 125
+-- Scaling Value
+modelScale = 0.8
+-- Tinting Color 1 (Red)
+red = 200
+-- Stock Maximum
+stockMax = 3
+-- Stock Replenish Interval
+stockRegen = 10
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

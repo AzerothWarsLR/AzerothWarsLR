@@ -1,0 +1,27 @@
+[n0AB]
+_parent = "nbzd"
+-- Hit Points Maximum (Base)
+HP = 2000
+-- Name
+-- Normal
+abilList = "A00I,AInv,Alit,ACsk"
+-- Normal Skin
+abilSkinList = ""
+-- Gold Bounty Awarded - Base
+bountyplus = 85
+-- Attack 1 - Cooldown Time
+cool1 = 1.0
+-- Defense Base
+def = 5
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 2.0
+-- Height
+moveHeight = 350.0
+-- Mana Regeneration
+regenMana = 2.0
+-- Selection Scale
+scale = 3.0

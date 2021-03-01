@@ -1,0 +1,61 @@
+[h02G]
+_parent = "hcth"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Patreon tier 1)"
+-- Hit Points Maximum (Base)
+HP = 925
+-- Hotkey
+Hotkey = "A"
+-- Name
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00A|r] - Marshal"
+-- Tooltip - Extended
+Ubertip = "Heavy melee commander unit. Can learn Steel Plating.|n|cff99b4d1Can only train 12.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0UM,A0P3,A0BI,Avul,Aihn"
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Death Type
+deathType = 1
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 1
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 24
+-- Gold Cost
+goldcost = 23
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 1.3
+-- Race
+race = "creeps"
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 1
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "Knight"
+-- Upgrades Used
+upgrades = "R01C,R01U,R02Y,R03D,Rhme,Rhar,R05O"

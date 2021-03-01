@@ -1,0 +1,103 @@
+[n06N]
+_parent = "nzep"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSkyfireGunship.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 875
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GyroCopter\\GyroCopterImpact.mdl"
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\GyroCopter\\GyroCopterMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1000
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 1000
+-- Name
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Tooltip - Basic
+Tip = "Train Gunship"
+-- Tooltip - Extended
+Ubertip = "Dwarven engineering in the hands of ingenuic humans.|n|cfff5962dAbilities:|r Cloud, Rocket Barrage, Repair Crew, Spyglass|n|n|cff99b4d1Can only build 6.|n|r|cffffd700Attacks land units.|r"
+-- Normal
+abilList = "A0VV,A0IZ,A0IX,A0IY"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Attack 2 - Attack Type
+atkType2 = "siege"
+-- Build Time
+bldtm = 15
+-- Collision Size
+collision = 54.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.4
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "large"
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 2 - Damage Number of Dice
+dice2 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 15
+-- Attack 2 - Damage Base
+dmgplus2 = 28
+-- Model File
+file = "Skyfire Gunship.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 35
+-- Level
+level = 4
+-- Repair Lumber Cost
+lumberRep = 300
+-- Scaling Value
+modelScale = 0.5
+-- Height
+moveHeight = 300.0
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 300
+-- Selection Circle - Height
+selZ = 150.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 2
+-- Attack 2 - Damage Sides per Die
+sides2 = 8
+-- Speed Base
+spd = 210
+-- Categorization - Special
+special = 0
+-- Stock Replenish Interval
+stockRegen = 300
+-- Stock Start Delay
+stockStart = 300
+-- Attack 1 - Targets Allowed
+targs1 = "air"
+-- Attack 2 - Targets Allowed
+targs2 = "debris,enemies,ground,item,nonancient,structure,ward"
+-- Turn Rate
+turnRate = 0.6
+-- Unit Classification
+type = "mechanical,sapper"
+-- Unit Sound Set
+unitSound = "Boat"
+-- Upgrades Used
+upgrades = "R01N,Rhar,Rhme,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 2 - Weapon Type
+weapTp2 = "missile"
+-- Attacks Enabled
+weapsOn = 3

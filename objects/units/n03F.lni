@@ -1,0 +1,68 @@
+[n03F]
+_parent = "nogl"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArmoredOge.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong-Elite)"
+-- Hit Points Maximum (Base)
+HP = 1600
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Train Ogre Lord"
+-- Tooltip - Extended
+Ubertip = "Breaker of magic and one of the lords of Stonemaul.|n|cfff5962dAbilities:|R Taunt, Shockwave, Bash, Spell Block, Devotion Aura|n|n|cff99b4d1Can only train 6. |r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A064,ANta,A0WJ,A0Q9,Aion,A01T,ACrk,A0B2"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 28.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.1
+-- Death Type
+deathType = 1
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 58
+-- Model File
+file = "units\\creeps\\OgreOneHeadedArmored\\OgreOneHeadedArmored.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 90
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.15
+-- Priority
+prio = 13
+-- Race
+race = "orc"
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 10
+-- Speed Base
+spd = 220
+-- Unit Classification
+type = "sapper"
+-- Upgrades Used
+upgrades = "R019,R015,Ropm,Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "WoodHeavyBash"

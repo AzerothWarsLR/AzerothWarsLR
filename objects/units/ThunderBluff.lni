@@ -1,0 +1,65 @@
+[o00J]
+_parent = "ofrt"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 100
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.23
+-- Attack 1 - Projectile Art
+Missileart_1 = "abilities\\weapons\\catapult\\catapultmissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 950
+-- Name
+-- Researches Available
+Researches = "Ropg"
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "o00A,opeo,o00E,noga,n03R"
+-- Normal
+abilList = "A0C9,A0GM,A09I,Aspi,Argl"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Defense Base
+def = 20
+-- Attack 1 - Damage Number of Dice
+dice1 = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 200
+-- Model File
+file = "war3mapImported\\TaurenGreatHall.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 150
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.95
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = ""
+-- Attack 1 - Range
+rangeN1 = 1150
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 12
+-- Attack 1 - Targets Allowed
+targs1 = "enemies,ground,mechanical"
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Attack 1 - Weapon Type
+weapTp1 = "artillery"

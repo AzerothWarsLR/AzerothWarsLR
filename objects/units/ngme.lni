@@ -1,0 +1,16 @@
+[ngme]
+_parent = "ngme"
+-- Items Sold
+Sellitems = "rde3,pghe,pgma,pomn,tret,stwp,I00L,bspd,dust,shea,spro"
+-- Shadow Texture (Building)
+buildingShadow = "ShadowHouse"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.6
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Selection Scale
+scale = 3.25
+-- Ground Texture
+uberSplat = ""

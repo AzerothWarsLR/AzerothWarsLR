@@ -1,0 +1,16 @@
+[nsln]
+_parent = "nsln"
+-- Hit Points Maximum (Base)
+HP = 1275
+-- Normal
+abilList = "A0P0,ACsw,A0KH"
+-- Default Active Ability
+auto = "A0P0"
+-- Gold Bounty Awarded - Base
+bountyplus = 11
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Damage Base
+dmgplus1 = 42
+-- Food Cost
+fused = 0

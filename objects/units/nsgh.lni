@@ -1,0 +1,8 @@
+[nsgh]
+_parent = "nsgh"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Attack 1 - Damage Base
+dmgplus1 = 22

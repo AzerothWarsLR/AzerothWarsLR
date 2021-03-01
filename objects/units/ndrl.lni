@@ -1,0 +1,18 @@
+[ndrl]
+_parent = "ndrl"
+-- Structures Built
+Builds = "eshy,ndh4"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 6.0
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 7
+-- Race
+race = "nightelf"
+-- Unit Classification
+type = "sapper,peon"
+-- Upgrades Used
+upgrades = ""

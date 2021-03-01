@@ -1,0 +1,20 @@
+[nssp]
+_parent = "nssp"
+-- Tooltip - Extended
+Ubertip = "Light ranged unit that spits poison at opponents. Can Cast Web. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aspo,A0DH"
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Collision Size
+collision = 16.0
+-- Defense Type
+defType = "medium"
+-- Food Cost
+fused = 1
+-- Scaling Value
+modelScale = 0.85
+-- Race
+race = "nightelf"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar,Ruwb"

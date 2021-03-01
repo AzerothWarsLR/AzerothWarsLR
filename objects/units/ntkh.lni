@@ -1,0 +1,6 @@
+[ntkh]
+_parent = "ntkh"
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1

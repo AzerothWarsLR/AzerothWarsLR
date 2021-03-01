@@ -1,0 +1,8 @@
+[nvk2]
+_parent = "nvk2"
+-- Hit Points Maximum (Base)
+HP = 120
+-- Collision Size
+collision = 6.0
+-- Selection Scale
+scale = 0.6

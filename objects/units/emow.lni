@@ -1,0 +1,50 @@
+[emow]
+_parent = "emow"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Build Moon Well"
+-- Tooltip - Extended
+Ubertip = "Well of Elune's Light.|nProvides 8 food, which increases the maximum number of units that can be trained.|n|cfff5962dAbilities:|R Replenish Mana and Life"
+-- Normal
+abilList = "Ambt"
+-- Default Active Ability
+auto = "Ambt"
+-- Build Time
+bldtm = 20
+-- Collision Size
+collision = 0.0
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 18
+-- Repair Lumber Cost
+lumberRep = 15
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 0.95
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Mana Regeneration
+regenMana = 2.0
+-- Repair Time
+reptm = 30
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rews,Rgfo"

@@ -1,0 +1,23 @@
+[n090]
+_parent = "ncop"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNResStone.blp"
+-- Description
+Description = "The diamond complex of Oshu'gun."
+-- Name - Editor Suffix
+EditorSuffix = "(AoS)"
+-- Hit Points Maximum (Base)
+HP = 1800
+-- Name
+-- Normal
+abilList = "A0NR"
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\other\\GoldMine\\GoldMine.mdl"
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Team Color
+teamColor = 2
+-- Unit Classification
+type = "sapper"

@@ -1,0 +1,51 @@
+[n002]
+_parent = "nfoh"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Name
+-- Researches Available
+Researches = "R04E"
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Nordrassil"
+-- Units Trained
+Trains = "h04L,e00N,ewsp"
+-- Normal
+abilList = "Adtg,A00H,A01A,A019"
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 300.0
+-- Defense Base
+def = 20
+-- Defense Upgrade Bonus
+defUp = 5
+-- Model File
+file = "Doodads\\Ashenvale\\Structures\\Worldtree\\Worldtree.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 100
+-- Repair Lumber Cost
+lumberRep = 300
+-- Scaling Value
+modelScale = 0.5
+-- Sight Radius (Night)
+nsight = 1800
+-- Priority
+prio = 20
+-- Race
+race = "nightelf"
+-- Repair Time
+reptm = 120
+-- Sight Radius (Day)
+sight = 1800
+-- Unit Classification
+type = "ancient,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac,R013,Rgfo,Renb,R064"

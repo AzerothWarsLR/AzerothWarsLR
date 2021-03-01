@@ -1,0 +1,49 @@
+[h06C]
+_parent = "hars"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGryphonAviary.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hotkey
+Hotkey = "D"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R01Q"
+-- Tooltip - Basic
+Tip = "Build Aviary"
+-- Units Trained
+Trains = "h02Q,nwe2"
+-- Tooltip - Extended
+Ubertip = "Flying unit production building.|n|cfff5962dTrains:|r Pegasus Knight, Thunder Eagle"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "ShadowAltarofKings"
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\human\\GryphonAviary\\GryphonAviary.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.8
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 19
+-- Repair Time
+reptm = 60
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""

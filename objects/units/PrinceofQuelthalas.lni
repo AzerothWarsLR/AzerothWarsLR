@@ -1,0 +1,53 @@
+[Hkal]
+_parent = "Hkal"
+-- Tooltip - Awaken
+Awakentip = "Revive Prince of Quel'thalas"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'thalas)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "Z"
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.15
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\SerpentWardMissile\\SerpentWardMissile.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 900
+-- Name
+-- Proper Names
+Propernames = "Kael'thas Sunstrider"
+-- Requirements
+Requires = "R04Q"
+-- Tooltip - Revive
+Revivetip = "Revive Prince of Quel'thalas"
+-- Tooltip - Basic
+Tip = "Summon Kael'thas Sunstrider"
+-- Tooltip - Extended
+Ubertip = "Destructive mystical hero, adept at dealing magical damage.|n|cfff5962dCan Learn:|R Resurgent Flame Strike, Mass Banish, Verdant Spheres, Siphoning Ritual|n|n|cff8080ffStarting level:|r 10|n|cffffcc00Attacks land and air units.|R"
+-- Attack 2 - Attack Type
+atkType2 = "magic"
+-- Build Time
+bldtm = 5
+-- Collision Size
+collision = 23.0
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "Aamk,A04H,A0FD,A0WH,A0FA"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 18
+-- Attack 2 - Range
+rangeN2 = 600
+-- Attack 2 - Show UI
+showUI2 = 0
+-- Speed Base
+spd = 220
+-- Attacks Enabled
+weapsOn = 3

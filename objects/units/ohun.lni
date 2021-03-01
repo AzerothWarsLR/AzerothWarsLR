@@ -1,0 +1,60 @@
+[ohun]
+_parent = "ohun"
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Versatile marksmen and a true believer of the Horde.|n|cfff5962dAbilities:|R Slow Poison|n|cfff5962dCan learn:|R Animal Companion|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "ANtr,ACsf,Aion,A05H"
+-- Acquisition Range
+acquire = 750.0
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Defense Type
+defType = "small"
+-- Attack 1 - Damage Base
+dmgplus1 = 24
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Attack 1 - Range
+rangeN1 = 750
+-- Repair Time
+reptm = 2
+-- Shadow Image - Height
+shadowH = 100.0
+-- Shadow Image - Width
+shadowW = 100.0
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "Rhar,Rotr,Ropm,Rhme,Rguv"

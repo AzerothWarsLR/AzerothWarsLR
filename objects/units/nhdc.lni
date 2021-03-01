@@ -1,0 +1,4 @@
+[nhdc]
+_parent = "nhdc"
+-- Scaling Value
+modelScale = 0.8

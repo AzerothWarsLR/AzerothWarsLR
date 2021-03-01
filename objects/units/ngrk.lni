@@ -1,0 +1,36 @@
+[ngrk]
+_parent = "ngrk"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Normal
+abilList = "ACmi,ACrk,ACsw"
+-- Build Time
+bldtm = 60
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 13.0
+-- Defense Type
+defType = "large"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 28
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Repair Time
+reptm = 60
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Upgrades Used
+upgrades = "Rhme,Rhar,R00N"

@@ -1,0 +1,72 @@
+[nstl]
+_parent = "nstl"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSatyrTrickster.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Xavius)"
+-- Hit Points Maximum (Base)
+HP = 640
+-- Hotkey
+Hotkey = "R"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Spells\\Undead\\OrbOfDeath\\AnnihilationMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 777
+-- Tooltip - Basic
+Tip = "Train Satyr Soulstealer"
+-- Tooltip - Extended
+Ubertip = "Supporting spellcaster, Has the Shadow Strike, Devour Magic and Cripple abilities. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aiun,ACss,ACde,A079"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = ""
+-- Build Time
+bldtm = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "medium"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 19
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 600
+-- Stock Replenish Interval
+stockRegen = 100
+-- Stock Start Delay
+stockStart = 0
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rguv,R02A"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

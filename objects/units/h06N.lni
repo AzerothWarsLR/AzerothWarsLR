@@ -1,0 +1,142 @@
+[h06N]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(stormwind)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 25
+-- Attack 2 - Area of Effect (Full Damage)
+Farea2 = 25
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 50
+-- Attack 2 - Area of Effect (Medium Damage)
+Harea2 = 50
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.4
+-- Attack 2 - Damage Factor - Medium
+Hfact2 = 0.4
+-- Hotkey
+Hotkey = "C"
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.35
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\BallistaMissile\\BallistaMissile.mdl"
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\CannonTowerMissile\\CannonTowerMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1400
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 1400
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 150
+-- Attack 2 - Area of Effect (Small Damage)
+Qarea2 = 150
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.25
+-- Attack 2 - Damage Factor - Small
+Qfact2 = 0.25
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R061,R06Q"
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Units Trained
+Trains = "h03S,h022,h06D,h06B,h05F,nbee,h019,hpea,h01L,h00F,n00A,n007"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Peasant, Stormwind Champion |n|cfff5962dAbilities:|R Call to Arms, Summon Garrison"
+-- Normal
+abilList = "A0CY,A0GC,A0GD,A0GA,Amic,Argl"
+-- Acquisition Range
+acquire = 1300.0
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Attack 2 - Attack Type
+atkType2 = "siege"
+-- Default Active Ability
+auto = "A0GC"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 1.9
+-- Attack 2 - Animation Backswing Point
+backSw2 = 0.3
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.5
+-- Attack 2 - Cooldown Time
+cool2 = 3.5
+-- Attack 1 - Damage Loss Factor
+damageLoss1 = 0.2
+-- Attack 2 - Damage Loss Factor
+damageLoss2 = 0.2
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 2 - Damage Number of Dice
+dice2 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 2 - Damage Base
+dmgplus2 = 135
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.1
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.3
+-- Model File
+file = "war3mapImported\\TownHallStormwindV1.02.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 135
+-- Repair Lumber Cost
+lumberRep = 200
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.95
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 1300
+-- Attack 2 - Range
+rangeN2 = 1200
+-- Mana Regeneration
+regenMana = 2.2
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.5
+-- Attack 1 - Damage Sides per Die
+sides1 = 18
+-- Attack 2 - Damage Sides per Die
+sides2 = 25
+-- Attack 1 - Damage Spill Radius
+spillRadius1 = 50.0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,structure,wall"
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,wall,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "debris,ground,item,structure,wall,ward"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,R02H,Rhac,Rgfo"
+-- Attack 2 - Weapon Type
+weapTp2 = "artillery"

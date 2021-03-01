@@ -1,0 +1,97 @@
+[Haah]
+_parent = "Haah"
+-- Starting Agility
+AGI = 14
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Tooltip - Awaken
+Awakentip = "Revive The Last Guardian"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "Z"
+-- Starting Intelligence
+INT = 39
+-- Intelligence per Level
+INTplus = 4.3
+-- Attack 1 - Projectile Art
+Missileart_1 = "war3mapImported\\SpiritDragonMissile(Azure).mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 550
+-- Movement
+MovementSoundLabel = ""
+-- Name
+-- Proper Names
+Propernames = "Medivh"
+-- Requirements
+Requires = "R012"
+-- Tooltip - Revive
+Revivetip = "Revive The Last Guardian"
+-- Starting Strength
+STR = 24
+-- Strength per Level
+STRplus = 1.95
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp"
+-- Tooltip - Basic
+Tip = "Summon Medivh"
+-- Tooltip - Extended
+Ubertip = "Mysterious mystical hero, adept at dealing magic damage through attacks.|n|cfff5962dAbilities:|r Banish|n|cfff5962dCan Learn:|R Murder of Crows, Surge of Power, Dragon Storm, Fel Rift|n|n|cff8080ffStarting level:|r 10|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "A0GK,ACbn,AInv"
+-- Acquisition Range
+acquire = 700.0
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.49
+-- Build Time
+bldtm = 13
+-- Animation - Cast Backswing
+castbsw = 0.51
+-- Collision Size
+collision = 22.0
+-- Death Time (seconds)
+death = 3.0
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.6
+-- Model File
+file = "units\\creeps\\Medivh\\Medivh.mdl"
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 500
+-- Hero
+heroAbilList = "A0BS,A0BR,A0BQ,A0UK,Aamk"
+-- Projectile Launch - Z
+launchZ = 60.0
+-- Lumber Cost
+lumbercost = 0
+-- Maximum Pitch Angle (degrees)
+maxPitch = 10.0
+-- Orientation Interpolation
+orientInterp = 0
+-- Priority
+prio = 20
+-- Attack 1 - Range
+rangeN1 = 700
+-- Animation - Run Speed
+run = 200.0
+-- Shadow Image - Height
+shadowH = 100.0
+-- Shadow Image - Width
+shadowW = 100.0
+-- Shadow Image - Center X
+shadowX = 50.0
+-- Shadow Image - Center Y
+shadowY = 50.0
+-- Speed Base
+spd = 250
+-- Animation - Walk Speed
+walk = 200.0

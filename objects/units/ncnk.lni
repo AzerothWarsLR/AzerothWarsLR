@@ -1,0 +1,14 @@
+[ncnk]
+_parent = "ncnk"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Normal
+abilList = "SCae,ACrn"
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Food Cost
+fused = 0
+-- Level
+level = 7

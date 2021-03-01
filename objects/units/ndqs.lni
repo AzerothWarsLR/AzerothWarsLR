@@ -1,0 +1,58 @@
+[ndqs]
+_parent = "ndqs"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Tooltip - Basic
+Tip = "Summon Queen of Suffering"
+-- Tooltip - Extended
+Ubertip = "Mother of cruel delights.|n|cfff5962dAbilities:|R Carrion Swarm, Howl of Terror, Unholy Aura |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Acht,A0XZ,ACua"
+-- Acquisition Range
+acquire = 600.0
+-- Build Time
+bldtm = 22
+-- Tinting Color 3 (Blue)
+blue = 174
+-- Gold Bounty Awarded - Base
+bountyplus = 47
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Attack 1 - Damage Base
+dmgplus1 = 48
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 39
+-- Tinting Color 2 (Green)
+green = 175
+-- Level
+level = 7
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Speed Base
+spd = 260
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 110
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumSlice"

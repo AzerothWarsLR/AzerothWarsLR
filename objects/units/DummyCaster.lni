@@ -1,0 +1,31 @@
+[u00X]
+_parent = "ushd"
+-- Name
+-- Normal
+abilList = "Aloc"
+-- Animation - Cast Backswing
+castbsw = 0.0
+-- Animation - Cast Point
+castpt = 0.0
+-- Model File
+file = "Dummy.mdl"
+-- Food Cost
+fused = 0
+-- Mana Initial Amount
+mana0 = 100000
+-- Mana Maximum
+manaN = 100000
+-- Height
+moveHeight = 0.0
+-- Hit Points Regeneration Rate
+regenHP = 0.0
+-- Mana Regeneration
+regenMana = 1000.0
+-- Speed Base
+spd = 0
+-- Categorization - Special
+special = 1
+-- Shadow Image (Unit)
+unitShadow = ""
+-- Upgrades Used
+upgrades = ""

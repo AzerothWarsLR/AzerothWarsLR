@@ -1,0 +1,63 @@
+[H00Z]
+_parent = "Huth"
+-- Agility per Level
+AGIplus = 1.6
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBanditWarrior.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Crown Prince of Stromgarde"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Dark Green)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Hotkey
+Hotkey = "X"
+-- Intelligence per Level
+INTplus = 2.0
+-- Name
+-- Proper Names
+Propernames = "Galen Trollbane"
+-- Requirements
+Requires = "R01M"
+-- Tooltip - Revive
+Revivetip = "Revive Crown Prince of Stromgarde"
+-- Strength per Level
+STRplus = 3.5
+-- Icon - Score Screen
+ScoreScreenIcon = "war3mapImported\\SSHHeroFootmanHero.blp"
+-- Tooltip - Basic
+Tip = "Summon Galen Trollbane"
+-- Tooltip - Extended
+Ubertip = "Regal warrior hero, adept at supporting armies.|n|cfff5962dAbilities:|R War Plate|n|cfff5962dCan Learn:|R Earth Bind, War Stomp, Conveyance Aura, Instant Revitalization|n|n|cff8080ffStarting level:|r 7|n|cffffcc00Attacks land units.|R"
+-- Normal
+abilList = "A087,A0GK,AInv"
+-- Build Time
+bldtm = 5
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Model File
+file = "CW_Galen_Trollbane.mdl"
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "Aamk,A0WM,A08N,A08O,A0Q4"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.98
+-- Priority
+prio = 18
+-- Speed Base
+spd = 260
+-- Unit Sound Set
+unitSound = "HeroPaladin"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumSlice"

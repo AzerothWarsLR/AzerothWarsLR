@@ -1,0 +1,24 @@
+[osw3]
+_parent = "osw3"
+-- Name - Editor Suffix
+EditorSuffix = "Frostwolf-Thrall)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Tooltip - Extended
+Ubertip = "Thrall's feral embodiment of the Horde."
+-- Normal
+abilList = "ACct"
+-- Collision Size
+collision = 26.0
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.75
+-- Categorization - Special
+special = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"

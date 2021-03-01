@@ -1,0 +1,55 @@
+[owar]
+_parent = "owar"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Bonebreaker"
+-- Tooltip - Extended
+Ubertip = "Strong mounted warrior of Outland.|n|cfff5962dAbilities:|R Charge, Self-Bloodlust, Bash, War Plating, Pillage|n|cfff5962dCan Learn:|R Bloodcraze|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0ES,A0ER,A0GQ,A0EH,A020,Aion"
+-- Default Active Ability
+auto = "A0EH"
+-- Build Time
+bldtm = 3
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 16.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 23
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 28
+-- Gold Cost
+goldcost = 26
+-- Level
+level = 4
+-- Mana Regeneration
+regenMana = 0.4
+-- Repair Time
+reptm = 4
+-- Attack 1 - Damage Sides per Die
+sides1 = 7
+-- Speed Base
+spd = 270
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rguv,R02L,Robf,R00Y,Rhar,Rhme"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumBash"

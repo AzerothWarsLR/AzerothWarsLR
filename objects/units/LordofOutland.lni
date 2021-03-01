@@ -1,0 +1,53 @@
+[Nmag]
+_parent = "Nmag"
+-- Agility per Level
+AGIplus = 1.6
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "A"
+-- Intelligence per Level
+INTplus = 2.0
+-- Name
+-- Starting Strength
+STR = 35
+-- Strength per Level
+STRplus = 4.0
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0EJ,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 26.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 49
+-- Hero
+heroAbilList = "Aamk,A04N,A0C7,A07M,A0KU"
+-- Scaling Value
+modelScale = 1.15
+-- Priority
+prio = 19
+-- Attack 1 - Range
+rangeN1 = 225
+-- Hit Points Regeneration Rate
+regenHP = 0.55
+-- Animation - Run Speed
+run = 320.0
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "HeroPitLord"
+-- Upgrades Used
+upgrades = "R010,R011"
+-- Animation - Walk Speed
+walk = 210.0

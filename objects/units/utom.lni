@@ -1,0 +1,32 @@
+[utom]
+_parent = "utom"
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "ritd,I013,rnec,plcl,sand,phea,pman,stwp,ocor,shea"
+-- Tooltip - Extended
+Ubertip = "Creates a shop with purchasable items."
+-- Normal
+abilList = "Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 13
+-- Repair Lumber Cost
+lumberRep = 20
+-- Scaling Value
+modelScale = 0.65
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Placement Prevented By
+requirePlace = ""
+-- Ground Texture
+uberSplat = ""

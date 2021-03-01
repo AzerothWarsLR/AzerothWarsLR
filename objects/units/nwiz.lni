@@ -1,0 +1,22 @@
+[nwiz]
+_parent = "nwiz"
+-- Hit Points Maximum (Base)
+HP = 530
+-- Normal
+abilList = "A009,A00D"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Mana Initial Amount
+mana0 = 140
+-- Mana Maximum
+manaN = 140
+-- Mana Regeneration
+regenMana = 1.0

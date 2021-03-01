@@ -1,0 +1,24 @@
+[E00P]
+_parent = "Ekgg"
+-- Starting Agility
+AGI = 24
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Proper Names
+Propernames = "Horn Guardian"
+-- Normal
+abilList = "Amim,AInv,Ault"
+-- Categorization - Campaign
+campaign = 0
+-- Hero
+heroAbilList = "AEer,AEah,AEtq"
+-- Scaling Value
+modelScale = 1.5
+-- Sight Radius (Night)
+nsight = 600
+-- Race
+race = "creeps"
+-- Sight Radius (Day)
+sight = 600

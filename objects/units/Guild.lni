@@ -1,0 +1,49 @@
+[h048]
+_parent = "hbla"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendBlacksmith.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Ironforge)"
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R00N,Rhlh,Rhac,Rhse,R00K,Rhme,Rhar"
+-- Tooltip - Basic
+Tip = "Build Guild"
+-- Tooltip - Extended
+Ubertip = "Place for dwarven craftsmen to gather and work their trades.|n|cfff5962dResearches: |RForged Weaponry, Armor Plating, Power Infusion|n|n|cffffcc00Can receive Lumber.|R"
+-- Normal
+abilList = "Arlm"
+-- Build Time
+bldtm = 20
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\BlacksmithIronforgeV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 100
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 15
+-- Repair Time
+reptm = 60
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R03A,Rhac,Rgfo"

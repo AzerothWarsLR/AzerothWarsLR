@@ -1,0 +1,14 @@
+[nnwl]
+_parent = "nnwl"
+-- Hit Points Maximum (Base)
+HP = 690
+-- Normal
+abilList = "ACwb,Aspa,Arai"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 31

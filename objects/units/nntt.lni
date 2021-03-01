@@ -1,0 +1,32 @@
+[nntt]
+_parent = "nntt"
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "Q"
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00Q|r] - Temple of Tides"
+-- Units Trained
+Trains = "n06L,nnrg,nmpe"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train Mur'gul Slaves, Royal Guards and receive gathered resources. Also contains the Submerge upgrade."
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 38
+-- Repair Lumber Cost
+lumberRep = 140
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Repair Time
+reptm = 60
+-- Ground Texture
+uberSplat = ""

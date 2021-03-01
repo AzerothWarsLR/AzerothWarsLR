@@ -1,0 +1,9 @@
+[nth0]
+_parent = "nth0"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Name
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Selection Scale
+scale = 1.0

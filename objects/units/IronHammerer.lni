@@ -1,0 +1,63 @@
+[n08T]
+_parent = "nchg"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDwarvenDeathKnight.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(yogg)"
+-- Hit Points Maximum (Base)
+HP = 1025
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train - Iron Hammerer"
+-- Tooltip - Extended
+Ubertip = "Denizen and defender of the installation.|n|cfff5962dAbilities:|R Emergency Patch Up, Charge, Repair, Bash|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A02W,A020,Ahrp,A01K"
+-- Attack 1 - Attack Type
+atkType1 = "normal"
+-- Build Time
+bldtm = 4
+-- Tinting Color 3 (Blue)
+blue = 180
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.9
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Defense Base
+def = 3
+-- Model File
+file = "war3mapImported\\DwarfHammerer.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 13
+-- Tinting Color 2 (Green)
+green = 180
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.75
+-- Race
+race = "nightelf"
+-- Tinting Color 1 (Red)
+red = 180
+-- Hit Points Regeneration Rate
+regenHP = 0.0
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 205
+-- Unit Classification
+type = "mechanical"
+-- Unit Sound Set
+unitSound = "HeroMountainKing"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumBash"

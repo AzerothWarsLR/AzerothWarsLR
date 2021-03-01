@@ -1,0 +1,48 @@
+[ehpr]
+_parent = "ehpr"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Train Hippogryph Rider"
+-- Tooltip - Extended
+Ubertip = "Airborne archer of the Sentinels who strikes multiple foes.|n|cfff5962dAbilities:|R Multi Shot|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "ANwk,A0HZ,Ault"
+-- Build Time
+bldtm = 10
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Transported Size
+cargoSize = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 19
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 35
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Attack 1 - Range
+rangeN1 = 500
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 280
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rguv,R002,R03J,Rhme,Rhar,Reib,Remk,Reuv"

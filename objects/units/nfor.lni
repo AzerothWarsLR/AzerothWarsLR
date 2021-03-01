@@ -1,0 +1,6 @@
+[nfor]
+_parent = "nfor"
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Food Cost
+fused = 0

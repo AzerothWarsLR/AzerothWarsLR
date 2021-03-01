@@ -1,0 +1,19 @@
+[n0A1]
+_parent = "nwgt"
+-- Name
+-- Normal
+abilList = "A03K,Awrp,Avul"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Model File
+file = "buildings\\other\\TaurenTent2\\TaurenTent2.mdl"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.8
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4Default.tga"
+-- Ground Texture
+uberSplat = ""

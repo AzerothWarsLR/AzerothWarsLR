@@ -1,0 +1,104 @@
+[n04L]
+_parent = "nina"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 865
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.4
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 2000
+-- Requirements
+Requires = "R04B"
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Build Infernal Juggernaut"
+-- Tooltip - Extended
+Ubertip = "Hellforged contraption of doom.|n|cfff5962dAbilities:|R Inferno|n|n|cff99b4d1Can only build 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A077"
+-- Acquisition Range
+acquire = 1150.0
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Attack 2 - Attack Type
+atkType2 = "siege"
+-- Attack 2 - Animation Backswing Point
+backSw2 = 0.8
+-- Build Time
+bldtm = 35
+-- Gold Bounty Awarded - Base
+bountyplus = 95
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 4.0
+-- Attack 2 - Cooldown Time
+cool2 = 4.0
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 2 - Damage Number of Dice
+dice2 = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 80
+-- Attack 2 - Damage Base
+dmgplus2 = 40
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.5
+-- Model File
+file = "units\\creeps\\InfernalCannonCannon\\InfernalCannonCannon.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 33
+-- Gold Cost
+goldcost = 72
+-- Projectile Launch - Z
+launchZ = 140.0
+-- Level
+level = 5
+-- Lumber Cost
+lumbercost = 70
+-- Minimum Attack Range
+minRange = 250
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Attack 2 - Range
+rangeN2 = 1150
+-- Attack 1 - Damage Sides per Die
+sides1 = 18
+-- Attack 2 - Damage Sides per Die
+sides2 = 18
+-- Speed Base
+spd = 120
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,structure,tree,ward"
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 110
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "structure"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "artillery"
+-- Attack 2 - Weapon Type
+weapTp2 = "missile"

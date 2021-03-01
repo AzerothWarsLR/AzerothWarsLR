@@ -1,0 +1,35 @@
+[u008]
+_parent = "uloc"
+-- Hit Points Maximum (Base)
+HP = 100
+-- Name
+-- Normal
+abilList = "A04G,Avul,A01G,Aloc"
+-- Acquisition Range
+acquire = 99999.0
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Damage Base
+dmgplus1 = 16
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Model File
+file = "Doodads\\Terrain\\NorthrendTree\\NorthrendTree.mdl"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.5
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 522
+-- Shadow Image (Unit)
+unitShadow = ""
+-- Attacks Enabled
+weapsOn = 0

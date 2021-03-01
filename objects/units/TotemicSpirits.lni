@@ -1,0 +1,7 @@
+[u005]
+_parent = "uloc"
+-- Name
+-- Model File
+file = "Abilities\\Spells\\Orc\\AncestralSpirit\\AncestralSpiritCaster.mdl"
+-- Race
+race = "orc"

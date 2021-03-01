@@ -1,0 +1,30 @@
+[ndh3]
+_parent = "ndh3"
+-- Units Trained
+Trains = "ndrn,ndsa,ndrt,ncat"
+-- Tooltip - Extended
+Ubertip = "Produces Draenei Vindicators, Stalkers, and Demolishers."
+-- Build Time
+bldtm = 40
+-- Collision Size
+collision = 0.0
+-- Food Produced
+fmade = 0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 1.1
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "nightelf"
+-- Repair Time
+reptm = 60
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,8 @@
+[nfot]
+_parent = "nfot"
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Food Cost
+fused = 0
+-- Attack 1 - Targets Allowed
+targs1 = "air,enemies,ground,hero,structure"

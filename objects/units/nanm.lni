@@ -1,0 +1,6 @@
+[nanm]
+_parent = "nanm"
+-- Gold Bounty Awarded - Base
+bountyplus = 1
+-- Food Cost
+fused = 0

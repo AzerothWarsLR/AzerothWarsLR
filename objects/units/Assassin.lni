@@ -1,0 +1,89 @@
+[h05T]
+_parent = "hfoo"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBanditSpearThrower.blp"
+-- Required Attachment Link Names
+Attachmentlinkprops = "alternate"
+-- Required Bone Names
+Boneprops = "alternate"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 575
+-- Hotkey
+Hotkey = "R"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 900
+-- Name
+-- Tooltip - Basic
+Tip = "Train Assassin"
+-- Tooltip - Extended
+Ubertip = "Versatile Assassin of the SI:7.|n|cfff5962dAbilities:|R Slow Poison, Ambush, Critical Strike|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0XK,A0P3,A0J4,A03O,Aihn"
+-- Required Animation Names
+animProps = "alternate"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Default Active Ability
+auto = "A0P0"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 180
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.7
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "small"
+-- Attack 1 - Damage Base
+dmgplus1 = 28
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "SpearThrowerGilneasV1.02.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 12
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 180
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 5
+-- Attack 1 - Range
+rangeN1 = 300
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 265
+-- Attack 1 - Targets Allowed
+targs1 = "ground,structure,debris,air,item,ward"
+-- Unit Sound Set
+unitSound = "Bandit"
+-- Upgrades Used
+upgrades = "R01N,R03F,Rguv,Rhar,Rhme"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

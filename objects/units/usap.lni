@@ -1,0 +1,28 @@
+[usap]
+_parent = "usap"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Requirements
+Requires = ""
+-- Units Trained
+Trains = "ushd"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 7
+-- Gold Cost
+goldcost = 7
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Placement Prevented By
+requirePlace = ""
+-- Ground Texture
+uberSplat = ""

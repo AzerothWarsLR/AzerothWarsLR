@@ -1,0 +1,67 @@
+[nvdw]
+_parent = "nvdw"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 775
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 235.0
+-- Tooltip - Basic
+Tip = "Summon Voidweaver"
+-- Tooltip - Extended
+Ubertip = "Light ranged unit with Phase Shift and Frost Attack. Can learn Voidic Lash.|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Afrc,Apsh,A0PY"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Default Active Ability
+auto = "Apsh"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 14
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 100
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 400
+-- Hit Points Regeneration Rate
+regenHP = 1.2
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 225
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 30
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "R003,Rguv,Rhme,Rhar"

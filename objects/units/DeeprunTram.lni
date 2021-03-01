@@ -1,0 +1,45 @@
+[n03B]
+_parent = "nwgt"
+-- Description
+Description = "Teleports units to the other Deeprun Tram."
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Researches Available
+Researches = "R014"
+-- Normal
+abilList = "A0F2,Awrp,Avul"
+-- Tinting Color 3 (Blue)
+blue = 160
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "units\\human\\WarWagon\\WarWagon_V1.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Tinting Color 2 (Green)
+green = 120
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 1.35
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Tinting Color 1 (Red)
+red = 120
+-- Repair Time
+reptm = 90
+-- Unit Classification
+type = "ancient,mechanical,neutral,standon"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"

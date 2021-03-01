@@ -1,0 +1,4 @@
+[nccr]
+_parent = "nccr"
+-- Categorization - Special
+special = 1

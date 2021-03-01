@@ -1,0 +1,21 @@
+[n07K]
+_parent = "nwgt"
+-- Name
+-- Normal
+abilList = "A0A4,Awrp,Avul"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Model File
+file = "Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTo.mdl"
+-- Tinting Color 2 (Green)
+green = 0
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.7
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Ground Texture
+uberSplat = ""

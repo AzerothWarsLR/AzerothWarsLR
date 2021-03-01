@@ -1,0 +1,69 @@
+[u00V]
+_parent = "unec"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNOrcWarlock.blp"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Shadow Infusion,- Shadow Infusion|n- Unholy Frenzy,- Shadow Infusion|n- Unholy Frenzy|n- Unholy Armor"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train - Necrolyte"
+-- Tooltip - Extended
+Ubertip = "Necromancer of orcish past, and veteran of many wars.|n|cfff5962dAbilities:|R Shadow Infusion|n|cfff5962dCan Learn:|R Unholy Frenzy, Soul Burn  |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0AR,S004,A0W5,Aion"
+-- Default Active Ability
+auto = "A0AR"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 11.0
+-- Attack 1 - Damage Base
+dmgplus1 = 6
+-- Model File
+file = "units\\creeps\\OrcWarlock\\OrcWarlock.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 14
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 10
+-- Race
+race = "orc"
+-- Hit Points Regeneration Rate
+regenHP = 0.25
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Unit Classification
+type = ""
+-- Unit Sound Set
+unitSound = "ShamanX"
+-- Upgrades Used
+upgrades = "R024,R023,Rguv,Ropm"

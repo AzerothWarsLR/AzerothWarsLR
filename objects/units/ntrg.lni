@@ -1,0 +1,12 @@
+[ntrg]
+_parent = "ntrg"
+-- Hit Points Maximum (Base)
+HP = 1350
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Defense Base
+def = 10
+-- Attack 1 - Damage Base
+dmgplus1 = 45
+-- Level
+level = 6

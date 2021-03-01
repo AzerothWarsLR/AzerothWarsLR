@@ -1,0 +1,32 @@
+[nvde]
+_parent = "nvde"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Tooltip - Basic
+Tip = "Train Elder Voidwalker"
+-- Normal
+abilList = "Adtg,ACfl,ACde"
+-- Gold Bounty Awarded - Base
+bountyplus = 35
+-- Collision Size
+collision = 34.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 37
+-- Gold Cost
+goldcost = 37
+-- Level
+level = 5
+-- Scaling Value
+modelScale = 1.4
+-- Stock Replenish Interval
+stockRegen = 110
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

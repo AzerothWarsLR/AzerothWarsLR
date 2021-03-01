@@ -1,0 +1,40 @@
+[htow]
+_parent = "htow"
+-- Hotkey
+Hotkey = "Q"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "h022,h019,nbee,hpea"
+-- Tooltip - Extended
+Ubertip = "Main gathering structure for Alliance Nations.|n|cff6480ffLordaeron|r/|cff556b2fArathor|r |cfff5962dTrains:|R Peasants|n|cffffd700Khaz Modan|r |cfff5962dTrains:|R Masons|n|cff828282Dalaran|r |cfff5962dTrains:|R Shapers|n|cff00ffffQuel'Thalas|r |cfff5962dTrains:|R Architects|n|cff6480ffLordaeron|r/|cff556b2fArathor|r |cfff5962dAbilities:|R Call to Arms|n|cfff5962dUpgrades Into:|R Keep|n|n|cffffcc00Can receive Lumber.|R"
+-- Normal
+abilList = "Amic,Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 3
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 200
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.25
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"

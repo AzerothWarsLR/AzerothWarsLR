@@ -1,0 +1,20 @@
+[ucsB]
+_parent = "ucsB"
+-- Name - Editor Suffix
+EditorSuffix = " (Red - Anub'Arak)(Level 2)"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Model File
+file = "Doodads\\Barrens\\Rocks\\Geyser\\Geyser0.mdl"
+-- Scaling Value
+modelScale = 1.0
+-- Speed Base
+spd = 130
+-- Upgrades Used
+upgrades = "R008,Rhar,Rhme,Rguv"

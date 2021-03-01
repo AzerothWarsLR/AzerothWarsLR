@@ -1,0 +1,14 @@
+[ugol]
+_parent = "ugol"
+-- Normal
+abilList = ""
+-- Collision Size
+collision = 0.0
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""

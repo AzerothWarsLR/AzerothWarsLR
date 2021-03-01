@@ -1,0 +1,42 @@
+[h034]
+_parent = "hars"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'thalas)"
+-- Hotkey
+Hotkey = "S"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Rhse,R01L,Rhpt,Rhst"
+-- Units Trained
+Trains = "hmpr,hsor,u00J"
+-- Tooltip - Extended
+Ubertip = "Sanctum for the spellcasters of Quel'thalas.|n|cfff5962dTrains:|R Priest, Sorceress, Arcane Wagon|n|cfff5962dResearches:|R Priest Training, Sorceress Training, Magic Sentry"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 19
+-- Repair Time
+reptm = 60
+-- Selection Scale
+scale = 3.5
+-- Ground Texture
+uberSplat = ""

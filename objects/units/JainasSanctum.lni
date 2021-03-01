@@ -1,0 +1,71 @@
+[h010]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "h022,n007,nbee,hpea,h019"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0JV,Argl"
+-- Required Animation Names
+animProps = "upgrade,third"
+-- Tinting Color 3 (Blue)
+blue = 240
+-- Shadow Texture (Building)
+buildingShadow = "ShadowGuardTower"
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "buildings\\human\\HumanTower\\HumanTower.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 180
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 1.5
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 18
+-- Tinting Color 1 (Red)
+red = 180
+-- Mana Regeneration
+regenMana = 2.0
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 3.0
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "ArcaneTower"

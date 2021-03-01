@@ -1,0 +1,55 @@
+[u01I]
+_parent = "utom"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNerubianZiggurat.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Building Item)"
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "I008,hslv,plcl,phea,pman,stwp,ocor,shea"
+-- Name
+-- Tooltip - Basic
+Tip = "Summon [|cffffcc00C|r] - Chamber of Wonders"
+-- Tooltip - Extended
+Ubertip = "Creates a shop with purchasable items."
+-- Normal
+abilList = "A0YA,A0RU,Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 101
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 0.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Model File
+file = "buildings\\other\\NerubianZiggurat\\NerubianZiggurat.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 13
+-- Tinting Color 2 (Green)
+green = 221
+-- Scaling Value
+modelScale = 0.9
+-- Type
+movetp = "hover"
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Placement Prevented By
+requirePlace = ""
+-- Selection Scale
+scale = 3.0
+-- Team Color
+teamColor = 16
+-- Ground Texture
+uberSplat = ""

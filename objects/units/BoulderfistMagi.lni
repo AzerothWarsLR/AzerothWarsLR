@@ -1,0 +1,35 @@
+[n080]
+_parent = "nomg"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Name
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Collision Size
+collision = 36.0
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.35
+-- Attack 1 - Range
+rangeN1 = 500
+-- Repair Time
+reptm = 5
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220

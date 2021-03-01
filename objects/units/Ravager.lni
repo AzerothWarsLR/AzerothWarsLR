@@ -1,0 +1,55 @@
+[o01G]
+_parent = "owar"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 1025
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Ravager"
+-- Tooltip - Extended
+Ubertip = "Mounted orc servant of the Legion.|n|cfff5962dAbilities:|R Charge, Self-Bloodlust, War Plating|n|n|cff99b4d1Can only train 12.|r |n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0ER,A0EH,A020,Aion"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Default Active Ability
+auto = "A0EH"
+-- Build Time
+bldtm = 4
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 19
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 23
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "undead"
+-- Hit Points Regeneration Rate
+regenHP = 0.4
+-- Repair Time
+reptm = 4
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 250
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyChop"

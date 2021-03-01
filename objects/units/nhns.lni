@@ -1,0 +1,6 @@
+[nhns]
+_parent = "nhns"
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

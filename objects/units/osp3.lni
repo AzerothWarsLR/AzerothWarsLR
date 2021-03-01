@@ -1,0 +1,36 @@
+[osp3]
+_parent = "osp3"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Vol'jin-Level 3)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 20
+-- Hit Points Maximum (Base)
+HP = 550
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 40
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.4
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 60
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.2
+-- Normal
+abilList = "S001"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Categorization - Special
+special = 0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "ground,air,structure,enemy"
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"

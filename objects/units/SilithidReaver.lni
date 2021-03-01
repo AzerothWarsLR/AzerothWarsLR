@@ -1,0 +1,103 @@
+[o00L]
+_parent = "ohun"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArachnathidGreen.blp"
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Silithid Reaver)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl"
+-- Name
+-- Requirements
+Requires = ""
+-- Special
+Specialart = "Objects\\Spawnmodels\\Demon\\DemonLargeDeathExplode\\DemonLargeDeathExplode.mdl"
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] - Silithid Reaver"
+-- Tooltip - Extended
+Ubertip = "Versatile dart-thrower with Slow Poison and Web. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aion,A0DH,A05H"
+-- Acquisition Range
+acquire = 700.0
+-- Armor Type
+armor = "Stone"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.47
+-- Build Time
+bldtm = 5
+-- Tinting Color 3 (Blue)
+blue = 101
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 2
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Death Time (seconds)
+death = 3.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 24
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.53
+-- Model File
+file = "Units\\Creeps\\ArchnathidGreen\\ArchnathidGreen.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 13
+-- Tinting Color 2 (Green)
+green = 221
+-- Projectile Launch - Z
+launchZ = 60.0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Maximum Pitch Angle (degrees)
+maxPitch = 60.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 60.0
+-- Scaling Value
+modelScale = 0.7
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 500
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Repair Time
+reptm = 2
+-- Animation - Run Speed
+run = 230.0
+-- Shadow Image - Height
+shadowH = 100.0
+-- Shadow Image - Width
+shadowW = 100.0
+-- Speed Base
+spd = 220
+-- Team Color
+teamColor = 16
+-- Unit Sound Set
+unitSound = "Arachnathid"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 230.0

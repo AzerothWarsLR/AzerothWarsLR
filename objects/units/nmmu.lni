@@ -1,0 +1,8 @@
+[nmmu]
+_parent = "nmmu"
+-- Gold Bounty Awarded - Base
+bountyplus = 18
+-- Scaling Value
+modelScale = 1.8
+-- Type
+movetp = "amph"

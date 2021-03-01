@@ -1,0 +1,15 @@
+[nbsm]
+_parent = "nbsm"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Hit Points Maximum (Base)
+HP = 100
+-- Name
+-- Normal
+abilList = "Avul,Aiun"
+-- Is a Building
+isbldg = 0
+-- Race
+race = "human"
+-- Unit Classification
+type = "mechanical,neutral,sapper"

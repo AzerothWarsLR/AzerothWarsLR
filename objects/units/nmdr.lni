@@ -1,0 +1,50 @@
+[nmdr]
+_parent = "nmdr"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(vassal - Roanauk)"
+-- Hit Points Maximum (Base)
+HP = 2550
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Train Dire Mammoth"
+-- Normal
+abilList = "A0VI"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Build Time
+bldtm = 20
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 40
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 32.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.35
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 80
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 50
+-- Display as Neutral Hostile
+hostilePal = 0
+-- Lumber Cost
+lumbercost = 10
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 150
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Speed Base
+spd = 240
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"

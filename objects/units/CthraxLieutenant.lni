@@ -1,0 +1,83 @@
+[U01P]
+_parent = "Ulic"
+-- Starting Agility
+AGI = 26
+-- Agility per Level
+AGIplus = 2.1
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGeneralVezax.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive"
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Intelligence per Level
+INTplus = 1.4
+-- Attack 1 - Projectile Art
+Missileart_1 = ""
+-- Name
+-- Primary Attribute
+Primary = "STR"
+-- Proper Names
+Propernames = "Warlord Zon'ozz"
+-- Requirements - Tier 2
+Requires1 = ""
+-- Requirements - Tier 3
+Requires2 = ""
+-- Tooltip - Revive
+Revivetip = "Revive"
+-- Starting Strength
+STR = 26
+-- Strength per Level
+STRplus = 2.6
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNGeneralVezax.blp"
+-- Normal
+abilList = "A11F,A0GK,AInv"
+-- Build Time
+bldtm = 13
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Defense Base
+def = 4
+-- Model File
+file = "Units\\Creeps\\Unbroken\\Unbroken.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "A11E,A11D,A11C,A10Y,Aamk"
+-- Scaling Value
+modelScale = 1.2
+-- Height
+moveHeight = 0.0
+-- Type
+movetp = "foot"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 17
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 150
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Turn Rate
+turnRate = 0.6
+-- Unit Classification
+type = ""
+-- Unit Sound Set
+unitSound = "FacelessOne"
+-- Attack 1 - Weapon Type
+weapTp1 = "normal"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumChop"

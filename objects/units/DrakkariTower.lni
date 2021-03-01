@@ -1,0 +1,41 @@
+[o00M]
+_parent = "owtw"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Name
+-- Acquisition Range
+acquire = 700.0
+-- Tinting Color 3 (Blue)
+blue = 125
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.9
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 28
+-- Tinting Color 2 (Green)
+green = 50
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 160
+-- Scaling Value
+modelScale = 0.9
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 50
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Ground Texture
+uberSplat = ""

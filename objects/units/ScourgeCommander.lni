@@ -1,0 +1,71 @@
+[U00A]
+_parent = "Udea"
+-- Starting Agility
+AGI = 15
+-- Agility per Level
+AGIplus = 1.7
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnightR.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Scourge Commander"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "E"
+-- Starting Intelligence
+INT = 19
+-- Intelligence per Level
+INTplus = 1.6
+-- Name
+-- Proper Names
+Propernames = "Baron Rivendare"
+-- Tooltip - Revive
+Revivetip = "Revive Scourge Commander"
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = "Strong Death Knight who was a friend of Kel'thuzad and helped build the Cult of the Damned.|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A10S,AInv"
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 222
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 27.0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\GarithosUndeadV2.08.mdl"
+-- Food Cost
+fused = 0
+-- Tinting Color 2 (Green)
+green = 222
+-- Hero
+heroAbilList = "A0CD,AUdc,A08X,A09Y,Aamk"
+-- Scaling Value
+modelScale = 1.1
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 15
+-- Tinting Color 1 (Red)
+red = 222
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 1.25
+-- Speed Base
+spd = 270
+-- Upgrades Used
+upgrades = "R01D,"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

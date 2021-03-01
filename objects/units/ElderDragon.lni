@@ -1,0 +1,41 @@
+[Edem]
+_parent = "Edem"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroBloodelfWarlock.blp"
+-- Dependency Equivalents
+DependencyOr = "E004"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel)"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl"
+-- Name
+-- Proper Names
+Propernames = "Korialstrasz"
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNHeroBloodelfWarlock.blp"
+-- Special
+Specialart = "Objects\\Spawnmodels\\Human\\HumanLargeDeathExplode\\HumanLargeDeathExplode.mdl"
+-- Normal
+abilList = "AInv"
+-- Categorization - Campaign
+campaign = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\DruidoftheTalonBloodElfV1.01.mdl"
+-- Hero
+heroAbilList = "A07T,Aamk,A0W1,A07P,A03N"
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 600
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = ""
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

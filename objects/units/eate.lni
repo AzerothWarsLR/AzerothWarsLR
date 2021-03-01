@@ -1,0 +1,36 @@
+[eate]
+_parent = "eate"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hotkey
+Hotkey = "X"
+-- Tooltip - Basic
+Tip = "Build Altar of Elders"
+-- Units Trained
+Trains = "E00A,h03I,e009,e00X"
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes and Demi-heroes."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"

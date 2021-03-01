@@ -1,0 +1,10 @@
+[nvl2]
+_parent = "nvl2"
+-- Hit Points Maximum (Base)
+HP = 280
+-- Collision Size
+collision = 6.0
+-- Scaling Value
+modelScale = 1.0
+-- Selection Scale
+scale = 0.6

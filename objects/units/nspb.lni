@@ -1,0 +1,20 @@
+[nspb]
+_parent = "nspb"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Normal
+abilList = "A0DQ,Aweb,Aspd"
+-- Gold Bounty Awarded - Base
+bountyplus = 15
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Food Cost
+fused = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Mana Regeneration
+regenMana = 1.0

@@ -1,0 +1,34 @@
+[h00V]
+_parent = "hwt3"
+-- Name - Editor Suffix
+EditorSuffix = "(Level 3 Custom)"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Normal
+abilList = "ANbh,A008"
+-- Collision Size
+collision = 6.0
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 46
+-- Level
+level = 5
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 0.85
+-- Type
+movetp = "amph"
+-- Race
+race = "creeps"
+-- Speed Base
+spd = 200
+-- Upgrades Used
+upgrades = "R020,Rhme,Rhar,R00N"

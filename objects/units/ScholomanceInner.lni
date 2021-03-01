@@ -1,0 +1,23 @@
+[n04B]
+_parent = "nwgt"
+-- Name
+-- Normal
+abilList = "A0A4,Awrp,Avul"
+-- Tinting Color 3 (Blue)
+blue = 60
+-- Model File
+file = "buildings\\undead\\Graveyard\\Graveyard.mdl"
+-- Tinting Color 2 (Green)
+green = 60
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4Default.tga"
+-- Tinting Color 1 (Red)
+red = 60
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Ground Texture
+uberSplat = ""

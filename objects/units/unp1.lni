@@ -1,0 +1,50 @@
+[unp1]
+_parent = "unp1"
+-- Hotkey
+Hotkey = "Z"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "uaco,u00D"
+-- Tooltip - Extended
+Ubertip = "Death ridden halls soaring high above.|nThe upgrade gives the following:|n|cfff5962dAbilities:|R Raise Dead|n|cfff5962dUpgrades Into:|R Black Citadel|n|n|cffffcc00Can receive Lumber.|R|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0CB,Arlm,A0C8"
+-- Build Time
+bldtm = 50
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Food Produced
+fmade = 20
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 70
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 355
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Mana Regeneration
+regenMana = 1.5
+-- Repair Time
+reptm = 90
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rusm,Rhme,Rgfo"

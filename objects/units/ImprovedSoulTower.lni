@@ -1,0 +1,59 @@
+[u00I]
+_parent = "uzg1"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDemonZigguratUpgrade.blp"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Hotkey
+Hotkey = "Z"
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "(|cffffff00Z|r) Upgrade to Improved Soul Tower"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 52
+-- Model File
+file = "war3mapImported\\ZigguratDemonV1.05.mdl"
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 45
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 175
+-- Height Minimum
+moveFloor = -5.0
+-- Height
+moveHeight = -5.0
+-- Type
+movetp = "hover"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 3.5
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Unit Classification
+type = "mechanical,sapper,undead"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rgfo,Rhme"

@@ -1,0 +1,35 @@
+[Uvng]
+_parent = "Uvng"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDarkKael.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Name
+-- Proper Names
+Propernames = "Koltira Deathweaver"
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 20.0
+-- Model File
+file = "units\\human\\BloodElfSpellThief\\BloodElfSpellThief.mdl"
+-- Tinting Color 2 (Green)
+green = 150
+-- Hero
+heroAbilList = "ANso,Aamk,AUdc,A10Y,A10X"
+-- Scaling Value
+modelScale = 1.0
+-- Priority
+prio = 18
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 1.0
+-- Unit Sound Set
+unitSound = "Kael"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavySlice"

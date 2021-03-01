@@ -1,0 +1,6 @@
+[nlkl]
+_parent = "nlkl"
+-- Gold Bounty Awarded - Base
+bountyplus = 25
+-- Level
+level = 5

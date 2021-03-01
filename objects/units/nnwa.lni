@@ -1,0 +1,36 @@
+[nnwa]
+_parent = "nnwa"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hit Points Maximum (Base)
+HP = 745
+-- Normal
+abilList = "Abur,Assp"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 2
+-- Collision Size
+collision = 11.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 17
+-- Scaling Value
+modelScale = 0.9
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 250
+-- Upgrades Used
+upgrades = "Rhme,Rhar,R001,R00Q,Rugf"

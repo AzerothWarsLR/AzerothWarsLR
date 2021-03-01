@@ -1,0 +1,8 @@
+[ndch]
+_parent = "ndch"
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,6 @@
+[nglm]
+_parent = "nglm"
+-- Hit Points Maximum (Base)
+HP = 2
+-- Defense Type
+defType = "divine"

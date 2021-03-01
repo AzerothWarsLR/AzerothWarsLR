@@ -1,0 +1,6 @@
+[ncnt]
+_parent = "ncnt"
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

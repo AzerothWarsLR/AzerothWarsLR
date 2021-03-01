@@ -1,0 +1,47 @@
+[o01M]
+_parent = "obea"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNAmmoDump.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Hotkey
+Hotkey = "F"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build Goblin Laboratory"
+-- Units Trained
+Trains = "n062,nzep,n061"
+-- Tooltip - Extended
+Ubertip = "Centre of highly volatile innovation.|n|cfff5962dTrains:|R Shredder, Sapper, Zeppelin |n|cfff5962dAbilities:|R Reveal"
+-- Normal
+abilList = "A07O"
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "BuildingShadowLarge"
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\other\\AmmoDump\\AmmoDump.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.75
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Selection Scale
+scale = 3.7
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""

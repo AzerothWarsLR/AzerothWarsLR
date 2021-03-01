@@ -1,0 +1,18 @@
+[nrel]
+_parent = "nrel"
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 330
+-- Normal
+abilList = "A00S"
+-- Gold Bounty Awarded - Base
+bountyplus = 3
+-- Mana Initial Amount
+mana0 = 100
+-- Mana Maximum
+manaN = 100
+-- Mana Regeneration
+regenMana = 1.0
+-- Upgrades Used
+upgrades = "R01N,Rhme,Rhar"

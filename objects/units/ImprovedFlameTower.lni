@@ -1,0 +1,25 @@
+[nft2]
+_parent = "nft2"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Name
+-- Normal
+abilList = "Abof"
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 75
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 200
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rhac"

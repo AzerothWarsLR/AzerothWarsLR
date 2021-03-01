@@ -1,0 +1,43 @@
+[o01C]
+_parent = "oalt"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Revives Dead Heroes
+Revive = 0
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0A8,A08L,ARal,Avul"
+-- Tinting Color 3 (Blue)
+blue = 80
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Barrens\\Props\\HellscreamThrone\\HellscreamThrone.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Tinting Color 2 (Green)
+green = 80
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 0.8
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 80
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = ""

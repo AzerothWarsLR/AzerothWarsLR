@@ -1,0 +1,59 @@
+[nchr]
+_parent = "nchr"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Fel Raider"
+-- Tooltip - Extended
+Ubertip = "Mobile pillager infused with the blood of demons.|n|cfff5962dAbilities:|R Ensnare, Self-Bloodlust, Pillage, Demolish, Bleeding Blade|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0LQ,A0ES,A0SX,A0EH,Aion,A07J"
+-- Attack 1 - Attack Type
+atkType1 = "normal"
+-- Default Active Ability
+auto = "A0EH"
+-- Build Time
+bldtm = 3
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 14.5
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 23
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 20
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Hit Points Regeneration Rate
+regenHP = 0.25
+-- Repair Time
+reptm = 3
+-- Selection Scale
+scale = 1.3
+-- Speed Base
+spd = 270
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Roen,R02L,R00Y,Rhar,Rhme,R00O,Rguv"

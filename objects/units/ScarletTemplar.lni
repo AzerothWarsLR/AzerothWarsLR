@@ -1,0 +1,89 @@
+[h06B]
+_parent = "hkni"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHoly Paladin.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\UPGUPGHolyMaul.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Holy Light & Divine Shield,- Holy Light & Divine Shield|n- Resurrection,- Holy Light & Divine Shield|n- Resurrection|n- Reincarnation"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Hotkey
+Hotkey = "W"
+-- Looping Fade In Rate
+LoopingSoundFadeIn = 0
+-- Looping Fade Out Rate
+LoopingSoundFadeOut = 0
+-- Movement
+MovementSoundLabel = ""
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Scarlet Templar"
+-- Tooltip - Extended
+Ubertip = "Righteous warrior of the Scarlet Crusade.|n|cfff5962dAbilities:|r Greater Holy Light, Greater Holy Fire, Divine Shield, Consecrated Strikes, Resistant Skin, Heavy Plating|n|cfff5962dCan learn:|r Reincarnation, Resurrection|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A04W,A07W,A09S,A0T7,A0T1,A05M,ACds,Aihn"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Death Type
+deathType = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 52
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.46
+-- Model File
+file = "Judgment.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 90
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 425
+-- Mana Maximum
+manaN = 425
+-- Scaling Value
+modelScale = 0.95
+-- Type
+movetp = "foot"
+-- Priority
+prio = 15
+-- Hit Points Regeneration Rate
+regenHP = 1.5
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 7
+-- Speed Base
+spd = 250
+-- Unit Classification
+type = "sapper"
+-- Unit Sound Set
+unitSound = "HeroPaladin"
+-- Upgrades Used
+upgrades = "R06Q,R01N,Rhar,Rhme,Rhpm,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

@@ -1,0 +1,13 @@
+[ntav]
+_parent = "ntav"
+-- Name - Editor Suffix
+EditorSuffix = "(Vassals)"
+-- Name
+-- Units Sold
+Sellunits = "O01P,O01Q,H02E,H04K,H049"
+-- Normal
+abilList = "Ane2,Avul"
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Ground Texture
+uberSplat = ""

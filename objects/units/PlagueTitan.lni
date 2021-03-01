@@ -1,0 +1,75 @@
+[nfgl]
+_parent = "nfgl"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 2225
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Requirements
+Requires = "R06M"
+-- Units Sold
+Sellunits = "n08G"
+-- Tooltip - Basic
+Tip = "Train Plague Titan"
+-- Tooltip - Extended
+Ubertip = "Massive Flesh Golems, the ultimate abominations.|n|cfff5962dAbilities:|R Disease Cloud, Spawn Plagueling|n|n|cff99b4d1Can only train 2.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Aap1"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 0
+-- Animation - Cast Backswing
+castbsw = 0.0
+-- Collision Size
+collision = 31.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.5
+-- Defense Base
+def = 7
+-- Defense Type
+defType = "large"
+-- Attack 1 - Damage Base
+dmgplus1 = 80
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 250
+-- Gold Cost
+goldcost = 95
+-- Level
+level = 9
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Scaling Value
+modelScale = 1.05
+-- Priority
+prio = 9
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 150
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Repair Time
+reptm = 60
+-- Speed Base
+spd = 1
+-- Unit Classification
+type = "mechanical,undead"
+-- Upgrades Used
+upgrades = "Rguv,R01X,Rhme,Rhar"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

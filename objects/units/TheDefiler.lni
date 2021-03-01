@@ -1,0 +1,67 @@
+[Uwar]
+_parent = "Uwar"
+-- Agility per Level
+AGIplus = 1.6
+-- Tooltip - Awaken
+Awakentip = "Revive Defiler"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 35
+-- Hit Points Maximum (Base)
+HP = 2100
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Starting Intelligence
+INT = 19
+-- Intelligence per Level
+INTplus = 3.25
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 200
+-- Tooltip - Revive
+Revivetip = "Revive Defiler"
+-- Starting Strength
+STR = 22
+-- Strength per Level
+STRplus = 2.25
+-- Normal
+abilList = "ACm2,A0A0,AInv"
+-- Acquisition Range
+acquire = 700.0
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 40.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 34
+-- Hero
+heroAbilList = "Aamk,A0EN,ANrc,A00X,A06X"
+-- Mana Initial Amount
+mana0 = 250
+-- Mana Maximum
+manaN = 250
+-- Scaling Value
+modelScale = 2.0
+-- Priority
+prio = 20
+-- Attack 1 - Range
+rangeN1 = 700
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Selection Scale
+scale = 3.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 7
+-- Speed Base
+spd = 220
+-- Team Color
+teamColor = 1
+-- Upgrades Used
+upgrades = "R061"

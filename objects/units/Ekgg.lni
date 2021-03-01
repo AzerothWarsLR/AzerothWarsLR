@@ -1,0 +1,22 @@
+[Ekgg]
+_parent = "Ekgg"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Starting Intelligence
+INT = 30
+-- Intelligence per Level
+INTplus = 3.5
+-- Proper Names
+Propernames = "Califax"
+-- Normal
+abilList = "ACcy,Amim,AInv,Ault"
+-- Build Time
+bldtm = 180
+-- Defense Base
+def = 4
+-- Scaling Value
+modelScale = 1.5
+-- Mana Regeneration
+regenMana = 2.0

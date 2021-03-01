@@ -1,0 +1,31 @@
+[n05M]
+_parent = "nanw"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-Conjurer)"
+-- Hit Points Maximum (Base)
+HP = 380
+-- Name
+-- Normal
+abilList = "A0DQ"
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Collision Size
+collision = 8.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.9
+-- Defense Base
+def = 0
+-- Defense Type
+defType = "small"
+-- Food Cost
+fused = 0
+-- Level
+level = 1
+-- Scaling Value
+modelScale = 0.5
+-- Race
+race = "human"
+-- Selection Scale
+scale = 1.0
+-- Upgrades Used
+upgrades = "Rhar,Rhme,Rguv,R01N"

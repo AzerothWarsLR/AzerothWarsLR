@@ -1,0 +1,16 @@
+[ndrh]
+_parent = "ndrh"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Collision Size
+collision = 20.0
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 16
+-- Lumber Cost
+lumbercost = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

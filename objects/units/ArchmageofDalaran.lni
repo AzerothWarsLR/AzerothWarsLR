@@ -1,0 +1,33 @@
+[Hjai]
+_parent = "Hjai"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Name
+-- Proper Names
+Propernames = "Jaina Proudmoore"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0TD,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Hero
+heroAbilList = "Aamk,A096,AHbz,AHab,AHmt"
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 18
+-- Animation - Run Speed
+run = 350.0
+-- Speed Base
+spd = 220
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,enemies,ground,nonancient,structure,vulnerable"
+-- Animation - Walk Speed
+walk = 350.0

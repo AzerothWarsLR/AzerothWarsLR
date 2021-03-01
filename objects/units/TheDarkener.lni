@@ -1,0 +1,47 @@
+[Utic]
+_parent = "Utic"
+-- Agility per Level
+AGIplus = 2.2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "A"
+-- Starting Intelligence
+INT = 20
+-- Intelligence per Level
+INTplus = 3.25
+-- Name
+-- Primary Attribute
+Primary = "INT"
+-- Starting Strength
+STR = 22
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A07B,AInv,Apiv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Defense Type
+defType = "hero"
+-- Hero
+heroAbilList = "AUav,Aamk,A06V,A06U,A10M"
+-- Scaling Value
+modelScale = 1.3
+-- Priority
+prio = 16
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 240
+-- Team Color
+teamColor = 0
+-- Unit Classification
+type = ""
+-- Upgrades Used
+upgrades = "R054,R01Y"

@@ -1,0 +1,6 @@
+[narg]
+_parent = "narg"
+-- Food Cost
+fused = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

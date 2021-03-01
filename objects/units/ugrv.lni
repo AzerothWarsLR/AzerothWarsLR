@@ -1,0 +1,34 @@
+[ugrv]
+_parent = "ugrv"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Hotkey
+Hotkey = "E"
+-- Researches Available
+Researches = "R02A,Rhme,Rhar"
+-- Tooltip - Extended
+Ubertip = "Resource collection and infuser of combat enhancements.|n|cfff5962dAbilities:|R Spawn Corpses |n|cfff5962dResearches:|R Weapon Upgdrades, Armor Upgrades, Chaos Infusion"
+-- Normal
+abilList = "Agyd,Arlm"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 21
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 15
+-- Repair Time
+reptm = 60
+-- Placement Prevented By
+requirePlace = ""
+-- Ground Texture
+uberSplat = ""

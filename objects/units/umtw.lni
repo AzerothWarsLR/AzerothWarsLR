@@ -1,0 +1,54 @@
+[umtw]
+_parent = "umtw"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 30
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 90
+-- Tooltip - Basic
+Tip = "Build Meat Wagon"
+-- Tooltip - Extended
+Ubertip = "Repurposed cart used to haul and launch corpses.|n|cfff5962dAbilities:|R Disease Cloud|n|cfff5962dCan Learn:|R Exhume Corpses|n|n|cff99b4d1Can only build 6.|r|n|cffffcc00Attacks land units and trees.|r"
+-- Build Time
+bldtm = 12
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.2
+-- Attack 2 - Cooldown Time
+cool2 = 3.2
+-- Attack 1 - Damage Base
+dmgplus1 = 90
+-- Attack 2 - Damage Base
+dmgplus2 = 90
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 23
+-- Gold Cost
+goldcost = 23
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.75
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Speed Base
+spd = 200
+-- Unit Classification
+type = "mechanical,undead"
+-- Upgrades Used
+upgrades = "Rhme,R01X,Rhar,Rguv"

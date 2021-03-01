@@ -1,0 +1,4 @@
+[nfa1]
+_parent = "nfa1"
+-- Hit Points Maximum (Base)
+HP = 1150

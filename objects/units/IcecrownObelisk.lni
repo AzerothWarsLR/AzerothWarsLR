@@ -1,0 +1,65 @@
+[n094]
+_parent = "ntx2"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Red)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 75
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl"
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 100
+-- Normal
+abilList = "ACm3,A09N"
+-- Acquisition Range
+acquire = 900.0
+-- Required Animation Names
+animProps = "alternate"
+-- Collision Size
+collision = 0.0
+-- Death Time (seconds)
+death = 1.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Model File
+file = "doodads\\cinematic\\IcecrownObelisk\\IcecrownObelisk.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 0.7
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 900
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 10
+-- Unit Classification
+type = "ancient,mechanical,sapper,undead"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rhme"

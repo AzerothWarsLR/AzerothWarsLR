@@ -1,0 +1,31 @@
+[n08P]
+_parent = "nheb"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "hmpr,hsor,n063"
+-- Tooltip - Extended
+Ubertip = ""
+-- Tinting Color 3 (Blue)
+blue = 50
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Tinting Color 2 (Green)
+green = 250
+-- Scaling Value
+modelScale = 0.8
+-- Tinting Color 1 (Red)
+red = 250
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"

@@ -1,0 +1,71 @@
+[e010]
+_parent = "eaom"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNAncient of Lore (Spring).blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Researches Available
+Researches = "R01H,R026,R064,Rews,Reuv,Rhme,Rhar"
+-- Tooltip - Basic
+Tip = "Build Ancient of Creation"
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = "Kaldorei hall of enhancements, where the defenders of Kalimdor grow in strength.|n|cfff5962dResearches: |RWeapon Upgrades, Armor Upgrades, Ultravision, Wellspring, Malorne's Infusion"
+-- Normal
+abilList = "Aeat,Aro1"
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "ShadowAncientProtector"
+-- Collision Size
+collision = 40.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 4
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Attack 2 - Damage Base
+dmgplus2 = 60
+-- Model File
+file = "war3mapImported\\AncientofLies.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 150
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Attack 2 - Range
+rangeN2 = 150
+-- Selection Scale
+scale = 3.0
+-- Speed Base
+spd = 95
+-- Unit Classification
+type = "_"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,Renb,R018,Rhme,R002,Rgfo"

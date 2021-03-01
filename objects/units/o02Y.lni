@@ -1,0 +1,36 @@
+[o02Y]
+_parent = "ogre"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcGreatHall.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "Q"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "o00E,ncpn,opeo"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Peon |n|cfff5962dAbilities:|R Spiked Barricades"
+-- Upgrades To
+Upgrade = "o02Z"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\GreatHallFelOrcV1.05.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 38
+-- Repair Lumber Cost
+lumberRep = 200
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""

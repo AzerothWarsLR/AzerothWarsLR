@@ -1,0 +1,68 @@
+[eaoe]
+_parent = "eaoe"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Hotkey
+Hotkey = "S"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Redc,Rers"
+-- Tooltip - Basic
+Tip = "Build Ancient of Lore"
+-- Units Trained
+Trains = "edoc,emtg"
+-- Tooltip - Extended
+Ubertip = "Ancient keeper of the forest dwellers.|n|cfff5962dTrains:|R Druid of the Claw, Mountain Giant|n|cfff5962dResearches:|R Druid of the Claw Training, Resistant Skin|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Aeat,Aro1"
+-- Acquisition Range
+acquire = 700.0
+-- Attack 2 - Attack Type
+atkType2 = "siege"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 34.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Attack 2 - Cooldown Time
+cool2 = 1.9
+-- Defense Base
+def = 4
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 2 - Damage Base
+dmgplus2 = 50
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 150
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Repair Time
+reptm = 60
+-- Speed Base
+spd = 95
+-- Unit Classification
+type = ""
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,R002,R018,Renb,Rgfo,Rhme"

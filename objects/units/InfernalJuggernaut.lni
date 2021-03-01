@@ -1,0 +1,81 @@
+[n066]
+_parent = "ntx2"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNInfernalFlameCannon.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Teal - Tower)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 70
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 160
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.5
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 700
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 250
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.25
+-- Normal
+abilList = "Avul"
+-- Acquisition Range
+acquire = 800.0
+-- Required Animation Names
+animProps = ""
+-- Armor Type
+armor = "Wood"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.8
+-- Animation - Cast Backswing
+castbsw = 0.8
+-- Animation - Cast Point
+castpt = 0.5
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.5
+-- Attack 1 - Damage Loss Factor
+damageLoss1 = 0.05
+-- Death Time (seconds)
+death = 1.67
+-- Defense Base
+def = 10
+-- Attack 1 - Damage Base
+dmgplus1 = 82
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.5
+-- Model File
+file = "units\\creeps\\InfernalCannonFlame\\InfernalCannonFlame.mdl"
+-- Projectile Impact - Z
+impactZ = 110.0
+-- Projectile Launch - Y
+launchY = 30.0
+-- Projectile Launch - Z
+launchZ = 60.0
+-- Scaling Value
+modelScale = 1.25
+-- Propulsion Window (degrees)
+propWin = 30.0
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 800
+-- Selection Scale
+scale = 3.5
+-- Attack 1 - Damage Sides per Die
+sides1 = 18
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "InfernalMachine"
+-- Upgrades Used
+upgrades = "R010,Rhme"
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"

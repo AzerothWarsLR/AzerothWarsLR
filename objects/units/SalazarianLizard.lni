@@ -1,0 +1,11 @@
+[nsll]
+_parent = "nsll"
+-- Hit Points Maximum (Base)
+HP = 1200
+-- Name
+-- Normal
+abilList = "ACim,Advc,ACdv"
+-- Gold Bounty Awarded - Base
+bountyplus = 40
+-- Level
+level = 8

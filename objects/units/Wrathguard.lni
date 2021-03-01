@@ -1,0 +1,43 @@
+[nfgb]
+_parent = "nfgb"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Hit Points Maximum (Base)
+HP = 925
+-- Hotkey
+Hotkey = "B"
+-- Name
+-- Tooltip - Basic
+Tip = "Summon Wrathguard"
+-- Tooltip - Extended
+Ubertip = "Elite warrior of the Burning Crusade's armies.|n|cfff5962dAbilities:|R Charge, Critical Strike, Vampiric Attack, Heavy Plating |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0ER,A0GZ,A070,A020"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Collision Size
+collision = 18.0
+-- Attack 1 - Damage Base
+dmgplus1 = 34
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 15
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 1.1
+-- Race
+race = "orc"
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 20
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"

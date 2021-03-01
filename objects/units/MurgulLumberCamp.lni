@@ -1,0 +1,43 @@
+[h06S]
+_parent = "hlum"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Researches Available
+Researches = "Rhme,Rhar"
+-- Tooltip - Basic
+Tip = "Build [|cffcece00E|r] - Mur'gul Lumber Camp"
+-- Tooltip - Extended
+Ubertip = "Provides attack and defense upgrades. Serves as a drop-off point for harvested lumber. "
+-- Normal
+abilList = "Arlm"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\other\\MurlocHut0\\MurlocHut0.mdl"
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 12
+-- Scaling Value
+modelScale = 1.2
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "naga"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = ""

@@ -1,0 +1,44 @@
+[nbt1]
+_parent = "nbt1"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "X"
+-- Tooltip - Basic
+Tip = "Upgrade to Boulder Tower"
+-- Tooltip - Extended
+Ubertip = "Fires massive boulders upon its foes.|n|cfff5962dUpgrades Into:|R Improved Boulder Tower|n|n|cffffcc00Attacks land units.|r"
+-- Build Time
+bldtm = 25
+-- Categorization - Campaign
+campaign = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 65
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 40
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 140
+-- Race
+race = "orc"
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "ground,nonancient,notself,structure,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,tree,wall,ward"
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rosp"
+-- Attacks Enabled
+weapsOn = 1

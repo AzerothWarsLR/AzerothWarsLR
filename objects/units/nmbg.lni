@@ -1,0 +1,6 @@
+[nmbg]
+_parent = "nmbg"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Gold Bounty Awarded - Base
+bountyplus = 3

@@ -1,0 +1,33 @@
+[n076]
+_parent = "nfgt"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Name
+-- Tooltip - Extended
+Ubertip = "A mighty tentacle from the depths. |n|n|cffffcc00Attacks land units.|r"
+-- Tinting Color 3 (Blue)
+blue = 50
+-- Gold Bounty Awarded - Base
+bountyplus = 1
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "small"
+-- Attack 1 - Damage Base
+dmgplus1 = 14
+-- Tinting Color 2 (Green)
+green = 221
+-- Scaling Value
+modelScale = 0.5
+-- Race
+race = "naga"
+-- Tinting Color 1 (Red)
+red = 100
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

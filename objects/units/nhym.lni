@@ -1,0 +1,58 @@
+[nhym]
+_parent = "nhym"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMageWC2.blp"
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNCrushingWave.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Purge,- Purge|n- Summon Water Elemental,- Purge|n- Summon Water Elemental|n- Frost Cell"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 390
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = [=[
+Adept mage of the frost arcanum.|n|cfff5962dAbilities:|R Purge|n|cfff5962dCan Learn:|R Summon Water Elemental, Frost Cell|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "A07Q,Aihn,A029,A0CZ"
+-- Default Active Ability
+auto = ""
+-- Build Time
+bldtm = 3
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 22
+-- Gold Cost
+goldcost = 17
+-- Tinting Color 2 (Green)
+green = 155
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 13
+-- Tinting Color 1 (Red)
+red = 155
+-- Selection Scale
+scale = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R00J,R00K,R00E"

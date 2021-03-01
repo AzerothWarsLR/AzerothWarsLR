@@ -1,0 +1,69 @@
+[ndqt]
+_parent = "ndqt"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Hit Points Maximum (Base)
+HP = 725
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Name
+-- Tooltip - Basic
+Tip = "Summon Sister of Pleasure"
+-- Tooltip - Extended
+Ubertip = "Succubi of torturous pleasure.|n|cfff5962dAbilities:|R Carrion Swarm, Shadow Infusion |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ACca,A03U"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "A03U"
+-- Build Time
+bldtm = 6
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Collision Size
+collision = 18.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.45
+-- Defense Base
+def = 2
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 19
+-- Gold Cost
+goldcost = 16
+-- Level
+level = 8
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 325
+-- Mana Maximum
+manaN = 325
+-- Scaling Value
+modelScale = 1.25
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 475
+-- Mana Regeneration
+regenMana = 1.0
+-- Speed Base
+spd = 250
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 60
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

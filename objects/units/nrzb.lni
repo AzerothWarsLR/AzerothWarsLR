@@ -1,0 +1,6 @@
+[nrzb]
+_parent = "nrzb"
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 22

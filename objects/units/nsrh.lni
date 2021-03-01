@@ -1,0 +1,8 @@
+[nsrh]
+_parent = "nsrh"
+-- Acquisition Range
+acquire = 900.0
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Attack 1 - Range
+rangeN1 = 900

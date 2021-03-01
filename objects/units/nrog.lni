@@ -1,0 +1,14 @@
+[nrog]
+_parent = "nrog"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Normal
+abilList = "A02D,ACct,Ashm"
+-- Default Active Ability
+auto = "A02D"
+-- Collision Size
+collision = 18.0
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Scaling Value
+modelScale = 1.1

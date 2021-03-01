@@ -1,0 +1,82 @@
+[n04K]
+_parent = "ndqn"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBlueDemoness.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Art
+Casterupgradeart = "UI\\Widgets\\Console\\Human\\infocard-banshee.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Shadow Infusion,- Shadow Infusion|n- Dispel magic,- Shadow Infusion|n- Dispel magic|n- Mind Flay"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 375
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\SpiritOfVengeanceMissile\\SpiritOfVengeanceMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1100
+-- Tooltip - Basic
+Tip = "Train Succubus"
+-- Tooltip - Extended
+Ubertip = "Manipulative demon of the nether. |n|cfff5962dAbilities:|R Shadow Infusion|n|cfff5962dCan Learn:|R Dispel Magic, Mind Flay|n|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "A0AR,A0AQ,A0EZ,Aiun"
+-- Acquisition Range
+acquire = 650.0
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "A0AR"
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.55
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 9
+-- Model File
+file = "units\\demon\\DemonessBlue\\DemonessBlue.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 12
+-- Gold Cost
+goldcost = 18
+-- Level
+level = 2
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.9
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 550
+-- Mana Regeneration
+regenMana = 1.33
+-- Speed Base
+spd = 220
+-- Stock Replenish Interval
+stockRegen = 20
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "R028,R02A,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"

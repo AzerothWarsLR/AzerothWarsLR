@@ -1,0 +1,29 @@
+[ndt2]
+_parent = "ndt2"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 10
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Name
+-- Normal
+abilList = "A05L"
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 75
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 200
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rhac"

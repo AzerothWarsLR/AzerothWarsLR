@@ -1,0 +1,51 @@
+[h01B]
+_parent = "hkni"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBanditLord.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "E"
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Outrider"
+-- Tooltip - Extended
+Ubertip = "Simple rider warrior of the Southern lands.|n|cfff5962dAbilities:|R Charge, Trample|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0LQ,A0P3,S00T,A020,A0IQ,Aihn"
+-- Build Time
+bldtm = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Collision Size
+collision = 16.0
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Model File
+file = "units\\creeps\\BanditLord\\BanditLord.mdl"
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 23
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 8
+-- Selection Scale
+scale = 1.2
+-- Speed Base
+spd = 270
+-- Upgrades Used
+upgrades = "R01N,R02Y,Rhme,Rhar,Rhan,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumBash"

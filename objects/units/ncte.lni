@@ -1,0 +1,56 @@
+[ncte]
+_parent = "ncte"
+-- Hit Points Maximum (Base)
+HP = 2400
+-- Researches Available
+Researches = "Rews,Renb"
+-- Units Trained
+Trains = "n067,o000"
+-- Normal
+abilList = "Arlm,Aeat,Aro1,Atol"
+-- Build Time
+bldtm = 140
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 4
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 89
+-- Attack 2 - Damage Base
+dmgplus2 = 89
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 160
+-- Lumber Cost
+lumbercost = 565
+-- Scaling Value
+modelScale = 1.0
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 8
+-- Hit Points Regeneration Rate
+regenHP = 4.0
+-- Repair Time
+reptm = 90
+-- Speed Base
+spd = 80
+-- Unit Classification
+type = "townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rgfo,Renb"

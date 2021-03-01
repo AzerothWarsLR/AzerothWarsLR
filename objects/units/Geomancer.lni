@@ -1,0 +1,67 @@
+[h02D]
+_parent = "hmpr"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Caster Upgrade Tips
+Casterupgradetip = "- Raise Earth,- Raise Earth|n- Healing Shield,- Raise Earth|n- Healing Shield|n- Mage Armour"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 375
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Spells\\Items\\OrbVenom\\OrbVenomMissile.mdl"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Geomancer"
+-- Tooltip - Extended
+Ubertip = "Mage adept in the means of earthbending.|n|cfff5962dAbilities:|R Raise Earth|n|cfff5962dCan Learn:|R Mage Armor, Healing Shield|n|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "A0TE,A0K6,A0FW,Aihn,A045"
+-- Default Active Ability
+auto = "A045"
+-- Build Time
+bldtm = 3
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 11.0
+-- Model File
+file = "units\\human\\Priest\\Priest_V1.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 17
+-- Tinting Color 2 (Green)
+green = 250
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 10
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R00J,R00K,R01V,Rhpm,Rguv"

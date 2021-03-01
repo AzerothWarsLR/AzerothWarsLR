@@ -1,0 +1,55 @@
+[u01F]
+_parent = "uaod"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Building)"
+-- Hotkey
+Hotkey = "X"
+-- Name
+-- Tooltip - Basic
+Tip = "Summon [|cffffcc00X|r] - Altar of the Old Ones"
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes."
+-- Normal
+abilList = "A0YA,A0RU"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 101
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 0.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 18
+-- Tinting Color 2 (Green)
+green = 221
+-- Scaling Value
+modelScale = 0.85
+-- Height Minimum
+moveFloor = -40.0
+-- Height
+moveHeight = -29.0
+-- Type
+movetp = "hover"
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Placement Prevented By
+requirePlace = ""
+-- Team Color
+teamColor = 16
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,54 @@
+[edcm]
+_parent = "edcm"
+-- Name - Editor Suffix
+EditorSuffix = "(Bear Form)"
+-- Hit Points Maximum (Base)
+HP = 825
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Powerful frontline melee unit. |n|cfff5962dAbilities:|R Roar, Cleaving Attack|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A020,A0CR,A0NE,Aien,Ault,Abrf"
+-- Required Animation Names
+animProps = "alternate"
+-- Default Active Ability
+auto = "A0CR"
+-- Build Time
+bldtm = 3
+-- Collision Size
+collision = 16.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.5
+-- Defense Base
+def = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 33
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 21
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Hit Points Regeneration Rate
+regenHP = 2.5
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R002,R05X,R01H,Reuv,Rhme,Rhar,Repm"

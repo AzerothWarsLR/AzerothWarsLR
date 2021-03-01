@@ -1,0 +1,8 @@
+[nkol]
+_parent = "nkol"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Attack 1 - Damage Base
+dmgplus1 = 38

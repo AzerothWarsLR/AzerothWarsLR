@@ -1,0 +1,38 @@
+[ncpn]
+_parent = "ncpn"
+-- Structures Built
+Builds = "n0AP,o02V,u00Q,o032,o02Y,o02W,o031,o02X,ocbw,o033,o034"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = "Basic laborer of the Fel Horde machine.|n|cfff5962dAbilities:|r Repair, Gather|n|n|cffffcc00Attacks land units and trees."
+-- Normal
+abilList = "ANha,Arep,A08C"
+-- Build Time
+bldtm = 2
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 6.0
+-- Defense Type
+defType = "medium"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 7
+-- Gold Cost
+goldcost = 7
+-- Hit Points Regeneration Rate
+regenHP = 0.25
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 165
+-- Categorization - Special
+special = 1
+-- Unit Classification
+type = "sapper,peon"
+-- Upgrades Used
+upgrades = "Ropg,Rguv"

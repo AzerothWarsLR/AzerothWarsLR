@@ -1,0 +1,4 @@
+[ncp2]
+_parent = "ncp2"
+-- Unit Classification
+type = "mechanical,sapper,standon"

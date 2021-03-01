@@ -1,0 +1,23 @@
+[n036]
+_parent = "nwgt"
+-- Hit Points Maximum (Base)
+HP = 200000
+-- Name
+-- Normal
+abilList = "A01M,A023,Awrp,Avul"
+-- Model File
+file = "war3mapImported\\Void Teleport Orange To.mdl"
+-- Scaling Value
+modelScale = 0.8
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""

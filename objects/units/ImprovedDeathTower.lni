@@ -1,0 +1,23 @@
+[ntx2]
+_parent = "ntx2"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Name
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 75
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 200
+-- Repair Time
+reptm = 50
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rhac"

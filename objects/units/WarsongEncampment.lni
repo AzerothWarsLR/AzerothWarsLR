@@ -1,0 +1,51 @@
+[o02K]
+_parent = "otto"
+-- Hit Points Maximum (Base)
+HP = 5000
+-- Name
+-- Researches Available
+Researches = "Ropg"
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Warsong Encampment"
+-- Units Trained
+Trains = "o00A,opeo,o00E,n03F"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0C9,A0GM,Arlm,Abds,Aspi"
+-- Tinting Color 3 (Blue)
+blue = 190
+-- Collision Size
+collision = 100.0
+-- Defense Base
+def = 20
+-- Model File
+file = "buildings\\orc\\GreatHall\\GreatHall.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.12
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 60
+-- Selection Scale
+scale = 5.0
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""

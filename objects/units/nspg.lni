@@ -1,0 +1,18 @@
+[nspg]
+_parent = "nspg"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Normal
+abilList = "A0DQ,Aweb"
+-- Default Active Ability
+auto = "Aweb"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Food Cost
+fused = 0

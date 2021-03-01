@@ -1,0 +1,63 @@
+[nhea]
+_parent = "nhea"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Ranger"
+-- Tooltip - Extended
+Ubertip = "Renowned Ranger of Quel'thalas.|n|cfff5962dAbilities:|r Cold Arrows|n|cfff5962dCan Learn:|R Precision Shots|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A03H,A02H,Aihn"
+-- Default Active Ability
+auto = "A03H"
+-- Build Time
+bldtm = 2
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 16
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 17
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 100
+-- Mana Maximum
+manaN = 100
+-- Scaling Value
+modelScale = 0.8
+-- Attack 1 - Range
+rangeN1 = 450
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rguv,R01R,Rhme,Rhpm,Rhar"

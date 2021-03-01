@@ -1,0 +1,57 @@
+[h031]
+_parent = "hcth"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron-Arthas)"
+-- Hit Points Maximum (Base)
+HP = 1200
+-- Hotkey
+Hotkey = "C"
+-- Name
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00C|r] - Royal Guard"
+-- Tooltip - Extended
+Ubertip = "Elite Guardrian of the Lordaeron Royal Family.|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ACrk,A0DJ,Aihn,A0YO"
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.45
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 24
+-- Gold Cost
+goldcost = 23
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 5
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "Knight"
+-- Upgrades Used
+upgrades = "R01N,Rhar,Rhme,Rhde,Rhpm,Rguv"

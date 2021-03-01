@@ -1,0 +1,57 @@
+[h057]
+_parent = "hbar"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTavern.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal)"
+-- Hit Points Maximum (Base)
+HP = 2750
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Build - Adventurer's Tavern"
+-- Units Trained
+Trains = "h01I,h032,hkni,n00A,nchp,nhea,hhes,h05M,h05K,h05T,h05V,h01C,h03S,hmtm,h02X,hrif,h019"
+-- Tooltip - Extended
+Ubertip = "Trains the unit of Alliance vassals. Also ressurects heroes, is a lumber drop-site and provides food.|n|r|cfff5962dTrains:|R Workers and all units."
+-- Normal
+abilList = "Abdl,Argl"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 6
+-- Model File
+file = "buildings\\other\\Tavern\\Tavern.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Selection Scale
+scale = 4.0
+-- Unit Classification
+type = "mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = ""

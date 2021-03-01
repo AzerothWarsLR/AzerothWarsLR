@@ -1,0 +1,45 @@
+[n07R]
+_parent = "nntt"
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00Q|r] - Temple of the Drowned"
+-- Units Trained
+Trains = "nnrg,nmpe"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train Mur'gul Slaves, Royal Guards and receive gathered resources. Also contains the Submerge upgrade."
+-- Normal
+abilList = "Argl"
+-- Required Animation Names
+animProps = "upgrade,third"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "buildings\\undead\\Necropolis\\Necropolis.mdl"
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 65
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 220
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""

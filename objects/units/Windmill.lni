@@ -1,0 +1,33 @@
+[h00I]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron-Other)"
+-- Name
+-- Normal
+abilList = ""
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "Doodads\\LordaeronSummer\\Structures\\WindMill\\WindMill.mdl"
+-- Food Produced
+fmade = 5
+-- Repair Gold Cost
+goldRep = 5
+-- Repair Lumber Cost
+lumberRep = 15
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.9
+-- Placement Requires
+preventPlace = ""
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 0.9
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""

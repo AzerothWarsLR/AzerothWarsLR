@@ -1,0 +1,42 @@
+[nvdg]
+_parent = "nvdg"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Eye of Sargeras)"
+-- Hotkey
+Hotkey = "G"
+-- Normal
+abilList = "A076"
+-- Default Active Ability
+auto = "A076"
+-- Build Time
+bldtm = 7
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Collision Size
+collision = 22.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 19
+-- Gold Cost
+goldcost = 28
+-- Level
+level = 4
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.2
+-- Hit Points Regeneration Rate
+regenHP = 1.2
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Stock Replenish Interval
+stockRegen = 60
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

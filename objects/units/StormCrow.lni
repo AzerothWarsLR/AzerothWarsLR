@@ -1,0 +1,61 @@
+[e00C]
+_parent = "edtm"
+-- Required Attachment Link Names
+Attachmentlinkprops = ""
+-- Required Bone Names
+Boneprops = ""
+-- Caster Upgrade Art
+Casterupgradeart = "NONE"
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Druids-Storm Crow)"
+-- Hit Points Maximum (Base)
+HP = 510
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "war3mapImported\\FeatherMissile.mdl"
+-- Name
+-- Tooltip - Basic
+Tip = "Train |cffffcc00(W)|r Storm Crow Form"
+-- Tooltip - Extended
+Ubertip = "Maneuverable spellcaster. Casts Faerie Fire and Night Elf Form.|n|n|cffffcc00Attacks air units.|r"
+-- Normal
+abilList = "Aien"
+-- Required Animation Names
+animProps = ""
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Build Time
+bldtm = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Model File
+file = "war3mapImported\\Raven.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.85
+-- Hit Points Regeneration Rate
+regenHP = 0.5
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rguv,Rhar,Rhme"

@@ -1,0 +1,12 @@
+[nmdm]
+_parent = "nmdm"
+-- Hit Points Maximum (Base)
+HP = 1
+-- Normal
+abilList = "A11J,ACrk,AInv,Amrf"
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Mana Regeneration
+regenMana = 0.0

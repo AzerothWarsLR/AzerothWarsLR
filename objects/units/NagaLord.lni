@@ -1,0 +1,81 @@
+[U01S]
+_parent = "Ulic"
+-- Starting Agility
+AGI = 26
+-- Agility per Level
+AGIplus = 2.1
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive"
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Intelligence per Level
+INTplus = 1.4
+-- Attack 1 - Projectile Art
+Missileart_1 = ""
+-- Name
+-- Primary Attribute
+Primary = "STR"
+-- Proper Names
+Propernames = "Overseer Idra'kess"
+-- Requirements - Tier 2
+Requires1 = ""
+-- Requirements - Tier 3
+Requires2 = ""
+-- Tooltip - Revive
+Revivetip = "Revive"
+-- Starting Strength
+STR = 36
+-- Strength per Level
+STRplus = 2.6
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp"
+-- Build Time
+bldtm = 13
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Defense Base
+def = 4
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "A0WM,A0DA,AHad,A118,Aamk"
+-- Scaling Value
+modelScale = 1.1
+-- Height
+moveHeight = 0.0
+-- Type
+movetp = "amph"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 17
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 150
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Turn Rate
+turnRate = 0.6
+-- Unit Classification
+type = ""
+-- Unit Sound Set
+unitSound = "NagaRoyalGuard"
+-- Attack 1 - Weapon Type
+weapTp1 = "normal"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumChop"

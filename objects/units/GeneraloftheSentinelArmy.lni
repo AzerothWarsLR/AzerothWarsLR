@@ -1,0 +1,87 @@
+[E002]
+_parent = "Emoo"
+-- Starting Agility
+AGI = 21
+-- Agility per Level
+AGIplus = 2.0
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNShandris.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Sentinel General"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 400
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "S"
+-- Intelligence per Level
+INTplus = 2.3
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.1
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 800
+-- Name
+-- Proper Names
+Propernames = "Shandris Feathermoon"
+-- Tooltip - Revive
+Revivetip = "Revive Sentinel General"
+-- Strength per Level
+STRplus = 1.5
+-- Tooltip - Basic
+Tip = " "
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0GK,S003,AInv,A0KV,Ault"
+-- Acquisition Range
+acquire = 750.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.54
+-- Build Time
+bldtm = 13
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.7
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.46
+-- Model File
+file = "units\\nightelf\\Shandris\\Shandris.mdl"
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "A0TQ,Aamk,A0L9,A0PK,A047"
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 1.05
+-- Type
+movetp = "foot"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 18
+-- Attack 1 - Range
+rangeN1 = 750
+-- Selection Scale
+scale = 1.2
+-- Speed Base
+spd = 260
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Turn Rate
+turnRate = 0.6
+-- Unit Sound Set
+unitSound = "Shandris"
+-- Upgrades Used
+upgrades = "R002,Reuv"

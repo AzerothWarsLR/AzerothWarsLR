@@ -1,0 +1,4 @@
+[nsw3]
+_parent = "nsw3"
+-- Collision Size
+collision = 40.0

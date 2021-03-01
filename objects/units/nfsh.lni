@@ -1,0 +1,28 @@
+[nfsh]
+_parent = "nfsh"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 12
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 23.0
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 29
+-- Scaling Value
+modelScale = 1.05
+-- Hit Points Regeneration Rate
+regenHP = 2.1
+-- Attack 1 - Damage Sides per Die
+sides1 = 5

@@ -1,0 +1,85 @@
+[N00D]
+_parent = "Nfir"
+-- Starting Agility
+AGI = 45
+-- Agility per Level
+AGIplus = 4.0
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Hit Points Maximum (Base)
+HP = 9000
+-- Starting Intelligence
+INT = 32
+-- Intelligence per Level
+INTplus = 6.0
+-- Name
+-- Primary Attribute
+Primary = "STR"
+-- Proper Names
+Propernames = "Ragnaros"
+-- Starting Strength
+STR = 22
+-- Strength per Level
+STRplus = 5.0
+-- Normal
+abilList = "ACrk,Apig,Amim,A0I2,A04S,A0HW"
+-- Acquisition Range
+acquire = 1200.0
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 15
+-- Gold Bounty Awarded - Base
+bountyplus = 500
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 5
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 70.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.45
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Number of Dice
+dice1 = 10
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Model File
+file = "Ragnaros.mdl"
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "ANav"
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Mana Initial Amount
+mana0 = 5000
+-- Mana Maximum
+manaN = 5000
+-- Scaling Value
+modelScale = 3.5
+-- Type
+movetp = ""
+-- Race
+race = "demon"
+-- Attack 1 - Range
+rangeN1 = 1200
+-- Attack 2 - Range
+rangeN2 = 1200
+-- Hit Points Regeneration Rate
+regenHP = 40.0
+-- Mana Regeneration
+regenMana = 3.0
+-- Selection Scale
+scale = 4.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 10
+-- Speed Base
+spd = 0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,ground,notself,structure"
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 6
+-- Team Color
+teamColor = 5

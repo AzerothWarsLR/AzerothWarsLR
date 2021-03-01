@@ -1,0 +1,15 @@
+[nbds]
+_parent = "nbds"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Name
+-- Normal
+abilList = "ACev,ACdr"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 15
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 40

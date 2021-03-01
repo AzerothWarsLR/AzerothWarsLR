@@ -1,0 +1,12 @@
+[net1]
+_parent = "net1"
+-- Repair Gold Cost
+goldRep = 20
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 120
+-- Repair Time
+reptm = 50
+-- Ground Texture
+uberSplat = ""

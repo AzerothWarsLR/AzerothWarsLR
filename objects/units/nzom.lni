@@ -1,0 +1,50 @@
+[nzom]
+_parent = "nzom"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "R"
+-- Tooltip - Basic
+Tip = "Train Zombie"
+-- Tooltip - Extended
+Ubertip = "Poor soul consumed in undeath.|n|cfff5962dAbilities:|R Disease Cloud, Infected Wounds|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Aiun,Aap1"
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.7
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "large"
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 9
+-- Gold Cost
+goldcost = 14
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R01D,R01X,Rhar,Rhme,Rupm,Rguv"

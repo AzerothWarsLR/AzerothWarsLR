@@ -1,0 +1,51 @@
+[h07L]
+_parent = "hgtw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendGuardTower.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(dwarf)"
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Hotkey
+Hotkey = "Z"
+-- Name
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Upgrade to (|cffffcc00Z|r) Improved Guard Tower"
+-- Normal
+abilList = "A00E,Adts"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Defense Type
+defType = "fort"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 39
+-- Model File
+file = "war3mapImported\\TowerIronforgeV1.04.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 165
+-- Scaling Value
+modelScale = 1.2
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhme,Rhac,Rgfo"

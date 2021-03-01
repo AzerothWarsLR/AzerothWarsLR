@@ -1,0 +1,12 @@
+[Nalc]
+_parent = "Nalc"
+-- Gold Bounty Awarded - Base
+bountyplus = 25
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Hero
+heroAbilList = "Aamk,ANhs,ANcr,A072"
+-- Hit Points Regeneration Rate
+regenHP = 1.0

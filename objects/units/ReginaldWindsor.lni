@@ -1,0 +1,85 @@
+[h03F]
+_parent = "hkni"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNReginald.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1550
+-- Hotkey
+Hotkey = "A"
+-- Looping Fade In Rate
+LoopingSoundFadeIn = 0
+-- Looping Fade Out Rate
+LoopingSoundFadeOut = 0
+-- Movement
+MovementSoundLabel = ""
+-- Name
+-- Requirements
+Requires = "R03R"
+-- Tooltip - Basic
+Tip = "Revive Reginal Windsor"
+-- Tooltip - Extended
+Ubertip = "Loyal friend of Varian, and Knight Commander of Stormwind, Reginald is a strong leader for the armies of the south. He values the integrity of his nation highly, and will root out any that threaten it."
+-- Normal
+abilList = "A064,A055,A0EG,A02Y,ACrk,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 25.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Death Type
+deathType = 0
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 75
+-- Model File
+file = "units\\human\\HeroPaladin\\HeroPaladin.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 100
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 425
+-- Scaling Value
+modelScale = 0.9
+-- Type
+movetp = "foot"
+-- Priority
+prio = 16
+-- Hit Points Regeneration Rate
+regenHP = 1.5
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Speed Base
+spd = 220
+-- Team Color
+teamColor = 10
+-- Unit Classification
+type = "giant,sapper"
+-- Unit Sound Set
+unitSound = "Uther"
+-- Upgrades Used
+upgrades = "Rhar,Rhme,Rguv,R01N"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

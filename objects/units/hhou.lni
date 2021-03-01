@@ -1,0 +1,38 @@
+[hhou]
+_parent = "hhou"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Build - Farm"
+-- Tooltip - Extended
+Ubertip = "Civilian farmstead supplying food for your nation.|nProvides 8 food, which increases the maximum number of units that can be trained."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 20
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 8
+-- Repair Lumber Cost
+lumberRep = 15
+-- Scaling Value
+modelScale = 0.85
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 2.0
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"

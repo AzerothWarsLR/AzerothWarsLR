@@ -1,0 +1,45 @@
+[Hmbr]
+_parent = "Hmbr"
+-- Starting Agility
+AGI = 20
+-- Agility per Level
+AGIplus = 1.8
+-- Tooltip - Awaken
+Awakentip = "Revive Mountain Prince"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Khaz Modan)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Hotkey
+Hotkey = "S"
+-- Starting Intelligence
+INT = 18
+-- Intelligence per Level
+INTplus = 1.7
+-- Name
+-- Tooltip - Revive
+Revivetip = "Revive Mountain Prince"
+-- Starting Strength
+STR = 26
+-- Tooltip - Extended
+Ubertip = ""
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Hero
+heroAbilList = "Aamk,A0K3,ANdh,A0I9,AHav"
+-- Priority
+prio = 18
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R014"

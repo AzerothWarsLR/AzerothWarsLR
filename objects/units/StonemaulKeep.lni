@@ -1,0 +1,55 @@
+[o004]
+_parent = "otto"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Name
+-- Researches Available
+Researches = "R019,Ropg"
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Stonemaul Keep"
+-- Units Trained
+Trains = "o00A,opeo,o00E,n03F"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0C9,A0GM,Arlm,Abds,Aspi"
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 180.0
+-- Defense Base
+def = 20
+-- Model File
+file = "buildings\\other\\Mercenary\\Mercenary.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.35
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 120
+-- Selection Scale
+scale = 6.0
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""

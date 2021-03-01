@@ -1,0 +1,28 @@
+[nftb]
+_parent = "nftb"
+-- Hit Points Maximum (Base)
+HP = 835
+-- Normal
+abilList = "ACev,Absk"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 12
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 23.0
+-- Defense Base
+def = 3
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 32
+-- Scaling Value
+modelScale = 0.9
+-- Hit Points Regeneration Rate
+regenHP = 2.1
+-- Attack 1 - Damage Sides per Die
+sides1 = 7

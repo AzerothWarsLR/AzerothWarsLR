@@ -1,0 +1,17 @@
+[nbdo]
+_parent = "nbdo"
+-- Hit Points Maximum (Base)
+HP = 1400
+-- Name
+-- Normal
+abilList = "ACev,Arsk,ACav,ACbf"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 52
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Food Cost
+fused = 0

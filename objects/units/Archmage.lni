@@ -1,0 +1,39 @@
+[H04F]
+_parent = "Hkal"
+-- Starting Agility
+AGI = 20
+-- Agility per Level
+AGIplus = 1.3
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElfRogue.blp"
+-- Tooltip - Awaken
+Awakentip = "(|cffffff00S|r) Revive Blood Mage"
+-- Name - Editor Suffix
+EditorSuffix = "(Green)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "S"
+-- Name
+-- Proper Names
+Propernames = "Grand Magister Rommath"
+-- Strength per Level
+STRplus = 2.2
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNElfRogue.blp"
+-- Normal
+abilList = "A0GK,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Model File
+file = "units\\human\\HeroArchMage\\HeroArchMage.mdl"
+-- Hero
+heroAbilList = "Aamk,Heal,A0L1,A08J,AHab"
+-- Priority
+prio = 17
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "HighElfSwordsman"

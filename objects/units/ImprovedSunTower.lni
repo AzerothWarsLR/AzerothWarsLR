@@ -1,0 +1,53 @@
+[n003]
+_parent = "negt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElvenSkyTower.blp"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Hotkey
+Hotkey = "Z"
+-- Name
+-- Tooltip - Basic
+Tip = "Upgrade to Improved Sun Tower"
+-- Tooltip - Extended
+Ubertip = "Sunwell infused stone and steel, built to defend Quel'Thalas.|n|cfff5962dCan Learn:|R Magic Sentry|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Adts"
+-- Build Time
+bldtm = 25
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 42
+-- Model File
+file = "buildings\\other\\ElvenGuardMagicTower\\ElvenGuardMagicTower.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 165
+-- Scaling Value
+modelScale = 1.1
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rhac"

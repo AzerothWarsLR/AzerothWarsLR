@@ -1,0 +1,17 @@
+[n02H]
+_parent = "ngrk"
+-- Hit Points Maximum (Base)
+HP = 540
+-- Name
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 16
+-- Tinting Color 2 (Green)
+green = 100
+-- Level
+level = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5

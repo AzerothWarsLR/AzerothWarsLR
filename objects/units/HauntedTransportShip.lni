@@ -1,0 +1,35 @@
+[ubot]
+_parent = "ubot"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Legion)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Build Haunted Transport Ship"
+-- Tooltip - Extended
+Ubertip = "A sturdy transport ship capable of carrying units over the sea.|n|n|cff00ffffCan transport 10 units."
+-- Build Time
+bldtm = 10
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 30.0
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 17
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.9
+-- Selection Scale
+scale = 2.0
+-- Speed Base
+spd = 270
+-- Stock Maximum
+stockMax = 1
+-- Upgrades Used
+upgrades = "Rguv,R006"

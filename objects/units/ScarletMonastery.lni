@@ -1,0 +1,37 @@
+[h00T]
+_parent = "hars"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R00I,R02E"
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "n03K,nchp"
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Death Type
+deathType = 0
+-- Model File
+file = "Doodads\\Cityscape\\Structures\\Cathedral\\Cathedral.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 150
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Unit Classification
+type = "ancient,mechanical"
+-- Ground Texture
+uberSplat = ""

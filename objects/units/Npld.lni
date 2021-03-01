@@ -1,0 +1,26 @@
+[Npld]
+_parent = "Npld"
+-- Starting Agility
+AGI = 22
+-- Agility per Level
+AGIplus = 1.2
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Starting Intelligence
+INT = 15
+-- Intelligence per Level
+INTplus = 1.4
+-- Proper Names
+Propernames = "Azgalor"
+-- Starting Strength
+STR = 35
+-- Build Time
+bldtm = 13
+-- Attack 1 - Damage Base
+dmgplus1 = 15
+-- Hero
+heroAbilList = "A014,A0WM,Aamk,A01W,A00F"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 17

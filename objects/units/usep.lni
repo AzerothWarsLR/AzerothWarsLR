@@ -1,0 +1,36 @@
+[usep]
+_parent = "usep"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hotkey
+Hotkey = "A"
+-- Researches Available
+Researches = "R00P,Ruwb,Rugf"
+-- Units Trained
+Trains = "ugho,ucry,nska"
+-- Tooltip - Extended
+Ubertip = "Vile housing for the constant raising of undead.|n|cfff5962dTrains:|R Ghouls, Crypt Fiends, Skeletal Archers, Gargoyles|n|cfff5962dResearches:|R Ghoul Frenzy, Web"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 20
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Placement Prevented By
+requirePlace = ""
+-- Ground Texture
+uberSplat = ""

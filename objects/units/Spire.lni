@@ -1,0 +1,41 @@
+[o006]
+_parent = "osld"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIronHordeFoundry.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R015,R02I"
+-- Tooltip - Basic
+Tip = "Build Spire"
+-- Units Trained
+Trains = "nogo,nogn,o00I"
+-- Tooltip - Extended
+Ubertip = "Where the strongest Ogres rule over the weak.|n|cfff5962dTrains:|r Stonemaul Bruiser, Stonemaul Magi, War Machine|n|cfff5962dResearches:|R Stonemaul Magi Training"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\FoundryIronHordeV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 50
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 19
+-- Repair Time
+reptm = 60
+-- Ground Texture
+uberSplat = ""

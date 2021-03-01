@@ -1,0 +1,67 @@
+[e008]
+_parent = "ebal"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBallista.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Attack 2 - Area of Effect (Full Damage)
+Farea2 = 0
+-- Hit Points Maximum (Base)
+HP = 450
+-- Attack 2 - Area of Effect (Medium Damage)
+Harea2 = 0
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Art
+Missileart_1 = "war3mapImported\\BEGlaiveMissile.mdl"
+-- Name
+-- Attack 2 - Area of Effect (Small Damage)
+Qarea2 = 0
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Ballista"
+-- Tooltip - Extended
+Ubertip = "Long-range percision siege weaponry.|n|n|cff99b4d1Can only build 6.|r|n|cffffcc00Attacks land units and trees.|r"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 12
+-- Collision Size
+collision = 30.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Model File
+file = "war3mapImported\\BloodElvenArcaneGlaiveThrower.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 130
+-- Gold Cost
+goldcost = 25
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.85
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Selection Scale
+scale = 2.0
+-- Scale Projectiles
+scaleBull = 0
+-- Categorization - Special
+special = 1
+-- Attack 2 - Damage Spill Radius
+spillRadius2 = 80.0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,organic,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,tree,wall,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "debris,item,structure,wall,ward"
+-- Upgrades Used
+upgrades = "R01R,Rhme,Rhar"

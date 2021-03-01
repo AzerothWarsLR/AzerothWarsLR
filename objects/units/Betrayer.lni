@@ -1,0 +1,59 @@
+[Eevi]
+_parent = "Eevi"
+-- Starting Agility
+AGI = 25
+-- Agility per Level
+AGIplus = 3.5
+-- Name - Editor Suffix
+EditorSuffix = "(Naga)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 35
+-- Hit Points Maximum (Base)
+HP = 700
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 85
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.45
+-- Starting Intelligence
+INT = 18
+-- Intelligence per Level
+INTplus = 2.7
+-- Name
+-- Proper Names
+Propernames = "Illidan Stormrage"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 135
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.23
+-- Starting Strength
+STR = 20
+-- Strength per Level
+STRplus = 2.3
+-- Normal
+abilList = "A0NN,AInv,AEvi,Ault"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 24.0
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Hero
+heroAbilList = "A0UK,A0UV,A0YW,A0TX,Aamk"
+-- Lumber Cost
+lumbercost = 200
+-- Scaling Value
+modelScale = 1.2
+-- Priority
+prio = 20
+-- Race
+race = "naga"
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 260
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "enemies,ground,vulnerable"

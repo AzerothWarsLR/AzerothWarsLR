@@ -1,0 +1,69 @@
+[n071]
+_parent = "nnfm"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNZigguratUpgrade.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "small"
+-- Construction
+BuildingSoundLabel = "UndeadBuildingConstructionLoop"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Pillars)"
+-- Hit Points Maximum (Base)
+HP = 975
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00W|r] - Pillars of C'thun"
+-- Normal
+abilList = "A0YA,A0RU"
+-- Required Animation Names
+animProps = "upgrade,first"
+-- Build Time
+bldtm = 35
+-- Tinting Color 3 (Blue)
+blue = 101
+-- Collision Size
+collision = 0.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Model File
+file = "buildings\\undead\\Ziggurat\\Ziggurat.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 12
+-- Gold Cost
+goldcost = 12
+-- Tinting Color 2 (Green)
+green = 221
+-- Projectile Launch - Z
+launchZ = 0.0
+-- Scaling Value
+modelScale = 0.6
+-- Height Minimum
+moveFloor = -25.0
+-- Height
+moveHeight = -25.0
+-- Type
+movetp = "hover"
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Race
+race = "undead"
+-- Selection Scale
+scale = 1.25
+-- Team Color
+teamColor = 16
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""

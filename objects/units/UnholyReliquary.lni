@@ -1,0 +1,61 @@
+[u015]
+_parent = "utom"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDemonTombOfRelics.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 675
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "rej5,rnec,ritd,I00W,dsum,phea,pman,stwp,infs,modt,ocor"
+-- Name
+-- Tooltip - Basic
+Tip = "Summon Unholy Reliquary"
+-- Tooltip - Extended
+Ubertip = "Creates a shop with purchasable items."
+-- Normal
+abilList = "Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 185
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\TombOfRelicsDemonV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 13
+-- Tinting Color 2 (Green)
+green = 185
+-- Repair Lumber Cost
+lumberRep = 20
+-- Scaling Value
+modelScale = 0.7
+-- Height Minimum
+moveFloor = -10.0
+-- Height
+moveHeight = -10.0
+-- Type
+movetp = "hover"
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 185
+-- Repair Time
+reptm = 50
+-- Placement Prevented By
+requirePlace = ""
+-- Selection Scale
+scale = 3.0
+-- Unit Classification
+type = "mechanical,sapper,undead"
+-- Ground Texture
+uberSplat = ""

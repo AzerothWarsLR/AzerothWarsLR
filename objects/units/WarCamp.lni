@@ -1,0 +1,43 @@
+[o02W]
+_parent = "obar"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcBarracks.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "A"
+-- Name
+-- Researches Available
+Researches = "R02L,R00Y,R066,Robf"
+-- Tooltip - Basic
+Tip = "Build War Camp"
+-- Units Trained
+Trains = "o01K,n03R,o00P,ogrk,o00G,o01O,n058,o00I,o01G,o01F,o005,ogru,nftk,ohun,otbk,nchg,ocat"
+-- Tooltip - Extended
+Ubertip = "Home to the warriors of the Fel Horde.|n|cfff5962dTrains:|R Fel Grunt, Crossbowman, Demolisher|n|cfff5962dResearches:|R Demonic Flux, Bloodcraze, Improved Self-Bloodlust, Burning Oil"
+-- Normal
+abilList = "Aspi"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\BarracksFelOrcV1.03.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,26 @@
+[ncbb]
+_parent = "ncbb"
+-- Defense Base
+def = 2
+-- Food Produced
+fmade = 5
+-- Repair Gold Cost
+goldRep = 5
+-- Repair Lumber Cost
+lumberRep = 15
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Race
+race = "human"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 1.0
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

@@ -1,0 +1,6 @@
+[nhrq]
+_parent = "nhrq"
+-- Gold Bounty Awarded - Base
+bountyplus = 25
+-- Attack 1 - Damage Base
+dmgplus1 = 40

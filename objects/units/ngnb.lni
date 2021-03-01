@@ -1,0 +1,20 @@
+[ngnb]
+_parent = "ngnb"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Normal
+abilList = "ANbh"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Sleeps
+canSleep = 0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 41
+-- Food Cost
+fused = 0
+-- Hit Points Regeneration Rate
+regenHP = 1.0

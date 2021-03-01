@@ -1,0 +1,36 @@
+[otto]
+_parent = "otto"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hotkey
+Hotkey = "F"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R00W,Rows"
+-- Units Trained
+Trains = "oosc,otau"
+-- Tooltip - Extended
+Ubertip = "Gathering spot of the Bloodhoof Tribe.|n|cfff5962dTrains:|R Tauren|n|cfff5962dResearches:|R Toughened Hides, Improved Pulverize"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 13
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""

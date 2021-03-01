@@ -1,0 +1,34 @@
+[halt]
+_parent = "halt"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Hotkey
+Hotkey = "X"
+-- Tooltip - Basic
+Tip = "Build - Altar of Kings"
+-- Units Trained
+Trains = "n075,h052,h03F,h05W,n06F,h05X,h03W,h012,h01M,njks,H01J,Hlgr"
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes and Demi-heroes."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

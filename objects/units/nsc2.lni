@@ -1,0 +1,4 @@
+[nsc2]
+_parent = "nsc2"
+-- Gold Bounty Awarded - Base
+bountyplus = 4

@@ -1,0 +1,8 @@
+[ntkw]
+_parent = "ntkw"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1

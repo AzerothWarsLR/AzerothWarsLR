@@ -1,0 +1,56 @@
+[owtw]
+_parent = "owtw"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Hotkey
+Hotkey = "Z"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build - Watch Tower"
+-- Tooltip - Extended
+Ubertip = "Spearman filled eyes of the Horde.|n|cfff5962dUpgrades Into:|R Improved Watch Tower|n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "nbt1,o002"
+-- Normal
+abilList = "Arbr,Aspi"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Attack 1 - Damage Base
+dmgplus1 = 29
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 60
+-- Scaling Value
+modelScale = 0.85
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 700
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp,Rhme,Rorb,Rgfo"

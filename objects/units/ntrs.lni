@@ -1,0 +1,46 @@
+[ntrs]
+_parent = "ntrs"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Tortolla)"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Hotkey
+Hotkey = "D"
+-- Tooltip - Basic
+Tip = "Call Sea Turtle"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 10
+-- Lumber Cost
+lumbercost = 0
+-- Type
+movetp = "foot"
+-- Race
+race = "nightelf"
+-- Speed Base
+spd = 230
+-- Stock Maximum
+stockMax = 5
+-- Stock Replenish Interval
+stockRegen = 60
+-- Stock Start Delay
+stockStart = 60
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 25
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"

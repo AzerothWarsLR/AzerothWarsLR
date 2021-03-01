@@ -1,0 +1,41 @@
+[o022]
+_parent = "ovln"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Hit Points Maximum (Base)
+HP = 2000
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "stwa,vddl,will,I00O,vamp,hslv,phea,pman,stwp,olig"
+-- Name
+-- Tooltip - Basic
+Tip = "Build - Voodoo Lounge"
+-- Tooltip - Extended
+Ubertip = "Mystical lounge with purchasable items."
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 13
+-- Tinting Color 2 (Green)
+green = 200
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 1.15
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""

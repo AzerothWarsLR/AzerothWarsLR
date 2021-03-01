@@ -1,0 +1,51 @@
+[negt]
+_parent = "negt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElvenSkyTower.blp"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "Z"
+-- Name
+-- Tooltip - Basic
+Tip = "Build - Sun Tower"
+-- Tooltip - Extended
+Ubertip = "Tower infused with the magic of the Sunwell.|n|cfff5962dCan Learn:|R Magic Sentry|n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "n003"
+-- Normal
+abilList = "Adts"
+-- Build Time
+bldtm = 25
+-- Categorization - Campaign
+campaign = 0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Model File
+file = "buildings\\other\\ElvenGuardMagicTower\\ElvenGuardMagicTower.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 30
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 80
+-- Scaling Value
+modelScale = 0.85
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 2.0
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,Rhac"

@@ -1,0 +1,9 @@
+[n06B]
+_parent = "ntor"
+-- Name - Editor Suffix
+EditorSuffix = "(Level 3)"
+-- Name
+-- Normal
+abilList = "A0H9,Atsp,Aasl"
+-- Speed Base
+spd = 150

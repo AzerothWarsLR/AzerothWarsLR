@@ -1,0 +1,91 @@
+[h05X]
+_parent = "hsor"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMagician.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1075
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl"
+-- Name
+-- Requirements
+Requires = "R03X"
+-- Tooltip - Basic
+Tip = "Revive [|cffffcc00S|r] - High Sorcerer Andromath"
+-- Tooltip - Extended
+Ubertip = "Spellcaster demi-hero. Has the following abilities: Frost armor, Ring of Frost and Blink. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0AU,A0B9,A0RA,AInv,ACrk,A0GK"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "A0AU"
+-- Build Time
+bldtm = 60
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.55
+-- Death Type
+deathType = 0
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 66
+-- Model File
+file = "units\\creeps\\HumanMage\\HumanMage.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Type
+movetp = "foot"
+-- Priority
+prio = 16
+-- Tinting Color 1 (Red)
+red = 100
+-- Hit Points Regeneration Rate
+regenHP = 0.7
+-- Mana Regeneration
+regenMana = 1.2
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 250
+-- Team Color
+teamColor = 10
+-- Unit Classification
+type = "giant"
+-- Unit Sound Set
+unitSound = "BloodElfSorceror"
+-- Upgrades Used
+upgrades = "R01N,Rhme,Rhpm,Rhar,Rguv"

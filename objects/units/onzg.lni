@@ -1,0 +1,8 @@
+[onzg]
+_parent = "onzg"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Normal
+abilList = "Aens,Aion"
+-- Upgrades Used
+upgrades = "Rhar,Roen,Rhme,Ropg,Ropm,Rguv"

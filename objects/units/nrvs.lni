@@ -1,0 +1,8 @@
+[nrvs]
+_parent = "nrvs"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Food Cost
+fused = 0
+-- Upgrades Used
+upgrades = "Rhme,R008,Rhar"

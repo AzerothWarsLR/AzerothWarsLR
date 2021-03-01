@@ -1,0 +1,20 @@
+[nbot]
+_parent = "nbot"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "|cffeae402(Q) |r- Hire |cffffcc00T|rransport Ship"
+-- Defense Base
+def = 2
+-- Gold Cost
+goldcost = 34
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Sight Radius (Night)
+nsight = 1100
+-- Speed Base
+spd = 270
+-- Upgrades Used
+upgrades = "R006"

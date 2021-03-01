@@ -1,0 +1,10 @@
+[nano]
+_parent = "nano"
+-- Hit Points Maximum (Base)
+HP = 940
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 37

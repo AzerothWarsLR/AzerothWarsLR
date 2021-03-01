@@ -1,0 +1,7 @@
+[u01D]
+_parent = "uloc"
+-- Name
+-- Normal
+abilList = "Afra,Aloc"
+-- Model File
+file = "Abilities\\Weapons\\ZigguratFrostMissile\\ZigguratFrostMissile.mdl"

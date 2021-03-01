@@ -1,0 +1,103 @@
+[n09A]
+_parent = "nogn"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTlenoTech Mechanic.blp"
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNThunderclap.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Patch,- Patch|n- Dispel,- Patch|n- Dispel|n - Ritual of the Machine"
+-- Name - Editor Suffix
+EditorSuffix = "(yogg)"
+-- Hit Points Maximum (Base)
+HP = 830
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GryphonRiderMissile\\GryphonRiderMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1100
+-- Name
+-- Tooltip - Basic
+Tip = "Train Mechagnome Tech"
+-- Tooltip - Extended
+Ubertip = "Repair custodian of the Prime Installation.|n|cfff5962dAbilities:|R Patch, Dispel, Ritual of the Machine |n|n|cffd5d500Attacks land and air units.|r"
+-- Normal
+abilList = "A05R,A07L,A03I,Aion"
+-- Acquisition Range
+acquire = 600.0
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "A03I"
+-- Build Time
+bldtm = 5
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 17.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Defense Base
+def = 6
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 22
+-- Model File
+file = "units\\human\\HeroMountainKing\\HeroMountainKing.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 21
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 2
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 9
+-- Race
+race = "nightelf"
+-- Attack 1 - Range
+rangeN1 = 300
+-- Tinting Color 1 (Red)
+red = 150
+-- Hit Points Regeneration Rate
+regenHP = 0.0
+-- Mana Regeneration
+regenMana = 1.64
+-- Repair Time
+reptm = 7
+-- Selection Scale
+scale = 1.0
+-- Shadow Image - Height
+shadowH = 120.0
+-- Shadow Image - Width
+shadowW = 120.0
+-- Shadow Image - Center X
+shadowX = 50.0
+-- Shadow Image - Center Y
+shadowY = 50.0
+-- Speed Base
+spd = 220
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Classification
+type = "mechanical"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

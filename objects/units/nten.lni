@@ -1,0 +1,8 @@
+[nten]
+_parent = "nten"
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

@@ -1,0 +1,24 @@
+[nrvi]
+_parent = "nrvi"
+-- Normal
+abilList = "ACf2,ACvp"
+-- Default Active Ability
+auto = "ACf2"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 26.0
+-- Level
+level = 6
+-- Mana Initial Amount
+mana0 = 250
+-- Mana Maximum
+manaN = 250
+-- Mana Regeneration
+regenMana = 0.5
+-- Upgrades Used
+upgrades = "Rhme,R008,Rhar"

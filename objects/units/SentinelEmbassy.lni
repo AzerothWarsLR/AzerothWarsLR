@@ -1,0 +1,85 @@
+[n06O]
+_parent = "nbwd"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNWaygate1.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "large"
+-- Construction
+BuildingSoundLabel = "NightElfGrowingLoop"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 1900
+-- Hotkey
+Hotkey = "Z"
+-- Looping Fade In Rate
+LoopingSoundFadeIn = 512
+-- Looping Fade Out Rate
+LoopingSoundFadeOut = 512
+-- Name
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl"
+-- Tooltip - Basic
+Tip = "Sentinel Embassy"
+-- Units Trained
+Trains = "ewsp"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Wisp|n|cfff5962dAbilities:|R Ancestral Spirits |n|cfff5962dUpgrades to:|R Sentinel Enclave"
+-- Upgrades To
+Upgrade = "n06P"
+-- Normal
+abilList = "Arlm,A0GN"
+-- Required Animation Names
+animProps = "Upgrade,First"
+-- Build Time
+bldtm = 50
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 5
+-- Defense Upgrade Bonus
+defUp = 2
+-- Model File
+file = "war3mapImported\\NETownhall.mdl"
+-- Food Produced
+fmade = 20
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 70
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 365
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.85
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 8
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 3.0
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 0
+-- Unit Classification
+type = "_"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"

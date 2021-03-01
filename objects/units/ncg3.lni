@@ -1,0 +1,24 @@
+[ncg3]
+_parent = "ncg3"
+-- Name - Editor Suffix
+EditorSuffix = "(Level 3)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.9
+-- Attack 1 - Damage Base
+dmgplus1 = 31
+-- Tinting Color 2 (Green)
+green = 150
+-- Scaling Value
+modelScale = 1.1
+-- Priority
+prio = 2
+-- Tinting Color 1 (Red)
+red = 150

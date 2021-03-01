@@ -1,0 +1,55 @@
+[U016]
+_parent = "Udea"
+-- Starting Agility
+AGI = 15
+-- Tooltip - Awaken
+Awakentip = "(|cffffff00E|r) Revive Death Knight"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Hit Points Maximum (Base)
+HP = 250
+-- Hotkey
+Hotkey = "E"
+-- Starting Intelligence
+INT = 24
+-- Intelligence per Level
+INTplus = 2.0
+-- Name
+-- Proper Names
+Propernames = "Thoras Trollbane"
+-- Tooltip - Revive
+Revivetip = "(|cffffff00E|r) Revive Death Knight"
+-- Tooltip - Extended
+Ubertip = "Strong Death Knight who was a friend of Kel'thuzad and helped build the Cult of the Damned.|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0CH,AInv"
+-- Build Time
+bldtm = 13
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 27.0
+-- Attack 1 - Damage Base
+dmgplus1 = 5
+-- Food Cost
+fused = 0
+-- Tinting Color 2 (Green)
+green = 150
+-- Hero
+heroAbilList = "A0Z4,A0A3,A0CD,A0Z3,Aamk"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 18
+-- Tinting Color 1 (Red)
+red = 150
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 1.25
+-- Speed Base
+spd = 270

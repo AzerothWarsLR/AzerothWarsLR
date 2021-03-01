@@ -1,0 +1,8 @@
+[nhcn]
+_parent = "nhcn"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Normal
+abilList = ""

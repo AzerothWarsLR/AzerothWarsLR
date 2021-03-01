@@ -1,0 +1,39 @@
+[n07S]
+_parent = "nnfm"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00W|r] - Arcane Welll"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 35
+-- Collision Size
+collision = 0.0
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 12
+-- Repair Lumber Cost
+lumberRep = 15
+-- Scaling Value
+modelScale = 0.85
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 1.25
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""

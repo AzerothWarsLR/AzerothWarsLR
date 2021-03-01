@@ -1,0 +1,6 @@
+[nplb]
+_parent = "nplb"
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Food Cost
+fused = 0

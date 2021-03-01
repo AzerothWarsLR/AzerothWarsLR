@@ -1,0 +1,53 @@
+[h05M]
+_parent = "hfoo"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBandit.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 690
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Enforcer"
+-- Tooltip - Extended
+Ubertip = "Westfall Brigade's SI:7 trained soldier.|n|cfff5962dAbilities:|R Charge, Bash|n|cfff5962dCan Learn:|R Runic Strength|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0P3,A020,A0QS,A01K,Aihn"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 245
+-- Gold Bounty Awarded - Base
+bountyplus = 6
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.25
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "AxemanGilneasV1.02.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 12
+-- Gold Cost
+goldcost = 16
+-- Scaling Value
+modelScale = 0.9
+-- Tinting Color 1 (Red)
+red = 200
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R01N,R038,Rhme,Rhar,Rguv"

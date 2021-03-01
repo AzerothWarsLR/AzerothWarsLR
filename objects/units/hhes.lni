@@ -1,0 +1,40 @@
+[hhes]
+_parent = "hhes"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 675
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = "Versatile defender of Silvermoon.|n|cfff5962dAbilities:|R Charge, Defend, Evasion|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "S001,A020,Adef,A0E2,Aihn"
+-- Build Time
+bldtm = 2
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 12.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 15
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Scaling Value
+modelScale = 0.82
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rhde,Rhpm,Rguv"

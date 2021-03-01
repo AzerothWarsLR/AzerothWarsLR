@@ -1,0 +1,52 @@
+[njks]
+_parent = "njks"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Hotkey
+Hotkey = "A"
+-- Tooltip - Basic
+Tip = "Revive - Jailor Kassan"
+-- Tooltip - Extended
+Ubertip = "The Kirin Tor's jailor for their dungeons. He guards the mage's failed experiments from running amuck in Dalaran and is their sole guardian for their most precious artifacts."
+-- Normal
+abilList = "ACrk,A0GK,A020,A05A,A01X,A0YO,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Tinting Color 3 (Blue)
+blue = 100
+-- Collision Size
+collision = 18.0
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 8
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Priority
+prio = 17
+-- Mana Regeneration
+regenMana = 1.0
+-- Selection Scale
+scale = 1.0
+-- Unit Classification
+type = "giant"
+-- Upgrades Used
+upgrades = "R01J,Rhme,Rhar,Rhse"

@@ -1,0 +1,7 @@
+[nmh1]
+_parent = "nmh1"
+-- Name
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

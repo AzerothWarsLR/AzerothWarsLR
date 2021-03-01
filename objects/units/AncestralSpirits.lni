@@ -1,0 +1,9 @@
+[u01L]
+_parent = "uloc"
+-- Name
+-- Model File
+file = "units\\nightelf\\Wisp\\Wisp.mdl"
+-- Scaling Value
+modelScale = 0.5
+-- Race
+race = "orc"

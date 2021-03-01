@@ -1,0 +1,17 @@
+[o00W]
+_parent = "oeye"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArcaneEye.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Pink - Witch Doctor)"
+-- Name
+-- Normal
+abilList = "Avul,Adt1,Aeth"
+-- Model File
+file = "units\\orc\\WatcherWard\\WatcherWard.mdl"
+-- Sight Radius (Night)
+nsight = 1800
+-- Race
+race = "nightelf"
+-- Sight Radius (Day)
+sight = 1800

@@ -1,0 +1,69 @@
+[nbwm]
+_parent = "nbwm"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Tier-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1500
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Hotkey
+Hotkey = "S"
+-- Attack 2 - Projectile Homing Enabled
+MissileHoming_2 = 1
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl"
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 200
+-- Tooltip - Basic
+Tip = "Train Nefarian"
+-- Tooltip - Extended
+Ubertip = "|cfff5962dAbilities:|R Breath of Fire, Devour, Searing Breath, Resistant Skin|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A08Y,Adev,ACrk,Abof"
+-- Acquisition Range
+acquire = 600.0
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Attack 1 - Cooldown Time
+cool1 = 3.15
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 122
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 150
+-- Level
+level = 8
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.4
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 600
+-- Attack 2 - Range
+rangeN2 = 700
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,nonancient,structure,tree"
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,tree,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attacks Enabled
+weapsOn = 1

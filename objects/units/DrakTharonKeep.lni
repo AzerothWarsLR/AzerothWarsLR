@@ -1,0 +1,55 @@
+[o016]
+_parent = "ofrt"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "u00D"
+-- Normal
+abilList = "A0CA,Argl"
+-- Required Animation Names
+animProps = ""
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Northrend\\Structures\\AncientZiggurat\\AncientZiggurat0.mdl"
+-- Food Produced
+fmade = 15
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 105
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 120
+-- Scaling Value
+modelScale = 1.5
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = ""
+-- Priority
+prio = 1
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.0
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac,R013,Renb,R064,Rosp,Rgfo"

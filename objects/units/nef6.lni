@@ -1,0 +1,30 @@
+[nef6]
+_parent = "nef6"
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 2
+-- Defense Upgrade Bonus
+defUp = 2
+-- Food Produced
+fmade = 6
+-- Repair Gold Cost
+goldRep = 5
+-- Repair Lumber Cost
+lumberRep = 15
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.65
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 0.8
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"

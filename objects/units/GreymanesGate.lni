@@ -1,0 +1,55 @@
+[h02M]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Open)"
+-- Hit Points Maximum (Base)
+HP = 5000
+-- Name
+-- Tooltip - Basic
+Tip = "Greymane's Gate"
+-- Tooltip - Extended
+Ubertip = " "
+-- Normal
+abilList = "A0O0"
+-- Build Time
+bldtm = 5
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 15
+-- Defense Upgrade Bonus
+defUp = 5
+-- Model File
+file = "Doodads\\LordaeronSummer\\Terrain\\IronGate\\IronGate.mdl"
+-- Food Produced
+fmade = 0
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 200
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\Gate1PathDeath.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Race
+race = "unknown"
+-- Repair Time
+reptm = 30
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rosp,R064,Renb,R013,Rhac"

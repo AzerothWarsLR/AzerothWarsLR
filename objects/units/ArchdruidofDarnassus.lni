@@ -1,0 +1,73 @@
+[E00K]
+_parent = "Emfr"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheClaw.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Archdruid"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 250
+-- Hotkey
+Hotkey = "S"
+-- Intelligence per Level
+INTplus = 2.5
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 960
+-- Name
+-- Primary Attribute
+Primary = "STR"
+-- Proper Names
+Propernames = "Fandral Staghelm"
+-- Tooltip - Revive
+Revivetip = "Revive Archdruid"
+-- Starting Strength
+STR = 25
+-- Strength per Level
+STRplus = 3.5
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheClaw.blp"
+-- Tooltip - Basic
+Tip = " "
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0AV,A0GK,AInv,Ault"
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 140
+-- Collision Size
+collision = 30.0
+-- Defense Base
+def = 0
+-- Model File
+file = "units\\nightelf\\DruidoftheClaw\\DruidoftheClaw.mdl"
+-- Tinting Color 2 (Green)
+green = 140
+-- Hero
+heroAbilList = "A0QP,A0M2,Aamk,A06H,A091"
+-- Type
+movetp = "foot"
+-- Priority
+prio = 17
+-- Attack 1 - Range
+rangeN1 = 550
+-- Selection Scale
+scale = 1.5
+-- Speed Base
+spd = 220
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Sound Set
+unitSound = "DruidOfTheClaw"
+-- Upgrades Used
+upgrades = "R002"

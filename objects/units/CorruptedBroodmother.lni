@@ -1,0 +1,81 @@
+[n03V]
+_parent = "nsbm"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Blue - Broodmother)"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 890
+-- Name
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] Corrupted Brood Mother"
+-- Tooltip - Extended
+Ubertip = "Heavy ranged unit that poisons opponents and can summon its young into battle.|n|n|cff99b4d1Can only train 4 |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0WT,ACvs"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 12
+-- Tinting Color 3 (Blue)
+blue = 120
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 24.0
+-- Attack 1 - Damage Base
+dmgplus1 = 48
+-- Model File
+file = "units\\creeps\\Spider\\Spider.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 60
+-- Tinting Color 2 (Green)
+green = 180
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.25
+-- Attack 1 - Range
+rangeN1 = 500
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 0.4
+-- Stock Replenish Interval
+stockRegen = 150
+-- Stock Start Delay
+stockStart = 0
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""

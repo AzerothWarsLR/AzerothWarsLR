@@ -1,0 +1,51 @@
+[n001]
+_parent = "nfoh"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Tooltip - Basic
+Tip = "Reconstruct the Elven Grand Sunwell."
+-- Units Trained
+Trains = "nbee,nggr"
+-- Tooltip - Extended
+Ubertip = "Reconstruct the Elven Grand Sunwell to again have a  life regeneration aura throughout your lands."
+-- Normal
+abilList = "A0EP,A09F"
+-- Build Time
+bldtm = 120
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Cinematic\\SunWell\\SunWell.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 0
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 1000
+-- Pathing Map
+pathTex = "PathTextures\\8x8Default.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "human"
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 90
+-- Unit Classification
+type = "ancient,mechanical,neutral"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac,R013,Rosp,R064,Renb"

@@ -1,0 +1,52 @@
+[oshm]
+_parent = "oshm"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Purge,- Purge|n- Lightning Shield,- Purge|n- Lightning Shield|n- Frost Armor"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = [=[
+Elementalist contected to the spirits of Azeroth.|n|cfff5962dAbilities:|R Purge|n|cfff5962dCan Learn:|R Lightning Shield, Frost Armor|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "Alsh,A0FB,Aion,Apg2"
+-- Default Active Ability
+auto = "A0FB"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 9
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 1 - Damage Base
+dmgplus1 = 16
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 10
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R023,Rost,Ropm,Rguv"

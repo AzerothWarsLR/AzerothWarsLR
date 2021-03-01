@@ -1,0 +1,55 @@
+[Oths]
+_parent = "Oths"
+-- Starting Agility
+AGI = 20
+-- Agility per Level
+AGIplus = 1.2
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Invoker"
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong-Bloodpact)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Starting Intelligence
+INT = 35
+-- Intelligence per Level
+INTplus = 4.5
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl"
+-- Name
+-- Proper Names
+Propernames = "Jergosh"
+-- Tooltip - Revive
+Revivetip = "Revive Invoker"
+-- Starting Strength
+STR = 29
+-- Strength per Level
+STRplus = 1.6
+-- Icon - Score Screen
+ScoreScreenIcon = "UI\\Glues\\ScoreScreen\\scorescreen-hero-farseer.blp"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0GK,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Model File
+file = "units\\demon\\ChaosWarlock\\ChaosWarlock.mdl"
+-- Hero
+heroAbilList = "AHab,Aamk,A02B,A013,A0GJ"
+-- Scaling Value
+modelScale = 1.1
+-- Type
+movetp = "foot"
+-- Priority
+prio = 20
+-- Speed Base
+spd = 200
+-- Unit Sound Set
+unitSound = "PitLord"

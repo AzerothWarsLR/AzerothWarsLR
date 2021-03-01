@@ -1,0 +1,8 @@
+[nnzg]
+_parent = "nnzg"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Selection Scale
+scale = 1.0
+-- Ground Texture
+uberSplat = ""

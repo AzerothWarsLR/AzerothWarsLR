@@ -1,0 +1,25 @@
+[n09W]
+_parent = "nglm"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels-Moonhunter)"
+-- Hit Points Maximum (Base)
+HP = 2
+-- Name
+-- Normal
+abilList = "Amnz,A0VA"
+-- Categorization - Campaign
+campaign = 0
+-- Defense Type
+defType = "none"
+-- Model File
+file = "Doodads\\Barrens\\Rocks\\Geyser\\Geyser0.mdl"
+-- Tinting Color 2 (Green)
+green = 150
+-- Scaling Value
+modelScale = 1.4
+-- Race
+race = "nightelf"
+-- Tinting Color 1 (Red)
+red = 150
+-- Categorization - Special
+special = 1

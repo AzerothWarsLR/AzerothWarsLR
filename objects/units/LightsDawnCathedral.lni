@@ -1,0 +1,61 @@
+[h062]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep - Gilneas)"
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R00Q"
+-- Special
+Specialart = "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl,Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl"
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "h00H,uaco,h019,h022,hpea,nbee"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0BN"
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 144.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Cityscape\\Structures\\Cathedral\\Cathedral.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unamph"
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "AltarOfKings"
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

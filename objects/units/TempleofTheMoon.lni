@@ -1,0 +1,65 @@
+[o029]
+_parent = "oalt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMoonWell.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Name
+-- Researches Available
+Researches = "R013"
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl"
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "h045,h04L,e00N,ewsp"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = ""
+-- Shadow Texture (Building)
+buildingShadow = "ShadowMoonWell"
+-- Defense Base
+def = 20
+-- Model File
+file = "buildings\\nightelf\\MoonWell\\MoonWell.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Maximum
+manaN = 5000
+-- Scaling Value
+modelScale = 0.5
+-- Height
+moveHeight = -25.0
+-- Type
+movetp = "fly"
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 18
+-- Race
+race = "nightelf"
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 120
+-- Selection Scale
+scale = 12.0
+-- Team Color
+teamColor = 21
+-- Unit Classification
+type = "ancient,mechanical"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"

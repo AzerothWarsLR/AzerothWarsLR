@@ -1,0 +1,46 @@
+[hgra]
+_parent = "hgra"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionGryphonAviary.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hotkey
+Hotkey = "F"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build - Gryphon Aviary"
+-- Units Trained
+Trains = "hgry"
+-- Tooltip - Extended
+Ubertip = "Resting roost for the gryphons.|n|cfff5962dTrains:|R Gryphon Riders|n|cfff5962dResearches:|R Storm Hammers"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\GryphonAviaryIronforge2.00.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 16
+-- Repair Time
+reptm = 60
+-- Selection Scale
+scale = 3.6
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"

@@ -1,0 +1,28 @@
+[ntrt]
+_parent = "ntrt"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "F"
+-- Tooltip - Basic
+Tip = "Call Giant Sea Turtle |cffffcc00F|r"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 7
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 15
+-- Lumber Cost
+lumbercost = 15
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

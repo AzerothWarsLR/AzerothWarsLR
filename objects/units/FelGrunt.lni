@@ -1,0 +1,45 @@
+[nchg]
+_parent = "nchg"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 880
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Fel Grunt"
+-- Tooltip - Extended
+Ubertip = "Brutish warrior of infused with the blood of demons.|n|cfff5962dAbilities:|R Charge, Self-Bloodlust, Pillage|n|cfff5962dCan Learn:|R Bloodcraze, Imbued Weaponry|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0GQ,A0ES,A0EH,A020,Aion"
+-- Default Active Ability
+auto = "A0EH"
+-- Build Time
+bldtm = 3
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 17
+-- Level
+level = 2
+-- Scaling Value
+modelScale = 0.9
+-- Hit Points Regeneration Rate
+regenHP = 0.25
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 210
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "R02L,Robf,R00Y,Rhar,Rhme,Rguv"

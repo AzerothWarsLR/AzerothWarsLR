@@ -1,0 +1,61 @@
+[o02U]
+_parent = "ocat"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBloodelf_Arcane_Annihilator.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 30
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "war3mapImported\\CrystalArtillery_Missile.mdl"
+-- Name
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 90
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build Crystal Artillery"
+-- Tooltip - Extended
+Ubertip = "Magical siege weapon.|n|n|cff99b4d1Can only build 6. |r|n|cffffcc00Attacks land units and trees.|r"
+-- Normal
+abilList = ""
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.5
+-- Build Time
+bldtm = 12
+-- Animation - Cast Point
+castpt = 0.3
+-- Collision Size
+collision = 30.0
+-- Model File
+file = "war3mapImported\\CrystalArtillery2_00.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 22
+-- Gold Cost
+goldcost = 22
+-- Projectile Launch - Z
+launchZ = 120.0
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.8
+-- Type
+movetp = "hover"
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Selection Scale
+scale = 2.0
+-- Speed Base
+spd = 200
+-- Upgrades Used
+upgrades = "Rguv,Rhar,Rhme"

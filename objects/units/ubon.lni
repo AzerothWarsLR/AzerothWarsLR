@@ -1,0 +1,42 @@
+[ubon]
+_parent = "ubon"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Hotkey
+Hotkey = "F"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R06N,R01D,R04V,Rufb"
+-- Units Trained
+Trains = "ugar,ufro,ubsp"
+-- Tooltip - Extended
+Ubertip = "Where wyrms go to rest. |n|cfff5962dTrains:|R Gargoyles, Frost Wyrms, Obsidian Destroyers|n|cfff5962dResearches:|R Freezing Breath, Improved Hypothermic Breath, Piercing Screech, Improved Orb of Annihilation"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 16
+-- Repair Time
+reptm = 60
+-- Placement Prevented By
+requirePlace = ""
+-- Ground Texture
+uberSplat = ""

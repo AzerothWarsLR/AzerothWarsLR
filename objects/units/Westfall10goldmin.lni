@@ -1,0 +1,21 @@
+[n02L]
+_parent = "ncop"
+-- Hit Points Maximum (Base)
+HP = 5000
+-- Name
+-- Normal
+abilList = "A0LO"
+-- Collision Size
+collision = 0.0
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Can Be Built On
+isBuildOn = 1
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 1.5
+-- Unit Classification
+type = "ancient,sapper"

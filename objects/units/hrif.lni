@@ -1,0 +1,52 @@
+[hrif]
+_parent = "hrif"
+-- Name - Editor Suffix
+EditorSuffix = "(Ironforge)"
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Highly skilled sharpshooter, and fan of the boomstick. |cfff5962dAbilities:|R Ensnare|n|cfff5962dCan Learn:|R Armor Penetration Rounds|n|n|cffffcc00Attacks land and air units.|nCan be loaded into Keep Towers.|r"
+-- Normal
+abilList = "Aens,A0F4,Aihn"
+-- Acquisition Range
+acquire = 700.0
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Defense Base
+def = 1
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 4
+-- Attack 1 - Range
+rangeN1 = 500
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rhar,Rguv,Rhme,Rhri,R00Z"

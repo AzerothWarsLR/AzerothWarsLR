@@ -1,0 +1,51 @@
+[h065]
+_parent = "htow"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArcaneTownHall.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hotkey
+Hotkey = "Q"
+-- Name
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build Refuge"
+-- Units Trained
+Trains = "h022,h019,nbee,hpea"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Shaper"
+-- Upgrades To
+Upgrade = "h066"
+-- Normal
+abilList = "Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "war3mapImported\\ArcaneCastleV1.04.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 200
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.25
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"

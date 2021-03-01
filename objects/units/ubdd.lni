@@ -1,0 +1,76 @@
+[ubdd]
+_parent = "ubdd"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNskullblue.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Demi)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hit Points Maximum (Base)
+HP = 1400
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Hotkey
+Hotkey = "S"
+-- Requirements
+Requires = "R025"
+-- Tooltip - Basic
+Tip = "Revive Sapphiron"
+-- Tooltip - Extended
+Ubertip = "Flying demi-hero, has the following abilities: Freazing Breath, Breat of Frost and Frost Breath.|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "ACrk,A058,Afrz,Afrb"
+-- Acquisition Range
+acquire = 800.0
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 2 - Attack Type
+atkType2 = "chaos"
+-- Build Time
+bldtm = 60
+-- Categorization - Campaign
+campaign = 0
+-- Defense Base
+def = 5
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 98
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 150
+-- Tinting Color 2 (Green)
+green = 170
+-- Level
+level = 8
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.2
+-- Priority
+prio = 13
+-- Attack 1 - Range
+rangeN1 = 500
+-- Tinting Color 1 (Red)
+red = 170
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Attack 1 - Damage Sides per Die
+sides1 = 12
+-- Attack 2 - Damage Sides per Die
+sides2 = 7
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Team Color
+teamColor = 3
+-- Unit Classification
+type = "giant,undead"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"

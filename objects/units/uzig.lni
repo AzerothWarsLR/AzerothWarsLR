@@ -1,0 +1,44 @@
+[uzig]
+_parent = "uzig"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Extended
+Ubertip = "Provides 8 food, which increases the maximum number of units that can be trained. Can be upgraded to a defensive structure that attacks land and air units."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 20
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 2
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 11
+-- Repair Lumber Cost
+lumberRep = 15
+-- Lumber Cost
+lumbercost = 25
+-- Scaling Value
+modelScale = 0.6
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 30
+-- Placement Prevented By
+requirePlace = ""
+-- Selection Scale
+scale = 2.2
+-- Unit Classification
+type = "mechanical,sapper,undead"
+-- Ground Texture
+uberSplat = ""

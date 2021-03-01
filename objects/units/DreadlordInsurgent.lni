@@ -1,0 +1,41 @@
+[Uvar]
+_parent = "Uvar"
+-- Agility per Level
+AGIplus = 2.0
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "S"
+-- Intelligence per Level
+INTplus = 3.5
+-- Name
+-- Primary Attribute
+Primary = "AGI"
+-- Strength per Level
+STRplus = 3.5
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A06R,AInv,Apiv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Hero
+heroAbilList = "Aamk,ANrf,AUsl,AUav"
+-- Scaling Value
+modelScale = 0.95
+-- Priority
+prio = 15
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 240
+-- Team Color
+teamColor = 0

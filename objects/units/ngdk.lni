@@ -1,0 +1,10 @@
+[ngdk]
+_parent = "ngdk"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 30
+-- Level
+level = 4
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"

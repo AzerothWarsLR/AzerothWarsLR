@@ -1,0 +1,7 @@
+[n05J]
+_parent = "ngob"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+-- Race
+race = "creeps"

@@ -1,0 +1,54 @@
+[Ulic]
+_parent = "Ulic"
+-- Starting Agility
+AGI = 10
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBurningLegionLich.blp"
+-- Hit Points Maximum (Base)
+HP = 250
+-- Starting Intelligence
+INT = 26
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\ZigguratFrostMissile\\ZigguratFrostMissile.mdl"
+-- Proper Names
+Propernames = "Rage Winterchill"
+-- Starting Strength
+STR = 21
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 100
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Model File
+file = "units\\undead\\HeroLich\\HeroLich_V1.mdl"
+-- Food Cost
+fused = 0
+-- Tinting Color 2 (Green)
+green = 100
+-- Hero
+heroAbilList = "A00Y,A052,A10V,A0BV,Aamk"
+-- Proper Names Used
+nameCount = 1
+-- Priority
+prio = 16
+-- Tinting Color 1 (Red)
+red = 200
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 230
+-- Team Color
+teamColor = 20
+-- Upgrades Used
+upgrades = "R061"

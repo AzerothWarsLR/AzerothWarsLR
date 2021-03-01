@@ -1,0 +1,9 @@
+[o036]
+_parent = "otot"
+-- Name - Editor Suffix
+EditorSuffix = "(Dwarf)"
+-- Name
+-- Race
+race = "human"
+-- Categorization - Special
+special = 0

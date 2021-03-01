@@ -1,0 +1,10 @@
+[njg1]
+_parent = "njg1"
+-- Hit Points Maximum (Base)
+HP = 725
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 24

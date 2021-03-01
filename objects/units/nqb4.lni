@@ -1,0 +1,8 @@
+[nqb4]
+_parent = "nqb4"
+-- Name - Editor Suffix
+EditorSuffix = " (Level 4)(Grey - Rexxar Summon)"
+-- Collision Size
+collision = 40.0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"

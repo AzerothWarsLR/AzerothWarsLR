@@ -1,0 +1,26 @@
+[n09B]
+_parent = "nskm"
+-- Name - Editor Suffix
+EditorSuffix = "(Red - Graveyard Event)"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Normal
+abilList = "Aiun,A0PI,ACct,ACcw"
+-- Default Active Ability
+auto = "ACcw"
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Food Cost
+fused = 1
+-- Scaling Value
+modelScale = 0.9
+-- Attack 1 - Range
+rangeN1 = 600
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Upgrades Used
+upgrades = "R001,Rguv,Rhme,Rhar"

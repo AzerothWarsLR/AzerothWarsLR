@@ -1,0 +1,14 @@
+[nspd]
+_parent = "nspd"
+-- Hit Points Maximum (Base)
+HP = 480
+-- Normal
+abilList = "Aweb"
+-- Gold Bounty Awarded - Base
+bountyplus = 2
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Food Cost
+fused = 0

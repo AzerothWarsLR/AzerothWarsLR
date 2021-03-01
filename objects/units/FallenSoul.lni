@@ -1,0 +1,63 @@
+[u01C]
+_parent = "uskm"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGhostMage.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-Chaplain)"
+-- Hit Points Maximum (Base)
+HP = 210
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 0
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.45
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl"
+-- Name
+-- Tooltip - Basic
+Tip = ""
+-- Normal
+abilList = "ACmi"
+-- Armor Type
+armor = "Ethereal"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Tinting Color 3 (Blue)
+blue = 0
+-- Collision Size
+collision = 0.01
+-- Attack 1 - Cooldown Time
+cool1 = 0.4
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 14
+-- Model File
+file = "units\\nightelf\\Wisp\\Wisp.mdl"
+-- Tinting Color 2 (Green)
+green = 140
+-- Scaling Value
+modelScale = 0.4
+-- Type
+movetp = "hover"
+-- Race
+race = "human"
+-- Tinting Color 1 (Red)
+red = 200
+-- Selection Scale
+scale = 0.5
+-- Shadow Image - Height
+shadowH = 40.0
+-- Shadow Image - Width
+shadowW = 40.0
+-- Shadow Image - Center X
+shadowX = 35.0
+-- Shadow Image - Center Y
+shadowY = 35.0
+-- Categorization - Special
+special = 0
+-- Unit Classification
+type = ""
+-- Unit Sound Set
+unitSound = "Ghost"
+-- Upgrades Used
+upgrades = "R01N,Rguv,Rhme,Rhar"

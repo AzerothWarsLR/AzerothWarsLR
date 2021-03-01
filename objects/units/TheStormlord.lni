@@ -1,0 +1,71 @@
+[H04N]
+_parent = "Huth"
+-- Agility per Level
+AGIplus = 1.3
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNStormThrasher.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "large"
+-- Tooltip - Awaken
+Awakentip = "Revive Stormlord"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(yogg)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "S"
+-- Starting Intelligence
+INT = 30
+-- Intelligence per Level
+INTplus = 2.7
+-- Name
+-- Proper Names
+Propernames = "Thorim"
+-- Tooltip - Revive
+Revivetip = "Revive Stormlord"
+-- Starting Strength
+STR = 38
+-- Strength per Level
+STRplus = 3.8
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNStormThrasher.blp"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A01N,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 34.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.9
+-- Attack 1 - Damage Number of Dice
+dice1 = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 97
+-- Model File
+file = "war3mapImported\\UtherTheLightbringer.mdl"
+-- Tinting Color 2 (Green)
+green = 200
+-- Hero
+heroAbilList = "A024,A01Z,A0XO,A01V,Aamk"
+-- Scaling Value
+modelScale = 1.85
+-- Priority
+prio = 18
+-- Race
+race = "nightelf"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Tinting Color 1 (Red)
+red = 200
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 170

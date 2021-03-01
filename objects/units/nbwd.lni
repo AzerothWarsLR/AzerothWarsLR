@@ -1,0 +1,30 @@
+[nbwd]
+_parent = "nbwd"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "ewsp,e00N"
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Repair Lumber Cost
+lumberRep = 150
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064"

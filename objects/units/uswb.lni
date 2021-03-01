@@ -1,0 +1,50 @@
+[uswb]
+_parent = "uswb"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Demi)"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Hotkey
+Hotkey = "D"
+-- Requirements
+Requires = "R02D"
+-- Tooltip - Basic
+Tip = "Revive Sylvanas"
+-- Tooltip - Extended
+Ubertip = "Raised for her insolence and stubborn resistance toward the passification of the Northern Alliance, Sylvanas was risen to sow despair in the remaining defenders of Silvermoon."
+-- Normal
+abilList = "A0GK,AInv,ACsi,ACrk"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 20.0
+-- Defense Type
+defType = "hero"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 100
+-- Level
+level = 6
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Regeneration
+regenMana = 1.3
+-- Repair Time
+reptm = 60
+-- Unit Classification
+type = "giant,undead"
+-- Upgrades Used
+upgrades = "Rguv,R01D,Rhme,Rhar,R02A"

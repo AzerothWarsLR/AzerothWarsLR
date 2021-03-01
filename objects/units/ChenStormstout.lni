@@ -1,0 +1,113 @@
+[h04E]
+_parent = "hkni"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNPandarenBrewmaster.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1250
+-- Hotkey
+Hotkey = "S"
+-- Looping Fade In Rate
+LoopingSoundFadeIn = 0
+-- Looping Fade Out Rate
+LoopingSoundFadeOut = 0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\BrewmasterMissile\\BrewmasterMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 900
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 900
+-- Movement
+MovementSoundLabel = ""
+-- Name
+-- Requirements
+Requires = "R037"
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Revive Chen"
+-- Tooltip - Extended
+Ubertip = "Wandering master of brew, Chen scours the lands of foreign worlds seeking the most unique of ingredients for his concoctions of inebriation. He joins the orcs of the Warsong to fight for their equal place in all breweries."
+-- Normal
+abilList = "ACba,ACes,ACbc,ACsk,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 2 - Attack Type
+atkType2 = "hero"
+-- Attack 2 - Animation Backswing Point
+backSw2 = 0.44
+-- Build Time
+bldtm = 60
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Attack 2 - Cooldown Time
+cool2 = 1.6
+-- Death Type
+deathType = 0
+-- Defense Type
+defType = "hero"
+-- Attack 2 - Damage Number of Dice
+dice2 = 2
+-- Attack 2 - Damage Base
+dmgplus2 = 28
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.66
+-- Model File
+file = "Units\\Creeps\\PandarenBrewmaster\\PandarenBrewmaster.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 100
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 425
+-- Type
+movetp = "foot"
+-- Priority
+prio = 15
+-- Race
+race = "orc"
+-- Attack 2 - Range
+rangeN2 = 500
+-- Hit Points Regeneration Rate
+regenHP = 1.5
+-- Mana Regeneration
+regenMana = 1.0
+-- Selection Scale
+scale = 1.6
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Attack 2 - Damage Sides per Die
+sides2 = 8
+-- Speed Base
+spd = 220
+-- Attack 2 - Targets Allowed
+targs2 = "ground,structure,debris,air,item,ward"
+-- Unit Classification
+type = "giant,sapper"
+-- Unit Sound Set
+unitSound = "PandarenBrewmaster"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 2 - Weapon Type
+weapTp2 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"

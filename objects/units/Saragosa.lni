@@ -1,0 +1,27 @@
+[nadr]
+_parent = "nadr"
+-- Hit Points Maximum (Base)
+HP = 1600
+-- Name
+-- Normal
+abilList = "ACbf,Afrb"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 50
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Attack 1 - Damage Base
+dmgplus1 = 48
+-- Mana Initial Amount
+mana0 = 800
+-- Mana Maximum
+manaN = 800
+-- Scaling Value
+modelScale = 1.6
+-- Mana Regeneration
+regenMana = 2.0
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"

@@ -1,0 +1,6 @@
+[nwad]
+_parent = "nwad"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Categorization - Campaign
+campaign = 1

@@ -1,0 +1,18 @@
+[ndtr]
+_parent = "ndtr"
+-- Hit Points Maximum (Base)
+HP = 410
+-- Normal
+abilList = "ACct"
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Sleeps
+canSleep = 0
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 19
+-- Food Cost
+fused = 0
+-- Hit Points Regeneration Rate
+regenHP = 2.1

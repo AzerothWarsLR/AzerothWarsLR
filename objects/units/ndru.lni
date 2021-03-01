@@ -1,0 +1,20 @@
+[ndru]
+_parent = "ndru"
+-- Hit Points Maximum (Base)
+HP = 1500
+-- Units Sold
+Sellunits = ""
+-- Normal
+abilList = ""
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 1.0
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Neutral Building - Valid As Random Building
+nbrandom = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Ground Texture
+uberSplat = ""

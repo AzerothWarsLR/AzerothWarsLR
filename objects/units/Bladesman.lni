@@ -1,0 +1,55 @@
+[h02O]
+_parent = "hcth"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFootman.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "W"
+-- Name
+-- Tooltip - Basic
+Tip = "Train Bladesman"
+-- Tooltip - Extended
+Ubertip = "Soldier of Arathor, ready to defend his nation.|n|cfff5962dAbilities:|R Defend, Combat Experience|n|cfff5962dCan Learn:|R Runic Strength|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0P3,S00S,S01J,Adef,A0BG,Aihn"
+-- Build Time
+bldtm = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 22
+-- Model File
+file = "FootmanBanditV1.00.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 16
+-- Level
+level = 2
+-- Scaling Value
+modelScale = 0.95
+-- Priority
+prio = 7
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "Peasant"
+-- Upgrades Used
+upgrades = "R01N,R02Y,R03D,Rhme,Rhar,Rguv"

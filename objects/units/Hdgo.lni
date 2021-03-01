@@ -1,0 +1,6 @@
+[Hdgo]
+_parent = "Hdgo"
+-- Model File
+file = "units\\human\\Arthas\\Arthas.mdl"
+-- Team Color
+teamColor = 1

@@ -1,0 +1,7 @@
+[n05P]
+_parent = "nglm"
+-- Name
+-- Priority
+prio = 20
+-- Race
+race = "human"

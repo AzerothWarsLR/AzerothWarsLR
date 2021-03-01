@@ -1,0 +1,45 @@
+[o032]
+_parent = "oshy"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcShipyard.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Description
+Description = ""
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "R"
+-- Name
+-- Researches Available
+Researches = "R06G,R006,R00C,R01D"
+-- Units Sold
+Sellunits = ""
+-- Tooltip - Basic
+Tip = "Build Horde Pier"
+-- Units Trained
+Trains = "odes,obot,ojgn"
+-- Tooltip - Extended
+Ubertip = "Boat construction facility for the Horde.|n|cfff5962dBuilds:|R Horde Transport Ships, Frigates, Juggernauts |n|n|cff00c4c4Cannot be built near small inland water areas.|r"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\ShipyardFelOrcV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 110
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Ground Texture
+uberSplat = ""

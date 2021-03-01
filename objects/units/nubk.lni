@@ -1,0 +1,14 @@
+[nubk]
+_parent = "nubk"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Normal
+abilList = "A0F0,ACsk"
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 5
+-- Defense Upgrade Bonus
+defUp = 6
+-- Attack 1 - Damage Base
+dmgplus1 = 43

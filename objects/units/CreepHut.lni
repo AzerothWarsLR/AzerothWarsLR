@@ -1,0 +1,11 @@
+[ngt2]
+_parent = "ngt2"
+-- Hit Points Maximum (Base)
+HP = 250
+-- Name
+-- Defense Base
+def = 2
+-- Hit Points Regeneration Rate
+regenHP = 0.5
+-- Selection Scale
+scale = 1.0

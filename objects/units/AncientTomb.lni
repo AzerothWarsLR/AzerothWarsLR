@@ -1,0 +1,77 @@
+[o00D]
+_parent = "osld"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTombOfRelics.blp"
+-- Construction
+BuildingSoundLabel = "UndeadBuildingConstructionLoop"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Building)"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Name
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R03G"
+-- Special
+Specialart = "Objects\\Spawnmodels\\Undead\\UCancelDeath\\UCancelDeath.mdl"
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00S|r] - Ancient Tomb"
+-- Units Trained
+Trains = "n05V,n060,o001"
+-- Tooltip - Extended
+Ubertip = "Spellcaster production building. |rTrains Silithid Tunneler, Faceless Shadow Weaver and Tol'vir Statue. Contains caster health upgrade."
+-- Normal
+abilList = "A0YA,A0RU"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 102
+-- Shadow Texture (Building)
+buildingShadow = "ShadowTombOfRelics"
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 0.0
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Defense Base
+def = 6
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Model File
+file = "buildings\\undead\\TombOfRelics\\TombOfRelics.mdl"
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 221
+-- Scaling Value
+modelScale = 0.75
+-- Height Minimum
+moveFloor = -49.0
+-- Height
+moveHeight = -49.0
+-- Type
+movetp = "hover"
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 19
+-- Race
+race = "undead"
+-- Team Color
+teamColor = 16
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "TempleOfTheDamned"
+-- Upgrades Used
+upgrades = "Rgfo"
