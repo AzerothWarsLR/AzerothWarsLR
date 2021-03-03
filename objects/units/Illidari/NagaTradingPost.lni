@@ -1,0 +1,61 @@
+[nmrb]
+_parent = "nmrb"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMerchant.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Description
+Description = "A store for purchasing items"
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga Item Shop)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Items Made
+Makeitems = "I00B,rots,sreg,phea,pman,stwp,ssan,gldo"
+-- Name
+Name = "Naga Trading Post"
+-- Units Sold
+Sellunits = ""
+-- Tooltip - Basic
+Tip = "Build [|cffcece00C|r] - Naga Trading Post"
+-- Normal
+abilList = "Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "ShadowAltarOfDepths"
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 3
+-- Model File
+file = "buildings\\other\\Merchant\\Merchant.mdl"
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 13
+-- Repair Lumber Cost
+lumberRep = 20
+-- Lumber Cost
+lumbercost = 30
+-- Scaling Value
+modelScale = 0.6
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Race
+race = "naga"
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 1.5
+-- Team Color
+teamColor = -1
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "Marketplace"
+

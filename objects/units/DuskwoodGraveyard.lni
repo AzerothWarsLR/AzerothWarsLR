@@ -3,6 +3,7 @@ _parent = "halt"
 -- Hit Points Maximum (Base)
 HP = 2000
 -- Name
+Name = "Duskwood Graveyard"
 -- Units Trained
 Trains = ""
 -- Tooltip - Extended
@@ -33,3 +34,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rosp,R064,Renb,R013,Rhac,Rgfo"
+

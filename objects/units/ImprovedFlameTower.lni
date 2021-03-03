@@ -3,6 +3,7 @@ _parent = "nft2"
 -- Hit Points Maximum (Base)
 HP = 1150
 -- Name
+Name = "Improved Flame Tower"
 -- Normal
 abilList = "Abof"
 -- Attack 1 - Cooldown Time
@@ -23,3 +24,4 @@ sides1 = 6
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rhac"
+

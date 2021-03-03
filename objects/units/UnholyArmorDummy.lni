@@ -3,6 +3,7 @@ _parent = "hhes"
 -- Hit Points Maximum (Base)
 HP = 500000
 -- Name
+Name = "UnholyArmorDummy"
 -- Normal
 abilList = "Aloc,A0EG,Avul,Adef"
 -- Collision Size
@@ -27,3 +28,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

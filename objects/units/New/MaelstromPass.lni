@@ -1,0 +1,25 @@
+[n09U]
+_parent = "nwgt"
+-- Name - Editor Suffix
+EditorSuffix = "(New)"
+-- Name
+Name = "Maelstrom Pass"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "Doodads\\Dungeon\\Structures\\DungeonArchway45\\DungeonArchway45.mdl"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Is a Building
+isbldg = 0
+-- Scaling Value
+modelScale = 0.1
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = ""
+-- Ground Texture
+uberSplat = ""
+

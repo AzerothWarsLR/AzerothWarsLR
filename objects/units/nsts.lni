@@ -30,3 +30,4 @@ stockRegen = 50
 stockStart = 0
 -- Upgrades Used
 upgrades = "Rguv,Rhme,Rhar"
+

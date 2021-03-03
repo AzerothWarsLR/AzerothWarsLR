@@ -6,3 +6,4 @@ HP = 600
 pathTex = "PathTextures\\4x4SimpleSolid.tga"
 -- Selection Scale
 scale = 1.0
+

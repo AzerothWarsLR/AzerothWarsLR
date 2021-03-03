@@ -1,6 +1,7 @@
 [n04S]
 _parent = "nwgt"
 -- Name
+Name = "Azjol-Nerub"
 -- Normal
 abilList = "A03K,Awrp,Avul"
 -- Tinting Color 3 (Blue)
@@ -25,3 +26,4 @@ red = 130
 regenHP = 5.0
 -- Ground Texture
 uberSplat = ""
+

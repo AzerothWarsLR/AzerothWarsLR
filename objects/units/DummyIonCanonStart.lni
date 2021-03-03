@@ -3,6 +3,7 @@ _parent = "hfoo"
 -- Icon - Game Interface
 Art = "UI\\Minimap\\Minimap-Tower"
 -- Name
+Name = "Dummy(Ion Canon Start)"
 -- Tooltip - Basic
 Tip = ""
 -- Tooltip - Extended
@@ -61,3 +62,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

@@ -1,0 +1,55 @@
+[h02I]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Dead)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Name
+Name = "Stormwind Harbour Gate"
+-- Tooltip - Basic
+Tip = "Horizontal Wooden Gate"
+-- Tooltip - Extended
+Ubertip = " "
+-- Upgrades To
+Upgrade = "h02H"
+-- Normal
+abilList = ""
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 0
+-- Defense Upgrade Bonus
+defUp = 5
+-- Model File
+file = "Doodads\\LordaeronSummer\\Terrain\\IronGate\\IronGate.mdl"
+-- Food Produced
+fmade = 0
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.3
+-- Pathing Map
+pathTex = "PathTextures\\Gate1PathDeath.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Race
+race = "unknown"
+-- Repair Time
+reptm = 3
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rosp,R064,Renb,R013,R03A,Rhac"
+

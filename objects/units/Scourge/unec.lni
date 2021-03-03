@@ -1,0 +1,49 @@
+[unec]
+_parent = "unec"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Extended
+Ubertip = "Spellcaster of vile necrotic magic.|n|cfff5962dAbilities:|R Raise Dead|n|cfff5962dCan Learn:|R Unholy Frenzy, Soul Burn|n|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "A0W2,Arai,Auhf,Aiun"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 11.0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 14
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 10
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "Rguv,R04K,R02A,Rune,Rupm"
+

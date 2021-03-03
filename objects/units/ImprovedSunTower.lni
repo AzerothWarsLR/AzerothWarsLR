@@ -9,6 +9,7 @@ HP = 1150
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Improved Sun Tower"
 -- Tooltip - Basic
 Tip = "Upgrade to Improved Sun Tower"
 -- Tooltip - Extended
@@ -51,3 +52,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rhac"
+

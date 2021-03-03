@@ -1,0 +1,75 @@
+[h01C]
+_parent = "hrif"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFootarcher.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hit Points Maximum (Base)
+HP = 520
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Archer_Lordaeron_ArrowMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 900
+-- Name
+Name = "Huntsman"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Huntsman"
+-- Tooltip - Extended
+Ubertip = "Highly skilled hunter of Tirisfal.|n|cfff5962dCan learn:|R Ensnare, Rapid Fire|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0AC,A0F3,Aihn"
+-- Acquisition Range
+acquire = 500.0
+-- Default Active Ability
+auto = "A0AC"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 1.0
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 22
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.334
+-- Model File
+file = "Archer  Lordaeron_Light_Alter.mdl"
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 15
+-- Projectile Launch - X
+launchX = 11.0
+-- Projectile Launch - Y
+launchY = 62.0
+-- Projectile Launch - Z
+launchZ = 71.0
+-- Lumber Cost
+lumbercost = 0
+-- Attack 1 - Range
+rangeN1 = 550
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "Footman"
+-- Upgrades Used
+upgrades = "R04A,R01P,R01N,Rhar,Rhpm,Rguv,Rhme"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

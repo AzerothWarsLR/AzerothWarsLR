@@ -1,0 +1,71 @@
+[h04C]
+_parent = "hcth"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNpikeman.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Pikeman"
+-- Tooltip - Basic
+Tip = "Train Pikeman"
+-- Tooltip - Extended
+Ubertip = "Veteran warrior ready to risk his life and blood for humanity. |n|cfff5962dAbilities:|R Defend, Combat Experience, Evasion|n|cfff5962dAbilities:|R Runic Strength, First Strike, Sunder Armor|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0P3,A02D,A0KT,A0JJ,Adef,A0BG,Aihn"
+-- Default Active Ability
+auto = "A02D"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.415
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 14.5
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.415
+-- Model File
+file = "Spearman Lordaeron_Medium_Alter.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 17
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 2
+-- Scaling Value
+modelScale = 1.04
+-- Attack 1 - Range
+rangeN1 = 150
+-- Tinting Color 1 (Red)
+red = 200
+-- Hit Points Regeneration Rate
+regenHP = 0.35
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 235
+-- Unit Sound Set
+unitSound = "Footman"
+-- Upgrades Used
+upgrades = "R01N,R02Y,R03D,Rhme,Rhar,Rguv"
+

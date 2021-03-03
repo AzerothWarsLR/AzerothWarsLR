@@ -1,0 +1,47 @@
+[hars]
+_parent = "hars"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hotkey
+Hotkey = "S"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Rhse,R01L,R005,R00D,R01I,R00E,Rhpt,R02E,R01V,Rhst"
+-- Units Trained
+Trains = "n0A4,n09N,h01I,n05L,h02D,n03E,nchp,nhym,hmpr,n093,h00J,hsor"
+-- Tooltip - Extended
+Ubertip = "Sanctum for the spellcasters of Stormwind.|n|cfff5962dTrains:|R Clergyman, Chaplain|n|cfff5962dResearches:|R Clergyman Training, Light's Praise Training, Magic Sentry"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\ArcaneSanctumStormwindV1.00.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 19
+-- Repair Time
+reptm = 60
+-- Selection Scale
+scale = 3.5
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R03A,Rhac,Rgfo"
+

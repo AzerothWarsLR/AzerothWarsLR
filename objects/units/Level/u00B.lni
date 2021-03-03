@@ -1,0 +1,9 @@
+[u00B]
+_parent = "uplg"
+-- Name - Editor Suffix
+EditorSuffix = "(Level 2)"
+-- Normal
+abilList = "A09A"
+-- Scaling Value
+modelScale = 0.4
+

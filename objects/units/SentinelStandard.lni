@@ -1,14 +1,15 @@
-[o01Z]
+[o01Y]
 _parent = "osp1"
 -- Icon - Game Interface
 Art = "ReplaceableTextures\\CommandButtons\\BTNNightElfCaptureFlag.blp"
 -- Name - Editor Suffix
-EditorSuffix = "(Light Blue - Shandris)(Level 1)"
+EditorSuffix = " (Light Blue - Shandris)(Level 2)"
 -- Hit Points Maximum (Base)
-HP = 55
+HP = 65
 -- Name
+Name = "Sentinel Standard"
 -- Normal
-abilList = "A0LB"
+abilList = "A0LC"
 -- Attack 1 - Attack Type
 atkType1 = "unknown"
 -- Defense Type
@@ -29,3 +30,4 @@ targCount1 = 0
 targs1 = ""
 -- Attacks Enabled
 weapsOn = 0
+

@@ -3,6 +3,7 @@ _parent = "nban"
 -- Hit Points Maximum (Base)
 HP = 1600
 -- Name
+Name = "The Mighty Pirate"
 -- Normal
 abilList = "ACbh,Ashm,A0CR,ACpy"
 -- Attack 1 - Attack Type
@@ -33,3 +34,4 @@ red = 150
 regenMana = 1.0
 -- Targeted as
 targType = "ancient,ground"
+

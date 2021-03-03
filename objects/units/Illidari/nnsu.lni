@@ -1,0 +1,49 @@
+[nnsu]
+_parent = "nnsu"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hit Points Maximum (Base)
+HP = 430
+-- Hotkey
+Hotkey = "E"
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00E|r] - Summoner"
+-- Tooltip - Extended
+Ubertip = "Powerful caster. Can cast Spiritual Connection, Parasite and Healing Wards.|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0TT,ANpa,AChw"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 6.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Attack 1 - Damage Base
+dmgplus1 = 11
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 16
+-- Lumber Cost
+lumbercost = 7
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 0.85
+-- Mana Regeneration
+regenMana = 1.14
+-- Selection Scale
+scale = 0.85
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R00K,Rguv"
+

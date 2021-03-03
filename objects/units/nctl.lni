@@ -46,3 +46,4 @@ spd = 80
 type = "townhall"
 -- Upgrades Used
 upgrades = "Rgfo,Renb"
+

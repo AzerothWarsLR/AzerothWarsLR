@@ -1,0 +1,21 @@
+[n08U]
+_parent = "nwgt"
+-- Name - Editor Suffix
+EditorSuffix = "(upper)"
+-- Name
+Name = "Illidan's Prison"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Model File
+file = "Doodads\\Icecrown\\Terrain\\IceCrownGate45\\IceCrownGate45.mdl"
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.5
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\StoneWall4Path.tga"
+-- Ground Texture
+uberSplat = ""
+

@@ -1,0 +1,79 @@
+[u00F]
+_parent = "uzg2"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDemonNecropolis.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Blue)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl"
+-- Name
+Name = "Legion Spire"
+-- Researches Available
+Researches = "R04G,R01Y"
+-- Tooltip - Basic
+Tip = "Summon Legion Spire"
+-- Units Trained
+Trains = "u007,u00D"
+-- Tooltip - Extended
+Ubertip = "A point of ralliement for the followers of the Burning Legion. Can revive heroes.|n|cfff5962dTrains:|R Legion Herald, Dreadlord"
+-- Normal
+abilList = "A0M7,Arlm"
+-- Required Animation Names
+animProps = ""
+-- Build Time
+bldtm = 25
+-- AI Placement Radius
+buffRadius = 14.0
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Model File
+file = "war3mapImported\\MetropolisDemon4TierV1.01.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 65
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 215
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Placement Prevented By
+requirePlace = ""
+-- Attack 1 - Damage Sides per Die
+sides1 = 10
+-- Unit Classification
+type = "mechanical,undead"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rhme,Rgfo"
+-- Attacks Enabled
+weapsOn = 0
+

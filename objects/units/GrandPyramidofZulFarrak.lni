@@ -9,6 +9,7 @@ Missileart_1 = "abilities\\weapons\\catapult\\catapultmissile.mdl"
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 950
 -- Name
+Name = "Grand Pyramid of Zul'Farrak"
 -- Researches Available
 Researches = "Ropg"
 -- Revives Dead Heroes
@@ -69,3 +70,4 @@ uberSplat = ""
 upgrades = "Rhac,R013,Renb,R064,Rosp,Rgfo"
 -- Attack 1 - Weapon Type
 weapTp1 = "artillery"
+

@@ -1,0 +1,65 @@
+[n0AE]
+_parent = "ngrk"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Living Fragments)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Name
+Name = "Shard Golem"
+-- Tooltip - Extended
+Ubertip = "A Crystal Golem split in two. Immune to spells. |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 60
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 8.0
+-- Defense Type
+defType = "large"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Model File
+file = "war3mapImported\\CrystalGolem.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 0
+-- Display as Neutral Hostile
+hostilePal = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Scaling Value
+modelScale = 0.45
+-- Race
+race = "human"
+-- Mana Regeneration
+regenMana = 0.0
+-- Repair Time
+reptm = 60
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Categorization - Special
+special = 1
+-- Tilesets
+tilesets = "Y,X,J,D,F,L,W,V,Q"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

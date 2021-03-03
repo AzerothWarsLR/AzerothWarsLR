@@ -1,0 +1,79 @@
+[u01M]
+_parent = "uaod"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNKeep.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "large"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "S"
+-- Name
+Name = "Caer Darrow Keep"
+-- Researches Available
+Researches = "R00Q"
+-- Revives Dead Heroes
+Revive = 0
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "uaco,h00H"
+-- Tooltip - Extended
+Ubertip = "Trains the spellcasters of the Legions Forces. Trains Shadow Priests and Warlocks. Contains upgrades for all three casters as well as a caster health research."
+-- Normal
+abilList = ""
+-- Required Animation Names
+animProps = "upgrade,first"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 100
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 0.0
+-- Model File
+file = "buildings\\human\\TownHall\\TownHall.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 18
+-- Tinting Color 2 (Green)
+green = 100
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 0.9
+-- Height Minimum
+moveFloor = -40.0
+-- Height
+moveHeight = -40.0
+-- Type
+movetp = "hover"
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 100
+-- Repair Time
+reptm = 90
+-- Placement Prevented By
+requirePlace = ""
+-- Team Color
+teamColor = 3
+-- Unit Classification
+type = "ancient,mechanical,townhall,undead"
+-- Ground Texture
+uberSplat = ""
+

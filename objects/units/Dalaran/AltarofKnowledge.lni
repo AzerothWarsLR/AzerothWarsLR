@@ -1,0 +1,41 @@
+[h044]
+_parent = "halt"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hotkey
+Hotkey = "X"
+-- Name
+Name = "Altar of Knowledge"
+-- Tooltip - Basic
+Tip = "Build Altar of Knowledge"
+-- Units Trained
+Trains = "Haah,njks"
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes and Demi-heroes."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\AltarOfEldersDalaranV3.02.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"
+

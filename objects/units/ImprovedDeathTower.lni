@@ -3,6 +3,7 @@ _parent = "ntx2"
 -- Hit Points Maximum (Base)
 HP = 1150
 -- Name
+Name = "Improved Death Tower"
 -- Attack 1 - Cooldown Time
 cool1 = 1.3
 -- Attack 1 - Damage Base
@@ -21,3 +22,4 @@ reptm = 50
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rhac"
+

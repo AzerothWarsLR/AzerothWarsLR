@@ -1,0 +1,19 @@
+[h027]
+_parent = "hphx"
+-- Name - Editor Suffix
+EditorSuffix = "(Blood Mage Summon)"
+-- Hit Points Maximum (Base)
+HP = 550
+-- Normal
+abilList = "A0EM,A0EL"
+-- Attack 1 - Damage Base
+dmgplus1 = 34
+-- Scaling Value
+modelScale = 0.7
+-- Hit Points Regeneration Rate
+regenHP = -30.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 7
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

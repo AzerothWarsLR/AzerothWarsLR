@@ -1,0 +1,31 @@
+[nfv3]
+_parent = "nfv3"
+-- Name - Editor Suffix
+EditorSuffix = "(Two Story-Druids-Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Name
+Name = "Residence"
+-- Build Time
+bldtm = 20
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Repair Lumber Cost
+lumberRep = 15
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.75
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Repair Time
+reptm = 30
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"
+

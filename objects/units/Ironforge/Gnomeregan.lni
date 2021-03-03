@@ -1,0 +1,57 @@
+[h013]
+_parent = "harm"
+-- Name - Editor Suffix
+EditorSuffix = "(Khaz Modan)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+Name = "Gnomeregan"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R022"
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "h019,h01L,hpea"
+-- Normal
+abilList = "A0CY,A0K5,Argl,A0M0,A06K"
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Units\\Creeps\\HeroTinkerFactory\\HeroTinkerFactory.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Tinting Color 2 (Green)
+green = 225
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.75
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Placement Requires
+preventPlace = ""
+-- Tinting Color 1 (Red)
+red = 225
+-- Mana Regeneration
+regenMana = 2.2
+-- Repair Time
+reptm = 90
+-- Targeted as
+targType = "ancient,structure"
+-- Unit Classification
+type = "ancient,mechanical"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"
+

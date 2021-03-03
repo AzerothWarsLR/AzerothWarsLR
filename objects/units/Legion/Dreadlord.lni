@@ -1,0 +1,97 @@
+[u007]
+_parent = "uabo"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTichondrius.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Legion-Elite)"
+-- Hit Points Maximum (Base)
+HP = 925
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Dreadlord"
+-- Requirements
+Requires = ""
+-- Special
+Specialart = ""
+-- Tooltip - Basic
+Tip = "Train Dreadlord"
+-- Tooltip - Extended
+Ubertip = "Elite Nathrezim, handpicked by Tichondrius himself.|n|cfff5962dAbilities:|R Carrion Swarm, Sleep, Vampiric Attack|n|cfff5962dCan Learn:|R Astral Walk|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0C0,A07B,A0WB,A08P,A0GZ,Aiun,Apiv,ACca,ACsl"
+-- Acquisition Range
+acquire = 300.0
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 35
+-- Model File
+file = "units\\undead\\HeroDreadLord\\HeroDreadLord.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 90
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 350
+-- Mana Maximum
+manaN = 350
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 14
+-- Tinting Color 1 (Red)
+red = 200
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.6
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 60
+-- Speed Base
+spd = 240
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 0
+-- Unit Classification
+type = ""
+-- Unit Sound Set
+unitSound = "Varimathras"
+-- Upgrades Used
+upgrades = "R04G,R054,R01Y,Rupm,Rhme,Rhar"
+-- Attack 1 - Weapon Sound
+weapType1 = "WoodHeavyBash"
+

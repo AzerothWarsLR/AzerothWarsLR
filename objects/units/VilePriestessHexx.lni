@@ -3,6 +3,7 @@ _parent = "nfsh"
 -- Hit Points Maximum (Base)
 HP = 1500
 -- Name
+Name = "Vile Priestess Hexx"
 -- Normal
 abilList = "ACev,AChx"
 -- Attack 1 - Attack Type
@@ -57,3 +58,4 @@ regenMana = 3.0
 reptm = 1
 -- Unit Sound Set
 unitSound = "Shandris"
+

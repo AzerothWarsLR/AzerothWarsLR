@@ -1,0 +1,53 @@
+[n05B]
+_parent = "nfgu"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Hit Points Maximum (Base)
+HP = 875
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Summon Felguard"
+-- Tooltip - Extended
+Ubertip = "Frontline demon warrior.|n|cfff5962dAbilities:|R Charge, Critical Strike, Cleave |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A020,A0CH,A070,Aion"
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 125
+-- Gold Bounty Awarded - Base
+bountyplus = 2
+-- Collision Size
+collision = 16.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 18
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 11
+-- Tinting Color 2 (Green)
+green = 125
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "orc"
+-- Tinting Color 1 (Red)
+red = 200
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 240
+-- Categorization - Special
+special = 1
+-- Stock Replenish Interval
+stockRegen = 40
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

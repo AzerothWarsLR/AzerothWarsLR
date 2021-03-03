@@ -1,0 +1,57 @@
+[h07J]
+_parent = "hctw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendCannonTower.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(dwarf)"
+-- Hit Points Maximum (Base)
+HP = 900
+-- Hotkey
+Hotkey = "X"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Cannon topped tower defense.|n|cfff5962dUpgrades Into:|R Improved Cannon Tower|n|n|cffffcc00Attacks land units and trees.|r"
+-- Upgrades To
+Upgrade = "h07K"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Damage Base
+dmgplus1 = 65
+-- Attack 2 - Damage Base
+dmgplus2 = 91
+-- Model File
+file = "war3mapImported\\TowerIronforgeV1.04.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 40
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 140
+-- Scaling Value
+modelScale = 0.85
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "ground,nonancient,notself,structure,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,tree,wall,ward"
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,R03A,R013,Rhac,Rgfo"
+

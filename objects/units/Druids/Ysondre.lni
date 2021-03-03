@@ -1,0 +1,39 @@
+[ngrd]
+_parent = "ngrd"
+-- Name - Editor Suffix
+EditorSuffix = "(Brown - Cenarius Summon)"
+-- Hit Points Maximum (Base)
+HP = 1300
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Name
+Name = "Ysondre"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 200
+-- Normal
+abilList = "Ault,Adtg"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 15
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Attack 1 - Range
+rangeN1 = 700
+-- Mana Regeneration
+regenMana = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,enemies,ground,hero,item,mechanical,nonancient,nonhero,organic,structure,vulnerable,ward"
+-- Upgrades Used
+upgrades = "Reuv,R019,Rhme,Rhar"
+-- Attacks Enabled
+weapsOn = 1
+

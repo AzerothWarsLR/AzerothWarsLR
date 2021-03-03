@@ -3,6 +3,7 @@ _parent = "nfoh"
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Nordrassil"
 -- Researches Available
 Researches = "R04E"
 -- Revives Dead Heroes
@@ -49,3 +50,4 @@ type = "ancient,townhall"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac,R013,Rgfo,Renb,R064"
+

@@ -1,0 +1,141 @@
+[e00N]
+_parent = "emtg"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNKeeperOfTheGrove.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Druids-Elite)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\KeeperGroveMissile\\KeeperGroveMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 900
+-- Name
+Name = "Keeper of the Grove"
+-- Requirements
+Requires = ""
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NightElfLargeDeathExplode\\NightElfLargeDeathExplode.mdl"
+-- Tooltip - Basic
+Tip = "Train Keeper of the Grove"
+-- Tooltip - Extended
+Ubertip = "Powerful Druidic caster. Can cast Nature's Fury, Haste, Banish, and Cyclone. |n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units, air units, and trees.|r"
+-- Normal
+abilList = "A07C,Acyc,Ault,ACsk,A0CO,A0FQ,A0FP,Aien"
+-- Acquisition Range
+acquire = 800.0
+-- Armor Type
+armor = "Flesh"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "A0FP"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.77
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Transported Size
+cargoSize = 1
+-- Animation - Cast Backswing
+castbsw = 0.475
+-- Animation - Cast Point
+castpt = 0.3
+-- Collision Size
+collision = 16.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.2
+-- Death Time (seconds)
+death = 5.0
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.4
+-- Elevation - Sample Radius
+elevRad = 20.0
+-- Model File
+file = "units\\nightelf\\HeroKeeperoftheGrove\\HeroKeeperoftheGrove.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 32
+-- Gold Cost
+goldcost = 90
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 1.2
+-- Orientation Interpolation
+orientInterp = 5
+-- Priority
+prio = 15
+-- Propulsion Window (degrees)
+propWin = 60.0
+-- Attack 1 - Range
+rangeN1 = 700
+-- Tinting Color 1 (Red)
+red = 150
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 5
+-- Animation - Run Speed
+run = 300.0
+-- Selection Scale
+scale = 1.5
+-- Shadow Image - Height
+shadowH = 160.0
+-- Shadow Image - Width
+shadowW = 160.0
+-- Shadow Image - Center X
+shadowX = 60.0
+-- Shadow Image - Center Y
+shadowY = 60.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Speed Base
+spd = 250
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,tree,wall,ward"
+-- Turn Rate
+turnRate = 0.5
+-- Unit Sound Set
+unitSound = "HeroKeeperOfTheGrove"
+-- Upgrades Used
+upgrades = "Repm,Rhme,Rhar,Reuv,Rguv"
+-- Animation - Walk Speed
+walk = 300.0
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+

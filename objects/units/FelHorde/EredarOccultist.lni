@@ -1,0 +1,71 @@
+[odkt]
+_parent = "odkt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Caster Upgrade Art
+Casterupgradeart = "UI\\Widgets\\Console\\Human\\infocard-witchdoctor.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate, Adept, Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Firestorm,- Firestorm|n- Stasis Trap,- Firestorm|n- Stasis Trap|n- Mass Bloodlust"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 565
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Eredar Occultist"
+-- Tooltip - Basic
+Tip = "Train Eredar Occultist"
+-- Tooltip - Extended
+Ubertip = "Powerful Eredar Warlock in service of Magtheridon.|n|cfff5962dAbilities:|R Stasis Trap, Firestorm, Mass Bloodlust, Resistant Skin|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "ACrk,A0EE,A07I,A03E,Aion"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 15
+-- Categorization - Campaign
+campaign = 0
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Death Type
+deathType = 2
+-- Model File
+file = "units\\demon\\EredarWarlock\\EredarWarlock.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 50
+-- Level
+level = 5
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 450
+-- Mana Maximum
+manaN = 450
+-- Priority
+prio = 15
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 4
+-- Selection Scale
+scale = 1.7
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Unit Sound Set
+unitSound = "PitLord"
+-- Upgrades Used
+upgrades = "Rguv,R023,R03I"
+

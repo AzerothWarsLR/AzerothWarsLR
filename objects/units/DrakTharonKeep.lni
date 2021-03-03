@@ -3,6 +3,7 @@ _parent = "ofrt"
 -- Required Animation Names - Attachments
 Attachmentanimprops = ""
 -- Name
+Name = "Drak'Tharon Keep"
 -- Requirements
 Requires = ""
 -- Researches Available
@@ -53,3 +54,4 @@ type = "ancient,mechanical,townhall"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac,R013,Renb,R064,Rosp,Rgfo"
+

@@ -15,6 +15,7 @@ Harea1 = 75
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Nordrassil Ancient Protector"
 -- Attack 1 - Area of Effect (Small Damage)
 Qarea1 = 75
 -- Attack 2 - Area of Effect (Small Damage)
@@ -81,3 +82,4 @@ uberSplat = ""
 upgrades = "R018,R002,Renb,Rhme,Rgfo"
 -- Attacks Enabled
 weapsOn = 2
+

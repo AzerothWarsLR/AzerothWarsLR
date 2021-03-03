@@ -26,3 +26,4 @@ goldcost = 15
 lumbercost = 15
 -- Upgrades Used
 upgrades = "Rhme,Rhar"
+

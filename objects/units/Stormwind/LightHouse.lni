@@ -1,0 +1,107 @@
+[h024]
+_parent = "hwtw"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GuardTowerMissile\\GuardTowerMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1800
+-- Name
+Name = "Light House"
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Tooltip - Basic
+Tip = "Build Light House"
+-- Tooltip - Extended
+Ubertip = "Basic naval watch tower. Has the Flash of Light ability and high sight radius."
+-- Upgrades To
+Upgrade = ""
+-- Normal
+abilList = "A094"
+-- Acquisition Range
+acquire = 700.0
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.7
+-- Defense Base
+def = 10
+-- Defense Type
+defType = "fort"
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 32
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "war3mapImported\\TowerStormwindV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 15
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 150
+-- Lumber Cost
+lumbercost = 125
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 1.35
+-- Sight Radius (Night)
+nsight = 2100
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 800
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 0.45
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 3.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Sight Radius (Day)
+sight = 1900
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 30
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 3
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac,R013"
+

@@ -1,0 +1,43 @@
+[nsat]
+_parent = "nsat"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Xavius)"
+-- Hit Points Maximum (Base)
+HP = 595
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\VoidWalkerMissile\\VoidWalkerMissile.mdl"
+-- Tooltip - Basic
+Tip = "Train Satyr Trickster"
+-- Tooltip - Extended
+Ubertip = "Light ranged unit. Can cast Slow and Ensnare. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aens,ACsw,Aiun"
+-- Default Active Ability
+auto = "ACsw"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 5
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 14.0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Gold Cost
+goldcost = 17
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "undead"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

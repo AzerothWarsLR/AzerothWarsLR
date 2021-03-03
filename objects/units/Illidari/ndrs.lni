@@ -1,0 +1,53 @@
+[ndrs]
+_parent = "ndrs"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "R"
+-- Tooltip - Basic
+Tip = "Train Draenei Seer (|cffcece00R|r)"
+-- Tooltip - Extended
+Ubertip = "Heavy ranged unit. Can cast Slow Lightning shield and Healing Wave. |n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0U6,ACls,AChv"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "Ahea"
+-- Build Time
+bldtm = 8
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.2
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 6
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 24
+-- Level
+level = 4
+-- Lumber Cost
+lumbercost = 0
+-- Mana Maximum
+manaN = 300
+-- Race
+race = "naga"
+-- Mana Regeneration
+regenMana = 1.8
+-- Upgrades Used
+upgrades = "R00K"
+

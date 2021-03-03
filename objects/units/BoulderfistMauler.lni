@@ -3,6 +3,7 @@ _parent = "nogm"
 -- Hit Points Maximum (Base)
 HP = 1250
 -- Name
+Name = "Boulderfist Mauler"
 -- Normal
 abilList = "A06P,ACbh"
 -- Attack 1 - Attack Type
@@ -37,3 +38,4 @@ regenMana = 0.5
 reptm = 7
 -- Speed Base
 spd = 220
+

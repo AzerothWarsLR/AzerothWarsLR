@@ -6,3 +6,4 @@ pathTex = "PathTextures\\10x10Simple.tga"
 preventPlace = "unwalkable"
 -- Unit Classification
 type = "mechanical,neutral"
+

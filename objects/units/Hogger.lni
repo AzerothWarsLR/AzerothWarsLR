@@ -3,6 +3,7 @@ _parent = "ngnb"
 -- Hit Points Maximum (Base)
 HP = 800
 -- Name
+Name = "Hogger"
 -- Normal
 abilList = "ANbh"
 -- Acquisition Range
@@ -21,3 +22,4 @@ dmgplus1 = 41
 fused = 0
 -- Hit Points Regeneration Rate
 regenHP = 1.0
+

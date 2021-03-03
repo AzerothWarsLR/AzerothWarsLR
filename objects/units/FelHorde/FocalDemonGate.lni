@@ -1,0 +1,55 @@
+[n0AP]
+_parent = "ndmg"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNAetherGate.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "D"
+-- Name
+Name = "Focal Demon Gate"
+-- Tooltip - Basic
+Tip = "Build Focal Demon Gate"
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = "Unique gateway that causes units spawned from ordinary Demon Gates to appear at its location instead.|n|n|cff99b4d1Can only control 1. Building a second structure will destroy the older one.|r"
+-- Normal
+abilList = "ARal"
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Model File
+file = "war3mapimported/Aethergate_2010.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 50
+-- Scaling Value
+modelScale = 0.5
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 60
+-- Unit Classification
+type = "mechanical"
+-- Ground Texture
+uberSplat = ""
+

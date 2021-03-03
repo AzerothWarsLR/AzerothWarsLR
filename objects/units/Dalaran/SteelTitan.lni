@@ -1,0 +1,103 @@
+[n09T]
+_parent = "ngst"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Metal Titan)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 175
+-- Hit Points Maximum (Base)
+HP = 7500
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 20000
+-- Name
+Name = "Steel Titan"
+-- Normal
+abilList = "ACmi"
+-- Armor Type
+armor = "Metal"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Build Time
+bldtm = 150
+-- Tinting Color 3 (Blue)
+blue = 99
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Categorization - Campaign
+campaign = 1
+-- Transported Size
+cargoSize = 8
+-- Collision Size
+collision = 55.0
+-- Attack 1 - Cooldown Time
+cool1 = 4.5
+-- Defense Base
+def = 15
+-- Defense Type
+defType = "fort"
+-- Attack 1 - Damage Number of Dice
+dice1 = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 250
+-- Model File
+file = "units\\creeps\\GolemStatue\\GolemStatue.mdl"
+-- Food Cost
+fused = 6
+-- Repair Gold Cost
+goldRep = 400
+-- Gold Cost
+goldcost = 400
+-- Tinting Color 2 (Green)
+green = 99
+-- Level
+level = 9
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Scaling Value
+modelScale = 2.2
+-- Type
+movetp = "amph"
+-- Priority
+prio = 20
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 250
+-- Tinting Color 1 (Red)
+red = 99
+-- Repair Time
+reptm = 150
+-- Selection Scale
+scale = 4.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 25
+-- Sight Radius (Day)
+sight = 2500
+-- Speed Base
+spd = 220
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,enemies,ground,structure"
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Unit Classification
+type = "mechanical"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"
+-- Attacks Enabled
+weapsOn = 1
+

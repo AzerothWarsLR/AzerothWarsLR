@@ -1,0 +1,91 @@
+[h002]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl"
+-- Name
+Name = "The Violet Citadel"
+-- Researches Available
+Researches = "R061"
+-- Revives Dead Heroes
+Revive = 1
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Units Trained
+Trains = "h022,n007,hpea"
+-- Normal
+abilList = "A0AA,A0GC,Abdl,Argl"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Default Active Ability
+auto = "A0GC"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.6
+-- Death Time (seconds)
+death = 1.0
+-- Defense Base
+def = 20
+-- Defense Upgrade Bonus
+defUp = 5
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "buildings\\other\\ArcaneObservatory\\ArcaneObservatory.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 170
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 1.2
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Priority
+prio = 20
+-- Attack 1 - Range
+rangeN1 = 800
+-- Tinting Color 1 (Red)
+red = 250
+-- Mana Regeneration
+regenMana = 2.2
+-- Selection Scale
+scale = 6.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 1
+-- Attack 1 - Targets Allowed
+targs1 = "air"
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

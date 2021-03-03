@@ -1,0 +1,43 @@
+[obot]
+_parent = "obot"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNOrcDestroyer.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong-Frostwolf-Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Horde Transport Ship"
+-- Tooltip - Basic
+Tip = "Build - Horde Transport Ship"
+-- Tooltip - Extended
+Ubertip = "A sturdy transport ship capable of carrying units over the sea.|n|n|cff00ffffCan transport 10 units."
+-- Build Time
+bldtm = 10
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 30.0
+-- Model File
+file = "OrcTransport.mdl"
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.7
+-- Selection Scale
+scale = 2.0
+-- Speed Base
+spd = 270
+-- Stock Maximum
+stockMax = 1
+-- Upgrades Used
+upgrades = "Rguv,R006"
+

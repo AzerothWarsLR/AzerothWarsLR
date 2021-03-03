@@ -1,0 +1,49 @@
+[h04T]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Dead)"
+-- Hit Points Maximum (Base)
+HP = 100
+-- Name
+Name = "Uldum Gate"
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Upgrades To
+Upgrade = "h04S"
+-- Normal
+abilList = ""
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 0
+-- Model File
+file = "Doodads\\LordaeronSummer\\Terrain\\BigElfGate45\\BigElfGate45.mdl"
+-- Food Produced
+fmade = 0
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Pathing Map
+pathTex = "PathTextures\\Gate2PathDeath.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Race
+race = "unknown"
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rhac"
+

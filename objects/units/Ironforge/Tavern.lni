@@ -1,0 +1,55 @@
+[h01S]
+_parent = "hhou"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendFarm.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Ironforge)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Tavern"
+-- Tooltip - Basic
+Tip = "Build Tavern"
+-- Tooltip - Extended
+Ubertip = "Provides food, which increases the maximum number of units that can be trained, and can heal nearby friendly units.|n|cfff5962dAbilities:|r Swig"
+-- Normal
+abilList = "A09J"
+-- Default Active Ability
+auto = "A09J"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\TavernIronForgeV1.00.mdl"
+-- Food Produced
+fmade = 16
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 16
+-- Repair Lumber Cost
+lumberRep = 30
+-- Lumber Cost
+lumbercost = 40
+-- Scaling Value
+modelScale = 0.6
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rhac,Rgfo,R00N"
+

@@ -1,0 +1,15 @@
+[even]
+_parent = "even"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Collision Size
+collision = 8.0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Scaling Value
+modelScale = 0.85
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R026,R002,R00U,R01H,Reuv,Rhme,Rhar"
+

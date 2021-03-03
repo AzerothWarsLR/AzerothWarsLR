@@ -3,6 +3,7 @@ _parent = "nnwq"
 -- Hit Points Maximum (Base)
 HP = 1500
 -- Name
+Name = "Queen Nezar'Azret"
 -- Normal
 abilList = "ACua,ACca,Aspa,A08R,Assp"
 -- Tinting Color 3 (Blue)
@@ -31,3 +32,4 @@ modelScale = 1.75
 spd = 300
 -- Upgrades Used
 upgrades = "R008,Rhme,Rhar,Rugf,R00Q,R00P"
+

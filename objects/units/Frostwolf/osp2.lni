@@ -1,0 +1,25 @@
+[osp2]
+_parent = "osp2"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Vol'jin-Level 2)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Normal
+abilList = "S001"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 1
+-- Gold Bounty Awarded - Base
+bountyplus = 7
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Categorization - Special
+special = 0
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"
+

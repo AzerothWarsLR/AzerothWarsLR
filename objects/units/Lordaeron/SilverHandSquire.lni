@@ -1,0 +1,69 @@
+[hcth]
+_parent = "hcth"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNCrusader.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Silver Hand Squire"
+-- Tooltip - Basic
+Tip = "Train Silver Hand Squire"
+-- Tooltip - Extended
+Ubertip = "Light-infused warrior immune to plague and undeath.|n|cfff5962dAbilities:|R Charge, Spell Resistance, Pure Soul|n|cfff5962dCan Learn:|R Seal of Righteousness|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A07C,A020,A0KJ,A0MI,Aihn"
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.2
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Upgrade Amount
+dmgUp1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "Royal Captain.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 19
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 3
+-- Scaling Value
+modelScale = 0.9
+-- Tinting Color 1 (Red)
+red = 175
+-- Repair Time
+reptm = 2
+-- Selection Scale
+scale = 0.9
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 225
+-- Unit Classification
+type = "undead"
+-- Upgrades Used
+upgrades = "R01N,R04D,Rhar,Rhme,Rhpm,Rguv"
+

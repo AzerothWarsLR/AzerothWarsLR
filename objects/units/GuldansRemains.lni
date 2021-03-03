@@ -3,6 +3,7 @@ _parent = "ohwd"
 -- Icon - Game Interface
 Art = "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp"
 -- Name
+Name = "Gul'dan's Remains"
 -- Normal
 abilList = "A0GK,Avul"
 -- Attack 1 - Attack Type
@@ -33,3 +34,4 @@ targs1 = "ground"
 teamColor = 3
 -- Shadow Image (Unit)
 unitShadow = ""
+

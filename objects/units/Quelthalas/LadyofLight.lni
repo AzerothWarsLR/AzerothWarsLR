@@ -1,0 +1,55 @@
+[H00Y]
+_parent = "Huth"
+-- Agility per Level
+AGIplus = 1.1
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSalandria.blp"
+-- Tooltip - Awaken
+Awakentip = "(|cffffff00D|r) Revive Paladin"
+-- Name - Editor Suffix
+EditorSuffix = "(Rise from the ashes)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Hotkey
+Hotkey = "D"
+-- Starting Intelligence
+INT = 22
+-- Intelligence per Level
+INTplus = 2.6
+-- Name
+Name = "Lady of Light"
+-- Proper Names
+Propernames = "Lady Liadrin"
+-- Tooltip - Revive
+Revivetip = "(|cffffff00D|r) Revive Paladin"
+-- Strength per Level
+STRplus = 3.4
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNSalandria.blp"
+-- Normal
+abilList = "ACds,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Model File
+file = "war3mapImported\\Lady Liadrin.mdl"
+-- Hero
+heroAbilList = "A007,A0XO,AHad,AHhb,Aamk"
+-- Scaling Value
+modelScale = 1.05
+-- Priority
+prio = 18
+-- Speed Base
+spd = 260
+-- Unit Sound Set
+unitSound = "Archer"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumSlice"
+

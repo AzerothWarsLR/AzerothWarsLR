@@ -1,0 +1,81 @@
+[H04U]
+_parent = "Hvsh"
+-- Starting Agility
+AGI = 3
+-- Agility per Level
+AGIplus = 0.3
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleGreen.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Demigod"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Druid Vassal)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Hotkey
+Hotkey = "R"
+-- Starting Intelligence
+INT = 45
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl"
+-- Name
+Name = "Demigod"
+-- Proper Names
+Propernames = "Tortolla"
+-- Requirements
+Requires = "R04J,R06E,R05H"
+-- Tooltip - Revive
+Revivetip = "Revive Demigod"
+-- Starting Strength
+STR = 32
+-- Strength per Level
+STRplus = 3.0
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleGreen.blp"
+-- Units Sold
+Sellunits = "ntrh,ntrs"
+-- Tooltip - Basic
+Tip = "Choose Vassal: Tortolla"
+-- Tooltip - Extended
+Ubertip = "|cffff0000You will lose your current faction and join the Druids as a new small 1 hero faction|r|n|nAncient Hero, has access to very powerful ability. Can train Sea Turtles, Sea Turtles Hatchling and Dragon Turtles. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Advc,AInv"
+-- Acquisition Range
+acquire = 800.0
+-- Armor Type
+armor = "Stone"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 4.5
+-- Model File
+file = "Units\\Creeps\\GiantSeaTurtleRange\\GiantSeaTurtleRange.mdl"
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "A11B,A0D7,Aamk,A0DN,AUts"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.2
+-- Type
+movetp = "foot"
+-- Priority
+prio = 19
+-- Race
+race = "nightelf"
+-- Attack 1 - Range
+rangeN1 = 700
+-- Speed Base
+spd = 170
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 5
+-- Unit Sound Set
+unitSound = "GiantSeaTurtle"
+

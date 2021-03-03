@@ -1,0 +1,47 @@
+[nlv1]
+_parent = "nlv1"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Name
+Name = "Fire Elemental"
+-- Tooltip - Extended
+Ubertip = [=[
+Tamed elemental of the Firelands.|n|cfff5962dAbilities:|R Incinerate|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "A0JG"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Number of Dice
+dice1 = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 14
+-- Projectile Impact - Z
+impactZ = 70.0
+-- Projectile Launch - Z
+launchZ = 70.0
+-- Level
+level = 2
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Race
+race = "human"
+-- Selection Scale
+scale = 1.0
+-- Unit Classification
+type = "summoned"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

@@ -1,0 +1,29 @@
+[n068]
+_parent = "nspb"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep Skitterweb camp)"
+-- Hit Points Maximum (Base)
+HP = 1250
+-- Name
+Name = "Brood Guardian"
+-- Tooltip - Basic
+Tip = "Summon Brood Guardian"
+-- Tooltip - Extended
+Ubertip = "Powerful Defensive unit, has web Spiked Carapace and a life stealing attack. |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0GZ,A0GY,A0DH"
+-- Gold Bounty Awarded - Base
+bountyplus = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 34
+-- Food Cost
+fused = 0
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 1.25
+-- Hit Points Regeneration Rate
+regenHP = 1.33
+-- Upgrades Used
+upgrades = "Ruwb,Rhme,Rhar"
+

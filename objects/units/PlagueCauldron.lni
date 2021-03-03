@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNCannibalize.blp"
 -- Hit Points Maximum (Base)
 HP = 600
 -- Name
+Name = "Plague Cauldron"
 -- Special
 Specialart = ""
 -- Tooltip - Extended
@@ -37,3 +38,4 @@ uberSplat = ""
 unitSound = "Ziggurat"
 -- Upgrades Used
 upgrades = ""
+

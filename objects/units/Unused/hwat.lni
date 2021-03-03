@@ -1,0 +1,23 @@
+[hwat]
+_parent = "hwat"
+-- Name - Editor Suffix
+EditorSuffix = "(Unused)"
+-- Tooltip - Extended
+Ubertip = [=[
+Jaina's personal elemental.|n|cfff5962dAbilities:|R Bash|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Collision Size
+collision = 10.0
+-- Scaling Value
+modelScale = 0.85
+-- Type
+movetp = "amph"
+-- Speed Base
+spd = 180
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

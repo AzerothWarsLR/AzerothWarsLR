@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp"
 -- Hit Points Maximum (Base)
 HP = 5500
 -- Name
+Name = "Hellfire Citadel"
 -- Researches Available
 Researches = ""
 -- Revives Dead Heroes
@@ -55,3 +56,4 @@ teamColor = 12
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

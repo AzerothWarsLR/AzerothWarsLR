@@ -1,8 +1,0 @@
-[ncfs]
-_parent = "ncfs"
--- Name - Editor Suffix
-EditorSuffix = "(Level 1)"
--- Food Cost
-fused = 0
--- Upgrades Used
-upgrades = "Rhme,Rhar"

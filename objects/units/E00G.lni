@@ -36,3 +36,4 @@ regenHP = 2.0
 regenType = "always"
 -- Speed Base
 spd = 250
+

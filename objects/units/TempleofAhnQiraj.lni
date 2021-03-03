@@ -3,6 +3,7 @@ _parent = "nwgt"
 -- Hit Points Maximum (Base)
 HP = 100000
 -- Name
+Name = "Temple of Ahn'Qiraj"
 -- Normal
 abilList = "Avul,A0A4,Awrp"
 -- Tinting Color 3 (Blue)
@@ -31,3 +32,4 @@ regenType = "always"
 scale = 10.0
 -- Ground Texture
 uberSplat = ""
+

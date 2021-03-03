@@ -1,0 +1,57 @@
+[uobs]
+_parent = "uobs"
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 875
+-- Hotkey
+Hotkey = "E"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build Obsidian Statue"
+-- Tooltip - Extended
+Ubertip = "Construct of ancient design.|n|cfff5962dAbilities:|R Essence of Blight, Spirit Touch, Mana Flare|n|n|cff99b4d1Can only train 2.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0W7,Arpl,Arpm"
+-- Default Active Ability
+auto = "Arpl"
+-- Build Time
+bldtm = 15
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 50
+-- Level
+level = 4
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 100
+-- Mana Initial Amount
+mana0 = 600
+-- Scaling Value
+modelScale = 0.7
+-- Speed Base
+spd = 220
+-- Unit Classification
+type = "mechanical,undead"
+-- Upgrades Used
+upgrades = "Rguv,R06L,Rhme,Rhar"
+

@@ -1,0 +1,63 @@
+[n09N]
+_parent = "nhym"
+-- Icon - Game Interface
+Art = "war3mapImported\\BTNHolyPaladin.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNExplosion.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Bishop of the Light"
+-- Tooltip - Basic
+Tip = "Train Bishop of the Light"
+-- Tooltip - Extended
+Ubertip = "True and strong believer in the holy Light.|n|cfff5962dAbilities:|R Holy Nova, Holy Fire, Resurrection.|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0VF,Aihn,AChv,A0R3,A0R4"
+-- Default Active Ability
+auto = ""
+-- Build Time
+bldtm = 15
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Death Type
+deathType = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 28
+-- Model File
+file = "Human Bishop.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 22
+-- Gold Cost
+goldcost = 30
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Scaling Value
+modelScale = 0.7
+-- Priority
+prio = 13
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 235
+-- Upgrades Used
+upgrades = "R01N,R02X,Rguv,R03C,R00K"
+

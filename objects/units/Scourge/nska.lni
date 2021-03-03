@@ -1,0 +1,57 @@
+[nska]
+_parent = "nska"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Hotkey
+Hotkey = "E"
+-- Tooltip - Basic
+Tip = "Train Skeleton Archer"
+-- Tooltip - Extended
+Ubertip = "Necromatically risen archer of death.|n|cfff5962dAbilities:|R Skeletal Frame|n|cfff5962dCan Learn:|R Cold Arrows|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0BW,Aiun,A0PI"
+-- Acquisition Range
+acquire = 750.0
+-- Default Active Ability
+auto = "A0BW"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.45
+-- Death Type
+deathType = 2
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Base
+dmgplus1 = 19
+-- Gold Cost
+goldcost = 10
+-- Level
+level = 2
+-- Mana Initial Amount
+mana0 = 100
+-- Mana Maximum
+manaN = 250
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "undead"
+-- Attack 1 - Range
+rangeN1 = 650
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 250
+-- Upgrades Used
+upgrades = "Rguv,R00P,Rhme,Rhar"
+

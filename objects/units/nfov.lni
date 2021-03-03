@@ -26,3 +26,4 @@ stockMax = 1
 stockRegen = 30
 -- Upgrades Used
 upgrades = "Rhme,Rhar"
+

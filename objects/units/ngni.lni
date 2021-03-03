@@ -4,3 +4,4 @@ _parent = "ngni"
 modelScale = 0.9
 -- Pathing Map
 pathTex = "PathTextures\\4x4SimpleSolid.tga"
+

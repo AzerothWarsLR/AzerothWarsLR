@@ -1,0 +1,39 @@
+[edtm]
+_parent = "edtm"
+-- Name - Editor Suffix
+EditorSuffix = "(Druids-Storm Crow)"
+-- Hit Points Maximum (Base)
+HP = 510
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Train |cffffcc00(W)|r Storm Crow Form"
+-- Tooltip - Extended
+Ubertip = "Maneuverable spellcaster. Casts Faerie Fire and Night Elf Form.|n|n|cffffcc00Attacks air units.|r"
+-- Normal
+abilList = "Aien,Arav,Afa2,Ault"
+-- Build Time
+bldtm = 2
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 0.85
+-- Hit Points Regeneration Rate
+regenHP = 0.5
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Upgrades Used
+upgrades = "R002,R018,Rhar,Reuv,Rhme"
+

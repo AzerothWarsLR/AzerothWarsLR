@@ -3,6 +3,7 @@ _parent = "ngz1"
 -- Hit Points Maximum (Base)
 HP = 985
 -- Name
+Name = "Amani War Bear"
 -- Normal
 abilList = "ACbh"
 -- Attack 1 - Attack Type
@@ -19,3 +20,4 @@ dmgplus1 = 41
 regenHP = 1.33
 -- Attack 1 - Damage Sides per Die
 sides1 = 5
+

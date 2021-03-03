@@ -4,3 +4,4 @@ _parent = "nsra"
 acquire = 900.0
 -- Gold Bounty Awarded - Base
 bountyplus = 2
+

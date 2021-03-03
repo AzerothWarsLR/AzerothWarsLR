@@ -3,6 +3,7 @@ _parent = "ngst"
 -- Hit Points Maximum (Base)
 HP = 900
 -- Name
+Name = "Crystalline Golem"
 -- Normal
 abilList = "ACbh,ACmi,ACtb"
 -- Gold Bounty Awarded - Number of Dice
@@ -17,3 +18,4 @@ dmgplus1 = 36
 green = 100
 -- Tinting Color 1 (Red)
 red = 150
+

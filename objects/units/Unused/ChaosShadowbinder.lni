@@ -1,0 +1,63 @@
+[n03L]
+_parent = "nw2w"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNChaosWarlock.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Caster Upgrade Tips
+Casterupgradetip = "- Shadow Infusion,- Shadow Infusion|n- Devour Magic,- Shadow Infusion|n- Devour Magic|n- Soul Burn"
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Hit Points Maximum (Base)
+HP = 335
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Chaos Shadowbinder"
+-- Tooltip - Basic
+Tip = "Train Chaos Shadowbinder"
+-- Tooltip - Extended
+Ubertip = "Corrupted warlock of the Warsong Clan.|n|cfff5962dAbilities:|R Shadow Infusion|n|cfff5962dCan Learn:|R Devour Magic, Soul Burn|n|n|cffd5d500Attacks land and air units.|r"
+-- Normal
+abilList = "Aion,A0AR,A0KS,A0W6"
+-- Default Active Ability
+auto = "A0AR"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 15
+-- Model File
+file = "units\\demon\\ChaosWarlock\\ChaosWarlock.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 21
+-- Gold Cost
+goldcost = 18
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 10
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R023,Ropm,R03Q,Rguv"
+

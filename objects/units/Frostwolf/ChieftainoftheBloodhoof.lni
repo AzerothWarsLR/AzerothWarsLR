@@ -1,0 +1,49 @@
+[Ocbh]
+_parent = "Ocbh"
+-- Agility per Level
+AGIplus = 1.6
+-- Tooltip - Awaken
+Awakentip = "Revive Cairne"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "D"
+-- Starting Intelligence
+INT = 16
+-- Intelligence per Level
+INTplus = 2.0
+-- Name
+Name = "Chieftain of the Bloodhoof"
+-- Tooltip - Revive
+Revivetip = "Revive Cairne"
+-- Starting Strength
+STR = 35
+-- Strength per Level
+STRplus = 3.8
+-- Tooltip - Basic
+Tip = "Revive Cairne"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "AOr3,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 25.0
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 40
+-- Hero
+heroAbilList = "Aamk,A01R,A0WM,A0NI,A08S"
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 18
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R00W,R02N"
+

@@ -1,0 +1,77 @@
+[hbsh]
+_parent = "hbsh"
+-- Name - Editor Suffix
+EditorSuffix = "(Alliance)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hotkey
+Hotkey = "E"
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.1
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\BoatMissile\\BoatMissile.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 900
+-- Name
+Name = "Battleship"
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Build - Alliance Battleship"
+-- Tooltip - Extended
+Ubertip = "Massive vessel of naval domination for the Alliance.|n|cfff5962dAbilities:|R Repair|n|n|cff99b4d1Can only build 12.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Repa"
+-- Attack 2 - Attack Type
+atkType2 = "siege"
+-- Build Time
+bldtm = 10
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 2
+-- Gold Bounty Awarded - Base
+bountyplus = 25
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 5
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 35.0
+-- Attack 2 - Cooldown Time
+cool2 = 4.0
+-- Defense Type
+defType = "fort"
+-- Attack 2 - Damage Number of Dice
+dice2 = 3
+-- Attack 2 - Damage Base
+dmgplus2 = 75
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 50
+-- Lumber Cost
+lumbercost = 150
+-- Attack 1 - Range
+rangeN1 = 700
+-- Attack 2 - Range
+rangeN2 = 700
+-- Selection Scale
+scale = 1.7
+-- Attack 2 - Damage Sides per Die
+sides2 = 10
+-- Speed Base
+spd = 250
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,enemies,ground,neutral,nonancient,structure,tree,wall"
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 90
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "structure"
+-- Upgrades Used
+upgrades = "Rguv,R01N,R00C,R006"
+-- Attack 2 - Weapon Type
+weapTp2 = "artillery"
+

@@ -1,0 +1,67 @@
+[H02B]
+_parent = "Hvwd"
+-- Agility per Level
+AGIplus = 1.9
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroRanger.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Ranger-Lord"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "A"
+-- Starting Intelligence
+INT = 13
+-- Intelligence per Level
+INTplus = 2.2
+-- Name
+Name = "Ranger-Lord"
+-- Proper Names
+Propernames = "Jennalla Deemspring"
+-- Tooltip - Revive
+Revivetip = "Revive Ranger-Lord"
+-- Starting Strength
+STR = 16
+-- Strength per Level
+STRplus = 1.4
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp"
+-- Normal
+abilList = "A0KV,AInv,Ault"
+-- Acquisition Range
+acquire = 750.0
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.7
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\HeroRanger.mdl"
+-- Hero
+heroAbilList = "Aamk,A083,A047,AEar,A0PK"
+-- Scaling Value
+modelScale = 1.0
+-- Priority
+prio = 18
+-- Attack 1 - Range
+rangeN1 = 650
+-- Attack 2 - Range
+rangeN2 = 650
+-- Selection Scale
+scale = 1.1
+-- Speed Base
+spd = 250
+-- Team Color
+teamColor = 1
+-- Unit Sound Set
+unitSound = "Archer"
+-- Upgrades Used
+upgrades = "R01R"
+

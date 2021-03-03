@@ -1,0 +1,17 @@
+[o011]
+_parent = "osp1"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNEntrapmentWard.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Zuluhed-Level 3)"
+-- Name
+Name = "Bloodlust Totem"
+-- Normal
+abilList = "S00E"
+-- Default Active Ability
+auto = "S00E"
+-- Model File
+file = "units\\orc\\StasisTotem\\StasisTotem.mdl"
+-- Attacks Enabled
+weapsOn = 0
+

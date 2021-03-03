@@ -18,3 +18,4 @@ modelScale = 0.85
 race = "nightelf"
 -- Upgrades Used
 upgrades = "Rguv,Rhme,Rhar,Ruwb"
+

@@ -1,0 +1,27 @@
+[ndh0]
+_parent = "ndh0"
+-- Name - Editor Suffix
+EditorSuffix = "(Real)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Tooltip - Extended
+Ubertip = "A Draenei hut. Gives food."
+-- Food Produced
+fmade = 10
+-- Gold Cost
+goldcost = 8
+-- Lumber Cost
+lumbercost = 20
+-- Sight Radius (Night)
+nsight = 600
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "nightelf"
+-- Sight Radius (Day)
+sight = 600
+-- Ground Texture
+uberSplat = ""
+

@@ -1,0 +1,45 @@
+[harm]
+_parent = "harm"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNorthrendWorkshop.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Ironforge)"
+-- Hotkey
+Hotkey = "D"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R00T,R010"
+-- Units Trained
+Trains = "n02D,hgyr,h01P"
+-- Tooltip - Extended
+Ubertip = "Technological shop of engineering prowess.|n|cfff5962dTrains:|r War Golem, Gyrocopter, Steam Tank|n|cfff5962dResearches:|R Improved Spell Resistance, Overclock"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\WorkshopIronforgeV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 18
+-- Selection Scale
+scale = 4.0
+-- Ground Texture
+uberSplat = ""
+

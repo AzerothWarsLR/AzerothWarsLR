@@ -1,0 +1,5 @@
+[nmyr]
+_parent = "nmyr"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+

@@ -1,0 +1,39 @@
+[nsty]
+_parent = "nsty"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Xavius)"
+-- Hit Points Maximum (Base)
+HP = 740
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Satyr Warrior"
+-- Tooltip - Basic
+Tip = "Build Satyr Warrior"
+-- Tooltip - Extended
+Ubertip = "Light melee unit, has the Evasion and Feedback abilities. |n|n|cffffcc00Attacks land units.|r "
+-- Normal
+abilList = "Aiun,A020,Afbk"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 10.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 27
+-- Gold Cost
+goldcost = 16
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "undead"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

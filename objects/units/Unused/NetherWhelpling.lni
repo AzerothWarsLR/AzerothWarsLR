@@ -1,0 +1,67 @@
+[n057]
+_parent = "nnht"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Nether Whelpling"
+-- Tooltip - Basic
+Tip = "Train Nether Whelpling"
+-- Tooltip - Extended
+Ubertip = "Nether Dragon Hatchling enslaved by the Dragonmaw component of the Fel Horde. |n|cff99b4d1Can only train 8.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Adtg"
+-- Build Time
+bldtm = 6
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Attack 1 - Damage Loss Factor
+damageLoss1 = 0.3
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "small"
+-- Attack 2 - Damage Base
+dmgplus2 = 54
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 225
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Race
+race = "orc"
+-- Animation - Run Speed
+run = 580.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 280
+-- Categorization - Special
+special = 1
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "enemies,ground"
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 20
+-- Stock Start Delay
+stockStart = 0
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 580.0
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

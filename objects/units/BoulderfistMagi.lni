@@ -3,6 +3,7 @@ _parent = "nomg"
 -- Hit Points Maximum (Base)
 HP = 1000
 -- Name
+Name = "Boulderfist Magi"
 -- Attack 1 - Attack Type
 atkType1 = "chaos"
 -- Build Time
@@ -33,3 +34,4 @@ reptm = 5
 sides1 = 5
 -- Speed Base
 spd = 220
+

@@ -16,3 +16,4 @@ def = 2
 dmgplus1 = 30
 -- Hit Points Regeneration Rate
 regenHP = 2.1
+

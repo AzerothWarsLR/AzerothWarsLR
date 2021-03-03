@@ -2,3 +2,4 @@
 _parent = "nfa1"
 -- Hit Points Maximum (Base)
 HP = 1150
+

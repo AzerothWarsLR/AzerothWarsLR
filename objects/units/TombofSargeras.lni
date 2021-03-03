@@ -1,6 +1,7 @@
 [n032]
 _parent = "nwgt"
 -- Name
+Name = "Tomb of Sargeras"
 -- Normal
 abilList = "Awrp,A0A4,Avul"
 -- Shadow Texture (Building)
@@ -17,3 +18,4 @@ nbmmIcon = 0
 pathTex = "PathTextures\\StoneWall1Path.tga"
 -- Ground Texture
 uberSplat = ""
+

@@ -1,0 +1,65 @@
+[e009]
+_parent = "ensh"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHuntressN.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1200
+-- Hotkey
+Hotkey = "A"
+-- Tooltip - Basic
+Tip = "Revive - Naisha"
+-- Tooltip - Extended
+Ubertip = "Lieutenant of the Watchers, Naisha is a strong leader and close confidant to Maeiv. She is the shield of the underside of the Sentinels and the rest of the Kaldorei"
+-- Normal
+abilList = "A0F0,A0GK,A0E2,AInv,Aesr,A0I5,Amgr,ACrk,S003"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 20.0
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "hero"
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 140
+-- Level
+level = 8
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 250
+-- Mana Maximum
+manaN = 350
+-- Scaling Value
+modelScale = 1.01
+-- Priority
+prio = 16
+-- Attack 1 - Range
+rangeN1 = 400
+-- Mana Regeneration
+regenMana = 1.0
+-- Speed Base
+spd = 300
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 2
+-- Unit Classification
+type = "giant"
+-- Upgrades Used
+upgrades = "Rguv,R03J,Rhme,Rhar,Reuv"
+

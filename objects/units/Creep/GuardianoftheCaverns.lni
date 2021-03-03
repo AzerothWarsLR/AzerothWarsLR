@@ -1,0 +1,125 @@
+[O025]
+_parent = "Obla"
+-- Starting Agility
+AGI = 12
+-- Agility per Level
+AGIplus = 2.65
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBronzeDragon.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive |cffffcc00A|rmani Warlord"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep-Caverns)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 75
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 150
+-- Starting Intelligence
+INT = 6
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\ChimaeraLightningMissile\\ChimaeraLightningMissile.mdl"
+-- Name
+Name = "Guardian of the Caverns"
+-- Primary Attribute
+Primary = "INT"
+-- Proper Names
+Propernames = "Occulus"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 225
+-- Requirements - Tier 2
+Requires1 = ""
+-- Requirements - Tier 3
+Requires2 = ""
+-- Tooltip - Revive
+Revivetip = "Revive Amani Warlord"
+-- Starting Strength
+STR = 8
+-- Strength per Level
+STRplus = 2.3
+-- Tooltip - Basic
+Tip = "Summon |cffffcc00A|rmani Warlord"
+-- Normal
+abilList = "A0GK,Alit,ACsk"
+-- Acquisition Range
+acquire = 700.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.56
+-- Tinting Color 3 (Blue)
+blue = 120
+-- Gold Bounty Awarded - Base
+bountyplus = 85
+-- Categorization - Campaign
+campaign = 1
+-- Animation - Cast Point
+castpt = 1.0
+-- Collision Size
+collision = 48.0
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 5
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.94
+-- Model File
+file = "units\\creeps\\BronzeDragon\\BronzeDragon.mdl"
+-- Food Cost
+fused = 0
+-- Tinting Color 2 (Green)
+green = 180
+-- Hero
+heroAbilList = "ANfl"
+-- Hero Skin
+heroAbilSkinList = ""
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Scaling Value
+modelScale = 2.0
+-- Height Minimum
+moveFloor = 90.0
+-- Height
+moveHeight = 400.0
+-- Type
+movetp = "hover"
+-- Priority
+prio = 16
+-- Race
+race = "creeps"
+-- Attack 1 - Range
+rangeN1 = 650
+-- Hit Points Regeneration Rate
+regenHP = 2.5
+-- Animation - Run Speed
+run = 200.0
+-- Selection Scale
+scale = 3.0
+-- Selection Circle - Height
+selZ = 230.0
+-- Shadow Image - Height
+shadowH = 300.0
+-- Shadow Image - Width
+shadowW = 300.0
+-- Shadow Image - Center X
+shadowX = 150.0
+-- Shadow Image - Center Y
+shadowY = 150.0
+-- Speed Base
+spd = 300
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "ground"
+-- Targeted as
+targType = "air"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Team Color
+teamColor = 17
+-- Unit Sound Set
+unitSound = "AzureDragon"
+-- Animation - Walk Speed
+walk = 200.0
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+

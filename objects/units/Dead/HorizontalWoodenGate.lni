@@ -1,0 +1,53 @@
+[h00M]
+_parent = "hhou"
+-- Name - Editor Suffix
+EditorSuffix = "(Dead)"
+-- Hit Points Maximum (Base)
+HP = 100
+-- Name
+Name = "Horizontal Wooden Gate"
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Upgrades To
+Upgrade = "h00K"
+-- Normal
+abilList = ""
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 0
+-- Model File
+file = "Doodads\\LordaeronSummer\\Terrain\\Gate\\Gate.mdl"
+-- Food Produced
+fmade = 0
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Pathing Map
+pathTex = "PathTextures\\Gate1PathDeath.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Race
+race = "unknown"
+-- Repair Time
+reptm = 3
+-- Selection Scale
+scale = 1.5
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "Rosp,Renb,R064,R013,Rhac"
+

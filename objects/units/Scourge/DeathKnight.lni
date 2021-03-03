@@ -1,0 +1,97 @@
+[h00H]
+_parent = "hkni"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Elite)"
+-- Hit Points Maximum (Base)
+HP = 1150
+-- Hotkey
+Hotkey = "W"
+-- Looping Fade In Rate
+LoopingSoundFadeIn = 0
+-- Looping Fade Out Rate
+LoopingSoundFadeOut = 0
+-- Movement
+MovementSoundLabel = ""
+-- Name
+Name = "Death Knight"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Death Knight"
+-- Tooltip - Extended
+Ubertip = "The loyal knights of Ner'zhul.|n|cfff5962dAbilities:|R Death Coil, Black Strike, Unholy Plating, Death Pact, Resistant Skin|n|cfff5962dCan Learn:|R Chilling Aura|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A08Z,A0YL,ACdc,ACbk,Unho,A059,ACsk,Aiun"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "ACbk"
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 33
+-- Model File
+file = "units\\undead\\HeroDeathKnight\\HeroDeathKnight.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 90
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 0.85
+-- Type
+movetp = "foot"
+-- Priority
+prio = 13
+-- Race
+race = "undead"
+-- Tinting Color 1 (Red)
+red = 150
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Speed Base
+spd = 270
+-- Unit Classification
+type = "sapper,undead"
+-- Unit Sound Set
+unitSound = "HeroDeathKnight"
+-- Upgrades Used
+upgrades = "Rupm,Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyChop"
+

@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp"
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Blackrock Spire"
 -- Requirements
 Requires = ""
 -- Researches Available
@@ -57,3 +58,4 @@ reptm = 120
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

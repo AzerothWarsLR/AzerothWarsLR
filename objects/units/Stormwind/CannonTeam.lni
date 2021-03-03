@@ -1,0 +1,107 @@
+[o01A]
+_parent = "ocat"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNCanoneer_Team_Kul-Tiras_HD.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.05
+-- Attack 1 - Projectile Art
+Missileart_1 = "war3mapImported\\Cannon Ball Unit.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 2000
+-- Name
+Name = "Cannon Team"
+-- Requirements
+Requires = "R00L"
+-- Tooltip - Basic
+Tip = "Train Cannon Team"
+-- Tooltip - Extended
+Ubertip = "Sea dogs equipped with a portable cannon.|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units and trees.|r"
+-- Normal
+abilList = ""
+-- Acquisition Range
+acquire = 1110.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 1.1
+-- Build Time
+bldtm = 12
+-- Categorization - Campaign
+campaign = 1
+-- Animation - Cast Backswing
+castbsw = 0.9
+-- Animation - Cast Point
+castpt = 1.1
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 5.0
+-- Death Time (seconds)
+death = 3.04
+-- Attack 1 - Damage Base
+dmgplus1 = 100
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.26
+-- Elevation - Sample Points
+elevPts = 0
+-- Elevation - Sample Radius
+elevRad = 30.0
+-- Model File
+file = "war3mapImported\\Cannoneer Team_Kul-Tiras_HD_TC.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 0
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 23
+-- Gold Cost
+goldcost = 30
+-- Projectile Launch - Z
+launchZ = 60.400002
+-- Level
+level = 4
+-- Maximum Pitch Angle (degrees)
+maxPitch = 10.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 10.0
+-- Minimum Attack Range
+minRange = 0
+-- Scaling Value
+modelScale = 1.2
+-- Propulsion Window (degrees)
+propWin = 60.0
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 1100
+-- Animation - Run Speed
+run = 100.0
+-- Selection Scale
+scale = 2.0
+-- Shadow Image - Height
+shadowH = 160.0
+-- Shadow Image - Width
+shadowW = 160.0
+-- Shadow Image - Center X
+shadowX = 60.0
+-- Shadow Image - Center Y
+shadowY = 60.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 21
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,tree,wall,ward"
+-- Unit Sound Set
+unitSound = "MortarTeam"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 100.0
+-- Attacks Enabled
+weapsOn = 1
+

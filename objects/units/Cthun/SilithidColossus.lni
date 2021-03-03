@@ -1,0 +1,121 @@
+[o000]
+_parent = "ogru"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroCryptLord.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "medium"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(C'thun Elites)"
+-- Hit Points Maximum (Base)
+HP = 1875
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Silithid Colossus"
+-- Special
+Specialart = "Objects\\Spawnmodels\\Undead\\UndeadLargeDeathExplode\\UndeadLargeDeathExplode.mdl"
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] - Silithid Colossus"
+-- Tooltip - Extended
+Ubertip = "An incredibly powerful warrior. Can use Impale, Locus Swarm, Wind Walk and Bloodbath. |n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0NG,A0Y3,A0Y2,ACmp,Aion,ACrk,A0XG"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "A0EH"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.54
+-- Tinting Color 3 (Blue)
+blue = 50
+-- Animation - Cast Backswing
+castbsw = 1.1
+-- Animation - Cast Point
+castpt = 0.4
+-- Collision Size
+collision = 25.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.15
+-- Allow Custom Team Color
+customTeamColor = 1
+-- Death Time (seconds)
+death = 3.0
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 6
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 82
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.46
+-- Elevation - Sample Radius
+elevRad = 100.0
+-- Model File
+file = "BloodBeetle.mdl"
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 90
+-- Tinting Color 2 (Green)
+green = 200
+-- Projectile Launch - Z
+launchZ = 130.0
+-- Level
+level = 8
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Maximum Pitch Angle (degrees)
+maxPitch = 30.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 30.0
+-- Scaling Value
+modelScale = 1.3
+-- Priority
+prio = 15
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Hit Points Regeneration Rate
+regenHP = 2.8
+-- Mana Regeneration
+regenMana = 1.5
+-- Animation - Run Speed
+run = 180.0
+-- Selection Scale
+scale = 3.2
+-- Shadow Image - Height
+shadowH = 280.0
+-- Shadow Image - Width
+shadowW = 280.0
+-- Shadow Image - Center X
+shadowX = 112.0
+-- Shadow Image - Center Y
+shadowY = 112.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Speed Base
+spd = 230
+-- Team Color
+teamColor = 21
+-- Turn Rate
+turnRate = 0.4
+-- Unit Classification
+type = "sapper"
+-- Unit Sound Set
+unitSound = "HeroCryptLord"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 180.0
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalLightChop"
+

@@ -1,0 +1,53 @@
+[nnsw]
+_parent = "nnsw"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Naga)"
+-- Hit Points Maximum (Base)
+HP = 540
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] - Naga Siren"
+-- Tooltip - Extended
+Ubertip = "Powerful spellcaster. Can cast Frost Bolt, Frost Armor, and Anti-magic Shell. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A10W,Aams,ACfu"
+-- Default Active Ability
+auto = "ACfu"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 11.0
+-- Attack 1 - Damage Base
+dmgplus1 = 14
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 7
+-- Mana Maximum
+manaN = 400
+-- Mana Regeneration
+regenMana = 1.14
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 200
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "R00K,Rguv"
+

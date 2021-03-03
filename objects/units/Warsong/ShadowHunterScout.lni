@@ -1,0 +1,47 @@
+[O01J]
+_parent = "Orkn"
+-- Agility per Level
+AGIplus = 2.0
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "C"
+-- Starting Intelligence
+INT = 23
+-- Intelligence per Level
+INTplus = 2.7
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\WitchDoctorMissile\\WitchDoctorMissile.mdl"
+-- Name
+Name = "Shadow Hunter Scout"
+-- Primary Attribute
+Primary = "INT"
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "ACes,AInv"
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 20.0
+-- Hero
+heroAbilList = "Aamk,ANst,A0FC,ANhw,AOae"
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 20
+-- Speed Base
+spd = 260
+-- Upgrades Used
+upgrades = "R016"
+

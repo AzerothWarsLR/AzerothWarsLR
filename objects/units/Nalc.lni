@@ -10,3 +10,4 @@ dmgplus1 = 20
 heroAbilList = "Aamk,ANhs,ANcr,A072"
 -- Hit Points Regeneration Rate
 regenHP = 1.0
+

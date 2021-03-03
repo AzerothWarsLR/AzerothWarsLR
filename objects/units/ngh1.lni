@@ -4,3 +4,4 @@ _parent = "ngh1"
 HP = 500
 -- Attack 1 - Attack Type
 atkType1 = "chaos"
+

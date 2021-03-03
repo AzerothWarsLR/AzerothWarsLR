@@ -1,0 +1,37 @@
+[o02V]
+_parent = "oalt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcAltarOfStorms.blp"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "X"
+-- Name
+Name = "Altar of Domination"
+-- Tooltip - Basic
+Tip = "Build Altar of Domination"
+-- Units Trained
+Trains = "nbwm,o01R,h00C,h04E,n08A,n064,n05T,O00Y"
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes and Demi-heros."
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\AltarofStormsFelOrcV1.03.mdl"
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""
+

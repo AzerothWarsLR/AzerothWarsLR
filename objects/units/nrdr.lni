@@ -4,3 +4,4 @@ _parent = "nrdr"
 HP = 1225
 -- Gold Bounty Awarded - Base
 bountyplus = 30
+

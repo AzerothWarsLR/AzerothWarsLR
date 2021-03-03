@@ -1,0 +1,45 @@
+[nwe2]
+_parent = "nwe2"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 30
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Thunder Eagle"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 90
+-- Requirements
+Requires = "R04L"
+-- Tooltip - Basic
+Tip = "Train - Thunder Eagle"
+-- Tooltip - Extended
+Ubertip = "Swift guardian eagle for Lordaeron.|n|cfff5962dCan Learn:|R Animal War Training|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Adtg,Alit"
+-- Build Time
+bldtm = 5
+-- Attack 1 - Cooldown Time
+cool1 = 1.0
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 35
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 500
+-- Categorization - Special
+special = 0
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rguv,R01N,Rhan,Rhme,Rhar"
+

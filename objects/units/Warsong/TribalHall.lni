@@ -1,0 +1,45 @@
+[o02Q]
+_parent = "obea"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIronHordeBeastiary.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Hotkey
+Hotkey = "D"
+-- Name
+Name = "Tribal Hall"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Rotr,R03Q,R016"
+-- Tooltip - Basic
+Tip = "Build Tribal Hall"
+-- Units Trained
+Trains = "n08E,otbk,nftk"
+-- Tooltip - Extended
+Ubertip = "A mere echo of home for the Darkspear trolls.|n|cfff5962dTrains:|R Berserker, Hexbinder, Warlord |n|cfff5962dResearches:|R Troll Regeneration, Hexbinder Training, Warlords"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\BeastiaryIronHordeV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 14
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 18
+-- Ground Texture
+uberSplat = ""
+

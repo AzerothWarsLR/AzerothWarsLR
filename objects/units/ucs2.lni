@@ -28,3 +28,4 @@ red = 150
 regenType = "always"
 -- Upgrades Used
 upgrades = "R008,Rhar,Rhme,Rguv"
+

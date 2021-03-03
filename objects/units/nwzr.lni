@@ -20,3 +20,4 @@ level = 4
 regenHP = 0.9
 -- Mana Regeneration
 regenMana = 1.0
+

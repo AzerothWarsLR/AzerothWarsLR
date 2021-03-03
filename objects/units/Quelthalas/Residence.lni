@@ -1,0 +1,45 @@
+[nefm]
+_parent = "nefm"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Description
+Description = "Provides 8 food, which increases the maximum number of units that can be trained."
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Residence"
+-- Tooltip - Basic
+Tip = "Residence"
+-- Tooltip - Extended
+Ubertip = "Rural elven home, providing for its nation. Provides 8 food, which increases the maximum number of units that can be trained."
+-- Build Time
+bldtm = 20
+-- Collision Size
+collision = 0.0
+-- Food Produced
+fmade = 8
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 8
+-- Repair Lumber Cost
+lumberRep = 15
+-- Scaling Value
+modelScale = 0.8
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 0.8
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"
+

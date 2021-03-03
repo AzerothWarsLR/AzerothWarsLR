@@ -1,0 +1,47 @@
+[e00T]
+_parent = "edob"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNChimaeraRoost.blp"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hotkey
+Hotkey = "D"
+-- Name
+Name = "Sentinel Rise"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build - Sentinel Rise"
+-- Units Trained
+Trains = "n08H,n06E"
+-- Tooltip - Extended
+Ubertip = "High rise tower where the best warriors of the Sentinels reside.|n|cfff5962dTrains:|R Son of Goldrinn, Shadowleaf"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 2
+-- Model File
+file = "buildings\\nightelf\\ChimaeraRoost\\ChimaeraRoost.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 24
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 125
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,Renb,Rgfo"
+

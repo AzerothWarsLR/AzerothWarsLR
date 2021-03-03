@@ -1,0 +1,43 @@
+[h01H]
+_parent = "halt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElvenAltarOfKings.blp"
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'thalas)"
+-- Hotkey
+Hotkey = "X"
+-- Name
+Name = "Altar of Prowess"
+-- Tooltip - Basic
+Tip = "Build Altar of Prowess"
+-- Units Trained
+Trains = "n075,h052,Hkal"
+-- Tooltip - Extended
+Ubertip = "Revives slain Heroes and Demi-heroes."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\AltarOfEldersElfV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = ""
+

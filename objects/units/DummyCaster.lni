@@ -1,6 +1,7 @@
 [u00X]
 _parent = "ushd"
 -- Name
+Name = "Dummy Caster"
 -- Normal
 abilList = "Aloc"
 -- Animation - Cast Backswing
@@ -29,3 +30,4 @@ special = 1
 unitShadow = ""
 -- Upgrades Used
 upgrades = ""
+

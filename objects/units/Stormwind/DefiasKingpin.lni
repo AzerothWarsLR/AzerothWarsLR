@@ -1,0 +1,75 @@
+[E00O]
+_parent = "Eill"
+-- Starting Agility
+AGI = 25
+-- Agility per Level
+AGIplus = 2.2
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Defias Kingpin"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(stormwind vassal)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "R"
+-- Intelligence per Level
+INTplus = 2.5
+-- Name
+Name = "Defias Kingpin"
+-- Proper Names
+Propernames = "Edwin Vancleef"
+-- Requirements
+Requires = "R04J,R060,R05J"
+-- Tooltip - Revive
+Revivetip = "Revive Defias Kingpin"
+-- Starting Strength
+STR = 20
+-- Strength per Level
+STRplus = 2.3
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp"
+-- Tooltip - Basic
+Tip = "Choose Vassal: Edwin"
+-- Tooltip - Extended
+Ubertip = "|cffff0000You will lose your current faction and join Stormwind as a new small 1 hero faction|r|n|nStealthy Hero, adept at targeting heroes and disrupting enemy troops. This Vassal can train Si-7 Agents, Enforcers and Assasins. |n|n|cffffcc00Attacks land units.|r"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\EdwinVancleef1.mdl"
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "AEfk,A083,A0FK,A110,Aamk"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 18
+-- Race
+race = "human"
+-- Selection Scale
+scale = 1.27
+-- Speed Base
+spd = 240
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "enemies,ground,vulnerable"
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 5
+

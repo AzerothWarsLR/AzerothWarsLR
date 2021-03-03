@@ -24,3 +24,4 @@ modelScale = 1.0
 regenType = "always"
 -- Upgrades Used
 upgrades = "R008,Rhar,Rhme,Rguv"
+

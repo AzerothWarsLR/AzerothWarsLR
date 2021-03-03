@@ -3,6 +3,7 @@ _parent = "ncop"
 -- Hit Points Maximum (Base)
 HP = 5000
 -- Name
+Name = "Desolace (15gold/min)"
 -- Normal
 abilList = "A0MW"
 -- Collision Size
@@ -19,3 +20,4 @@ regenType = "always"
 scale = 1.5
 -- Unit Classification
 type = "ancient,sapper"
+

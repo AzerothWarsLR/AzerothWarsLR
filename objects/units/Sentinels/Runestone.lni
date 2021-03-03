@@ -1,0 +1,85 @@
+[h03M]
+_parent = "hgtw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNEnchantedGemstone.blp"
+-- Construction
+BuildingSoundLabel = "NightElfGrowingLoop"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 100
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "Z"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\MurgulMagicMissile\\MurgulMagicMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1600
+-- Name
+Name = "Runestone"
+-- Requirements
+Requires = ""
+-- Special
+Specialart = "Objects\\Spawnmodels\\NightElf\\NECancelDeath\\NECancelDeath.mdl"
+-- Tooltip - Basic
+Tip = "Build Runestone"
+-- Tooltip - Extended
+Ubertip = "Primary defensive structure. |n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "h03N"
+-- Normal
+abilList = "A0HJ"
+-- Acquisition Range
+acquire = 600.0
+-- Armor Type
+armor = "Stone"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Damage Loss Factor
+damageLoss1 = 0.5
+-- Defense Type
+defType = "fort"
+-- Defense Upgrade Bonus
+defUp = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Model File
+file = "buildings\\other\\BridgeObelisk\\BridgeObelisk.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 30
+-- Lumber Cost
+lumbercost = 80
+-- Scaling Value
+modelScale = 0.7
+-- Sight Radius (Night)
+nsight = 1200
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "nightelf"
+-- Attack 1 - Range
+rangeN1 = 750
+-- Selection Scale
+scale = 1.3
+-- Sight Radius (Day)
+sight = 1400
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "ground,structure,debris,enemy"
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 2
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "ChimaeraRoost"
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo,Rhme"
+-- Attack 1 - Weapon Type
+weapTp1 = "mbounce"
+

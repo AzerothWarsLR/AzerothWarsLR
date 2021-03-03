@@ -1,0 +1,17 @@
+[n08K]
+_parent = "nwld"
+-- Name - Editor Suffix
+EditorSuffix = "(Brown - Cenarius Summon)"
+-- Name
+Name = "Feral Wolf"
+-- Normal
+abilList = "Ault,ANbh,ACct,ACro"
+-- Attack 1 - Cooldown Time
+cool1 = 0.9
+-- Model File
+file = "units\\creeps\\TimberWolf\\TimberWolf.mdl"
+-- Scaling Value
+modelScale = 1.0
+-- Upgrades Used
+upgrades = "Reuv,R019,Rhme,Rhar"
+

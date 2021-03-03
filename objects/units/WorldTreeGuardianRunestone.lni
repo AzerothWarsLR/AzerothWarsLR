@@ -1,6 +1,7 @@
 [ngob]
 _parent = "ngob"
 -- Name
+Name = "World Tree Guardian Runestone"
 -- Normal
 abilList = "Adtg,Avul"
 -- Scaling Value
@@ -13,3 +14,4 @@ scale = 1.5
 sight = 1800
 -- Upgrades Used
 upgrades = "Renb,R064"
+

@@ -1,0 +1,67 @@
+[ners]
+_parent = "ners"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNEredarRed.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 0
+-- Hit Points Maximum (Base)
+HP = 800
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 0
+-- Hotkey
+Hotkey = "R"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 0
+-- Tooltip - Basic
+Tip = "Summon Eredar Sorcerer"
+-- Tooltip - Extended
+Ubertip = "Mystical mage of the Burning Crusade.|n|cfff5962dAbilities:|R Inferno, Void Parasite |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "ACpa,A077"
+-- Default Active Ability
+auto = "ACpa"
+-- Build Time
+bldtm = 2
+-- Tinting Color 3 (Blue)
+blue = 100
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Collision Size
+collision = 14.0
+-- Defense Type
+defType = "none"
+-- Model File
+file = "units\\demon\\EredarWarlockPurple\\EredarWarlockPurple.mdl"
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 15
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 1.1
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 500
+-- Mana Regeneration
+regenMana = 1.0
+-- Speed Base
+spd = 210
+-- Categorization - Special
+special = 1
+-- Stock Replenish Interval
+stockRegen = 45
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

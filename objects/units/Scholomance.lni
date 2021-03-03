@@ -3,6 +3,7 @@ _parent = "unp2"
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Scholomance"
 -- Requirements
 Requires = ""
 -- Researches Available
@@ -57,3 +58,4 @@ type = "ancient,mechanical,townhall,undead"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rgfo"
+

@@ -11,6 +11,7 @@ HP = 760
 -- Starting Intelligence
 INT = 19
 -- Name
+Name = "Centaur Khan"
 -- Proper Names
 Propernames = "Ramzes the Horror"
 -- Starting Strength
@@ -41,3 +42,4 @@ regenHP = 2.0
 regenMana = 2.75
 -- Speed Base
 spd = 280
+

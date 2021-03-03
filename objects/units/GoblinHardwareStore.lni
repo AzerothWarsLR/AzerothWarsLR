@@ -9,6 +9,7 @@ Hotkey = "C"
 -- Items Made
 Makeitems = "stwa,I01Q,I01P,gobm,I00O,shas,hslv,phea,pman,stwp"
 -- Name
+Name = "Goblin Hardware Store"
 -- Tooltip - Basic
 Tip = "Build [|cffffcc00C|r] - Goblin Hardware Store"
 -- Tooltip - Extended
@@ -37,3 +38,4 @@ reptm = 50
 scale = 3.0
 -- Ground Texture
 uberSplat = ""
+

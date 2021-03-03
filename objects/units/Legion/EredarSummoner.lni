@@ -1,0 +1,61 @@
+[n04P]
+_parent = "nhym"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNEredarWarlockPurple.blp"
+-- Caster Upgrade Art
+Casterupgradeart = "UI\\Widgets\\Console\\Human\\infocard-necromancer.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Shadowbolt,- Shadowbolt|n- Flame Shield,- Shadowbolt|n- Flame Shield|n- Summon Minion"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl"
+-- Name
+Name = "Eredar Summoner"
+-- Tooltip - Basic
+Tip = "Train Eredar Summoner"
+-- Tooltip - Extended
+Ubertip = [=[
+Summoner of the Legion's hounds.|n|cfff5962dAbilities:|R Shadowbolt|n|cfff5962dCan Learn:|R Flame Shield, Summon Minion|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "Aiun,A0AO,A0AS,A0AT"
+-- Default Active Ability
+auto = "A0AO"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "units\\demon\\EredarWarlockPurple\\EredarWarlockPurple.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 19
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Maximum
+manaN = 200
+-- Priority
+prio = 11
+-- Race
+race = "undead"
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "PitLord"
+-- Upgrades Used
+upgrades = "Rupm,R02A,R027,Rguv"
+

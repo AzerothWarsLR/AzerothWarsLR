@@ -1,0 +1,73 @@
+[h05J]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Name
+Name = "Champion's Hall"
+-- Requirements
+Requires = "R022"
+-- Researches Available
+Researches = "R030,R031,R02Z,R03B,R02Y,R03D"
+-- Special
+Specialart = ""
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "Avul"
+-- Required Animation Names
+animProps = ""
+-- Build Time
+bldtm = 1
+-- Tinting Color 3 (Blue)
+blue = 225
+-- Shadow Texture (Building)
+buildingShadow = "BuildingShadowSmall"
+-- Collision Size
+collision = 75.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "buildings\\human\\HumanBarracks\\HumanBarracks.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 225
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 1.05
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 1.9
+-- Scale Projectiles
+scaleBull = 0
+-- Unit Classification
+type = "ancient,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "ArcaneObservatory"
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"
+

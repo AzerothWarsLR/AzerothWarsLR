@@ -15,6 +15,7 @@ INTplus = 1.4
 -- Attack 1 - Projectile Art
 Missileart_1 = ""
 -- Name
+Name = "Qiraji Commander"
 -- Primary Attribute
 Primary = "STR"
 -- Proper Names
@@ -81,3 +82,4 @@ unitSound = "FacelessOne"
 weapTp1 = "normal"
 -- Attack 1 - Weapon Sound
 weapType1 = "MetalMediumChop"
+

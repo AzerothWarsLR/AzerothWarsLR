@@ -1,0 +1,43 @@
+[nerd]
+_parent = "nerd"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Eye of Sargeras)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 0
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 0
+-- Hotkey
+Hotkey = "D"
+-- Name
+Name = "Eredar Wizard"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 0
+-- Tooltip - Basic
+Tip = "Train Ere|cffffcc00d|rar Diabolist"
+-- Normal
+abilList = "ACpa,ACfb"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Collision Size
+collision = 20.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 19
+-- Gold Cost
+goldcost = 19
+-- Scaling Value
+modelScale = 1.25
+-- Stock Replenish Interval
+stockRegen = 45
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

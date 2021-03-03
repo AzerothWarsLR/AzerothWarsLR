@@ -1,6 +1,7 @@
 [n07K]
 _parent = "nwgt"
 -- Name
+Name = "Teldrassil"
 -- Normal
 abilList = "A0A4,Awrp,Avul"
 -- Shadow Texture (Building)
@@ -19,3 +20,4 @@ nbmmIcon = 0
 pathTex = "PathTextures\\4x4SimpleSolid.tga"
 -- Ground Texture
 uberSplat = ""
+

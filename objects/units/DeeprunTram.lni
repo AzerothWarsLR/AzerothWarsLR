@@ -5,6 +5,7 @@ Description = "Teleports units to the other Deeprun Tram."
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Deeprun Tram"
 -- Researches Available
 Researches = "R014"
 -- Normal
@@ -43,3 +44,4 @@ type = "ancient,mechanical,neutral,standon"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac"
+

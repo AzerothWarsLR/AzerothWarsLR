@@ -1,6 +1,7 @@
 [h03P]
 _parent = "hhou"
 -- Name
+Name = "Gnomish House"
 -- Normal
 abilList = ""
 -- Build Time
@@ -35,3 +36,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "R013,Rhac,Rgfo"
+

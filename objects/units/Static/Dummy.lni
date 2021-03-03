@@ -1,0 +1,69 @@
+[h06L]
+_parent = "hfoo"
+-- Icon - Game Interface
+Art = "UI\\Minimap\\Minimap-Tower"
+-- Name - Editor Suffix
+EditorSuffix = "(Static STorm)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Name
+Name = "Dummy"
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0UN"
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 0
+-- Model File
+file = "Abilities\\Spells\\Human\\CloudOfFog\\CloudOfFog.mdl"
+-- Food Cost
+fused = 0
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Level
+level = 10
+-- Mana Initial Amount
+mana0 = 2000
+-- Mana Maximum
+manaN = 50000
+-- Maximum Pitch Angle (degrees)
+maxPitch = 30.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 30.0
+-- Speed Maximum
+maxSpd = 1
+-- Speed Minimum
+minSpd = 1
+-- Height Minimum
+moveFloor = 100.0
+-- Height
+moveHeight = 280.0
+-- Type
+movetp = "fly"
+-- Sight Radius (Night)
+nsight = 0
+-- Race
+race = "commoner"
+-- Sight Radius (Day)
+sight = 0
+-- Speed Base
+spd = 1
+-- Targeted as
+targType = ""
+-- Turn Rate
+turnRate = 3.0
+-- Unit Classification
+type = "ward"
+-- Shadow Image (Unit)
+unitShadow = ""
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = ""
+-- Attacks Enabled
+weapsOn = 0
+

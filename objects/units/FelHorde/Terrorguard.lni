@@ -1,0 +1,117 @@
+[o014]
+_parent = "odkt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = "medium"
+-- Required Attachment Link Names
+Attachmentlinkprops = "alternate"
+-- Required Bone Names
+Boneprops = "alternate"
+-- Caster Upgrade Art
+Casterupgradeart = "NONE"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 45
+-- Hit Points Maximum (Base)
+HP = 1975
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 75
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.3
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl"
+-- Name
+Name = "Terrorguard"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 150
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.15
+-- Tooltip - Basic
+Tip = "Summon Terrorguard"
+-- Tooltip - Extended
+Ubertip = "Winged demon-cousin of the Doomguard, and bringer of shadow and misery.|n|cfff5962dAbilities:|R Consume, Nether's Eye, Living Missile, Resistant Skin, True Sight|n|n|cff99b4d1Can only summon 4.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A04Z,A051,A050,A04V,ACrk,Adtg,Aion"
+-- Acquisition Range
+acquire = 750.0
+-- Required Animation Names
+animProps = "alternate"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Default Active Ability
+auto = "A04V"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.64
+-- Build Time
+bldtm = 20
+-- Categorization - Campaign
+campaign = 0
+-- Animation - Cast Backswing
+castbsw = 0.47
+-- Animation - Cast Point
+castpt = 0.3
+-- Collision Size
+collision = 22.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.2
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 64
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.26
+-- Model File
+file = "units\\nightelf\\EvilIllidan\\IllidanEvil.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 150
+-- Tinting Color 2 (Green)
+green = 120
+-- Level
+level = 9
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 650
+-- Mana Maximum
+manaN = 650
+-- Priority
+prio = 15
+-- Attack 1 - Range
+rangeN1 = 750
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 4
+-- Animation - Run Speed
+run = 350.0
+-- Selection Scale
+scale = 1.7
+-- Speed Base
+spd = 255
+-- Categorization - Special
+special = 1
+-- Unit Sound Set
+unitSound = "HeroDemonHunterMorphed"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 350.0
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"
+

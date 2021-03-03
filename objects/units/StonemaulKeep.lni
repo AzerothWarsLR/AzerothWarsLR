@@ -3,6 +3,7 @@ _parent = "otto"
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Stonemaul Keep"
 -- Researches Available
 Researches = "R019,Ropg"
 -- Revives Dead Heroes
@@ -53,3 +54,4 @@ scale = 6.0
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

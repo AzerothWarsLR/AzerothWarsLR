@@ -8,3 +8,4 @@ bountyplus = 4
 fused = 0
 -- Attack 1 - Targets Allowed
 targs1 = "debris,ground,item,nonancient,structure,ward"
+

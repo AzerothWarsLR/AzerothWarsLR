@@ -1,0 +1,53 @@
+[otbr]
+_parent = "otbr"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 475
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 350.0
+-- Tooltip - Extended
+Ubertip = "Swift flying bomber of the skies.|n|cfff5962dAbilities:|R Unstable Concoction, Acid Bomb|n|cfff5962dCan Learn:|R Liquid Fire, Troll Regeneration |n|n|cff99b4d1Can only train 12.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ANtr,A09D,Aliq,Auco"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 8
+-- Categorization - Campaign
+campaign = 1
+-- Transported Size
+cargoSize = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 18
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 13
+-- Level
+level = 3
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 120
+-- Mana Maximum
+manaN = 120
+-- Scaling Value
+modelScale = 0.8
+-- Mana Regeneration
+regenMana = 1.2
+-- Speed Base
+spd = 300
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "R06B,Rhar,Rotr,Rhme,Rguv"
+

@@ -1,0 +1,61 @@
+[e014]
+_parent = "etoe"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Name
+Name = "Seradane Great Tree"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = ""
+-- Normal
+abilList = "A0PL"
+-- Attack 1 - Attack Type
+atkType1 = "unknown"
+-- Attack 2 - Attack Type
+atkType2 = "unknown"
+-- Defense Base
+def = 5
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Ashenvale\\Structures\\Worldtree\\Worldtree.mdl"
+-- Food Produced
+fmade = 15
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 24
+-- Repair Lumber Cost
+lumberRep = 120
+-- Scaling Value
+modelScale = 0.2
+-- Type
+movetp = ""
+-- Pathing Map
+pathTex = ""
+-- Placement Requires
+preventPlace = ""
+-- Repair Time
+reptm = 90
+-- Speed Base
+spd = 0
+-- Attack 2 - Targets Allowed
+targs2 = "debris,ground,item,structure,ward"
+-- Team Color
+teamColor = 12
+-- Turn Rate
+turnRate = 0.1
+-- Unit Classification
+type = "ancient,mechanical,sapper"
+-- Unit Sound Set
+unitSound = "Waygate"
+-- Upgrades Used
+upgrades = "Renb,Rhac,R064,R013,Rgfo"
+-- Attacks Enabled
+weapsOn = 0
+

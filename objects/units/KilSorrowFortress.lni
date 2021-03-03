@@ -3,6 +3,7 @@ _parent = "ofrt"
 -- Icon - Game Interface
 Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp"
 -- Name
+Name = "Kil'Sorrow Fortress"
 -- Researches Available
 Researches = "R00M"
 -- Units Trained
@@ -51,3 +52,4 @@ teamColor = 12
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

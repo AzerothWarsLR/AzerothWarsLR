@@ -1,0 +1,51 @@
+[o02R]
+_parent = "ostr"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIronHordeStrongHold.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(warsong)"
+-- Hotkey
+Hotkey = "C"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "o00E,ncpn,opeo"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Peon |n|cfff5962dAbilities:|R Spiked Barricades, For The Horde!"
+-- Upgrades To
+Upgrade = "o02S"
+-- Normal
+abilList = "A0PF,A0GM,Aspi,Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\GreatHallIronHordeV1.04.mdl"
+-- Food Produced
+fmade = 20
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 70
+-- Repair Lumber Cost
+lumberRep = 200
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.95
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Mana Regeneration
+regenMana = 2.0
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+

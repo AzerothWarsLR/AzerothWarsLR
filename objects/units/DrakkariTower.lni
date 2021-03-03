@@ -3,6 +3,7 @@ _parent = "owtw"
 -- Hit Points Maximum (Base)
 HP = 800
 -- Name
+Name = "Drakkari Tower"
 -- Acquisition Range
 acquire = 700.0
 -- Tinting Color 3 (Blue)
@@ -39,3 +40,4 @@ scale = 1.0
 sides1 = 5
 -- Ground Texture
 uberSplat = ""
+

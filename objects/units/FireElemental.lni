@@ -1,35 +1,41 @@
-[n06U]
+[n05E]
 _parent = "nlv1"
 -- Name - Editor Suffix
-EditorSuffix = "(Dargan summon level 3)"
+EditorSuffix = ""
 -- Hit Points Maximum (Base)
-HP = 600
--- Attack 1 - Projectile Art
-Missileart_1 = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl"
+HP = 825
 -- Name
+Name = "Fire Elemental"
 -- Normal
-abilList = "A089,A0BB,A0JG"
--- Attack 1 - Attack Type
-atkType1 = "chaos"
--- Collision Size
-collision = 10.0
--- Attack 1 - Cooldown Time
-cool1 = 1.35
+abilList = "A089,A0HU"
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
 -- Defense Base
 def = 3
+-- Defense Type
+defType = "small"
 -- Attack 1 - Damage Number of Dice
-dice1 = 2
+dice1 = 6
 -- Attack 1 - Damage Base
-dmgplus1 = 29
+dmgplus1 = 28
+-- Level
+level = 5
 -- Mana Initial Amount
 mana0 = 400
 -- Mana Maximum
 manaN = 400
 -- Race
-race = "human"
--- Attack 1 - Range
-rangeN1 = 450
+race = "creeps"
 -- Hit Points Regeneration Rate
-regenHP = 1.8
+regenHP = 0.5
+-- Mana Regeneration
+regenMana = 0.25
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
 -- Upgrades Used
-upgrades = "R01K,R033,R034,Rhar,Rhme,Rguv"
+upgrades = ""
+

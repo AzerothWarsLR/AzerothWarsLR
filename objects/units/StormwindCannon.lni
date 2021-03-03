@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCannonTower.blp"
 -- Hit Points Maximum (Base)
 HP = 2000
 -- Name
+Name = "Stormwind Cannon"
 -- Requirements
 Requires = ""
 -- Tooltip - Basic
@@ -75,3 +76,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,R013,Rhac,Rgfo"
+

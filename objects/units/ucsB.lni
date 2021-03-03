@@ -18,3 +18,4 @@ modelScale = 1.0
 spd = 130
 -- Upgrades Used
 upgrades = "R008,Rhar,Rhme,Rguv"
+

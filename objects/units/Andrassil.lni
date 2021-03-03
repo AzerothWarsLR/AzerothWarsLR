@@ -3,6 +3,7 @@ _parent = "nfoh"
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Andrassil"
 -- Researches Available
 Researches = "R05X"
 -- Revives Dead Heroes
@@ -53,3 +54,4 @@ type = "ancient,townhall"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rgfo,Renb,R064"
+

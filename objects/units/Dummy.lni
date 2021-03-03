@@ -1,10 +1,9 @@
-[h06U]
+[h06H]
 _parent = "hfoo"
 -- Icon - Game Interface
 Art = "UI\\Minimap\\Minimap-Tower"
--- Name - Editor Suffix
-EditorSuffix = "(Mediv Lightning strike)"
 -- Name
+Name = "Dummy"
 -- Tooltip - Basic
 Tip = ""
 -- Tooltip - Extended
@@ -16,9 +15,7 @@ collision = 0.0
 -- Death Type
 deathType = 0
 -- Model File
-file = "Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster.mdl"
--- Model File - Extra Versions
-fileVerFlags = 2
+file = "war3mapImported\\DUMMY.mdl"
 -- Food Cost
 fused = 0
 -- Hide Minimap Display
@@ -33,8 +30,10 @@ manaN = 50000
 maxSpd = 522
 -- Speed Minimum
 minSpd = 522
+-- Height Minimum
+moveFloor = -50.0
 -- Height
-moveHeight = 40.0
+moveHeight = -50.0
 -- Type
 movetp = "fly"
 -- Sight Radius (Night)
@@ -55,3 +54,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

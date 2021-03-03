@@ -1,6 +1,7 @@
 [n08R]
 _parent = "nwgt"
 -- Name
+Name = "Grim Batol Tunnels"
 -- Shadow Texture (Building)
 buildingShadow = ""
 -- Collision Size
@@ -19,3 +20,4 @@ nbmmIcon = 0
 pathTex = ""
 -- Ground Texture
 uberSplat = ""
+

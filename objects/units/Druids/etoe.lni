@@ -1,0 +1,81 @@
+[etoe]
+_parent = "etoe"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "C"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "Renb"
+-- Units Trained
+Trains = "e00N,ewsp"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Wisp, Keeper of the Grove|n|cfff5962dAbilities:|R Force of Nature, Sacred Ground"
+-- Normal
+abilList = "A0G9,A0G8,Aeat,Aro1,Atol,Arlm"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 46.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 103
+-- Attack 2 - Damage Base
+dmgplus2 = 103
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 135
+-- Repair Lumber Cost
+lumberRep = 200
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.0
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 12
+-- Attack 1 - Range
+rangeN1 = 200
+-- Attack 2 - Range
+rangeN2 = 200
+-- Hit Points Regeneration Rate
+regenHP = 10.0
+-- Mana Regeneration
+regenMana = 2.2
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 90
+-- Attack 1 - Damage Sides per Die
+sides1 = 20
+-- Attack 2 - Damage Sides per Die
+sides2 = 20
+-- Speed Base
+spd = 100
+-- Attack 2 - Targets Allowed
+targs2 = "debris,ground,item,structure,ward"
+-- Unit Classification
+type = "townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,R002,R018,Renb,Rgfo,Rhme"
+

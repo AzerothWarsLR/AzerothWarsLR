@@ -1,0 +1,47 @@
+[n0A3]
+_parent = "nnsg"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNCorruptedMoonWell.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "A"
+-- Name
+Name = "Deep Sea Pool"
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00A|r] - Deep Sea Pool"
+-- Units Trained
+Trains = "n008,nlpd,n06K,nahy,nsgb"
+-- Tooltip - Extended
+Ubertip = "Trains Makrura Scavenger, Makrura Deep Scout, Ancient Hydra, Sea Giant Behemoth and Trench Spider Crab."
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "buildings\\demon\\CorruptedMoonWell\\CorruptedMoonWell.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 50
+-- Scaling Value
+modelScale = 0.85
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unamph,unwalkable"
+-- Ground Texture
+uberSplat = ""
+

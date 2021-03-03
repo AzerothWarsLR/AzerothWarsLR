@@ -1,0 +1,19 @@
+[nwwf]
+_parent = "nwwf"
+-- Name - Editor Suffix
+EditorSuffix = "(Pink - Drek'Thar Summon)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Gold Bounty Awarded - Base
+bountyplus = 3
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Food Cost
+fused = 0
+-- Scaling Value
+modelScale = 0.9
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

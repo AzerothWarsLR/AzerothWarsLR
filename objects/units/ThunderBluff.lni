@@ -11,6 +11,7 @@ Missileart_1 = "abilities\\weapons\\catapult\\catapultmissile.mdl"
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 950
 -- Name
+Name = "Thunder Bluff"
 -- Researches Available
 Researches = "Ropg"
 -- Revives Dead Heroes
@@ -63,3 +64,4 @@ type = "ancient,mechanical,townhall"
 uberSplat = ""
 -- Attack 1 - Weapon Type
 weapTp1 = "artillery"
+

@@ -1,0 +1,71 @@
+[n06K]
+_parent = "nlpd"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNLobstrokkGreen.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(n'zoth)"
+-- Hit Points Maximum (Base)
+HP = 765
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.15
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 950
+-- Name
+Name = "Makrura Deep Scout"
+-- Tooltip - Basic
+Tip = "Breed [|cffffcc00W|r] Makrura Deep Scout"
+-- Tooltip - Extended
+Ubertip = "Light ranged unit. Has the Cold Attack and Deep Core Carapace abilities. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A11F,Afr2"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Build Time
+bldtm = 4
+-- Gold Bounty Awarded - Base
+bountyplus = 3
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.24
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Model File
+file = "Units\\Creeps\\Lobstrokkgreen\\Lobstrokkgreen.mdl"
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 21
+-- Scaling Value
+modelScale = 0.45
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 500
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 225
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+

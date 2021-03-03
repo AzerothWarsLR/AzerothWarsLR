@@ -1,0 +1,55 @@
+[n07T]
+_parent = "nmrk"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionArcaneAcademy.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Stormwind)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "srrc,I00Q,sreg,rwiz,phea,pman,stwp,tsct,ofir,ssan"
+-- Name
+Name = "Royal Treasury"
+-- Tooltip - Basic
+Tip = "Build Royal Treasury"
+-- Tooltip - Extended
+Ubertip = "Creates a shop with purchasable items. "
+-- Normal
+abilList = "Aall,Apit"
+-- Build Time
+bldtm = 30
+-- Defense Base
+def = 5
+-- Model File
+file = "war3mapImported\\ArcaneAcademyStormwindV1.02.mdl"
+-- Gold Cost
+goldcost = 13
+-- Lumber Cost
+lumbercost = 30
+-- Scaling Value
+modelScale = 0.7
+-- Sight Radius (Night)
+nsight = 750
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "human"
+-- Selection Scale
+scale = 3.0
+-- Sight Radius (Day)
+sight = 1000
+-- Team Color
+teamColor = -1
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac,R013"
+

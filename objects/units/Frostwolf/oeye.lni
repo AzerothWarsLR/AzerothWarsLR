@@ -1,0 +1,7 @@
+[oeye]
+_parent = "oeye"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Witch Doctor)"
+-- Categorization - Special
+special = 0
+

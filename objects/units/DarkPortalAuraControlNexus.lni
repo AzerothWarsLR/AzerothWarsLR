@@ -3,5 +3,7 @@ _parent = "ngob"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Dark Portal Aura Control Nexus"
 -- Race
 race = "creeps"
+

@@ -2,3 +2,4 @@
 _parent = "ndr3"
 -- Upgrades Used
 upgrades = "R008,Rusl,Rhme,Rhar,Rguv"
+

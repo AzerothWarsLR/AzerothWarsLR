@@ -1,6 +1,7 @@
 [n0A1]
 _parent = "nwgt"
 -- Name
+Name = "Thunder Bluff Lift"
 -- Normal
 abilList = "A03K,Awrp,Avul"
 -- Shadow Texture (Building)
@@ -17,3 +18,4 @@ nbmmIcon = 0
 pathTex = "PathTextures\\4x4Default.tga"
 -- Ground Texture
 uberSplat = ""
+

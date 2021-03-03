@@ -1,0 +1,51 @@
+[ndrn]
+_parent = "ndrn"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hit Points Maximum (Base)
+HP = 1230
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Train Draenei Vindicator (|cffffff00Q|r)"
+-- Tooltip - Extended
+Ubertip = "Heavy melee unit. Has Vindication and War Plating.|n |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0H2,A02Y"
+-- Default Active Ability
+auto = "A0H2"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 4
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 21
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 300
+-- Race
+race = "naga"
+-- Mana Regeneration
+regenMana = 1.33
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Speed Base
+spd = 260
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

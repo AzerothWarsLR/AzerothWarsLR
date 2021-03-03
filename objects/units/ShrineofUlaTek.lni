@@ -3,6 +3,7 @@ _parent = "oalt"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Shrine of Ula-Tek"
 -- Units Trained
 Trains = ""
 -- Normal
@@ -41,3 +42,4 @@ type = "ancient,mechanical"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac,R013,Renb,R064,Rosp,Rgfo"
+

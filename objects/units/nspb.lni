@@ -18,3 +18,4 @@ mana0 = 200
 manaN = 200
 -- Mana Regeneration
 regenMana = 1.0
+

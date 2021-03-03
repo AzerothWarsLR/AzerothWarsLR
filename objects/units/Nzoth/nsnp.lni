@@ -1,0 +1,71 @@
+[nsnp]
+_parent = "nsnp"
+-- Name - Editor Suffix
+EditorSuffix = "(Naga)"
+-- Hit Points Maximum (Base)
+HP = 650
+-- Hotkey
+Hotkey = "W"
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\snapMissile\\snapMissile.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 1900
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] - Snap Dragon"
+-- Normal
+abilList = "Adtg,Aspo"
+-- Attack 2 - Attack Type
+atkType2 = "pierce"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 10
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Collision Size
+collision = 14.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 2
+-- Attack 2 - Damage Number of Dice
+dice2 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Attack 2 - Damage Base
+dmgplus2 = 12
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 18
+-- Repair Lumber Cost
+lumberRep = 80
+-- Lumber Cost
+lumbercost = 20
+-- Scaling Value
+modelScale = 0.8
+-- Attack 1 - Range
+rangeN1 = 650
+-- Attack 2 - Range
+rangeN2 = 550
+-- Repair Time
+reptm = 3
+-- Selection Scale
+scale = 0.7
+-- Attack 2 - Damage Sides per Die
+sides2 = 5
+-- Speed Base
+spd = 240
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,mechanical,organic,structure,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "air,debris,ground,item,mechanical,organic,structure,ward"
+-- Upgrades Used
+upgrades = "R043,Rhme,Rhar"
+-- Attack 2 - Weapon Type
+weapTp2 = "missile"
+

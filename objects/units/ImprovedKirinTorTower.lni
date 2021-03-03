@@ -11,6 +11,7 @@ Hotkey = "Z"
 -- Attack 1 - Projectile Art
 Missileart_1 = "war3mapImported\\Psionic Shot Pink.mdl"
 -- Name
+Name = "Improved Kirin Tor Tower"
 -- Tooltip - Basic
 Tip = "Upgrade to Improved Kirin Tor Tower"
 -- Tooltip - Extended
@@ -53,3 +54,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rhac"
+

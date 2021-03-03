@@ -1,8 +1,0 @@
-[ntws]
-_parent = "ntws"
--- Name - Editor Suffix
-EditorSuffix = "(Level 2)"
--- Food Cost
-fused = 0
--- Upgrades Used
-upgrades = "R01H,R007,Rguv,Rhme,Rhar"

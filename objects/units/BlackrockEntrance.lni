@@ -3,6 +3,7 @@ _parent = "nwgt"
 -- Hit Points Maximum (Base)
 HP = 200000
 -- Name
+Name = "Blackrock Entrance"
 -- Normal
 abilList = "Avul,A0A4,Awrp"
 -- Shadow Texture (Building)
@@ -23,3 +24,4 @@ regenHP = 5.0
 regenType = "always"
 -- Ground Texture
 uberSplat = ""
+

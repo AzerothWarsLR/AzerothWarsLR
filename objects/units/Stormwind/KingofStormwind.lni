@@ -1,0 +1,69 @@
+[H00R]
+_parent = "Huth"
+-- Starting Agility
+AGI = 32
+-- Agility per Level
+AGIplus = 1.9
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroVarianWrynn.blp"
+-- Tooltip - Awaken
+Awakentip = "(|cffffff00A|r) Revive Varian Wrynn"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dark Green)"
+-- Hit Points Maximum (Base)
+HP = 125
+-- Hotkey
+Hotkey = "A"
+-- Starting Intelligence
+INT = 15
+-- Intelligence per Level
+INTplus = 1.6
+-- Name
+Name = "King of Stormwind"
+-- Primary Attribute
+Primary = "AGI"
+-- Proper Names
+Propernames = "King Varian Wrynn"
+-- Tooltip - Revive
+Revivetip = "(|cffffff00A|r) Revive Varian Wrynn"
+-- Starting Strength
+STR = 24
+-- Strength per Level
+STRplus = 2.5
+-- Icon - Score Screen
+ScoreScreenIcon = "war3mapImported\\SSHHeroVarianWrynn.blp"
+-- Tooltip - Extended
+Ubertip = "King of Stormwind and an exceptional warrior. Can learn Shockwave, Rally to the King!, Conveyance Aura, and Horn of Stormwind. |n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "A0W3,A0GK,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Defense Base
+def = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "war3mapImported\\King Varian Wrynn1.mdl"
+-- Hero
+heroAbilList = "A0W4,A08M,Aamk,A01R,A0FK"
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 19
+-- Attack 1 - Range
+rangeN1 = 120
+-- Attack 1 - Damage Sides per Die
+sides1 = 12
+-- Speed Base
+spd = 260
+-- Upgrades Used
+upgrades = "R05O"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavySlice"
+

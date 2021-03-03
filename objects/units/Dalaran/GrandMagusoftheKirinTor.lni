@@ -1,0 +1,45 @@
+[Hant]
+_parent = "Hant"
+-- Starting Agility
+AGI = 12
+-- Tooltip - Awaken
+Awakentip = "Revive Grand Magus"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "S"
+-- Intelligence per Level
+INTplus = 3.5
+-- Name
+Name = "Grand Magus of the Kirin Tor"
+-- Proper Names
+Propernames = "Archmage Antonidas"
+-- Tooltip - Revive
+Revivetip = "Revive Grand Magus"
+-- Strength per Level
+STRplus = 1.5
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0WD,A0WG,AInv"
+-- Build Time
+bldtm = 13
+-- Animation - Cast Backswing
+castbsw = 1.0
+-- Collision Size
+collision = 22.0
+-- Hero
+heroAbilList = "Aamk,A032,A0OF,A0DG,A034"
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 18
+-- Speed Base
+spd = 270
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,enemies,ground,nonancient,structure,vulnerable"
+

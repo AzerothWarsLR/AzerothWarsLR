@@ -1,0 +1,61 @@
+[o02A]
+_parent = "owtw"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(real tower)"
+-- Hit Points Maximum (Base)
+HP = 1050
+-- Name
+Name = "Alterac Watch Tower"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Upgrade to Improved |cffffcc00W|ratch Tower"
+-- Normal
+abilList = "A0J1,Arbr,Aspi"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.55
+-- Defense Base
+def = 5
+-- Defense Type
+defType = "fort"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 45
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 60
+-- Repair Lumber Cost
+lumberRep = 150
+-- Lumber Cost
+lumbercost = 250
+-- Scaling Value
+modelScale = 1.1
+-- Sight Radius (Night)
+nsight = 600
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 9
+-- Sight Radius (Day)
+sight = 900
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme"
+

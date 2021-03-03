@@ -1,0 +1,117 @@
+[eden]
+_parent = "eden"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGoldMine.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "C"
+-- Items Made
+Makeitems = "rej5,phea,I01G,moon,plcl,dust,pman,stwp,oven,pams"
+-- Name
+Name = "Den of Wonders"
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 0.0
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 0.0
+-- Tooltip - Basic
+Tip = "Build Den of Wonders"
+-- Tooltip - Extended
+Ubertip = "Structure of the artifacts of the Kaldorei, and any purchasable items."
+-- Normal
+abilList = "Aall,Apit"
+-- Acquisition Range
+acquire = 0.0
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.0
+-- Attack 2 - Animation Backswing Point
+backSw2 = 0.0
+-- Build Time
+bldtm = 30
+-- Shadow Texture (Building)
+buildingShadow = "ShadowHuntersHall"
+-- Can Flee
+canFlee = 0
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.0
+-- Attack 2 - Cooldown Time
+cool2 = 0.0
+-- Defense Base
+def = 5
+-- Defense Upgrade Bonus
+defUp = 1
+-- Attack 1 - Damage Number of Dice
+dice1 = 0
+-- Attack 2 - Damage Number of Dice
+dice2 = 0
+-- Attack 1 - Damage Base
+dmgplus1 = 0
+-- Attack 2 - Damage Base
+dmgplus2 = 0
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.0
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.0
+-- Model File
+file = "DenOfWonders.mdl"
+-- Repair Gold Cost
+goldRep = 10
+-- Gold Cost
+goldcost = 15
+-- Repair Lumber Cost
+lumberRep = 20
+-- Scaling Value
+modelScale = 0.95
+-- Type
+movetp = ""
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 0
+-- Attack 2 - Range
+rangeN2 = 0
+-- Repair Time
+reptm = 50
+-- Selection Scale
+scale = 3.0
+-- Attack 1 - Show UI
+showUI1 = 1
+-- Attack 1 - Damage Sides per Die
+sides1 = 0
+-- Attack 2 - Damage Sides per Die
+sides2 = 0
+-- Speed Base
+spd = 0
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 0
+-- Attack 2 - Maximum Number of Targets
+targCount2 = 0
+-- Attack 1 - Targets Allowed
+targs1 = ""
+-- Attack 2 - Targets Allowed
+targs2 = ""
+-- Turn Rate
+turnRate = 0.1
+-- Unit Classification
+type = ""
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"
+-- Attack 1 - Weapon Type
+weapTp1 = ""
+-- Attack 2 - Weapon Type
+weapTp2 = ""
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+-- Attack 2 - Weapon Sound
+weapType2 = ""
+-- Attacks Enabled
+weapsOn = 0
+

@@ -1,0 +1,59 @@
+[o02J]
+_parent = "ogre"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNecropolis.blp"
+-- Construction
+BuildingSoundLabel = "UndeadBuildingConstructionLoop"
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal)"
+-- Hit Points Maximum (Base)
+HP = 2750
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Forsaken hall"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Build Forsaken Hall"
+-- Units Trained
+Trains = "uaco,nzom,uban,nska"
+-- Tooltip - Extended
+Ubertip = "Primary vassal structure. Can revive heroes and serve as a lumber drop-site.|n|r|cfff5962dTrains:|R Acolytes and all units"
+-- Upgrades To
+Upgrade = ""
+-- Normal
+abilList = "Argl"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 6
+-- Model File
+file = "buildings\\undead\\Necropolis\\Necropolis.mdl"
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 60
+-- Scaling Value
+modelScale = 0.75
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "undead"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 5.0
+-- Ground Texture
+uberSplat = ""
+

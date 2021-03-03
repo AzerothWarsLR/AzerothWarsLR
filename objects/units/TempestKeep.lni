@@ -9,6 +9,7 @@ Description = "Dimensional fortress."
 -- Hit Points Maximum (Base)
 HP = 10000
 -- Name
+Name = "Tempest Keep"
 -- Revives Dead Heroes
 Revive = 1
 -- Units Trained
@@ -47,3 +48,4 @@ scale = 1.75
 type = "mechanical,neutral"
 -- Ground Texture
 uberSplat = ""
+

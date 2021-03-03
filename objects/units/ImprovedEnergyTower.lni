@@ -1,6 +1,7 @@
 [net2]
 _parent = "net2"
 -- Name
+Name = "Improved Energy Tower"
 -- Repair Gold Cost
 goldRep = 30
 -- Gold Cost
@@ -13,3 +14,4 @@ lumbercost = 200
 reptm = 50
 -- Ground Texture
 uberSplat = ""
+

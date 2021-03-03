@@ -6,3 +6,4 @@ HP = 1250
 def = 3
 -- Hit Points Regeneration Rate
 regenHP = 0.75
+

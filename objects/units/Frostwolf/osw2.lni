@@ -1,0 +1,21 @@
+[osw2]
+_parent = "osw2"
+-- Name - Editor Suffix
+EditorSuffix = "(Frostwolf-Thrall)"
+-- Hit Points Maximum (Base)
+HP = 675
+-- Tooltip - Extended
+Ubertip = "Feral spirit of the Horde."
+-- Collision Size
+collision = 20.0
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 30
+-- Scaling Value
+modelScale = 0.75
+-- Categorization - Special
+special = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

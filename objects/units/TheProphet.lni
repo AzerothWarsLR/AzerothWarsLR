@@ -25,6 +25,7 @@ Missileart_1 = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl"
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 950
 -- Name
+Name = "The Prophet"
 -- Primary Attribute
 Primary = "INT"
 -- Proper Names
@@ -121,3 +122,4 @@ walk = 250.0
 weapTp1 = "missile"
 -- Attack 1 - Weapon Sound
 weapType1 = ""
+

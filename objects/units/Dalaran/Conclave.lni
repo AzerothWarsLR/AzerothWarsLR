@@ -1,0 +1,111 @@
+[h066]
+_parent = "hkee"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArcaneKeep.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 25
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 50
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.4
+-- Hotkey
+Hotkey = "C"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\BallistaMissile\\BallistaMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1400
+-- Name
+Name = "Conclave"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 150
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.25
+-- Researches Available
+Researches = ""
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Tooltip - Basic
+Tip = "Upgrade to Conclave"
+-- Units Trained
+Trains = "h022,h019,nbee,hpea"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Shaper|n|cfff5962dAbilities:|R Replenish Mana"
+-- Upgrades To
+Upgrade = "h068"
+-- Normal
+abilList = "A0GC,Argl"
+-- Acquisition Range
+acquire = 1300.0
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Default Active Ability
+auto = "A0GC"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 1.9
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.5
+-- Attack 1 - Damage Loss Factor
+damageLoss1 = 0.2
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.1
+-- Model File
+file = "war3mapImported\\ArcaneCastleV1.04.mdl"
+-- Food Produced
+fmade = 20
+-- Repair Gold Cost
+goldRep = 35
+-- Gold Cost
+goldcost = 70
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 350
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 1300
+-- Mana Regeneration
+regenMana = 1.5
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.3
+-- Attack 1 - Damage Sides per Die
+sides1 = 18
+-- Attack 1 - Damage Spill Radius
+spillRadius1 = 50.0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,structure,wall"
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,wall,ward"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhac"
+-- Attack 1 - Weapon Type
+weapTp1 = "aline"
+

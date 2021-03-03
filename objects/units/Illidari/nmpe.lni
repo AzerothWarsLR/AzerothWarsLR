@@ -1,0 +1,31 @@
+[nmpe]
+_parent = "nmpe"
+-- Structures Built
+Builds = "h01D,hshy,h03O,n05Q,n07R,n07V,n055,n07W,n07S,h027,nmrb,nnad,nnfm,nnsa,nnsg,nntt,nntg,h06S,n0A3"
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "Q"
+-- Tooltip - Basic
+Tip = "Train Mur'gul Slave (|cffffff00Q|r)"
+-- Build Time
+bldtm = 2
+-- Collision Size
+collision = 6.0
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 7
+-- Gold Cost
+goldcost = 7
+-- Repair Lumber Cost
+lumberRep = 25
+-- Scaling Value
+modelScale = 0.85
+-- Repair Time
+reptm = 2
+-- Speed Base
+spd = 170
+-- Unit Classification
+type = "peon,sapper"
+

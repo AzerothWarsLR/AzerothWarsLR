@@ -1,0 +1,63 @@
+[esen]
+_parent = "esen"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 770
+-- Hotkey
+Hotkey = "Q"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train - Huntress"
+-- Tooltip - Extended
+Ubertip = "Mounted Sentinel warrior.|n|cfff5962dAbilities:|r Ensnare, Evasion, Elune's Grace|n|cfff5962dCan Learn:|r Sentinel, Moon Glaive|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "S003,ANwk,Aens,Aegr,Aesn,Amgl,Aien,Ault"
+-- Armor Type
+armor = "Wood"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 14.5
+-- Attack 1 - Cooldown Time
+cool1 = 1.9
+-- Defense Base
+def = 3
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Base
+dmgplus1 = 23
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 22
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.9
+-- Attack 1 - Range
+rangeN1 = 300
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 270
+-- Upgrades Used
+upgrades = "Roen,Rguv,R03J,Rhme,Rhar,Resc,Reuv,Remg,Repm,R002"
+

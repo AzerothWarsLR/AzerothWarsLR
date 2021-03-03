@@ -5,6 +5,7 @@ HP = 99999
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 0
 -- Name
+Name = "SG Dummy"
 -- Attack 1 - Range Motion Buffer
 RngBuff1 = 0.0
 -- Attack 2 - Range Motion Buffer
@@ -113,3 +114,4 @@ targCount1 = 0
 unitShadow = ""
 -- Animation - Walk Speed
 walk = 0.0
+

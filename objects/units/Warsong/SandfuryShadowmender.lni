@@ -1,0 +1,57 @@
+[ndtp]
+_parent = "ndtp"
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong-Frostwolf)"
+-- Hit Points Maximum (Base)
+HP = 370
+-- Name
+Name = "Sandfury Shadowmender"
+-- Tooltip - Basic
+Tip = "Train SandfuryShadowmender"
+-- Tooltip - Extended
+Ubertip = "Elite Sandfury priest recruited after the annexation of Zul'Farrak.|n|cfff5962dAbilities:|R Heal, Curse|n|cfff5962dCan Learn:|R Troll Regeneration|n|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "Anhe,Aion,ANtr,Acrs"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Tinting Color 3 (Blue)
+blue = 60
+-- Gold Bounty Awarded - Base
+bountyplus = 16
+-- Categorization - Campaign
+campaign = 1
+-- Sleeps
+canSleep = 0
+-- Collision Size
+collision = 14.0
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Food Cost
+fused = 0
+-- Tinting Color 2 (Green)
+green = 160
+-- Display as Neutral Hostile
+hostilePal = 0
+-- Level
+level = 3
+-- Mana Initial Amount
+mana0 = 350
+-- Mana Maximum
+manaN = 350
+-- Race
+race = "orc"
+-- Tinting Color 1 (Red)
+red = 240
+-- Hit Points Regeneration Rate
+regenHP = 2.1
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "Rotr,R023,Rguv"
+

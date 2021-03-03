@@ -1,0 +1,45 @@
+[o01S]
+_parent = "obar"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNIronHordeBarracks.blp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(warsong)"
+-- Hotkey
+Hotkey = "A"
+-- Name
+Name = "War Camp"
+-- Researches Available
+Researches = "Robs,R01J"
+-- Tooltip - Basic
+Tip = "Build War Camp"
+-- Units Trained
+Trains = "ogru,orai,o00G"
+-- Tooltip - Extended
+Ubertip = "Residence and training grounds for Orcish warriors.|n|cfff5962dTrains:|r Grunt, Raider, Blademaster|n|cfff5962dResearches:|R Brute Strength, Improved Ensnare, Blade Mastery"
+-- Normal
+abilList = "Aspi"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\BarracksIronHordeV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Ground Texture
+uberSplat = ""
+

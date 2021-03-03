@@ -1,10 +1,11 @@
-[n03H]
+[n03A]
 _parent = "nwgt"
--- Name - Editor Suffix
-EditorSuffix = "(Inside)"
+-- Hit Points Maximum (Base)
+HP = 200000
 -- Name
+Name = "Dalaran Dungeons"
 -- Normal
-abilList = "A0A4,Awrp,Avul"
+abilList = "Avul,Awrp"
 -- Shadow Texture (Building)
 buildingShadow = ""
 -- Model File
@@ -12,10 +13,15 @@ file = "Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTo.mdl"
 -- Hide Minimap Display
 hideOnMinimap = 1
 -- Scaling Value
-modelScale = 0.6
+modelScale = 0.4
 -- Neutral Building - Shows Minimap Icon
 nbmmIcon = 0
 -- Pathing Map
 pathTex = ""
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Hit Points Regeneration Type
+regenType = "always"
 -- Ground Texture
 uberSplat = ""
+

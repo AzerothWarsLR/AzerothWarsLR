@@ -1,0 +1,33 @@
+[nogr]
+_parent = "nogr"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Vassal - Cho'gall"
+-- Hit Points Maximum (Base)
+HP = 850
+-- Hotkey
+Hotkey = "E"
+-- Normal
+abilList = "ACct,ACbh"
+-- Build Time
+bldtm = 3
+-- Collision Size
+collision = 24.0
+-- Attack 1 - Damage Base
+dmgplus1 = 37
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 15
+-- Scaling Value
+modelScale = 1.0
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

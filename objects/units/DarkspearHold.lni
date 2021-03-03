@@ -3,6 +3,7 @@ _parent = "otto"
 -- Hit Points Maximum (Base)
 HP = 5000
 -- Name
+Name = "Darkspear Hold"
 -- Researches Available
 Researches = "Ropg"
 -- Revives Dead Heroes
@@ -49,3 +50,4 @@ scale = 5.0
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

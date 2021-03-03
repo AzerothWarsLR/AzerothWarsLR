@@ -1,0 +1,37 @@
+[ngsp]
+_parent = "ngsp"
+-- Name - Editor Suffix
+EditorSuffix = "(Goblin Shop)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Goblin Sapper"
+-- Tooltip - Basic
+Tip = "Hire (|cffffcc00Q|r) Goblin Sapper"
+-- Normal
+abilList = "A0A6,Asds"
+-- Build Time
+bldtm = 15
+-- Gold Bounty Awarded - Base
+bountyplus = 18
+-- Transported Size
+cargoSize = 1
+-- Collision Size
+collision = 22.0
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 25
+-- Level
+level = 2
+-- Lumber Cost
+lumbercost = 0
+-- Stock Replenish Interval
+stockRegen = 45
+-- Stock Start Delay
+stockStart = 240
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

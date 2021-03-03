@@ -1,6 +1,7 @@
 [ncop]
 _parent = "ncop"
 -- Name
+Name = "Tavern Selector"
 -- Collision Size
 collision = 0.0
 -- Scaling Value
@@ -9,3 +10,4 @@ modelScale = 0.5
 pathTex = ""
 -- Unit Classification
 type = "mechanical,sapper,standon"
+

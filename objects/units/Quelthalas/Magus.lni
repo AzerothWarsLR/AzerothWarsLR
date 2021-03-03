@@ -1,0 +1,79 @@
+[n063]
+_parent = "nmed"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHighElfChronomancer.blp"
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNManaFlare.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Mana Burn,- Mana Burn|n- Siphon Mana,- Mana Burn|n- Siphon Mana|n- Healing Wave"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Hotkey
+Hotkey = "Q"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 800
+-- Name
+Name = "Magus"
+-- Tooltip - Basic
+Tip = "Train Magus"
+-- Tooltip - Extended
+Ubertip = "A member of the Silvermoon ruling elite, skilled in the use of the arcane arts.|n|cfff5962dAbilities:|R Mana Burn|n|cfff5962dCan Learn:|R Siphon Mana, Healing Wave|n|n|cff99b4d1Can only train 12.|r|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "A0FO,A06Y,Aihn,A00B"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.1
+-- Build Time
+bldtm = 10
+-- Collision Size
+collision = 12.0
+-- Death Type
+deathType = 2
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 12
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "HeroChronomancer.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 45
+-- Gold Cost
+goldcost = 30
+-- Level
+level = 6
+-- Mana Initial Amount
+mana0 = 200
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 16
+-- Mana Regeneration
+regenMana = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 30
+-- Selection Scale
+scale = 1.1
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 210
+-- Unit Sound Set
+unitSound = "Priest"
+-- Upgrades Used
+upgrades = "Rguv,R00K,R029"
+

@@ -1,0 +1,43 @@
+[h015]
+_parent = "hprt"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Name
+Name = "The Legion's Portal"
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Tinting Color 2 (Green)
+green = 100
+-- Projectile Impact - Z
+impactZ = 0.0
+-- Is a Building
+isbldg = 1
+-- Projectile Launch - Z
+launchZ = 0.0
+-- Maximum Pitch Angle (degrees)
+maxPitch = 0.0
+-- Maximum Roll Angle (degrees)
+maxRoll = 0.0
+-- Scaling Value
+modelScale = 0.9
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "undead"
+-- Tinting Color 1 (Red)
+red = 100
+-- Hit Points Regeneration Rate
+regenHP = 10.0
+-- Selection Scale
+scale = 1.5
+-- Categorization - Special
+special = 0
+-- Unit Classification
+type = "townhall"
+

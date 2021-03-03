@@ -3,6 +3,7 @@ _parent = "hhou"
 -- Icon - Game Interface
 Art = "ReplaceableTextures\\CommandButtons\\BTNMarketplace.blp"
 -- Name
+Name = "Troll House"
 -- Build Time
 bldtm = 25
 -- Collision Size
@@ -31,3 +32,4 @@ reptm = 30
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rgfo,Rosp"
+

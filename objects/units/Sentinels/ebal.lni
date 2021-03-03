@@ -1,0 +1,53 @@
+[ebal]
+_parent = "ebal"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Hotkey
+Hotkey = "E"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train - Glaive Thrower"
+-- Tooltip - Extended
+Ubertip = "Elegant Sentinel siege weapon.|n|n|cff99b4d1Can only build 8.|r|n|cffffcc00Attacks land units and trees.|r"
+-- Build Time
+bldtm = 8
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.3
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 21
+-- Gold Cost
+goldcost = 21
+-- Level
+level = 4
+-- Scaling Value
+modelScale = 0.85
+-- Attack 1 - Range
+rangeN1 = 1050
+-- Selection Scale
+scale = 2.5
+-- Speed Base
+spd = 230
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,structure,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,tree,wall,ward"
+-- Upgrades Used
+upgrades = "Rguv,Rhar,Rhme,Reuv,Repb"
+-- Attack 1 - Weapon Type
+weapTp1 = "aline"
+-- Attack 2 - Weapon Type
+weapTp2 = "aline"
+

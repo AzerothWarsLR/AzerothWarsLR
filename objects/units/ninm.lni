@@ -30,3 +30,4 @@ modelScale = 0.8
 stockRegen = 80
 -- Upgrades Used
 upgrades = "Rhme,Rhar"
+

@@ -1,0 +1,63 @@
+[etrp]
+_parent = "etrp"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Druids)"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Hotkey
+Hotkey = "Z"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build Ancient Protector"
+-- Tooltip - Extended
+Ubertip = "Defensive Ancient of the Kaldorei forests who hurls boulders at his foes|n|cfff5962dUpgraded Into:|R Improved Ancient Protector |n|n|cffffcc00Attacks land and air units.|r"
+-- Upgrades To
+Upgrade = "e000"
+-- Normal
+abilList = "Aeat,Aro2"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.2
+-- Attack 2 - Cooldown Time
+cool2 = 1.6
+-- Defense Base
+def = 4
+-- Defense Upgrade Bonus
+defUp = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 54
+-- Attack 2 - Damage Base
+dmgplus2 = 54
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 23
+-- Repair Lumber Cost
+lumberRep = 70
+-- Lumber Cost
+lumbercost = 100
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 50
+-- Speed Base
+spd = 100
+-- Unit Classification
+type = "sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,R018,R002,Renb,Rhme,Rgfo"
+

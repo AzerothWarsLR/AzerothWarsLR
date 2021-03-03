@@ -4,3 +4,4 @@ _parent = "nsqa"
 abilList = "ACfr,ACrn"
 -- Gold Bounty Awarded - Base
 bountyplus = 50
+

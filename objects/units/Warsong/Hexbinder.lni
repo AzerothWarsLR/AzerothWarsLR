@@ -1,0 +1,69 @@
+[n08E]
+_parent = "nw2w"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTrollPredator.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Tips
+Casterupgradetip = "- Slow,- Slow|n- Rejuvenation,- Slow|n- Rejuvenation|n- Soul Burn"
+-- Name - Editor Suffix
+EditorSuffix = "(Warsong)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl"
+-- Name
+Name = "Hexbinder"
+-- Tooltip - Basic
+Tip = "Train Hexbinder"
+-- Tooltip - Extended
+Ubertip = "Shadowy voodoo Troll.|n|cfff5962dAbilities:|R Slow|n|cfff5962dCan Learn:|R Rejuvenation, Soul Burn|n|n|cffd5d500Attacks land and air units.|r"
+-- Normal
+abilList = "ANtr,A09E,Aion,Aslo,A0W6"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "Aslo"
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 8
+-- Animation - Cast Backswing
+castbsw = 1.4
+-- Animation - Cast Point
+castpt = 0.6
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 18
+-- Model File
+file = "Troll MageMask.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 21
+-- Gold Cost
+goldcost = 18
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Priority
+prio = 10
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "WitchDoctor"
+-- Upgrades Used
+upgrades = "Rotr,R023,Ropm,R03Q,Rguv"
+

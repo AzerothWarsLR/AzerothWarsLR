@@ -1,65 +1,25 @@
-[u01H]
-_parent = "ubon"
+[nfac]
+_parent = "nfac"
 -- Icon - Game Interface
-Art = "ReplaceableTextures\\CommandButtons\\BTNSacrificialPit.blp"
--- Button Position (X)
-Buttonpos_1 = 2
--- Button Position (Y)
-Buttonpos_2 = 1
--- Name - Editor Suffix
-EditorSuffix = "(C'thun Building)"
--- Hotkey
-Hotkey = "D"
+Art = "ReplaceableTextures\\CommandButtons\\BTNPortal.blp"
+-- Hit Points Maximum (Base)
+HP = 3000
 -- Name
--- Requirements
-Requires = ""
--- Researches Available
-Researches = ""
+Name = "Void Portal"
 -- Tooltip - Basic
-Tip = "Summon [|cffffcc00D|r] - Void Portal"
--- Units Trained
-Trains = "h01Q,h01K"
+Tip = "Open Void Portal"
 -- Tooltip - Extended
-Ubertip = "Advanced unit building. Produces Faceless Corruptors, Silithid Overlords and Immortal Guardian."
+Ubertip = "Portal for summoning Voidwalkers"
 -- Normal
-abilList = "A0YA,A0RU"
--- Build Time
-bldtm = 30
--- Tinting Color 3 (Blue)
-blue = 101
--- Categorization - Campaign
-campaign = 1
--- Collision Size
-collision = 0.0
--- Allow Custom Team Color
-customTeamColor = 1
--- Elevation - Sample Points
-elevPts = 0
--- Elevation - Sample Radius
-elevRad = 0.0
+abilList = "ARal,A0CV"
+-- Shadow Texture (Building)
+buildingShadow = ""
 -- Model File
-file = "buildings\\undead\\SacrificialPit\\SacrificialPit.mdl"
--- Repair Gold Cost
-goldRep = 17
--- Gold Cost
-goldcost = 17
--- Tinting Color 2 (Green)
-green = 221
--- Height Minimum
-moveFloor = -20.0
--- Height
-moveHeight = -20.0
--- Type
-movetp = "hover"
--- Pathing Map
-pathTex = "PathTextures\\8x8SimpleSolid.tga"
--- Placement Requires
-preventPlace = "unwalkable"
--- Priority
-prio = 16
--- Placement Prevented By
-requirePlace = ""
--- Team Color
-teamColor = 16
--- Ground Texture
-uberSplat = ""
+file = "doodads\\cinematic\\ShimmeringPortal\\ShimmeringPortal.mdl"
+-- Targeted as
+targType = "ward"
+-- Unit Classification
+type = "_"
+-- Unit Sound Set
+unitSound = "SacrificialPit"
+

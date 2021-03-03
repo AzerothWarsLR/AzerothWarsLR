@@ -1,0 +1,95 @@
+[h05W]
+_parent = "hsor"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroArchMage.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-Demi)"
+-- Hit Points Maximum (Base)
+HP = 995
+-- Hotkey
+Hotkey = "A"
+-- Name
+Name = "Archbishop Benedictus"
+-- Requirements
+Requires = "R03P"
+-- Tooltip - Basic
+Tip = "Revive [|cffffcc00A|r] - Archbishop Benedictus"
+-- Tooltip - Extended
+Ubertip = "Healer demi-hero. Has Restoration Aura and can cast Greater Heal, Power Word: Shield, and Restoration Aura. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0SK,A0BP,A0E8,A0R6,ACrn,AInv,ACrk,A0GK"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "A0SK"
+-- Build Time
+bldtm = 60
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.55
+-- Death Type
+deathType = 0
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Model File
+file = "Bishop.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 200
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 0.7
+-- Type
+movetp = "foot"
+-- Priority
+prio = 16
+-- Tinting Color 1 (Red)
+red = 180
+-- Hit Points Regeneration Rate
+regenHP = 0.7
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 3
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 250
+-- Team Color
+teamColor = 10
+-- Unit Classification
+type = "giant"
+-- Unit Sound Set
+unitSound = "Priest"
+-- Upgrades Used
+upgrades = "R01N,R03P,Rguv,Rhme,Rhar"
+

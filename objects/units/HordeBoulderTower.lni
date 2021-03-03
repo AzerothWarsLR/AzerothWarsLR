@@ -23,6 +23,7 @@ Missileart_1 = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMis
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 900
 -- Name
+Name = "Horde Boulder Tower"
 -- Attack 1 - Area of Effect (Small Damage)
 Qarea1 = 200
 -- Attack 1 - Damage Factor - Small
@@ -101,3 +102,4 @@ uberSplat = ""
 upgrades = "Rosp,Rhme,Rgfo"
 -- Attack 1 - Weapon Type
 weapTp1 = "artillery"
+

@@ -8,3 +8,4 @@ fused = 0
 targs1 = "air,enemies,ground,hero,structure"
 -- Upgrades Used
 upgrades = "Rhme,Rhar"
+

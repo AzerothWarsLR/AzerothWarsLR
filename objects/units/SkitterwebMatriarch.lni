@@ -15,6 +15,7 @@ Missileart_1 = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 900
 -- Name
+Name = "Skitterweb Matriarch"
 -- Attack 1 - Area of Effect (Small Damage)
 Qarea1 = 125
 -- Normal
@@ -73,3 +74,4 @@ targs1 = "air,debris,ground,item,structure,ward"
 weapTp1 = "msplash"
 -- Attack 1 - Weapon Sound
 weapType1 = ""
+

@@ -1,0 +1,89 @@
+[h01U]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Khaz Modan)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 30
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 80
+-- Attack 1 - Damage Factor - Medium
+Hfact1 = 0.5
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\Mortar\\MortarMissile.mdl"
+-- Name
+Name = "Aerie Peak"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 125
+-- Attack 1 - Damage Factor - Small
+Qfact1 = 0.1
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "h019,h01L,hpea"
+-- Normal
+abilList = "A0CY,A0K5,Arlm,AEsb"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Tinting Color 3 (Blue)
+blue = 160
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 87
+-- Model File
+file = "buildings\\human\\GryphonAviary\\GryphonAviary.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 160
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.25
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Priority
+prio = 18
+-- Attack 1 - Range
+rangeN1 = 600
+-- Tinting Color 1 (Red)
+red = 160
+-- Mana Regeneration
+regenMana = 2.2
+-- Repair Time
+reptm = 90
+-- Attack 1 - Damage Sides per Die
+sides1 = 26
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "debris,ground,nonancient,notself,structure,tree,wall"
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,tree,wall,ward"
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"
+

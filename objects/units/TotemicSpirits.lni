@@ -1,7 +1,9 @@
 [u005]
 _parent = "uloc"
 -- Name
+Name = "Totemic Spirits"
 -- Model File
 file = "Abilities\\Spells\\Orc\\AncestralSpirit\\AncestralSpiritCaster.mdl"
 -- Race
 race = "orc"
+

@@ -1,0 +1,83 @@
+[O026]
+_parent = "Obla"
+-- Agility per Level
+AGIplus = 2.65
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp"
+-- Required Attachment Link Names
+Attachmentlinkprops = "alternate"
+-- Tooltip - Awaken
+Awakentip = "Revive Witch Doctor"
+-- Required Bone Names
+Boneprops = "alternate"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep-Zandalar)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Name
+Name = "God King of the Zandalari Tribe"
+-- Primary Attribute
+Primary = "STR"
+-- Proper Names
+Propernames = "Rastakhan"
+-- Requirements - Tier 2
+Requires1 = ""
+-- Requirements - Tier 3
+Requires2 = ""
+-- Tooltip - Revive
+Revivetip = "Revive Witch Doctor"
+-- Strength per Level
+STRplus = 2.3
+-- Tooltip - Basic
+Tip = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A089,Aap3"
+-- Required Animation Names
+animProps = "alternate"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.6
+-- Gold Bounty Awarded - Base
+bountyplus = 85
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 25.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 15
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "units\\orc\\HeadHunter\\HeadHunter_V1.mdl"
+-- Model File - Extra Versions
+fileVerFlags = 2
+-- Food Cost
+fused = 0
+-- Hero
+heroAbilList = "AOre,AHfs"
+-- Hero Skin
+heroAbilSkinList = ""
+-- Display as Neutral Hostile
+hostilePal = 1
+-- Scaling Value
+modelScale = 1.5
+-- Priority
+prio = 16
+-- Race
+race = "creeps"
+-- Hit Points Regeneration Rate
+regenHP = 2.5
+-- Speed Base
+spd = 240
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Unit Sound Set
+unitSound = "ForestTroll"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumSlice"
+

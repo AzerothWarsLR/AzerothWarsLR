@@ -3,6 +3,7 @@ _parent = "hhes"
 -- Hit Points Maximum (Base)
 HP = 500000
 -- Name
+Name = "SoulSacrificeDummy"
 -- Normal
 abilList = "Aloc,A0MK,Avul"
 -- Collision Size
@@ -31,3 +32,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

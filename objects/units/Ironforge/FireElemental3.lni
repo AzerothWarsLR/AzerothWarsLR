@@ -1,0 +1,37 @@
+[n06T]
+_parent = "nlv1"
+-- Name - Editor Suffix
+EditorSuffix = "(Dargan summon level 2)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl"
+-- Name
+Name = "Fire Elemental"
+-- Normal
+abilList = "A0BB,A0JG"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Collision Size
+collision = 10.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.35
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 24
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Race
+race = "human"
+-- Attack 1 - Range
+rangeN1 = 450
+-- Hit Points Regeneration Rate
+regenHP = 1.8
+-- Upgrades Used
+upgrades = "R01K,R033,R034,Rhar,Rhme,Rguv"
+

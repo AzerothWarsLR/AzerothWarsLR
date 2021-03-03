@@ -9,6 +9,7 @@ HP = 10000
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Dragonmaw Tower"
 -- Requirements
 Requires = ""
 -- Attack 1 - Range Motion Buffer
@@ -59,3 +60,4 @@ uberSplat = ""
 upgrades = "Rosp,Rorb,Rhme,Rgfo"
 -- Attacks Enabled
 weapsOn = 0
+

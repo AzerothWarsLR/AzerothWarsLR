@@ -1,0 +1,93 @@
+[hdes]
+_parent = "hdes"
+-- Name - Editor Suffix
+EditorSuffix = "(Alliance)"
+-- Attack 2 - Area of Effect (Full Damage)
+Farea2 = 25
+-- Hit Points Maximum (Base)
+HP = 750
+-- Attack 2 - Area of Effect (Medium Damage)
+Harea2 = 35
+-- Hotkey
+Hotkey = "W"
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.1
+-- Attack 2 - Projectile Art
+Missileart_2 = "Abilities\\Weapons\\BoatMissile\\BoatMissile.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 900
+-- Name
+Name = "Destroyer"
+-- Attack 2 - Area of Effect (Small Damage)
+Qarea2 = 50
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Build - Destroyer"
+-- Tooltip - Extended
+Ubertip = "Pride of the Alliance Navy, and defender of the seas.|n|cfff5962dAbilities:|R Board|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0LW,A0FV"
+-- Attack 2 - Attack Type
+atkType2 = "pierce"
+-- Attack 2 - Animation Backswing Point
+backSw2 = 0.3
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 17
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 20.0
+-- Attack 2 - Cooldown Time
+cool2 = 1.5
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "large"
+-- Attack 2 - Damage Number of Dice
+dice2 = 1
+-- Attack 2 - Damage Base
+dmgplus2 = 54
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.3
+-- Repair Gold Cost
+goldRep = 25
+-- Gold Cost
+goldcost = 25
+-- Lumber Cost
+lumbercost = 50
+-- Scaling Value
+modelScale = 0.95
+-- Attack 1 - Range
+rangeN1 = 450
+-- Attack 2 - Range
+rangeN2 = 450
+-- Selection Scale
+scale = 1.8
+-- Attack 2 - Damage Sides per Die
+sides2 = 15
+-- Speed Base
+spd = 330
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Attack 2 - Area of Effect Targets
+splashTargs2 = "air"
+-- Stock Maximum
+stockMax = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "air"
+-- Upgrades Used
+upgrades = "R01N,R00C,Rguv,R006"
+-- Attack 2 - Weapon Type
+weapTp2 = "msplash"
+-- Attacks Enabled
+weapsOn = 3
+

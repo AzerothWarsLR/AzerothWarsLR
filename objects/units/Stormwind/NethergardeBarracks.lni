@@ -1,0 +1,49 @@
+[h05E]
+_parent = "hbar"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionBarracks.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+Name = "Nethergarde Barracks"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "h05T,h05U,h04C,h054,h00J,h00A,h02O,h01B"
+-- Tooltip - Extended
+Ubertip = "The outermost outpost of the Arathor Kingdom."
+-- Normal
+abilList = "ACav,Abds"
+-- Tinting Color 3 (Blue)
+blue = 130
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "war3mapImported\\BarracksStormwindV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Tinting Color 2 (Green)
+green = 205
+-- Repair Lumber Cost
+lumberRep = 150
+-- Sight Radius (Night)
+nsight = 900
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 130
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo,R03B"
+

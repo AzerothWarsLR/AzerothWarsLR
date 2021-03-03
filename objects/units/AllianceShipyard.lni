@@ -1,14 +1,11 @@
-[h077]
+[hshy]
 _parent = "hshy"
--- Icon - Game Interface
-Art = "ReplaceableTextures\\CommandButtons\\BTNElvenShipyardA.blp"
 -- Button Position (X)
 Buttonpos_1 = 3
--- Name - Editor Suffix
-EditorSuffix = "(high elves)"
 -- Hotkey
 Hotkey = "R"
 -- Name
+Name = "Alliance Shipyard"
 -- Researches Available
 Researches = "R06K,R06F,R006,R00C"
 -- Units Sold
@@ -25,8 +22,6 @@ abilList = "Ane2"
 bldtm = 30
 -- Categorization - Campaign
 campaign = 0
--- Model File
-file = "war3mapImported\\ShipyardElfNightElfV1.01.mdl"
 -- Repair Gold Cost
 goldRep = 15
 -- Gold Cost
@@ -36,10 +31,11 @@ lumberRep = 50
 -- Lumber Cost
 lumbercost = 110
 -- Scaling Value
-modelScale = 0.7
+modelScale = 0.85
 -- Selection Scale
 scale = 3.0
 -- Ground Texture
 uberSplat = ""
 -- Upgrades Used
 upgrades = "R013,R03A,Rhac,Rgfo"
+

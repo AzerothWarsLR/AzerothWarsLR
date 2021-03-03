@@ -3,6 +3,7 @@ _parent = "ngrk"
 -- Hit Points Maximum (Base)
 HP = 540
 -- Name
+Name = "Small Crystalline Golem"
 -- Gold Bounty Awarded - Base
 bountyplus = 10
 -- Gold Bounty Awarded - Sides per Die
@@ -15,3 +16,4 @@ green = 100
 level = 3
 -- Attack 1 - Damage Sides per Die
 sides1 = 5
+

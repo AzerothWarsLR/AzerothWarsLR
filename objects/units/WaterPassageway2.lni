@@ -1,6 +1,7 @@
 [n03Q]
 _parent = "nwgt"
 -- Name
+Name = "Water Passageway 2"
 -- Shadow Texture (Building)
 buildingShadow = ""
 -- Model File
@@ -15,3 +16,4 @@ pathTex = ""
 selCircOnWater = 1
 -- Ground Texture
 uberSplat = ""
+

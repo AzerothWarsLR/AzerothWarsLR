@@ -1,0 +1,41 @@
+[hwt3]
+_parent = "hwt3"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Jaina)"
+-- Hit Points Maximum (Base)
+HP = 1250
+-- Name
+Name = "Water Lord Elemental"
+-- Tooltip - Extended
+Ubertip = [=[
+Jaina's personal lord elemental.|n|cfff5962dAbilities:|R Bash|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "ANbh,A00S"
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.2
+-- Defense Base
+def = 3
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Type
+movetp = "amph"
+-- Attack 1 - Range
+rangeN1 = 450
+-- Mana Regeneration
+regenMana = 0.5
+-- Speed Base
+spd = 180
+-- Categorization - Special
+special = 0
+-- Upgrades Used
+upgrades = "R020,R00N,Rhme,Rhar,Rguv"
+

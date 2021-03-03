@@ -1,0 +1,35 @@
+[nnsa]
+_parent = "nnsa"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hotkey
+Hotkey = "S"
+-- Researches Available
+Researches = "R00K,Rnsw"
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00S|r] - Shrine of Azshara"
+-- Units Trained
+Trains = "nnsu,nnsw,nlds"
+-- Tooltip - Extended
+Ubertip = "Trains Naga Sirens, Summoners and Couatl. Also contains spell upgrades for Naga Sirens and Summoners."
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 18
+-- Scaling Value
+modelScale = 0.85
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Repair Time
+reptm = 60
+-- Ground Texture
+uberSplat = ""
+

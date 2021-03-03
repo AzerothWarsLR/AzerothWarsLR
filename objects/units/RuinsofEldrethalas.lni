@@ -1,6 +1,7 @@
 [n03I]
 _parent = "nwgt"
 -- Name
+Name = "Ruins of Eldre'thalas"
 -- Normal
 abilList = "A0A4,Awrp,Avul"
 -- Shadow Texture (Building)
@@ -17,3 +18,4 @@ nbmmIcon = 0
 pathTex = "PathTextures\\StoneWall1Path.tga"
 -- Ground Texture
 uberSplat = ""
+

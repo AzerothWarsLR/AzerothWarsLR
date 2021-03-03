@@ -1,0 +1,49 @@
+[Harf]
+_parent = "Harf"
+-- Agility per Level
+AGIplus = 2.5
+-- Tooltip - Awaken
+Awakentip = "Revive King of Lordaeron"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron-King)"
+-- Hit Points Maximum (Base)
+HP = 400
+-- Intelligence per Level
+INTplus = 2.5
+-- Name
+Name = "King of Lordaeron"
+-- Proper Names
+Propernames = "Arthas Menethil"
+-- Tooltip - Revive
+Revivetip = "Revive King of Lordaeron"
+-- Strength per Level
+STRplus = 3.5
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A04M,ACds,A0C1,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.8
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 31
+-- Model File
+file = "war3mapImported\\ArthasMenethilKingV1.03.mdl"
+-- Hero
+heroAbilList = "A056,A01F,Aamk,A0DM,A06S"
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 19
+-- Speed Base
+spd = 220
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavyBash"
+

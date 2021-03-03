@@ -3,6 +3,7 @@ _parent = "nheb"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Silver Covenant"
 -- Researches Available
 Researches = ""
 -- Revives Dead Heroes
@@ -29,3 +30,4 @@ red = 250
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac"
+

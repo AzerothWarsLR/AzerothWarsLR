@@ -1,0 +1,59 @@
+[u00T]
+_parent = "uabo"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Baron Rivendare)"
+-- Hit Points Maximum (Base)
+HP = 3000
+-- Name
+Name = "Ramstein"
+-- Requirements
+Requires = ""
+-- Normal
+abilList = "A0CH,Aiun,Afzy,ACbh"
+-- Default Active Ability
+auto = "Afzy"
+-- Build Time
+bldtm = 5
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 140
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 24
+-- Gold Cost
+goldcost = 24
+-- Tinting Color 2 (Green)
+green = 150
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.4
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R01D,R01X,Rhme,Rhar,Rupm,Rguv"
+

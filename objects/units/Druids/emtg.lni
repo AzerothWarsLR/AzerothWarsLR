@@ -1,0 +1,59 @@
+[emtg]
+_parent = "emtg"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Brown)"
+-- Hit Points Maximum (Base)
+HP = 1625
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Massive melee unit that can take incredible amounts of punishment.|n|cfff5962dAbilities:|R Taunt, War Club, Eat Tree|n|cfff5962dCan learn:|R Hardened Skin, Resistant Skin|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Ault,A0QA,Atau,Agra,Arsk,Assk,Aien"
+-- Build Time
+bldtm = 5
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 24.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.1
+-- Attack 1 - Damage Base
+dmgplus1 = 32
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 32
+-- Gold Cost
+goldcost = 30
+-- Level
+level = 5
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Hit Points Regeneration Rate
+regenHP = 3.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 5
+-- Selection Scale
+scale = 2.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "Rhme,Rguv,Rhar,Rers,Rehs,Reuv"
+

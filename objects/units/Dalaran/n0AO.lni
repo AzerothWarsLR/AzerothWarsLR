@@ -1,0 +1,39 @@
+[n0AO]
+_parent = "nwgt"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 1500
+-- Hotkey
+Hotkey = "F"
+-- Tooltip - Extended
+Ubertip = "Teleports units to its corresponding Way Gate.|n|n|cff99b4d1Can only build 2."
+-- Normal
+abilList = "Awrp"
+-- Shadow Texture (Building)
+buildingShadow = "ShadowAltarofKings"
+-- Death Type
+deathType = 0
+-- Gold Cost
+goldcost = 150
+-- Lumber Cost
+lumbercost = 200
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = ""
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Race
+race = "human"
+-- Selection Scale
+scale = 3.0
+-- Unit Classification
+type = "mechanical,standon,neutral,sapper"
+-- Ground Texture
+uberSplat = ""
+

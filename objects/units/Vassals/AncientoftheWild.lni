@@ -1,0 +1,77 @@
+[e00Y]
+_parent = "etol"
+-- Name - Editor Suffix
+EditorSuffix = "(vassal)"
+-- Hit Points Maximum (Base)
+HP = 2750
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Ancient of the Wild"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Build - Ancient of the Wild"
+-- Units Trained
+Trains = "ntrh,ntrs,nhyc,earc,nwat,h045,ewsp"
+-- Tooltip - Extended
+Ubertip = "A grand tree and home of the wisps.|n|cfff5962dTrains:|R Wisps|n|cfff5962dResearches:|R Nature's Blessing|n|cfff5962dUpgrades Into:|R Tree of Ages|n|n|cffffcc00Attacks land units.|r"
+-- Upgrades To
+Upgrade = ""
+-- Normal
+abilList = "Aeat,Aro1,Arlm"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Attack 2 - Damage Base
+dmgplus2 = 60
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 50
+-- Repair Lumber Cost
+lumberRep = 200
+-- Lumber Cost
+lumbercost = 60
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Attack 2 - Range
+rangeN2 = 200
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 16
+-- Attack 2 - Damage Sides per Die
+sides2 = 16
+-- Speed Base
+spd = 100
+-- Unit Classification
+type = "townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme"
+

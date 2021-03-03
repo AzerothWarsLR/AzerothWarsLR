@@ -1,0 +1,47 @@
+[h077]
+_parent = "hshy"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElvenShipyardA.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(high elves)"
+-- Hotkey
+Hotkey = "R"
+-- Name
+Name = "Alliance Shipyard"
+-- Researches Available
+Researches = "R06K,R06F,R006,R00C"
+-- Units Sold
+Sellunits = ""
+-- Tooltip - Basic
+Tip = "Build - Alliance Shipyard"
+-- Units Trained
+Trains = "h02C,h060,h005,h04X,hdes,hbsh,hbot"
+-- Tooltip - Extended
+Ubertip = "Boat construction facility for the Alliance.|n|cfff5962dTrains:|R Alliance Transport Ships, Destroyers, Battleships, |cff556b2fArathor|r-Carrier Flagship|R|n|n|cff00c4c4Cannot be built near small inland water areas.|"
+-- Normal
+abilList = "Ane2"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 0
+-- Model File
+file = "war3mapImported\\ShipyardElfNightElfV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 15
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 110
+-- Scaling Value
+modelScale = 0.7
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"
+

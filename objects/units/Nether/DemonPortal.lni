@@ -1,0 +1,25 @@
+[n03C]
+_parent = "nwgt"
+-- Name - Editor Suffix
+EditorSuffix = "(Nether)"
+-- Name
+Name = "Demon Portal"
+-- Normal
+abilList = "A0A4,Awrp,Avul"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Is a Building
+isbldg = 0
+-- Scaling Value
+modelScale = 1.5
+-- Neutral Building - Shows Minimap Icon
+nbmmIcon = 0
+-- Pathing Map
+pathTex = ""
+-- Hit Points Regeneration Rate
+regenHP = 5.0
+-- Ground Texture
+uberSplat = ""
+

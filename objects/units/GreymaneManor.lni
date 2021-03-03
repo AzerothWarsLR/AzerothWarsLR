@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNKeep.blp"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Greymane Manor"
 -- Requirements
 Requires = ""
 -- Researches Available
@@ -79,3 +80,4 @@ unitSound = "Keep"
 upgrades = "Rhac,R013"
 -- Attacks Enabled
 weapsOn = 0
+

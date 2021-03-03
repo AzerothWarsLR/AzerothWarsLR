@@ -3,6 +3,7 @@ _parent = "nfoh"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "The Sunwell"
 -- Tooltip - Basic
 Tip = "Reconstruct the Elven Grand Sunwell."
 -- Units Trained
@@ -49,3 +50,4 @@ type = "ancient,mechanical,neutral"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhac,R013,Rosp,R064,Renb"
+

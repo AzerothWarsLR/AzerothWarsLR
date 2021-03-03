@@ -1,0 +1,73 @@
+[h03X]
+_parent = "hgtw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionGuardTower.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Hotkey
+Hotkey = "Z"
+-- Name
+Name = "Sentinel Tower"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = "h009"
+-- Normal
+abilList = "ACav,ARal,A0GD,A00E,Adts"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.0
+-- Defense Base
+def = 10
+-- Defense Type
+defType = "fort"
+-- Defense Upgrade Bonus
+defUp = 3
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 39
+-- Model File
+file = "war3mapImported\\TowerStormwindV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 50
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 150
+-- Lumber Cost
+lumbercost = 165
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 1.4
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Attack 1 - Range
+rangeN1 = 1100
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 2.0
+-- Repair Time
+reptm = 90
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhme,Rhac,Rgfo"
+

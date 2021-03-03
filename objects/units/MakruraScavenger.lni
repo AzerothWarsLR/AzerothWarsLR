@@ -5,6 +5,7 @@ HP = 900
 -- Hotkey
 Hotkey = "Q"
 -- Name
+Name = "Makrura Scavenger"
 -- Tooltip - Basic
 Tip = "Breed [|cffffcc00Q|r] Makrura Scavenger"
 -- Tooltip - Extended
@@ -35,3 +36,4 @@ spd = 240
 upgrades = "Rhme,Rhar"
 -- Attack 1 - Weapon Sound
 weapType1 = "MetalMediumChop"
+

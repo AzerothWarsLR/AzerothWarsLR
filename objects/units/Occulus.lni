@@ -3,6 +3,7 @@ _parent = "nbzd"
 -- Hit Points Maximum (Base)
 HP = 2000
 -- Name
+Name = "Occulus"
 -- Normal
 abilList = "A00I,AInv,Alit,ACsk"
 -- Normal Skin
@@ -25,3 +26,4 @@ moveHeight = 350.0
 regenMana = 2.0
 -- Selection Scale
 scale = 3.0
+

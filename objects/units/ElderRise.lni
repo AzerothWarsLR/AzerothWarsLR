@@ -9,6 +9,7 @@ Hotkey = "C"
 -- Items Made
 Makeitems = "stwa,vddl,will,I00O,vamp,hslv,phea,pman,stwp,olig"
 -- Name
+Name = "Elder Rise"
 -- Tooltip - Basic
 Tip = "Build - Voodoo Lounge"
 -- Tooltip - Extended
@@ -39,3 +40,4 @@ pathTex = "PathTextures\\8x8SimpleSolid.tga"
 preventPlace = "unwalkable"
 -- Ground Texture
 uberSplat = ""
+

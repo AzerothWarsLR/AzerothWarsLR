@@ -1,0 +1,7 @@
+[now2]
+_parent = "now2"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels-Tyrande)"
+-- Speed Base
+spd = 320
+

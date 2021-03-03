@@ -1,0 +1,55 @@
+[Uear]
+_parent = "Uear"
+-- Starting Agility
+AGI = 24
+-- Agility per Level
+AGIplus = 1.7
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 350
+-- Hotkey
+Hotkey = "Z"
+-- Starting Intelligence
+INT = 21
+-- Name
+Name = "Champion of the Scourge"
+-- Proper Names
+Propernames = "Arthas Menethil"
+-- Requirements
+Requires = "R01K"
+-- Starting Strength
+STR = 29
+-- Strength per Level
+STRplus = 2.8
+-- Tooltip - Basic
+Tip = "Summon Arthas Menethil"
+-- Tooltip - Extended
+Ubertip = "Unholy warrior hero, adept at supporting armies and inflicting magical damage.|n|cfff5962dCan Learn:|R Taste of Death, Soul Drain, Unholy Aura, Reaping Hour|n|n|cff8080ffStarting level:|r 10|n|cffffcc00Attacks land units.|R"
+-- Normal
+abilList = "A08V,A04M,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 5
+-- Collision Size
+collision = 22.0
+-- Attack 1 - Damage Base
+dmgplus1 = 28
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "Aamk,A04L,A052,A10N,A0SC"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 17
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 270
+

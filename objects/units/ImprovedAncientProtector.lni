@@ -9,6 +9,7 @@ HP = 1000
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Improved Ancient Protector"
 -- Tooltip - Basic
 Tip = "Upgrade to Improved Ancient Protector"
 -- Build Time
@@ -55,3 +56,4 @@ type = "sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "R018,R002,Renb,Rhme,Rgfo"
+

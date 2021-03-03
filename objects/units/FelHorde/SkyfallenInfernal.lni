@@ -1,0 +1,61 @@
+[n082]
+_parent = "ninf"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Legion-Juggernaut)"
+-- Hit Points Maximum (Base)
+HP = 900
+-- Hotkey
+Hotkey = "D"
+-- Name
+Name = "Skyfallen Infernal"
+-- Tooltip - Basic
+Tip = "Summon Skyfallen Infernal"
+-- Tooltip - Extended
+Ubertip = "Demonic demon ingulfed in flames.|n|cfff5962dAbilities:|R Permanent Immoliation, Resistant Skin|n|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ANpi,ACrk"
+-- Build Time
+bldtm = 15
+-- Tinting Color 3 (Blue)
+blue = 190
+-- Gold Bounty Awarded - Base
+bountyplus = 35
+-- Collision Size
+collision = 30.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Base
+def = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 39
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 35
+-- Level
+level = 4
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Race
+race = "orc"
+-- Tinting Color 1 (Red)
+red = 160
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 60
+-- Stock Start Delay
+stockStart = 0
+-- Unit Classification
+type = "summoned"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

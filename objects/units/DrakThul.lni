@@ -1,6 +1,7 @@
 [n03Y]
 _parent = "nsrw"
 -- Name
+Name = "Drak'Thul"
 -- Normal
 abilList = "ACad,ACmo,ACdc"
 -- Gold Bounty Awarded - Number of Dice
@@ -21,3 +22,4 @@ fused = 0
 level = 6
 -- Upgrades Used
 upgrades = "R008,Rhme,Rhar,Rugf,R00Q,R00P"
+

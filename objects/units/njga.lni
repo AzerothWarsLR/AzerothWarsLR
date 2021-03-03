@@ -12,3 +12,4 @@ bountyplus = 20
 def = 3
 -- Attack 1 - Damage Base
 dmgplus1 = 42
+

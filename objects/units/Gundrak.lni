@@ -3,6 +3,7 @@ _parent = "ofrt"
 -- Required Animation Names - Attachments
 Attachmentanimprops = ""
 -- Name
+Name = "Gundrak"
 -- Requirements
 Requires = ""
 -- Researches Available
@@ -49,3 +50,4 @@ reptm = 90
 type = "ancient,mechanical"
 -- Ground Texture
 uberSplat = ""
+

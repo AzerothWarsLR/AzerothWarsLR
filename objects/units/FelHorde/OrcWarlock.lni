@@ -1,0 +1,69 @@
+[nchw]
+_parent = "nchw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNChaosWarlockGreen.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Art
+Casterupgradeart = "UI\\Widgets\\Console\\Human\\infocard-shaman.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate, Adept, Master, Grandmaster"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Firebolt,- Firebolt|n- Devour Magic,- Firebolt|n- Devour Magic|n- Unholy Armor,- Firebolt|n- Devour Magic|n- Unholy Armor|n Life Drain"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde)"
+-- Hit Points Maximum (Base)
+HP = 335
+-- Name
+Name = "Orc Warlock"
+-- Tooltip - Basic
+Tip = "Train Orc Warlock"
+-- Tooltip - Extended
+Ubertip = "Vile warlock of the various Outland clans.|n|cfff5962dAbilities:|R Firebolt|n|cfff5962dCan Learn:|R Devour Magic, Unholy Armor, Life Drain  |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0F8,ACdr,Aion,ACfb,A0JI"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "A0F8"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.7
+-- Build Time
+bldtm = 3
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Defense Type
+defType = "none"
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.39
+-- Model File
+file = "units\\creeps\\ChaosWarlockGreen\\ChaosWarlockGreen.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 22
+-- Gold Cost
+goldcost = 19
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 10
+-- Hit Points Regeneration Rate
+regenHP = 0.25
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "R023,R00M,Rguv"
+

@@ -3,6 +3,7 @@ _parent = "hfoo"
 -- Icon - Game Interface
 Art = "UI\\Minimap\\Minimap-Tower"
 -- Name
+Name = "Dummy(Beast Attack)"
 -- Tooltip - Basic
 Tip = ""
 -- Tooltip - Extended
@@ -53,3 +54,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

@@ -1,0 +1,59 @@
+[ndqp]
+_parent = "ndqp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Portal-Eye of Sargeras)"
+-- Name
+Name = "Maiden of Dominance"
+-- Tooltip - Basic
+Tip = "Summon Maiden of Dominance"
+-- Tooltip - Extended
+Ubertip = "Dominatrix of the night sisters.|n|cfff5962dAbilities:|R Control Magic, Charm, Spell Steal|n|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "ACch,A11H,Asps"
+-- Default Active Ability
+auto = "Asps"
+-- Build Time
+bldtm = 10
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Collision Size
+collision = 22.0
+-- Defense Type
+defType = "medium"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 33
+-- Gold Cost
+goldcost = 37
+-- Level
+level = 5
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 1.0
+-- Race
+race = "orc"
+-- Attack 1 - Range
+rangeN1 = 200
+-- Speed Base
+spd = 260
+-- Categorization - Special
+special = 1
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 115
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Type
+weapTp1 = "normal"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalMediumSlice"
+

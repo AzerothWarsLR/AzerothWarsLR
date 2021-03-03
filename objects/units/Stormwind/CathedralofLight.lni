@@ -1,0 +1,61 @@
+[h021]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor)"
+-- Name
+Name = "Cathedral of Light"
+-- Requirements
+Requires = "R022"
+-- Researches Available
+Researches = "R03R,R03P,R02X,R03C,R02W,R03A"
+-- Special
+Specialart = "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl,Objects\\Spawnmodels\\Human\\HCancelDeath\\HCancelDeath.mdl"
+-- Tooltip - Basic
+Tip = ""
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "Avul,AUau,A0K7"
+-- Build Time
+bldtm = 1
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Collision Size
+collision = 144.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Cityscape\\Structures\\Cathedral\\Cathedral.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 150
+-- Repair Lumber Cost
+lumberRep = 150
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unamph"
+-- Tinting Color 1 (Red)
+red = 150
+-- Repair Time
+reptm = 90
+-- Unit Classification
+type = "ancient,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Unit Sound Set
+unitSound = "AltarOfKings"
+-- Upgrades Used
+upgrades = "R013,Rhac,Rgfo"
+

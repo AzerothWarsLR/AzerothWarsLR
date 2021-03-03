@@ -3,6 +3,7 @@ _parent = "uloc"
 -- Hit Points Maximum (Base)
 HP = 100
 -- Name
+Name = "Peasant Converter"
 -- Normal
 abilList = "A04G,Avul,A01G,Aloc"
 -- Acquisition Range
@@ -33,3 +34,4 @@ spd = 522
 unitShadow = ""
 -- Attacks Enabled
 weapsOn = 0
+

@@ -38,3 +38,4 @@ targs1 = "debris,ground,item,nonancient,structure,ward"
 upgrades = "Rhme,Rhar"
 -- Animation - Walk Speed
 walk = 400.0
+

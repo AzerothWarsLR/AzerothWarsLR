@@ -1,0 +1,53 @@
+[h033]
+_parent = "htow"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNElvenTownHall.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'thalas)"
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Steading"
+-- Researches Available
+Researches = ""
+-- Tooltip - Basic
+Tip = "Build Steading"
+-- Units Trained
+Trains = "h022,h019,nbee,hpea"
+-- Tooltip - Extended
+Ubertip = "Main gathering structure.|n|cfff5962dTrains:|R Architect"
+-- Upgrades To
+Upgrade = "h03S"
+-- Normal
+abilList = "Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "war3mapImported\\TownHallElfV1.01.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 200
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.25
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"
+

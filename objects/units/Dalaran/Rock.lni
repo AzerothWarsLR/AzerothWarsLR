@@ -1,0 +1,41 @@
+[h04B]
+_parent = "hwtw"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGolemThunderclap.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Geomancer rock)"
+-- Name
+Name = "Rock"
+-- Upgrades To
+Upgrade = ""
+-- Normal
+abilList = ""
+-- Collision Size
+collision = 40.0
+-- Defense Base
+def = 7
+-- Defense Type
+defType = "fort"
+-- Defense Upgrade Bonus
+defUp = 2
+-- Model File
+file = "Doodads\\LordaeronSummer\\Terrain\\LoardaeronRockChunks\\LoardaeronRockChunks3.mdl"
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Hit Points Regeneration Rate
+regenHP = -15.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 10
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R00N,Rhac,Rgfo"
+

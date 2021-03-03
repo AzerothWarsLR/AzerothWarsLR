@@ -1,0 +1,71 @@
+[h012]
+_parent = "hcth"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron-Demi)"
+-- Hit Points Maximum (Base)
+HP = 1200
+-- Name
+Name = "Captain Falric"
+-- Tooltip - Basic
+Tip = "Revive Captain Falric"
+-- Tooltip - Extended
+Ubertip = "Loyal Captain of Arthas, and his acting right hand. Falric has been with the prince since his youth, and is a strong follower. Him and his friend, Marwyn, are the closest to Arthas."
+-- Normal
+abilList = "A020,A02Y,AInv,A05A,ACrk,A0YO"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.6
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Death Type
+deathType = 0
+-- Defense Base
+def = 4
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Upgrade Amount
+dmgUp1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.6
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 100
+-- Tinting Color 2 (Green)
+green = 188
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 1.2
+-- Tinting Color 1 (Red)
+red = 188
+-- Hit Points Regeneration Rate
+regenHP = 0.5
+-- Mana Regeneration
+regenMana = 0.75
+-- Repair Time
+reptm = 2
+-- Selection Scale
+scale = 0.95
+-- Attack 1 - Damage Sides per Die
+sides1 = 3
+-- Speed Base
+spd = 220
+-- Unit Classification
+type = "giant"
+-- Upgrades Used
+upgrades = "R01N,R00B,Rhar,Rhme,Rhpm,Rguv"
+

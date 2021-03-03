@@ -26,3 +26,4 @@ modelScale = 1.0
 stockRegen = 100
 -- Stock Start Delay
 stockStart = 0
+

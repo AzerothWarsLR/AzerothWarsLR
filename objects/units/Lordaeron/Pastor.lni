@@ -1,0 +1,57 @@
+[n03K]
+_parent = "nchp"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNEmissary.blp"
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNSearingArrows.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate,Adept,Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Cleanse,- Cleanse|n- Renewal,- Cleanse|n- Renewal|n- Light Burst"
+-- Name - Editor Suffix
+EditorSuffix = "(Lordaeron)"
+-- Hit Points Maximum (Base)
+HP = 300
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Pastor"
+-- Tooltip - Basic
+Tip = "Train Pastor"
+-- Tooltip - Extended
+Ubertip = [=[
+Devout believer in the purity of the Light.|n|cfff5962dAbilities:|R Cleanse|n|cfff5962dCan Learn:|R Renewal, Light Burst|n|n|cffffcc00Attacks land and air units.|R
+]=]
+-- Normal
+abilList = "A0CW,A07U,Aihn,A0CX"
+-- Default Active Ability
+auto = ""
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Collision Size
+collision = 10.0
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 15
+-- Lumber Cost
+lumbercost = 0
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 12
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R01N,R00K,Rhpm,R02E,Rguv"
+

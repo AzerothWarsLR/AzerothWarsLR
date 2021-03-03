@@ -1,0 +1,49 @@
+[o030]
+_parent = "ofrt"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "C"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "n086,o01L,n03F,o00E,nina,o01H,o00A,ncpn,opeo"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Peon, Executioner, Fel Death Knight, Infernal Juggernaut |n|cfff5962dAbilities:|R Spiked Barricades, Fel Energy"
+-- Normal
+abilList = "A0PF,Aspi,A0GM,Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\GreatHallFelOrcV1.05.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 160
+-- Repair Lumber Cost
+lumberRep = 200
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 300
+-- Pathing Map
+pathTex = "PathTextures\\10x10SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Mana Regeneration
+regenMana = 2.2
+-- Repair Time
+reptm = 90
+-- Ground Texture
+uberSplat = ""
+

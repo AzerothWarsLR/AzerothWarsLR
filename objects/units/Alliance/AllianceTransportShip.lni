@@ -1,0 +1,47 @@
+[hbot]
+_parent = "hbot"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNAllianceTransporter.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Alliance)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "Q"
+-- Name
+Name = "Alliance Transport Ship"
+-- Tooltip - Basic
+Tip = "Build - Alliance Transport Ship"
+-- Tooltip - Extended
+Ubertip = "A sturdy transport ship capable of carrying units over the sea.|n|n|cff00ffffCan transport 10 units."
+-- Build Time
+bldtm = 10
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 20.0
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 17
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.8
+-- Selection Scale
+scale = 1.8
+-- Speed Base
+spd = 270
+-- Stock Maximum
+stockMax = 1
+-- Upgrades Used
+upgrades = "R01N,R006,Rguv"
+

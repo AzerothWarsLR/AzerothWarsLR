@@ -1,0 +1,55 @@
+[nggr]
+_parent = "nggr"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'thalas)"
+-- Hit Points Maximum (Base)
+HP = 1600
+-- Hotkey
+Hotkey = "W"
+-- Tooltip - Basic
+Tip = "Build Granite"
+-- Tooltip - Extended
+Ubertip = "Extraordinarily powerful construct built and infused with magic.|n|cfff5962dAbilities:|R Hurl Boulder, Spell Immunity, True Sight|n|n|cff99b4d1Can only train 4.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Adtg,ACmi,ACtb"
+-- Build Time
+bldtm = 15
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 24.0
+-- Defense Base
+def = 6
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 0
+-- Gold Cost
+goldcost = 50
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Race
+race = "human"
+-- Repair Time
+reptm = 1
+-- Speed Base
+spd = 200
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

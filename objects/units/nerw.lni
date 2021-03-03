@@ -38,3 +38,4 @@ stockStart = 0
 upgrades = "Rhme,Rhar"
 -- Attack 1 - Weapon Type
 weapTp1 = "missile"
+

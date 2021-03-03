@@ -13,6 +13,7 @@ Missileart_1 = "Abilities\\Spells\\Other\\Volcano\\VolcanoMissile.mdl"
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 700
 -- Name
+Name = "Improved Flame Pillar"
 -- Tooltip - Basic
 Tip = "Upgrade to Improved Flame Pillar"
 -- Tooltip - Extended
@@ -57,3 +58,4 @@ uberSplat = ""
 upgrades = "Rhme,Rosp"
 -- Attacks Enabled
 weapsOn = 1
+

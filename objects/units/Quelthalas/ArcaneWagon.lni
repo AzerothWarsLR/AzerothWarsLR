@@ -1,0 +1,67 @@
+[u00J]
+_parent = "uobs"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBloodElfSupplyWagon.blp"
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Quel'Thalas)"
+-- Hit Points Maximum (Base)
+HP = 875
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\AncestralGuardianMissile\\AncestralGuardianMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 1900
+-- Name
+Name = "Arcane Wagon"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Build Arcane Wagon"
+-- Tooltip - Extended
+Ubertip = "Forged with the Mana infused steel, bleeding excess into the air.|n|cfff5962dAbilities:|R Spirit Touch, Arcane Artillery|n|n|cff99b4d1Can only build 2.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Arpm,A054"
+-- Default Active Ability
+auto = "Arpm"
+-- Build Time
+bldtm = 15
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 22.0
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Model File
+file = "units\\other\\BloodElfWagon\\BloodElfWagon.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 60
+-- Gold Cost
+goldcost = 60
+-- Level
+level = 4
+-- Repair Lumber Cost
+lumberRep = 110
+-- Lumber Cost
+lumbercost = 110
+-- Race
+race = "human"
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Upgrades Used
+upgrades = "Rhme,R008,Rhar,Rguv"
+

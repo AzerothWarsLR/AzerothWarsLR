@@ -1,0 +1,45 @@
+[h055]
+_parent = "hbar"
+-- Name - Editor Suffix
+EditorSuffix = "(Arathor-SI:7 / Champion's Hall)"
+-- Hit Points Maximum (Base)
+HP = 2500
+-- Name
+Name = "Construction Site"
+-- Researches Available
+Researches = "R02U,R02V"
+-- Units Trained
+Trains = ""
+-- Tooltip - Extended
+Ubertip = ""
+-- Build Time
+bldtm = 300
+-- Collision Size
+collision = 75.0
+-- Model File
+file = "Doodads\\Cityscape\\Structures\\CityBuildingSmall135_0_BaseRuin\\CityBuildingSmall135_0_BaseRuin.mdl"
+-- Repair Gold Cost
+goldRep = 0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Scaling Value
+modelScale = 0.7
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = ""
+-- Repair Time
+reptm = 1000
+-- Selection Scale
+scale = 7.0
+-- Targeted as
+targType = "ancient,structure"
+-- Unit Classification
+type = "ancient,mechanical"
+-- Ground Texture
+uberSplat = "HSMA"
+-- Unit Sound Set
+unitSound = "HumanLumberMill"
+-- Upgrades Used
+upgrades = ""
+

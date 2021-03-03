@@ -3,6 +3,7 @@ _parent = "nrwm"
 -- Hit Points Maximum (Base)
 HP = 1950
 -- Name
+Name = "Vaelastrasz"
 -- Normal
 abilList = "A089"
 -- Gold Bounty Awarded - Number of Dice
@@ -15,3 +16,4 @@ bountysides = 0
 mana0 = 200
 -- Mana Maximum
 manaN = 200
+

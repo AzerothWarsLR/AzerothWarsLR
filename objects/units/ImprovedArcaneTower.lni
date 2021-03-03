@@ -1,20 +1,17 @@
-[h07A]
+[h008]
 _parent = "hatw"
 -- Button Position (X)
 Buttonpos_1 = 0
--- Name - Editor Suffix
-EditorSuffix = "(dalaran)"
 -- Hit Points Maximum (Base)
 HP = 1100
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Improved Arcane Tower"
 -- Tooltip - Basic
 Tip = "Upgrade to (|cffffcc00Z|r) Improved Arcane Tower"
 -- Normal
 abilList = "A02T,A00E,Abds,Afbt,AHta,Adts"
--- Required Animation Names
-animProps = "upgrade,fourth"
 -- Attack 1 - Attack Type
 atkType1 = "magic"
 -- Build Time
@@ -29,8 +26,6 @@ def = 6
 dice1 = 2
 -- Attack 1 - Damage Base
 dmgplus1 = 17
--- Model File
-file = "war3mapImported\\TowerDalaranV1.03.mdl"
 -- Repair Gold Cost
 goldRep = 30
 -- Gold Cost
@@ -39,6 +34,8 @@ goldcost = 43
 lumberRep = 100
 -- Lumber Cost
 lumbercost = 135
+-- Scaling Value
+modelScale = 1.1
 -- Placement Requires
 preventPlace = "unwalkable"
 -- Attack 1 - Damage Sides per Die
@@ -49,3 +46,4 @@ type = "mechanical,sapper"
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,R013,Rhac,Rgfo"
+

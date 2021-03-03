@@ -1,0 +1,99 @@
+[e00X]
+_parent = "edot"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNKeeperGhostBlue.blp"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Caster Upgrade Art
+Casterupgradeart = "UI\\Widgets\\Console\\Human\\infocard-priest.blp"
+-- Caster Upgrade Names
+Casterupgradename = ""
+-- Caster Upgrade Tips
+Casterupgradetip = ""
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Druids - Demi)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Hotkey
+Hotkey = "S"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl"
+-- Name
+Name = "Elemental Guardian"
+-- Requirements
+Requires = "R044"
+-- Tooltip - Basic
+Tip = "Revive Elemental Guardian"
+-- Tooltip - Extended
+Ubertip = "A powerful guardian of nature who specializes in spellcasting."
+-- Normal
+abilList = "AInv,A0CN,A076,A0OS,A0OT"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Default Active Ability
+auto = "A076"
+-- Build Time
+bldtm = 60
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 13.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.0
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Model File
+file = "units\\nightelf\\HeroKeeperoftheGroveGhost\\HeroKeeperoftheGroveGhost.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 14
+-- Gold Cost
+goldcost = 100
+-- Level
+level = 6
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 500
+-- Sight Radius (Night)
+nsight = 1000
+-- Priority
+prio = 17
+-- Attack 1 - Range
+rangeN1 = 700
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 2.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Selection Scale
+scale = 1.2
+-- Attack 1 - Damage Sides per Die
+sides1 = 9
+-- Speed Base
+spd = 240
+-- Unit Sound Set
+unitSound = "HeroKeeperOfTheGrove"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

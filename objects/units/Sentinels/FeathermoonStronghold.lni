@@ -1,0 +1,75 @@
+[e00M]
+_parent = "edob"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Hotkey
+Hotkey = "G"
+-- Name
+Name = "Feathermoon Stronghold"
+-- Requirements
+Requires = ""
+-- Researches Available
+Researches = "R013"
+-- Revives Dead Heroes
+Revive = 1
+-- Tooltip - Basic
+Tip = "Build - Feathermoon Stronghold"
+-- Units Trained
+Trains = "h045,h04L,e00N,ewsp"
+-- Tooltip - Extended
+Ubertip = "Stronghold of Sentinel General Shandris Feathermoon"
+-- Normal
+abilList = "A0C9,A0GN,A0HL,Abds"
+-- Tinting Color 3 (Blue)
+blue = 200
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 20
+-- Defense Upgrade Bonus
+defUp = 5
+-- Model File
+file = "buildings\\other\\BarrowDens\\BarrowDens.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 24
+-- Tinting Color 2 (Green)
+green = 100
+-- Repair Lumber Cost
+lumberRep = 300
+-- Lumber Cost
+lumbercost = 125
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.25
+-- Pathing Map
+pathTex = "PathTextures\\4x4SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 120
+-- Unit Classification
+type = "ancient,mechanical"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R064,Rgfo"
+

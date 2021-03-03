@@ -6,3 +6,4 @@ bountyplus = 50
 fused = 0
 -- Attack 1 - Targets Allowed
 targs1 = "air,enemies,ground,hero,structure"
+

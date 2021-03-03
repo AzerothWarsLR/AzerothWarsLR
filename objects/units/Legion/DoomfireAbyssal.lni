@@ -1,0 +1,47 @@
+[n091]
+_parent = "ninf"
+-- Name - Editor Suffix
+EditorSuffix = "(Legion-Archimond-Level 2)"
+-- Hit Points Maximum (Base)
+HP = 1300
+-- Name
+Name = "Doomfire Abyssal"
+-- Normal
+abilList = "ACmi,A04Q,ACrk"
+-- Tinting Color 3 (Blue)
+blue = 130
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 46.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.25
+-- Defense Base
+def = 8
+-- Attack 1 - Damage Base
+dmgplus1 = 51
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 40
+-- Tinting Color 2 (Green)
+green = 180
+-- Level
+level = 5
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.95
+-- Race
+race = "undead"
+-- Selection Scale
+scale = 2.75
+-- Stock Maximum
+stockMax = 2
+-- Stock Replenish Interval
+stockRegen = 60
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

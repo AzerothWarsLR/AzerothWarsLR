@@ -1,6 +1,7 @@
 [n04B]
 _parent = "nwgt"
 -- Name
+Name = "Scholomance Inner"
 -- Normal
 abilList = "A0A4,Awrp,Avul"
 -- Tinting Color 3 (Blue)
@@ -21,3 +22,4 @@ red = 60
 regenHP = 5.0
 -- Ground Texture
 uberSplat = ""
+

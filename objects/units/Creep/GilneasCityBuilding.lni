@@ -1,0 +1,43 @@
+[h059]
+_parent = "hhou"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(Creep - Gilneas)"
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Gilneas City Building"
+-- Tooltip - Basic
+Tip = "Build [|cffffcc00W|r] - Farm"
+-- Normal
+abilList = ""
+-- Collision Size
+collision = 50.0
+-- Model File
+file = "Buildings\\Other\\CityBuildingSmall0_2\\CityBuildingSmall0_2.mdl"
+-- Repair Gold Cost
+goldRep = 5
+-- Gold Cost
+goldcost = 8
+-- Tinting Color 2 (Green)
+green = 200
+-- Repair Lumber Cost
+lumberRep = 15
+-- Scaling Value
+modelScale = 0.5
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 200
+-- Repair Time
+reptm = 30
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"
+

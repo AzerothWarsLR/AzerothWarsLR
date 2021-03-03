@@ -1,0 +1,47 @@
+[n067]
+_parent = "nsbm"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep Skitterweb camp)"
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Normal
+abilList = "A0GT,ACsk,A0GU"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Collision Size
+collision = 28.0
+-- Defense Base
+def = 5
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 45
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 65
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 500
+-- Scaling Value
+modelScale = 1.25
+-- Hit Points Regeneration Rate
+regenHP = 1.5
+-- Mana Regeneration
+regenMana = 2.0
+-- Stock Replenish Interval
+stockRegen = 150
+-- Stock Start Delay
+stockStart = 0
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

@@ -3,6 +3,7 @@ _parent = "nfgt"
 -- Hit Points Maximum (Base)
 HP = 750
 -- Name
+Name = "Small Tentacle"
 -- Tooltip - Extended
 Ubertip = "A mighty tentacle from the depths. |n|n|cffffcc00Attacks land units.|r"
 -- Tinting Color 3 (Blue)
@@ -31,3 +32,4 @@ red = 100
 sides1 = 6
 -- Upgrades Used
 upgrades = "Rhme,Rhar"
+

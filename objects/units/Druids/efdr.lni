@@ -1,0 +1,57 @@
+[efdr]
+_parent = "efdr"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Brown)"
+-- Hit Points Maximum (Base)
+HP = 700
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Anti-caster flying unit. |n|cfff5962dAbilities:|R Phase Shift, Mana Flare|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "Amfl,Apsh,A0OL,Ault"
+-- Build Time
+bldtm = 10
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 26
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 23
+-- Level
+level = 4
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 350
+-- Mana Maximum
+manaN = 350
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 4
+-- Mana Regeneration
+regenMana = 0.85
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Speed Base
+spd = 280
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

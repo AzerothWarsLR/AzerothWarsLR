@@ -1,0 +1,33 @@
+[ucrm]
+_parent = "ucrm"
+-- Name - Editor Suffix
+EditorSuffix = "(Red)"
+-- Hit Points Maximum (Base)
+HP = 900
+-- Requirements
+Requires = ""
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 15.0
+-- Model File
+file = "Doodads\\Barrens\\Rocks\\Geyser\\Geyser0.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 21
+-- Gold Cost
+goldcost = 21
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.55
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Ruwb,Rubu,Rupm,Rguv"
+

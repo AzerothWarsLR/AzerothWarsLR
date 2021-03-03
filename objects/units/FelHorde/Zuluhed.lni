@@ -1,0 +1,73 @@
+[O01Q]
+_parent = "Oths"
+-- Starting Agility
+AGI = 20
+-- Agility per Level
+AGIplus = 1.2
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNecroMagus.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Nek'rosh"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde Vassal)"
+-- Hit Points Maximum (Base)
+HP = 200
+-- Hotkey
+Hotkey = "A"
+-- Starting Intelligence
+INT = 29
+-- Intelligence per Level
+INTplus = 3.2
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl"
+-- Name
+Name = "Chieftain of the Dragonmaw clan"
+-- Proper Names
+Propernames = "Nek'rosh Skullcrusher"
+-- Requirements
+Requires = "R04J,R05L,R04Y"
+-- Tooltip - Revive
+Revivetip = "Revive Nek'rosh"
+-- Starting Strength
+STR = 24
+-- Strength per Level
+STRplus = 1.85
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNNecroMagus.blp"
+-- Tooltip - Basic
+Tip = "Choose Vassal: Nek'rosh"
+-- Tooltip - Extended
+Ubertip = "|cffff0000You will lose your current faction and join Fel Horde as a new small 1 hero faction|r|n|nSpellcaster hero with strong offensive spells. Can train Grunts, Warlocks and Obsidian Drakes.  |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0GK,AInv"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 22.0
+-- Model File
+file = "war3mapImported\\OrcNercroMagus.mdl"
+-- Gold Cost
+goldcost = 0
+-- Hero
+heroAbilList = "AUan,ANsb,Aamk,A02B,A013"
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.9
+-- Type
+movetp = "foot"
+-- Priority
+prio = 20
+-- Speed Base
+spd = 230
+-- Stock Maximum
+stockMax = 1
+-- Stock Replenish Interval
+stockRegen = 0
+-- Unit Sound Set
+unitSound = "PitLord"
+

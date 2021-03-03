@@ -1,0 +1,67 @@
+[ubsp]
+_parent = "ubsp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 950
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Obsidian Destroyer"
+-- Tooltip - Basic
+Tip = "Train Obsidian Destroyer"
+-- Tooltip - Extended
+Ubertip = "Awakened statue of obsidian, and devourer of magic.|n|cfff5962dAbilities:|R Spell Immunity, Devour Magic, Absorb Mana, Orb of Annihilation|n|n|cff99b4d1Can only train 4.|r|n|cffffcc00Attacks land and air units.|r"
+-- Acquisition Range
+acquire = 550.0
+-- Attack 2 - Attack Type
+atkType2 = "magic"
+-- Build Time
+bldtm = 15
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 5
+-- Gold Bounty Awarded - Base
+bountyplus = 16
+-- Transported Size
+cargoSize = 3
+-- Defense Base
+def = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 28
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 135
+-- Gold Cost
+goldcost = 35
+-- Repair Lumber Cost
+lumberRep = 35
+-- Lumber Cost
+lumbercost = 50
+-- Mana Maximum
+manaN = 500
+-- Priority
+prio = 14
+-- Attack 1 - Range
+rangeN1 = 550
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = -4.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Categorization - Special
+special = 0
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,enemies,ground,nonancient,structure,vulnerable"
+-- Attack 2 - Area of Effect Targets
+splashTargs2 = "air,debris,enemies,ground,nonancient,structure,vulnerable"
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,enemies,ground,nonancient,structure,vulnerable"
+-- Attack 2 - Targets Allowed
+targs2 = "air,debris,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rguv,R06N,Rhme,Rhar"
+

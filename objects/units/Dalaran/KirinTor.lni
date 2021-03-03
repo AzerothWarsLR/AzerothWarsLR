@@ -1,0 +1,85 @@
+[n007]
+_parent = "nmed"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran-Elite)"
+-- Hit Points Maximum (Base)
+HP = 600
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 800
+-- Name
+Name = "Kirin Tor"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 100
+-- Tooltip - Basic
+Tip = "Train Kirin Tor"
+-- Tooltip - Extended
+Ubertip = "A powerful mage of Dalaran.|n|cfff5962dAbilities:|R Forked Lightning, Mana Shield, Arcane Combustion|n|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0EI,A07C,A0GK,A0WJ,A00V,A0GG,A0C3,A00I,Aihn,A08P"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.1
+-- Build Time
+bldtm = 30
+-- Tinting Color 3 (Blue)
+blue = 75
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 1
+-- Defense Type
+defType = "medium"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 43
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 45
+-- Gold Cost
+goldcost = 90
+-- Tinting Color 2 (Green)
+green = 75
+-- Level
+level = 7
+-- Mana Initial Amount
+mana0 = 500
+-- Mana Maximum
+manaN = 600
+-- Scaling Value
+modelScale = 0.7
+-- Priority
+prio = 14
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Mana Regeneration
+regenMana = 1.67
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 30
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 220
+-- Unit Classification
+type = "sapper"
+-- Unit Sound Set
+unitSound = ""
+-- Upgrades Used
+upgrades = "R061,R01B,Rhme,Rhar,R00J,R00K,Rhpm,Rguv"
+

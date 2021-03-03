@@ -1,0 +1,57 @@
+[h075]
+_parent = "hatw"
+-- Button Position (X)
+Buttonpos_1 = 0
+-- Name - Editor Suffix
+EditorSuffix = "(high elves)"
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Hotkey
+Hotkey = "Z"
+-- Name
+Name = "Improved Arcane Tower"
+-- Tooltip - Basic
+Tip = "Upgrade to (|cffffcc00Z|r) Improved Arcane Tower"
+-- Normal
+abilList = "A02T,A00E,Abds,Afbt,AHta,Adts"
+-- Required Animation Names
+animProps = "upgrade,first"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Build Time
+bldtm = 25
+-- Collision Size
+collision = 0.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.6
+-- Defense Base
+def = 6
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 17
+-- Model File
+file = "war3mapImported\\ElvenTowerV1.01.mdl"
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 43
+-- Tinting Color 2 (Green)
+green = 200
+-- Repair Lumber Cost
+lumberRep = 100
+-- Lumber Cost
+lumbercost = 135
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Tinting Color 1 (Red)
+red = 200
+-- Attack 1 - Damage Sides per Die
+sides1 = 4
+-- Unit Classification
+type = "mechanical,sapper"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rhme,R013,Rhac,Rgfo"
+

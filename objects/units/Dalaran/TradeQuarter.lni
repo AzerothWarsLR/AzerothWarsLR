@@ -1,0 +1,41 @@
+[h02N]
+_parent = "hlum"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNArcaneLumberMill.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Dalaran)"
+-- Hit Points Maximum (Base)
+HP = 800
+-- Hotkey
+Hotkey = "E"
+-- Name
+Name = "Trade Quarter"
+-- Researches Available
+Researches = "R00K,Rhme,Rhar"
+-- Tooltip - Basic
+Tip = "Build Trade Quarter"
+-- Tooltip - Extended
+Ubertip = "A section of Dalaran dedicated to the production and sale of crafts.|n|cfff5962dResearches: |RForged Weaponry, Armor Plating, Power Infusion|n|n|cffffcc00Can receive Lumber.|R"
+-- Normal
+abilList = "Arlm"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\LumberMillDalaranV1.03.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 17
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\6x6SimpleSolid.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Selection Scale
+scale = 3.0
+-- Ground Texture
+uberSplat = ""
+

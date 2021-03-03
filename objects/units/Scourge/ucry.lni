@@ -1,0 +1,57 @@
+[ucry]
+_parent = "ucry"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 750
+-- Hotkey
+Hotkey = "W"
+-- Requirements
+Requires = ""
+-- Tooltip - Extended
+Ubertip = "Former Nerubian raised for the Scourge.|n|cfff5962dAbilities:|R Burrow|n|cfff5962dCan Learn:|R Web|n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aspa,A0DH,Abur,Aiun"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = ""
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 15.0
+-- Defense Base
+def = 1
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 21
+-- Gold Cost
+goldcost = 18
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.75
+-- Attack 1 - Range
+rangeN1 = 450
+-- Hit Points Regeneration Rate
+regenHP = 1.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 240
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Upgrades Used
+upgrades = "R01D,Rhme,Rhar,Rupm,Rguv"
+

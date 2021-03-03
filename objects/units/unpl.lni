@@ -32,3 +32,4 @@ pathTex = "PathTextures\\10x10SimpleSolid.tga"
 preventPlace = "unwalkable"
 -- Ground Texture
 uberSplat = ""
+

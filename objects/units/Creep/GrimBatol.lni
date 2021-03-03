@@ -1,0 +1,55 @@
+[h01Z]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Creep)"
+-- Name
+Name = "Grim Batol"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "o01L,n086,ncpn"
+-- Normal
+abilList = "A04O,A0CY"
+-- Shadow Texture (Building)
+buildingShadow = ""
+-- Collision Size
+collision = 300.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "Doodads\\Cityscape\\Structures\\CathedralRuined\\CathedralRuined.mdl"
+-- Food Produced
+fmade = 15
+-- Repair Gold Cost
+goldRep = 30
+-- Gold Cost
+goldcost = 106
+-- Repair Lumber Cost
+lumberRep = 120
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 1.15
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "_"
+-- Mana Regeneration
+regenMana = 1.5
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 8.0
+-- Unit Classification
+type = "mechanical"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Rosp,R064,Renb,R013,Rhac,Rgfo"
+

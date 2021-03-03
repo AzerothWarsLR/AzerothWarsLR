@@ -1,0 +1,81 @@
+[h00X]
+_parent = "hcas"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Dark Green)"
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Name
+Name = "Stormwind Keep"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Attack 1 - Range Motion Buffer
+RngBuff1 = 250.0
+-- Units Trained
+Trains = "h05F,hpea,h019"
+-- Normal
+abilList = "ACav,A0GD,Amic,Argl"
+-- Attack 1 - Attack Type
+atkType1 = "pierce"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Collision Size
+collision = 300.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.6
+-- Defense Base
+def = 20
+-- Defense Upgrade Bonus
+defUp = 5
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 60
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.3
+-- Model File
+file = "war3mapImported\\TownHallStormwindV1.02.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 106
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.7
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 20
+-- Attack 1 - Range
+rangeN1 = 800
+-- Mana Regeneration
+regenMana = 1.0
+-- Selection Scale
+scale = 10.0
+-- Attack 1 - Damage Sides per Die
+sides1 = 6
+-- Attack 1 - Maximum Number of Targets
+targCount1 = 1
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"
+-- Attack 1 - Weapon Type
+weapTp1 = "missile"
+

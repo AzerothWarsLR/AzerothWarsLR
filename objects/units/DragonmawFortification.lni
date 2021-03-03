@@ -3,6 +3,7 @@ _parent = "ocbw"
 -- Hit Points Maximum (Base)
 HP = 1500
 -- Name
+Name = "Dragonmaw Fortification"
 -- Normal
 abilList = "A0CF,Abds,Aspi,Abun,Sbtl,Astd,Arbr,Aorb"
 -- Acquisition Range
@@ -41,3 +42,4 @@ sides1 = 10
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rosp,Rhme,Rgfo"
+

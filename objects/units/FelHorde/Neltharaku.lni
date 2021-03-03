@@ -1,0 +1,83 @@
+[n08A]
+_parent = "nbdk"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNetherDragon.blp"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Demi)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Hotkey
+Hotkey = "D"
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathMissile.mdl"
+-- Name
+Name = "Neltharaku"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 200
+-- Requirements
+Requires = "R069"
+-- Tooltip - Basic
+Tip = "Revive Neltharaku"
+-- Tooltip - Extended
+Ubertip = "Patriarch of the Netherwing Flight, Naltharaku struggles to survive in a harsh world that is not of his origin. Enslaved by the remnants of the Dragonmaw Clan, he fights those that his masters deem a threat."
+-- Normal
+abilList = "A0GK,ACrk,A0C2,Advm,A0JS,Adtg"
+-- Attack 1 - Attack Type
+atkType1 = "hero"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.5
+-- Tinting Color 3 (Blue)
+blue = 100
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 42
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.4
+-- Model File
+file = "units\\creeps\\NetherDragon\\NetherDragon.mdl"
+-- Food Cost
+fused = 0
+-- Gold Cost
+goldcost = 150
+-- Tinting Color 2 (Green)
+green = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.5
+-- Priority
+prio = 7
+-- Race
+race = "orc"
+-- Tinting Color 1 (Red)
+red = 200
+-- Mana Regeneration
+regenMana = 0.5
+-- Selection Scale
+scale = 2.3
+-- Speed Base
+spd = 270
+-- Categorization - Special
+special = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Unit Classification
+type = "giant"
+-- Unit Sound Set
+unitSound = "NetherDragon"
+-- Upgrades Used
+upgrades = "Rguv,Rhme,Rhar"
+

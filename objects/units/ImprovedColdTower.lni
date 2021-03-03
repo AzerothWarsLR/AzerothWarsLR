@@ -7,6 +7,7 @@ HP = 1150
 -- Attack 1 - Area of Effect (Medium Damage)
 Harea1 = 100
 -- Name
+Name = "Improved Cold Tower"
 -- Normal
 abilList = "A05L"
 -- Attack 1 - Cooldown Time
@@ -27,3 +28,4 @@ sides1 = 6
 uberSplat = ""
 -- Upgrades Used
 upgrades = "Rhme,Rhac"
+

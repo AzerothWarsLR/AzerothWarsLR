@@ -19,6 +19,7 @@ Missileart_1 = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl"
 -- Attack 1 - Projectile Speed
 Missilespeed_1 = 1800
 -- Name
+Name = "Obsidian Destroyer"
 -- Proper Names
 Propernames = "Moam"
 -- Requirements - Tier 2
@@ -71,3 +72,4 @@ teamColor = 16
 type = ""
 -- Unit Sound Set
 unitSound = "ObsidianDestroyer"
+

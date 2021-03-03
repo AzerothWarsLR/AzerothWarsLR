@@ -3,6 +3,7 @@ _parent = "ofrt"
 -- Icon - Game Interface
 Art = "ReplaceableTextures\\CommandButtons\\BTNStronghold.blp"
 -- Name
+Name = "Zeth'Gor Stronghold"
 -- Researches Available
 Researches = ""
 -- Units Trained
@@ -53,3 +54,4 @@ teamColor = 12
 type = "ancient,mechanical,townhall"
 -- Ground Texture
 uberSplat = ""
+

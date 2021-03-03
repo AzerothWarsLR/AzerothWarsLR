@@ -1,0 +1,23 @@
+[uktg]
+_parent = "uktg"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Ghost)"
+-- Normal
+abilList = "Avul,Agho"
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Scaling Value
+modelScale = 0.85
+-- Type
+movetp = "amph"
+-- Mana Regeneration
+regenMana = 0.0
+-- Selection Scale
+scale = 1.4
+

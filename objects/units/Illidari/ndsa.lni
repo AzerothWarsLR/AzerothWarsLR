@@ -1,0 +1,65 @@
+[ndsa]
+_parent = "ndsa"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hit Points Maximum (Base)
+HP = 1900
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 100
+-- Hotkey
+Hotkey = "E"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 150
+-- Tooltip - Basic
+Tip = "Train Salamander (|cffffff00E|r)"
+-- Tooltip - Extended
+Ubertip = "Heavy ranged unit that hurls bolts of lightning. Can cast the Static Storm ability.|n|n|cff99b4d1Can only train 2.|r|n|cffffcc00Attacks land and air units.|r"
+-- Acquisition Range
+acquire = 1100.0
+-- Build Time
+bldtm = 60
+-- Tinting Color 3 (Blue)
+blue = 150
+-- Gold Bounty Awarded - Base
+bountyplus = 20
+-- Collision Size
+collision = 26.0
+-- Attack 1 - Cooldown Time
+cool1 = 3.4
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 108
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 80
+-- Tinting Color 2 (Green)
+green = 150
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 1.1
+-- Race
+race = "naga"
+-- Attack 1 - Range
+rangeN1 = 1100
+-- Tinting Color 1 (Red)
+red = 150
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,enemies,ground,item,structure,ward"
+-- Team Color
+teamColor = 7
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

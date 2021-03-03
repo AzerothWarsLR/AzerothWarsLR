@@ -1,0 +1,49 @@
+[h06K]
+_parent = "htow"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionTownHall.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(stormwind)"
+-- Hotkey
+Hotkey = "Q"
+-- Researches Available
+Researches = ""
+-- Units Trained
+Trains = "h022,h019,nbee,hpea"
+-- Tooltip - Extended
+Ubertip = "Primary structure, used to train workers and gather resources.|n|cfff5962dTrains:|R Peasant |n|cfff5962dAbilities:|R Call to Arms|n|cfff5962dUpgrades to:|R Keep"
+-- Upgrades To
+Upgrade = "h06M"
+-- Normal
+abilList = "Amic,Argl"
+-- Build Time
+bldtm = 50
+-- Collision Size
+collision = 0.0
+-- Defense Upgrade Bonus
+defUp = 3
+-- Model File
+file = "war3mapImported\\TownHallStormwindV1.02.mdl"
+-- Food Produced
+fmade = 10
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 25
+-- Repair Lumber Cost
+lumberRep = 200
+-- Scaling Value
+modelScale = 0.85
+-- Pathing Map
+pathTex = "PathTextures\\10x10Simple.tga"
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 4.25
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "R013,R03A,Rhac,Rgfo"
+

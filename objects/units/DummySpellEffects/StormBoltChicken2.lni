@@ -1,0 +1,35 @@
+[n009]
+_parent = "nech"
+-- Name - Editor Suffix
+EditorSuffix = "(Dummy for triggers/spells)"
+-- Name
+Name = "Storm Bolt Chicken 2"
+-- Normal
+abilList = ""
+-- Collision Size
+collision = 0.0
+-- Death Type
+deathType = 2
+-- Model File
+file = "0.mdl"
+-- Mana Initial Amount
+mana0 = 2000
+-- Mana Maximum
+manaN = 2000
+-- Speed Minimum
+minSpd = 0
+-- Type
+movetp = "fly"
+-- Selection Scale
+scale = 0.0
+-- Has Water Shadow
+shadowOnWater = 0
+-- Speed Base
+spd = 0
+-- Turn Rate
+turnRate = 3.0
+-- Unit Classification
+type = "sapper"
+-- Shadow Image (Unit)
+unitShadow = ""
+

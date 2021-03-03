@@ -1,0 +1,25 @@
+[nbfl]
+_parent = "nbfl"
+-- Name - Editor Suffix
+EditorSuffix = "(Bloodpact)"
+-- Hit Points Maximum (Base)
+HP = 5000
+-- Normal
+abilList = ""
+-- Repair Gold Cost
+goldRep = 30
+-- Hide Minimap Display
+hideOnMinimap = 1
+-- Scaling Value
+modelScale = 0.85
+-- Sight Radius (Night)
+nsight = 100
+-- Pathing Map
+pathTex = "PathTextures\\8x8SimpleSolid.tga"
+-- Repair Time
+reptm = 50
+-- Sight Radius (Day)
+sight = 100
+-- Ground Texture
+uberSplat = ""
+

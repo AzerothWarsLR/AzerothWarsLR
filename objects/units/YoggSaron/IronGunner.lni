@@ -1,0 +1,69 @@
+[h05L]
+_parent = "hrif"
+-- Name - Editor Suffix
+EditorSuffix = "(yogg)"
+-- Hit Points Maximum (Base)
+HP = 735
+-- Hotkey
+Hotkey = "W"
+-- Name
+Name = "Iron Gunner"
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train Iron Gunner"
+-- Tooltip - Extended
+Ubertip = "Armed with vast technological superior rifles, they defend Uldular's airspace.|n|cfff5962dAbilities:|R Ensare |n|n|cffffcc00Attacks land and air units.|n"
+-- Normal
+abilList = "Aens,Aihn"
+-- Build Time
+bldtm = 3
+-- Tinting Color 3 (Blue)
+blue = 111
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 3
+-- Gold Bounty Awarded - Base
+bountyplus = 5
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 1
+-- Categorization - Campaign
+campaign = 1
+-- Collision Size
+collision = 12.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.6
+-- Defense Base
+def = 4
+-- Attack 1 - Damage Base
+dmgplus1 = 29
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 20
+-- Gold Cost
+goldcost = 17
+-- Tinting Color 2 (Green)
+green = 111
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 4
+-- Race
+race = "nightelf"
+-- Tinting Color 1 (Red)
+red = 120
+-- Hit Points Regeneration Rate
+regenHP = 0.0
+-- Repair Time
+reptm = 3
+-- Speed Base
+spd = 220
+-- Unit Classification
+type = "mechanical"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+

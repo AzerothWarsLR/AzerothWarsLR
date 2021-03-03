@@ -1,12 +1,13 @@
-[h06Q]
+[h06O]
 _parent = "hfoo"
 -- Name - Editor Suffix
-EditorSuffix = "(War Stomp)"
+EditorSuffix = " (Consecration)"
 -- Hit Points Maximum (Base)
 HP = 100000
 -- Hotkey
 Hotkey = ""
 -- Name
+Name = "Effect"
 -- Tooltip - Basic
 Tip = ""
 -- Tooltip - Extended
@@ -28,7 +29,7 @@ collision = 0.0
 -- Death Time (seconds)
 death = 0.1
 -- Model File
-file = "Abilities\\Spells\\Orc\\WarStomp\\WarStompCaster.mdl"
+file = "war3mapImported\\TheHolyBomb.mdl"
 -- Food Cost
 fused = 0
 -- Repair Gold Cost
@@ -65,3 +66,4 @@ unitSound = ""
 upgrades = ""
 -- Attacks Enabled
 weapsOn = 0
+

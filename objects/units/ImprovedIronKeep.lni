@@ -27,6 +27,7 @@ Missileart_2 = "Abilities\\Weapons\\BoatMissile\\BoatMissile.mdl"
 -- Attack 2 - Projectile Speed
 Missilespeed_2 = 2000
 -- Name
+Name = "Improved Iron Keep"
 -- Attack 1 - Area of Effect (Small Damage)
 Qarea1 = 0
 -- Attack 2 - Area of Effect (Small Damage)
@@ -89,3 +90,4 @@ upgrades = "Rhme,Rosp"
 weapTp1 = "missile"
 -- Attack 2 - Weapon Type
 weapTp2 = "artillery"
+

@@ -1,7 +1,9 @@
 [u00O]
 _parent = "uloc"
 -- Name
+Name = "Banshee Spirits"
 -- Model File
 file = "Abilities\\Spells\\Undead\\Possession\\PossessionMissile.mdl"
 -- Race
 race = "orc"
+

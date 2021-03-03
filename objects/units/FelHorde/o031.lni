@@ -1,0 +1,31 @@
+[o031]
+_parent = "ofor"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNFelOrcLumberMill.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(fel horde)"
+-- Hotkey
+Hotkey = "E"
+-- Researches Available
+Researches = "R023,Rhme,Rhar,Rosp,Rorb"
+-- Tooltip - Extended
+Ubertip = "Resource harvesting center and producer of Horde enhancements. |n|cfff5962dResearches:|R Weapon Upgdrades, Armor Upgrades, Reinforced Defenses, Spiked Barricades, Spiritual Infusion|n|n|cffffcc00Can receive Lumber.|R"
+-- Build Time
+bldtm = 30
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\WarMillFelOrcV1.02.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 20
+-- Scaling Value
+modelScale = 0.8
+-- Placement Requires
+preventPlace = "unwalkable"
+-- Priority
+prio = 15
+-- Ground Texture
+uberSplat = ""
+

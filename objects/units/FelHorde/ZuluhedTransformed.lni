@@ -1,0 +1,75 @@
+[O027]
+_parent = "Orkn"
+-- Starting Agility
+AGI = 21
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp"
+-- Tooltip - Awaken
+Awakentip = "Revive Zuluhed"
+-- Button Position (X)
+Buttonpos_1 = 2
+-- Button Position (Y)
+Buttonpos_2 = 2
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Zuluhed Ult Form)"
+-- Hit Points Maximum (Base)
+HP = 1100
+-- Hotkey
+Hotkey = "C"
+-- Starting Intelligence
+INT = 19
+-- Intelligence per Level
+INTplus = 3.0
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl"
+-- Name
+Name = "Chieftan of the Dragonmaw Clan"
+-- Primary Attribute
+Primary = "INT"
+-- Proper Names
+Propernames = "Zuluhed The Whacked"
+-- Tooltip - Revive
+Revivetip = "Revive Zuluhed"
+-- Starting Strength
+STR = 18
+-- Strength per Level
+STRplus = 2.33
+-- Icon - Score Screen
+ScoreScreenIcon = "UI\\Glues\\ScoreScreen\\scorescreen-hero-guldan.blp"
+-- Tooltip - Basic
+Tip = "Revive |cffffcc00Z|ruluhed the Whacked"
+-- Tooltip - Extended
+Ubertip = "Powerful Shaman of the Old Horde, can cast chain heal, Bloodlust totem, and Summon Nether Dragons. |n|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "A0Q8,A0Q7,A0Q3,A0Q1,A0GK,A0FI,AInv"
+-- Build Time
+bldtm = 13
+-- Tinting Color 3 (Blue)
+blue = 50
+-- Collision Size
+collision = 20.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.5
+-- Defense Base
+def = 5
+-- Attack 1 - Damage Base
+dmgplus1 = 10
+-- Model File
+file = "Units\\Creeps\\HeroFlameLord\\HeroFlameLord.mdl"
+-- Tinting Color 2 (Green)
+green = 55
+-- Hero
+heroAbilList = "Aamk"
+-- Scaling Value
+modelScale = 1.1
+-- Priority
+prio = 20
+-- Attack 1 - Range
+rangeN1 = 700
+-- Hit Points Regeneration Rate
+regenHP = 15.0
+-- Speed Base
+spd = 220
+-- Unit Sound Set
+unitSound = "HeroFireLord"
+

@@ -1,0 +1,17 @@
+[ncgb]
+_parent = "ncgb"
+-- Name - Editor Suffix
+EditorSuffix = "(level 1)"
+-- Hit Points Maximum (Base)
+HP = 450
+-- Collision Size
+collision = 14.0
+-- Attack 1 - Cooldown Time
+cool1 = 0.9
+-- Attack 1 - Damage Base
+dmgplus1 = 21
+-- Scaling Value
+modelScale = 0.9
+-- Priority
+prio = 2
+

@@ -1,0 +1,37 @@
+[Uktl]
+_parent = "Uktl"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge-Lich)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Hotkey
+Hotkey = "S"
+-- Name
+Name = "Archlich of the Scourge"
+-- Starting Strength
+STR = 15
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A00J,AInv"
+-- Acquisition Range
+acquire = 900.0
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 20.0
+-- Hero
+heroAbilList = "Aamk,AUfn,AUdr,AUan,AUdd"
+-- Scaling Value
+modelScale = 1.1
+-- Priority
+prio = 18
+-- Speed Base
+spd = 220
+-- Upgrades Used
+upgrades = "R01D,R00Q"
+

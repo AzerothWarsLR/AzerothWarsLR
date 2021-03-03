@@ -12,3 +12,4 @@ def = 5
 defUp = 6
 -- Attack 1 - Damage Base
 dmgplus1 = 43
+

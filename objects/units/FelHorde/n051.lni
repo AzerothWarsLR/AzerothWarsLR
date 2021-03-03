@@ -1,0 +1,63 @@
+[n051]
+_parent = "nndr"
+-- Name - Editor Suffix
+EditorSuffix = "(Fel Horde-Unused?)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 50
+-- Hit Points Maximum (Base)
+HP = 1500
+-- Tooltip - Basic
+Tip = "Train Nether Dragon"
+-- Tooltip - Extended
+Ubertip = "Enslaved dragon from Outland.|n|cfff5962dAbilities:|R Chain of Void, Netherwing Protection|n|n|cffd45e19Greater Demon|r|n|cff99b4d1Can only summon 4.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = ""
+-- Build Time
+bldtm = 60
+-- Gold Bounty Awarded - Base
+bountyplus = 100
+-- Attack 1 - Cooldown Time
+cool1 = 2.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.0
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "small"
+-- Attack 1 - Damage Base
+dmgplus1 = 50
+-- Model File
+file = "OnyxNetherDrake.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 500
+-- Gold Cost
+goldcost = 125
+-- Level
+level = 7
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 150
+-- Race
+race = "orc"
+-- Animation - Run Speed
+run = 500.0
+-- Speed Base
+spd = 220
+-- Categorization - Special
+special = 1
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "enemies,ground"
+-- Stock Replenish Interval
+stockRegen = 140
+-- Stock Start Delay
+stockStart = 0
+-- Attack 1 - Targets Allowed
+targs1 = "debris,enemies,ground,item,nonancient,structure,ward"
+-- Upgrades Used
+upgrades = "Rhme,Rhar,Rguv"
+-- Animation - Walk Speed
+walk = 500.0
+

@@ -1,0 +1,61 @@
+[H03E]
+_parent = "Hvsh"
+-- Starting Agility
+AGI = 35
+-- Agility per Level
+AGIplus = 3.2
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Naga)"
+-- Hit Points Maximum (Base)
+HP = 500
+-- Starting Intelligence
+INT = 35
+-- Attack 1 - Projectile Art
+Missileart_1 = ""
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 0
+-- Name
+Name = "Empress of Nazjatar"
+-- Proper Names
+Propernames = "Queen Azshara"
+-- Starting Strength
+STR = 25
+-- Strength per Level
+STRplus = 2.4
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp"
+-- Normal
+abilList = "A0V8,AInv"
+-- Build Time
+bldtm = 13
+-- Collision Size
+collision = 18.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.3
+-- Attack 1 - Damage Base
+dmgplus1 = 25
+-- Model File
+file = "HeroNagaEnchantress.mdl"
+-- Hero
+heroAbilList = "A02K,A0PD,AEsf,Aamk,AHhb"
+-- Lumber Cost
+lumbercost = 200
+-- Scaling Value
+modelScale = 1.1
+-- Priority
+prio = 19
+-- Attack 1 - Range
+rangeN1 = 150
+-- Speed Base
+spd = 220
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,structure,ward"
+-- Team Color
+teamColor = 9
+-- Attack 1 - Weapon Type
+weapTp1 = "normal"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalHeavySlice"
+

@@ -1,0 +1,61 @@
+[h01O]
+_parent = "hcas"
+-- Name - Editor Suffix
+EditorSuffix = "(Khaz Modan)"
+-- Name
+Name = "Shadowforge City"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Special
+Specialart = ""
+-- Units Trained
+Trains = "h019,h01L,hpea"
+-- Normal
+abilList = "A0CY,A0K5,Argl"
+-- Tinting Color 3 (Blue)
+blue = 100
+-- AI Placement Radius
+buffRadius = 0.0
+-- AI Placement Type
+buffType = ""
+-- Collision Size
+collision = 0.0
+-- Defense Base
+def = 10
+-- Defense Upgrade Bonus
+defUp = 3
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 40
+-- Gold Cost
+goldcost = 106
+-- Tinting Color 2 (Green)
+green = 70
+-- Repair Lumber Cost
+lumberRep = 150
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 1.1
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Placement Requires
+preventPlace = ""
+-- Tinting Color 1 (Red)
+red = 50
+-- Mana Regeneration
+regenMana = 2.2
+-- Repair Time
+reptm = 90
+-- Selection Scale
+scale = 6.0
+-- Unit Classification
+type = "mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+

@@ -3,6 +3,7 @@ _parent = "nwgt"
 -- Hit Points Maximum (Base)
 HP = 200000
 -- Name
+Name = "Dark Portal"
 -- Normal
 abilList = "A01M,A023,Awrp,Avul"
 -- Model File
@@ -21,3 +22,4 @@ regenType = "always"
 scale = 3.0
 -- Ground Texture
 uberSplat = ""
+

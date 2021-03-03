@@ -5,6 +5,7 @@ Art = "ReplaceableTextures\\CommandButtons\\BTNDwarvenWarrior.blp"
 -- Description
 Description = ""
 -- Name
+Name = "Thandol Span Engineer"
 -- Items Sold
 Sellitems = "I020"
 -- Tooltip - Basic
@@ -21,3 +22,4 @@ nbmmIcon = 0
 pathTex = ""
 -- Ground Texture
 uberSplat = ""
+

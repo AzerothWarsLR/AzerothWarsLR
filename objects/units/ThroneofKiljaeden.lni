@@ -3,6 +3,7 @@ _parent = "oalt"
 -- Hit Points Maximum (Base)
 HP = 2500
 -- Name
+Name = "Throne of Kil'jaeden"
 -- Revives Dead Heroes
 Revive = 0
 -- Tooltip - Basic
@@ -41,3 +42,4 @@ reptm = 90
 uberSplat = ""
 -- Upgrades Used
 upgrades = ""
+

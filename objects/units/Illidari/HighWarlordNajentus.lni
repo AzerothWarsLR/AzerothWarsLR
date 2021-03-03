@@ -1,0 +1,61 @@
+[n052]
+_parent = "nnrg"
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Dependency Equivalents
+DependencyOr = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Illidari)"
+-- Hit Points Maximum (Base)
+HP = 1750
+-- Hotkey
+Hotkey = "A"
+-- Name
+Name = "High Warlord Naj'entus"
+-- Tooltip - Basic
+Tip = "Revive Naj'entus"
+-- Tooltip - Extended
+Ubertip = ""
+-- Normal
+abilList = "A0KY,ANbh,Asb2,ACcv,A0EG,AInv,ACsk"
+-- Build Time
+bldtm = 60
+-- Collision Size
+collision = 22.0
+-- Death Type
+deathType = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Base
+dmgplus1 = 75
+-- Model File
+file = "LordNajentusEars.mdl"
+-- Food Cost
+fused = 0
+-- Repair Gold Cost
+goldRep = 50
+-- Gold Cost
+goldcost = 100
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 0.95
+-- Priority
+prio = 16
+-- Mana Regeneration
+regenMana = 1.0
+-- Repair Time
+reptm = 40
+-- Speed Base
+spd = 240
+-- Unit Classification
+type = "giant"
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+

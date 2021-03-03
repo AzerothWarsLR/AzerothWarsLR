@@ -1,0 +1,45 @@
+[Udea]
+_parent = "Udea"
+-- Starting Agility
+AGI = 14
+-- Agility per Level
+AGIplus = 3.0
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNDarionDeathKnight.blp"
+-- Name - Editor Suffix
+EditorSuffix = "(Scourge)"
+-- Hit Points Maximum (Base)
+HP = 350
+-- Intelligence per Level
+INTplus = 2.1
+-- Name
+Name = "Highlord of the Ebon Blade"
+-- Proper Names
+Propernames = "Darion Mograine"
+-- Starting Strength
+STR = 27
+-- Strength per Level
+STRplus = 3.2
+-- Icon - Score Screen
+ScoreScreenIcon = "ReplaceableTextures\\CommandButtons\\BTNDarionDeathKnight.blp"
+-- Normal
+abilList = "A0YZ,A0Z0,AInv"
+-- Tinting Color 3 (Blue)
+blue = 144
+-- Categorization - Campaign
+campaign = 1
+-- Attack 1 - Damage Base
+dmgplus1 = 20
+-- Model File
+file = "units\\creeps\\LordGarithos\\LordGarithos.mdl"
+-- Tinting Color 2 (Green)
+green = 124
+-- Hero
+heroAbilList = "A0Z2,A0Z1,A0SC,Aamk,AHre"
+-- Scaling Value
+modelScale = 1.15
+-- Priority
+prio = 19
+-- Tinting Color 1 (Red)
+red = 124
+

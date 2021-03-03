@@ -1,16 +1,15 @@
-[u009]
+[ushp]
 _parent = "ushp"
 -- Button Position (X)
 Buttonpos_1 = 3
--- Name - Editor Suffix
-EditorSuffix = "(Legion)"
 -- Hit Points Maximum (Base)
 HP = 1200
 -- Hotkey
 Hotkey = "R"
 -- Name
+Name = "Haunted Harbor"
 -- Researches Available
-Researches = "R01D,R006,R00C"
+Researches = "R006,R00C"
 -- Units Sold
 Sellunits = ""
 -- Tooltip - Basic
@@ -18,7 +17,7 @@ Tip = "Summon Haunted Harbor"
 -- Units Trained
 Trains = "uubs,ubot,udes"
 -- Tooltip - Extended
-Ubertip = "Boat construction facility for the legion.|n|cfff5962dTrains:|R Haunted Transport Ships, Corsairs, Dreadnoughts|R|n|n|cff00c4c4Cannot be built near small inland water areas.|r"
+Ubertip = "Boat construction facility for the Evil factions.|n|cfff5962dTrains:|R Haunted Transport Ships, Corsairs, Dreadnoughts|R|n|n|cff00c4c4Cannot be built near small inland water areas.|r"
 -- Normal
 abilList = "Ane2"
 -- Build Time
@@ -27,14 +26,10 @@ bldtm = 30
 campaign = 0
 -- Defense Base
 def = 5
--- Model File
-file = "war3mapImported\\ShipyardDemonV2.00.mdl"
 -- Repair Gold Cost
-goldRep = 13
+goldRep = 20
 -- Gold Cost
 goldcost = 20
--- Repair Lumber Cost
-lumberRep = 50
 -- Lumber Cost
 lumbercost = 110
 -- Scaling Value
@@ -45,3 +40,4 @@ pathTex = "PathTextures\\6x6SimpleSolid.tga"
 type = "mechanical,sapper,undead"
 -- Ground Texture
 uberSplat = ""
+

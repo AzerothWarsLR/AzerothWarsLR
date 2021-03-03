@@ -1,0 +1,119 @@
+[e018]
+_parent = "edcm"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNTreant.blp"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Druid Sentinel form)"
+-- Attack 1 - Area of Effect (Full Damage)
+Farea1 = 25
+-- Hit Points Maximum (Base)
+HP = 1025
+-- Attack 1 - Area of Effect (Medium Damage)
+Harea1 = 30
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Arc
+Missilearc_1 = 0.25
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl"
+-- Attack 1 - Projectile Speed
+Missilespeed_1 = 700
+-- Name
+Name = "Siege Ancient"
+-- Attack 1 - Area of Effect (Small Damage)
+Qarea1 = 90
+-- Requirements
+Requires = ""
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00W|r] - Druid of the Claw"
+-- Tooltip - Extended
+Ubertip = "Heavy melee unit with Roar, Animal Fury and Mighty Bash. Can learn Ferocious Strikes."
+-- Normal
+abilList = "Aien,A113"
+-- Acquisition Range
+acquire = 1100.0
+-- Required Animation Names
+animProps = "alternate"
+-- Armor Type
+armor = "Stone"
+-- Attack 1 - Attack Type
+atkType1 = "siege"
+-- Default Active Ability
+auto = "A0CR"
+-- Build Time
+bldtm = 3
+-- Collision Size
+collision = 16.0
+-- Attack 1 - Cooldown Time
+cool1 = 2.5
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 1
+-- Attack 1 - Damage Number of Dice
+dice1 = 3
+-- Attack 1 - Damage Base
+dmgplus1 = 89
+-- Model File
+file = "buildings\\nightelf\\AncientProtector\\AncientProtector.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 18
+-- Gold Cost
+goldcost = 30
+-- Is a Building
+isbldg = 1
+-- Projectile Launch - X
+launchX = -50.0
+-- Projectile Launch - Z
+launchZ = 200.0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 0
+-- Mana Maximum
+manaN = 0
+-- Speed Maximum
+maxSpd = 1
+-- Speed Minimum
+minSpd = 1
+-- Scaling Value
+modelScale = 0.9
+-- Attack 1 - Range
+rangeN1 = 1200
+-- Hit Points Regeneration Rate
+regenHP = 2.5
+-- Mana Regeneration
+regenMana = 0.0
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Selection Scale
+scale = 1.9
+-- Attack 1 - Damage Sides per Die
+sides1 = 10
+-- Speed Base
+spd = 1
+-- Attack 1 - Area of Effect Targets
+splashTargs1 = "air,debris,ground,item,structure,ward"
+-- Attack 1 - Targets Allowed
+targs1 = "air,debris,ground,item,structure,ward"
+-- Turn Rate
+turnRate = 0.1
+-- Unit Classification
+type = "mechanical"
+-- Unit Sound Set
+unitSound = "AncientProtector"
+-- Upgrades Used
+upgrades = "Rguv,Rhar,R002,Rhme"
+-- Attack 1 - Weapon Type
+weapTp1 = "msplash"
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+

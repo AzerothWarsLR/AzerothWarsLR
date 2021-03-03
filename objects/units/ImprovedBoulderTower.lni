@@ -5,6 +5,7 @@ HP = 1150
 -- Hotkey
 Hotkey = "Z"
 -- Name
+Name = "Improved Boulder Tower"
 -- Tooltip - Basic
 Tip = "Upgrade to Improved Boulder Tower"
 -- Tooltip - Extended
@@ -43,3 +44,4 @@ uberSplat = ""
 upgrades = "Rhme,Rosp"
 -- Attacks Enabled
 weapsOn = 1
+

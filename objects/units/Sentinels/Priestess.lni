@@ -1,0 +1,93 @@
+[e006]
+_parent = "earc"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNNightElfRunner.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Caster Upgrade Art
+Casterupgradeart = "ReplaceableTextures\\CommandButtons\\BTNScepterOfMastery.blp"
+-- Caster Upgrade Names
+Casterupgradename = "Initiate, Adept, Master"
+-- Caster Upgrade Tips
+Casterupgradetip = "- Heal,- Heal|n- Dispel Magic,- Heal|n- Dispel Magic- Light Burst"
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinels)"
+-- Hit Points Maximum (Base)
+HP = 310
+-- Hotkey
+Hotkey = "W"
+-- Attack 1 - Projectile Homing Enabled
+MissileHoming_1 = 1
+-- Attack 1 - Projectile Art
+Missileart_1 = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl"
+-- Name
+Name = "Priestess"
+-- Tooltip - Basic
+Tip = "Train - Priestess"
+-- Tooltip - Extended
+Ubertip = "Divine priestess of Elune.|n|cfff5962dAbilities:|r Heal, Elune's Grace|n|cfff5962dCan Learn:|R Dispel Magic, Light Burst, Wind Walk|n|n|cffffcc00Attacks land and air units.|R"
+-- Normal
+abilList = "S003,A07H,A0ED,ANwk,Adsm,A11A,Aien,Ault,Aegr"
+-- Attack 1 - Attack Type
+atkType1 = "magic"
+-- Default Active Ability
+auto = "A0ED"
+-- Attack 1 - Animation Backswing Point
+backSw1 = 0.3
+-- Build Time
+bldtm = 3
+-- Gold Bounty Awarded - Number of Dice
+bountydice = 0
+-- Gold Bounty Awarded - Base
+bountyplus = 0
+-- Gold Bounty Awarded - Sides per Die
+bountysides = 0
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.4
+-- Defense Type
+defType = "none"
+-- Attack 1 - Damage Base
+dmgplus1 = 11
+-- Attack 1 - Animation Damage Point
+dmgpt1 = 0.53
+-- Model File
+file = "units\\nightelf\\Runner\\Runner.mdl"
+-- Food Cost
+fused = 1
+-- Repair Gold Cost
+goldRep = 17
+-- Gold Cost
+goldcost = 16
+-- Projectile Launch - Z
+launchZ = 60.0
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 0
+-- Mana Initial Amount
+mana0 = 200
+-- Mana Maximum
+manaN = 200
+-- Scaling Value
+modelScale = 0.85
+-- Priority
+prio = 12
+-- Attack 1 - Range
+rangeN1 = 600
+-- Hit Points Regeneration Rate
+regenHP = 0.75
+-- Mana Regeneration
+regenMana = 0.67
+-- Hit Points Regeneration Type
+regenType = "always"
+-- Repair Time
+reptm = 2
+-- Attack 1 - Damage Sides per Die
+sides1 = 5
+-- Speed Base
+spd = 240
+-- Upgrades Used
+upgrades = "R002,R01H,R03J,R026,R00S,Reuv,Rguv"
+

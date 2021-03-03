@@ -1,0 +1,77 @@
+[nwgs]
+_parent = "nwgs"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Name - Editor Suffix
+EditorSuffix = "(Green - Naga)"
+-- Hit Points Maximum (Base)
+HP = 875
+-- Hotkey
+Hotkey = "R"
+-- Attack 2 - Projectile Homing Enabled
+MissileHoming_2 = 1
+-- Attack 2 - Projectile Arc
+Missilearc_2 = 0.1
+-- Attack 2 - Projectile Art
+Missileart_2 = "war3mapImported\\OrbOfWind.mdl"
+-- Attack 2 - Projectile Speed
+Missilespeed_2 = 1200
+-- Attack 2 - Range Motion Buffer
+RngBuff2 = 250.0
+-- Tooltip - Basic
+Tip = "Train [|cffffcc00R|r] - Couatl"
+-- Tooltip - Extended
+Ubertip = "Light flying unit that has envenomed attacks and a very strong anti-air attack. |n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land and air units.|r"
+-- Normal
+abilList = "Aeye,ACvs"
+-- Attack 2 - Attack Type
+atkType2 = "pierce"
+-- Default Active Ability
+auto = ""
+-- Attack 2 - Animation Backswing Point
+backSw2 = 1.0
+-- Build Time
+bldtm = 20
+-- Collision Size
+collision = 20.0
+-- Attack 2 - Cooldown Time
+cool2 = 2.3
+-- Attack 2 - Damage Number of Dice
+dice2 = 4
+-- Attack 2 - Damage Base
+dmgplus2 = 53
+-- Attack 2 - Animation Damage Point
+dmgpt2 = 0.33
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 35
+-- Repair Lumber Cost
+lumberRep = 0
+-- Lumber Cost
+lumbercost = 85
+-- Scaling Value
+modelScale = 0.85
+-- Attack 2 - Range
+rangeN2 = 800
+-- Mana Regeneration
+regenMana = 1.0
+-- Attack 2 - Damage Sides per Die
+sides2 = 5
+-- Speed Base
+spd = 300
+-- Stock Maximum
+stockMax = 1
+-- Attack 1 - Targets Allowed
+targs1 = "debris,ground,item,nonancient,structure,ward"
+-- Attack 2 - Targets Allowed
+targs2 = "air"
+-- Upgrades Used
+upgrades = "Rhme,Rhar"
+-- Attack 2 - Weapon Type
+weapTp2 = "missile"
+-- Attack 1 - Weapon Sound
+weapType1 = ""
+-- Attacks Enabled
+weapsOn = 3
+

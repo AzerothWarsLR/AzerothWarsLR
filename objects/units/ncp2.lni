@@ -2,3 +2,4 @@
 _parent = "ncp2"
 -- Unit Classification
 type = "mechanical,sapper,standon"
+

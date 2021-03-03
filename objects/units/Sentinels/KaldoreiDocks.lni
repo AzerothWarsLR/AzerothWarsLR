@@ -1,0 +1,49 @@
+[e011]
+_parent = "eshy"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNGilneanShipyard.blp"
+-- Button Position (X)
+Buttonpos_1 = 3
+-- Description
+Description = ""
+-- Name - Editor Suffix
+EditorSuffix = "(Sentinel)"
+-- Hotkey
+Hotkey = "R"
+-- Name
+Name = "Kaldorei Docks"
+-- Researches Available
+Researches = "R006,R00C,R01D"
+-- Units Sold
+Sellunits = ""
+-- Tooltip - Basic
+Tip = "Build Kaldorei Docks"
+-- Units Trained
+Trains = "etrs,edes,ebsh"
+-- Tooltip - Extended
+Ubertip = "Boat construction facility of the Kaldorei.|n|cfff5962dTrains: |RNight Elf Transport Ship, Night Elf Frigate, Night Elf Battleship|n|cfff5962dResearches:|R Improved Sails, Improved Cannons, Fortified Hulls|n|n|cff00c4c4Cannot be built near small inland water areas.|r"
+-- Normal
+abilList = "Ane2"
+-- Build Time
+bldtm = 30
+-- Categorization - Campaign
+campaign = 0
+-- Collision Size
+collision = 0.0
+-- Model File
+file = "war3mapImported\\ShipyardGilneasHumanV1.03.mdl"
+-- Repair Gold Cost
+goldRep = 13
+-- Gold Cost
+goldcost = 20
+-- Repair Lumber Cost
+lumberRep = 50
+-- Lumber Cost
+lumbercost = 110
+-- Scaling Value
+modelScale = 0.8
+-- Ground Texture
+uberSplat = ""
+-- Upgrades Used
+upgrades = "Renb,R064,Rgfo"
+

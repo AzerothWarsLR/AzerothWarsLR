@@ -1,0 +1,59 @@
+[o00F]
+_parent = "ofrt"
+-- Required Animation Names - Attachments
+Attachmentanimprops = ""
+-- Hit Points Maximum (Base)
+HP = 10000
+-- Name
+Name = "Black Temple"
+-- Researches Available
+Researches = ""
+-- Revives Dead Heroes
+Revive = 1
+-- Units Trained
+Trains = "n086,o01L,nina,ncpn"
+-- Normal
+abilList = "A0PF,Argl"
+-- Required Animation Names
+animProps = ""
+-- Tinting Color 3 (Blue)
+blue = 50
+-- Collision Size
+collision = 200.0
+-- Defense Base
+def = 20
+-- Model File
+file = "Doodads\\Northrend\\Structures\\AncientZiggurat\\AncientZiggurat1.mdl"
+-- Food Produced
+fmade = 30
+-- Repair Gold Cost
+goldRep = 100
+-- Gold Cost
+goldcost = 150
+-- Tinting Color 2 (Green)
+green = 50
+-- Repair Lumber Cost
+lumberRep = 300
+-- Mana Initial Amount
+mana0 = 300
+-- Mana Maximum
+manaN = 300
+-- Scaling Value
+modelScale = 3.5
+-- Pathing Map
+pathTex = "PathTextures\\12x12Simple.tga"
+-- Point Value
+points = 25
+-- Placement Requires
+preventPlace = ""
+-- Priority
+prio = 1
+-- Tinting Color 1 (Red)
+red = 50
+-- Mana Regeneration
+regenMana = 1.0
+-- Unit Classification
+type = "ancient,mechanical,townhall"
+-- Ground Texture
+uberSplat = ""
+

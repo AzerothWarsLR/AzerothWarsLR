@@ -1,0 +1,77 @@
+[o00H]
+_parent = "ogru"
+-- Icon - Game Interface
+Art = "ReplaceableTextures\\CommandButtons\\BTNChaosGrom.blp"
+-- Button Position (X)
+Buttonpos_1 = 1
+-- Button Position (Y)
+Buttonpos_2 = 1
+-- Name - Editor Suffix
+EditorSuffix = "(unused)"
+-- Hit Points Maximum (Base)
+HP = 1000
+-- Hotkey
+Hotkey = "A"
+-- Name
+Name = "Burning Blademaster"
+-- Tooltip - Basic
+Tip = "Train Burning Blademaster"
+-- Tooltip - Extended
+Ubertip = "Key member of the Burning Blade of Outland.|n|cfff5962dAbilities:|R Wind Walk, Resistant Skin, Bladestorm, Self-Bloodlust|n|cfff5962d|n|cff99b4d1Can only train 6.|r|n|cffffcc00Attacks land units.|r"
+-- Normal
+abilList = "S01D,ACsk,A0EH,Aion,A040,A03T"
+-- Attack 1 - Attack Type
+atkType1 = "chaos"
+-- Default Active Ability
+auto = "A0EH"
+-- Build Time
+bldtm = 35
+-- Collision Size
+collision = 15.0
+-- Attack 1 - Cooldown Time
+cool1 = 1.2
+-- Death Type
+deathType = 2
+-- Defense Base
+def = 2
+-- Defense Type
+defType = "hero"
+-- Attack 1 - Damage Number of Dice
+dice1 = 2
+-- Attack 1 - Damage Base
+dmgplus1 = 42
+-- Model File
+file = "units\\demon\\ChaosHellscream\\ChaosHellscream.mdl"
+-- Food Cost
+fused = 1
+-- Gold Cost
+goldcost = 50
+-- Level
+level = 5
+-- Mana Initial Amount
+mana0 = 400
+-- Mana Maximum
+manaN = 400
+-- Scaling Value
+modelScale = 0.8
+-- Priority
+prio = 15
+-- Hit Points Regeneration Rate
+regenHP = 2.0
+-- Mana Regeneration
+regenMana = 1.5
+-- Attack 1 - Damage Sides per Die
+sides1 = 8
+-- Categorization - Special
+special = 1
+-- Turn Rate
+turnRate = 0.4
+-- Unit Classification
+type = "sapper"
+-- Unit Sound Set
+unitSound = "HeroBladeMaster"
+-- Upgrades Used
+upgrades = "R00Y,Rhme,Rhar,Rguv"
+-- Attack 1 - Weapon Sound
+weapType1 = "MetalLightChop"
+
