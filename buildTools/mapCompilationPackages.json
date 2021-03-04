@@ -7,7 +7,7 @@
       "../jass/RoC/"
     ],
 		"ObjectDirectoryPaths": [
-      "../objects/Main/units/"
+      "../objects/Main/"
     ],
     "FileName": "AzerothWarsReignOfChaos",
     "VersionNumber": "1.00"
