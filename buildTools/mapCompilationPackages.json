@@ -1,12 +1,24 @@
 [
   {
-    "PackageName": "AzerothWarsRoC",
-    "SourceMapPath": "../sourceMaps/awr_source_roc",
+    "PackageName": "Azeroth Wars: Reign of Chaos",
+    "SourceMapPath": "../sourceMaps/awr_source_roc.w3x",
     "SourceCodeDirectoryPaths": [
-      "../jass/Main",
-      "../jass/RoC"
+      "../jass/Main/",
+      "../jass/RoC/"
+    ],
+		"ObjectDirectoryPaths": [
+      "../objects/Main/units/"
     ],
     "FileName": "AzerothWarsReignOfChaos",
     "VersionNumber": "1.00"
-  }
+  },
+	{
+    "PackageName": "AzerothWarsCoreCodeTest",
+    "SourceMapPath": "../sourceMaps/awr_source_blank.w3x",
+    "SourceCodeDirectoryPaths": [
+      "../jass/Main/",
+    ],
+    "FileName": "AzerothWarsCoreCodeTest",
+    "VersionNumber": "0"
+  },
 ]
