@@ -1,0 +1,12 @@
+[
+  {
+    "PackageName": "AzerothWarsRoC",
+    "SourceMapPath": "../sourceMaps/awr_source_roc",
+    "SourceCodeDirectoryPaths": [
+      "../jass/Main",
+      "../jass/RoC"
+    ],
+    "FileName": "AzerothWarsReignOfChaos",
+    "VersionNumber": "1.00"
+  }
+]
