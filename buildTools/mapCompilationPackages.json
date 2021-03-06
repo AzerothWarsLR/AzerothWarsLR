@@ -7,7 +7,8 @@
       "../jass/RoC/"
     ],
 		"ObjectDirectoryPaths": [
-      "../objects/Main/"
+      "../objects/Main/",
+			"../objects/RoC/"
     ],
     "FileName": "AzerothWarsReignOfChaos",
     "VersionNumber": "1.00"
@@ -15,6 +16,9 @@
 	{
     "PackageName": "AzerothWarsCoreCodeTest",
     "SourceMapPath": "../sourceMaps/awr_source_blank.w3x",
+		"ObjectDirectoryPaths": [
+      "../objects/CoreCodeTest/",
+    ],
     "SourceCodeDirectoryPaths": [
       "../jass/Main/",
     ],
