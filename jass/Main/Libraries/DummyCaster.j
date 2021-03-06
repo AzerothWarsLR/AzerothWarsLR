@@ -65,7 +65,7 @@ library DummyCaster
     globals
         // If this is changed, the object merger line must also be changed
         // before the second implementation step is followed.
-        constant integer DUMMY_TYPE='dumy'
+        constant integer DUMMY_TYPE='u00X'
         
         // This shouldn't be changed, but in some maps perhaps it is necessary.
         constant player DUMMY_OWNER=Player(PLAYER_NEUTRAL_AGGRESSIVE)
