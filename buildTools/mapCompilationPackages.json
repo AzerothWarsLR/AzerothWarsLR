@@ -13,6 +13,20 @@
     "FileName": "AzerothWarsReignOfChaos",
     "VersionNumber": "1.00"
   },
+  {
+    "PackageName": "Azeroth Wars: The Burning Crusade",
+    "SourceMapPath": "../sourceMaps/awr_source_tbc.w3x",
+    "SourceCodeDirectoryPaths": [
+      "../jass/Main/",
+      "../jass/TBC/"
+    ],
+		"ObjectDirectoryPaths": [
+      "../objects/Main/",
+			"../objects/TBC/"
+    ],
+    "FileName": "AzerothWarsTheBurningCrusade",
+    "VersionNumber": "0.01"
+  },	
 	{
     "PackageName": "AzerothWarsCoreCodeTest",
     "SourceMapPath": "../sourceMaps/awr_source_blank.w3x",

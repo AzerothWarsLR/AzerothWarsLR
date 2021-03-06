@@ -211,6 +211,8 @@ library ControlPoint initializer OnInit requires AIDS
     local group g
     local trigger trig = CreateTrigger()
     
+    call TriggerSleepAction(0.1)
+
     call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CHANGE_OWNER)
     call TriggerAddCondition(trig, Condition(function CPChangesOwner))
     
