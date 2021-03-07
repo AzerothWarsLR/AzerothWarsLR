@@ -18,10 +18,10 @@ library VassalBrann initializer OnInit requires Faction, IronforgeConfig
 
     //Building
     call VASSAL_BRANN.registerObjectLimit('h057', UNLIMITED)   //Explorers Tavern
-    call VASSAL_BRANN.registerObjectLimit('h02P', UNLIMITED)   //Farm
+    call VASSAL_BRANN.registerObjectLimit('h01S', UNLIMITED)   //Tavern
     call VASSAL_BRANN.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
-    call VASSAL_BRANN.registerObjectLimit('Rhme', 0)   //Attack Upgrade
-    call VASSAL_BRANN.registerObjectLimit('Rhar', 0)   //defense Upgrade
+    call VASSAL_BRANN.registerObjectLimit('Rhme', 0)           //Attack Upgrade
+    call VASSAL_BRANN.registerObjectLimit('Rhar', 0)           //defense Upgrade
     call VASSAL_BRANN.registerObjectLimit('Rhri', UNLIMITED)   //Long Rifles
     call VASSAL_BRANN.registerObjectLimit('Rhfl', UNLIMITED)   //Flare
     call VASSAL_BRANN.registerObjectLimit('Rhfs', UNLIMITED)   //Fragmentation Shards
