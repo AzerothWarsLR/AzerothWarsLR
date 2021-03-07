@@ -38,7 +38,7 @@ library MassSimulacrum initializer OnInit requires Filters
       loop
       exitwhen BlzGroupGetSize(tempGroup) == 0
         set u = BlzGroupUnitAt(tempGroup, GetRandomInt( 0, BlzGroupGetSize(tempGroup) - 1) )
-        if not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
+        if not IsUnitType(u, UNIT_TYPE_SUMMONED) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
           //Create the replicant
           set newUnit = CreateUnit(triggerPlayer, GetUnitTypeId(u), GetUnitX(u), GetUnitY(u), GetUnitFacing(u))
           call UnitAddType(newUnit, UNIT_TYPE_SUMMONED)
