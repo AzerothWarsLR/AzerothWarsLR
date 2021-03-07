@@ -15,7 +15,7 @@ library LegendFrostwolf initializer OnInit requires Legend
   
     set LEGEND_GAZLOWE = Legend.create()
     set LEGEND_GAZLOWE.UnitType = 'Ntin'
-    set LEGEND_GAZLOWE.StartingXP = 2800
+    set LEGEND_GAZLOWE.StartingXP = 4000
 
     set LEGEND_THRALL = Legend.create()
     set LEGEND_THRALL.Unit = gg_unit_Othr_1598

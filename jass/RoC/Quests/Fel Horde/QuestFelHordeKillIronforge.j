@@ -2,7 +2,7 @@ library QuestFelHordeKillIronforge initializer OnInit requires QuestData, FelHor
 
   globals
     private constant integer RESEARCH_ID = 'R011'
-    private constant integer UNITTYPE_ID = 'n04L'
+    private constant integer UNITTYPE_ID = 'nina'
     private constant integer BUILDING_ID = 'o030'
     private constant integer UNIT_LIMIT = 4
   endglobals

@@ -46,7 +46,6 @@ library FelHordeConfig initializer OnInit requires Faction, TeamConfig
     call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
     call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
-    call f.registerObjectLimit('nina', 2)           //Infernal Juggernaut
     call f.registerObjectLimit('o01V', 4)           //Eredar Elder Warlock
 
     call f.registerObjectLimit('n05T', 1)           //Kazzak 

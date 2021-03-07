@@ -24,7 +24,7 @@ library LegendLordaeron initializer OnInit requires Legend
 
     set LEGEND_MOGRAINE = Legend.create()
     set LEGEND_MOGRAINE.UnitType = 'H01J'
-    set LEGEND_MOGRAINE.StartingXP = 10800
+    set LEGEND_MOGRAINE.StartingXP = 5400
 
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
