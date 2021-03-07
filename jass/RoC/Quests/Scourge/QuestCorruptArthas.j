@@ -17,6 +17,7 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
     private method OnComplete takes nothing returns nothing
       call UnitDropAllItems(LEGEND_ARTHAS.Unit)
       call RemoveUnit(LEGEND_ARTHAS.Unit)
+      set LEGEND_ARTHAS.Unit = null
       set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
       set LEGEND_ARTHAS.StartingXP = 10800
       set LEGEND_ARTHAS.UnitType = 'Uear'
@@ -33,6 +34,7 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TYRSHAND))
+      call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
   endstruct
