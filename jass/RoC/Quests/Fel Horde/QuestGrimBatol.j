@@ -59,6 +59,7 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
       local group tempGroup = CreateGroup()
       local unit u
       local integer i = 0
+      call ShowUnit(gg_unit_n08A_3097, false)
       set thistype.GrimBatolUnits = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
       loop
