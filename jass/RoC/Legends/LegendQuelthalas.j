@@ -42,7 +42,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_KAEL = Legend.create()
     set LEGEND_KAEL.PlayerColor = PLAYER_COLOR_RED
     set LEGEND_KAEL.UnitType = 'Hkal'
-    set LEGEND_KAEL.StartingXP = 5400
+    set LEGEND_KAEL.StartingXP = 7000
   endfunction
 
 endlibrary

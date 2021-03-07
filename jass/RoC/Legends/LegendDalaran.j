@@ -14,7 +14,7 @@ library LegendDalaran initializer OnInit requires Legend
 
     set LEGEND_MEDIVH = Legend.create()
     set LEGEND_MEDIVH.UnitType = 'Haah'
-    set LEGEND_MEDIVH.StartingXP = 5400
+    set LEGEND_MEDIVH.StartingXP = 7000
 
     set LEGEND_DALARAN = Legend.create()
     set LEGEND_DALARAN.Unit = gg_unit_h002_0230
