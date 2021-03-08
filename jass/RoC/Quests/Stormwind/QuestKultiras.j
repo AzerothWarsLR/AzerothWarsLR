@@ -1,4 +1,4 @@
-library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, DalaranConfig
+library QuestKultiras requires QuestData, DetermineLevel, DalaranConfig
 
   globals
     private constant integer RESEARCH_ID = 'R00L'
@@ -63,9 +63,5 @@ library QuestKultiras initializer OnInit requires QuestData, DetermineLevel, Dal
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_STORMWIND.AddQuest(QuestKultiras.create())
-  endfunction
 
 endlibrary

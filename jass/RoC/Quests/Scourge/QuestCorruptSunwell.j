@@ -1,4 +1,4 @@
-library QuestCorruptSunwell initializer OnInit requires QuestData, ScourgeConfig
+library QuestCorruptSunwell requires QuestData, ScourgeConfig
 
   globals
     private constant integer RESEARCH_ID = 'R04K'
@@ -29,9 +29,5 @@ library QuestCorruptSunwell initializer OnInit requires QuestData, ScourgeConfig
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestCorruptSunwell.create())
-  endfunction
 
 endlibrary

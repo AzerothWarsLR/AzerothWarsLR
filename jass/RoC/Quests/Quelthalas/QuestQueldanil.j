@@ -1,4 +1,4 @@
-library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestQueldanil requires QuestData, QuelthalasConfig, LegendNeutral
 
   struct QuestQueldanil extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -26,11 +26,5 @@ library QuestQueldanil initializer OnInit requires QuestData, QuelthalasConfig, 
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    local QuestData newQuest = QuestQueldanil.create()
-    call FACTION_QUELTHALAS.AddQuest(newQuest)
-    set FACTION_QUELTHALAS.StartingQuest = newQuest
-  endfunction
 
 endlibrary

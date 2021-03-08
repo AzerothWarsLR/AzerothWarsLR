@@ -1,4 +1,4 @@
-library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsConfig, QuestItemControlPoint
+library QuestVaultoftheWardens requires QuestData, SentinelsConfig, QuestItemControlPoint
 
   globals
     private constant integer RESEARCH_ID = 'R06H'
@@ -32,9 +32,5 @@ library QuestVaultoftheWardens initializer OnInit requires QuestData, SentinelsC
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SENTINELS.AddQuest(QuestVaultoftheWardens.create())
-  endfunction
 
 endlibrary

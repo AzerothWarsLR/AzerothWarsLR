@@ -1,4 +1,4 @@
-library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestDraktharon requires QuestData, QuelthalasConfig, LegendNeutral
 
   globals
     private constant integer DARKHAN_ID = 'h052'
@@ -31,9 +31,5 @@ library QuestDraktharon initializer OnInit requires QuestData, QuelthalasConfig,
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_QUELTHALAS.AddQuest(QuestDraktharon.create())
-  endfunction
 
 endlibrary

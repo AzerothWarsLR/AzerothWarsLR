@@ -1,4 +1,4 @@
-library QuestSkullOfGuldan initializer OnInit requires QuestData, Artifact, LegionConfig, QuestItemAnyUnitInRect
+library QuestSkullOfGuldan requires QuestData, Artifact, LegionConfig, QuestItemAnyUnitInRect
 
   struct QuestSkullOfGuldan extends QuestData
     private QuestItemAnyUnitInRect questItemAnyUnitInRect
@@ -27,9 +27,5 @@ library QuestSkullOfGuldan initializer OnInit requires QuestData, Artifact, Legi
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LEGION.AddQuest(QuestSkullOfGuldan.create())
-  endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig, QuestItemKillUnit
+library QuestGnomeregan requires QuestData, IronforgeConfig, QuestItemKillUnit
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R05Q'
@@ -51,9 +51,5 @@ library QuestGnomeregan initializer OnInit requires QuestData, IronforgeConfig, 
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_IRONFORGE.AddQuest(QuestGnomeregan.create())
-  endfunction
 
 endlibrary

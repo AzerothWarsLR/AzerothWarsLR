@@ -1,4 +1,4 @@
-library TeamConfig initializer OnInit requires Team
+library TeamSetup initializer OnInit requires Team
 
   globals
     Team TEAM_SCOURGE

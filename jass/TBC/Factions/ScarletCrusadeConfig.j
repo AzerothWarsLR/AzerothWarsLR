@@ -1,4 +1,4 @@
-library ScarletCrusadeConfig initializer OnInit requires Faction, TeamConfig
+library ScarletCrusadeConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_SCARLETCRUSADE

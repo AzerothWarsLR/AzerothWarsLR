@@ -1,4 +1,4 @@
-library QuelthalasConfig initializer OnInit requires Faction, TeamConfig
+library QuelthalasConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_QUELTHALAS

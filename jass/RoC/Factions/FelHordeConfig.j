@@ -1,4 +1,4 @@
-library FelHordeConfig initializer OnInit requires Faction, TeamConfig
+library FelHordeConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_FEL_HORDE

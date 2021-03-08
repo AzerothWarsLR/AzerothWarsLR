@@ -1,4 +1,4 @@
-library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, StormwindConfig, QuestItemControlPoint, ArtifactConfig
+library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, QuestItemControlPoint, 
 
   globals
     private constant integer RESEARCH_ID = 'R01N'
@@ -43,10 +43,5 @@ library QuestKingdomOfMan initializer OnInit requires LordaeronConfig, Stormwind
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestKingdomOfMan.create())
-    call FACTION_STORMWIND.AddQuest(QuestKingdomOfMan.create())
-  endfunction
 
 endlibrary

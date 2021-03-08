@@ -1,4 +1,4 @@
-library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, LegionConfig
+library QuestSummonLegion requires QuestData, ScourgeConfig, LegionConfig
 
   globals
     private constant integer RITUAL_ID = 'A00J'
@@ -29,9 +29,5 @@ library QuestSummonLegion initializer OnInit requires QuestData, ScourgeConfig, 
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LEGION.AddQuest(QuestSummonLegion.create())
-  endfunction
 
 endlibrary

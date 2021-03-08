@@ -1,5 +1,5 @@
 //Garithos is spawned spawns after a timer expires.
-library QuestGarithos initializer OnInit requires QuestData, LordaeronConfig, LegendLordaeron
+library QuestGarithos requires QuestData, LordaeronConfig, LegendLordaeron
 
   globals
     private constant integer HERO_ID = 'Hlgr'
@@ -31,9 +31,5 @@ library QuestGarithos initializer OnInit requires QuestData, LordaeronConfig, Le
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestGarithos.create())
-  endfunction
 
 endlibrary

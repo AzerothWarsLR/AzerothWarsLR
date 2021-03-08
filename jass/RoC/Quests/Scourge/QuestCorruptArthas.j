@@ -1,4 +1,4 @@
-library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, GeneralHelpers, LegionConfig, ScourgeConfig, DetermineLevel
+library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionConfig, ScourgeConfig, DetermineLevel
 
   globals
     private constant integer HERO_ID = 'Uear'
@@ -38,9 +38,5 @@ library QuestCorruptArthas initializer OnInit requires Persons, GameTimer, Gener
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestCorruptArthas.create())
-  endfunction
 
 endlibrary

@@ -1,6 +1,6 @@
 //If any Horde unit enters the Crossroads area, OR a time elapses, OR someone becomes a solo Horde Path, give the Crossroads to a Horde player.
 
-library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
+library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
 
   struct QuestCrossroads extends QuestData
     private Faction fallbackFaction = 0
@@ -58,9 +58,5 @@ library QuestCrossroads initializer OnInit requires Persons, FrostwolfConfig, Wa
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestCrossroads.create(FACTION_FROSTWOLF))
-  endfunction
 
 endlibrary

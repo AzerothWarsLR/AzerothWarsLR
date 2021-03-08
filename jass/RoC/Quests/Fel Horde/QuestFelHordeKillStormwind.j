@@ -1,4 +1,4 @@
-library QuestFelHordeKillStormwind initializer OnInit requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendStormwind
+library QuestFelHordeKillStormwind requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendStormwind
 
   globals
     private constant integer RESEARCH_ID = 'R05Z'
@@ -31,9 +31,5 @@ library QuestFelHordeKillStormwind initializer OnInit requires QuestData, FelHor
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillStormwind.create())
-  endfunction
 
 endlibrary

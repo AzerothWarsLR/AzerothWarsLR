@@ -1,4 +1,4 @@
-library LegionConfig initializer OnInit requires Faction, TeamConfig
+library LegionConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_LEGION

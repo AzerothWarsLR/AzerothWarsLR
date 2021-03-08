@@ -1,5 +1,5 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
-library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, LegendLordaeron
+library QuestKingArthas requires QuestData, LordaeronConfig, LegendLordaeron
 
   struct QuestKingArthas extends QuestData
     private integer CROWN_ID = 'I001'
@@ -30,9 +30,5 @@ library QuestKingArthas initializer OnInit requires QuestData, LordaeronConfig, 
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
-  endfunction
 
 endlibrary

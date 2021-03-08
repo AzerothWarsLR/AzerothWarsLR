@@ -1,4 +1,4 @@
-library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionConfig
+library QuestDemonGateMonastery requires QuestData, LegionConfig
 
   globals
     private constant integer DEMONGATE_ID = 'ndmg'
@@ -33,9 +33,5 @@ library QuestDemonGateMonastery initializer OnInit requires QuestData, LegionCon
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LEGION.AddQuest(QuestDemonGateMonastery.create())
-  endfunction
 
 endlibrary

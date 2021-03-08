@@ -1,4 +1,4 @@
-library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
+library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
 
   struct QuestDrektharsSpellbook extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -21,9 +21,5 @@ library QuestDrektharsSpellbook initializer OnInit requires QuestData, Artifact,
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestDrektharsSpellbook.create())
-  endfunction
-
+  
 endlibrary

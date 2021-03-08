@@ -1,29 +1,10 @@
 library ControlPoint initializer OnInit requires AIDS
 
-  //*CONFIG*
-  globals
-    private constant integer    CP_BUFF_A = 'B025'
-    private constant integer    CP_BUFF_B = 'B050'
-    private constant integer    CP_BUFF_C = 'B051'
-    private constant integer    CP_BUFF_D = 'B052'
-    private constant integer    CP_BUFF_E = 'B053'
-    private constant integer    CP_BUFF_F = 'B054'
-    
-    private constant real       CP_VALUE_A = 10
-    private constant real       CP_VALUE_B = 15
-    private constant real       CP_VALUE_C = 20
-    private constant real       CP_VALUE_D = 25
-    private constant real       CP_VALUE_E = 30
-    private constant real       CP_VALUE_F = 50
-
-    Event OnControlPointLoss    
-    Event OnControlPointOwnerChange    
-  endglobals
-  //*ENDCONFIG*
-
   globals 
     group ControlPoints = CreateGroup()
     ControlPoint array CPData
+    Event OnControlPointLoss    
+    Event OnControlPointOwnerChange   
   endglobals
   
   struct ControlPoint
@@ -33,10 +14,6 @@ library ControlPoint initializer OnInit requires AIDS
     private static integer count = 0
     static thistype triggerControlPoint = 0
 
-    static boolean initialized = false
-    static integer array cpBuffs[6]
-    static real array cpValues[6]
-    
     real x
     real y
     real value = 0
@@ -113,41 +90,6 @@ library ControlPoint initializer OnInit requires AIDS
       return highestValueCP
     endmethod
 
-    static method initializeCP takes nothing returns nothing
-      local unit u = GetEnumUnit()
-      local integer i = 0
-      loop
-      exitwhen i > 5
-        if GetUnitAbilityLevel(GetEnumUnit(), cpBuffs[i]) > 0 then
-          call ControlPoint.create(GetEnumUnit(), cpValues[i])
-        endif
-      set i = i + 1
-      endloop   
-    endmethod
-    
-    static method initializeSystem takes nothing returns nothing  
-      local group g          
-      set cpBuffs[0] = CP_BUFF_A
-      set cpBuffs[1] = CP_BUFF_B
-      set cpBuffs[2] = CP_BUFF_C
-      set cpBuffs[3] = CP_BUFF_D
-      set cpBuffs[4] = CP_BUFF_E
-      set cpBuffs[5] = CP_BUFF_F
-      
-      set cpValues[0] = CP_VALUE_A
-      set cpValues[1] = CP_VALUE_B   
-      set cpValues[2] = CP_VALUE_C   
-      set cpValues[3] = CP_VALUE_D  
-      set cpValues[4] = CP_VALUE_E      
-      set cpValues[5] = CP_VALUE_F
-      
-      set g = CreateGroup()
-      call GroupEnumUnitsInRect(g, bj_mapInitialPlayableArea, null)
-      call ForGroup(g, function ControlPoint.initializeCP)    
-      
-      set initialized = true           
-    endmethod
-
     static method create takes unit u, real value returns ControlPoint
       local ControlPoint this = ControlPoint.allocate()
       local Person person = Person.ByHandle(GetOwningPlayer(u))
@@ -210,16 +152,12 @@ library ControlPoint initializer OnInit requires AIDS
   private function OnInit takes nothing returns nothing
     local group g
     local trigger trig = CreateTrigger()
-    
-    call TriggerSleepAction(0.1)
 
     call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CHANGE_OWNER)
     call TriggerAddCondition(trig, Condition(function CPChangesOwner))
     
     set OnControlPointLoss = Event.create()
     set OnControlPointOwnerChange = Event.create()
-
-    call ControlPoint.initializeSystem()
   endfunction
     
 endlibrary

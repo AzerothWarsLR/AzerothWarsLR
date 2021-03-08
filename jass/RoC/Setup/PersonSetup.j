@@ -1,6 +1,6 @@
-library PlayerConfig initializer OnInit requires Persons, Team, TeamConfig, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
+library PersonSetup requires Persons, Team, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
 
-  function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Person p
 
     set p = Person.create(Player(0))

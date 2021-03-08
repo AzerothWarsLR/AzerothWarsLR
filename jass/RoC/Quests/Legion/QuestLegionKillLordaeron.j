@@ -1,4 +1,4 @@
-library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, LegendLordaeron, LegendLegion, Display
+library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendLegion, Display
 
   struct QuestLegionKillLordaeron extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -22,9 +22,5 @@ library QuestLegionKillLordaeron initializer OnInit requires LegionConfig, Legen
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LEGION.AddQuest(QuestLegionKillLordaeron.create())
-  endfunction
 
 endlibrary

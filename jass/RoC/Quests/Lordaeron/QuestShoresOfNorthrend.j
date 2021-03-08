@@ -1,4 +1,4 @@
-library QuestShoresOfNorthrend initializer OnInit requires LordaeronConfig, LegendLordaeron, GeneralHelpers
+library QuestShoresOfNorthrend requires LordaeronConfig, LegendLordaeron, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R06F'
@@ -64,9 +64,5 @@ library QuestShoresOfNorthrend initializer OnInit requires LordaeronConfig, Lege
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestShoresOfNorthrend.create())
-  endfunction
 
 endlibrary

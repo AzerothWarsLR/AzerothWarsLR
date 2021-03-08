@@ -1,4 +1,4 @@
-library QuestThunderEagle initializer OnInit requires QuestData, QuestItemControlPoint, LordaeronConfig, LegendLegion
+library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronConfig, LegendLegion
 
   globals
     private constant integer RESEARCH_ID = 'R04L'
@@ -26,9 +26,5 @@ library QuestThunderEagle initializer OnInit requires QuestData, QuestItemContro
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestThunderEagle.create())
-  endfunction
 
 endlibrary

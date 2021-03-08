@@ -1,4 +1,4 @@
-library QuestCrystalGolem initializer OnInit requires QuestItemControlPoint, DalaranConfig, LegendLegion
+library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
 
   globals
     private constant integer RESEARCH_ID = 'R045'
@@ -31,9 +31,5 @@ library QuestCrystalGolem initializer OnInit requires QuestItemControlPoint, Dal
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestCrystalGolem.create())
-  endfunction
 
 endlibrary

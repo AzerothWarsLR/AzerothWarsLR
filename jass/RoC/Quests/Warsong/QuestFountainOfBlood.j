@@ -1,4 +1,4 @@
-library QuestFountainOfBlood initializer OnInit requires QuestData, WarsongConfig, LegendNeutral
+library QuestFountainOfBlood requires QuestData, WarsongConfig, LegendNeutral
 
   globals
     private constant integer RESEARCH_ID = 'R00X'
@@ -27,9 +27,5 @@ library QuestFountainOfBlood initializer OnInit requires QuestData, WarsongConfi
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestFountainOfBlood.create())
-  endfunction
 
 endlibrary

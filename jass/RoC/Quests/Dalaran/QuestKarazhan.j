@@ -1,4 +1,4 @@
-library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
+library QuestKarazhan requires LegendNeutral
 
   globals
     private constant integer RESEARCH_ID = 'R012'
@@ -32,9 +32,5 @@ library QuestKarazhan initializer OnInit requires DalaranConfig, LegendNeutral
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestKarazhan.create())
-  endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, DalaranConfig, LegendDalaran
+library QuestBlueDragons requires QuestItemControlLegend, LegendDalaran, Display
 
   globals
     private constant integer RESEARCH_ID = 'R00U'
@@ -31,9 +31,5 @@ library QuestBlueDragons initializer OnInit requires QuestItemControlLegend, Dal
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestBlueDragons.create())
-  endfunction
 
 endlibrary

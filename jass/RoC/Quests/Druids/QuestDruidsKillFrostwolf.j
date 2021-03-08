@@ -1,4 +1,4 @@
-library QuestDruidsKillFrostwolf initializer OnInit requires DruidsConfig, LegendFrostwolf, Display
+library QuestDruidsKillFrostwolf requires DruidsConfig, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R044'
@@ -30,9 +30,5 @@ library QuestDruidsKillFrostwolf initializer OnInit requires DruidsConfig, Legen
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DRUIDS.AddQuest(QuestDruidsKillFrostwolf.create())
-  endfunction
 
 endlibrary

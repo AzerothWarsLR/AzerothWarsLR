@@ -1,4 +1,4 @@
-library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, DruidsConfig
+library QuestAndrassil requires QuestData, ControlPoint, DruidsConfig
 
   globals
     private constant integer RESEARCH_ID = 'R002'
@@ -34,9 +34,5 @@ library QuestAndrassil initializer OnInit requires QuestData, ControlPoint, Drui
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DRUIDS.AddQuest(QuestAndrassil.create())
-  endfunction
 
 endlibrary

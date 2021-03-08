@@ -1,4 +1,4 @@
-library CthunConfig initializer OnInit requires Faction, TeamConfig
+library CthunConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_CTHUN

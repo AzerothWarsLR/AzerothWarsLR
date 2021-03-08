@@ -1,4 +1,4 @@
-library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongConfig, SentinelsConfig, ArtifactConfig
+library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongConfig, SentinelsConfig, 
 
   struct QuestScepterOfTheQueenWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -70,8 +70,6 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongCon
       endif
       call GroupRemoveUnit(tempGroup, u)
     endloop
-    call FACTION_FROSTWOLF.AddQuest(QuestScepterOfTheQueenWarsong.create())
-    call FACTION_SENTINELS.AddQuest(QuestScepterOfTheQueenSentinels.create())
   endfunction
 
 endlibrary

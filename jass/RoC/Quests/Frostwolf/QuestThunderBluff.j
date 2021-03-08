@@ -78,7 +78,7 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfConfig, 
     endloop
     call DestroyGroup(tempGroup)
     set tempGroup = null
-    call FACTION_FROSTWOLF.AddQuest(QuestThunderBluff.create(FACTION_WARSONG))
+    
   endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library QuestSentinelsKillWarsong initializer OnInit requires SentinelsConfig, LegendWarsong, Display
+library QuestSentinelsKillWarsong requires SentinelsConfig, LegendWarsong, Display
 
   globals
     private constant integer UNITTYPE_ID = 'echm'
@@ -35,9 +35,5 @@ library QuestSentinelsKillWarsong initializer OnInit requires SentinelsConfig, L
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SENTINELS.AddQuest(QuestSentinelsKillWarsong.create())
-  endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library QuestFrostwolfKillSentinels initializer OnInit requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
+library QuestFrostwolfKillSentinels requires FrostwolfConfig, LegendSentinels, Display, QuestItemLegendDead
 
   globals
     private constant integer UNITTYPE_ID = 'owyv'
@@ -26,9 +26,5 @@ library QuestFrostwolfKillSentinels initializer OnInit requires FrostwolfConfig,
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestFrostwolfKillSentinels.create())
-  endfunction
 
 endlibrary

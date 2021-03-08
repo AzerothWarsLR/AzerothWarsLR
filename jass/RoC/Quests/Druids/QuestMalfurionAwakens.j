@@ -1,6 +1,6 @@
 //Anyone on the Night Elves team approaches Moonglade with a unit with the Horn of Cenarius,
 //Causing Malfurion to spawn.
-library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDruids, Display, ArtifactConfig
+library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDruids, Display, 
 
   globals
     private group MoongladeUnits
@@ -77,7 +77,6 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsConfig, LegendDr
     call DestroyGroup(tempGroup)
     set tempGroup = null
     //Add quest
-    call FACTION_DRUIDS.AddQuest(QuestMalfurionAwakens.create())
   endfunction
 
 endlibrary

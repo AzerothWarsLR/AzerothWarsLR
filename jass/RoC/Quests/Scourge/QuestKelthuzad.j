@@ -1,4 +1,4 @@
-library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
+library QuestKelthuzad requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
 
   struct QuestKelthuzad extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -29,9 +29,5 @@ library QuestKelthuzad initializer OnInit requires QuestData, ScourgeConfig, Leg
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestKelthuzad.create())
-  endfunction
 
 endlibrary

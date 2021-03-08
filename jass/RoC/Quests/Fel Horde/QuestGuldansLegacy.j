@@ -1,4 +1,4 @@
-library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
+library QuestGuldansLegacy requires QuestData, FelHordeConfig
 
   globals
     private integer RESEARCH_ID = 'R041'
@@ -25,9 +25,5 @@ library QuestGuldansLegacy initializer OnInit requires QuestData, FelHordeConfig
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FEL_HORDE.AddQuest(QuestGuldansLegacy.create())
-  endfunction
   
 endlibrary

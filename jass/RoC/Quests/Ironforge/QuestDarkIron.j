@@ -1,4 +1,4 @@
-library QuestDarkIron initializer OnInit requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
+library QuestDarkIron requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
 
   globals
     private constant integer HERO_ID = 'H03G'
@@ -44,9 +44,5 @@ library QuestDarkIron initializer OnInit requires QuestItemKillUnit, IronforgeCo
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_IRONFORGE.AddQuest(QuestDarkIron.create())
-  endfunction
 
 endlibrary

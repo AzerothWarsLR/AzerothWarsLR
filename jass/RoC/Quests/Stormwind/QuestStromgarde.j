@@ -1,4 +1,4 @@
-library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, LegendNeutral, ArtifactConfig
+library QuestStromgarde requires QuestData, StormwindConfig, LegendNeutral, 
 
   globals
     private constant integer HERO_ID = 'H00Z'
@@ -59,9 +59,5 @@ library QuestStromgarde initializer OnInit requires QuestData, StormwindConfig, 
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
-  endfunction
 
 endlibrary

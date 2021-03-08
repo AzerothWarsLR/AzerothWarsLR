@@ -1,4 +1,4 @@
-library TestInvite requires Test, Persons, TeamConfig, ScourgeConfig
+library TestInvite requires Test, Persons, TeamSetup, ScourgeConfig
 
   struct TestInvite extends Test
     method Run takes nothing returns nothing

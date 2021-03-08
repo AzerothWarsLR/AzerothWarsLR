@@ -1,4 +1,4 @@
-library EmeraldNightmareConfig initializer OnInit requires Faction, TeamConfig
+library EmeraldNightmareConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_EMERALDNIGHTMARE

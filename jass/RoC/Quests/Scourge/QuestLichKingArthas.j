@@ -1,4 +1,4 @@
-library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig, Artifact
+library QuestLichKingArthas requires QuestData, ScourgeConfig, Artifact
 
   globals
     private constant integer LEVEL_REQUIREMENT = 15
@@ -35,9 +35,5 @@ library QuestLichKingArthas initializer OnInit requires QuestData, ScourgeConfig
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestLichKingArthas.create())
-  endfunction
 
 endlibrary

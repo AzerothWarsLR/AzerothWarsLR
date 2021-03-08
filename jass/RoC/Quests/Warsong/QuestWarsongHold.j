@@ -1,4 +1,4 @@
-library QuestWarsongHold initializer OnInit requires WarsongConfig, LegendWarsong, GeneralHelpers, QuestItemControlPoint
+library QuestWarsongHold requires WarsongConfig, LegendWarsong, GeneralHelpers, QuestItemControlPoint
 
   globals
     private constant integer RESEARCH_ID = 'R06G'
@@ -61,9 +61,5 @@ library QuestWarsongHold initializer OnInit requires WarsongConfig, LegendWarson
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestWarsongHold.create())
-  endfunction
 
 endlibrary

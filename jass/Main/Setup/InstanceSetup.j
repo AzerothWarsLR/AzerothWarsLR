@@ -1,6 +1,6 @@
-library InstanceConfig initializer OnInit requires Instance
+library InstanceSetup requires Instance
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Instance tempInstance = 0
 
     set tempInstance = Instance.create()

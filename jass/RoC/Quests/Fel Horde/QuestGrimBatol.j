@@ -1,4 +1,4 @@
-library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, DetermineLevel, LegendIronforge, LegendStormwind
+library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, LegendIronforge, LegendStormwind
 
   globals
     private constant integer ZULUHED_ID = 'O00Y'
@@ -79,9 +79,5 @@ library QuestGrimBatol initializer OnInit requires QuestData, FelHordeConfig, De
       set tempGroup = null
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FEL_HORDE.AddQuest(QuestGrimBatol.create())
-  endfunction
 
 endlibrary

@@ -1,6 +1,6 @@
 //When Hellfire Citadel is destroyed, give Honor Hold to Stormwind if they are in the game, and modify doodads for visuals.
 //If Stormwind is not in the game, do nothing.
-library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, GeneralHelpers
+library QuestHonorHold requires QuestData, StormwindConfig, GeneralHelpers
 
   struct QuestHonorHold extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -34,9 +34,5 @@ library QuestHonorHold initializer OnInit requires QuestData, StormwindConfig, G
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
-  endfunction
 
 endlibrary

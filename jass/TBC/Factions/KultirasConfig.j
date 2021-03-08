@@ -1,4 +1,4 @@
-library KultirasConfig initializer OnInit requires Faction, TeamConfig
+library KultirasConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_KULTIRAS

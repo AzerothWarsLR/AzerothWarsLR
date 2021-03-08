@@ -1,4 +1,4 @@
-library QuestFreeNerzhul initializer OnInit requires QuestData, LegendFrostwolf, FrostwolfConfig
+library QuestFreeNerzhul requires QuestData, LegendFrostwolf, FrostwolfConfig
 
   struct QuestFreeNerzhul extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -19,9 +19,5 @@ library QuestFreeNerzhul initializer OnInit requires QuestData, LegendFrostwolf,
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestFreeNerzhul.create())
-  endfunction
 
 endlibrary

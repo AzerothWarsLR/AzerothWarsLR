@@ -1,4 +1,4 @@
-library QuestGazlowe initializer OnInit requires QuestData, ControlPoint, FrostwolfConfig, LegendFrostwolf
+library QuestGazlowe requires QuestData, ControlPoint, FrostwolfConfig, LegendFrostwolf
 
   globals
     private constant integer RESEARCH_ID = 'R01F'
@@ -30,9 +30,5 @@ library QuestGazlowe initializer OnInit requires QuestData, ControlPoint, Frostw
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestGazlowe.create())
-  endfunction
 
 endlibrary

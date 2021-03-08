@@ -1,4 +1,4 @@
-library DalaranConfig initializer OnInit requires Faction, TeamConfig
+library DalaranConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_DALARAN

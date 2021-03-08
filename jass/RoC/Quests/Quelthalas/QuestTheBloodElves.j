@@ -1,4 +1,4 @@
-library QuestTheBloodElves initializer OnInit requires QuelthalasConfig, LegendLegion, LegendQuelthalas, Display
+library QuestTheBloodElves requires QuelthalasConfig, LegendLegion, LegendQuelthalas, Display
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R04Q'
@@ -36,9 +36,5 @@ library QuestTheBloodElves initializer OnInit requires QuelthalasConfig, LegendL
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_QUELTHALAS.AddQuest(QuestTheBloodElves.create())
-  endfunction
 
 endlibrary

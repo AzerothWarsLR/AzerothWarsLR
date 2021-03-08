@@ -1,4 +1,4 @@
-library WarsongConfig initializer OnInit requires Faction, TeamConfig
+library WarsongConfig initializer OnInit requires Faction, TeamSetup
   globals
     LiegeFaction FACTION_WARSONG
   endglobals

@@ -1,4 +1,4 @@
-library QuestDruidsKillWarsong initializer OnInit requires DruidsConfig, LegendWarsong, Display
+library QuestDruidsKillWarsong requires DruidsConfig, LegendWarsong, Display
 
   globals
     private constant integer UNITTYPE_ID = 'e012' //Siege Ancient
@@ -30,9 +30,5 @@ library QuestDruidsKillWarsong initializer OnInit requires DruidsConfig, LegendW
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DRUIDS.AddQuest(QuestDruidsKillWarsong.create())
-  endfunction
 
 endlibrary

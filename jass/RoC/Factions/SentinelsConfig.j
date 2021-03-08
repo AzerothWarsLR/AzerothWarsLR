@@ -1,4 +1,4 @@
-library SentinelsConfig initializer OnInit requires Faction, TeamConfig
+library SentinelsConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_SENTINELS

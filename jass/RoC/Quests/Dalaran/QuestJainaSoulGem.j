@@ -1,5 +1,5 @@
 //Jaina goes to Scholomance while Scholomance building is destroyed and retrieves the Soul Gem
-library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, DalaranConfig, LegendDalaran, LegendScourge
+library QuestJainaSoulGem requires QuestData, Artifact, LegendDalaran, LegendScourge
 
   struct QuestJainaSoulGem extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -21,9 +21,5 @@ library QuestJainaSoulGem initializer OnInit requires QuestData, Artifact, Dalar
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestJainaSoulGem.create())
-  endfunction
 
 endlibrary

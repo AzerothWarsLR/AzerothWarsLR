@@ -1,5 +1,5 @@
 //Chen Stormstout joins the Warsong when a Warsong unit approaches him.
-library QuestChenStormstout initializer OnInit requires QuestData, StormwindConfig, GeneralHelpers
+library QuestChenStormstout requires QuestData, StormwindConfig, GeneralHelpers
 
   globals
     private constant integer CHEN_RESEARCH = 'R037'
@@ -34,9 +34,5 @@ library QuestChenStormstout initializer OnInit requires QuestData, StormwindConf
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestChenStormstout.create())
-  endfunction
 
 endlibrary

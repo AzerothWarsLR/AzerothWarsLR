@@ -1,4 +1,4 @@
-library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
+library QuestWarMachine requires QuestData, ScourgeConfig
 
   struct QuestWarMachine extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -38,10 +38,5 @@ library QuestWarMachine initializer OnInit requires QuestData, ScourgeConfig
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    local QuestData newQuest = FACTION_WARSONG.AddQuest(QuestWarMachine.create())
-    set FACTION_WARSONG.StartingQuest = newQuest
-  endfunction
 
 endlibrary

@@ -1,4 +1,4 @@
-library LordaeronConfig initializer OnInit requires Faction, TeamConfig, UnitTypesLordaeron
+library LordaeronConfig initializer OnInit requires Faction, TeamSetup, UnitTypesLordaeron
 
   globals
     LiegeFaction FACTION_LORDAERON

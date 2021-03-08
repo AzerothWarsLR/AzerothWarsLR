@@ -1,4 +1,4 @@
-library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
+library QuestReanimateSylvanas requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
 
   globals
     private constant integer SYLVANAS_RESEARCH = 'R02D'
@@ -32,9 +32,5 @@ library QuestReanimateSylvanas initializer OnInit requires QuestData, ScourgeCon
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestReanimateSylvanas.create())
-  endfunction
 
 endlibrary

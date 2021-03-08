@@ -1,4 +1,4 @@
-library QuestWarsongKillDruids initializer OnInit requires WarsongConfig, LegendDruids, Display
+library QuestWarsongKillDruids requires WarsongConfig, LegendDruids, Display
 
   globals
     private constant integer RESEARCH_ID = 'R059'
@@ -28,9 +28,5 @@ library QuestWarsongKillDruids initializer OnInit requires WarsongConfig, Legend
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestWarsongKillDruids.create())
-  endfunction
 
 endlibrary

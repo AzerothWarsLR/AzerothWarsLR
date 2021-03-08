@@ -1,4 +1,4 @@
-library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, LegendSentinels, Display
+library QuestWarsongKillSentinels requires WarsongConfig, LegendSentinels, Display
 
   globals
     private constant integer RESEARCH_ID = 'R058'
@@ -32,9 +32,5 @@ library QuestWarsongKillSentinels initializer OnInit requires WarsongConfig, Leg
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_WARSONG.AddQuest(QuestWarsongKillSentinels.create())
-  endfunction
 
 endlibrary

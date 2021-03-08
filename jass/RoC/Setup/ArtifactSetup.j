@@ -1,4 +1,4 @@
-library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, PlayerConfig
+library ArtifactSetup requires Artifact, ArtifactMenu
 
   globals
     private constant real DUMMY_X = 20195
@@ -20,7 +20,7 @@ library ArtifactConfig initializer OnInit requires Artifact, ArtifactMenu, Playe
     Artifact ARTIFACT_TROLKALAR
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Artifact tempArtifact = 0
 
     set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))

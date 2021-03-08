@@ -1,4 +1,4 @@
-library FrostwolfConfig initializer OnInit requires Faction, TeamConfig
+library FrostwolfConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_FROSTWOLF

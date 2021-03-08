@@ -1,11 +1,11 @@
-library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, LegendFrostwolf, Display
+library QuestSentinelsKillFrostwolf requires SentinelsConfig, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R052'
     private constant integer AMARA_ID = 'h03I'
   endglobals
 
-  struct SentinelsKillFrostwolf extends QuestData
+  struct QuestSentinelsKillFrostwolf extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "The Frostwolves have been ousted from Kalimdor, along with their Tauren allies. They will not be missed."
     endmethod
@@ -30,9 +30,5 @@ library SentinelsKillFrostwolf initializer OnInit requires SentinelsConfig, Lege
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SENTINELS.AddQuest(SentinelsKillFrostwolf.create())
-  endfunction
 
 endlibrary

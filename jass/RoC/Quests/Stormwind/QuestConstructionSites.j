@@ -1,5 +1,5 @@
 //Stormwind's Construction sites are enabled after a delay.
-library QuestConstructionSites initializer OnInit requires QuestData, StormwindConfig
+library QuestConstructionSites requires QuestData, StormwindConfig
 
   globals
     private constant integer RESEARCH_ID = 'R022'
@@ -32,9 +32,5 @@ library QuestConstructionSites initializer OnInit requires QuestData, StormwindC
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_STORMWIND.AddQuest(QuestConstructionSites.create())
-  endfunction
 
 endlibrary

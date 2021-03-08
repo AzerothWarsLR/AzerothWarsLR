@@ -1,4 +1,4 @@
-library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalaran, Display, ArtifactConfig
+library QuestNewGuardian requires LegendDalaran, Display, 
 
   struct QuestNewGuardian extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -27,9 +27,5 @@ library QuestNewGuardian initializer OnInit requires DalaranConfig, LegendDalara
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestNewGuardian.create())
-  endfunction
 
 endlibrary

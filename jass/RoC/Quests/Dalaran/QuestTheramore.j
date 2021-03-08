@@ -1,4 +1,4 @@
-library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, DalaranConfig
+library QuestTheramore requires QuestData, DetermineLevel
 
   globals
     private constant integer RESEARCH_ID = 'R06K'
@@ -66,9 +66,5 @@ library QuestTheramore initializer OnInit requires QuestData, DetermineLevel, Da
       call DestroyGroup(tempGroup)
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_DALARAN.AddQuest(QuestTheramore.create())
-  endfunction
 
 endlibrary

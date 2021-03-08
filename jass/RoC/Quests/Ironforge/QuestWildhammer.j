@@ -1,4 +1,4 @@
-library QuestWildhammer initializer OnInit requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
+library QuestWildhammer requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
 
   globals
     private constant integer HERO_ID = 'H028'
@@ -52,9 +52,5 @@ library QuestWildhammer initializer OnInit requires QuestItemKillUnit, Ironforge
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_IRONFORGE.AddQuest(QuestWildhammer.create())
-  endfunction
 
 endlibrary

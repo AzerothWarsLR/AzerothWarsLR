@@ -1,4 +1,4 @@
-library QuestZulfarrak initializer OnInit requires FrostwolfConfig, LegendNeutral
+library QuestZulfarrak requires FrostwolfConfig, LegendNeutral
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -38,9 +38,5 @@ library QuestZulfarrak initializer OnInit requires FrostwolfConfig, LegendNeutra
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FROSTWOLF.AddQuest(QuestZulfarrak.create())
-  endfunction
 
 endlibrary

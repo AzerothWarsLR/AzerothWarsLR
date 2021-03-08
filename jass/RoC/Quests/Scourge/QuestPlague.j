@@ -1,4 +1,4 @@
-library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
+library QuestPlague requires QuestData, ScourgeConfig
 
   globals
     private constant integer RESEARCH_ID = 'R06I'
@@ -33,9 +33,5 @@ library QuestPlague initializer OnInit requires QuestData, ScourgeConfig
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestPlague.create())
-  endfunction
 
 endlibrary

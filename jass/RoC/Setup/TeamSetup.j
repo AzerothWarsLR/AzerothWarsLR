@@ -1,4 +1,4 @@
-library TeamConfig initializer OnInit requires Team
+library TeamSetup requires Team
 
   globals
     Team TEAM_SCOURGE
@@ -9,7 +9,7 @@ library TeamConfig initializer OnInit requires Team
     Team TEAM_FEL_HORDE
   endglobals
 
-  private function OnInit takes nothing returns nothing 
+  public function OnInit takes nothing returns nothing 
     //Starting teams
     local Team t = 0
     

@@ -1,4 +1,4 @@
-library ForsakenConfig initializer OnInit requires Faction, TeamConfig
+library ForsakenConfig initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_FORSAKEN

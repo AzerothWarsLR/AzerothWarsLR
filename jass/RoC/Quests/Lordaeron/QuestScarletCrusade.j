@@ -1,4 +1,4 @@
-library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron
+library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron
 
   globals
     private constant integer HERO_ID = 'H01J'
@@ -34,9 +34,5 @@ library QuestScarletCrusade initializer OnInit requires QuestData, QuestItemCont
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_LORDAERON.AddQuest(QuestScarletCrusade.create())
-  endfunction
 
 endlibrary

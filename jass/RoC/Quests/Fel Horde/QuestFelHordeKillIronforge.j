@@ -1,4 +1,4 @@
-library QuestFelHordeKillIronforge initializer OnInit requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendIronforge
+library QuestFelHordeKillIronforge requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendIronforge
 
   globals
     private constant integer RESEARCH_ID = 'R011'
@@ -31,9 +31,5 @@ library QuestFelHordeKillIronforge initializer OnInit requires QuestData, FelHor
       return this
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillIronforge.create())
-  endfunction
 
 endlibrary

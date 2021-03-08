@@ -1,4 +1,4 @@
-library QuestCaptureGilneas initializer OnInit requires QuestData, ScourgeConfig, LordaeronConfig, StormwindConfig, QuestItemKillUnit
+library QuestCaptureGilneas requires QuestData, ScourgeConfig, LordaeronConfig, StormwindConfig, QuestItemKillUnit
 
   struct QuestCaptureGilneas extends QuestData
     private boolean doBlight = false
@@ -62,11 +62,5 @@ library QuestCaptureGilneas initializer OnInit requires QuestData, ScourgeConfig
       call EnableWeatherEffect(thistype.weather, true)
     endmethod
   endstruct
-
-  private function OnInit takes nothing returns nothing
-    call FACTION_SCOURGE.AddQuest(QuestCaptureGilneas.create("Late Harvest", "Gilneas has sealed itself behind its enormous city walls, believing that in doing so they will be protected against the Scourge's onslaught. They are wrong.", true))
-    call FACTION_LORDAERON.AddQuest(QuestCaptureGilneas.create("Anti-Isolationist Policy", "Gilneas has sealed itself behind its enormous city walls, refusing to join the North Alliance in its defense against the Scourge. The issue must be forced.", false))
-    call FACTION_STORMWIND.AddQuest(QuestCaptureGilneas.create("Anti-Isolationist Policy", "Gilneas has sealed itself behind its enormous city walls, refusing to join the South Alliance in its defense against the Fel Horde. The issue must be forced.", false))
-  endfunction
 
 endlibrary
