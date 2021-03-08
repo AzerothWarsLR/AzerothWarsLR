@@ -2,7 +2,7 @@ library DemonSoulAssembly initializer OnInit requires Artifact, Persons
 
   globals
     private constant real DUMMY_X = 22700
-    private constant real DUMMY_Y = 23735
+    private constant real DUMMY_Y = 23734
   endglobals
 
   private function Consume takes integer whichItemId returns nothing
