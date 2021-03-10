@@ -1,4 +1,4 @@
-library StormwindQuestSetup requires StormwindConfig, QuestConstructionSites, QuestHonorHold, QuestKultiras, QuestStromgarde, QuestCaptureGilneas, QuestKingdomOfMan
+library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, QuestHonorHold, QuestKultiras, QuestStromgarde, QuestCaptureGilneas, QuestKingdomOfMan
 
   public function OnInit takes nothing returns nothing
     call FACTION_STORMWIND.AddQuest(QuestConstructionSites.create())

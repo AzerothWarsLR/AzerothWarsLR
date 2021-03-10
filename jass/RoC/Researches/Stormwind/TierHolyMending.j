@@ -1,4 +1,4 @@
-library TierHolyMending initializer OnInit requires StormwindConfig
+library TierHolyMending initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R02X' then

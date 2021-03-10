@@ -1,4 +1,4 @@
-library QuestAndrassil requires QuestData, ControlPoint, DruidsConfig
+library QuestAndrassil requires QuestData, ControlPoint, DruidsSetup
 
   globals
     private constant integer RESEARCH_ID = 'R002'

@@ -1,5 +1,5 @@
 //Garithos is spawned spawns after a timer expires.
-library QuestGarithos requires QuestData, LordaeronConfig, LegendLordaeron
+library QuestGarithos requires QuestData, LordaeronSetup, LegendLordaeron
 
   globals
     private constant integer HERO_ID = 'Hlgr'

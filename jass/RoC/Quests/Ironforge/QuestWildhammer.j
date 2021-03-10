@@ -1,4 +1,4 @@
-library QuestWildhammer requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
+library QuestWildhammer requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
 
   globals
     private constant integer HERO_ID = 'H028'

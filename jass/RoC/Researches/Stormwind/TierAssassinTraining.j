@@ -1,4 +1,4 @@
-library TierAssassinTraining initializer OnInit requires StormwindConfig
+library TierAssassinTraining initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03F' then

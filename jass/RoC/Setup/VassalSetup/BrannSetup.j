@@ -1,10 +1,10 @@
-library VassalBrann initializer OnInit requires Faction, IronforgeConfig
+library BrannSetup requires Faction, IronforgeSetup
 
   globals
     VassalFaction VASSAL_BRANN
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_BRANN = VassalFaction.create("Brann", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNRifleman.blp", FACTION_IRONFORGE, LEGEND_BRANN)
     set VASSAL_BRANN.AbsenceResearch = 'R05I'
     set VASSAL_BRANN.WorkerItemType = 'I00A'

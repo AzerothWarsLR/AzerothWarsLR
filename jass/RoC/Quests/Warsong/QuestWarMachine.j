@@ -1,4 +1,4 @@
-library QuestWarMachine requires QuestData, ScourgeConfig
+library QuestWarMachine requires QuestData, ScourgeSetup
 
   struct QuestWarMachine extends QuestData
     private method operator CompletionPopup takes nothing returns string

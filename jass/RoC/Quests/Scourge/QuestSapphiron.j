@@ -1,4 +1,4 @@
-library QuestSapphiron requires QuestData, ScourgeConfig
+library QuestSapphiron requires QuestData, ScourgeSetup
 
   globals
     private constant integer SAPPHIRON_ID = 'ubdd'

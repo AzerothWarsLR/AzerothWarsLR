@@ -1,4 +1,4 @@
-library QuestSkullOfGuldan requires QuestData, Artifact, LegionConfig, QuestItemAnyUnitInRect
+library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemAnyUnitInRect
 
   struct QuestSkullOfGuldan extends QuestData
     private QuestItemAnyUnitInRect questItemAnyUnitInRect

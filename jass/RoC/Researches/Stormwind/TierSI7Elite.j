@@ -1,4 +1,4 @@
-library TierSI7Elite initializer OnInit requires StormwindConfig
+library TierSI7Elite initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R032' then

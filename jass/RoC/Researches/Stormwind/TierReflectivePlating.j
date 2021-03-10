@@ -1,4 +1,4 @@
-library TierReflectivePlating initializer OnInit requires StormwindConfig
+library TierReflectivePlating initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R02Z' then

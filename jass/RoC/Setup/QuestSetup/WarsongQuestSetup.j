@@ -1,4 +1,4 @@
-library WarsongQuestSetup requires WarsongConfig, FrostwolfConfig, QuestChenStormstout, QuestCrossroads, QuestFountainOfBlood, QuestWarMachine, QuestWarsongHold, QuestWarsongKillDruids, QuestWarsongKillSentinels
+library WarsongQuestSetup requires WarsongSetup, FrostwolfSetup, QuestChenStormstout, QuestCrossroads, QuestFountainOfBlood, QuestWarMachine, QuestWarsongHold, QuestWarsongKillDruids, QuestWarsongKillSentinels
 
   public function OnInit takes nothing returns nothing
     local QuestData newQuest = FACTION_WARSONG.AddQuest(QuestWarMachine.create())

@@ -1,4 +1,4 @@
-library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronConfig, LegendLordaeron
+library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronSetup, LegendLordaeron
 
   globals
     private constant integer HERO_ID = 'H01J'

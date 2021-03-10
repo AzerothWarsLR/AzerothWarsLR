@@ -1,4 +1,4 @@
-library QuestFelHordeKillStormwind requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendStormwind
+library QuestFelHordeKillStormwind requires QuestData, FelHordeSetup, QuestItemLegendDead, LegendStormwind
 
   globals
     private constant integer RESEARCH_ID = 'R05Z'

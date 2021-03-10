@@ -1,4 +1,4 @@
-library QuestDemonGateMonastery requires QuestData, LegionConfig
+library QuestDemonGateMonastery requires QuestData, LegionSetup
 
   globals
     private constant integer DEMONGATE_ID = 'ndmg'

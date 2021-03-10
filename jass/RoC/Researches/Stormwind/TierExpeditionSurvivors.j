@@ -1,4 +1,4 @@
-library TierExpeditionSurvivors initializer OnInit requires StormwindConfig
+library TierExpeditionSurvivors initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R031' then

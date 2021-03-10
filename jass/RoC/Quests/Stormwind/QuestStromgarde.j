@@ -1,4 +1,4 @@
-library QuestStromgarde requires QuestData, StormwindConfig, LegendNeutral, 
+library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral, 
 
   globals
     private constant integer HERO_ID = 'H00Z'

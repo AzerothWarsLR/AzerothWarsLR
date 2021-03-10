@@ -1,5 +1,5 @@
 //When Archimonde permadies, the Legion player gets Kil'jaeden instead.
-library ArchimondeKiljaeden initializer OnInit requires LegionConfig, LegendLegion
+library ArchimondeKiljaeden initializer OnInit requires LegionSetup, LegendLegion
 
   private function Dies takes nothing returns nothing
     if LEGEND_ARCHIMONDE == GetTriggerLegend() then

@@ -1,4 +1,4 @@
-library StormwindConfig initializer OnInit requires Faction, TeamSetup, UnitTypesStormwind
+library StormwindSetup initializer OnInit requires Faction, TeamSetup, UnitTypesStormwind
 
   globals
     LiegeFaction FACTION_STORMWIND

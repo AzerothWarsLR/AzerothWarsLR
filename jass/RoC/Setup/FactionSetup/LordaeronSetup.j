@@ -1,10 +1,10 @@
-library LordaeronConfig initializer OnInit requires Faction, TeamSetup, UnitTypesLordaeron
+library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
   globals
     LiegeFaction FACTION_LORDAERON
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     set FACTION_LORDAERON = LiegeFaction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON

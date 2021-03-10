@@ -1,10 +1,10 @@
-library FrostwolfConfig initializer OnInit requires Faction, TeamSetup
+library FrostwolfSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_FROSTWOLF
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     set FACTION_FROSTWOLF = LiegeFaction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp", 3)
     set f = FACTION_FROSTWOLF

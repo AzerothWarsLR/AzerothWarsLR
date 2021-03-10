@@ -1,5 +1,5 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
-library QuestKingArthas requires QuestData, LordaeronConfig, LegendLordaeron
+library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron
 
   struct QuestKingArthas extends QuestData
     private integer CROWN_ID = 'I001'

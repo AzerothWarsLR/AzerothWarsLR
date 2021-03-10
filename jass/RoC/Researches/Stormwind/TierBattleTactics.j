@@ -1,4 +1,4 @@
-library TierBattleTactics initializer OnInit requires StormwindConfig
+library TierBattleTactics initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R02Y' then

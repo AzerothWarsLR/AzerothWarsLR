@@ -1,10 +1,10 @@
-library VassalNekrosh initializer OnInit requires Faction, FelHordeConfig
+library NekroshSetup requires Faction, FelHordeSetup
 
   globals
     VassalFaction VASSAL_NEKROSH
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_NEKROSH = VassalFaction.create("Nek'rosh", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNNecroMagus.blp", FACTION_FEL_HORDE, LEGEND_NEKROSH)
     set VASSAL_NEKROSH.AbsenceResearch = 'R04Y'
     set VASSAL_NEKROSH.WorkerItemType = 'I00O'

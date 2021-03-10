@@ -1,4 +1,4 @@
-library QuestWarsongKillDruids requires WarsongConfig, LegendDruids, Display
+library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
 
   globals
     private constant integer RESEARCH_ID = 'R059'

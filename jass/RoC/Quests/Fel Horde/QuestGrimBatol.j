@@ -1,4 +1,4 @@
-library QuestGrimBatol requires QuestData, FelHordeConfig, DetermineLevel, LegendIronforge, LegendStormwind
+library QuestGrimBatol requires QuestData, FelHordeSetup, DetermineLevel, LegendIronforge, LegendStormwind
 
   globals
     private constant integer ZULUHED_ID = 'O00Y'

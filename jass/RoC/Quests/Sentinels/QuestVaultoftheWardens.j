@@ -1,4 +1,4 @@
-library QuestVaultoftheWardens requires QuestData, SentinelsConfig, QuestItemControlPoint
+library QuestVaultoftheWardens requires QuestData, SentinelsSetup, QuestItemControlPoint
 
   globals
     private constant integer RESEARCH_ID = 'R06H'

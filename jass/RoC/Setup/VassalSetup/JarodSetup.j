@@ -1,10 +1,10 @@
-library VassalJarod initializer OnInit requires Faction, SentinelsConfig
+library JarodSetup requires Faction, SentinelsSetup
 
   globals
     VassalFaction VASSAL_JAROD
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_JAROD = VassalFaction.create("Jarod", PLAYER_COLOR_LAVENDER, "|cFFC184F9","ReplaceableTextures\\CommandButtons\\BTNNightElfPriest.blp", FACTION_SENTINELS, LEGEND_JAROD)
     set VASSAL_JAROD.AbsenceResearch = 'R05G'
     set VASSAL_JAROD.WorkerItemType = 'I01G'

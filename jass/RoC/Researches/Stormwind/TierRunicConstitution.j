@@ -1,4 +1,4 @@
-library TierRunicConstitution initializer OnInit requires StormwindConfig
+library TierRunicConstitution initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03C' then

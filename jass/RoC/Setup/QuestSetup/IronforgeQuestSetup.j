@@ -1,4 +1,4 @@
-library IronforgeQuestSetup requires IronforgeConfig, QuestDarkIron, QuestGnomeregan, QuestWildhammer
+library IronforgeQuestSetup requires IronforgeSetup, QuestDarkIron, QuestGnomeregan, QuestWildhammer
 
   public function OnInit takes nothing returns nothing
     call FACTION_IRONFORGE.AddQuest(QuestDarkIron.create())

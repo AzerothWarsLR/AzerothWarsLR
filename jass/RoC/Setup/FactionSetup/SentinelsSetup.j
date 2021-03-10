@@ -1,10 +1,10 @@
-library SentinelsConfig initializer OnInit requires Faction, TeamSetup
+library SentinelsSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_SENTINELS
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_SENTINELS = LiegeFaction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)

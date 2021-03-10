@@ -1,4 +1,4 @@
-library QuestCaptureGilneas requires QuestData, ScourgeConfig, LordaeronConfig, StormwindConfig, QuestItemKillUnit
+library QuestCaptureGilneas requires QuestData, ScourgeSetup, LordaeronSetup, StormwindSetup, QuestItemKillUnit
 
   struct QuestCaptureGilneas extends QuestData
     private boolean doBlight = false

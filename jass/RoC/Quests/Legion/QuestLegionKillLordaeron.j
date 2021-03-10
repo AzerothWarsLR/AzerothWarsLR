@@ -1,4 +1,4 @@
-library QuestLegionKillLordaeron requires LegionConfig, LegendLordaeron, LegendLegion, Display
+library QuestLegionKillLordaeron requires LegionSetup, LegendLordaeron, LegendLegion, Display
 
   struct QuestLegionKillLordaeron extends QuestData
     private method operator CompletionPopup takes nothing returns string

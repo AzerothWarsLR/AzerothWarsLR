@@ -1,4 +1,4 @@
-library TierHighSorcererAndromath initializer OnInit requires StormwindConfig
+library TierHighSorcererAndromath initializer OnInit requires StormwindSetup
 
   globals
     private constant integer DEMI_UNITTYPE_ID = 'h05X'

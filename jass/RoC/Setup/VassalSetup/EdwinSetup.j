@@ -1,10 +1,10 @@
-library VassalEdwin initializer OnInit requires Faction, StormwindConfig
+library EdwinSetup requires Faction, StormwindSetup
 
   globals
     VassalFaction VASSAL_EDWIN
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_EDWIN = VassalFaction.create("Edwin", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", FACTION_STORMWIND, LEGEND_EDWIN)
     set VASSAL_EDWIN.AbsenceResearch = 'R05J'
     set VASSAL_EDWIN.WorkerItemType = 'I00Q'

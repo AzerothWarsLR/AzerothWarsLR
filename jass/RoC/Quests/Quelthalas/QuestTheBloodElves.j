@@ -1,4 +1,4 @@
-library QuestTheBloodElves requires QuelthalasConfig, LegendLegion, LegendQuelthalas, Display
+library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQuelthalas, Display
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R04Q'

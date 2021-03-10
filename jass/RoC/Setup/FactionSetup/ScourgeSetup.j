@@ -1,10 +1,10 @@
-library ScourgeConfig initializer OnInit requires Faction, TeamSetup, UnitTypesScourge
+library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
 
   globals
     LiegeFaction FACTION_SCOURGE
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_SCOURGE = LiegeFaction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)

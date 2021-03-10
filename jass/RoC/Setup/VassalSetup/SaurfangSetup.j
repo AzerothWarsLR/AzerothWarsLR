@@ -1,10 +1,10 @@
-library VassalSaurfang initializer OnInit requires Faction, WarsongConfig
+library SaurfangSetup requires Faction, WarsongSetup
 
   globals
     VassalFaction VASSAL_SAURFANG
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_SAURFANG = VassalFaction.create("Saurfang", PLAYER_COLOR_LIGHT_GRAY, "|cFF949494","ReplaceableTextures\\CommandButtons\\BTNVarokSaurfang.blp", FACTION_WARSONG, LEGEND_SAURFANG)
     set VASSAL_SAURFANG.AbsenceResearch = 'R05D'
     set VASSAL_SAURFANG.WorkerItemType = 'I00O'

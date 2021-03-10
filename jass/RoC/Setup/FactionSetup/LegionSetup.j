@@ -1,10 +1,10 @@
-library LegionConfig initializer OnInit requires Faction, TeamSetup
+library LegionSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_LEGION
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_LEGION = LiegeFaction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)

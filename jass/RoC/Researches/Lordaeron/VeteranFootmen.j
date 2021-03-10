@@ -1,4 +1,4 @@
-library VeteranFootmen initializer OnInit requires Persons, LordaeronConfig
+library VeteranFootmen initializer OnInit requires Persons, LordaeronSetup
 
   globals
     private constant integer RESEARCH_ID = 'R00B'

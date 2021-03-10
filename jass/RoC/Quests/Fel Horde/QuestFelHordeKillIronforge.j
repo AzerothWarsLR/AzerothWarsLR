@@ -1,4 +1,4 @@
-library QuestFelHordeKillIronforge requires QuestData, FelHordeConfig, QuestItemLegendDead, LegendIronforge
+library QuestFelHordeKillIronforge requires QuestData, FelHordeSetup, QuestItemLegendDead, LegendIronforge
 
   globals
     private constant integer RESEARCH_ID = 'R011'

@@ -1,4 +1,4 @@
-library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronConfig, LegendLegion
+library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronSetup, LegendLegion
 
   globals
     private constant integer RESEARCH_ID = 'R04L'

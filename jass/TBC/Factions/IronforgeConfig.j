@@ -1,4 +1,4 @@
-library IronforgeConfig initializer OnInit requires Faction, TeamSetup
+library IronforgeSetup initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_IRONFORGE

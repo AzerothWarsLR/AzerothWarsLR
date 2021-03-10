@@ -1,4 +1,4 @@
-library LegionQuestSetup requires LegionConfig, QuestDemonGateMonastery, QuestLegionCaptureSunwell, QuestLegionKillLordaeron, QuestSkullOfGuldan, QuestSummonLegion
+library LegionQuestSetup requires LegionSetup, QuestDemonGateMonastery, QuestLegionCaptureSunwell, QuestLegionKillLordaeron, QuestSkullOfGuldan, QuestSummonLegion
 
   public function OnInit takes nothing returns nothing
     call FACTION_LEGION.AddQuest(QuestDemonGateMonastery.create())

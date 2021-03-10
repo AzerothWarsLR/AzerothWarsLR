@@ -1,4 +1,4 @@
-library QuestSentinelsKillWarsong requires SentinelsConfig, LegendWarsong, Display
+library QuestSentinelsKillWarsong requires SentinelsSetup, LegendWarsong, Display
 
   globals
     private constant integer UNITTYPE_ID = 'echm'

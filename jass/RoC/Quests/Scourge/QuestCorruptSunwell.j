@@ -1,4 +1,4 @@
-library QuestCorruptSunwell requires QuestData, ScourgeConfig
+library QuestCorruptSunwell requires QuestData, ScourgeSetup
 
   globals
     private constant integer RESEARCH_ID = 'R04K'

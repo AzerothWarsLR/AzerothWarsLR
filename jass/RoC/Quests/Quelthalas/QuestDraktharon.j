@@ -1,4 +1,4 @@
-library QuestDraktharon requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestDraktharon requires QuestData, QuelthalasSetup, LegendNeutral
 
   globals
     private constant integer DARKHAN_ID = 'h052'

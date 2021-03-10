@@ -1,5 +1,5 @@
 
-library DruidsConfig initializer OnInit requires Faction, TeamSetup
+library DruidsSetup initializer OnInit requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_DRUIDS

@@ -1,11 +1,11 @@
 
-library DruidsConfig initializer OnInit requires Faction, TeamSetup
+library DruidsSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_DRUIDS
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_DRUIDS = LiegeFaction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)

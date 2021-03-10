@@ -1,4 +1,4 @@
-library QuestDruidsKillWarsong requires DruidsConfig, LegendWarsong, Display
+library QuestDruidsKillWarsong requires DruidsSetup, LegendWarsong, Display
 
   globals
     private constant integer UNITTYPE_ID = 'e012' //Siege Ancient

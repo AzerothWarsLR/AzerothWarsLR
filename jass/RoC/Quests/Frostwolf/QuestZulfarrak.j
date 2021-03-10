@@ -1,4 +1,4 @@
-library QuestZulfarrak requires FrostwolfConfig, LegendNeutral
+library QuestZulfarrak requires FrostwolfSetup, LegendNeutral
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string

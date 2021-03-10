@@ -1,4 +1,4 @@
-library QuestPlague requires QuestData, ScourgeConfig
+library QuestPlague requires QuestData, ScourgeSetup
 
   globals
     private constant integer RESEARCH_ID = 'R06I'

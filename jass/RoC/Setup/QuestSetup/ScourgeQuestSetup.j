@@ -1,4 +1,4 @@
-library ScourgeQuestSetup requires ScourgeConfig, QuestCorruptArthas, QuestCorruptSunwell, QuestKelthuzad, QuestLichKingArthas, QuestPlague, QuestReanimateSylvanas, QuestSapphiron, QuestCaptureGilneas
+library ScourgeQuestSetup requires ScourgeSetup, QuestCorruptArthas, QuestCorruptSunwell, QuestKelthuzad, QuestLichKingArthas, QuestPlague, QuestReanimateSylvanas, QuestSapphiron, QuestCaptureGilneas
 
   public function OnInit takes nothing returns nothing
     call FACTION_SCOURGE.AddQuest(QuestCorruptArthas.create())

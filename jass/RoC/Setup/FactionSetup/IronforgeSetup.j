@@ -1,10 +1,10 @@
-library IronforgeConfig initializer OnInit requires Faction, TeamSetup
+library IronforgeSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_IRONFORGE
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_IRONFORGE = LiegeFaction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp", 3)

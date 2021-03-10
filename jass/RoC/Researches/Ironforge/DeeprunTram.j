@@ -1,4 +1,4 @@
-library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeConfig, StormwindConfig
+library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeSetup, StormwindSetup
 
   globals
     private constant integer RESEARCH_ID = 'R014'

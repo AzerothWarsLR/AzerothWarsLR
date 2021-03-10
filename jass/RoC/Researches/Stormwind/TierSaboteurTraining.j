@@ -1,4 +1,4 @@
-library TierSaboteurTraining initializer OnInit requires StormwindConfig
+library TierSaboteurTraining initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03E' then

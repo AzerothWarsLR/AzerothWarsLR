@@ -1,4 +1,4 @@
-library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfConfig, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
+library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
 
   struct QuestDrektharsSpellbook extends QuestData
     private method operator CompletionPopup takes nothing returns string

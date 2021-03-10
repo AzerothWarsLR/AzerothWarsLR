@@ -1,4 +1,4 @@
-library QuestKingdomOfMan requires LordaeronConfig, StormwindConfig, QuestItemControlPoint, 
+library QuestKingdomOfMan requires LordaeronSetup, StormwindSetup, QuestItemControlPoint, 
 
   globals
     private constant integer RESEARCH_ID = 'R01N'

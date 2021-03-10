@@ -1,6 +1,6 @@
 //If any Horde unit enters the Crossroads area, OR a time elapses, OR someone becomes a solo Horde Path, give the Crossroads to a Horde player.
 
-library QuestCrossroads requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
+library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralHelpers
 
   struct QuestCrossroads extends QuestData
     private Faction fallbackFaction = 0

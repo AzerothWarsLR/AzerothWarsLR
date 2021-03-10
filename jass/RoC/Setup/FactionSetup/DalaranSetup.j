@@ -1,10 +1,10 @@
-library DalaranConfig initializer OnInit requires Faction, TeamSetup
+library DalaranSetup requires Faction, TeamSetup
 
   globals
     LiegeFaction FACTION_DALARAN
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local Faction f
     
     set FACTION_DALARAN = LiegeFaction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 2)

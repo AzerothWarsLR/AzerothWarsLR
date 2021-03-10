@@ -1,4 +1,4 @@
-library QuestWarsongHold requires WarsongConfig, LegendWarsong, GeneralHelpers, QuestItemControlPoint
+library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, QuestItemControlPoint
 
   globals
     private constant integer RESEARCH_ID = 'R06G'

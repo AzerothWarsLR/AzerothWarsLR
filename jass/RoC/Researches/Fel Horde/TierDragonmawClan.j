@@ -1,4 +1,4 @@
-library TierDragonmawClan initializer OnInit requires FelHordeConfig
+library TierDragonmawClan initializer OnInit requires FelHordeSetup
 
   globals
     private constant integer RESEARCH_ID = 'R036'

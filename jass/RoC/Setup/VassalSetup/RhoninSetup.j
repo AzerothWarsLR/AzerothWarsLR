@@ -1,10 +1,10 @@
-library VassalRhonin initializer OnInit requires Faction, DalaranConfig
+library RhoninSetup requires Faction, DalaranSetup
 
   globals
     VassalFaction VASSAL_RHONIN
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_RHONIN = VassalFaction.create("Rhonin", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNRagnarFlamebeard.blp", FACTION_DALARAN, LEGEND_RHONIN)
     set VASSAL_RHONIN.AbsenceResearch = 'R051'
     set VASSAL_RHONIN.WorkerItemType = 'I00Q'

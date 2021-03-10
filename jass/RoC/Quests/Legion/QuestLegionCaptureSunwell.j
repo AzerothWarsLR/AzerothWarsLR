@@ -1,4 +1,4 @@
-library QuestLegionCaptureSunwell requires QuestData, LegionConfig, LegendQuelthalas
+library QuestLegionCaptureSunwell requires QuestData, LegionSetup, LegendQuelthalas
 
   globals
     private constant integer RESEARCH_ID = 'R054'

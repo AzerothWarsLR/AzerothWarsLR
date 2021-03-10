@@ -1,4 +1,4 @@
-library QuestFountainOfBlood requires QuestData, WarsongConfig, LegendNeutral
+library QuestFountainOfBlood requires QuestData, WarsongSetup, LegendNeutral
 
   globals
     private constant integer RESEARCH_ID = 'R00X'

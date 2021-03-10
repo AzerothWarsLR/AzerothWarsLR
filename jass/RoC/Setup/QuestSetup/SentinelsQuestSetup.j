@@ -1,4 +1,4 @@
-library SentinelsQuestSetup requires SentinelsConfig, QuestSentinelsKillFrostwolf, QuestSentinelsKillWarsong, QuestVaultoftheWardens, QuestScepterOfTheQueen
+library SentinelsQuestSetup requires SentinelsSetup, QuestSentinelsKillFrostwolf, QuestSentinelsKillWarsong, QuestVaultoftheWardens, QuestScepterOfTheQueen
 
   public function OnInit takes nothing returns nothing
     call FACTION_SENTINELS.AddQuest(QuestSentinelsKillFrostwolf.create())

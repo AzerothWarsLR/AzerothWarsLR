@@ -1,4 +1,4 @@
-library QuestFreeNerzhul requires QuestData, LegendFrostwolf, FrostwolfConfig
+library QuestFreeNerzhul requires QuestData, LegendFrostwolf, FrostwolfSetup
 
   struct QuestFreeNerzhul extends QuestData
     private method operator CompletionPopup takes nothing returns string

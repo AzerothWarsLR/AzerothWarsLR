@@ -1,4 +1,4 @@
-library TierFocusInTheLight initializer OnInit requires StormwindConfig
+library TierFocusInTheLight initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03A' then

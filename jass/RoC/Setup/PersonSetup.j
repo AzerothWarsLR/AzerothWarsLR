@@ -1,4 +1,4 @@
-library PersonSetup requires Persons, Team, ScourgeConfig, LegionConfig, FelHordeConfig, LordaeronConfig, IronforgeConfig, DalaranConfig, QuelthalasConfig, FrostwolfConfig, WarsongConfig, SentinelsConfig, StormwindConfig, DruidsConfig
+library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeSetup, LordaeronSetup, IronforgeSetup, DalaranSetup, QuelthalasSetup, FrostwolfSetup, WarsongSetup, SentinelsSetup, StormwindSetup, DruidsSetup
 
   public function OnInit takes nothing returns nothing
     local Person p

@@ -1,4 +1,4 @@
-library TierVeteranGuard initializer OnInit requires StormwindConfig
+library TierVeteranGuard initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03D' then

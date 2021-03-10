@@ -1,6 +1,6 @@
 //Scourge always has vision over Northrend.
 
-library NorthrendVision initializer OnInit requires ScourgeConfig
+library NorthrendVision initializer OnInit requires ScourgeSetup
 
   globals
     private fogmodifier array ScourgeFogModifiers

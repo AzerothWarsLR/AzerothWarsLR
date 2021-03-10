@@ -1,4 +1,4 @@
-library QuelthalasQuestSetup requires QuelthalasConfig, QuestDraktharon, QuestQueldanil, QuestTheBloodElves
+library QuelthalasQuestSetup requires QuelthalasSetup, QuestDraktharon, QuestQueldanil, QuestTheBloodElves
 
   public function OnInit takes nothing returns nothing
     local QuestData newQuest = QuestQueldanil.create()

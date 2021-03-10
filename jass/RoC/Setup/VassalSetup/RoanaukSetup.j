@@ -1,10 +1,10 @@
-library VassalRoanauk initializer OnInit requires Faction, FrostwolfConfig
+library RoanaukSetup requires Faction, FrostwolfSetup
 
   globals
     VassalFaction VASSAL_ROANAUK
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_ROANAUK = VassalFaction.create("Roanauk", PLAYER_COLOR_SNOW, "|cFFFFFFFF","ReplaceableTextures\\CommandButtons\\BTNSpiritWalker.blp", FACTION_FROSTWOLF, LEGEND_ROANAUK)
     set VASSAL_ROANAUK.AbsenceResearch = 'R05C'
     set VASSAL_ROANAUK.WorkerItemType = 'I00O'

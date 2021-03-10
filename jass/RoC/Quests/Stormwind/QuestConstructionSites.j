@@ -1,5 +1,5 @@
 //Stormwind's Construction sites are enabled after a delay.
-library QuestConstructionSites requires QuestData, StormwindConfig
+library QuestConstructionSites requires QuestData, StormwindSetup
 
   globals
     private constant integer RESEARCH_ID = 'R022'

@@ -1,4 +1,4 @@
-library QuestKultiras requires QuestData, DetermineLevel, DalaranConfig
+library QuestKultiras requires QuestData, DetermineLevel, DalaranSetup
 
   globals
     private constant integer RESEARCH_ID = 'R00L'

@@ -1,10 +1,10 @@
-library VassalChogall initializer OnInit requires Faction, FelHordeConfig
+library ChogallSetup requires Faction, FelHordeSetup
 
   globals
     VassalFaction VASSAL_CHOGALL
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_CHOGALL = VassalFaction.create("Cho'gall", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNHeroChogall.blp", FACTION_FEL_HORDE, LEGEND_CHOGALL)
     set VASSAL_CHOGALL.AbsenceResearch = 'R04X'
     set VASSAL_CHOGALL.WorkerItemType = 'I00O'

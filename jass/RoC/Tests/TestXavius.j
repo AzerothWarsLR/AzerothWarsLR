@@ -1,4 +1,4 @@
-library TestXavius requires Test, VassalXavius
+library TestXavius requires Test, XaviusSetup
 
   struct TestXavius extends Test
     method Run takes nothing returns nothing

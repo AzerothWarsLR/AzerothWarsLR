@@ -1,10 +1,10 @@
-library VassalNathanos initializer OnInit requires Faction, LordaeronConfig
+library NathanosSetup requires Faction, LordaeronSetup
 
   globals
     VassalFaction VASSAL_NATHANOS
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_NATHANOS = VassalFaction.create("Nathanos", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNNathanos.blp", FACTION_LORDAERON, LEGEND_NATHANOS)
     set VASSAL_NATHANOS.AbsenceResearch = 'R04Z'
     set VASSAL_NATHANOS.WorkerItemType = 'I00Q'

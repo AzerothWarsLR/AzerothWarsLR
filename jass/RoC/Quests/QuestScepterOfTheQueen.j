@@ -1,4 +1,4 @@
-library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongConfig, SentinelsConfig, 
+library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSetup, SentinelsSetup, 
 
   struct QuestScepterOfTheQueenWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string

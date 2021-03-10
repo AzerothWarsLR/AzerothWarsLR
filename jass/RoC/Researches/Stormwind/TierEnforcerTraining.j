@@ -1,4 +1,4 @@
-library TierEnforcerTraining initializer OnInit requires StormwindConfig
+library TierEnforcerTraining initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R038' then

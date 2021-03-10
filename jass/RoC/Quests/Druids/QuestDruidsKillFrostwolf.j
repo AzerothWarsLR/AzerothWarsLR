@@ -1,4 +1,4 @@
-library QuestDruidsKillFrostwolf requires DruidsConfig, LegendFrostwolf, Display
+library QuestDruidsKillFrostwolf requires DruidsSetup, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R044'

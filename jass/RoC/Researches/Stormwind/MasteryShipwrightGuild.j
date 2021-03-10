@@ -1,4 +1,4 @@
-library MasteryShipwrightGuild initializer OnInit requires StormwindConfig
+library MasteryShipwrightGuild initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R00Z' then

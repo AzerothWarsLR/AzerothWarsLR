@@ -1,4 +1,4 @@
-library QuestQueldanil requires QuestData, QuelthalasConfig, LegendNeutral
+library QuestQueldanil requires QuestData, QuelthalasSetup, LegendNeutral
 
   struct QuestQueldanil extends QuestData
     private method operator CompletionPopup takes nothing returns string

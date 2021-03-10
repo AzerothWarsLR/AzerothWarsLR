@@ -1,10 +1,10 @@
-library VassalLorthemar initializer OnInit requires Faction, QuelthalasConfig
+library LorthemarSetup requires Faction, QuelthalasSetup
 
   globals
     VassalFaction VASSAL_LORTHEMAR
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_LORTHEMAR = VassalFaction.create("Lor'themar", PLAYER_COLOR_MAROON, "|cFFC4000F","ReplaceableTextures\\CommandButtons\\BTNLorthemarv1.blp", FACTION_QUELTHALAS, LEGEND_LORTHEMAR)
     set VASSAL_LORTHEMAR.AbsenceResearch = 'R055'
     set VASSAL_LORTHEMAR.WorkerItemType = 'I00Q'

@@ -1,4 +1,4 @@
-library TierSkirmisherTraining initializer OnInit requires StormwindConfig
+library TierSkirmisherTraining initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03K' then

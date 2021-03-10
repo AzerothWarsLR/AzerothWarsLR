@@ -1,4 +1,4 @@
-library QuestWarsongKillSentinels requires WarsongConfig, LegendSentinels, Display
+library QuestWarsongKillSentinels requires WarsongSetup, LegendSentinels, Display
 
   globals
     private constant integer RESEARCH_ID = 'R058'

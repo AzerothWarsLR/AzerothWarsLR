@@ -1,4 +1,4 @@
-library TierMagesOfStromgarde initializer OnInit requires StormwindConfig, Math
+library TierMagesOfStromgarde initializer OnInit requires StormwindSetup, Math
 
   globals
     private constant integer UNITTYPE_PORTAL = 'n09P'

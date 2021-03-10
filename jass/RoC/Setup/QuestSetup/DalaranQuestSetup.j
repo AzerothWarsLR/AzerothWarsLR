@@ -1,4 +1,4 @@
-library DalaranQuestSetup requires DalaranConfig, QuestBlueDragons, QuestCrystalGolem, QuestJainaSoulGem, QuestKarazhan, QuestNewGuardian, QuestTheramore
+library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalGolem, QuestJainaSoulGem, QuestKarazhan, QuestNewGuardian, QuestTheramore
 
   public function OnInit takes nothing returns nothing
     call FACTION_DALARAN.AddQuest(QuestJainaSoulGem.create())

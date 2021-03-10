@@ -1,4 +1,4 @@
-library TierKatranaPrestor initializer OnInit requires StormwindConfig
+library TierKatranaPrestor initializer OnInit requires StormwindSetup
 
   globals
     private constant integer DEMI_UNITTYPE_ID = 'n06F'

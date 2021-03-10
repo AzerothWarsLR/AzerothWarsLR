@@ -1,4 +1,4 @@
-library QuestShoresOfNorthrend requires LordaeronConfig, LegendLordaeron, GeneralHelpers
+library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R06F'

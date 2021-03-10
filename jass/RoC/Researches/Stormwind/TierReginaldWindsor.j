@@ -1,4 +1,4 @@
-library TierReginaldWindsor initializer OnInit requires StormwindConfig
+library TierReginaldWindsor initializer OnInit requires StormwindSetup
 
   globals
     private constant integer DEMI_UNITTYPE_ID = 'h03F'

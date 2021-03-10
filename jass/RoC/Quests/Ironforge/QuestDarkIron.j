@@ -1,4 +1,4 @@
-library QuestDarkIron requires QuestItemKillUnit, IronforgeConfig, LegendNeutral
+library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
 
   globals
     private constant integer HERO_ID = 'H03G'

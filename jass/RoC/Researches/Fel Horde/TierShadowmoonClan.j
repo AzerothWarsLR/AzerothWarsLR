@@ -1,4 +1,4 @@
-library TierShadowmoonClan initializer OnInit requires FelHordeConfig, GeneralHelpers
+library TierShadowmoonClan initializer OnInit requires FelHordeSetup, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R047'

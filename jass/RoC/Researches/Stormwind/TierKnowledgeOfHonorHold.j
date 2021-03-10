@@ -1,4 +1,4 @@
-library TierKnowledgeOfHonorHold initializer OnInit requires StormwindConfig
+library TierKnowledgeOfHonorHold initializer OnInit requires StormwindSetup
 
   globals
     private constant integer UNITTYPE_PORTAL = 'n09P'

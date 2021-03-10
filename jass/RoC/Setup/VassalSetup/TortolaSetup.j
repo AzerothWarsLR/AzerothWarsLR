@@ -1,10 +1,10 @@
-library VassalTortola initializer OnInit requires Faction, DruidsConfig
+library TortolaSetup requires Faction, DruidsSetup
 
   globals
     VassalFaction VASSAL_TORTOLA
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_TORTOLA = VassalFaction.create("Tortola", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNSeaTurtleGreen.blp", FACTION_DRUIDS, LEGEND_TORTOLLA)
     set VASSAL_TORTOLA.AbsenceResearch = 'R05H'
     set VASSAL_TORTOLA.WorkerItemType = 'I01G'

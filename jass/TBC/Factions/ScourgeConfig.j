@@ -1,4 +1,4 @@
-library ScourgeConfig initializer OnInit requires Faction, TeamSetup, UnitTypesScourge
+library ScourgeSetup initializer OnInit requires Faction, TeamSetup, UnitTypesScourge
 
   globals
     LiegeFaction FACTION_SCOURGE

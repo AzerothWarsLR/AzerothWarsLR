@@ -1,4 +1,4 @@
-library QuestKelthuzad requires QuestData, ScourgeConfig, LegendScourge, LegendQuelthalas
+library QuestKelthuzad requires QuestData, ScourgeSetup, LegendScourge, LegendQuelthalas
 
   struct QuestKelthuzad extends QuestData
     private method operator CompletionPopup takes nothing returns string

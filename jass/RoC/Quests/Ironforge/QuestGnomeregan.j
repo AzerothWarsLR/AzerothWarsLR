@@ -1,4 +1,4 @@
-library QuestGnomeregan requires QuestData, IronforgeConfig, QuestItemKillUnit
+library QuestGnomeregan requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R05Q'

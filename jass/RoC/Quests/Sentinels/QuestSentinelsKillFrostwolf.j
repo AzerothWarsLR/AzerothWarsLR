@@ -1,4 +1,4 @@
-library QuestSentinelsKillFrostwolf requires SentinelsConfig, LegendFrostwolf, Display
+library QuestSentinelsKillFrostwolf requires SentinelsSetup, LegendFrostwolf, Display
 
   globals
     private constant integer RESEARCH_ID = 'R052'

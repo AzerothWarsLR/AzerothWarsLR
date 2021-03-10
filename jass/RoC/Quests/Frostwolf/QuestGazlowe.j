@@ -1,4 +1,4 @@
-library QuestGazlowe requires QuestData, ControlPoint, FrostwolfConfig, LegendFrostwolf
+library QuestGazlowe requires QuestData, ControlPoint, FrostwolfSetup, LegendFrostwolf
 
   globals
     private constant integer RESEARCH_ID = 'R01F'

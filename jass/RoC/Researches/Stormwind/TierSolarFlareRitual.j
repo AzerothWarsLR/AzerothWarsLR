@@ -1,4 +1,4 @@
-library TierSolarFlareRitual initializer OnInit requires StormwindConfig
+library TierSolarFlareRitual initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R03U' then

@@ -1,4 +1,4 @@
-library QuestGuldansLegacy requires QuestData, FelHordeConfig
+library QuestGuldansLegacy requires QuestData, FelHordeSetup
 
   globals
     private integer RESEARCH_ID = 'R041'

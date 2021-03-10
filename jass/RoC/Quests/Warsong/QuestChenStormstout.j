@@ -1,5 +1,5 @@
 //Chen Stormstout joins the Warsong when a Warsong unit approaches him.
-library QuestChenStormstout requires QuestData, StormwindConfig, GeneralHelpers
+library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
 
   globals
     private constant integer CHEN_RESEARCH = 'R037'

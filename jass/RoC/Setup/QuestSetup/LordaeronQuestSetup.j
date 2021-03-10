@@ -1,4 +1,4 @@
-library LordaeronQuestSetup requires LordaeronConfig, QuestGarithos, QuestKingArthas, QuestScarletCrusade, QuestShoresOfNorthrend, QuestThunderEagle, QuestCaptureGilneas, QuestKingdomOfMan
+library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArthas, QuestScarletCrusade, QuestShoresOfNorthrend, QuestThunderEagle, QuestCaptureGilneas, QuestKingdomOfMan
 
   public function OnInit takes nothing returns nothing
     call FACTION_LORDAERON.AddQuest(QuestGarithos.create())

@@ -1,4 +1,4 @@
-library FelHordeQuestSetup requires FelHordeConfig, QuestFelHordeKillIronforge, QuestFelHordeKillStormwind, QuestGrimBatol
+library FelHordeQuestSetup requires FelHordeSetup, QuestFelHordeKillIronforge, QuestFelHordeKillStormwind, QuestGrimBatol
 
   public function OnInit takes nothing returns nothing
     call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillIronforge.create())

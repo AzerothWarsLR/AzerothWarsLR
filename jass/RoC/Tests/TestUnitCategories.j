@@ -1,4 +1,4 @@
-library TestUnitCategories requires Test, LordaeronConfig, ScourgeConfig
+library TestUnitCategories requires Test, LordaeronSetup, ScourgeSetup
 
   struct TestUnitCategories extends Test
     method Run takes nothing returns nothing

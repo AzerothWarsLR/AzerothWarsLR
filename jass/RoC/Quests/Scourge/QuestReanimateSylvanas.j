@@ -1,4 +1,4 @@
-library QuestReanimateSylvanas requires QuestData, ScourgeConfig, QuelthalasConfig, LegendQuelthalas
+library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup, LegendQuelthalas
 
   globals
     private constant integer SYLVANAS_RESEARCH = 'R02D'

@@ -1,4 +1,4 @@
-library FrostwolfQuestSetup requires FrostwolfConfig, WarsongConfig, QuestDrektharsSpellbook, QuestFreeNerzhul, QuestFrostwolfKillSentinels, QuestGazlowe, QuestSeaWitch, QuestThunderBluff, QuestZulfarrak, QuestScepterOfTheQueen
+library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrektharsSpellbook, QuestFreeNerzhul, QuestFrostwolfKillSentinels, QuestGazlowe, QuestSeaWitch, QuestThunderBluff, QuestZulfarrak, QuestScepterOfTheQueen
   
   public function OnInit takes nothing returns nothing
     local QuestData newQuest = FACTION_FROSTWOLF.AddQuest(QuestSeaWitch.create())

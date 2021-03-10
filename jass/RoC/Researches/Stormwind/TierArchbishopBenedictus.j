@@ -1,4 +1,4 @@
-library TierArchbishopBenedictus initializer OnInit requires StormwindConfig
+library TierArchbishopBenedictus initializer OnInit requires StormwindSetup
 
   globals
     private constant integer DEMI_UNITTYPE_ID = 'h05W'

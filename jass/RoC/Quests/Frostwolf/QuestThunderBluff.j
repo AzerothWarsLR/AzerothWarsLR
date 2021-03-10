@@ -1,5 +1,5 @@
 //If the Centaur Khan dies, OR a time elapses, give Thunder Bluff to a Horde player.
-library QuestThunderBluff initializer OnInit requires Persons, FrostwolfConfig, WarsongConfig, GeneralHelpers
+library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, WarsongSetup, GeneralHelpers
 
   globals
     private group ThunderBluffUnits

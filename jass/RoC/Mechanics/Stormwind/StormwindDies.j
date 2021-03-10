@@ -1,4 +1,4 @@
-library StormwindDies initializer OnInit requires StormwindConfig
+library StormwindDies initializer OnInit requires StormwindSetup
 
   private function Dies takes nothing returns nothing
     call KillUnit( gg_unit_h055_0035 )

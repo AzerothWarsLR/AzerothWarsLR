@@ -1,4 +1,4 @@
-library TierSanctuaryOfLight initializer OnInit requires StormwindConfig
+library TierSanctuaryOfLight initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
     if GetResearched() == 'R02W' then

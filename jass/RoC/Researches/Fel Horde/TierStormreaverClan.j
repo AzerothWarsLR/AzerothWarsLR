@@ -1,4 +1,4 @@
-library TierStormreaverClan initializer OnInit requires FelHordeConfig
+library TierStormreaverClan initializer OnInit requires FelHordeSetup
 
   globals
     private constant integer RESEARCH_ID = 'R03L'

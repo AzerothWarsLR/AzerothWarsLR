@@ -1,4 +1,4 @@
-library KorkronGuard initializer OnInit requires FrostwolfConfig
+library KorkronGuard initializer OnInit requires FrostwolfSetup
 
   globals
     private constant integer RESEARCH_ID = 'R017'

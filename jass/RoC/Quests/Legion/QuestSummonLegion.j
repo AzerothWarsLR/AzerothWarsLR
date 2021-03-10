@@ -1,4 +1,4 @@
-library QuestSummonLegion requires QuestData, ScourgeConfig, LegionConfig
+library QuestSummonLegion requires QuestData, ScourgeSetup, LegionSetup
 
   globals
     private constant integer RITUAL_ID = 'A00J'

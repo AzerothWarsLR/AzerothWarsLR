@@ -1,4 +1,4 @@
-library QuestLichKingArthas requires QuestData, ScourgeConfig, Artifact
+library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
 
   globals
     private constant integer LEVEL_REQUIREMENT = 15

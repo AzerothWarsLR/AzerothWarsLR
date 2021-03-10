@@ -1,10 +1,10 @@
-library VassalSylvanas initializer OnInit requires Faction, ScourgeConfig
+library SylvanasSetup requires Faction, ScourgeSetup
 
   globals
     VassalFaction VASSAL_SYLVANAS
   endglobals
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     set VASSAL_SYLVANAS = VassalFaction.create("Sylvanas", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp", FACTION_SCOURGE, LEGEND_SYLVANASV)
     set VASSAL_SYLVANAS.AbsenceResearch = 'R04W'
     set VASSAL_SYLVANAS.WorkerItemType = 'I013'
