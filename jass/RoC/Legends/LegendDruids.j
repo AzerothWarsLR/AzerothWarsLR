@@ -28,7 +28,7 @@ library LegendDruids initializer OnInit requires Legend
 
     set LEGEND_URSOC = Legend.create()
     set LEGEND_URSOC.UnitType = 'E00A'
-    set LEGEND_URSOC.StartingXP = 15400
+    set LEGEND_URSOC.StartingXP = 10800
 
     set LEGEND_NORDRASSIL = Legend.create()
     set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
