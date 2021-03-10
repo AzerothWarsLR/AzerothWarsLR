@@ -1,7 +1,8 @@
 library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, QuestHonorHold, QuestKultiras, QuestStromgarde, QuestCaptureGilneas, QuestKingdomOfMan
 
   public function OnInit takes nothing returns nothing
-    call FACTION_STORMWIND.AddQuest(QuestConstructionSites.create())
+    local QuestData newQuest = FACTION_STORMWIND.AddQuest(QuestConstructionSites.create())
+    set FACTION_STORMWIND.StartingQuest = newQuest
     call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
     call FACTION_STORMWIND.AddQuest(QuestKultiras.create())
     call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
