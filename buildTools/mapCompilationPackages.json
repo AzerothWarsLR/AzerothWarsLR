@@ -38,5 +38,18 @@
     ],
     "FileName": "AzerothWarsCoreCodeTest",
     "VersionNumber": "0"
-  }
+  },
+	{
+    "PackageName": "AzerothWarsRoCBlank",
+    "SourceMapPath": "../sourceMaps/awr_source_rocblank.w3x",
+		"ObjectDirectoryPaths": [
+      "../objects/Main/",
+			"../objects/RoC/"
+    ],
+    "SourceCodeDirectoryPaths": [
+      "../jass/Main/"
+    ],
+    "FileName": "AzerothWarsROCBlank",
+    "VersionNumber": "0"
+  }  
 ]
