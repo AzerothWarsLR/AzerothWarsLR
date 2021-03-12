@@ -31,12 +31,12 @@
     "PackageName": "AzerothWarsCoreCodeTest",
     "SourceMapPath": "../sourceMaps/awr_source_blank.w3x",
 		"ObjectDirectoryPaths": [
-      "../objects/CoreCodeTest/",
+      "../objects/CoreCodeTest/"
     ],
     "SourceCodeDirectoryPaths": [
-      "../jass/Main/",
+      "../jass/Main/"
     ],
     "FileName": "AzerothWarsCoreCodeTest",
     "VersionNumber": "0"
-  },
+  }
 ]
