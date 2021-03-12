@@ -10,8 +10,8 @@
       "../objects/Main/",
 			"../objects/RoC/"
     ],
-    "FileName": "Azeroth Wars Reforged",
-    "VersionNumber": "1.15a"
+    "FileName": "AzerothWarsReforged",
+    "VersionNumber": "1.15b"
   },
   {
     "PackageName": "Azeroth Wars: The Burning Crusade",
