@@ -1,4 +1,4 @@
-library GameSetup initializer OnInit requires ArtifactSetup, InstanceSetup, PersonSetup, TeamSetup, QuestSetup, ShoreSetup, ControlPointSetup, FactionSetup, VassalSetup
+library GameSetup initializer OnInit requires ObserverSetup, ArtifactSetup, InstanceSetup, PersonSetup, TeamSetup, QuestSetup, ShoreSetup, ControlPointSetup, FactionSetup, VassalSetup
 
   public function OnInit takes nothing returns nothing
     call ShoreSetup_OnInit()
@@ -10,6 +10,7 @@ library GameSetup initializer OnInit requires ArtifactSetup, InstanceSetup, Pers
     call ArtifactSetup_OnInit()
     call ControlPointSetup_OnInit()
     call QuestSetup_OnInit()
+    call ObserverSetup_OnInit()
   endfunction
 
 endlibrary
