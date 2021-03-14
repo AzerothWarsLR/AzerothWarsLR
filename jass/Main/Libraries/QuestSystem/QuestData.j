@@ -90,8 +90,6 @@ library QuestData requires QuestItemData, Event
         if not this.muted then
           if formerProgress == QUEST_PROGRESS_UNDISCOVERED then
             call this.DisplayDiscovered()
-          else
-            call this.DisplayUpdated()
           endif
         endif
         call QuestSetCompleted(this.quest, false)
