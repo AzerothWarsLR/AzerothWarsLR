@@ -45,7 +45,6 @@ library DalaranSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n096', 6)           //Earth Golem
     call f.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
     call f.registerObjectLimit('n0AK', UNLIMITED)   //Sludge Flinger
-    call f.registerObjectLimit('h02C', 1)           //Flagship 
     call f.registerObjectLimit('o02U', 6)           //Crystal Artillery
 
 
