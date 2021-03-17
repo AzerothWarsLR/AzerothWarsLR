@@ -13,6 +13,7 @@ library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, Frostwol
     call WarsongSetup_OnInit()
     call StormwindSetup_OnInit()
     call IronforgeSetup_OnInit()
+    call KultirasSetup_OnInit()
   endfunction
 
 endlibrary
