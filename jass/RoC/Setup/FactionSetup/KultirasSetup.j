@@ -38,10 +38,12 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h04M', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
     call f.registerObjectLimit('n009', UNLIMITED)   //Revenant of the Tides
-    call f.registerObjectLimit('h04A', 6)           //Captain
+    call f.registerObjectLimit('n03L', 6)           //Storm Sorcerer
     call f.registerObjectLimit('n029', 12)          //Sea Giant
     call f.registerObjectLimit('h04N', UNLIMITED)   //Musketeer
     call f.registerObjectLimit('o01A', 6)           //Cannon Team
+    call f.registerObjectLimit('h04O', 12)          //Bomber
+    call f.registerObjectLimit('h04W', 4)           //Siege Tank
 
     //Upgrades
     call f.registerObjectLimit('R03H', UNLIMITED)   //Engineering Adept Training
