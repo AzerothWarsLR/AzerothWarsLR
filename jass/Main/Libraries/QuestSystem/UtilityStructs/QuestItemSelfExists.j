@@ -4,6 +4,10 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
     private static integer count = 0
     private static thistype array byIndex
 
+    method operator ShowsInQuestLog takes nothing returns boolean
+      return false
+    endmethod
+
     method OnAdd takes nothing returns nothing
       set this.Progress = QUEST_PROGRESS_COMPLETE
     endmethod

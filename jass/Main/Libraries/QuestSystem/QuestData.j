@@ -297,9 +297,11 @@ library QuestData requires QuestItemData, Event
     method AddQuestItem takes QuestItemData value returns QuestItemData
       set this.questItems[this.questItemCount] = value
       set this.questItemCount = this.questItemCount + 1
-      set value.QuestItem = QuestCreateItem(this.quest)
+      if value.ShowsInQuestLog then
+        set value.QuestItem = QuestCreateItem(this.quest)
+        call QuestItemSetDescription(value.QuestItem, value.Description)
+      endif
       set value.ParentQuest = this
-      call QuestItemSetDescription(value.QuestItem, value.Description)
       return value
     endmethod
 

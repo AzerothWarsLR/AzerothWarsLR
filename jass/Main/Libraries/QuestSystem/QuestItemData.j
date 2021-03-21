@@ -39,6 +39,11 @@ library QuestItemData
       set this.questItem = value
     endmethod
 
+    //Whether or not this can be seen as a bullet point in the quest log
+    stub method operator ShowsInQuestLog takes nothing returns boolean
+      return true
+    endmethod
+
     stub method operator X takes nothing returns real
       return 0.
     endmethod
@@ -78,20 +83,22 @@ library QuestItemData
         return
       endif
       set this.progress = value
-      if value == QUEST_PROGRESS_INCOMPLETE then
-        call QuestItemSetCompleted(this.questItem, false)
-        if GetLocalPlayer() == this.Holder.Player then
-          call this.Show()
+      if this.ShowsInQuestLog then
+        if value == QUEST_PROGRESS_INCOMPLETE then
+          call QuestItemSetCompleted(this.questItem, false)
+          if GetLocalPlayer() == this.Holder.Player then
+            call this.Show()
+          endif
+        elseif value == QUEST_PROGRESS_COMPLETE then
+          call QuestItemSetCompleted(this.questItem, true)
+          if GetLocalPlayer() == this.Holder.Player then
+            call this.Hide()
+          endif
+        elseif value == QUEST_PROGRESS_UNDISCOVERED then
+          call QuestItemSetCompleted(this.questItem, false)
+        elseif value == QUEST_PROGRESS_FAILED then
+          call QuestItemSetCompleted(this.questItem, false)
         endif
-      elseif value == QUEST_PROGRESS_COMPLETE then
-        call QuestItemSetCompleted(this.questItem, true)
-        if GetLocalPlayer() == this.Holder.Player then
-          call this.Hide()
-        endif
-      elseif value == QUEST_PROGRESS_UNDISCOVERED then
-        call QuestItemSetCompleted(this.questItem, false)
-      elseif value == QUEST_PROGRESS_FAILED then
-        call QuestItemSetCompleted(this.questItem, false)
       endif
       set thistype.triggerQuestItemData = this
       call thistype.progressChanged.fire()
