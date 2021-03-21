@@ -47,6 +47,9 @@ library KultirasSetup requires Faction, TeamSetup
 
     //Upgrades
     call f.registerObjectLimit('R03H', UNLIMITED)   //Engineering Adept Training
+    call f.registerObjectLimit('R000', UNLIMITED)   //Rising Tides
+    call f.registerObjectLimit('R001', UNLIMITED)   //Tidesage Adept Training
+    call f.registerObjectLimit('R01O', UNLIMITED)   //Crushing Wave
     call f.registerObjectLimit('R00L', UNLIMITED)   //Quest Completed: City at Sea
 
     //Free upgrades
