@@ -36,6 +36,29 @@ library DummyCast requires DummyCaster
     call UnitRemoveAbility(DUMMY,abilId)            
   endfunction
 
+  function DummyCastUnitFromPoint takes player whichPlayer, integer abilId, string orderId, integer level, unit u, real originX, real originY returns nothing
+    call SetUnitOwner(DUMMY, whichPlayer, false)
+    call SetUnitX(DUMMY, originX)
+    call SetUnitY(DUMMY, originY)
+    call UnitAddAbility(DUMMY, abilId)
+    call SetUnitAbilityLevel(DUMMY, abilId, level)
+    call IssueTargetOrder(DUMMY, orderId, u)
+    call UnitRemoveAbility(DUMMY,abilId)
+  endfunction
+
+  function DummyCastFromPointOnUnitsInCircle takes unit caster, integer abilId, string orderId, integer level, real targetX, real targetY, real radius, real originX, real originY, CastFilter castFilter returns nothing
+    local unit u
+    call GroupEnumUnitsInRange(TempGroup, targetX, targetY, radius, null)
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      if castFilter.evaluate(caster, u) then
+        call DummyCastUnitFromPoint(GetOwningPlayer(caster), abilId, orderId, level, u, originX, originY)
+      endif
+      call GroupRemoveUnit(TempGroup, u)
+    endloop
+  endfunction
+
   function DummyCastOnUnitsInCircle takes unit caster, integer abilId, string orderId, integer level, real x, real y, real radius, CastFilter castFilter returns nothing
     local unit u
     call GroupEnumUnitsInRange(TempGroup, x, y, radius, null)

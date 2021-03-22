@@ -46,15 +46,16 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h04W', 4)           //Siege Tank
 
     //Upgrades
-    call f.registerObjectLimit('R000', UNLIMITED)   //Engineering Adept Training
-    call f.registerObjectLimit('R000', UNLIMITED)   //Rising Tides
-    call f.registerObjectLimit('R001', UNLIMITED)   //Tidesage Adept Training
+    call f.registerObjectLimit('R001', UNLIMITED)   //Rising Tides
+    call f.registerObjectLimit('R000', UNLIMITED)   //Tidesage Adept Training
     call f.registerObjectLimit('R01O', UNLIMITED)   //Crushing Wave
+    call f.registerObjectLimit('R01T', UNLIMITED)   //Cluster Rockets
+    call f.registerObjectLimit('R01U', UNLIMITED)   //Improved Barrage
     call f.registerObjectLimit('R00L', UNLIMITED)   //Quest Completed: City at Sea
 
     //Heroes
-    call f.registerObjectLimit('H04A', UNLIMITED)   //Jaina
-    call f.registerObjectLimit('H05L', UNLIMITED)   //Lady Ashvane
+    call f.registerObjectLimit('H04A', 1)           //Jaina
+    call f.registerObjectLimit('H05L', 1)           //Lady Ashvane
 
     //Free upgrades
     call f.SetObjectLevel('R00L', 1)                //Quest Completed: City at Sea
