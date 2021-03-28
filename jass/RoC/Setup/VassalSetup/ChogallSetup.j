@@ -25,7 +25,7 @@ library ChogallSetup requires Faction, FelHordeSetup
     call VASSAL_CHOGALL.registerObjectLimit('R02I', UNLIMITED)   //Ogre Magi training
     call VASSAL_CHOGALL.SetObjectLevel('R02I', 2)
 
-    call VASSAL_CHOGALL.registerObjectLimit('R023', UNLIMITED)   //Infusion
+    call VASSAL_CHOGALL.registerObjectLimit('R023', 2)           //Infusion
     call VASSAL_CHOGALL.SetObjectLevel('R023', 2)
 
     call VASSAL_CHOGALL.registerObjectLimit('Rhme', 0)   //Attack Upgrade

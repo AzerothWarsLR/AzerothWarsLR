@@ -25,7 +25,7 @@ library NekroshSetup requires Faction, FelHordeSetup
     call VASSAL_NEKROSH.registerObjectLimit('R036', UNLIMITED)   //Dragonmaw tier 2
     call VASSAL_NEKROSH.SetObjectLevel('R036', 1)
 
-    call VASSAL_NEKROSH.registerObjectLimit('R023', UNLIMITED)   //Infusion
+    call VASSAL_NEKROSH.registerObjectLimit('R023', 2)           //Infusion
     call VASSAL_NEKROSH.SetObjectLevel('R023', 2)
 
     call VASSAL_NEKROSH.registerObjectLimit('Rhme', 0)   //Attack Upgrade

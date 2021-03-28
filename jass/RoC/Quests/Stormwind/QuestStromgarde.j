@@ -9,7 +9,7 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral,
     private QuestItemAnyUnitInRect questItemAnyUnitInRect = 0
 
     private method operator CompletionPopup takes nothing returns string
-      return "Galen Trollbane has pleged his forces to Stormwind's cause."
+      return "Galen Trollbane has pledged his forces to Stormwind's cause."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -38,7 +38,7 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral,
     private method OnFail takes nothing returns nothing
       call this.GiveStromgarde(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call SetItemPosition(ARTIFACT_TROLKALAR.item, 14088.9, 1236.3)
-      call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_GROUND)
+      call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_GROUND)
     endmethod
 
     private method OnComplete takes nothing returns nothing

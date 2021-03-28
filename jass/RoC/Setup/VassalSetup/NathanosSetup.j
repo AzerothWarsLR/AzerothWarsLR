@@ -24,7 +24,7 @@ library NathanosSetup requires Faction, LordaeronSetup
     call VASSAL_NATHANOS.registerObjectLimit('R00I', UNLIMITED)   //Cleric training
     call VASSAL_NATHANOS.SetObjectLevel('R00I', 2)
 
-    call VASSAL_NATHANOS.registerObjectLimit('R00K', UNLIMITED)   //Infusion
+    call VASSAL_NATHANOS.registerObjectLimit('R00K', 2)           //Infusion
     call VASSAL_NATHANOS.SetObjectLevel('R00K', 2)
 
     call VASSAL_NATHANOS.registerObjectLimit('Rhme', 0)   //Attack Upgrade

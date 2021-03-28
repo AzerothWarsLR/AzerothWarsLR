@@ -139,12 +139,12 @@ library VassalFaction requires Faction
         return
       endif
       if this.Liege.IsPlayerBannedFromBecomingVassal(whichPerson.Player) then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You're permanently banned from becoming a vassal of " + this.prefixCol + this.name + "|r.")
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You're permanently banned from becoming a vassal of " + this.Liege.prefixCol + this.Liege.name + "|r.")
         return
       endif
       set vassalMaximum = GetVassalMaximum()
       if GetTeamVassalCount(this.Liege.Team) == vassalMaximum and vassalMaximum != GetVassalMinimum() then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, this.Liege.prefixCol + this.Liege.name + "|r team has too many vassals already. Try picking a different vassal.")
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, this.Liege.prefixCol + this.Liege.name + "|r team has too many vassals already.")
         return
       endif
       set highestValueCP = ControlPoint.GetHighestValueCP(this.Liege.Person)

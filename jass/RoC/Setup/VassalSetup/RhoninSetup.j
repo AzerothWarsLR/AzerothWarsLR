@@ -25,7 +25,7 @@ library RhoninSetup requires Faction, DalaranSetup
     call VASSAL_RHONIN.registerObjectLimit('R00D', UNLIMITED)   //Pyromancer training
     call VASSAL_RHONIN.SetObjectLevel('R00D', 2)
 
-    call VASSAL_RHONIN.registerObjectLimit('R00K', UNLIMITED)   //Infusion
+    call VASSAL_RHONIN.registerObjectLimit('R00K', 2)           //Infusion
     call VASSAL_RHONIN.SetObjectLevel('R00K', 2)
 
     call VASSAL_RHONIN.registerObjectLimit('Rhme', 0)   //Attack Upgrade

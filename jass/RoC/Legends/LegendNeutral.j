@@ -50,6 +50,7 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_JINTHAALOR = Legend.create()
     set LEGEND_JINTHAALOR.Capturable = true
+    set LEGEND_JINTHAALOR.Unit = gg_unit_o02G_0310
 
     set LEGEND_SHRINEOFULATEK = Legend.create()
     set LEGEND_SHRINEOFULATEK.Capturable = true

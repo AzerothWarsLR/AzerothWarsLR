@@ -23,7 +23,7 @@ library SylvanasSetup requires Faction, ScourgeSetup
     call VASSAL_SYLVANAS.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
     call VASSAL_SYLVANAS.SetObjectLevel('Ruba', 2)
 
-    call VASSAL_SYLVANAS.registerObjectLimit('R02A', UNLIMITED)   //Infusion
+    call VASSAL_SYLVANAS.registerObjectLimit('R02A', 2)           //Infusion
     call VASSAL_SYLVANAS.SetObjectLevel('R02A', 2)
 
     call VASSAL_SYLVANAS.registerObjectLimit('Rhme', 0)   //Attack Upgrade

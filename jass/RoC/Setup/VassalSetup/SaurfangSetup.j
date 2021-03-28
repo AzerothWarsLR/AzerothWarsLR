@@ -13,7 +13,6 @@ library SaurfangSetup requires Faction, WarsongSetup
     //Units
     call VASSAL_SAURFANG.registerObjectLimit('o02I', UNLIMITED)   //Worker
     call VASSAL_SAURFANG.registerObjectLimit('orai', UNLIMITED)   //Raider
-    call VASSAL_SAURFANG.registerObjectLimit('noga', 3)           //Korkron Elite
     call VASSAL_SAURFANG.registerObjectLimit('owyv', 4)           //Wyvern
     //Building
     call VASSAL_SAURFANG.registerObjectLimit('o02F', UNLIMITED)   //Clan Gathering
@@ -22,7 +21,6 @@ library SaurfangSetup requires Faction, WarsongSetup
 
     call VASSAL_SAURFANG.registerObjectLimit('Rhme', 0)   //Attack Upgrade
     call VASSAL_SAURFANG.registerObjectLimit('Rhar', 0)   //defense Upgrade
-
-endfunction
+  endfunction
     
 endlibrary

@@ -6,6 +6,13 @@ library DummyCast requires DummyCaster
 
   function interface CastFilter takes unit caster, unit target returns boolean
 
+  function DummyChannelInstantFromPoint takes player whichPlayer, integer abilId, string orderId, integer level, real x, real y, real duration returns nothing
+    local unit u = CreateUnit(whichPlayer, DUMMY_TYPE, x, y, 0)
+    call UnitAddAbility(u, abilId)
+    call IssueImmediateOrder(u, orderId)
+    call UnitApplyTimedLife(u, 'BTLF', duration)
+  endfunction
+
   function DummyCastUnit takes player whichPlayer, integer abilId, string orderId, integer level, unit u returns nothing
     call SetUnitOwner(DUMMY, whichPlayer, false)
     call SetUnitX(DUMMY, GetUnitX(u))

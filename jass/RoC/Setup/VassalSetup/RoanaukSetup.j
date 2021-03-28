@@ -24,7 +24,7 @@ library RoanaukSetup requires Faction, FrostwolfSetup
     call VASSAL_ROANAUK.registerObjectLimit('Rowt', UNLIMITED)   //Spirit Walker training
     call VASSAL_ROANAUK.SetObjectLevel('Rowt', 2)
 
-    call VASSAL_ROANAUK.registerObjectLimit('R023', UNLIMITED)   //Infusion
+    call VASSAL_ROANAUK.registerObjectLimit('R023', 2)           //Infusion
     call VASSAL_ROANAUK.SetObjectLevel('R023', 2)
 
     call VASSAL_ROANAUK.registerObjectLimit('Rhme', 0)   //Attack Upgrade
