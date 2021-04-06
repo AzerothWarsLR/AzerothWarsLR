@@ -4,6 +4,11 @@ library SpellHelpers
         group TempGroup = CreateGroup()
     endglobals
     
+  function StartUnitAbilityCooldownFull takes unit whichUnit, integer abilCode returns nothing
+    local real fullCooldown = BlzGetUnitAbilityCooldown(whichUnit, abilCode, 0)
+    call BlzStartUnitAbilityCooldown(whichUnit, abilCode, fullCooldown)
+  endfunction
+
     function IsUnitAlive takes unit u returns boolean
          return not IsUnitType(u, UNIT_TYPE_DEAD) and GetUnitTypeId(u) != 0
     endfunction    
