@@ -60,6 +60,8 @@ library FrostwolfSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R00R', UNLIMITED)   //Improved Chain Lightning
     call f.registerObjectLimit('R00W', UNLIMITED)   //Toughened Hides
     call f.registerObjectLimit('R017', UNLIMITED)   //Kor'kron Guardsmen
+    call f.registerObjectLimit('R01Z', UNLIMITED)   //Battle Stations
+    call f.SetObjectLevel('R01Z', 1)                //Battle Stations
   endfunction
     
 endlibrary

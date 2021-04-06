@@ -59,6 +59,8 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R015', UNLIMITED)   //Spell Resistance
     call f.registerObjectLimit('R016', UNLIMITED)   //Warlords
     call f.registerObjectLimit('R019', UNLIMITED)   //Improved Shockwave
+    call f.registerObjectLimit('R01Z', UNLIMITED)   //Battle Stations
+    call f.SetObjectLevel('R01Z', 1)                //Battle Stations
   endfunction
 
 endlibrary

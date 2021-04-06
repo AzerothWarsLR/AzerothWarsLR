@@ -65,6 +65,8 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R00Y', UNLIMITED)   //Improved Self-Bloodlust
     call f.registerObjectLimit('R036', UNLIMITED)   //Incinerate
     call f.registerObjectLimit('R02L', UNLIMITED)   //Bloodcraze  
-    endfunction
+    call f.registerObjectLimit('R01Z', UNLIMITED)   //Battle Stations
+    call f.SetObjectLevel('R01Z', 1)                //Battle Stations
+  endfunction
     
 endlibrary
