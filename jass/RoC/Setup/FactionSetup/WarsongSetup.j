@@ -23,30 +23,25 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o028', UNLIMITED)   //Orc Burrow
     call f.registerObjectLimit('n03E', UNLIMITED)   //Watch Tower
     call f.registerObjectLimit('n0AL', UNLIMITED)   //Improved Watch Tower
-    call f.registerObjectLimit('o01T', UNLIMITED)   //Goblin Hardware Shop
     call f.registerObjectLimit('o02T', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('o01M', UNLIMITED)   //Goblin Laboratory
+    call f.registerObjectLimit('o01T', UNLIMITED)   //Goblin Hardware Shop
 
     call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
     call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
     call f.registerObjectLimit('orai', UNLIMITED)   //Raider
-    call f.registerObjectLimit('nw2w', -UNLIMITED)  //Orc Warlock
     call f.registerObjectLimit('n08E', UNLIMITED)   //Hexbinder
-    call f.registerObjectLimit('nftk', 12)          //Darkspear Warlord
     call f.registerObjectLimit('otbk', UNLIMITED)   //Troll Berseker
-    call f.registerObjectLimit('nogo', UNLIMITED)   //Stonemaul SOldier
     call f.registerObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
     call f.registerObjectLimit('o00I', 6)           //Horde War Machine
-    call f.registerObjectLimit('n061', 12)          //Goblin Sapper
-    call f.registerObjectLimit('n062', 8)           //Goblin Shredder
+    call f.registerObjectLimit('okod', 4)           //Kodo Beast
     call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
     call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
     call f.registerObjectLimit('o00G', 6)           //Blademaster
     call f.registerObjectLimit('n03F', 6)           //Ogre Lord
+    call f.registerObjectLimit('owyv', 8)           //Wind Rider
 
     call f.registerObjectLimit('o01R', 1)           //Nazgrel
-    call f.registerObjectLimit('h04E', 1)           //Chen
 
     call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
@@ -56,11 +51,12 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R03Q', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('Rorb', UNLIMITED)   //Reinforced Defenses
     call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
-    call f.registerObjectLimit('R015', UNLIMITED)   //Spell Resistance
     call f.registerObjectLimit('R016', UNLIMITED)   //Warlords
     call f.registerObjectLimit('R019', UNLIMITED)   //Improved Shockwave
     call f.registerObjectLimit('R01Z', UNLIMITED)   //Battle Stations
     call f.SetObjectLevel('R01Z', 1)                //Battle Stations
+    call f.registerObjectLimit('R00D', UNLIMITED)   //For the Horde!
+    call f.registerObjectLimit('Rovs', UNLIMITED)   //Envenomed Spears
   endfunction
 
 endlibrary

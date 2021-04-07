@@ -12,7 +12,7 @@ library LegendWarsong initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing
     set LEGEND_REXXAR = Legend.create()
-    set LEGEND_REXXAR.Unit = gg_unit_Orex_0312
+    set LEGEND_REXXAR.UnitType = 'Orex'
 
     set LEGEND_JERGOSH = Legend.create()
     set LEGEND_JERGOSH.UnitType = 'Oths'
