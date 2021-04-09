@@ -1,4 +1,4 @@
-library EyeOfSargerasCooldowns initializer OnInit requires Artifact, SpellHelpers
+library EyeOfSargerasCooldowns initializer OnInit requires Artifact, SpellHelpers, ArtifactSetup
 
   globals
     private constant integer SPELL_A = 'A04G'

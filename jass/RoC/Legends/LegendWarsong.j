@@ -8,11 +8,16 @@ library LegendWarsong initializer OnInit requires Legend
     Legend LEGEND_STONEMAUL
     Legend LEGEND_ENCAMPMENT
     Legend LEGEND_LUMBERCAMP
+    Legend LEGEND_GAHZRILLA
   endglobals
 
   private function OnInit takes nothing returns nothing
     set LEGEND_REXXAR = Legend.create()
     set LEGEND_REXXAR.UnitType = 'Orex'
+
+    set LEGEND_GAHZRILLA = Legend.create()
+    set LEGEND_GAHZRILLA.UnitType = 'H06Q'
+    set LEGEND_GAHZRILLA.PlayerColor = PLAYER_COLOR_SNOW
 
     set LEGEND_JERGOSH = Legend.create()
     set LEGEND_JERGOSH.UnitType = 'Oths'
