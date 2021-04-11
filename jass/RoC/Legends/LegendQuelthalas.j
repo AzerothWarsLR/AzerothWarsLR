@@ -13,9 +13,18 @@ library LegendQuelthalas initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
+    set LEGEND_SILVERMOON = Legend.create()
+    set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418
+    set LEGEND_SILVERMOON.DeathMessage = "The grand city of the high elves, Silvermoon, has been crushed by her enemies."
+
+    set LEGEND_SUNWELL = Legend.create()
+    set LEGEND_SUNWELL.Unit = gg_unit_n001_0165
+    set LEGEND_SUNWELL.Capturable = true
+
     set LEGEND_ANASTERIAN = Legend.create()
     set LEGEND_ANASTERIAN.Unit = gg_unit_H00Q_0630
     set LEGEND_ANASTERIAN.PlayerColor = PLAYER_COLOR_MAROON
+    call LEGEND_ANASTERIAN.AddUnitDependency(LEGEND_SUNWELL.Unit)
 
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
@@ -26,14 +35,6 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_SYLVANAS = Legend.create()
     set LEGEND_SYLVANAS.Unit = gg_unit_Hvwd_1515
     set LEGEND_SYLVANAS.PlayerColor = PLAYER_COLOR_GREEN
-
-    set LEGEND_SILVERMOON = Legend.create()
-    set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418
-    set LEGEND_SILVERMOON.DeathMessage = "The grand city of the high elves, Silvermoon, has been crushed by her enemies."
-
-    set LEGEND_SUNWELL = Legend.create()
-    set LEGEND_SUNWELL.Unit = gg_unit_n001_0165
-    set LEGEND_SUNWELL.Capturable = true
 
     set LEGEND_KORIALSTRASZ = Legend.create()
     set LEGEND_KORIALSTRASZ.UnitType = 'Edem'
