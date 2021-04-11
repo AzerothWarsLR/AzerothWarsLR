@@ -34,6 +34,7 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('emtg', 12)          //Mountain Giant
     call f.registerObjectLimit('efdr', 6)           //Faerie Dragon 
     call f.registerObjectLimit('edoc', UNLIMITED)   //Druid of the Claw
+    call f.registerObjectLimit('edcm', UNLIMITED)   //Druid of the Claw bear form
     call f.registerObjectLimit('e00N', 6)           //Keeper of the Grove
     call f.registerObjectLimit('n05H', UNLIMITED)   //Furbolg
     call f.registerObjectLimit('n065', 6)           //Green Dragon

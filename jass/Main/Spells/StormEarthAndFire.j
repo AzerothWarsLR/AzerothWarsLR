@@ -13,10 +13,10 @@ library StormEarthAndFire initializer OnInit requires Filters
     private constant string   EFFECT_TARGET = "Abilities\\Spells\\Items\\AIil\\AIilTarget.mdl"
     private constant real     EFFECT_SCALE_TARGET = 1.0
 
-    private constant real    HEALTH_BONUS_BASE = -0.2     //These refer to the % extra amount of that stat a Simulacrum gets
-    private constant real    HEALTH_BONUS_LEVEL = 0.2     //The level ones are for each additional hero level, including level 1
-    private constant real    DAMAGE_BONUS_BASE = -0.2
-    private constant real    DAMAGE_BONUS_LEVEL = 0.2
+    private constant real    HEALTH_BONUS_BASE = -0.15     //These refer to the % extra amount of that stat a Simulacrum gets
+    private constant real    HEALTH_BONUS_LEVEL = 0.15     //The level ones are for each additional hero level, including level 1
+    private constant real    DAMAGE_BONUS_BASE = -0.15
+    private constant real    DAMAGE_BONUS_LEVEL = 0.15
   endglobals
 
   private function SummonPanda takes player whichPlayer, integer unitType, real x, real y, real facing, real damageBonus, real hitpointBonus, real duration returns unit
