@@ -1,12 +1,17 @@
-library QuestZulfarrak requires FrostwolfSetup, LegendNeutral
+library QuestZulfarrak requires LegendNeutral
+
+  globals
+    private constant integer GAHZRILLA_RESEARCH = 'R02F'
+    private constant integer GAHZRILLA_ID = 'H06Q'
+  endglobals
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + "."
+      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + ", and Gahz'rilla awakens from its slumber."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'farrak and an army of Sandfury trolls"
+      return "Control of Zul'farrak, an army of Sandfury trolls, the ability to train Sandfury trolls, and you can summon the hero Gahz'rilla from the Altar of Conquerors"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -30,6 +35,12 @@ library QuestZulfarrak requires FrostwolfSetup, LegendNeutral
       call DestroyGroup(tempGroup)
       call CreateUnits(this.Holder.Player, 'ndtb', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
       call CreateUnits(this.Holder.Player, 'ndtp', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
+      call SetPlayerTechResearched(Holder.Player, GAHZRILLA_RESEARCH, 1)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(GAHZRILLA_RESEARCH, UNLIMITED)
+      call this.Holder.modObjectLimit(GAHZRILLA_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

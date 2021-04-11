@@ -1,4 +1,4 @@
-library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrektharsSpellbook, QuestFreeNerzhul, QuestFrostwolfKillSentinels, QuestGazlowe, QuestSeaWitch, QuestThunderBluff, QuestZulfarrak, QuestScepterOfTheQueen
+library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrektharsSpellbook, QuestFreeNerzhul, QuestGazlowe, QuestSeaWitch, QuestThunderBluff, QuestScepterOfTheQueen, QuestZeppelins
   
   public function OnInit takes nothing returns nothing
     local QuestData newQuest = FACTION_FROSTWOLF.AddQuest(QuestSeaWitch.create())
@@ -7,9 +7,8 @@ library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrekthar
     call FACTION_FROSTWOLF.AddQuest(QuestFreeNerzhul.create())
     call FACTION_FROSTWOLF.AddQuest(QuestGazlowe.create())
     call FACTION_FROSTWOLF.AddQuest(QuestThunderBluff.create(FACTION_WARSONG))
-    call FACTION_FROSTWOLF.AddQuest(QuestZulfarrak.create())
     call FACTION_FROSTWOLF.AddQuest(QuestScepterOfTheQueenWarsong.create())
-    call FACTION_FROSTWOLF.AddQuest(QuestFrostwolfKillSentinels.create())
+    call FACTION_FROSTWOLF.AddQuest(QuestZeppelins.create())
   endfunction
   
 endlibrary

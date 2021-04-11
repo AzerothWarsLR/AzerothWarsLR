@@ -1,4 +1,4 @@
-library QuestWarsongKillSentinels requires WarsongSetup, LegendSentinels, Display
+library QuestZeppelins requires LegendSentinels, Display
 
   globals
     private constant integer RESEARCH_ID = 'R058'
@@ -6,7 +6,7 @@ library QuestWarsongKillSentinels requires WarsongSetup, LegendSentinels, Displa
     private constant integer LIMIT_CHANGE = 2
   endglobals
 
-  struct QuestWarsongKillSentinels extends QuestData
+  struct QuestZeppelins extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "The Sentinels have been slain. With their Hippogryphs no longer terrorizing the skies, the Horde can field its refurbished Zeppelins."
     endmethod
@@ -26,7 +26,7 @@ library QuestWarsongKillSentinels requires WarsongSetup, LegendSentinels, Displa
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Perfect Warriors", "The prowess and savagery of the Sentinels is to be respected - and feared. They must be eliminated.", "ReplaceableTextures\\CommandButtons\\BTNGoblinZeppelin.blp")
+      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNGoblinZeppelin.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       return this

@@ -1,9 +1,9 @@
-library MassIcearmor initializer OnInit requires T32, DummyCast
+library MassIceArmor initializer OnInit requires DummyCast
 
   globals
     private constant integer ABIL_ID = 'A0H3'
     private constant integer DUMMY_ABIL_ID = 'A0H6'
-    private constant string DUMMY_ORDER_STRING = "frostarmoron"
+    private constant string DUMMY_ORDER_STRING = "frostarmor"
     private constant real RADIUS = 400.
   endglobals
 

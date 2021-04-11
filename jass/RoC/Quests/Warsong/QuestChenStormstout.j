@@ -3,6 +3,7 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
 
   globals
     private constant integer CHEN_RESEARCH = 'R037'
+    private constant integer CHEN_ID = 'Nsjs'
   endglobals
 
   struct QuestChenStormstout extends QuestData
@@ -11,20 +12,22 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Chen Stormstout"
+      return "The hero Chen Stormstout"
     endmethod
 
     private method OnFail takes nothing returns nothing
-      call RemoveUnit(gg_unit_h04E_2670)
+      call RemoveUnit(gg_unit_Nsjs_1887)
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(FACTION_WARSONG.Player, CHEN_RESEARCH, 1)
-      call UnitRescue(gg_unit_h04E_2670, FACTION_WARSONG.Player)
+      call RemoveUnit(gg_unit_Nsjs_1887)
+      call SetPlayerTechResearched(Holder.Player, CHEN_RESEARCH, 1)
     endmethod
 
     private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(CHEN_RESEARCH, UNLIMITED)
+      call this.Holder.modObjectLimit(CHEN_ID, 1)
+      call SetUnitInvulnerable(gg_unit_Nsjs_1887, true)
     endmethod
 
     public static method create takes nothing returns thistype

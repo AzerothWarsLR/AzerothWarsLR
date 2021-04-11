@@ -1,11 +1,11 @@
-library QuestFrostwolfKillSentinels requires FrostwolfSetup, LegendSentinels, Display, QuestItemLegendDead
+library QuestMoreWyverns requires LegendSentinels, Display, QuestItemLegendDead
 
   globals
     private constant integer UNITTYPE_ID = 'owyv'
     private constant integer LIMIT_CHANGE = 2
   endglobals
 
-  struct QuestFrostwolfKillSentinels extends QuestData
+  struct QuestMoreWyverns extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "The Sentinels have been eliminated. Warchief Thrall breathes a sigh of relief, knowing that his people are safe - for now."
     endmethod
@@ -20,7 +20,7 @@ library QuestFrostwolfKillSentinels requires FrostwolfSetup, LegendSentinels, Di
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
+      local thistype this = thistype.allocate("Perfect Warriors", "The prowess and savagery of the Sentinels is to be respected - and feared. They must be eliminated.", "ReplaceableTextures\\CommandButtons\\BTNArcher.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       return this
