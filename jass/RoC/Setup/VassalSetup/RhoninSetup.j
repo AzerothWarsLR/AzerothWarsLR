@@ -12,7 +12,7 @@ library RhoninSetup requires Faction, DalaranSetup
 
     call VASSAL_RHONIN.registerObjectLimit('h05K', UNLIMITED)   //Worker
     call VASSAL_RHONIN.registerObjectLimit('h032', UNLIMITED)   //Battlemage
-    call VASSAL_RHONIN.registerObjectLimit('n03E', UNLIMITED)   //Pyromancer
+    call VASSAL_RHONIN.registerObjectLimit('h02D', UNLIMITED)   //Geomancer
     call VASSAL_RHONIN.registerObjectLimit('h01I', UNLIMITED)   //Arcanist
 
     //Building
