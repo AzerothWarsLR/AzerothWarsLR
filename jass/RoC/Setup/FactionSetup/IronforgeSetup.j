@@ -46,8 +46,7 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('hgry', 6)           //Gryphon Rider        
     call f.registerObjectLimit('h018', UNLIMITED)   //Dwarven Warrior
     call f.registerObjectLimit('h01L', 6)           //Thane
-    call f.registerObjectLimit('h037', UNLIMITED)   //Mason
-    call f.registerObjectLimit('h02X', UNLIMITED)   //Explorer
+    call f.registerObjectLimit('h037', UNLIMITED)   //Engineer
     call f.registerObjectLimit('n02D', UNLIMITED)   //War Golem
     call f.registerObjectLimit('h01P', 3)           //Steam Tank
     call f.registerObjectLimit('n00C', UNLIMITED)   //Rune Priest

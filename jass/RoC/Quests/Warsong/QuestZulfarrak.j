@@ -33,8 +33,8 @@ library QuestZulfarrak requires LegendNeutral
         set u = FirstOfGroup(tempGroup)
       endloop   
       call DestroyGroup(tempGroup)
-      call CreateUnits(this.Holder.Player, 'ndtb', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
-      call CreateUnits(this.Holder.Player, 'ndtp', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
+      call CreateUnits(this.Holder.Player, 'otbk', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
+      call CreateUnits(this.Holder.Player, 'n08E', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
       call SetPlayerTechResearched(Holder.Player, GAHZRILLA_RESEARCH, 1)
     endmethod
 

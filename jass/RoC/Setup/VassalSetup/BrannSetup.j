@@ -14,6 +14,7 @@ library BrannSetup requires Faction, IronforgeSetup
     call VASSAL_BRANN.registerObjectLimit('h019', UNLIMITED)   //Masons
     call VASSAL_BRANN.registerObjectLimit('hrif', UNLIMITED)   //Rifleman
     call VASSAL_BRANN.registerObjectLimit('hmtm', 5)           //Mortar Team
+    call VASSAL_BRANN.registerObjectLimit('h037', UNLIMITED)   //Engineer
 
     //Building
     call VASSAL_BRANN.registerObjectLimit('h057', UNLIMITED)   //Explorers Tavern

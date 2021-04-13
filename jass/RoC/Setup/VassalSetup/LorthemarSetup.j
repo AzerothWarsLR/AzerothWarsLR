@@ -12,7 +12,7 @@ library LorthemarSetup requires Faction, QuelthalasSetup
 
     call VASSAL_LORTHEMAR.registerObjectLimit('h05K', UNLIMITED)   //Worker
     call VASSAL_LORTHEMAR.registerObjectLimit('hhes', UNLIMITED)   //Swordsman
-    call VASSAL_LORTHEMAR.registerObjectLimit('h03S', 3)           //Blood Knight
+    call VASSAL_LORTHEMAR.registerObjectLimit('n00A', 3)           //Farstrider
     call VASSAL_LORTHEMAR.registerObjectLimit('nhea', UNLIMITED)   //Ranger
 
     //Building

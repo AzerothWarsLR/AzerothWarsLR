@@ -12,7 +12,7 @@ library SylvanasSetup requires Faction, ScourgeSetup
 
 	  //Units
     call VASSAL_SYLVANAS.registerObjectLimit('uaco', UNLIMITED)   //acolyte
-    call VASSAL_SYLVANAS.registerObjectLimit('nzom', UNLIMITED)   //zombie
+    call VASSAL_SYLVANAS.registerObjectLimit('ugho', UNLIMITED)   //Ghoul
     call VASSAL_SYLVANAS.registerObjectLimit('uban', UNLIMITED)   //Banshee
     call VASSAL_SYLVANAS.registerObjectLimit('nska', UNLIMITED)   //Skeleton archer
     //Building

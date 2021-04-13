@@ -22,6 +22,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o02Q', UNLIMITED)   //Bestiary
     call f.registerObjectLimit('o028', UNLIMITED)   //Orc Burrow
     call f.registerObjectLimit('n03E', UNLIMITED)   //Watch Tower
+    call f.registerObjectLimit('o01H', UNLIMITED)   //Troll Shrine
     call f.registerObjectLimit('n0AL', UNLIMITED)   //Improved Watch Tower
     call f.registerObjectLimit('o02T', UNLIMITED)   //Shipyard
     call f.registerObjectLimit('o01T', UNLIMITED)   //Goblin Hardware Shop
@@ -37,8 +38,11 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
     call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
+    call f.registerObjectLimit('o021', 12)          //Ravager
+    call f.registerObjectLimit('nftk', 12)          //Warlord
     call f.registerObjectLimit('o00G', 6)           //Blademaster
-    call f.registerObjectLimit('n03F', 6)           //Ogre Lord
+    call f.registerObjectLimit('n03F', 6)           //Korkron elite
+    call f.registerObjectLimit('o02K', 6)           //Bear Rider
     call f.registerObjectLimit('owyv', 8)           //Wind Rider
 
     call f.registerObjectLimit('o01R', 1)           //Nazgrel

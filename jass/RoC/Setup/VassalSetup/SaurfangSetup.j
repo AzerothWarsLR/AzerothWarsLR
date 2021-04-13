@@ -14,6 +14,7 @@ library SaurfangSetup requires Faction, WarsongSetup
     call VASSAL_SAURFANG.registerObjectLimit('o02I', UNLIMITED)   //Worker
     call VASSAL_SAURFANG.registerObjectLimit('orai', UNLIMITED)   //Raider
     call VASSAL_SAURFANG.registerObjectLimit('owyv', 4)           //Wyvern
+    call VASSAL_SAURFANG.registerObjectLimit('n03F', 2)           //Korkron elite
     //Building
     call VASSAL_SAURFANG.registerObjectLimit('o02F', UNLIMITED)   //Clan Gathering
     call VASSAL_SAURFANG.registerObjectLimit('otrb', UNLIMITED)   //Farm
