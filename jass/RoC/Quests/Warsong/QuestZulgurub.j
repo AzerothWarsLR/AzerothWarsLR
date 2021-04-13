@@ -2,15 +2,17 @@ library QuestZulgurub requires LegendNeutral
 
   globals
     private constant integer ZULGURUB_RESEARCH = 'R02M'
+    private constant integer TROLL_SHRINE_ID = 'o01H'
+    private constant integer RAVAGER_ID = 'o021'
   endglobals
 
   struct QuestZulgurub extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Zul'Gurub has fallen. The Gurubashi trolls lend their might to the " + this.Holder.Team.Name 
+      return "Zul'Gurub has fallen. The Gurubashi trolls lend their might to the " + this.Holder.Team.Name  + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'Gurub, the ability to train Gurubashi Ravagers"
+      return "Control of Zul'Gurub and the ability to train " + GetObjectName(RAVAGER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -22,7 +24,7 @@ library QuestZulgurub requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Heart of Hakkar", "The Gurubashi troll of Zul'Gurub follow the sacred Heart of Hakkar, hidden within the Shrine. Capture it to gain their loyalty.", "ReplaceableTextures\\CommandButtons\\BTNTrollRavager.blp")
+      local thistype this = thistype.allocate("Heart of Hakkar", "The Gurubashi trolls of Zul'Gurub follow the sacred Heart of Hakkar, hidden within their shrine. Capture it to gain their loyalty.", "ReplaceableTextures\\CommandButtons\\BTNTrollRavager.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULGURUB, false))
       return this
     endmethod

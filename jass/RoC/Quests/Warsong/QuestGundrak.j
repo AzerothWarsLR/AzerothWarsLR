@@ -2,6 +2,8 @@ library QuestGundrak requires LegendNeutral
 
   globals
     private constant integer GUNDRAK_RESEARCH = 'R02Q'
+    private constant integer WARLORD_ID = 'nftk'
+    private constant integer TROLL_SHRINE_ID = 'o01H'
   endglobals
 
   struct QuestGundrak extends QuestData
@@ -10,7 +12,7 @@ library QuestGundrak requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Gundrak, the ability to train Warlords"
+      return "Control of Gundrak, the ability to train " + GetObjectName(WARLORD_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
