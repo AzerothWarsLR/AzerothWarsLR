@@ -28,7 +28,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o01T', UNLIMITED)   //Goblin Hardware Shop
 
     call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
-    call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
+    call f.registerObjectLimit('o02M', UNLIMITED)   //Grunt
     call f.registerObjectLimit('orai', UNLIMITED)   //Raider
     call f.registerObjectLimit('n08E', UNLIMITED)   //Hexbinder
     call f.registerObjectLimit('otbk', UNLIMITED)   //Troll Berseker
@@ -61,6 +61,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.SetObjectLevel('R01Z', 1)                //Battle Stations
     call f.registerObjectLimit('R00D', UNLIMITED)   //For the Horde!
     call f.registerObjectLimit('Rovs', UNLIMITED)   //Envenomed Spears
+    call f.registerObjectLimit('R017', UNLIMITED)   //Improved Ignore Pain
   endfunction
 
 endlibrary
