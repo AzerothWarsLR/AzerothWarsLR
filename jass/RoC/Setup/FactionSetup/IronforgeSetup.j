@@ -19,14 +19,14 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h07G', UNLIMITED)   //Castle
     call f.registerObjectLimit('h02P', UNLIMITED)   //Farm  (Dwarven)
     call f.registerObjectLimit('h01S', UNLIMITED)   //Tavern
-    call f.registerObjectLimit('halt', UNLIMITED)   //Altar of Kings
-    call f.registerObjectLimit('hbar', UNLIMITED)   //Barracks
+    call f.registerObjectLimit('h07B', UNLIMITED)   //Altar of Kings
+    call f.registerObjectLimit('h07C', UNLIMITED)   //Barracks
     call f.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
     call f.registerObjectLimit('h048', UNLIMITED)   //Blacksmith (Dwarven)
     call f.registerObjectLimit('h042', UNLIMITED)   //Machine Factory
     call f.registerObjectLimit('harm', UNLIMITED)   //Workshop
     call f.registerObjectLimit('hgra', UNLIMITED)   //Gryphon Aviary
-    call f.registerObjectLimit('hwtw', UNLIMITED)   //Scout Tower
+    call f.registerObjectLimit('h07H', UNLIMITED)   //Scout Tower
     call f.registerObjectLimit('h07J', UNLIMITED)   //Cannon Tower
     call f.registerObjectLimit('h07K', UNLIMITED)   //Cannon Tower (Improved)
     call f.registerObjectLimit('h07D', UNLIMITED)   //Alliance Shipyard
