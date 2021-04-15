@@ -32,7 +32,7 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Wandering Brewmaster", "Rumours tell of a strange white-furred creature from a foreign land. Perhaps it could be convinced to join the Horde.", "ReplaceableTextures\\CommandButtons\\BTNPandarenBrewmaster.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen, "Chen Stormstout", true))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen, "Chen Stormstout", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
