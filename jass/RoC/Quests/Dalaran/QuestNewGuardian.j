@@ -22,7 +22,7 @@ library QuestNewGuardian requires LegendDalaran, Display,
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Guardian of Tirisfal", "Medivh's death left Azeroth without a Guardian. The spell book he left behind could be used to empower a new one.", "ReplaceableTextures\\CommandButtons\\BTNAstral Blessing.blp")
-      call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_JAINA, 10))
+      call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_JAINA, 12))
       call this.AddQuestItem(QuestItemLegendHasArtifact.create(LEGEND_JAINA, ARTIFACT_BOOKOFMEDIVH))
       return this
     endmethod

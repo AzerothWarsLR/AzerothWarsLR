@@ -18,6 +18,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_EYEOFSARGERAS
     Artifact ARTIFACT_CROWNEASTERNKINGDOMS
     Artifact ARTIFACT_TROLKALAR
+    Artifact ARTIFACT_SHADOWCRYSTAL
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -135,6 +136,9 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_H05B_0308, ARTIFACT_HOLDER_ABIL_ID)             //Darius Crowley
     call UnitAddItem(gg_unit_H05B_0308, ARTIFACT_SCYTHEOFELUNE.item)            //Darius Crowley
+
+    set ARTIFACT_SHADOWCRYSTAL = Artifact.create(CreateItem('I01Q', DUMMY_X, DUMMY_Y))
+    call UnitAddItem(gg_unit_Nbbc_0767, ARTIFACT_SHADOWCRYSTAL.item)            //Dal'rend Blackhand
   endfunction
 
 endlibrary
