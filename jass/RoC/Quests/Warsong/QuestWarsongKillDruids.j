@@ -1,30 +1,24 @@
 library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
 
-  globals
-    private constant integer RESEARCH_ID = 'R059'
-  endglobals
-
   struct QuestWarsongKillDruids extends QuestData
+    private static integer EXPERIENCE_REWARD = 3000
+
     private method operator CompletionPopup takes nothing returns string
-      return "Nordrassil has been captured. Goblin Shredders begin immediate harvesting operations and are outfitted with newer, more effective equipment."
+      return "Nordrassil has been captured. The Warsong is supreme!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A research allowing your Goblin Shredders to use Emergency Repairs, Pocket Factory, and Saw Bombardment"
+      return "Grom Hellscream gains " + I2S(EXPERIENCE_REWARD) + " experience"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayResearchAcquired(this.Holder.Player, RESEARCH_ID, 1)
-    endmethod
-
-    private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, 1)
+      call AddHeroXP(LEGEND_GROM.Unit, EXPERIENCE_REWARD, true)
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple the Druids and supply the Warsong with an incredible source of lumber.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
+      local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple them permanently.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
+      call this.AddQuestItem(QuestItemLegendAlive(LEGEND_GROM))
       return this
     endmethod
   endstruct

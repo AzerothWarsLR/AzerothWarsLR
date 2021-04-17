@@ -1,4 +1,4 @@
-library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronSetup, LegendLordaeron
+library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItemLegendDead, LordaeronSetup, LegendLordaeron, ArtifactSetup
 
   globals
     private constant integer HERO_ID = 'H01J'
@@ -18,7 +18,7 @@ library QuestScarletCrusade requires QuestData, QuestItemControlPoint, QuestItem
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
       call this.Holder.modObjectLimit('h00F', -UNLIMITED)      //Lordaeron Paladin 
       call this.Holder.modObjectLimit('h06B', 6)               //Grand Templar
-      call SetItemPosition(ARTIFACT_SHADOWCRYSTAL.item, DUMMY_X, DUMMY_Y)
+      call SetItemPosition(ARTIFACT_SHADOWCRYSTAL.item, 20209, 24174)
       call ARTIFACT_SHADOWCRYSTAL.setStatus(ARTIFACT_STATUS_HIDDEN)
       call ARTIFACT_SHADOWCRYSTAL.setDescription("Destroyed")
     endmethod

@@ -22,8 +22,6 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
 
     set LEGEND_TYRANDE = Legend.create()
     set LEGEND_TYRANDE.Unit = gg_unit_Etyr_1241
-    call LEGEND_TYRANDE.AddUnitDependency(LEGEND_NORDRASSIL.Unit)
-    call LEGEND_TYRANDE.AddUnitDependency(LEGEND_AUBERDINE.Unit)
 
     set LEGEND_SHANDRIS = Legend.create()
     set LEGEND_SHANDRIS.Unit = gg_unit_E002_1221
