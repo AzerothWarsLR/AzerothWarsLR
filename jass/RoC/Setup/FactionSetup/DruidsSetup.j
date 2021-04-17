@@ -56,6 +56,9 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R05X', UNLIMITED)   //Blessing of Ursoc
     call f.registerObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
     call f.registerObjectLimit('R00A', UNLIMITED)   //Improved Thorns
+    call f.registerObjectLimit('R02T', UNLIMITED)   //Improved Moonwells
+    call f.registerObjectLimit('R033', UNLIMITED)   //Limber Timber
+
   endfunction
     
 endlibrary
