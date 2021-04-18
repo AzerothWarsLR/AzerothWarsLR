@@ -71,6 +71,7 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R00Z', UNLIMITED)   //Armor Penetration Rounds
     call f.registerObjectLimit('R010', UNLIMITED)   //Improved Spell Resistance
     call f.registerObjectLimit('R00T', UNLIMITED)   //Overclock 
+    call f.registerObjectLimit('R00N', UNLIMITED)   //Improved Swig
   endfunction
     
 endlibrary
