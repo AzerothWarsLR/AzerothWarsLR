@@ -34,8 +34,8 @@ library QuelthalasSetup requires Faction, TeamSetup
 
     //Units
     call f.registerObjectLimit('nbee', UNLIMITED)   //Elven Worker
-    call f.registerObjectLimit('hbot', UNLIMITED)   //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
+    call f.registerObjectLimit('hbot', 24)   	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 24)  	    //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship 
     call f.registerObjectLimit('hhes', UNLIMITED)   //Elven Warrior
     call f.registerObjectLimit('hmpr', UNLIMITED)   //Priest

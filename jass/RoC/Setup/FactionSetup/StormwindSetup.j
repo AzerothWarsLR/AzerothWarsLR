@@ -20,7 +20,6 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     call f.registerObjectLimit('h072', UNLIMITED)   //Farm
     call f.registerObjectLimit('h06T', UNLIMITED)   //Altar of Kings
     call f.registerObjectLimit('h06E', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('h06G', UNLIMITED)   //Lumber Mill
     call f.registerObjectLimit('h06F', UNLIMITED)   //Blacksmith
     call f.registerObjectLimit('h06A', UNLIMITED)   //Workshop (Stormwind)
     call f.registerObjectLimit('hars', UNLIMITED)   //Arcane Sanctum
@@ -46,8 +45,8 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     call f.registerObjectLimit('h00J', UNLIMITED)   //Clergyman
     call f.registerObjectLimit('n06N', 6)           //Gyrobomber
     call f.registerObjectLimit('n093', UNLIMITED)   //Chaplain
-    call f.registerObjectLimit('hbot', UNLIMITED)   //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
+    call f.registerObjectLimit('hbot', 24)   	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 24)   	    //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('h060', 3)           //Arathor Flagship
 

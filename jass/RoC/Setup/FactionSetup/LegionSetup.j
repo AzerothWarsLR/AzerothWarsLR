@@ -32,8 +32,8 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
     call f.registerObjectLimit('o01G', 12)          //Orc Cavalry
     call f.registerObjectLimit('o01F', 12)          //Beserker
-    call f.registerObjectLimit('ubot', UNLIMITED)   //Undead Transport SHip
-    call f.registerObjectLimit('udes', UNLIMITED)   //Undead Frigate
+    call f.registerObjectLimit('ubot', 24) 	    //Undead Transport SHip
+    call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship       
     call f.registerObjectLimit('o00B', 1)           //Jubei'thos    
     call f.registerObjectLimit('n070', 6)           //Drake

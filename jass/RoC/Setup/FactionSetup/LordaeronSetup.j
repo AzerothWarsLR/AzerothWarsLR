@@ -19,7 +19,6 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     call f.registerObjectLimit('hhou', UNLIMITED)   //Farm
     call f.registerObjectLimit('halt', UNLIMITED)   //Altar of Kings
     call f.registerObjectLimit('hbar', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('hlum', UNLIMITED)   //Lumber Mill
     call f.registerObjectLimit('hbla', UNLIMITED)   //Blacksmith
     call f.registerObjectLimit('h035', UNLIMITED)   //Chapel
     call f.registerObjectLimit('hwtw', UNLIMITED)   //Scout Tower
@@ -33,8 +32,8 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
-    call f.registerObjectLimit('hbot', UNLIMITED)   //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
+    call f.registerObjectLimit('hbot', 24) 	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 24) 	    //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('hfoo', UNLIMITED)   //Footman
     call f.registerObjectLimit('hkni', UNLIMITED)   //Knight

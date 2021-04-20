@@ -37,8 +37,8 @@ library FrostwolfSetup requires Faction, TeamSetup
     call f.registerObjectLimit('oshm', UNLIMITED)   //Shaman
     call f.registerObjectLimit('ospw', UNLIMITED)   //Spirit Walker
     call f.registerObjectLimit('o00A', 6)           //Far Seer
-    call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
-    call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
+    call f.registerObjectLimit('obot', 24)  	    //Transport Ship
+    call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
     call f.registerObjectLimit('oosc', UNLIMITED)   //Pack Kodo
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
     call f.registerObjectLimit('n061', 12)          //Goblin Sapper

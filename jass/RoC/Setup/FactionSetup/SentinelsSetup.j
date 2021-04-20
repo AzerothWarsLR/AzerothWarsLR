@@ -36,8 +36,8 @@ library SentinelsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('ebal', 8)           //Glaive Thrower
     call f.registerObjectLimit('ehpr', 6)           //Hippogryph Rider
     call f.registerObjectLimit('nwat', UNLIMITED)   //Nightblade  
-    call f.registerObjectLimit('etrs', UNLIMITED)   //Night Elf Transport Ship
-    call f.registerObjectLimit('edes', UNLIMITED)   //Night Elf Frigate
+    call f.registerObjectLimit('etrs', 24)   	    //Night Elf Transport Ship
+    call f.registerObjectLimit('edes', 24)  	    //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
     call f.registerObjectLimit('nnmg', 12)          //Redeemed Highborne 
 

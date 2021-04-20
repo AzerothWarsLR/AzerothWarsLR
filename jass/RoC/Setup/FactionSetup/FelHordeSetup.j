@@ -43,8 +43,8 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('u00V', UNLIMITED)   //Necrolyte
     call f.registerObjectLimit('n057', -UNLIMITED)  //Nether Dragon Hatchling
     call f.registerObjectLimit('n058', UNLIMITED)   //Troll Axethrowers
-    call f.registerObjectLimit('obot', UNLIMITED)   //Transport Ship
-    call f.registerObjectLimit('odes', UNLIMITED)   //Orc Frigate
+    call f.registerObjectLimit('obot', 24)  	    //Transport Ship
+    call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
     call f.registerObjectLimit('o01V', 4)           //Eredar Elder Warlock
 
