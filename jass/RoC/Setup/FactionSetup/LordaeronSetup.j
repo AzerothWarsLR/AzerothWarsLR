@@ -1,12 +1,12 @@
 library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
   globals
-    LiegeFaction FACTION_LORDAERON
+    Faction FACTION_LORDAERON
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_LORDAERON = LiegeFaction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
+    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 2)
     set f = FACTION_LORDAERON
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE

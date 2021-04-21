@@ -1,13 +1,13 @@
 library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
 
   globals
-    LiegeFaction FACTION_SCOURGE
+    Faction FACTION_SCOURGE
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SCOURGE = LiegeFaction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
+    set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
     set f = FACTION_SCOURGE
     set f.VictoryMusic = "UndeadVictory"
     set f.Team = TEAM_SCOURGE

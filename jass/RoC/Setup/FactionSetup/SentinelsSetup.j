@@ -1,13 +1,13 @@
 library SentinelsSetup requires Faction, TeamSetup
 
   globals
-    LiegeFaction FACTION_SENTINELS
+    Faction FACTION_SENTINELS
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SENTINELS = LiegeFaction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
+    set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
     set f = FACTION_SENTINELS
     set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES

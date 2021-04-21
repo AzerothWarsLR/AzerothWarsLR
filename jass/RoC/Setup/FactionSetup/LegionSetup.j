@@ -1,13 +1,13 @@
 library LegionSetup requires Faction, TeamSetup
 
   globals
-    LiegeFaction FACTION_LEGION
+    Faction FACTION_LEGION
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_LEGION = LiegeFaction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
+    set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 3)
     set f = FACTION_LEGION
     set f.VictoryMusic = "UndeadVictory"
     set f.PresenceResearch = 'R04T'
