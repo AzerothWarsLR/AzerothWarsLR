@@ -83,7 +83,7 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
     private method operator RallyX takes nothing returns real
       local location rally
       local real x
-      if FocalDemonGate.Instance != 0 then
+      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FELHORDE.Player then
         return FocalDemonGate.Instance.RallyX
       endif
       set rally = GetUnitRallyPoint(u)
@@ -93,10 +93,10 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
       return x
     endmethod
 
-    private method operator RallyY takes nothing returns real
+     private method operator RallyY takes nothing returns real
       local location rally
       local real y
-      if FocalDemonGate.Instance != 0 then
+      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FELHORDE.Player then
         return FocalDemonGate.Instance.RallyY
       endif
       set rally = GetUnitRallyPoint(u)
