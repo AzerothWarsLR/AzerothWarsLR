@@ -13,7 +13,7 @@ library QuestFelHordeKillIronforge requires QuestData, FelHordeSetup, QuestItemL
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID)
+      return "Learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID) + " and acquire Felsteel Plating"
     endmethod
 
     private method OnComplete takes nothing returns nothing

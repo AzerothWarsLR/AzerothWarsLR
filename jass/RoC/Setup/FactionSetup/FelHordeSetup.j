@@ -46,7 +46,6 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('obot', 24)  	    //Transport Ship
     call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
-    call f.registerObjectLimit('o01V', 4)           //Eredar Elder Warlock
 
     call f.registerObjectLimit('n05T', 1)           //Kazzak 
     call f.registerObjectLimit('n064', 1)           //Voone 
@@ -63,10 +62,24 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R00M', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('R03I', UNLIMITED)   //Eredar Warlock Adept Training
     call f.registerObjectLimit('R00Y', UNLIMITED)   //Improved Self-Bloodlust
+    call f.registerObjectLimit('R03L', UNLIMITED)   //Improved Shadow Infusion
     call f.registerObjectLimit('R036', UNLIMITED)   //Incinerate
     call f.registerObjectLimit('R02L', UNLIMITED)   //Bloodcraze  
+    call f.registerObjectLimit('R03O', UNLIMITED)   //Bloodcraze 
+    call f.registerObjectLimit('R034', UNLIMITED)   //Enhanced Breath 
+    call f.registerObjectLimit('R035', UNLIMITED)   //Improved Firebolt
     call f.registerObjectLimit('R01Z', UNLIMITED)   //Battle Stations
     call f.SetObjectLevel('R01Z', 1)                //Battle Stations
+
+
+    call f.registerObjectLimit('n05R', 1)           //Felguard
+    call f.registerObjectLimit('n06H', 1)           //Pit Fiend
+    call f.registerObjectLimit('n07B', 1)           //Queen
+    call f.registerObjectLimit('n07D', 1)           //Maiden
+    call f.registerObjectLimit('n07o', 1)           //Terror
+    call f.registerObjectLimit('n07N', 1)           //Lord
+
+
   endfunction
     
 endlibrary

@@ -23,15 +23,16 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('u015', UNLIMITED)   //Unholy Reliquary
     call f.registerObjectLimit('u006', UNLIMITED)   //Void Summoning Spire
     call f.registerObjectLimit('ndmg', UNLIMITED)   //Demon Gate
+    call f.registerObjectLimit('n04N', UNLIMITED)   //Infernal Machine Factory
+    call f.registerObjectLimit('n04Q', UNLIMITED)   //Nether Pit
+  
     //Units
     call f.registerObjectLimit('u00D', UNLIMITED)   //Legion Herald
     call f.registerObjectLimit('u007', 6)           //Dreadlord
     call f.registerObjectLimit('n04P', UNLIMITED)   //Warlock
-    call f.registerObjectLimit('ninc', 12)          //Infernal Contraption
+    call f.registerObjectLimit('ninc', UNLIMITED)   //Burning archer
     call f.registerObjectLimit('n04K', UNLIMITED)   //Succubus
     call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
-    call f.registerObjectLimit('o01G', 12)          //Orc Cavalry
-    call f.registerObjectLimit('o01F', 12)          //Beserker
     call f.registerObjectLimit('ubot', 24) 	    //Undead Transport SHip
     call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship       
@@ -42,6 +43,8 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('ninf', 12)          //Infernal
     call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
     call f.registerObjectLimit('n04U', 4)           //Dragon
+    call f.registerObjectLimit('n03L', 4)           //Barge
+
     //Researches
     call f.registerObjectLimit('R02C', UNLIMITED)   //Acute Sensors
     call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
@@ -49,6 +52,7 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('R01Y', UNLIMITED)   //Astral Walk
     call f.registerObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
+
     //Quests
     call f.registerObjectLimit('R04B', UNLIMITED)   //Summoned legion
 
