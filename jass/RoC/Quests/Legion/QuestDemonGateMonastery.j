@@ -1,7 +1,7 @@
 library QuestDemonGateMonastery requires QuestData, LegionSetup
 
   globals
-    private constant integer DEMONGATE_ID = 'ndmg'
+    private constant integer DEMONGATE_ID = 'n081'
   endglobals
 
   struct QuestDemonGateMonastery extends QuestData

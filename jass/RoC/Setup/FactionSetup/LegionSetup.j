@@ -15,7 +15,10 @@ library LegionSetup requires Faction, TeamSetup
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
     call f.registerObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon
-    call f.registerObjectLimit('u00F', UNLIMITED)   //Burning Shrine
+    call f.registerObjectLimit('u00F', UNLIMITED)   //Dormant Spire
+    call f.registerObjectLimit('u00C', UNLIMITED)   //Legion Bastion
+    call f.registerObjectLimit('u00N', UNLIMITED)   //Burning Citadel
+    call f.registerObjectLimit('u00U', UNLIMITED)   //Hell Palace
     call f.registerObjectLimit('n040', UNLIMITED)   //Armory
     call f.registerObjectLimit('u009', UNLIMITED)   //Undead Shipyard
     call f.registerObjectLimit('u00E', UNLIMITED)   //Generator
@@ -52,9 +55,17 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
     call f.registerObjectLimit('R01Y', UNLIMITED)   //Astral Walk
     call f.registerObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
-
+    call f.registerObjectLimit('R03Z', UNLIMITED)   //War Plating
+    call f.registerObjectLimit('R040', UNLIMITED)   //Flying horrors
     //Quests
     call f.registerObjectLimit('R04B', UNLIMITED)   //Summoned legion
+
+    call f.registerObjectLimit('n05R', 1)           //Felguard
+    call f.registerObjectLimit('n06H', 1)           //Pit Fiend
+    call f.registerObjectLimit('n07B', 1)           //Queen
+    call f.registerObjectLimit('n07D', 1)           //Maiden
+    call f.registerObjectLimit('n07o', 1)           //Terror
+    call f.registerObjectLimit('n07N', 1)           //Lord
 
   endfunction
     
