@@ -57,6 +57,7 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
     call f.registerObjectLimit('R03Z', UNLIMITED)   //War Plating
     call f.registerObjectLimit('R040', UNLIMITED)   //Flying horrors
+    call f.registerObjectLimit('R043', UNLIMITED)   //Fel Guard Summoning
     //Quests
     call f.registerObjectLimit('R04B', UNLIMITED)   //Summoned legion
 

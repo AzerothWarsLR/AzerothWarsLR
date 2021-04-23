@@ -7,6 +7,7 @@ library LegionQuestSetup requires LegionSetup, QuestDemonGateMonastery, QuestLeg
     call FACTION_LEGION.AddQuest(QuestLegionCaptureSunwell.create())
     call FACTION_LEGION.AddQuest(QuestLegionKillLordaeron.create())
     call FACTION_LEGION.AddQuest(QuestSkullOfGuldan.create())
+    call FACTION_LEGION.AddQuest(QuestEmbassy.create())
   endfunction
 
 endlibrary
