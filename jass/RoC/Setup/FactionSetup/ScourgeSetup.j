@@ -12,6 +12,8 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     set f.VictoryMusic = "UndeadVictory"
     set f.Team = TEAM_SCOURGE
     set f.PresenceResearch = 'R05K'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     //Buildings
     call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   

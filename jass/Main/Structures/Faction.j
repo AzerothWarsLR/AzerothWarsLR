@@ -45,6 +45,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     private integer array unitTypeByCategory[100]
 
+    public integer StartingGold = 0
+    public integer StartingLumber = 0
+
     method operator ObjectLimitCount takes nothing returns integer
       return this.objectCount
     endmethod
