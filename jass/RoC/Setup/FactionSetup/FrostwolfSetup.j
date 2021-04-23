@@ -11,6 +11,8 @@ library FrostwolfSetup requires Faction, TeamSetup
     set f.VictoryMusic = "OrcVictory"
     set f.Team = TEAM_HORDE
     set f.PresenceResearch = 'R05V'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold

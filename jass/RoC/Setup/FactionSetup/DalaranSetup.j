@@ -12,6 +12,8 @@ library DalaranSetup requires Faction, TeamSetup
     set f.VictoryMusic = "HumanVictory"
     set f.PresenceResearch = 'R05N'
     set f.Team = TEAM_NORTH_ALLIANCE
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
     
     //Structures
     call f.registerObjectLimit('h065', UNLIMITED)   //Refuge

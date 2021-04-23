@@ -12,6 +12,8 @@ library IronforgeSetup requires Faction, TeamSetup
     set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTH_ALLIANCE
     set f.PresenceResearch = 'R05T'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     //Structures
     call f.registerObjectLimit('h07E', UNLIMITED)   //Town Hall

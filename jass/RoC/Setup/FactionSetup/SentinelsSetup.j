@@ -12,6 +12,8 @@ library SentinelsSetup requires Faction, TeamSetup
     set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R05Y'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     call f.registerObjectLimit('e00V', UNLIMITED)   //Temple of Elune
     call f.registerObjectLimit('e00R', UNLIMITED)   //Altar of Watchers 

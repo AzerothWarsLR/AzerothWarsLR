@@ -11,6 +11,8 @@ library WarsongSetup requires Faction, TeamSetup
     set f.VictoryMusic = "OrcVictory"
     set f.Team = TEAM_HORDE
     set f.PresenceResearch = 'R05W'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     call f.registerObjectLimit('o00C', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('o02R', UNLIMITED)   //Stronghold

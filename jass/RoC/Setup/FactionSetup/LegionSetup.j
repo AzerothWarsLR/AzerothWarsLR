@@ -12,6 +12,8 @@ library LegionSetup requires Faction, TeamSetup
     set f.VictoryMusic = "UndeadVictory"
     set f.PresenceResearch = 'R04T'
     set f.Team = TEAM_SCOURGE
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
     //Structures
     call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
     call f.registerObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon
@@ -40,7 +42,6 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship       
     call f.registerObjectLimit('o00B', 1)           //Jubei'thos    
-    call f.registerObjectLimit('n070', 6)           //Drake
     call f.registerObjectLimit('n04O', 6)           //Doomguard
     call f.registerObjectLimit('n04L', 6)           //Infernal Juggernaut
     call f.registerObjectLimit('ninf', 12)          //Infernal

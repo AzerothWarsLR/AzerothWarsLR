@@ -12,6 +12,8 @@ library FelHordeSetup requires Faction, TeamSetup
     set f.VictoryMusic = "DarkVictory"
     set f.Team = TEAM_FEL_HORDE
     set f.PresenceResearch = 'R05L'
+    set f.StartingGold = 300
+    set f.StartingLumber = 600
 
     call f.registerObjectLimit('o02Y', UNLIMITED)   //Great Hall
     call f.registerObjectLimit('o02Z', UNLIMITED)   //Stronghold

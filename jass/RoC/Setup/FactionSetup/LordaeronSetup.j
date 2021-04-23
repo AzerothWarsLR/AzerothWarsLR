@@ -11,6 +11,8 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE
     set f.PresenceResearch = 'R05M'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     //Structures
     call f.registerObjectLimit('htow', UNLIMITED)   //Town Hall

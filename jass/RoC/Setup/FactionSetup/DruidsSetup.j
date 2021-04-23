@@ -13,6 +13,8 @@ library DruidsSetup requires Faction, TeamSetup
     set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R06E'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     call f.registerObjectLimit('etol', UNLIMITED)   //Tree of Life  
     call f.registerObjectLimit('etoa', UNLIMITED)   //Tree of Ages

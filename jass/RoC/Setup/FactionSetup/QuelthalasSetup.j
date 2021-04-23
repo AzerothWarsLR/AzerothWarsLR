@@ -11,6 +11,8 @@ library QuelthalasSetup requires Faction, TeamSetup
     set f.VictoryMusic = "HumanVictory"
     set f.Team = TEAM_NORTH_ALLIANCE
     set f.PresenceResearch = 'R05U'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
  
     //Structures
     call f.registerObjectLimit('h033', UNLIMITED)   //Steading

@@ -12,6 +12,8 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTH_ALLIANCE
     set f.PresenceResearch = 'R060'
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     //Structures
     call f.registerObjectLimit('h06K', UNLIMITED)   //Town Hall
