@@ -1,4 +1,4 @@
-library QuestFallenGuardian requires ArtifactSetup
+library QuestFallenGuardian requires LegendNeutral, ControlPoint
 
   globals
     private constant integer RESEARCH_ID = 'R02R'
@@ -24,8 +24,9 @@ library QuestFallenGuardian requires ArtifactSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Fallen Guardian", "Medivh's body was corrupted by Sargeras at conception. Now that he is dead, his spirit could be cleansed through use of one of the demon titan's own artifacts.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
-      call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_EYEOFSARGERAS))
+      local thistype this = thistype.allocate("The Fallen Guardian", "Medivh's body was corrupted by Sargeras at conception. Now that he is dead, the secrets of the Tomb of Sargeras and Sargeras combined might allow the mages of Dalaran to cleanse his spirit.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN, false))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00J')))
       return this
     endmethod
   endstruct
