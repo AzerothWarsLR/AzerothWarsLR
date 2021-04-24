@@ -20,13 +20,12 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral,
       local group tempGroup = CreateGroup()
       local unit u
       //Transfer all Neutral Passive units in Stromgarde
-      call UnitAddItem(this.questItemAnyUnitInRect.TriggerUnit, ARTIFACT_TROLKALAR.item)
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Stromgarde, null)
       loop
         set u = FirstOfGroup(tempGroup)
         exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, this.Holder.Person.Player)
+          call UnitRescue(u, whichPlayer)
         endif
         call GroupRemoveUnit(tempGroup, u)
       endloop
@@ -43,6 +42,8 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral,
 
     private method OnComplete takes nothing returns nothing
       call this.GiveStromgarde(this.Holder.Player)
+      call SetItemPosition(ARTIFACT_TROLKALAR.item, GetUnitX(this.questItemAnyUnitInRect.TriggerUnit), GetUnitY(this.questItemAnyUnitInRect.TriggerUnit))
+      call UnitAddItem(this.questItemAnyUnitInRect.TriggerUnit, ARTIFACT_TROLKALAR.item)
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
 

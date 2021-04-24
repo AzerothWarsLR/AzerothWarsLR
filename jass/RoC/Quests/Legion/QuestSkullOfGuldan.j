@@ -12,6 +12,8 @@ library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemA
     endmethod   
 
     private method OnComplete takes nothing returns nothing
+      call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_GROUND)
+      call SetItemPosition(ARTIFACT_SKULLOFGULDAN.item, GetUnitX(this.questItemAnyUnitInRect.TriggerUnit), GetUnitY(this.questItemAnyUnitInRect.TriggerUnit))
       call UnitAddItem(questItemAnyUnitInRect.TriggerUnit, ARTIFACT_SKULLOFGULDAN.item)
     endmethod
 
