@@ -10,8 +10,8 @@ library ReapingHour initializer OnInit requires T32, Set
     private constant real HORSEMEN_WIDTH = 700. //The total width of the spell
     private constant real DIST_FADE_START = 400.  //When the spell has this many units left to travel, the special effect begins to fade out
 
-    private constant real DAMAGE_BASE = 200.
-    private constant real DAMAGE_LEVEL = 100.
+    private constant real DAMAGE_BASE = 50.
+    private constant real DAMAGE_LEVEL = 50.
     private constant real EXECUTE_PERC = 1 //% of extra damage per % of lost life
 
     private constant string EFFECT_PROJ = "units\\undead\\HeroDeathKnight\\HeroDeathKnight.mdl"

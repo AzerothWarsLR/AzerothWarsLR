@@ -1,7 +1,7 @@
 library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
 
   struct QuestWarsongKillDruids extends QuestData
-    private static integer EXPERIENCE_REWARD = 3000
+    private static integer EXPERIENCE_REWARD = 15000
 
     private method operator CompletionPopup takes nothing returns string
       return "Nordrassil has been captured. The Warsong is supreme!"
