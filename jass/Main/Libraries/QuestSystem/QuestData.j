@@ -306,7 +306,9 @@ library QuestData requires QuestItemData, Event
     endmethod
 
     private static method OnAnyQuestItemProgressChanged takes nothing returns nothing
-      call QuestItemData.TriggerQuestItemData.ParentQuest.OnQuestItemProgressChanged()
+      if QuestItemData.TriggerQuestItemData.ParentQuest != 0 then
+        call QuestItemData.TriggerQuestItemData.ParentQuest.OnQuestItemProgressChanged()
+      endif
     endmethod
 
     private method destroy takes nothing returns nothing
