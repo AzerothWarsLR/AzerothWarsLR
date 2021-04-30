@@ -4,6 +4,7 @@ library WarsongQuestSetup requires WarsongSetup, FrostwolfSetup, QuestChenStorms
     set FACTION_WARSONG.StartingQuest = FACTION_WARSONG.AddQuest(QuestChenStormstout.create())
     call FACTION_WARSONG.AddQuest(QuestFountainOfBlood.create())
     call FACTION_WARSONG.AddQuest(QuestCrossroads.create(FACTION_FROSTWOLF))
+    call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
     call FACTION_WARSONG.AddQuest(QuestWarsongHold.create())
     call FACTION_WARSONG.AddQuest(QuestWarsongKillDruids.create())
     call FACTION_WARSONG.AddQuest(QuestMoreWyverns.create())
