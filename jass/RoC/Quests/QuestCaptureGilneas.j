@@ -2,7 +2,6 @@ library QuestCaptureGilneas requires QuestData, ScourgeSetup, LordaeronSetup, St
 
   struct QuestCaptureGilneas extends QuestData
     private boolean doBlight = false
-    private static weathereffect weather
 
     private method operator CompletionPopup takes nothing returns string
       return "Gilneas now falls under the dominion of the " + this.Holder.Team.Name + "."
@@ -40,14 +39,8 @@ library QuestCaptureGilneas requires QuestData, ScourgeSetup, LordaeronSetup, St
             call ReplaceUnitBJ(u, this.Holder.GetUnitTypeByCategory(UnitType.ById(GetUnitTypeId(u)).UnitCategory), bj_UNIT_STATE_METHOD_RELATIVE)
           endif
         endif
-
         call GroupRemoveUnit(tempGroup, u)
       endloop
-      if this.doBlight then
-        call RemoveWeatherEffect(thistype.weather)
-        set thistype.weather = AddWeatherEffect(gg_rct_Gilneas, 'FDgh')
-        call EnableWeatherEffect(thistype.weather, true)
-      endif
     endmethod
 
     public static method create takes string name, string desc, boolean doBlight returns thistype
@@ -55,11 +48,6 @@ library QuestCaptureGilneas requires QuestData, ScourgeSetup, LordaeronSetup, St
       set this.doBlight = doBlight
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_H05B_0308))
       return this
-    endmethod
-
-    private static method onInit takes nothing returns nothing
-      set thistype.weather = AddWeatherEffect(gg_rct_Gilneas, 'RAhr')
-      call EnableWeatherEffect(thistype.weather, true)
     endmethod
   endstruct
 
