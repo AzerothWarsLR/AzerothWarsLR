@@ -18,7 +18,7 @@ library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple them permanently.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
-      call this.AddQuestItem(QuestItemLegendAlive(LEGEND_GROM))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GROM))
       return this
     endmethod
   endstruct
