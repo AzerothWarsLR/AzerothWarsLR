@@ -1,4 +1,4 @@
-library TierHighSorcererAndromath initializer OnInit requires StormwindSetup
+library TierHighSorcererAndromath requires StormwindSetup
 
   globals
     private constant integer DEMI_UNITTYPE_ID = 'h05X'
@@ -11,7 +11,7 @@ library TierHighSorcererAndromath initializer OnInit requires StormwindSetup
     endif
   endfunction
 
-  private function OnInit takes nothing returns nothing
+  public function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
     call TriggerAddCondition(trig, Condition(function Research))    

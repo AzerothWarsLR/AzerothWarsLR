@@ -12,6 +12,7 @@ library StructurePackingConfig initializer OnInit requires StructurePacking
     call PackableStructure.create('obea', "buildings\\Orc\\Beastiary\\Beastiary.mdx", 'A07D')
     call PackableStructure.create('otrb', "buildings\\Orc\\TrollBurrow\\TrollBurrow.mdx", 'A0EV')
     call PackableStructure.create('oshy', "buildings\\Orc\\GoblinShipyard\\GoblinShipyard.mdx", 'A0EX')
+    call PackableStructure.create('o01M', "buildings\\other\\AmmoDump\\AmmoDump.mdl", 'A02Z')
   endfunction
 
 endlibrary
