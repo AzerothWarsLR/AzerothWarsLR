@@ -19,7 +19,7 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_GAHZRILLA = Legend.create()
     set LEGEND_GAHZRILLA.UnitType = 'H06Q'
     set LEGEND_GAHZRILLA.PlayerColor = PLAYER_COLOR_SNOW
-    set LEGEND_GAHZRILLA.StartingXP = 1000
+    set LEGEND_GAHZRILLA.StartingXP = 2000
 
     set LEGEND_CHEN = Legend.create()
     set LEGEND_CHEN.UnitType = 'Nsjs'

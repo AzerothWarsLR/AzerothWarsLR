@@ -4,9 +4,9 @@ library DemonGateConfig initializer OnInit requires DemonGate
   //You must create DemonGateTypes before specifying which units are DemonGates
 
   private function OnInit takes nothing returns nothing
-    call DemonGateType.create('n000', 'n059', 40,  2)  //T1 Hounds
-    call DemonGateType.create('n04I', 'ndqn', 50,  1)  //T1 succ
-    call DemonGateType.create('n05F', 'nvdl', 30,  1)  //T1 void
+    call DemonGateType.create('n000', 'n059', 80,  2)  //T1 Hounds
+    call DemonGateType.create('n04I', 'ndqn', 90,  1)  //T1 succ
+    call DemonGateType.create('n05F', 'nvdl', 60,  1)  //T1 void
 
     call DemonGateType.create('n05I', 'n059', 80,  6)  //T2 Hounds
     call DemonGateType.create('n05R', 'n05B', 85,  2)  //T2 felguard
