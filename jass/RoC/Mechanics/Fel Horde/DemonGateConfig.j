@@ -16,7 +16,7 @@ library DemonGateConfig initializer OnInit requires DemonGate
     call DemonGateType.create('n07B', 'ndqs', 120, 1)  //T2 Queen
     call DemonGateType.create('n07D', 'ndqp', 100, 1)  //T2 Maiden
 
-    call DemonGateType.create('n06G', 'n08C', 40,  1)  //T2 Void
+    call DemonGateType.create('n06G', 'n08C', 80,  1)  //T2 Void
     call DemonGateType.create('n07M', 'n088', 130, 1)  //T2 Voidlord
     call DemonGateType.create('n07O', 'o014', 240, 1)  //T2 Void Hunter
     
