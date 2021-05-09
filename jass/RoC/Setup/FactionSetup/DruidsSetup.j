@@ -60,6 +60,9 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R00A', UNLIMITED)   //Improved Thorns
     call f.registerObjectLimit('R02T', UNLIMITED)   //Improved Moonwells
     call f.registerObjectLimit('R033', UNLIMITED)   //Limber Timber
+    call f.registerObjectLimit('R046', UNLIMITED)   //Grasping Vines
+    call f.registerObjectLimit('R047', UNLIMITED)   //Crippling Poison
+    call f.registerObjectLimit('R048', UNLIMITED)   //Deadly Poison
 
   endfunction
     
