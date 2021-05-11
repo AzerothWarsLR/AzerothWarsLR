@@ -60,7 +60,6 @@ library DalaranSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R01L', UNLIMITED)   //Magic Sentry
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.registerObjectLimit('R00D', UNLIMITED)   //Pyromancer Adept Training
-    call f.registerObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.registerObjectLimit('R06J', UNLIMITED)   //Improved Ooze
     call f.registerObjectLimit('R061', UNLIMITED)   //Improved Forked Lightning
