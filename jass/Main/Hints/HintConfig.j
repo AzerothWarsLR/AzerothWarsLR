@@ -11,6 +11,7 @@ library HintConfig initializer OnInit requires Hint
     call Hint.create("When a player leaves, their gold, lumber, units and hero experience are spread among their remaining allies.")
     call Hint.create("There are water passageways at the edge of the map you can use to instantly move to the other side of the map.")
     call Hint.create("You can type -unally to unally everyone on your team.")
+    call Hint.create("Every faction can build an item shop that contains useful purchasable items.")
   endfunction
 
 endlibrary
