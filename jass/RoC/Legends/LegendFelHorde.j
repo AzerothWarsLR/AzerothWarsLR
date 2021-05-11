@@ -1,4 +1,4 @@
-library LegendFelHorde initializer OnInit requires Legend
+﻿library LegendFelHorde initializer OnInit requires Legend
 
   globals
     Legend LEGEND_MAGTHERIDON
@@ -17,7 +17,7 @@ library LegendFelHorde initializer OnInit requires Legend
   
     set LEGEND_ZULUHED = Legend.create()
     set LEGEND_ZULUHED.UnitType = 'O00Y'
-    set LEGEND_ZULUHED.StartingXP = 10800
+    set LEGEND_ZULUHED.StartingXP = 7000
 
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507

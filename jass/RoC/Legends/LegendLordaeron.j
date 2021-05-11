@@ -28,7 +28,7 @@ library LegendLordaeron initializer OnInit requires Legend
 
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
-    set LEGEND_GARITHOS.StartingXP = 7000
+    set LEGEND_GARITHOS.StartingXP = 2800
 
     set LEGEND_CAPITALPALACE = Legend.create()
     set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406

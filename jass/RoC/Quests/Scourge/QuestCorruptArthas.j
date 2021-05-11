@@ -19,7 +19,7 @@ library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSe
       call RemoveUnit(LEGEND_ARTHAS.Unit)
       set LEGEND_ARTHAS.Unit = null
       set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
-      set LEGEND_ARTHAS.StartingXP = 9800
+      set LEGEND_ARTHAS.StartingXP = 7000
       set LEGEND_ARTHAS.UnitType = 'Uear'
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
