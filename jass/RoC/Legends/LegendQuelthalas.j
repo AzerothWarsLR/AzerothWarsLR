@@ -16,10 +16,12 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_SILVERMOON = Legend.create()
     set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418
     set LEGEND_SILVERMOON.DeathMessage = "The grand city of the high elves, Silvermoon, has been crushed by her enemies."
+    set LEGEND_SILVERMOON.IsCapital = true
 
     set LEGEND_SUNWELL = Legend.create()
     set LEGEND_SUNWELL.Unit = gg_unit_n001_0165
     set LEGEND_SUNWELL.Capturable = true
+    set LEGEND_SUNWELL.IsCapital = true
 
     set LEGEND_ANASTERIAN = Legend.create()
     set LEGEND_ANASTERIAN.Unit = gg_unit_H00Q_0630

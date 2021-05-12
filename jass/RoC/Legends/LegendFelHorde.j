@@ -22,9 +22,11 @@
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507
     set LEGEND_BLACKROCKSPIRE.DeathMessage = "Blackrock Spire has been razed."
+    set LEGEND_BLACKROCKSPIRE.IsCapital = true
 
     set LEGEND_BLACKTEMPLE = Legend.create()
     set LEGEND_BLACKTEMPLE.Unit = gg_unit_o00F_0659
+    set LEGEND_BLACKTEMPLE.IsCapital = true
     
     set LEGEND_HELLFIRECITADEL = Legend.create()
     set LEGEND_HELLFIRECITADEL.Unit = gg_unit_o008_0168

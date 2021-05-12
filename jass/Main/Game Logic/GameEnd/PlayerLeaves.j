@@ -5,15 +5,9 @@ library PlayerLeaves initializer OnInit requires Persons
     local integer pId = GetPlayerId(p)
     local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
 
-    if triggerPerson.Faction != 0 then
-      call BJDebugMsg( triggerPerson.Faction.Name + " has left the game." )
-    else
-      call BJDebugMsg( GetPlayerName(p) + " has left the game." )        
-    endif
-
-    if triggerPerson != 0 then
-      call triggerPerson.Faction.Leave()
-      set triggerPerson.Faction = 0
+    if triggerPerson != 0 and triggerPerson.Faction != 0 then
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, triggerPerson.Faction.ColoredName + " has left the game.")
+      set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
     endif
   endfunction
 

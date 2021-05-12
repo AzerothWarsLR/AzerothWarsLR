@@ -34,12 +34,14 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_STONEMAUL = Legend.create()
     set LEGEND_STONEMAUL.Unit = gg_unit_o004_0169
     set LEGEND_STONEMAUL.DeathMessage = "The fortress of the Stonemaul Clan has fallen."
+    set LEGEND_STONEMAUL.IsCapital = true
 
     set LEGEND_ENCAMPMENT = Legend.create()
     //set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
 
     set LEGEND_LUMBERCAMP = Legend.create()
     set LEGEND_LUMBERCAMP.Unit = gg_unit_o01I_1103
+    set LEGEND_LUMBERCAMP.IsCapital = true
 
     set LEGEND_GROM = Legend.create()
     set LEGEND_GROM.Unit = gg_unit_Ogrh_0249

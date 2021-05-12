@@ -33,6 +33,7 @@ library LegendDruids initializer OnInit requires Legend
     set LEGEND_NORDRASSIL = Legend.create()
     set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
     set LEGEND_NORDRASSIL.Capturable = true
+    set LEGEND_NORDRASSIL.IsCapital = true
   endfunction
 
 endlibrary

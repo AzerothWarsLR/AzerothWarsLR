@@ -14,17 +14,10 @@ library ObserverCommand initializer OnInit
     call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_OBSERVER, 1)
     call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
 
-    if triggerPerson.Faction != 0 then
-      call BJDebugMsg( triggerPerson.Faction.Name + " has become an observer." )
-    else
-      call BJDebugMsg( GetPlayerName(triggerPerson.Player) + " has become an observer." )        
-    endif        
-
-    if triggerPerson != 0 then         
-      call triggerPerson.Faction.Leave()
-      set triggerPerson.Faction = 0
-      set triggerPerson.Faction.Team = 0
-      call triggerPerson.destroy()
+    if triggerPerson != 0 then
+      if triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
+        set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
+      endif
     endif
   endfunction
 

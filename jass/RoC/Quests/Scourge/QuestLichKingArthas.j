@@ -16,6 +16,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
     private method OnComplete takes nothing returns nothing
       call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
       set LEGEND_LICHKING.Hivemind = false
+      set LEGEND_LICHKING.IsCapital = false
       set LEGEND_LICHKING.DeathMessage = ""
       call KillUnit(LEGEND_LICHKING.Unit)
       set LEGEND_ARTHAS.UnitType = 'N023'

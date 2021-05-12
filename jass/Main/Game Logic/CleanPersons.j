@@ -11,10 +11,7 @@ library CleanPersons initializer OnInit requires Persons, TestSafety
       exitwhen i > MAX_PLAYERS
         set loopPerson = Person.ById(i)
         if loopPerson != 0 and GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_PLAYING then
-          call loopPerson.Faction.Leave()
-          set loopPerson.Faction.Team = 0
-          set loopPerson.Faction = 0
-          call loopPerson.destroy()
+          set loopPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
         endif
         set i = i + 1
       endloop

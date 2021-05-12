@@ -16,9 +16,11 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
 
     set LEGEND_AUBERDINE = Legend.create()
     set LEGEND_AUBERDINE.Unit = gg_unit_e00J_0320
+    set LEGEND_AUBERDINE.IsCapital = true
 
     set LEGEND_FEATHERMOON = Legend.create()
     set LEGEND_FEATHERMOON.Unit = gg_unit_e00M_2545
+    set LEGEND_FEATHERMOON.IsCapital = true
 
     set LEGEND_TYRANDE = Legend.create()
     set LEGEND_TYRANDE.Unit = gg_unit_Etyr_1241

@@ -13,6 +13,7 @@ library ControlPoint initializer OnInit requires AIDS
     private static Table byHandle
     private static integer count = 0
     static thistype triggerControlPoint = 0
+    static player controlPointFormerOwner = null
 
     real x
     real y
@@ -56,6 +57,7 @@ library ControlPoint initializer OnInit requires AIDS
       set thistype.triggerControlPoint = this
       call OnControlPointLoss.fire()
 
+      set thistype.controlPointFormerOwner = this.owner
       set this.owner = p
       set person = Person.ByHandle(this.owner)
       
@@ -115,7 +117,7 @@ library ControlPoint initializer OnInit requires AIDS
       
       return this           
     endmethod        
-    
+
     private static method onInit takes nothing returns nothing
       set thistype.byUnitType = Table.create()
       set thistype.byHandle = Table.create()
@@ -128,6 +130,10 @@ library ControlPoint initializer OnInit requires AIDS
       call this.deallocate()
     endmethod  
   endstruct
+
+  function GetControlPointPreviousOwner takes nothing returns player
+    return ControlPoint.controlPointFormerOwner
+  endfunction
 
   function GetTriggerControlPoint takes nothing returns ControlPoint
     return ControlPoint.triggerControlPoint

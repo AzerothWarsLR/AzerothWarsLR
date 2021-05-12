@@ -5,6 +5,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     Event OnFactionTeamLeave
     Event OnFactionTeamJoin
     Event OnFactionGameLeave
+    Event FactionScoreStatusChanged
 
     constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
     constant integer HERO_COST = 100    //For refunding
@@ -22,6 +23,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     readonly string prefixCol = null
     readonly string icon = null
     private integer weight //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
+    private integer scoreStatus
 
     private Person person = 0 //One-to-one relationship
     private Team team = 0 //The team this Faction is in
@@ -78,6 +80,27 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     private stub method OnTeamChange takes nothing returns nothing
 
+    endmethod
+
+    method operator ScoreStatus takes nothing returns integer
+      return scoreStatus
+    endmethod
+
+    method operator ScoreStatus= takes integer value returns nothing
+      if this.scoreStatus == SCORESTATUS_VICTORIOUS or this.scoreStatus == SCORESTATUS_DEFEATED then
+        call BJDebugMsg("ERROR: Tried to set scorestatus of " + this.name + " but it is already either Victorious or Defeated")
+        return
+      endif
+      if value == SCORESTATUS_VICTORIOUS and this.Player != null then
+        call RemovePlayer(this.Player, PLAYER_GAME_RESULT_VICTORY)
+        call this.Leave()
+      elseif value == SCORESTATUS_DEFEATED and this.Player != null then
+        call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
+        call this.Leave()
+      endif
+      set this.scoreStatus = value
+      set thistype.triggerFaction = this
+      call FactionScoreStatusChanged.fire()
     endmethod
 
     method operator Team= takes Team team returns nothing
@@ -469,9 +492,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     endmethod
 
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
-    method Leave takes nothing returns nothing
+    private method Leave takes nothing returns nothing
       call OnPreLeave()
-      if team.PlayerCount > 1 then
+      if team.PlayerCount > 1 and team.ScoreStatus == SCORESTATUS_NORMAL then
         call distributeUnits()
         call distributeResources()
         call distributeExperience()
@@ -501,6 +524,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       set this.weight = weight
       set this.objectLimits = Table.create()
       set this.objectLevels = Table.create()
+      set this.scoreStatus = SCORESTATUS_NORMAL
       
       if not factionsByName.exists(StringCase(name,false)) then
         set factionsByName[StringCase(name,false)] = this
@@ -528,6 +552,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       set OnFactionTeamLeave = Event.create()
       set OnFactionTeamJoin = Event.create()
       set OnFactionGameLeave = Event.create()
+      set FactionScoreStatusChanged = Event.create()
       
       call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
       call TriggerAddAction(trig, function thistype.OnAnyResearch)
