@@ -7,6 +7,7 @@ library Legend requires GeneralHelpers, Event
   globals
     private constant integer DUMMY_DIESWITHOUT = 'LEgn'
     private constant integer DUMMY_PERMADIES = 'LEgo'
+    private constant integer DUMMY_CAPITAL = 'LEca'
 
     private Legend TriggerLegend = 0
     private player LegendPreviousOwner
@@ -255,7 +256,9 @@ library Legend requires GeneralHelpers, Event
         endif
       endif
       if isCapital then
-        call BlzSetUnitName(this.unit, "CAPITAL")
+        call UnitAddAbility(unit, DUMMY_CAPITAL)
+      else
+        call UnitRemoveAbility(unit, DUMMY_CAPITAL)
       endif
     endmethod
 
