@@ -1,10 +1,11 @@
-library Team initializer OnInit requires Table, Event, Persons, Set
+library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
   globals
     private integer DEFAULT_MAX_WEIGHT = 6  //All Teams have this much maximum weight
 
     Event OnTeamCreate = 0
     Event OnTeamSizeChange = 0
     Event OnTeamWeightChange = 0
+    Event TeamScoreStatusChanged
   endglobals
 
   struct Team     
@@ -16,6 +17,65 @@ library Team initializer OnInit requires Table, Event, Persons, Set
     private string name = null
     private Set invitees //Factions invited to join this Team
     private Set factions
+    private integer scoreStatus
+
+    method operator ScoreStatus takes nothing returns integer
+      return this.scoreStatus
+    endmethod
+
+    method operator CapitalCount takes nothing returns integer
+      local integer total = 0
+      local integer i = 0
+      local Legend loopLegend
+      loop
+        exitwhen i == Legend.Count
+        set loopLegend = Legend.ByIndex(i)
+        if loopLegend != 0 and loopLegend.Unit != null and loopLegend.OwningFaction.Team == this and loopLegend.IsCapital == true and UnitAlive(loopLegend.Unit) then
+          set total = total + 1
+        endif
+        set i = i + 1
+      endloop
+      return total
+    endmethod
+
+    method operator ControlPointCount takes nothing returns integer
+      local integer total = 0
+      local integer i = 0
+      loop
+        exitwhen i == this.FactionCount
+        if this.GetFactionByIndex(i).Person != 0 then
+          set total = total + this.GetFactionByIndex(i).Person.ControlPointCount
+        endif
+        set i = i + 1
+      endloop
+      return total
+    endmethod
+
+    //If a team's score status becomes victorious, they get Gold Gathered equal to their Control Point count plus seconds spent in game.
+    //If they're defeated, they instead just get Gold Gathered equal to time spent in game.
+    //Either way, they are removed from the game.
+    method operator ScoreStatus= takes integer value returns nothing
+      local integer i = 0
+      local Faction loopFaction
+      local integer cpCount = this.ControlPointCount
+      set this.scoreStatus = value
+      loop
+        exitwhen i == this.factions.size
+        set loopFaction = Faction(this.factions[i])
+        if loopFaction.Person != 0 then
+          if value == SCORESTATUS_VICTORIOUS then
+            call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()) + cpCount)
+          elseif value == SCORESTATUS_DEFEATED then
+            call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()))
+          endif
+          if loopFaction.ScoreStatus != value then
+            set loopFaction.ScoreStatus = value
+          endif
+        endif
+        set i = i + 1 
+      endloop
+      call TeamScoreStatusChanged.fire()
+    endmethod
 
     method operator Name takes nothing returns string
       return this.name
@@ -29,9 +89,11 @@ library Team initializer OnInit requires Table, Event, Persons, Set
     method operator PlayerCount takes nothing returns integer
       local integer i = 0
       local integer total = 0
+      local Faction loopFaction
       loop
         exitwhen i == factions.size
-        if Faction(factions[i]).Person != 0 then
+        set loopFaction = factions[i]
+        if loopFaction.Person != 0 and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
           set total = total + 1
         endif
         set i = i + 1
@@ -145,9 +207,11 @@ library Team initializer OnInit requires Table, Event, Persons, Set
     method CreateForceFromPlayers takes nothing returns force
       local integer i = 0
       local force newForce = CreateForce()
+      local Faction loopFaction
       loop
         exitwhen i == factions.size
-        if Faction(factions[i]).Person != 0 then
+        set loopFaction = factions[i]
+        if loopFaction.Person != 0 and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
           call ForceAddPlayer(newForce, Faction(factions[i]).Player)
         endif
         set i = i + 1
@@ -223,6 +287,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set
     set OnTeamCreate = Event.create()
     set OnTeamSizeChange = Event.create()
     set OnTeamWeightChange = Event.create()
+    set TeamScoreStatusChanged = Event.create()
   endfunction
 
 endlibrary

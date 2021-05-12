@@ -5,7 +5,8 @@ library GameTimer initializer OnInit
     private constant real TIMER_DELAY = 6.      //How long after game start to actually show the timer. 
                                                 //This must be after the Multiboard is shown or the Multiboard will break
     private timer GameTimer = null
-    private timerdialog GameTimerDialog = null
+    private timer TurnTimer = null
+    private timerdialog TurnTimerDialog = null
     private integer TurnCount = 0
 
     private real GameTime = 0
@@ -18,19 +19,24 @@ library GameTimer initializer OnInit
 
   private function EndTurn takes nothing returns nothing
     set TurnCount = TurnCount + 1
-    call TimerDialogSetTitle(GameTimerDialog, "Turn " + I2S(TurnCount))
-    set GameTime = GameTime + TURN_DURATION
+    call TimerDialogSetTitle(TurnTimerDialog, "Turn " + I2S(TurnCount))
+  endfunction
+
+  private function GameTick takes nothing returns nothing
+    set GameTime = GameTime + 1
   endfunction
 
   private function ShowTimer takes nothing returns nothing
-    call TimerDialogDisplay(GameTimerDialog, true)
-    call TimerDialogSetTitle(GameTimerDialog, "Game starts in:")    
+    call TimerDialogDisplay(TurnTimerDialog, true)
+    call TimerDialogSetTitle(TurnTimerDialog, "Game starts in:")    
   endfunction
 
   private function Actions takes nothing returns nothing
-    set GameTimer = CreateTimer()
-    set GameTimerDialog = CreateTimerDialog(GameTimer)
+    set TurnTimer = CreateTimer()
+    set TurnTimerDialog = CreateTimerDialog(TurnTimer)
     call TimerStart(GameTimer, TURN_DURATION, true, function EndTurn)
+    set GameTimer = CreateTimer()
+    call TimerStart(GameTimer, 1, true, function GameTick)
   endfunction
 
   private function OnInit takes nothing returns nothing

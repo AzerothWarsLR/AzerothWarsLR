@@ -26,6 +26,7 @@ library LegendIronforge initializer OnInit requires Legend
     set LEGEND_GREATFORGE = Legend.create()
     set LEGEND_GREATFORGE.Unit = gg_unit_h001_0180
     set LEGEND_GREATFORGE.DeathMessage = "The Great Forge has been extinguished."
+    set LEGEND_GREATFORGE.IsCapital = true
 
     set LEGEND_THELSAMAR = Legend.create()
     set LEGEND_THELSAMAR.Unit = gg_unit_h05H_1847

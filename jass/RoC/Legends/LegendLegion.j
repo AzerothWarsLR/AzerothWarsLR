@@ -36,6 +36,7 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_LEGIONNEXUS = Legend.create()
     set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871
     set LEGEND_LEGIONNEXUS.DeathMessage = "The Legion Nexus was destroyed. The Burning Legion is now cut off from Azeroth."
+    set LEGEND_LEGIONNEXUS.IsCapital = true
   endfunction
 
 endlibrary

@@ -81,6 +81,8 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       local integer i = 0
       local integer j = 0
       local integer row = 0
+      local Faction loopFaction = 0
+      local Team loopTeam = 0
       call DestroyMultiboard(this.multiboard)
       set this.multiboard = CreateMultiboardBJ(COLUMN_COUNT, 3, TITLE)
       call MultiboardSetRowCount(this.multiboard, 30)
@@ -88,16 +90,18 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       set row = row + 1
       loop
         exitwhen i == Team.Count
-        if Team.ByIndex(i).PlayerCount > 0 then
-          set this.rowsByTeam[Team.ByIndex(i)] = row
-          call UpdateTeamRow(Team.ByIndex(i))
+        set loopTeam = Team.ByIndex(i)
+        if loopTeam.PlayerCount > 0 and loopTeam.ScoreStatus != SCORESTATUS_DEFEATED then
+          set this.rowsByTeam[loopTeam] = row
+          call UpdateTeamRow(loopTeam)
           set row = row + 1
           set j = 0
           loop
-          exitwhen j == Team.ByIndex(i).FactionCount
-            if Team.ByIndex(i).GetFactionByIndex(j).Person != 0 then
-              set this.rowsByFaction[Team.ByIndex(i).GetFactionByIndex(j)] = row
-              call UpdateFactionRow(Team.ByIndex(i).GetFactionByIndex(j))
+          exitwhen j == loopTeam.FactionCount
+            set loopFaction = loopTeam.GetFactionByIndex(j)
+            if loopFaction.Person != 0 and loopFaction.ScoreStatus != SCORESTATUS_DEFEATED then
+              set this.rowsByFaction[loopFaction] = row
+              call UpdateFactionRow(loopFaction)
               set row = row + 1
             endif
             set j = j + 1
@@ -134,6 +138,8 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       call OnPersonFactionChange.register(trig)
       call OnFactionTeamJoin.register(trig)
       call OnFactionTeamLeave.register(trig)
+      call TeamScoreStatusChanged.register(trig)
+      call FactionScoreStatusChanged.register(trig)
       call TriggerAddAction(trig, function thistype.RenderInstance)
 
       set trig = CreateTrigger()

@@ -35,6 +35,15 @@ library Legend requires GeneralHelpers, Event
     private integer startingXP //A value indicating how much experience a hero should not distribute when refunded. Must be set manually per hero
     private boolean hasCustomColor = false
     private playercolor playerColor
+    private boolean isCapital = false
+
+    public static method operator Count takes nothing returns integer
+      return thistype.count
+    endmethod
+
+    public static method ByIndex takes integer index returns thistype
+      return thistype.byIndex[index]
+    endmethod
 
     public method operator Name takes nothing returns string
       if this.unit == null and this.unitType != 0 then
@@ -46,6 +55,15 @@ library Legend requires GeneralHelpers, Event
         return GetUnitName(this.unit)
       endif
       return "NONAME"
+    endmethod
+
+    public method operator IsCapital takes nothing returns boolean
+      return this.isCapital
+    endmethod
+
+    public method operator IsCapital= takes boolean value returns nothing
+      set this.isCapital = value
+      call this.refreshDummy()
     endmethod
 
     public method operator HasCustomColor takes nothing returns boolean
@@ -235,6 +253,9 @@ library Legend requires GeneralHelpers, Event
         else
           call UnitRemoveAbility(unit, DUMMY_DIESWITHOUT)
         endif
+      endif
+      if isCapital then
+        call BlzSetUnitName(this.unit, "CAPITAL")
       endif
     endmethod
 

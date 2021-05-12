@@ -23,6 +23,9 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_THUNDERBLUFF = Legend.create()
     set LEGEND_THUNDERBLUFF.Unit = gg_unit_o00J_1495
     set LEGEND_THUNDERBLUFF.DeathMessage = "The mesas of Thunderbluff have been swept clean of the Tauren. The Bloodhoof are without a home."
+    set LEGEND_THUNDERBLUFF.IsCapital = true
+
+    //TODO: Darkspear Hold
   endfunction
 
 endlibrary

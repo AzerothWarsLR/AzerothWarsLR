@@ -34,6 +34,7 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_LICHKING.Unit = gg_unit_u000_0649
     set LEGEND_LICHKING.Hivemind = true
     set LEGEND_LICHKING.DeathMessage = "The great Lich King has been destroyed. With no central mind to command them, the forces of the Undead have gone rogue."
+    set LEGEND_LICHKING.IsCapital = true
 endfunction
 
 endlibrary
