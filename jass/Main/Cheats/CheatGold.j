@@ -14,8 +14,8 @@ library CheatGold initializer OnInit requires Persons, TestSafety
     local player p = GetTriggerPlayer()
     
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
-    call AdjustPlayerStateBJ(S2I(parameter), p, PLAYER_STATE_RESOURCE_GOLD)
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Granted " + parameter + " gold.")
+    call SetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD, S2I(parameter))
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Set to " + parameter + " gold.")
   endfunction
 
   private function OnInit takes nothing returns nothing
