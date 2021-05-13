@@ -30,6 +30,7 @@
     
     set LEGEND_HELLFIRECITADEL = Legend.create()
     set LEGEND_HELLFIRECITADEL.Unit = gg_unit_o008_0168
+    set LEGEND_HELLFIRECITADEL.IsCapital = true
   endfunction
 
 endlibrary
