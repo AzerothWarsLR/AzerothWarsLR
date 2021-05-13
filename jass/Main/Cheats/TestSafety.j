@@ -10,7 +10,7 @@ library TestSafety initializer OnInit requires Event
 
   function CheatCondition takes nothing returns boolean
     local string triggerPlayerName = GetPlayerName(GetTriggerPlayer())
-    if triggerPlayerName == "YakaryBovine#6863" or triggerPlayerName == "DaveRolf#2229" or triggerPlayerName == "Richard#2862" or triggerPlayerName == "Lordsebas#11619" then
+    if triggerPlayerName == "YakaryBovine#6863" or triggerPlayerName == "Lordsebas#11619" then
       return true
     endif
     return AreCheatsActive
