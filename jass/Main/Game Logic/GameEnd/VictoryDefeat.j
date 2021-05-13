@@ -28,9 +28,9 @@ library VictoryDefeat requires GameTimer
   function DefeatTeam takes Team whichTeam returns nothing
     if GetGameTime() >= 60 then
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\nTEAM DEFEAT!|r\nThe " + whichTeam.Name + " has been defeated.")
+      call PlayMusic(whichTeam.DefeatMusic)
     endif
     set whichTeam.ScoreStatus = SCORESTATUS_DEFEATED
-    call PlayMusic(whichTeam.DefeatMusic)
   endfunction
 
 endlibrary
