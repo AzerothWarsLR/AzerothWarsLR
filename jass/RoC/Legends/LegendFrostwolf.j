@@ -6,6 +6,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     Legend LEGEND_THRALL
 
     Legend LEGEND_THUNDERBLUFF
+    Legend LEGEND_DARKSPEARHOLD
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -25,7 +26,11 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_THUNDERBLUFF.DeathMessage = "The mesas of Thunderbluff have been swept clean of the Tauren. The Bloodhoof are without a home."
     set LEGEND_THUNDERBLUFF.IsCapital = true
 
-    //TODO: Darkspear Hold
+    set LEGEND_DARKSPEARHOLD = Legend.create()
+    set LEGEND_DARKSPEARHOLD.Unit = gg_unit_o02D_0245
+    set LEGEND_DARKSPEARHOLD.IsCapital = true
+
+  
   endfunction
 
 endlibrary

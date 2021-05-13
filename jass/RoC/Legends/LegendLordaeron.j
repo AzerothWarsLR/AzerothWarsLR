@@ -38,10 +38,12 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_STRATHOLME = Legend.create()
     set LEGEND_STRATHOLME.Unit = gg_unit_h01G_0885
     set LEGEND_STRATHOLME.DeathMessage = "The majestic city of Stratholme has been destroyed."
+    set LEGEND_STRATHOLME.IsCapital = true
 
     set LEGEND_TYRSHAND = Legend.create()
     set LEGEND_TYRSHAND.Unit = gg_unit_h030_0839
     set LEGEND_TYRSHAND.DeathMessage = "Tyr's Hand, the bastion of human power in Lordaeron, has fallen."
+    set LEGEND_TYRSHAND.IsCapital = true
   endfunction
 
 endlibrary
