@@ -27,7 +27,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_THUNDERBLUFF.IsCapital = true
 
     set LEGEND_DARKSPEARHOLD = Legend.create()
-    set LEGEND_DARKSPEARHOLD.Unit = gg_unit_o02D_0245
+    set LEGEND_DARKSPEARHOLD.Unit = gg_unit_o02D_0254
     set LEGEND_DARKSPEARHOLD.IsCapital = true
 
   
