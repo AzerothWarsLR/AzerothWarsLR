@@ -34,7 +34,7 @@ library TestSafety initializer OnInit requires Event
     set i = 0
     loop
     exitwhen i == MAX_PLAYERS or AreCheatsActive == false or IS_TEST_VERSION == true
-      if GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(i)) == MAP_CONTROL_USER then
+      if GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING then
         set userCount = userCount + 1
         if userCount > 1 then
           set AreCheatsActive = false
