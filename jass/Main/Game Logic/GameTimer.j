@@ -34,7 +34,7 @@ library GameTimer initializer OnInit
   private function Actions takes nothing returns nothing
     set TurnTimer = CreateTimer()
     set TurnTimerDialog = CreateTimerDialog(TurnTimer)
-    call TimerStart(GameTimer, TURN_DURATION, true, function EndTurn)
+    call TimerStart(TurnTimer, TURN_DURATION, true, function EndTurn)
     set GameTimer = CreateTimer()
     call TimerStart(GameTimer, 1, true, function GameTick)
   endfunction
