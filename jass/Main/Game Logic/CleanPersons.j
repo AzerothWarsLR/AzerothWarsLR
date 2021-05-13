@@ -10,7 +10,7 @@ library CleanPersons initializer OnInit requires Persons, TestSafety
       loop
       exitwhen i > MAX_PLAYERS
         set loopPerson = Person.ById(i)
-        if loopPerson != 0 and GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_PLAYING then
+        if loopPerson != 0 and GetPlayerSlotState(Player(i)) != PLAYER_SLOT_STATE_PLAYING and loopPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
           set loopPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
         endif
         set i = i + 1

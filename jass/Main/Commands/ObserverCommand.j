@@ -10,10 +10,6 @@ library ObserverCommand initializer OnInit
     local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
     local group tempGroup = CreateGroup()
 
-    call ForceAddPlayer(Observers, GetTriggerPlayer())
-    call SetPlayerState(GetTriggerPlayer(), PLAYER_STATE_OBSERVER, 1)
-    call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
-
     if triggerPerson != 0 then
       if triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
         set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED

@@ -19,6 +19,25 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     private Set factions
     private integer scoreStatus
 
+    private string victoryMusic
+    private string defeatMusic
+
+    method operator DefeatMusic= takes string whichMusic returns nothing
+      set this.defeatMusic = whichMusic
+    endmethod
+
+    method operator DefeatMusic takes nothing returns string
+      return this.defeatMusic
+    endmethod
+
+    method operator VictoryMusic= takes string whichMusic returns nothing
+      set this.victoryMusic = whichMusic
+    endmethod
+
+    method operator VictoryMusic takes nothing returns string
+      return this.victoryMusic
+    endmethod
+
     method operator ScoreStatus takes nothing returns integer
       return this.scoreStatus
     endmethod
@@ -58,6 +77,12 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       local integer i = 0
       local Faction loopFaction
       local integer cpCount = this.ControlPointCount
+
+      if this.scoreStatus == SCORESTATUS_VICTORIOUS or this.scoreStatus == SCORESTATUS_DEFEATED then
+        call BJDebugMsg("ERROR: Tried to set scorestatus of team " + this.name + " but it is already either Victorious or Defeated")
+        return
+      endif
+
       set this.scoreStatus = value
       loop
         exitwhen i == this.factions.size
@@ -93,7 +118,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       loop
         exitwhen i == factions.size
         set loopFaction = factions[i]
-        if loopFaction.Person != 0 and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
+        if loopFaction.Person != 0 and loopFaction.ScoreStatus != SCORESTATUS_DEFEATED then
           set total = total + 1
         endif
         set i = i + 1
@@ -211,7 +236,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       loop
         exitwhen i == factions.size
         set loopFaction = factions[i]
-        if loopFaction.Person != 0 and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
+        if loopFaction.Person != 0 and loopFaction.ScoreStatus != SCORESTATUS_DEFEATED then
           call ForceAddPlayer(newForce, Faction(factions[i]).Player)
         endif
         set i = i + 1

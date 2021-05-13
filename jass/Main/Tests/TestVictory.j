@@ -1,4 +1,4 @@
-library TestVictory requires Test, ControlPointVictory, ControlPoint
+library TestVictory requires Test, ControlPointVictory, ControlPoint, VictoryDefeat
 
   struct TestVictory extends Test
     method Run takes nothing returns nothing

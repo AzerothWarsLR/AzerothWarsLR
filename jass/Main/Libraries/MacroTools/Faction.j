@@ -88,14 +88,14 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     method operator ScoreStatus= takes integer value returns nothing
       if this.scoreStatus == SCORESTATUS_VICTORIOUS or this.scoreStatus == SCORESTATUS_DEFEATED then
-        call BJDebugMsg("ERROR: Tried to set scorestatus of " + this.name + " but it is already either Victorious or Defeated")
+        call BJDebugMsg("ERROR: Tried to set scorestatus of faction " + this.name + " but it is already either Victorious or Defeated")
         return
       endif
       if value == SCORESTATUS_VICTORIOUS and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_VICTORY)
-        call this.Leave()
       elseif value == SCORESTATUS_DEFEATED and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
+        call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
         call this.Leave()
       endif
       set this.scoreStatus = value

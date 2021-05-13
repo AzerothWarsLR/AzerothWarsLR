@@ -6,7 +6,7 @@ library SurvivingTeamVictory initializer OnInit requires VictoryDefeat, Team, Fa
     local integer i = 0
     local Team victoriousTeam = 0
     local integer total = 0
-    if GetTriggerTeam().ScoreStatus == SCORESTATUS_DEFEATED then
+    if not GameWon and GetTriggerTeam().ScoreStatus == SCORESTATUS_DEFEATED then
       loop
         exitwhen i == Team.Count or total > 1
         set loopTeam = Team.ByIndex(i)
