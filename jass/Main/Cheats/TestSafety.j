@@ -1,8 +1,4 @@
 library TestSafety initializer OnInit requires Event
-  
-  globals
-    private constant boolean IS_TEST_VERSION = true  //Change this to false for live release
-  endglobals
 
   globals
     boolean AreCheatsActive
@@ -33,8 +29,8 @@ library TestSafety initializer OnInit requires Event
     set AreCheatsActive = true
     set i = 0
     loop
-    exitwhen i == MAX_PLAYERS or AreCheatsActive == false or IS_TEST_VERSION == true
-      if GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING then
+    exitwhen i == MAX_PLAYERS or AreCheatsActive == false
+      if GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(i)) == MAP_CONTROL_USER then
         set userCount = userCount + 1
         if userCount > 1 then
           set AreCheatsActive = false
