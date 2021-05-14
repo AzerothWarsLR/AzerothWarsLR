@@ -5,6 +5,10 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
   endglobals
 
   struct QuestLichKingArthas extends QuestData
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+
     private method operator CompletionPopup takes nothing returns string
       return "Arthas has ascended the Frozen Throne itself and shattered Ner'zhul's frozen prison. Ner'zhul and Arthas are now joined, body and soul, into one being: the god-like Lich King."
     endmethod
