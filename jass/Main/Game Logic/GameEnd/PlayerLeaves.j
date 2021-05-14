@@ -5,7 +5,7 @@ library PlayerLeaves initializer OnInit requires Persons
     local integer pId = GetPlayerId(p)
     local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
 
-    if triggerPerson != 0 and triggerPerson.Faction != 0 then
+    if triggerPerson != 0 and triggerPerson.Faction != 0 and triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, triggerPerson.Faction.ColoredName + " has left the game.")
       set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
     endif
