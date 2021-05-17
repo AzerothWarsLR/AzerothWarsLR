@@ -44,7 +44,7 @@ library QuestTheramore requires QuestData, DetermineLevel
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Theramore", "The distant lands of Kalimdor remain untouched by human civilization. If the Third War proceeds poorly, it may become necessary to establish a forward base there.", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
-      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID))
+      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h076'))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

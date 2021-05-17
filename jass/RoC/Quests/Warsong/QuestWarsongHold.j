@@ -57,7 +57,7 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Warsong Hold", "The far-off land of Northrend is the new home of the traitor shaman Ner'zhul. The Warsong must land its forces on its shores in order to end the existential threat he now represents.", "ReplaceableTextures\\CommandButtons\\BTNTuskaarBrown.blp")
-      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID))
+      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'o02T'))
       return this
     endmethod
   endstruct
