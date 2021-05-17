@@ -14,15 +14,19 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Arthas becomes the Lich King"
+      return "Arthas becomes the Lich King, but the Frozen Throne loses its abilities"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
-      set LEGEND_LICHKING.Hivemind = false
-      set LEGEND_LICHKING.IsCapital = false
-      set LEGEND_LICHKING.DeathMessage = ""
-      call KillUnit(LEGEND_LICHKING.Unit)
+      set LEGEND_LICHKING.DeathMessage = "Icecrown Citadel been razed. Unfortunately, the Lich King has already vacated his unholy throne."
+      set LEGEND_LICHKING.PermaDies = false
+      call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A0W8')
+      call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A0L3')
+      call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A002')
+      call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A001')
+      call BlzSetUnitMaxMana(LEGEND_LICHKING.Unit, 0)
+      call BlzSetUnitName(LEGEND_LICHKING.Unit, "Icecrown Citadel")
       set LEGEND_ARTHAS.UnitType = 'N023'
       set LEGEND_ARTHAS.PermaDies = true
       set LEGEND_ARTHAS.Hivemind = true
