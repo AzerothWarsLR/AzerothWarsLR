@@ -148,7 +148,7 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
         exitwhen i == gateType.Count
         set newUnit = CreateUnit(Owner, gateType.SpawnUnitType, SpawnX, SpawnY, Facing)
         call GroupAddUnit(spawnedDemons, newUnit)
-        call IssuePointOrder(newUnit, "attackground", this.RallyX, this.RallyY)
+        call IssuePointOrder(newUnit, "attack", this.RallyX, this.RallyY)
         set i = i + 1
       endloop
       set newUnit = null
