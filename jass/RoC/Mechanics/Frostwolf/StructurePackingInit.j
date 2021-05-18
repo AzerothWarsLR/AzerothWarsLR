@@ -14,7 +14,7 @@ library StructurePackingInit initializer OnInit requires StructurePackingConfig
     local unit u
     local integer i = 0
 
-    set Buildings[0] = 'obea'
+    set Buildings[0] = 'o01M'
     set Buildings[1] = 'ofor'
     set Buildings[2] = 'oalt'
     set Buildings[3] = 'obar'
