@@ -6,7 +6,7 @@ library VictoryDefeat requires GameTimer
     boolean GameWon = false
 
     sound VICTORY_SOUND = null
-    sound DEFEAT_SOUND = "GameFound"
+    sound DEFEAT_SOUND = null
   endglobals
 
   function TeamVictory takes Team whichTeam returns nothing
