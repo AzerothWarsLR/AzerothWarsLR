@@ -26,17 +26,17 @@ library QuestItemArtifactInRect requires QuestItemData, Artifact
     endmethod
 
     private method IsArtifactInRect takes nothing returns boolean
-      if targetArtifact.owningUnit != null and RectContainsCoords(this.targetRect, GetUnitX(this.targetArtifact.owningUnit), GetUnitY(this.targetArtifact.owningUnit)) then
+      if targetArtifact.OwningUnit != null and RectContainsCoords(this.targetRect, GetUnitX(this.targetArtifact.OwningUnit), GetUnitY(this.targetArtifact.OwningUnit)) then
         return true
       endif
-      if targetArtifact.owningUnit == null and RectContainsCoords(this.targetRect, GetItemX(this.targetArtifact.item), GetItemY(this.targetArtifact.item)) then
+      if targetArtifact.OwningUnit == null and RectContainsCoords(this.targetRect, GetItemX(this.targetArtifact.item), GetItemY(this.targetArtifact.item)) then
         return true
       endif
       return false
     endmethod
 
     private method OnRegionEnter takes unit whichUnit returns nothing
-      if targetArtifact.owningUnit == GetEnteringUnit() then
+      if targetArtifact.OwningUnit == GetEnteringUnit() then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_INCOMPLETE
