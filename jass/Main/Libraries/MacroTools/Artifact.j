@@ -141,7 +141,7 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
     readonly static Artifact triggerArtifact = 0
     readonly item item = null
     readonly Person owningPerson = 0
-    readonly unit owningUnit = null
+    private unit owningUnit = null
     readonly integer status = 0
     readonly string description = null                  //More like a situation describer; eg "Owned by xx..." or "Unknown location"
 
@@ -159,6 +159,10 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
         set thistype.triggerArtifact = this
         call OnArtifactStatusChange.fire()
       endif
+    endmethod
+
+    method operator OwningUnit takes nothing returns unit
+      return this.owningUnit
     endmethod
 
     method setOwningUnit takes unit u returns nothing

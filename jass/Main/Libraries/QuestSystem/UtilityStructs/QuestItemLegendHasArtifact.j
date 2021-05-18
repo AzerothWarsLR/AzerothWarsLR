@@ -7,13 +7,13 @@ library QuestItemLegendHasArtifact initializer OnInit requires QuestItemData, Ar
     private Legend targetLegend
 
     private method OnAdd takes nothing returns nothing
-      if this.targetArtifact.owningUnit == this.targetLegend.Unit then
+      if this.targetArtifact.OwningUnit == this.targetLegend.Unit then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       endif
     endmethod
 
     private method OnAcquired takes nothing returns nothing
-      if this.targetArtifact.owningUnit == this.targetLegend.Unit then
+      if this.targetArtifact.OwningUnit == this.targetLegend.Unit then
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_INCOMPLETE

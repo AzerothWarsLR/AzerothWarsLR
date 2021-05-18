@@ -18,7 +18,7 @@ library QuestKingdomOfMan requires LordaeronSetup, StormwindSetup, QuestItemCont
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      local unit crownHolder = ARTIFACT_CROWNSTORMWIND.owningUnit
+      local unit crownHolder = ARTIFACT_CROWNSTORMWIND.OwningUnit
       call RemoveItem(ARTIFACT_CROWNLORDAERON.item)
       call RemoveItem(ARTIFACT_CROWNSTORMWIND.item)
       call UnitAddItem(crownHolder, ARTIFACT_CROWNEASTERNKINGDOMS.item)
