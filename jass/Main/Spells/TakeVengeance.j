@@ -6,9 +6,9 @@ library TakeVengeance initializer OnInit requires Table
   globals
     private constant integer ABIL_ID = 'A017'
     private constant integer ALTERNATE_FORM_ID = 'espv'
-    private constant integer HITS_REVIVE_THRESHOLD = 7   //Maiev needs to hit this many times to revive
-    private constant real HEAL_BASE = 500.                //Maiev goes into Vengeance form with this much free health
-    private constant real HEAL_LEVEL = 200.
+    private constant integer HITS_REVIVE_THRESHOLD = 5   //Maiev needs to hit this many times to revive
+    private constant real HEAL_BASE = 900.                //Maiev goes into Vengeance form with this much free health
+    private constant real HEAL_LEVEL = 300.
     private constant integer DAMAGE_BASE = 20
     private constant integer DAMAGE_LEVEL = 20
     private constant real DURATION = 20.
