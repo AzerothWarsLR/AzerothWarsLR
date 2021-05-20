@@ -8,11 +8,11 @@ library QuestGazlowe requires QuestData, ControlPoint, FrostwolfSetup, LegendFro
   struct QuestGazlowe extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "With the Goblin homeland of Kezan now under " + this.Holder.Name + " control, the goblin Gazlowe offers his services as an expert engineer."
+      return "With the Goblin homeland of Kezan now under " + this.Holder.Name + " control, the goblin Gazlowe offers his services as an expert engineer, upgrading your Shredders with new weaponry."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Gazlowe from the Altar of Storms"
+      return "You can summon Gazlowe from the Altar of Storms and gain new Shredders abilities"
     endmethod
 
     private method OnComplete takes nothing returns nothing
