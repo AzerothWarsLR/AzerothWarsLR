@@ -63,6 +63,8 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R046', UNLIMITED)   //Grasping Vines
     call f.registerObjectLimit('R047', UNLIMITED)   //Crippling Poison
     call f.registerObjectLimit('R048', UNLIMITED)   //Deadly Poison
+    call f.registerObjectLimit('R008', UNLIMITED)   //Improved Natures FuryR015
+    call f.registerObjectLimit('R015', UNLIMITED)   //Improved Mana Flare
 
   endfunction
     
