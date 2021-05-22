@@ -12,12 +12,13 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
       set this.Progress = QUEST_PROGRESS_COMPLETE
     endmethod
 
-    static method OnAnyPersonFactionChange takes nothing returns nothing
+    static method OnAnyFactionScoreStatusChanged takes nothing returns nothing
       local integer i = 0
-      if GetChangingPersonPrevFaction() != 0 then
+      local Faction triggerFaction = GetTriggerFaction()
+      if triggerFaction != 0 and triggerFaction.ScoreStatus == SCORESTATUS_DEFEATED then
         loop
           exitwhen i == thistype.count
-          if thistype.byIndex[i].Holder == GetChangingPersonPrevFaction() then
+          if thistype.byIndex[i].Holder == triggerFaction then
             set thistype.byIndex[i].Progress = QUEST_PROGRESS_FAILED
           endif
           set i = i + 1
@@ -30,7 +31,7 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       set this.Progress = QUEST_PROGRESS_COMPLETE
-      set this.Description = "You exist"
+      set this.Description = "You have not been defeated"
       return this
     endmethod
   endstruct
@@ -38,7 +39,7 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call OnPersonFactionChange.register(trig) 
-    call TriggerAddAction(trig, function QuestItemSelfExists.OnAnyPersonFactionChange)
+    call TriggerAddAction(trig, function QuestItemSelfExists.OnAnyFactionScoreStatusChanged)
   endfunction
 
 endlibrary
