@@ -360,7 +360,10 @@ library Legend requires GeneralHelpers, Event
     endmethod
 
     private static method onUnitChangeOwner takes nothing returns nothing
-      call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onChangeOwner()
+      local Legend triggerLegend = thistype.byHandle[GetHandleId(GetTriggerUnit())]
+      if triggerLegend != 0 then
+        call triggerLegend.onChangeOwner()
+      endif
     endmethod
 
     private static method onUnitDamaged takes nothing returns nothing
