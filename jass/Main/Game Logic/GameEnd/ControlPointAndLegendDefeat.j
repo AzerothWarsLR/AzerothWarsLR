@@ -35,12 +35,14 @@ library ControlPointAndLegendDefeat initializer OnInit requires VictoryDefeat, C
     private static method OnLegendOwnerChanged takes nothing returns nothing
       local Person previousPerson = Person.ById(GetPlayerId(GetLegendPreviousOwner()))
       local Faction previousFaction
+      local Legend triggerLegend = GetTriggerLegend()
       if previousPerson != 0 then
         set previousFaction = Person.ById(GetPlayerId(GetLegendPreviousOwner())).Faction
       endif
       if GetTriggerLegend().IsCapital == true and previousFaction != 0 and CanDefeatTeam(previousFaction.Team) then
         call DefeatTeam(previousFaction.Team)
       endif
+      call SetTriggerLegend(triggerLegend)
     endmethod
 
     private static method OnLegendPermanentlyDied takes nothing returns nothing

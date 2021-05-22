@@ -427,6 +427,12 @@ library Legend requires GeneralHelpers, Event
     return LegendPreviousOwner
   endfunction
 
+  //This is unbelievably stupid but it is also the only way I can see to support recursion of event parameters
+  //This needs to be set at the end of functions which both respond to Legend events AND may modify TriggerLegend through their actions
+  function SetTriggerLegend takes Legend value returns nothing
+    set TriggerLegend = value
+  endfunction
+
   function GetTriggerLegend takes nothing returns Legend
     return TriggerLegend
   endfunction
