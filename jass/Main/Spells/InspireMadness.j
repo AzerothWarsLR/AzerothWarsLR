@@ -34,6 +34,7 @@ library InspireMadness initializer OnInit requires Filters
         if not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and not IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
           call SetUnitOwner(u, triggerPlayer, true)
           call UnitApplyTimedLife(u, 'Bpos', DURATION)
+          call SetUnitExploded(u, true)
           set tempEffect = AddSpecialEffect(EFFECT_TARGET, GetUnitX(u), GetUnitY(u))
           call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE_TARGET)
           call DestroyEffect(tempEffect)
