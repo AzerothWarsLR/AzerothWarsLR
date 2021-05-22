@@ -13,11 +13,22 @@ library TeamSetup requires Team
     //Starting teams
     local Team t = 0
     set TEAM_SCOURGE = Team.create("Scourge")
+    set TEAM_SCOURGE.VictoryMusic = "DarkVictory"
+
     set TEAM_NORTH_ALLIANCE = Team.create("North Alliance")
+    set TEAM_NORTH_ALLIANCE.VictoryMusic = "HeroicVictory"
+
     set TEAM_HORDE = Team.create("Horde")
+    set TEAM_HORDE.VictoryMusic = "DarkVictory"
+
     set TEAM_NIGHT_ELVES = Team.create("Night Elves")
+    set TEAM_NIGHT_ELVES.VictoryMusic = "HeroicVictory"
+
     set TEAM_SOUTH_ALLIANCE = Team.create("South Alliance")
+    set TEAM_SOUTH_ALLIANCE.VictoryMusic = "HeroicVictory"
+
     set TEAM_FEL_HORDE = Team.create("Fel Horde")
+    set TEAM_FEL_HORDE.VictoryMusic = "DarkVictory"
   endfunction
 
 endlibrary

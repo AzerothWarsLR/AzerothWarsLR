@@ -9,7 +9,6 @@ library SentinelsSetup requires Faction, TeamSetup
     
     set FACTION_SENTINELS = Faction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp", 3)
     set f = FACTION_SENTINELS
-    set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R05Y'
     set f.StartingGold = 150

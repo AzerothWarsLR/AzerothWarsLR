@@ -18,6 +18,15 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     private Set invitees //Factions invited to join this Team
     private Set factions
     private integer scoreStatus
+    private string victoryMusic
+
+    method operator VictoryMusic= takes string whichMusic returns nothing
+      set this.victoryMusic = whichMusic
+    endmethod
+
+    method operator VictoryMusic takes nothing returns string
+      return this.victoryMusic
+    endmethod
 
     method operator ScoreStatus takes nothing returns integer
       return this.scoreStatus

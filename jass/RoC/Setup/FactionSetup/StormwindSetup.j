@@ -9,7 +9,6 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     
     set FACTION_STORMWIND = Faction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp", 3)
     set f = FACTION_STORMWIND
-    set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTH_ALLIANCE
     set f.PresenceResearch = 'R060'
     set f.StartingGold = 150

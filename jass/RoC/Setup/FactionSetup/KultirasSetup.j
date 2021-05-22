@@ -9,7 +9,6 @@ library KultirasSetup requires Faction, TeamSetup
     
     set FACTION_KULTIRAS = Faction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 3)
     set f = FACTION_KULTIRAS
-    set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTH_ALLIANCE
 
     //Structures

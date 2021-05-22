@@ -10,7 +10,6 @@ library DruidsSetup requires Faction, TeamSetup
     
     set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp", 3)
     set f = FACTION_DRUIDS
-    set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R06E'
     set f.StartingGold = 150
