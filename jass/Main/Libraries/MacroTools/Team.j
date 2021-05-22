@@ -80,6 +80,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
         endif
         set i = i + 1 
       endloop
+      set thistype.triggerTeam = this
       call TeamScoreStatusChanged.fire()
     endmethod
 
