@@ -77,7 +77,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       loop
         exitwhen i == this.factions.size
         set loopFaction = Faction(this.factions[i])
-        if loopFaction.Person != 0 then
+        if loopFaction.Person != 0 and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
           if value == SCORESTATUS_VICTORIOUS then
             call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()) + cpCount)
           elseif value == SCORESTATUS_DEFEATED then
