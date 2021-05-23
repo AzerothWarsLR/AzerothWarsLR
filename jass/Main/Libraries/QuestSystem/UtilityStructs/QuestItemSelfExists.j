@@ -1,4 +1,4 @@
-library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
+library QuestItemSelfExists initializer OnInit requires QuestItemData, Faction
 
   struct QuestItemSelfExists extends QuestItemData
     private static integer count = 0
@@ -38,7 +38,7 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Persons
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    call OnPersonFactionChange.register(trig) 
+    call FactionScoreStatusChanged.register(trig) 
     call TriggerAddAction(trig, function QuestItemSelfExists.OnAnyFactionScoreStatusChanged)
   endfunction
 
