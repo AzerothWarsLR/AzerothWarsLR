@@ -61,27 +61,23 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     endmethod
 
     //If a team's score status becomes victorious, they get Gold Gathered equal to their Control Point count plus seconds spent in game.
-    //If they're defeated, they instead just get Gold Gathered equal to time spent in game.
-    //Either way, they are removed from the game.
+    //If they're defeated, they instead only get Gold Gathered equal to time spent in game.
     method operator ScoreStatus= takes integer value returns nothing
       local integer i = 0
       local Faction loopFaction
       local integer cpCount = this.ControlPointCount
-
-      if this.scoreStatus == SCORESTATUS_VICTORIOUS or this.scoreStatus == SCORESTATUS_DEFEATED then
-        call BJDebugMsg("ERROR: Tried to set scorestatus of team " + this.name + " but it is already either Victorious or Defeated")
-        return
-      endif
 
       set this.scoreStatus = value
       loop
         exitwhen i == this.factions.size
         set loopFaction = Faction(this.factions[i])
         if loopFaction.Person != 0 then
-          if value == SCORESTATUS_VICTORIOUS then
-            call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()) + cpCount)
-          elseif value == SCORESTATUS_DEFEATED then
-            call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()))
+          if GetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED) == 0 then //Don't change score if it has already been set
+            if value == SCORESTATUS_VICTORIOUS then
+              call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()) + cpCount)
+            elseif value == SCORESTATUS_DEFEATED then
+              call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()))
+            endif
           endif
           if loopFaction.ScoreStatus != value and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
             set loopFaction.ScoreStatus = value

@@ -13,7 +13,7 @@ library PlayerLeaves initializer OnInit requires Persons
     endif
 
     //Defeat the player
-    if triggerPerson != 0 and triggerPerson.Faction != 0 and triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
+    if triggerPerson != 0 and triggerPerson.Faction != 0 and triggerPerson.Faction.ScoreStatus != SCORESTATUS_DEFEATED then
       set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
     endif
   endfunction

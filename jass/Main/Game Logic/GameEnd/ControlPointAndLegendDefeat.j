@@ -13,7 +13,7 @@ library ControlPointAndLegendDefeat initializer OnInit requires VictoryDefeat, C
       if whichTeam == 0 then
         call BJDebugMsg("ERROR: whichTeam value of 0 passed to CanDefeatTeam")
       endif
-      if whichTeam.ControlPointCount < CPS_THRESHOLD and whichTeam.CapitalCount == 0 and whichTeam.ScoreStatus == SCORESTATUS_NORMAL then
+      if whichTeam.ControlPointCount < CPS_THRESHOLD and whichTeam.CapitalCount == 0 and whichTeam.ScoreStatus != SCORESTATUS_DEFEATED then
         return true
       endif
       return false
