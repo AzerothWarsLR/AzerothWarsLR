@@ -91,8 +91,11 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
         return
       endif
       if value == SCORESTATUS_DEFEATED and this.Player != null then
+        call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
         call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
         call this.Leave()
+      elseif value == SCORESTATUS_VICTORIOUS and this.Player != null then
+        call RemovePlayer(this.Player, PLAYER_GAME_RESULT_VICTORY)
       endif
       set this.scoreStatus = value
       set thistype.triggerFaction = this

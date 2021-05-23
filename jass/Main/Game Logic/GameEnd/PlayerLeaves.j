@@ -16,13 +16,6 @@ library PlayerLeaves initializer OnInit requires Persons
     if triggerPerson != 0 and triggerPerson.Faction != 0 and triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
       set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
     endif
-
-    //If the game has been won, every leaving player gets a gold border so that they can report the final game score state
-    if GameWon then
-      call RemovePlayer(GetTriggerPlayer(), PLAYER_GAME_RESULT_VICTORY)
-    else
-      call RemovePlayer(GetTriggerPlayer(), PLAYER_GAME_RESULT_DEFEAT)
-    endif
   endfunction
 
   private function OnInit takes nothing returns nothing
