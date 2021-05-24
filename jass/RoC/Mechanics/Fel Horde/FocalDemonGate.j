@@ -36,6 +36,10 @@ library FocalDemonGate requires AIDS
       return GetPolarOffsetY(GetUnitY(this.unit), SPAWN_DISTANCE, GetUnitFacing(this.unit) + FACING_OFFSET)
     endmethod
 
+    method operator Alive takes nothing returns boolean
+      return UnitAlive(this.unit)
+    endmethod
+
     static method operator Instance takes nothing returns thistype
       return thistype.instance
     endmethod

@@ -83,7 +83,7 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
     private method operator RallyX takes nothing returns real
       local location rally
       local real x
-      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
+      if FocalDemonGate.Instance != 0 and FocalDemonGate.Instance.Alive == true and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
         return FocalDemonGate.Instance.RallyX
       endif
       set rally = GetUnitRallyPoint(u)
@@ -96,7 +96,7 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
      private method operator RallyY takes nothing returns real
       local location rally
       local real y
-      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
+      if FocalDemonGate.Instance != 0 and FocalDemonGate.Instance.Alive == true and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
         return FocalDemonGate.Instance.RallyY
       endif
       set rally = GetUnitRallyPoint(u)
@@ -107,14 +107,14 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
     endmethod
 
     private method operator SpawnX takes nothing returns real
-      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
+      if FocalDemonGate.Instance != 0 and FocalDemonGate.Instance.Alive == true and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
         return FocalDemonGate.Instance.SpawnX
       endif
       return GetPolarOffsetX(X, SPAWN_DISTANCE, Facing)
     endmethod
 
     private method operator SpawnY takes nothing returns real
-      if FocalDemonGate.Instance != 0 and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
+      if FocalDemonGate.Instance != 0 and FocalDemonGate.Instance.Alive == true and GetOwningPlayer(this.u) == FACTION_FEL_HORDE.Player then
         return FocalDemonGate.Instance.SpawnY
       endif
       return GetPolarOffsetY(Y, SPAWN_DISTANCE, Facing)
