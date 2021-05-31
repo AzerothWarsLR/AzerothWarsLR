@@ -14,6 +14,7 @@ library QuestData requires QuestItemData, Event
     private Faction holder
     private quest quest
     private boolean muted = true //Doesn't display text when updated if true
+    private integer researchId
 
     private QuestItemData array questItems[10]
     private integer questItemCount = 0
@@ -51,6 +52,15 @@ library QuestData requires QuestItemData, Event
       return this.description
     endmethod
 
+    //The research given to the faction when it completes its quest
+    method operator ResearchId takes nothing returns integer
+      return this.researchId
+    endmethod
+
+    method operator ResearchId= takes integer value returns nothing
+      set this.researchId = value
+    endmethod
+
     method operator Quest takes nothing returns quest
       return this.quest
     endmethod
@@ -76,6 +86,9 @@ library QuestData requires QuestItemData, Event
           if this.Global then
             call this.DisplayCompletedGlobal()
           endif
+        endif
+        if this.researchId != 0 then
+          call SetPlayerTechResearched(this.Holder.Player, this.researchId, 1)
         endif
         call OnComplete()
       elseif value == QUEST_PROGRESS_FAILED then
@@ -123,6 +136,9 @@ library QuestData requires QuestItemData, Event
         return
       endif
       set this.holder = value
+      if this.researchId != 0 then
+        call Holder.modObjectLimit(this.researchId, 1)
+      endif
       call this.OnAdd()
       call QuestSetDescription(this.quest, this.description + "\n|cffffcc00Reward:|r " + this.CompletionDescription)
       loop
