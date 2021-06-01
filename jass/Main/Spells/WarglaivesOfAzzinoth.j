@@ -1,4 +1,4 @@
-library WarglaivesOfAzzinoth initializer OnInit
+library WarglaivesOfAzzinoth initializer OnInit requires FilteredDamageEvents
 
   globals
     private constant integer ABIL_ID = 'A0YW'
@@ -48,9 +48,15 @@ library WarglaivesOfAzzinoth initializer OnInit
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DAMAGING )
-    call TriggerAddCondition( trig, Condition(function Damaging))
+    call RegisterUnitTypeInflictsDamageAction('Eill', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('Eidm', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('Eevm', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('Eilm', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('Eevi', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('E00F', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('E00G', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('E00E', function Damaging)
+    call RegisterUnitTypeInflictsDamageAction('E00D', function Damaging)
   endfunction
 
 endlibrary
