@@ -4,6 +4,8 @@
 library TakeVengeance initializer OnInit requires Table
 
   globals
+    private constant integer HERO_ID = 'Ewrd' //The hero that can use Take Vengeance
+
     private constant integer ABIL_ID = 'A017'
     private constant integer ALTERNATE_FORM_ID = 'espv'
     private constant integer HITS_REVIVE_THRESHOLD = 5   //Maiev needs to hit this many times to revive
@@ -79,9 +81,7 @@ library TakeVengeance initializer OnInit requires Table
 
     private static method onInit takes nothing returns nothing
       set vengeanceByUnit = Table.create()
-      set damageTrigger = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(damageTrigger, EVENT_PLAYER_UNIT_DAMAGED)
-      call TriggerAddAction( damageTrigger, function thistype.globalDamage )
+      call RegisterUnitTypeTakesDamageAction(HERO_ID, function thistype.globalDamage)
     endmethod
 
     static method create takes unit caster, integer damageBonus, real heal, real duration returns thistype
@@ -117,9 +117,7 @@ library TakeVengeance initializer OnInit requires Table
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DAMAGING )
-    call TriggerAddCondition( trig, Condition(function Damaging))
+    call RegisterUnitTypeTakesDamageAction(HERO_ID, function Damaging)
   endfunction
 
 endlibrary
