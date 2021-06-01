@@ -55,10 +55,8 @@ library InspireMadness initializer OnInit requires Filters
     endif      
   endfunction
 
-private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_EFFECT )
-    call TriggerAddCondition( trig, Condition(function Cast))
+  private function OnInit takes nothing returns nothing
+    call RegisterSpellEffectAction(ABIL_ID, function Cast)
   endfunction
 
 endlibrary

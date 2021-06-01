@@ -79,12 +79,10 @@ library MassSimulacrum initializer OnInit requires Filters
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_EFFECT )
-    call TriggerAddCondition( trig, Condition(function Cast))
-
-    set trig = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DEATH )
     call TriggerAddCondition( trig, Condition(function Death))
+
+    call RegisterSpellEffectAction(ABIL_ID, function Cast)
 
     set Simulacrums = CreateGroup()   
   endfunction

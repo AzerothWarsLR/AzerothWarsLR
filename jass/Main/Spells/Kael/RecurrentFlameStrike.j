@@ -1,5 +1,5 @@
 //Casts Flame Strike at itself every few seconds.
-library RecurrentFlameStrike initializer OnInit requires T32, DummyCast
+library RecurrentFlameStrike initializer OnInit requires T32, DummyCast, FilteredCastEvents
 
   globals
     private constant integer ABIL_ID = 'A04H'
@@ -56,15 +56,11 @@ library RecurrentFlameStrike initializer OnInit requires T32, DummyCast
   endstruct
 
   private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call RecurrentFlameStrike.create(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY(), GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID))
-    endif
+    call RecurrentFlameStrike.create(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY(), GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID))
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_EFFECT )
-    call TriggerAddCondition( trig, Condition(function Cast))
+    call RegisterSpellEffectAction(ABIL_ID, function Cast)
   endfunction
 
 endlibrary
