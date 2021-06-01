@@ -42,10 +42,8 @@ library CheatMana initializer OnInit requires Persons, TestSafety
       endloop   
       call TriggerAddCondition(trig, Condition(function CheatCondition))
       call TriggerAddAction( trig, function Actions) 
-      
-      set trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_ENDCAST )
-      call TriggerAddCondition(trig, Condition(function Spell))
+
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_SPELL_ENDCAST, function Spell)
     endfunction
     
 endlibrary

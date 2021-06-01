@@ -1,5 +1,5 @@
 
-library CheatBuild initializer OnInit requires Persons, TestSafety
+library CheatBuild initializer OnInit requires Persons, TestSafety, PlayerUnitEventFilterManager
 
   //**CONFIG
   globals
@@ -42,10 +42,8 @@ library CheatBuild initializer OnInit requires Persons, TestSafety
     endloop   
     call TriggerAddCondition(trig, Condition(function CheatCondition))
     call TriggerAddAction(trig, function Actions)
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_ISSUED_ORDER )
-    call TriggerAddCondition(trig, Condition(function Build))
+
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_ISSUED_ORDER, function Build)
   endfunction
   
 endlibrary

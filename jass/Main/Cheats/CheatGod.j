@@ -41,10 +41,8 @@ library CheatGod initializer OnInit requires Persons, TestSafety
     endloop   
     call TriggerAddCondition(trig, Condition(function CheatCondition))
     call TriggerAddAction(trig, function Actions)
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DAMAGED )
-    call TriggerAddCondition(trig, Condition(function Damage))
+
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_DAMAGED, function Damage)
   endfunction
     
 endlibrary

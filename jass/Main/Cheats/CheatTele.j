@@ -42,10 +42,8 @@ library CheatTele initializer OnInit requires Persons, TestSafety
     endloop   
     call TriggerAddCondition(trig, Condition(function CheatCondition))
     call TriggerAddAction(trig, function Actions)
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_ISSUED_POINT_ORDER )
-    call TriggerAddCondition(trig, Condition(function Patrol))
+  
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_ISSUED_POINT_ORDER, function Patrol)
   endfunction
   
 endlibrary
