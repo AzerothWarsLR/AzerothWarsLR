@@ -1,4 +1,4 @@
-library DemonSoulAssembly initializer OnInit requires Artifact, Persons
+library DemonSoulAssembly initializer OnInit requires Artifact, Persons, FilteredItemEvents
 
   globals
     private constant real DUMMY_X = 22700
@@ -36,9 +36,11 @@ library DemonSoulAssembly initializer OnInit requires Artifact, Persons
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_PICKUP_ITEM)
-    call TriggerAddAction(trig, function ItemPickup)
+    call RegisterItemTypePickupAction('I01J', function ItemPickup)
+    call RegisterItemTypePickupAction('I01K', function ItemPickup)
+    call RegisterItemTypePickupAction('I01M', function ItemPickup)
+    call RegisterItemTypePickupAction('I01I', function ItemPickup)
+    call RegisterItemTypePickupAction('I01L', function ItemPickup)
   endfunction
 
 endlibrary
