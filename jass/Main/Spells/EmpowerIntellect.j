@@ -1,4 +1,4 @@
-library EmpowerIntellect initializer OnInit
+library EmpowerIntellect initializer OnInit requires PlayerUnitEventFilterManager
 
   globals
     private constant integer BUFF_ID = 'B069'
@@ -15,9 +15,7 @@ library EmpowerIntellect initializer OnInit
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_EFFECT )
-    call TriggerAddCondition( trig, Condition(function Cast))
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_SPELL_EFFECT, function Cast)
   endfunction 
     
 endlibrary
