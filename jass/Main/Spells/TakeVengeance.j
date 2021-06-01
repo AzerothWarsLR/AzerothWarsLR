@@ -1,7 +1,7 @@
 //When Maiev dies, she becomes an illusory assassin with additional damage. 
 //If she hits at least x times before it expires, she revives. Lasts y seconds.
 
-library TakeVengeance initializer OnInit requires Table
+library TakeVengeance initializer OnInit requires Table, FilteredDamageEvents
 
   globals
     private constant integer HERO_ID = 'Ewrd' //The hero that can use Take Vengeance
@@ -20,7 +20,7 @@ library TakeVengeance initializer OnInit requires Table
 
   private struct Vengeance
     private static trigger damageTrigger
-    private static Table vengeanceByUnit
+    readonly static Table vengeanceByUnit
 
     private unit caster
     private integer tick
@@ -53,7 +53,7 @@ library TakeVengeance initializer OnInit requires Table
       call destroy()
     endmethod
 
-    private method onAttack takes nothing returns nothing
+    method onAttack takes nothing returns nothing
       set hitsDone = hitsDone + 1
       if hitsDone >= HITS_REVIVE_THRESHOLD then
         call revive()
@@ -71,17 +71,8 @@ library TakeVengeance initializer OnInit requires Table
 
     implement T32x
 
-    //When any unit deals damage, check if it has Vengeance and act
-    private static method globalDamage takes nothing returns nothing
-      local Vengeance tempVengeance = vengeanceByUnit[GetHandleId(GetEventDamageSource())]
-      if tempVengeance != 0 and BlzGetEventIsAttack() == true then
-        call tempVengeance.onAttack()
-      endif
-    endmethod
-
     private static method onInit takes nothing returns nothing
       set vengeanceByUnit = Table.create()
-      call RegisterUnitTypeTakesDamageAction(HERO_ID, function thistype.globalDamage)
     endmethod
 
     static method create takes unit caster, integer damageBonus, real heal, real duration returns thistype
@@ -102,8 +93,16 @@ library TakeVengeance initializer OnInit requires Table
     endmethod
   endstruct
 
+  //When Maiev deals damage, check if she has Vengeance and act
+  private function OnInflictsDamage takes nothing returns nothing
+    local Vengeance tempVengeance = Vengeance.vengeanceByUnit[GetHandleId(GetEventDamageSource())]
+      if tempVengeance != 0 and BlzGetEventIsAttack() == true then
+        call tempVengeance.onAttack()
+      endif
+  endfunction
+
   //Unit is damaged; check if it has this ability and it would take the damage. If so, trigger this ability
-  private function Damaging takes nothing returns nothing
+  private function OnTakesDamage takes nothing returns nothing
     local unit triggerUnit = GetTriggerUnit()
     local integer abilityLevel = 0
     if GetUnitAbilityLevel(triggerUnit, ABIL_ID) > 0 then
@@ -117,7 +116,8 @@ library TakeVengeance initializer OnInit requires Table
   endfunction
 
   private function OnInit takes nothing returns nothing
-    call RegisterUnitTypeTakesDamageAction(HERO_ID, function Damaging)
+    call RegisterUnitTypeTakesDamageAction(HERO_ID, function OnTakesDamage)
+    call RegisterUnitTypeInflictsDamageAction(HERO_ID, function OnInflictsDamage)
   endfunction
 
 endlibrary
