@@ -108,9 +108,7 @@ library SolarJudgement initializer OnInit requires T32, Filters
   endstruct
 
   private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call SolarJudgement.create(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY(), DAMAGE_BASE + DAMAGE_LEVEL*GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID), DURATION)
-    endif
+    call SolarJudgement.create(GetTriggerUnit(), GetSpellTargetX(), GetSpellTargetY(), DAMAGE_BASE + DAMAGE_LEVEL*GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID), DURATION)
   endfunction
 
   private function OnInit takes nothing returns nothing

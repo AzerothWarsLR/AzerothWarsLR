@@ -206,17 +206,13 @@ library ReapingHour initializer OnInit requires T32, Set
     local real offsetDist = 0
     local integer middle = 0
     local integer level = 0
-    if GetSpellAbilityId() == ABIL_ID then
-      set triggerUnit = GetTriggerUnit()
-      set triggerX = GetUnitX(triggerUnit)
-      set triggerY = GetUnitY(triggerUnit)
-      set triggerFace = GetUnitFacing(triggerUnit)
-      set level = GetUnitAbilityLevel(triggerUnit, ABIL_ID)    
-
-      call ReapingHour.create(triggerUnit, triggerX, triggerY, triggerFace, DAMAGE_BASE + DAMAGE_LEVEL*level, RANGE)
-
-      set triggerUnit = null
-    endif
+    set triggerUnit = GetTriggerUnit()
+    set triggerX = GetUnitX(triggerUnit)
+    set triggerY = GetUnitY(triggerUnit)
+    set triggerFace = GetUnitFacing(triggerUnit)
+    set level = GetUnitAbilityLevel(triggerUnit, ABIL_ID)    
+    call ReapingHour.create(triggerUnit, triggerX, triggerY, triggerFace, DAMAGE_BASE + DAMAGE_LEVEL*level, RANGE)
+    set triggerUnit = null
   endfunction
 
   private function OnInit takes nothing returns nothing

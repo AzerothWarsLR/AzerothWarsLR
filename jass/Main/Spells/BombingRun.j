@@ -6,9 +6,7 @@ library BombingRun initializer OnInit requires DummyCast
   endglobals
 
   private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call DummyChannelInstantFromPoint(GetOwningPlayer(GetTriggerUnit()), LOCUSTSWARM_ID, "locustswarm", 1, GetSpellTargetX(), GetSpellTargetY(), 15)
-		endif
+    call DummyChannelInstantFromPoint(GetOwningPlayer(GetTriggerUnit()), LOCUSTSWARM_ID, "locustswarm", 1, GetSpellTargetX(), GetSpellTargetY(), 15)
   endfunction
 
   private function OnInit takes nothing returns nothing

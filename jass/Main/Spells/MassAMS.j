@@ -15,9 +15,7 @@ library MassAMS initializer OnInit requires DummyCast
   endfunction
 
   private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call DummyCastOnUnitsInCircle(GetTriggerUnit(), DUMMY_ABIL_ID, DUMMY_ORDER_STRING, GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID), GetSpellTargetX(), GetSpellTargetY(), RADIUS, CastFilter.BanishFilter)
-    endif
+    call DummyCastOnUnitsInCircle(GetTriggerUnit(), DUMMY_ABIL_ID, DUMMY_ORDER_STRING, GetUnitAbilityLevel(GetTriggerUnit(), ABIL_ID), GetSpellTargetX(), GetSpellTargetY(), RADIUS, CastFilter.BanishFilter)
   endfunction
 
   private function OnInit takes nothing returns nothing

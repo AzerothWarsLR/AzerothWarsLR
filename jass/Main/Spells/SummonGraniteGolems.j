@@ -16,21 +16,19 @@ library SummonGraniteGolems initializer OnInit requires DummyCast, Filters
     local unit summonedUnit
     local real x
     local real y
-    if GetSpellAbilityId() == ABIL_ID then
-      loop
-        exitwhen i == SUMMON_COUNT
-        set angle = angle + 360. / SUMMON_COUNT
-        set x = GetPolarOffsetX(GetUnitX(GetTriggerUnit()), RADIUS, angle)
-        set y = GetPolarOffsetY(GetUnitY(GetTriggerUnit()), RADIUS, angle)
-        set summonedUnit = CreateUnit(GetOwningPlayer(GetTriggerUnit()), SUMMON_ID, x, y, GetAngleBetweenPoints(x, y, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit())))
-        call UnitApplyTimedLife(summonedUnit, 0, DURATION)
-        call UnitAddType(summonedUnit, UNIT_TYPE_SUMMONED)
-        call SetUnitAnimation(summonedUnit, "birth")
-        call QueueUnitAnimation(summonedUnit, "stand")
-        call DestroyEffect(AddSpecialEffect(EFFECT, x, y))
-        set i = i + 1
-      endloop
-    endif
+    loop
+      exitwhen i == SUMMON_COUNT
+      set angle = angle + 360. / SUMMON_COUNT
+      set x = GetPolarOffsetX(GetUnitX(GetTriggerUnit()), RADIUS, angle)
+      set y = GetPolarOffsetY(GetUnitY(GetTriggerUnit()), RADIUS, angle)
+      set summonedUnit = CreateUnit(GetOwningPlayer(GetTriggerUnit()), SUMMON_ID, x, y, GetAngleBetweenPoints(x, y, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit())))
+      call UnitApplyTimedLife(summonedUnit, 0, DURATION)
+      call UnitAddType(summonedUnit, UNIT_TYPE_SUMMONED)
+      call SetUnitAnimation(summonedUnit, "birth")
+      call QueueUnitAnimation(summonedUnit, "stand")
+      call DestroyEffect(AddSpecialEffect(EFFECT, x, y))
+      set i = i + 1
+    endloop
   endfunction
 
   private function OnInit takes nothing returns nothing

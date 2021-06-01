@@ -42,17 +42,15 @@ library StormEarthAndFire initializer OnInit requires Filters
     local unit newUnit = null
     local real x
     local real y
-    if GetSpellAbilityId() == ABIL_ID then
-      set caster = GetTriggerUnit()
-      set triggerPlayer = GetOwningPlayer(caster)
-      set level = GetUnitAbilityLevel(caster, ABIL_ID) 
-      set x = GetPolarOffsetX(GetUnitX(caster), 150, GetUnitFacing(caster))
-      set y = GetPolarOffsetY(GetUnitY(caster), 150, GetUnitFacing(caster))
-      //Create the replicant
-      call SummonPanda(triggerPlayer, UNIT_TYPE_1, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
-      call SummonPanda(triggerPlayer, UNIT_TYPE_2, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
-      call SummonPanda(triggerPlayer, UNIT_TYPE_3, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
-    endif
+    set caster = GetTriggerUnit()
+    set triggerPlayer = GetOwningPlayer(caster)
+    set level = GetUnitAbilityLevel(caster, ABIL_ID) 
+    set x = GetPolarOffsetX(GetUnitX(caster), 150, GetUnitFacing(caster))
+    set y = GetPolarOffsetY(GetUnitY(caster), 150, GetUnitFacing(caster))
+    //Create the replicant
+    call SummonPanda(triggerPlayer, UNIT_TYPE_1, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
+    call SummonPanda(triggerPlayer, UNIT_TYPE_2, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
+    call SummonPanda(triggerPlayer, UNIT_TYPE_3, x, y, GetUnitFacing(caster), DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level, DURATION)
   endfunction
 
   private function OnInit takes nothing returns nothing

@@ -15,21 +15,18 @@ library ElectricStrike initializer OnInit requires DummyCast, Environment
   private function Cast takes nothing returns nothing
     local unit u
     local unit caster 
-
-    if GetSpellAbilityId() == ABIL_ID then
-      set caster = GetTriggerUnit()         
-			set P = GetOwningPlayer(caster)
-			call GroupEnumUnitsInRange(TempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
-			loop
-				set u = FirstOfGroup(TempGroup)
-				exitwhen u == null
-        if IsUnitType(u, UNIT_TYPE_STRUCTURE) == false and UnitAlive(u) == true then
-          call DummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, 1, u)
-          call DummyCastUnit(GetOwningPlayer(caster), PURGE_ID, PURGE_ORDER, 1, u)
-        endif
-				call GroupRemoveUnit(TempGroup,u)
-			endloop
-		endif
+    set caster = GetTriggerUnit()         
+    set P = GetOwningPlayer(caster)
+    call GroupEnumUnitsInRange(TempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      if IsUnitType(u, UNIT_TYPE_STRUCTURE) == false and UnitAlive(u) == true then
+        call DummyCastUnit(GetOwningPlayer(caster), STUN_ID, STUN_ORDER, 1, u)
+        call DummyCastUnit(GetOwningPlayer(caster), PURGE_ID, PURGE_ORDER, 1, u)
+      endif
+      call GroupRemoveUnit(TempGroup,u)
+    endloop
   endfunction
 
   private function OnInit takes nothing returns nothing

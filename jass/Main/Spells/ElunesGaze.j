@@ -14,9 +14,7 @@ library ElunesGaze initializer OnInit requires DummyCast
   endfunction
 
   private function Cast takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call DummyCastOnUnitsInCircle(GetTriggerUnit(), INVIS_ID, "invisibility", 1, GetSpellTargetX(), GetSpellTargetY(), RADIUS, CastFilter.ElunesGazeFilter)
-		endif
+    call DummyCastOnUnitsInCircle(GetTriggerUnit(), INVIS_ID, "invisibility", 1, GetSpellTargetX(), GetSpellTargetY(), RADIUS, CastFilter.ElunesGazeFilter)
   endfunction
 
   private function OnInit takes nothing returns nothing

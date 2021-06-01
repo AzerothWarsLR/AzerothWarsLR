@@ -14,7 +14,6 @@ library WarStompKazzak initializer OnInit requires DummyCast, Filters
   private function Cast takes nothing returns nothing
     local unit u
     local unit caster    
-    if GetSpellAbilityId() == ABIL_ID then
     set caster = GetTriggerUnit()   
     set P = GetOwningPlayer(caster)
     call GroupEnumUnitsInRange(TempGroup,GetUnitX(caster),GetUnitY(caster),RADIUS,Condition(function EnemyAliveFilter))
@@ -26,7 +25,6 @@ library WarStompKazzak initializer OnInit requires DummyCast, Filters
       call GroupRemoveUnit(TempGroup,u)
     endloop
     call DestroyEffect(AddSpecialEffect(EFFECT,GetUnitX(caster),GetUnitY(caster)))
-  endif
   endfunction
 
   private function OnInit takes nothing returns nothing

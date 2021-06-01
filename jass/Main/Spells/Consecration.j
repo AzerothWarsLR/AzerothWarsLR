@@ -15,21 +15,18 @@ library Consecration initializer OnInit requires DummyCast, Filters
     local unit u
     local unit caster
     local integer level
-
-    if GetSpellAbilityId() == ABIL_ID then
-      set caster = GetTriggerUnit()
-      set level = GetUnitAbilityLevel(caster, ABIL_ID)             
-      set P = GetOwningPlayer(caster)
-      call GroupEnumUnitsInRange(TempGroup,GetUnitX(caster),GetUnitY(caster),RADIUS,Condition(function EnemyAliveFilter))
-      loop
-        set u = FirstOfGroup(TempGroup)
-        exitwhen u == null
-        call UnitDamageTarget(caster, u, DAMAGE_BASE+DAMAGE_LEVEL*level, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
-        call DummyCastUnit(GetOwningPlayer(caster), DUMMY_ID, DUMMY_ORDER, 1, u)
-        call GroupRemoveUnit(TempGroup,u)
-      endloop
-      call DestroyEffect(AddSpecialEffect(EFFECT,GetUnitX(caster),GetUnitY(caster)))
-    endif
+    set caster = GetTriggerUnit()
+    set level = GetUnitAbilityLevel(caster, ABIL_ID)             
+    set P = GetOwningPlayer(caster)
+    call GroupEnumUnitsInRange(TempGroup,GetUnitX(caster),GetUnitY(caster),RADIUS,Condition(function EnemyAliveFilter))
+    loop
+      set u = FirstOfGroup(TempGroup)
+      exitwhen u == null
+      call UnitDamageTarget(caster, u, DAMAGE_BASE+DAMAGE_LEVEL*level, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+      call DummyCastUnit(GetOwningPlayer(caster), DUMMY_ID, DUMMY_ORDER, 1, u)
+      call GroupRemoveUnit(TempGroup,u)
+    endloop
+    call DestroyEffect(AddSpecialEffect(EFFECT,GetUnitX(caster),GetUnitY(caster)))
   endfunction
 
   private function OnInit takes nothing returns nothing

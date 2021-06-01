@@ -29,42 +29,40 @@ library MassSimulacrum initializer OnInit requires Filters, FilteredCastEvents, 
     local player triggerPlayer = null
     local effect tempEffect = null
     local unit newUnit = null
-    if GetSpellAbilityId() == ABIL_ID then
-      set caster = GetTriggerUnit()
-      set triggerPlayer = GetOwningPlayer(caster)
-      set level = GetUnitAbilityLevel(caster, ABIL_ID) 
-      set tempGroup = CreateGroup()
-      call GroupEnumUnitsInRange(tempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
-      loop
-      exitwhen BlzGroupGetSize(tempGroup) == 0
-        set u = BlzGroupUnitAt(tempGroup, GetRandomInt( 0, BlzGroupGetSize(tempGroup) - 1) )
-        if not IsUnitIllusion(u) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
-          //Create the replicant
-          set newUnit = CreateUnit(triggerPlayer, GetUnitTypeId(u), GetUnitX(u), GetUnitY(u), GetUnitFacing(u))
-          call UnitAddType(newUnit, UNIT_TYPE_SUMMONED)
-          call UnitApplyTimedLife(newUnit, 0, DURATION)
-          call SetUnitVertexColor(newUnit, 100, 100, 230, 150)
-          call ScaleUnitBaseDamage(newUnit, 1 + DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, 0)
-          call ScaleUnitMaxHP(newUnit, 1 + HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level)
-          set tempEffect = AddSpecialEffect(EFFECT_TARGET, GetUnitX(newUnit), GetUnitY(newUnit))
-          call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE_TARGET)
-          call DestroyEffect(tempEffect)
-          call GroupAddUnit(Simulacrums, newUnit)
-          set newUnit = null
-        else
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-      endloop
-      set tempEffect = AddSpecialEffect(EFFECT, GetSpellTargetX(), GetSpellTargetY())
-      call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE)
-      call DestroyEffect(tempEffect)
-      set caster = null  
-      set tempEffect = null
-      set triggerPlayer = null
-      set tempGroup = null
-      call DestroyGroup(tempGroup)
-      set u = null
-    endif      
+    set caster = GetTriggerUnit()
+    set triggerPlayer = GetOwningPlayer(caster)
+    set level = GetUnitAbilityLevel(caster, ABIL_ID) 
+    set tempGroup = CreateGroup()
+    call GroupEnumUnitsInRange(tempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
+    loop
+    exitwhen BlzGroupGetSize(tempGroup) == 0
+      set u = BlzGroupUnitAt(tempGroup, GetRandomInt( 0, BlzGroupGetSize(tempGroup) - 1) )
+      if not IsUnitIllusion(u) and not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
+        //Create the replicant
+        set newUnit = CreateUnit(triggerPlayer, GetUnitTypeId(u), GetUnitX(u), GetUnitY(u), GetUnitFacing(u))
+        call UnitAddType(newUnit, UNIT_TYPE_SUMMONED)
+        call UnitApplyTimedLife(newUnit, 0, DURATION)
+        call SetUnitVertexColor(newUnit, 100, 100, 230, 150)
+        call ScaleUnitBaseDamage(newUnit, 1 + DAMAGE_BONUS_BASE + DAMAGE_BONUS_LEVEL*level, 0)
+        call ScaleUnitMaxHP(newUnit, 1 + HEALTH_BONUS_BASE + HEALTH_BONUS_LEVEL*level)
+        set tempEffect = AddSpecialEffect(EFFECT_TARGET, GetUnitX(newUnit), GetUnitY(newUnit))
+        call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE_TARGET)
+        call DestroyEffect(tempEffect)
+        call GroupAddUnit(Simulacrums, newUnit)
+        set newUnit = null
+      else
+      endif
+      call GroupRemoveUnit(tempGroup, u)
+    endloop
+    set tempEffect = AddSpecialEffect(EFFECT, GetSpellTargetX(), GetSpellTargetY())
+    call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE)
+    call DestroyEffect(tempEffect)
+    set caster = null  
+    set tempEffect = null
+    set triggerPlayer = null
+    set tempGroup = null
+    call DestroyGroup(tempGroup)
+    set u = null
   endfunction
 
   private function Death takes nothing returns nothing

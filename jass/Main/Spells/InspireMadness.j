@@ -22,37 +22,35 @@ library InspireMadness initializer OnInit requires Filters
     local unit u = null
     local player triggerPlayer = null
     local effect tempEffect = null
-    if GetSpellAbilityId() == ABIL_ID then
-      set caster = GetTriggerUnit()
-      set triggerPlayer = GetOwningPlayer(caster)
-      set level = GetUnitAbilityLevel(caster, ABIL_ID) 
-      set tempGroup = CreateGroup()
-      call GroupEnumUnitsInRange(tempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
-      loop
-      exitwhen BlzGroupGetSize(tempGroup) == 0 or i == COUNT_BASE+COUNT_LEVEL*level
-        set u = BlzGroupUnitAt(tempGroup, GetRandomInt( 0, BlzGroupGetSize(tempGroup) - 1) )
-        if not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and not IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
-          call SetUnitOwner(u, triggerPlayer, true)
-          call UnitApplyTimedLife(u, 'Bpos', DURATION)
-          call SetUnitExploded(u, true)
-          set tempEffect = AddSpecialEffect(EFFECT_TARGET, GetUnitX(u), GetUnitY(u))
-          call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE_TARGET)
-          call DestroyEffect(tempEffect)
-          set i = i + 1
-        else
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-      endloop
-      set tempEffect = AddSpecialEffect(EFFECT, GetSpellTargetX(), GetSpellTargetY())
-      call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE)
-      call DestroyEffect(tempEffect)
-      set caster = null  
-      set tempEffect = null
-      set triggerPlayer = null
-      set tempGroup = null
-      call DestroyGroup(tempGroup)
-      set u = null
-    endif      
+    set caster = GetTriggerUnit()
+    set triggerPlayer = GetOwningPlayer(caster)
+    set level = GetUnitAbilityLevel(caster, ABIL_ID) 
+    set tempGroup = CreateGroup()
+    call GroupEnumUnitsInRange(tempGroup, GetSpellTargetX(), GetSpellTargetY(), RADIUS, null)
+    loop
+    exitwhen BlzGroupGetSize(tempGroup) == 0 or i == COUNT_BASE+COUNT_LEVEL*level
+      set u = BlzGroupUnitAt(tempGroup, GetRandomInt( 0, BlzGroupGetSize(tempGroup) - 1) )
+      if not IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) and not IsUnitType(u, UNIT_TYPE_MECHANICAL) and not IsUnitType(u, UNIT_TYPE_RESISTANT) and not IsUnitType(u, UNIT_TYPE_HERO) and not IsUnitAlly(u, triggerPlayer) and IsUnitAliveBJ(u) then
+        call SetUnitOwner(u, triggerPlayer, true)
+        call UnitApplyTimedLife(u, 'Bpos', DURATION)
+        call SetUnitExploded(u, true)
+        set tempEffect = AddSpecialEffect(EFFECT_TARGET, GetUnitX(u), GetUnitY(u))
+        call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE_TARGET)
+        call DestroyEffect(tempEffect)
+        set i = i + 1
+      else
+      endif
+      call GroupRemoveUnit(tempGroup, u)
+    endloop
+    set tempEffect = AddSpecialEffect(EFFECT, GetSpellTargetX(), GetSpellTargetY())
+    call BlzSetSpecialEffectScale(tempEffect, EFFECT_SCALE)
+    call DestroyEffect(tempEffect)
+    set caster = null  
+    set tempEffect = null
+    set triggerPlayer = null
+    set tempGroup = null
+    call DestroyGroup(tempGroup)
+    set u = null
   endfunction
 
   private function OnInit takes nothing returns nothing
