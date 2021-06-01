@@ -5,11 +5,11 @@ library FilteredAttackEvents initializer OnInit requires PlayerUnitEventFilterMa
     private FilteredEventType FILTEREDEVENTTYPE_UNITTYPEATTACKS
   endglobals
 
-  function RegisterUnitTypeAttackedEvent takes code whichTriggerAction, integer unitTypeId returns nothing
+  function RegisterUnitTypeAttackedAction takes integer unitTypeId, code whichTriggerAction returns nothing
     call PlayerUnitEventAddFilteredAction(EVENT_PLAYER_UNIT_ATTACKED, whichTriggerAction, FILTEREDEVENTTYPE_UNITTYPEATTACKED, unitTypeId)
   endfunction
 
-  function RegisterUnitTypeAttacksEvent takes code whichTriggerAction, integer unitTypeId returns nothing
+  function RegisterUnitTypeAttacksAction takes integer unitTypeId, code whichTriggerAction returns nothing
     call PlayerUnitEventAddFilteredAction(EVENT_PLAYER_UNIT_ATTACKED, whichTriggerAction, FILTEREDEVENTTYPE_UNITTYPEATTACKS, unitTypeId)
   endfunction
 
