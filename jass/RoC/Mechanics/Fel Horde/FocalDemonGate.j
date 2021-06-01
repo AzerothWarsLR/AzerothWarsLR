@@ -1,5 +1,5 @@
 //Units spawned at Demon Gates spawn at the Focal Demon Gate instead, if one exists.
-library FocalDemonGate requires AIDS
+library FocalDemonGate initializer OnInit requires AIDS, FilteredConstructEvents
 
   globals
     private constant integer GATE_UNITTYPE = 'n0AP'
@@ -44,7 +44,7 @@ library FocalDemonGate requires AIDS
       return thistype.instance
     endmethod
 
-    private method operator Constructed= takes boolean value returns nothing
+    method operator Constructed= takes boolean value returns nothing
       set this.constructed = value
       call KillUnit(thistype.instance.unit)
       set thistype.instance = this
@@ -67,18 +67,14 @@ library FocalDemonGate requires AIDS
         set thistype.instance = 0
       endif
     endmethod
-
-    private static method OnAnyUnitConstruct takes nothing returns nothing
-      if GetUnitTypeId(GetTriggerUnit()) == GATE_UNITTYPE then
-        set FocalDemonGate(GetUnitId(GetTriggerUnit())).Constructed = true
-      endif
-    endmethod
-
-    private static method AIDS_onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
-      call TriggerAddAction(trig, function thistype.OnAnyUnitConstruct)
-    endmethod
   endstruct
+
+  private function OnGateConstruct takes nothing returns nothing
+    set FocalDemonGate(GetUnitId(GetTriggerUnit())).Constructed = true
+  endfunction
+
+  private function OnInit takes nothing returns nothing
+    call RegisterConstructFinishedAction(GATE_UNITTYPE, function OnGateConstruct)
+  endfunction
 
 endlibrary

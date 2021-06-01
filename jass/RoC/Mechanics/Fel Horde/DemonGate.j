@@ -212,17 +212,12 @@ library DemonGate requires T32, Math, Environment, FocalDemonGate
     endmethod
 
     private static method onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-      call TriggerAddAction(trig, function thistype.onUnitUpgraded)
-
-      set trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
-      call TriggerAddAction(trig, function thistype.onUnitConstructed)
-
+      //Currently listens for all units being constructed and upgraded.
+      //Should ideally only listen for buildings which are registered as Demon Gate types.
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_UPGRADE_FINISH, function thistype.onUnitUpgraded)
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_CONSTRUCT_FINISH, function thistype.onUnitConstructed)
       set byHandle = Table.create()
     endmethod
-
   endstruct
 
 endlibrary

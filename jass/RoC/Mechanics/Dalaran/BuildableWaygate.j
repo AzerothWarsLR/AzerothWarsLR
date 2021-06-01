@@ -1,17 +1,17 @@
 //Allows exactly two Waygates to be built on the map. These Waygates can teleport units between themselves.
-library BuildableWaygate requires AIDS
+library BuildableWaygate initializer OnInit requires AIDS, FilteredConstructEvents, FilteredDeathEvents
 
   globals
     private constant integer WAYGATE_UNITTYPE = 'n0AO'
   endglobals
 
-  struct BuildableWaygate extends array
+  private struct BuildableWaygate extends array
     //! runtextmacro AIDS()
     private static thistype waygateA = 0
     private static thistype waygateB = 0
     private boolean constructed
 
-    private method operator Constructed= takes boolean value returns nothing
+    method operator Constructed= takes boolean value returns nothing
       set this.constructed = value
       if waygateA.constructed == true and waygateB.constructed == true then
         call thistype.LinkWaygates()
@@ -56,30 +56,19 @@ library BuildableWaygate requires AIDS
       endif
       call UnlinkWaygates()
     endmethod
-
-    //Link two Waygates together when they are both fully built
-    private static method OnAnyUnitConstruct takes nothing returns nothing
-      if GetUnitTypeId(GetTriggerUnit()) == WAYGATE_UNITTYPE then
-        set BuildableWaygate(GetUnitId(GetTriggerUnit())).Constructed = true
-      endif
-    endmethod
-
-    //Instantly remove Waygates that die so that they can be deallocated faster
-    private static method OnAnyUnitDeath takes nothing returns nothing
-      if GetUnitTypeId(GetTriggerUnit()) == WAYGATE_UNITTYPE then
-        call RemoveUnit(GetTriggerUnit())
-      endif
-    endmethod
-
-    private static method AIDS_onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_DEATH)
-      call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
-
-      set trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
-      call TriggerAddAction(trig, function thistype.OnAnyUnitConstruct)
-    endmethod
   endstruct
+
+  private function OnWaygateConstruct takes nothing returns nothing
+    set BuildableWaygate(GetUnitId(GetTriggerUnit())).Constructed = true
+  endfunction
+
+  private function OnWaygateDeath takes nothing returns nothing
+    call RemoveUnit(GetTriggerUnit())
+  endfunction
+
+  private function OnInit takes nothing returns nothing
+    call RegisterConstructFinishedAction(WAYGATE_UNITTYPE, function OnWaygateConstruct)
+    call RegisterUnitTypeDiesAction(WAYGATE_UNITTYPE, function OnWaygateDeath)
+  endfunction
 
 endlibrary
