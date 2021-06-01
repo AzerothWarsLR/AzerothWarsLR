@@ -1,4 +1,4 @@
-library MassSimulacrum initializer OnInit requires Filters
+library MassSimulacrum initializer OnInit requires Filters, FilteredCastEvents, FilteredDeathEvents
 
   globals
     private constant integer  ABIL_ID = 'A0DG'
@@ -78,10 +78,7 @@ library MassSimulacrum initializer OnInit requires Filters
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DEATH )
-    call TriggerAddCondition( trig, Condition(function Death))
-
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_DEATH, function Death)
     call RegisterSpellEffectAction(ABIL_ID, function Cast)
 
     set Simulacrums = CreateGroup()   
