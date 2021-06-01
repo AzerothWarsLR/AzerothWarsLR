@@ -1,15 +1,11 @@
 library TierSI7Elite initializer OnInit requires StormwindSetup
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'R032' then
-      call FACTION_STORMWIND.modObjectLimit('h05V', 6)                       //SI:7 Agent   
-    endif
+    call FACTION_STORMWIND.modObjectLimit('h05V', 6) //SI:7 Agent   
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
-    call TriggerAddCondition(trig, Condition(function Research))    
+    call RegisterResearchFinishedAction('R032', function Research)
   endfunction
 
 endlibrary

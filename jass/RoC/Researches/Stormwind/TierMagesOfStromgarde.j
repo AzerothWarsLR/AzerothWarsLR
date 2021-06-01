@@ -23,17 +23,13 @@ library TierMagesOfStromgarde initializer OnInit requires StormwindSetup, Math
   endfunction
 
   private function Research takes nothing returns nothing
-    if GetResearched() == 'R03V' then
-      call FACTION_STORMWIND.modObjectLimit('R03X', UNLIMITED)       //High Sorcerer Andromath
-      call FACTION_STORMWIND.modObjectLimit('R03Y', UNLIMITED)       //Katrana Prestor     
-      call EnablePortals()
-    endif
+    call FACTION_STORMWIND.modObjectLimit('R03X', UNLIMITED)       //High Sorcerer Andromath
+    call FACTION_STORMWIND.modObjectLimit('R03Y', UNLIMITED)       //Katrana Prestor     
+    call EnablePortals()
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
-    call TriggerAddCondition(trig, Condition(function Research))    
+    call RegisterResearchFinishedAction('R03V', function Research)
   endfunction
 
 endlibrary

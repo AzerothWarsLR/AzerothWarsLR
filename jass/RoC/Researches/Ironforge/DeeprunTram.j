@@ -1,4 +1,4 @@
-library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeSetup, StormwindSetup
+library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeSetup, StormwindSetup, FilteredResearchEvents
 
   globals
     private constant integer RESEARCH_ID = 'R014'
@@ -30,21 +30,13 @@ library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeSetup
     call SetUnitInvulnerable(stormwindTram, false)
   endfunction
 
-  private function ResearchFinish takes nothing returns nothing
-    if GetResearched() == RESEARCH_ID then
-      call Transfer()
-    endif        
-  endfunction
-
   private function ResearchStart takes nothing returns nothing
     local integer i = 0
-    if GetResearched() == RESEARCH_ID then
-      loop
-      exitwhen i > MAX_PLAYERS
-        call Person.ById(i).SetObjectLimit(RESEARCH_ID, 0)
-        set i = i + 1
-      endloop
-    endif
+    loop
+    exitwhen i > MAX_PLAYERS
+      call Person.ById(i).SetObjectLimit(RESEARCH_ID, 0)
+      set i = i + 1
+    endloop
   endfunction
 
   private function ResearchCancel takes nothing returns nothing
@@ -57,17 +49,9 @@ library DeeprunTram initializer OnInit requires Persons, Faction, IronforgeSetup
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH  )
-    call TriggerAddCondition( trig, Condition(function ResearchFinish))
-
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_START )
-    call TriggerAddCondition(trig,Condition(function ResearchStart))
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_CANCEL )
-    call TriggerAddCondition(trig,Condition(function ResearchCancel))
+    call RegisterResearchFinishedAction(RESEARCH_ID, function Transfer)
+    call RegisterResearchStartedAction(RESEARCH_ID, function ResearchStart)
+    call RegisterResearchCancelledAction(RESEARCH_ID, function ResearchCancel)
   endfunction
   
 endlibrary
