@@ -1,6 +1,6 @@
 //Like vanilla Life Drain & Siphon Mana, but it applies to a group of units.
 //Only drains if the caster needs the health and mana OR the target is an enemy.
-library SiphoningRitual initializer OnInit requires T32, DummyCast, Set, SpellHelpers
+library SiphoningRitual initializer OnInit requires T32, DummyCast, Set, SpellHelpers, FilteredCastEvents
 
   globals
     private constant integer ABIL_ID = 'A0FA'
@@ -132,26 +132,17 @@ library SiphoningRitual initializer OnInit requires T32, DummyCast, Set, SpellHe
   endstruct
 
   private function StopChannel takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call SiphoningRitual.ByUnit[GetUnitId(GetTriggerUnit())].destroy()
-    endif
+    call SiphoningRitual.ByUnit[GetUnitId(GetTriggerUnit())].destroy()
   endfunction
 
   private function StartChannel takes nothing returns nothing
     local unit u = GetTriggerUnit()      
-    if GetSpellAbilityId() == ABIL_ID then
-      set SiphoningRitual.ByUnit[GetUnitId(u)] = SiphoningRitual.create(u, GetSpellTargetX(), GetSpellTargetY(), RADIUS, LIFEDRAIN_BASE+GetUnitAbilityLevel(u, ABIL_ID)*LIFEDRAIN_LEVEL, MANADRAIN_BASE+GetUnitAbilityLevel(u, ABIL_ID)*MANADRAIN_LEVEL)
-    endif
+    set SiphoningRitual.ByUnit[GetUnitId(u)] = SiphoningRitual.create(u, GetSpellTargetX(), GetSpellTargetY(), RADIUS, LIFEDRAIN_BASE+GetUnitAbilityLevel(u, ABIL_ID)*LIFEDRAIN_LEVEL, MANADRAIN_BASE+GetUnitAbilityLevel(u, ABIL_ID)*MANADRAIN_LEVEL)
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_CHANNEL )
-    call TriggerAddCondition( trig, Condition(function StartChannel) )
-
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_ENDCAST )
-    call TriggerAddCondition( trig, Condition(function StopChannel) )   
+    call RegisterSpellChannelAction(ABIL_ID, function StartChannel)
+    call RegisterSpellEndcastAction(ABIL_ID, function StopChannel)
   endfunction 
 
 endlibrary

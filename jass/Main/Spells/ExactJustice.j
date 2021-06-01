@@ -1,4 +1,4 @@
-library DivineJustice initializer OnInit requires Filters
+library DivineJustice initializer OnInit requires Filters, FilteredCastEvents
 
   globals
     private constant integer    ABIL_ID                        = 'A097'
@@ -177,9 +177,7 @@ library DivineJustice initializer OnInit requires Filters
   endfunction
 
   private function StopChannel takes nothing returns nothing
-    if GetSpellAbilityId() == ABIL_ID then
-      call ConsecrationsByUnit[GetUnitId(GetTriggerUnit())].end()
-    endif
+    call ConsecrationsByUnit[GetUnitId(GetTriggerUnit())].end()
   endfunction
 
   private function StartChannel takes nothing returns nothing
@@ -187,23 +185,13 @@ library DivineJustice initializer OnInit requires Filters
     local integer i = 0
     local boolean b = false
     
-    if GetSpellAbilityId() == ABIL_ID then
-      set ConsecrationsByUnit[GetUnitId(u)] = Consecration.create(u, GetUnitX(u), GetUnitY(u), CONSECRATION_DAMAGE_BASE+GetUnitAbilityLevel(u, ABIL_ID)*CONSECRATION_DAMAGE_LEVEL, CONSECRATION_RADIUS, DURATION)
-    endif
+    set ConsecrationsByUnit[GetUnitId(u)] = Consecration.create(u, GetUnitX(u), GetUnitY(u), CONSECRATION_DAMAGE_BASE+GetUnitAbilityLevel(u, ABIL_ID)*CONSECRATION_DAMAGE_LEVEL, CONSECRATION_RADIUS, DURATION)
   endfunction
   
-  private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_CHANNEL )
-    call TriggerAddCondition( trig, Condition(function StartChannel) )
-
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_ENDCAST )
-    call TriggerAddCondition( trig, Condition(function StopChannel) )
-    
-    set trig  = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DAMAGED )
-    call TriggerAddCondition( trig,Condition(function OnDamage) )        
+  private function OnInit takes nothing returns nothing  
+    call RegisterSpellChannelAction(ABIL_ID, function StartChannel)
+    call RegisterSpellEndcastAction(ABIL_ID, function StopChannel)  
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_DAMAGED, function OnDamage)
   endfunction 
   
 endlibrary
