@@ -37,9 +37,7 @@ library QuestItemLegendLevel requires QuestItemData, Legend
     endmethod
 
     private static method onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_HERO_LEVEL)
-      call TriggerAddAction(trig, function thistype.OnAnyLevel)
+      call PlayerUnitEventAddAction(EVENT_PLAYER_HERO_LEVEL, function thistype.OnAnyLevel) //TODO: use filtered events
     endmethod
   endstruct
 

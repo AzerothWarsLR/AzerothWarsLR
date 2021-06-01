@@ -20,9 +20,7 @@ library RefundZeroLimitUnits initializer OnInit requires Persons, UnitType
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_TRAIN_FINISH )
-    call TriggerAddCondition(trig, Condition(function Trained))       
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_TRAIN_FINISH, function Trained) 
   endfunction
 
 endlibrary

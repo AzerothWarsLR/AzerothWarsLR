@@ -27,7 +27,7 @@ library CPCapture initializer OnInit requires AIDS
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_DAMAGED )
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_DAMAGED, function Actions) //TODO: use filtered events, since all Control Points identities are known
     call TriggerAddCondition(trig,Condition(function Actions))
   endfunction
 

@@ -29,9 +29,7 @@ library QuestItemResearch requires QuestItemData
     endmethod
 
     private static method onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-      call TriggerAddAction(trig, function thistype.OnAnyResearch)
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_RESEARCH_FINISH, function thistype.OnAnyResearch) //TODO: use filtered events
     endmethod
   endstruct
 

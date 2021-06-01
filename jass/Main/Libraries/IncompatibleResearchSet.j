@@ -1,4 +1,4 @@
-library IncompatibleResearchSet initializer OnInit
+library IncompatibleResearchSet initializer OnInit requires PlayerUnitEventFilterManager
     
   //An IncompatibleResearchSet is a list of Researchs which are mutually exclusive with each other
   //This means that if one of these Researchs is started, the other 2 are disabled
@@ -84,13 +84,8 @@ library IncompatibleResearchSet initializer OnInit
   endfunction    
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_START )
-    call TriggerAddCondition(trig,Condition(function ResearchStart))
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_RESEARCH_CANCEL )
-    call TriggerAddCondition(trig,Condition(function ResearchCancel))
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_RESEARCH_START, function ResearchStart) //TODO: use filtered events
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_RESEARCH_CANCEL, function ResearchCancel) //TODO: use filtered events
   endfunction        
     
 endlibrary

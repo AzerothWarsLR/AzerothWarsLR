@@ -329,20 +329,12 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore
 
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_PICKUP_ITEM)
-    call TriggerAddAction(trig, function ItemPickup)
-    
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_DROP_ITEM)
-    call TriggerAddAction(trig, function ItemDrop)
-
-    set trig = CreateTrigger()
     call OnPersonFactionChange.register(trig)
     call TriggerAddAction(trig, function OnPersonFactionChanged)
 
-    set trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_CHANGE_OWNER)
-    call TriggerAddAction(trig, function UnitChangeOwner)
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_PICKUP_ITEM, function ItemPickup) //TODO: use filtered events
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_DROP_ITEM, function ItemDrop) //TODO: use filtered events
+    call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_CHANGE_OWNER, function UnitChangeOwner) //TODO: use filtered events
 
     set OnArtifactCreate = Event.create()
     set OnArtifactAcquire = Event.create()

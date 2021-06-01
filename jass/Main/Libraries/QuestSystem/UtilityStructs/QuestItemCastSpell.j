@@ -35,7 +35,7 @@ library QuestItemCastSpell requires QuestItemData
 
     static method create takes integer spellId, boolean holderOnly returns thistype
       local thistype this = thistype.allocate()
-      local trigger trig = CreateTrigger()
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_SPELL_FINISH, function thistype.OnAnyUnitFinishesSpell) //TODO: use filtered events
       if holderOnly then
         set this.Description = "Cast " + GetObjectName(spellId)
       else
@@ -43,8 +43,6 @@ library QuestItemCastSpell requires QuestItemData
       endif
       set this.spellId = spellId
       set this.holderOnly = holderOnly
-      call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_UNIT_SPELL_FINISH )
-      call TriggerAddAction(trig, function thistype.OnAnyUnitFinishesSpell)
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

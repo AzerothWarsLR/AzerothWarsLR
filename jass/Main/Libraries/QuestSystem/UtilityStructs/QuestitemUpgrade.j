@@ -29,9 +29,7 @@ library QuestItemUpgrade requires QuestItemData
     endmethod
 
     private static method onInit takes nothing returns nothing
-      local trigger trig = CreateTrigger()
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-      call TriggerAddAction(trig, function thistype.OnAnyUpgrade)
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_UPGRADE_FINISH, function thistype.OnAnyUpgrade) //TODO: use filtered events
     endmethod
   endstruct
 

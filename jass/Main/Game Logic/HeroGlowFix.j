@@ -10,9 +10,7 @@ library HeroGlowFix initializer OnInit requires Legend
   endfunction
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ( trig, EVENT_PLAYER_HERO_REVIVE_FINISH  )
-    call TriggerAddCondition(trig, Condition(function Revived))    
+    call PlayerUnitEventAddAction(EVENT_PLAYER_HERO_REVIVE_FINISH, function Revived)
   endfunction
 
 endlibrary

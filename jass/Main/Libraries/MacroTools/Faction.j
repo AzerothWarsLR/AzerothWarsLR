@@ -540,9 +540,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       set OnFactionTeamJoin = Event.create()
       set OnFactionGameLeave = Event.create()
       set FactionScoreStatusChanged = Event.create()
-      
-      call TriggerRegisterAnyUnitEventBJ(trig, EVENT_PLAYER_UNIT_RESEARCH_FINISH)
-      call TriggerAddAction(trig, function thistype.OnAnyResearch)
+
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_RESEARCH_FINISH, function thistype.OnAnyResearch) //TODO: use filtered events
     endmethod 
   endstruct
 
