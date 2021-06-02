@@ -1,4 +1,4 @@
-library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSetup, ScourgeSetup, DetermineLevel
+library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSetup, ScourgeSetup
 
   globals
     private constant integer HERO_ID = 'Uear'

@@ -1,4 +1,4 @@
-library QuestTheramore requires QuestData, DetermineLevel
+library QuestTheramore requires QuestData
 
   globals
     private constant integer RESEARCH_ID = 'R06K'
