@@ -7,7 +7,7 @@ library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronSe
 
   struct QuestThunderEagle extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Thunder Eagles, now in safe hands " + this.Holder.ColoredName + "."
+      return "The Thunder Eagles, now in safe hands " + this.Holder.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

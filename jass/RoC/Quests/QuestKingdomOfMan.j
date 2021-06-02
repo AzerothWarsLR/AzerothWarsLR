@@ -10,7 +10,7 @@ library QuestKingdomOfMan requires LordaeronSetup, StormwindSetup, QuestItemCont
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The people of the Eastern Kingdoms have been united under the banner of " + this.Holder.ColoredName + ". Long live the King!"
+      return "The people of the Eastern Kingdoms have been united under the banner of " + this.Holder.Name + ". Long live the King!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

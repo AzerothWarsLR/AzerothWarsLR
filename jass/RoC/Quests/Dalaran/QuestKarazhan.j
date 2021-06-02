@@ -2,7 +2,7 @@ library QuestKarazhan requires LegendNeutral
 
   struct QuestKarazhan extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Karazhan has been captured. " + this.Holder.ColoredName + "'s  archivists scour its halls for arcane resources."
+      return "Karazhan has been captured. " + this.Holder.Name + "'s  archivists scour its halls for arcane resources."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

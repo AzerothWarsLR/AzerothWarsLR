@@ -6,7 +6,7 @@ library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
 
   struct QuestCrystalGolem extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return this.Holder.ColoredName + "'s Earth Golems have been infused with living crystal."
+      return this.Holder.Name + "'s Earth Golems have been infused with living crystal."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

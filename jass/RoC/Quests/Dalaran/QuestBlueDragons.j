@@ -8,7 +8,7 @@ library QuestBlueDragons requires QuestItemControlLegend, LegendDalaran, Display
 
   struct QuestBlueDragons extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Nexus has been captured. The Blue Dragonflight fights for " + this.Holder.ColoredName + "."
+      return "The Nexus has been captured. The Blue Dragonflight fights for " + this.Holder.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
