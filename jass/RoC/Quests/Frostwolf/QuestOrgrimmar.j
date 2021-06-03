@@ -15,6 +15,10 @@ library QuestOrgrimmar requires QuestData, FrostwolfSetup
       return "You can summon Rexxar from the " + GetObjectName(ALTAR_ID)
     endmethod
 
+    private method OnComplete takes nothing returns nothing
+      call this.Holder.modObjectLimit(STRUCTURE_ID, -1)
+    endmethod
+
     private method OnAdd takes nothing returns nothing
       call this.Holder.modObjectLimit(HERO_ID, 1)
       call this.Holder.modObjectLimit(STRUCTURE_ID, 1)
