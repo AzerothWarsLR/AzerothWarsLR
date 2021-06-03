@@ -1,8 +1,8 @@
 library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup, LegendQuelthalas
 
   globals
-    private constant integer SYLVANAS_RESEARCH = 'R02D'
     private constant integer SYLVANAS_ID = 'uswb'
+    private constant integer ALTAR_ID = 'uaod'
   endglobals
 
   struct QuestReanimateSylvanas extends QuestData
@@ -11,24 +11,18 @@ library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Sylvanas"
+      return "You can summon Sylvanas from the " + GetObjectName(ALTAR_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(this.Holder.Player, SYLVANAS_RESEARCH, 1)
-      call LEGEND_JENNALLA.Spawn(FACTION_QUELTHALAS.Player, 18509, 18073, 295)
-      call CreateUnit(this.Holder.Player, SYLVANAS_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), GetUnitFacing(GetTriggerUnit()))
-      call SetHeroXP(LEGEND_JENNALLA.Unit, GetHeroXP(LEGEND_SYLVANAS.Unit), true)
-      set LEGEND_SYLVANAS.Unit = null
-    endmethod
-
-    private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(SYLVANAS_RESEARCH, UNLIMITED)
+      call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand second")
+      call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand third")
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Slay her, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SYLVANAS.Unit))
+      local thistype this = thistype.allocate("The First Banshee", "Sylvanas, the Ranger-General of Silvermoon, stands between the legions of the Scourge and the Sunwell. Destroy her people, and her soul will be transformed into a tormented Banshee under the Scourge's control.", "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp")
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
+      set this.ResearchId = 'R02D'
       return this
     endmethod
   endstruct

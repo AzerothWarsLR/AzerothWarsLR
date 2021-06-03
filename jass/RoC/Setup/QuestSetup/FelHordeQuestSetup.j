@@ -6,6 +6,7 @@ library FelHordeQuestSetup requires FelHordeSetup, QuestFelHordeKillIronforge, Q
     call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillIronforge.create())
     call FACTION_FEL_HORDE.AddQuest(QuestGrimBatol.create())
     call FACTION_FEL_HORDE.AddQuest(QuestGuldansLegacy.create())
+    call FACTION_FEL_HORDE.AddQuest(QuestChogall.create())
   endfunction
 
 endlibrary

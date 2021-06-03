@@ -9,6 +9,7 @@ library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrekthar
     call FACTION_FROSTWOLF.AddQuest(QuestThunderBluff.create(FACTION_WARSONG))
     call FACTION_FROSTWOLF.AddQuest(QuestScepterOfTheQueenWarsong.create())
     call FACTION_FROSTWOLF.AddQuest(QuestZeppelins.create())
+    call FACTION_FROSTWOLF.AddQuest(QuestOrgrimmar.create())
   endfunction
   
 endlibrary

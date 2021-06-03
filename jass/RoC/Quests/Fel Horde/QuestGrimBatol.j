@@ -2,7 +2,7 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
 
   globals
     private constant integer ZULUHED_ID = 'O00Y'
-    private constant integer RESEARCH_ID = 'R069'
+    private constant integer NEKROSH_ID = 0
   endglobals
 
   struct QuestGrimBatol extends QuestData
@@ -13,7 +13,7 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Nelrathaku, control of all units at Grim Batol, and you can summon the hero Zuluhed the Whacked from the Altar of Domination"
+      return "The demihero Nelrathaku, control of all units at Grim Batol, and you can summon the heroes Zuluhed and Nek'rosh from the Altar of Domination"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -31,13 +31,12 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
       call EnableWaygate(gg_unit_n08R_2214) //Grim Batol Tunnels
       call IssueImmediateOrderBJ( gg_unit_ocbw_3168, "battlestations" ) //Orc Burrow
       call IssueImmediateOrderBJ( gg_unit_ocbw_3166, "battlestations" ) //Orc Burrow
-      call SetPlayerTechResearched(FACTION_FEL_HORDE.Player, RESEARCH_ID, 1)
       call DestroyGroup(thistype.GrimBatolUnits)
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
       call Holder.modObjectLimit(ZULUHED_ID, 1)
+      call Holder.modObjectLimit(NEKROSH_ID, 1)
     endmethod
 
     private static method EnableWaygate takes unit u returns nothing
@@ -51,6 +50,7 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THELSAMAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_DARKSHIRE))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Grim_Batol, "Grim Batol", true))
+      set this.ResearchId = 'R069'
       return this
     endmethod
 
