@@ -21,6 +21,7 @@ library LegendStormwind initializer OnInit requires Legend
 
     set LEGEND_KHADGAR = Legend.create()
     set LEGEND_KHADGAR.UnitType = 'H05Y'
+    set LEGEND_KHADGAR.StartingXP = 5400
 
     set LEGEND_STORMWINDKEEP = Legend.create()
     set LEGEND_STORMWINDKEEP.Unit = gg_unit_h00X_0007

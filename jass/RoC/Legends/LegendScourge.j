@@ -4,6 +4,7 @@ library LegendScourge initializer OnInit requires Legend
     Legend LEGEND_KELTHUZAD
     Legend LEGEND_ANUBARAK
     Legend LEGEND_RIVENDARE
+    Legend LEGEND_SYLVANASV
 
     Legend LEGEND_SCHOLOMANCE
     Legend LEGEND_LICHKING
@@ -25,6 +26,10 @@ library LegendScourge initializer OnInit requires Legend
 
     set LEGEND_RIVENDARE = Legend.create()
     set LEGEND_RIVENDARE.Unit = gg_unit_U00A_3741
+
+    set LEGEND_SYLVANASV = Legend.create()
+    set LEGEND_SYLVANASV.UnitType = 'Usyl'
+    set LEGEND_SYLVANASV.StartingXP = 5400
 
     set LEGEND_SCHOLOMANCE = Legend.create()
     set LEGEND_SCHOLOMANCE.Unit = gg_unit_u012_1149

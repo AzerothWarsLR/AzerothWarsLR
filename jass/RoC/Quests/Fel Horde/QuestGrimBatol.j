@@ -2,18 +2,18 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
 
   globals
     private constant integer ZULUHED_ID = 'O00Y'
-    private constant integer NEKROSH_ID = 0
+    private constant integer NEKROSH_ID = 'O01Q'
   endglobals
 
   struct QuestGrimBatol extends QuestData
     private static group GrimBatolUnits
 
     private method operator CompletionPopup takes nothing returns string
-      return "Zuluhed the Whacked and his followers join the Fel Horde once more. Near the Black Temple, the great Nether Dragon Neltharaku awakens."
+      return "The Dragonmaw Clan joins the Fel Horde once more. Near Grim Batol, the great Nether Dragon Neltharaku awakens."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Nelrathaku, control of all units at Grim Batol, and you can summon the heroes Zuluhed and Nek'rosh from the Altar of Domination"
+      return "The demihero Nelrathaku, control of all units at Grim Batol, and you can summon Zuluhed and Nek'rosh from the Altar of Domination"
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -11,7 +11,7 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can train Khadgar from the Altar of Kings"
+      return "You can summon Khadgar from the Altar of Kings"
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -20,8 +20,8 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Keeper of the Eternal Watch", "At the end of the Second War, Khadgar remained in Draenor to seal the Dark Portal, effectively ending the conflict. He has been stranded deep in Outland ever since.", "ReplaceableTextures\\CommandButtons\\BTNMageWC2.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_BLACKTEMPLE.Unit))
-      set this.ResearchId = 0
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BLACKTEMPLE))
+      set this.ResearchId = 'R016'
       return this
     endmethod
   endstruct

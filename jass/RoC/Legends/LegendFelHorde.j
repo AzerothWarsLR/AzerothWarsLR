@@ -3,6 +3,8 @@
   globals
     Legend LEGEND_MAGTHERIDON
     Legend LEGEND_ZULUHED
+    Legend LEGEND_CHOGALL
+    Legend LEGEND_NEKROSH
     
     Legend LEGEND_BLACKROCKSPIRE
     Legend LEGEND_BLACKTEMPLE
@@ -18,6 +20,14 @@
     set LEGEND_ZULUHED = Legend.create()
     set LEGEND_ZULUHED.UnitType = 'O00Y'
     set LEGEND_ZULUHED.StartingXP = 7000
+
+    set LEGEND_NEKROSH = Legend.create()
+    set LEGEND_NEKROSH.UnitType = 'O01Q'
+    set LEGEND_NEKROSH.StartingXP = 7000
+
+    set LEGEND_CHOGALL = Legend.create()
+    set LEGEND_CHOGALL.UnitType = 'O01P'
+    set LEGEND_CHOGALL.StartingXP = 10800
 
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507

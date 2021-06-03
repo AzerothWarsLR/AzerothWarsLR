@@ -2,7 +2,6 @@ library LegendWarsong initializer OnInit requires Legend
 
   globals
     Legend LEGEND_GROM
-    Legend LEGEND_REXXAR
     Legend LEGEND_JERGOSH
     Legend LEGEND_MANNOROTH
     Legend LEGEND_STONEMAUL
@@ -13,9 +12,6 @@ library LegendWarsong initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
-    set LEGEND_REXXAR = Legend.create()
-    set LEGEND_REXXAR.UnitType = 'Orex'
-
     set LEGEND_GAHZRILLA = Legend.create()
     set LEGEND_GAHZRILLA.UnitType = 'H06Q'
     set LEGEND_GAHZRILLA.PlayerColor = PLAYER_COLOR_SNOW

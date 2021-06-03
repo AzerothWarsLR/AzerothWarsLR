@@ -4,6 +4,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     Legend LEGEND_CAIRNE
     Legend LEGEND_GAZLOWE
     Legend LEGEND_THRALL
+    Legend LEGEND_REXXAR
 
     Legend LEGEND_THUNDERBLUFF
     Legend LEGEND_DARKSPEARHOLD
@@ -30,7 +31,9 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_DARKSPEARHOLD.Unit = gg_unit_o02D_0254
     set LEGEND_DARKSPEARHOLD.IsCapital = true
 
-  
+    set LEGEND_REXXAR = Legend.create()
+    set LEGEND_REXXAR.UnitType = 'Orex'
+    set LEGEND_REXXAR.StartingXP = 7000
   endfunction
 
 endlibrary

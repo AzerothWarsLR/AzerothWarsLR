@@ -1,7 +1,7 @@
 library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup, LegendQuelthalas
 
   globals
-    private constant integer SYLVANAS_ID = 'uswb'
+    private constant integer SYLVANAS_ID = 'Usyl'
     private constant integer ALTAR_ID = 'uaod'
   endglobals
 
@@ -17,6 +17,10 @@ library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup
     private method OnComplete takes nothing returns nothing
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand second")
       call SetUnitAnimation(LEGEND_SUNWELL.Unit, "stand third")
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(SYLVANAS_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
