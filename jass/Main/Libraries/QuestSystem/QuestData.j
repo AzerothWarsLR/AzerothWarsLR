@@ -140,7 +140,11 @@ library QuestData requires QuestItemData, Event
         call Holder.modObjectLimit(this.researchId, 1)
       endif
       call this.OnAdd()
-      call QuestSetDescription(this.quest, this.description + "\n|cffffcc00Reward:|r " + this.CompletionDescription)
+      if this.FailurePopup != null then
+        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On completion:|r " + this.CompletionDescription + "\n|cffffcc00On failure:|r " + this.FailureDescription)
+      else
+        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On completion:|r " + this.CompletionDescription)
+      endif
       loop
         exitwhen i == this.questItemCount
         call this.questItems[i].OnAdd()
@@ -221,7 +225,11 @@ library QuestData requires QuestItemData, Event
       local QuestItemData tempQuestItemData
       local string display = ""
       if GetLocalPlayer() == this.Holder.Player then
-        set display = display + "\n|cffffcc00QUEST FAILED - " + this.Title + "|r\n"
+        if this.FailurePopup != null then
+          set display = display + "\n|cffffcc00QUEST FAILED - " + this.Title + "|r\n" + this.FailurePopup + "\n"
+        else
+          set display = display + "\n|cffffcc00QUEST FAILED - " + this.Title + "|r\n" + this.Description + "\n"
+        endif
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = this.questItems[i]

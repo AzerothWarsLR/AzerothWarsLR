@@ -38,6 +38,20 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
       endif
     endmethod
 
+    public static method OnAnyUnitDeath takes nothing returns nothing
+      local integer i = 0
+      local thistype loopItem
+      local Legend triggerLegend = GetTriggerLegend()
+      loop
+        exitwhen i == thistype.count
+        set loopItem = thistype.byIndex[i]
+        if loopItem.target == triggerLegend and loopItem.canFail == true then
+          set loopItem.Progress = QUEST_PROGRESS_FAILED
+        endif
+        set i = i + 1
+      endloop
+    endmethod
+
     public static method OnAnyLegendChangeOwner takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
@@ -67,6 +81,10 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
     local trigger trig = CreateTrigger()
     call OnLegendChangeOwner.register(trig) 
     call TriggerAddAction(trig, function QuestItemControlLegend.OnAnyLegendChangeOwner)
+
+    set trig = CreateTrigger()
+    call OnLegendPermaDeath.register(trig)
+    call TriggerAddAction(trig, function QuestItemControlLegend.OnAnyUnitDeath)
   endfunction  
 
 endlibrary

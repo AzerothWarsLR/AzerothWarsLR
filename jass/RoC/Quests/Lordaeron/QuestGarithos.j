@@ -12,7 +12,7 @@ library QuestGarithos requires QuestData, LordaeronSetup, LegendLordaeron
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "24 Knights and you can train Garithos from the Altar of Kings"
+      return "24 Knights and you can summon Garithos from the Altar of Kings"
     endmethod
 
     private method OnComplete takes nothing returns nothing

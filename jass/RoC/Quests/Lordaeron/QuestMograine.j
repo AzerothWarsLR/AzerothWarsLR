@@ -3,6 +3,7 @@ library QuestMograine requires LordaeronSetup, LegendLordaeron, QuestItemLegendD
 
   globals
     private constant integer ALTAR_ID = 'halt'
+    private constant integer HERO_ID = 'H01J'
   endglobals
 
   struct QuestMograine extends QuestData
@@ -12,6 +13,10 @@ library QuestMograine requires LordaeronSetup, LegendLordaeron, QuestItemLegendD
 
     private method operator CompletionDescription takes nothing returns string
       return "You can summon Alexandros Mograine from the " + GetObjectName(ALTAR_ID)
+    endmethod
+
+    private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -7,6 +7,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     Legend LEGEND_SYLVANAS
     Legend LEGEND_KORIALSTRASZ
     Legend LEGEND_KAEL
+    Legend LEGEND_LORTHEMAR
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
@@ -46,6 +47,10 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_KAEL.PlayerColor = PLAYER_COLOR_RED
     set LEGEND_KAEL.UnitType = 'Hkal'
     set LEGEND_KAEL.StartingXP = 7000
+
+    set LEGEND_LORTHEMAR = Legend.create()
+    set LEGEND_LORTHEMAR.UnitType = 'H02E'
+    set LEGEND_LORTHEMAR.StartingXP = 7000
   endfunction
 
 endlibrary

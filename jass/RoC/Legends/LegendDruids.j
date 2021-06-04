@@ -5,6 +5,7 @@ library LegendDruids initializer OnInit requires Legend
     Legend LEGEND_MALFURION
     Legend LEGEND_FANDRAL
     Legend LEGEND_URSOC
+    Legend LEGEND_TORTOLLA
 
     Legend LEGEND_NORDRASSIL
 
@@ -34,6 +35,10 @@ library LegendDruids initializer OnInit requires Legend
     set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
     set LEGEND_NORDRASSIL.Capturable = true
     set LEGEND_NORDRASSIL.IsCapital = true
+
+    set LEGEND_TORTOLLA = Legend.create()
+    set LEGEND_TORTOLLA.UnitType = 'H04U'
+    set LEGEND_TORTOLLA.StartingXP = 5400
   endfunction
 
 endlibrary

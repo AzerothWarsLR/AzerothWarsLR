@@ -1,10 +1,11 @@
-library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestCaptureGilneas, QuestKingdomOfMan
+library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestCaptureGilneas, QuestKingdomOfMan, QuestMograine
 
   public function OnInit takes nothing returns nothing
     //Early duel
     set FACTION_LORDAERON.StartingQuest = FACTION_LORDAERON.AddQuest(QuestShoresOfNorthrend.create())
-    call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
     call FACTION_LORDAERON.AddQuest(QuestThunderEagle.create())
+    call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
+    call FACTION_LORDAERON.AddQuest(QuestMograine.create())
     //Misc
     call FACTION_LORDAERON.AddQuest(QuestGarithos.create())
     call FACTION_LORDAERON.AddQuest(QuestCaptureGilneas.create("Anti-Isolationist Policy", "Gilneas has sealed itself behind its enormous city walls, refusing to join the North Alliance in its defense against the Scourge. The issue must be forced.", false))
