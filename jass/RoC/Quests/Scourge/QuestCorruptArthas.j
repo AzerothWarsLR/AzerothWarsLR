@@ -1,4 +1,4 @@
-library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSetup, ScourgeSetup
+library QuestCorruptArthas requires GeneralHelpers, LegendLordaeron, LordaeronSetup, QuestItemLegendDead, QuestItemEitherOf, QuestItemFactionDefeated
 
   globals
     private constant integer HERO_ID = 'Uear'
@@ -21,6 +21,7 @@ library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSe
       set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_PURPLE
       set LEGEND_ARTHAS.StartingXP = 7000
       set LEGEND_ARTHAS.UnitType = 'Uear'
+      call LEGEND_ARTHAS.ClearUnitDependencies()
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
 
@@ -30,10 +31,9 @@ library QuestCorruptArthas requires Persons, GameTimer, GeneralHelpers, LegionSe
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Culling", "When the last bastion of Lordaeron falls, Prince Arthas will abandon his people and join the Scourge as their champion.", "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
+      local thistype this = thistype.allocate("The Culling", "When the city of Stratholme, Prince Arthas will abandon his people and join the Scourge as their champion.", "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TYRSHAND))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendDead.create(LEGEND_ARTHAS), QuestItemFactionDefeated.create(FACTION_LORDAERON)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
