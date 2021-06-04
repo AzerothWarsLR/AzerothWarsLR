@@ -7,6 +7,19 @@ library GeneralHelpers
     private rect TempRect = Rect(0, 0, 0, 0)
   endglobals
 
+  function GetUnitAverageDamage takes unit whichUnit, integer weaponIndex returns integer
+    local real baseDamage = BlzGetUnitBaseDamage(whichUnit, weaponIndex)
+    local real numberOfDice = BlzGetUnitDiceNumber(whichUnit, weaponIndex)
+    local real sidesPerDie = BlzGetUnitDiceSides(whichUnit, weaponIndex)
+    return R2I(baseDamage + (numberOfDice + sidesPerDie*numberOfDice) / 2)
+  endfunction
+
+  //Returns as percentage.
+  function GetUnitDamageReduction takes unit whichUnit returns real
+    local real armor = BlzGetUnitArmor(whichUnit)
+    return (armor*0.06) / ((1+0.06)*armor)
+  endfunction
+
   function KillNeutralHostileUnitsInRadius takes real x, real y, real radius returns nothing
     local unit u
     call GroupEnumUnitsInRange(TempGroup, x, y, radius, null)
