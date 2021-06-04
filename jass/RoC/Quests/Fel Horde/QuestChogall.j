@@ -19,7 +19,7 @@ library QuestChogall requires QuestData, FelHordeSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Twilight's Hammer", "When Gul'dan was torn to shreds by Sargeras' minions, Cho'gall found refuge in the Old God city of Ahn'qiraj. He must be rescued from his new dark master so that he can rejoin the Fel Horde.", "ReplaceableTextures\\CommandButtons\\BTNOgreMagi.blp")
+      local thistype this = thistype.allocate("The Twilight's Hammer", "When Gul'dan was torn to shreds by Sargeras' minions, Cho'gall found refuge in the Old God city of Ahn'qiraj. He must be rescued from his new dark master so that he can rejoin the Fel Horde.", "ReplaceableTextures\\CommandButtons\\BTNHeroChogall.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n02F_1138)) //C'thun
       set this.ResearchId = 'R03G'
       return this
