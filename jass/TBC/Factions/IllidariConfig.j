@@ -10,7 +10,7 @@ library IllidariConfig initializer OnInit requires Faction, TeamSetup
     set FACTION_ILLIDARI = LiegeFaction.create("Illidari", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp", 2)
     set f = FACTION_ILLIDARI 
     set f.VictoryMusic = "HumanVictory"
-    set f.PresenceResearch = 'R05N'
+    set f.UndefeatedResearch = 'R05N'
     set f.Team = TEAM_ILLIDARI
   endfunction
     

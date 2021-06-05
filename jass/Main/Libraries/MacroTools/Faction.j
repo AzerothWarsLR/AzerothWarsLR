@@ -29,8 +29,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     private Team team = 0 //The team this Faction is in
     readonly integer xp = 0 //Stored by DistributeUnits and given out again by DistributeResources
     
-    readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is unoccupied
-    readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction slot is occupied
+    private integer defeatedResearch = 0  //This upgrade is researched for all players only if this Faction slot is defeated
+    private integer undefeatedResearch = 0 //This upgrade is researched for all players only if this Faction is undefeated
     
     readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
     readonly integer array objectList[100] //An index for objectLimits
@@ -86,6 +86,17 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     endmethod
 
     method operator ScoreStatus= takes integer value returns nothing
+      local integer i = 0
+      //Change defeated/undefeated researches
+      if value == SCORESTATUS_DEFEATED then
+        loop
+          exitwhen i == MAX_PLAYERS
+          call SetPlayerTechResearched(Player(i), this.defeatedResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.undefeatedResearch, 0)
+          set i = i + 1
+        endloop
+      endif
+      //Remove player from game if necessary
       if value == SCORESTATUS_DEFEATED and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
         call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
@@ -317,31 +328,39 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       endif
     endmethod
 
-    method operator PresenceResearch= takes integer research returns nothing
+    method operator UndefeatedResearch takes nothing returns integer
+      return this.undefeatedResearch
+    endmethod
+
+    method operator UndefeatedResearch= takes integer research returns nothing
       local integer i = 0
-      if this.presenceResearch == 0 then
-        set this.presenceResearch = research
+      if this.undefeatedResearch == 0 then
+        set this.undefeatedResearch = research
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.presenceResearch, 0)
+          call SetPlayerTechResearched(Player(i), this.undefeatedResearch, 1)
           set i = i + 1
         endloop                
       else
-        call BJDebugMsg("ERROR: attempted to set presence research for faction " + this.name + " but one is already set")
+        call BJDebugMsg("ERROR: attempted to set undefeated research for faction " + this.name + " but one is already set")
       endif
     endmethod
 
-    method operator AbsenceResearch= takes integer research returns nothing
+    method operator DefeatedResearch takes nothing returns integer
+      return this.defeatedResearch
+    endmethod
+
+    method operator DefeatedResearch= takes integer research returns nothing
       local integer i = 0
-      if this.absenceResearch == 0 then
-        set this.absenceResearch = research
+      if this.defeatedResearch == 0 then
+        set this.defeatedResearch = research
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.absenceResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.defeatedResearch, 0)
           set i = i + 1
         endloop
       else
-        call BJDebugMsg("ERROR: attempted to set absence research for faction " + this.name + " but one is already set")
+        call BJDebugMsg("ERROR: attempted to set defeated research for faction " + this.name + " but one is already set")
       endif
     endmethod                   
 

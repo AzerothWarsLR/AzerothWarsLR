@@ -9,7 +9,7 @@ library FrostwolfSetup requires Faction, TeamSetup
     set FACTION_FROSTWOLF = Faction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp", 3)
     set f = FACTION_FROSTWOLF
     set f.Team = TEAM_HORDE
-    set f.PresenceResearch = 'R05V'
+    set f.UndefeatedResearch = 'R05V'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

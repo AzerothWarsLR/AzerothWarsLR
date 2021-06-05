@@ -11,7 +11,7 @@ library StormwindSetup initializer OnInit requires Faction, TeamSetup, UnitTypes
     set f = FACTION_STORMWIND
     set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTHALLIANCE
-    set f.PresenceResearch = 'R060'
+    set f.UndefeatedResearch = 'R060'
 
     //Structures
     call f.registerObjectLimit('h06K', UNLIMITED)   //Town Hall

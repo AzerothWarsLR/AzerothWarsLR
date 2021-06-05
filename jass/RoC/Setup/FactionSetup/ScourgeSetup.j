@@ -10,7 +10,7 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     set FACTION_SCOURGE = Faction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp", 3)
     set f = FACTION_SCOURGE
     set f.Team = TEAM_SCOURGE
-    set f.PresenceResearch = 'R05K'
+    set f.UndefeatedResearch = 'R05K'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

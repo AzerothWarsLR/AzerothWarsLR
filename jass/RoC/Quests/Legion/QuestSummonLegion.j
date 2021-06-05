@@ -18,7 +18,7 @@ library QuestSummonLegion requires QuestData, ScourgeSetup, LegionSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      if Holder.presenceResearch == 0 then
+      if Holder.UndefeatedResearch == 0 then
         call BJDebugMsg("ERROR: " + Holder.Name + " has no presence research. QuestSummonLegion won't work")
       endif
     endmethod

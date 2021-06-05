@@ -11,7 +11,7 @@ library IronforgeSetup initializer OnInit requires Faction, TeamSetup
     set f = FACTION_IRONFORGE
     set f.VictoryMusic = "HeroicVictory"
     set f.Team = TEAM_SOUTHALLIANCE
-    set f.PresenceResearch = 'R05T'
+    set f.UndefeatedResearch = 'R05T'
 
     //Structures
     call f.registerObjectLimit('h07E', UNLIMITED)   //Town Hall

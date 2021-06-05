@@ -9,7 +9,7 @@ library QuelthalasSetup requires Faction, TeamSetup
     set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
     set f = FACTION_QUELTHALAS
     set f.Team = TEAM_NORTH_ALLIANCE
-    set f.PresenceResearch = 'R05U'
+    set f.UndefeatedResearch = 'R05U'
     set f.StartingGold = 150
     set f.StartingLumber = 500
  
