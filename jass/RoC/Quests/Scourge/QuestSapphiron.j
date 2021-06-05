@@ -7,7 +7,7 @@ library QuestSapphiron requires QuestData, ScourgeSetup
 
   struct QuestSapphiron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Sapphiron has been slain, and has been reanimated as a mighty Frost Worm under the command of the Scourge."
+      return "Sapphiron has been slain, and has been reanimated as a mighty Frost Wyrm under the command of the Scourge."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

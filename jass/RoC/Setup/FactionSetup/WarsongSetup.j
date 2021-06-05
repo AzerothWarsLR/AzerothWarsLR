@@ -46,8 +46,6 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o02K', 6)           //Bear Rider
     call f.registerObjectLimit('owyv', 8)           //Wind Rider
 
-    call f.registerObjectLimit('o01R', 1)           //Nazgrel
-
     call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
