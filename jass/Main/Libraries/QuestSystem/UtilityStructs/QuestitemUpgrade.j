@@ -5,9 +5,9 @@ library QuestItemUpgrade requires QuestItemData
     private static thistype array byIndex
     private integer objectId
 
-    static method create takes integer objectId returns thistype
+    static method create takes integer objectId, integer upgradeFromId returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "Upgrade your Dormant Spire to a " + GetObjectName(objectId)
+      set this.Description = "Upgrade your " + GetObjectName(upgradeFromId) + " to a " + GetObjectName(objectId)
       set this.objectId = objectId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

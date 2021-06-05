@@ -6,7 +6,7 @@ library QuestEmbassy requires QuestData, LegionSetup
 
   struct QuestEmbassy extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Your presence on this world is now strong enough to start invoking infernal machines"
+      return "Your presence on this world is now strong enough to start invoking infernal machines."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -26,8 +26,8 @@ library QuestEmbassy requires QuestData, LegionSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Infernal Foothold", "A stronger foothold in this world will be required to field the Burning Legion war machines", "ReplaceableTextures\\CommandButtons\\BTNDemonBlackCitadel.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create(OBJECT_ID))
+      local thistype this = thistype.allocate("Infernal Foothold", "A stronger foothold in this world will be required to field the Burning Legion war machines.", "ReplaceableTextures\\CommandButtons\\BTNDemonBlackCitadel.blp")
+      call this.AddQuestItem(QuestItemUpgrade.create(OBJECT_ID, 'u00N'))
       return this
     endmethod
   endstruct

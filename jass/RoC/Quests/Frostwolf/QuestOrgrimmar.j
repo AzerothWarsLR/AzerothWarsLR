@@ -26,7 +26,7 @@ library QuestOrgrimmar requires QuestData, FrostwolfSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "The Orcs led by Thrall grew up in human internment camps, and have never had a land to call their own. Now they must forge their own path.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create(STRUCTURE_ID))
+      call this.AddQuestItem(QuestItemUpgrade.create(STRUCTURE_ID, 'ofrt'))
       set this.ResearchId = 'R03S'
       return this
     endmethod
