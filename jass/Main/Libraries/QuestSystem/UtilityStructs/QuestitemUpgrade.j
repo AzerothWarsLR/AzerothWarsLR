@@ -4,6 +4,11 @@ library QuestItemUpgrade requires QuestItemData
     private static integer count = 0
     private static thistype array byIndex
     private integer objectId
+    private unit triggerUnit
+
+    method operator TriggerUnit takes nothing returns unit
+      return this.triggerUnit
+    endmethod
 
     static method create takes integer objectId, integer upgradeFromId returns thistype
       local thistype this = thistype.allocate()
@@ -21,7 +26,8 @@ library QuestItemUpgrade requires QuestItemData
       loop
         exitwhen i == thistype.count
         set loopQuestItem = thistype.byIndex[i]
-        if loopQuestItem.objectId == GetUnitTypeId(triggerUnit) and loopQuestItem.Holder.Player == GetOwningPlayer(GetTriggerUnit()) then
+        if not loopQuestItem.ProgressLocked and loopQuestItem.objectId == GetUnitTypeId(triggerUnit) and loopQuestItem.Holder.Player == GetOwningPlayer(GetTriggerUnit()) then
+          set loopQuestItem.triggerUnit = triggerUnit
           set loopQuestItem.Progress = QUEST_PROGRESS_COMPLETE
         endif
         set i = i + 1

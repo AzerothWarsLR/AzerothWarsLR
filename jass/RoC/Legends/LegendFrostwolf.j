@@ -8,6 +8,7 @@ library LegendFrostwolf initializer OnInit requires Legend
 
     Legend LEGEND_THUNDERBLUFF
     Legend LEGEND_DARKSPEARHOLD
+    Legend LEGEND_ORGRIMMAR
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -34,6 +35,8 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_REXXAR = Legend.create()
     set LEGEND_REXXAR.UnitType = 'Orex'
     set LEGEND_REXXAR.StartingXP = 7000
+
+    set LEGEND_ORGRIMMAR = Legend.create()
   endfunction
 
 endlibrary

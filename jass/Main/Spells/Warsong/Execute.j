@@ -4,7 +4,7 @@ library Execute initializer OnInit requires FilteredDamageEvents, GeneralHelpers
   globals
     private constant integer UNITTYPE_ID = 'o021'
     private constant string EFFECT = "Objects\\Spawnmodels\\Human\\HumanLargeDeathExplode\\HumanLargeDeathExplode.mdl"
-    private constant integer DAMAGE_MULT = 10
+    private constant integer DAMAGE_MULT = 5
   endglobals
 
   private function OnDamage takes nothing returns nothing
