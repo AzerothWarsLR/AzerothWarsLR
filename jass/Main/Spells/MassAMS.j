@@ -1,7 +1,7 @@
 library MassAMS initializer OnInit requires DummyCast
 
   globals
-    private constant integer ABIL_ID = 'A0JM'
+    private constant integer ABIL_ID = 'A0L4'
     private constant integer DUMMY_ABIL_ID = 'A0JN'
     private constant string DUMMY_ORDER_STRING = "antimagicshell"
     private constant real RADIUS = 200.
