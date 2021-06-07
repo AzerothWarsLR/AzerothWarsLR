@@ -37,6 +37,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_REXXAR.StartingXP = 7000
 
     set LEGEND_ORGRIMMAR = Legend.create()
+    set LEGEND_ORGRIMMAR.DeathMessage = "Orgrimmar has been demolished. With it dies the hopes and dreams of a wartorn race seeking refuge in a new world."
   endfunction
 
 endlibrary
