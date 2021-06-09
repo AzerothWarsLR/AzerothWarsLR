@@ -10,7 +10,7 @@ library QuestKultiras requires QuestData, DalaranSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units at Kul'tiras, and you can train Cannon Teams from the Workshop"
+      return "Control of all units at Kul'tiras, and you can train Cannon from the Workshop"
     endmethod
 
     private static method GrantToPlayer takes player whichPlayer returns nothing
