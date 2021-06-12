@@ -12,7 +12,7 @@ library QuestGazlowe requires QuestData, ControlPoint, FrostwolfSetup, LegendFro
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Gazlowe from the Altar of Storms and gain new Shredders abilities"
+      return "You can summon Gazlowe from the Altar of Storms, and Shredders learn to cast Pocket Factory, Saw Bombardment, and Emergency Repairs"
     endmethod
 
     private method OnComplete takes nothing returns nothing
