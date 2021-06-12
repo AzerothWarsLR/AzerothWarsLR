@@ -11,6 +11,7 @@ library HintConfig initializer OnInit requires Hint
     call Hint.create("There are water passageways at the edge of the map you can use to instantly move to the other side of the map.")
     call Hint.create("Every faction can build an item shop that contains useful purchasable items.")
     call Hint.create("When you unlock a hero through a Quest, you still need to summon that hero from an Altar.")
+    call Hint.create("Each player can control up to 4 heroes at a time, but you can only unlock that many by completing Quests.")
   endfunction
 
 endlibrary
