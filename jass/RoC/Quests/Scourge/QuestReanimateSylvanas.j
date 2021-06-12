@@ -7,7 +7,7 @@ library QuestReanimateSylvanas requires QuestData, ScourgeSetup, QuelthalasSetup
 
   struct QuestReanimateSylvanas extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Sylvanas has been slain. Her soul is ripped from her body, and she becomes the first of the High Elven Banshees."
+      return "Quel'thalas has fallen to the Scourge's onslaught. The Sunwell itself has been corrupted, cutting the quel'dorei off from the source of their longevity. Sylvanas is denied a clean death following her tenacious defense, and she becomes the first of the High Elven Banshees."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
