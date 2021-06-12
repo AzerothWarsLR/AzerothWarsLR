@@ -75,6 +75,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
         set u = FirstOfGroup(tempGroup)
         exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call ShowUnit(u, false)
           call SetUnitInvulnerable(u, true)
           call GroupAddUnit(thistype.SecondChanceUnits, u)
         endif
