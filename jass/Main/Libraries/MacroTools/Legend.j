@@ -2,7 +2,7 @@
 //A Legend might have other units it relies on to survive. If so, when it dies, it gets removed if those units are not under control.
 //There is a dummy ability to represent this.
 
-library Legend requires GeneralHelpers, Event
+library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
 
   globals
     private constant integer DUMMY_DIESWITHOUT = 'LEgn'
@@ -381,10 +381,21 @@ library Legend requires GeneralHelpers, Event
     //When any unit is trained, check if it has the unittype of a Legend, and assign it to that Legend if so
     private static method onUnitTrain takes nothing returns nothing
       local integer i = 0
+      local unit trainedUnit = GetTrainedUnit()
+      local player owningPlayer = GetOwningPlayer(trainedUnit)
+
+      //Just remove the hero outright if the player is already at their hero cap
+      if IsHeroUnitId(GetUnitTypeId(trainedUnit)) and GetHeroCount(owningPlayer) > GetHeroLimit(owningPlayer) then
+        call RemoveUnit(trainedUnit)
+        set trainedUnit = null
+        set owningPlayer = null
+        return
+      endif
+
       loop
         exitwhen i == thistype.count
-        if thistype.byIndex[i].UnitType == GetUnitTypeId(GetTrainedUnit()) then
-          set thistype.byIndex[i].Unit = GetTrainedUnit()
+        if thistype.byIndex[i].UnitType == GetUnitTypeId(trainedUnit) then
+          set thistype.byIndex[i].Unit = trainedUnit
           set LegendPreviousOwner = null
           set TriggerLegend = thistype.byIndex[i]
           call OnLegendChangeOwner.fire()
@@ -392,6 +403,9 @@ library Legend requires GeneralHelpers, Event
         endif
         set i = i + 1
       endloop
+
+      set trainedUnit = null
+      set owningPlayer = null
     endmethod
 
     private method destroy takes nothing returns nothing
