@@ -37,8 +37,8 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('ninc', UNLIMITED)   //Burning archer
     call f.registerObjectLimit('n04K', UNLIMITED)   //Succubus
     call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
-    call f.registerObjectLimit('ubot', 24) 	    //Undead Transport SHip
-    call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
+    call f.registerObjectLimit('ubot', 24) 	        //Undead Transport SHip
+    call f.registerObjectLimit('udes', 24) 	        //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship       
     call f.registerObjectLimit('o00B', 1)           //Jubei'thos    
     call f.registerObjectLimit('n04O', 6)           //Doomguard
@@ -47,6 +47,12 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
     call f.registerObjectLimit('n04U', 4)           //Dragon
     call f.registerObjectLimit('n03L', 4)           //Barge
+    call f.registerObjectLimit('n05R', 1)           //Felguard
+    call f.registerObjectLimit('n06H', 1)           //Pit Fiend
+    call f.registerObjectLimit('n07B', 1)           //Queen
+    call f.registerObjectLimit('n07D', 1)           //Maiden
+    call f.registerObjectLimit('n07o', 1)           //Terror
+    call f.registerObjectLimit('n07N', 1)           //Lord
 
     //Researches
     call f.registerObjectLimit('R02C', UNLIMITED)   //Acute Sensors
@@ -58,16 +64,9 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R03Z', UNLIMITED)   //War Plating
     call f.registerObjectLimit('R040', UNLIMITED)   //Flying horrors
     call f.registerObjectLimit('R043', UNLIMITED)   //Fel Guard Summoning
-    //Quests
-    call f.registerObjectLimit('R04B', UNLIMITED)   //Summoned legion
-
-    call f.registerObjectLimit('n05R', 1)           //Felguard
-    call f.registerObjectLimit('n06H', 1)           //Pit Fiend
-    call f.registerObjectLimit('n07B', 1)           //Queen
-    call f.registerObjectLimit('n07D', 1)           //Maiden
-    call f.registerObjectLimit('n07o', 1)           //Terror
-    call f.registerObjectLimit('n07N', 1)           //Lord
-
+    
+    //Heroes
+    call f.registerObjectLimit('U00L', 1)           //Anetheron
   endfunction
     
 endlibrary
