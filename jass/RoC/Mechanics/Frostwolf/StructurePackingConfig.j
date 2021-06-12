@@ -10,8 +10,8 @@ library StructurePackingConfig initializer OnInit requires StructurePacking
     call PackableStructure.create('otto', "buildings\\Orc\\TaurenTotem\\TaurenTotem.mdx", 'A09Z')
     call PackableStructure.create('osld', "buildings\\Orc\\SpiritLodge\\SpiritLodge.mdx", 'A09H')
     call PackableStructure.create('otrb', "buildings\\Orc\\TrollBurrow\\TrollBurrow.mdx", 'A0EV')
-    call PackableStructure.create('oshy', "buildings\\Orc\\GoblinShipyard\\GoblinShipyard.mdx", 'A0EX')
-    call PackableStructure.create('o01M', "buildings\\other\\AmmoDump\\AmmoDump.mdl", 'A07D')
+    call PackableStructure.create('oshy', "buildings\\other\\GoblinShipyard\\GoblinShipyard.mdx", 'A0EX')
+    call PackableStructure.create('o01M', "war3mapImported\\Building_GoblinOutpost.mdl", 'A07D')
   endfunction
 
 endlibrary
