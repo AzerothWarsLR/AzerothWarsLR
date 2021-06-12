@@ -1,5 +1,5 @@
 //when a team has 6 or fewer Control Points and no capitals, they are defeated.
-library ControlPointAndLegendDefeat initializer OnInit requires VictoryDefeat, ControlPoint, Event, GameTimer
+library ControlPointAndLegendDefeat initializer OnInit requires VictoryDefeat, ControlPoint, Event, GameTimer, Legend
 
   struct ControlPointAndLegendDefeat
     private static integer CPS_THRESHOLD = 6 //Factions are defeated at this many CPs
