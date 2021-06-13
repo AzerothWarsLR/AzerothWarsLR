@@ -7,7 +7,7 @@ library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Arthas gains 2000 experience and the Crown of Lordaeron"
+      return "Arthas gains 2000 experience and the Crown of Lordaeron, and he can no longer permanently die"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -17,6 +17,7 @@ library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron
       call AddHeroXP(LEGEND_ARTHAS.Unit, 2000, true)
       call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
+      call LEGEND_ARTHAS.ClearUnitDependencies()
     endmethod
 
     public static method create takes nothing returns thistype
