@@ -383,10 +383,15 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       local integer i = 0
       local unit trainedUnit = GetTrainedUnit()
       local player owningPlayer = GetOwningPlayer(trainedUnit)
+      local Person tempPerson
 
       //Just remove the hero outright if the player is already at their hero cap
       if IsHeroUnitId(GetUnitTypeId(trainedUnit)) and GetHeroCount(owningPlayer) > GetHeroLimit(owningPlayer) then
         call RemoveUnit(trainedUnit)
+        set tempPerson = Person.ByHandle(owningPlayer)
+        if tempPerson != 0 then
+          call tempPerson.ModObjectLimit(GetUnitTypeId(trainedUnit), 1) //This is a hack solution to the fact that removing heroes does not reduce their internal unit-type count.
+        endif
         set trainedUnit = null
         set owningPlayer = null
         return
