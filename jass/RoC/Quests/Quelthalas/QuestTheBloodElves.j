@@ -36,6 +36,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     private method OnFail takes nothing returns nothing
       local unit u
       local player holderPlayer = this.Holder.Person.Player
+      local Legend triggerLegend = GetTriggerLegend()
       set LEGEND_KAEL.StartingXP = GetHeroXP(LEGEND_ANASTERIAN.Unit)
       set LEGEND_LORTHEMAR.StartingXP = GetHeroXP(LEGEND_SYLVANAS.Unit)
       call this.Holder.obliterate()
@@ -55,6 +56,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
           call SetCameraPosition(GetRectCenterX(gg_rct_BloodElfSecondChanceSpawn), GetRectCenterY(gg_rct_BloodElfSecondChanceSpawn))
         endif
       endif
+      call SetTriggerLegend(triggerLegend)
     endmethod
 
     private method OnAdd takes nothing returns nothing
