@@ -21,6 +21,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
       call PlayThematicMusicBJ( "Sound\\Music\\mp3Music\\LichKingTheme.mp3" )
       set LEGEND_LICHKING.DeathMessage = "Icecrown Citadel been razed. Unfortunately, the Lich King has already vacated his unholy throne."
       set LEGEND_LICHKING.PermaDies = false
+      set LEGEND_LICHKING.Hivemind = false
       call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A0W8')
       call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A0L3')
       call UnitRemoveAbility(LEGEND_LICHKING.Unit, 'A002')
