@@ -27,7 +27,7 @@
 
     set LEGEND_CHOGALL = Legend.create()
     set LEGEND_CHOGALL.UnitType = 'O01P'
-    set LEGEND_CHOGALL.StartingXP = 10800
+    set LEGEND_CHOGALL.StartingXP = 8800
 
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507
