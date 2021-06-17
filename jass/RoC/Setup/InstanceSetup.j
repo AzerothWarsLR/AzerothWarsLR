@@ -17,11 +17,7 @@ library InstanceSetup requires Instance
 
     set tempInstance = Instance.create()
     set tempInstance.Name = "Scholomance"
-    call tempInstance.addRect(gg_rct_InstanceScholomance)   
-
-    set tempInstance = Instance.create()
-    set tempInstance.Name = "Ahn'qiraj"
-    call tempInstance.addRect(gg_rct_InstanceAhnqiraj)         
+    call tempInstance.addRect(gg_rct_InstanceScholomance)         
 
     set tempInstance = Instance.create()
     set tempInstance.Name = "Blackrock Depths"
