@@ -16,7 +16,8 @@
     set LEGEND_MAGTHERIDON.Unit = gg_unit_Nmag_0893
     call LEGEND_MAGTHERIDON.AddUnitDependency(gg_unit_o00F_0659)
     set LEGEND_MAGTHERIDON.DeathMessage = "Magtheridon’s eternal demon soul has been consumed, and his life permanently extinguished. The Lord of Outland has fallen."
-  
+    set LEGEND_MAGTHERIDON.Essential = true
+
     set LEGEND_ZULUHED = Legend.create()
     set LEGEND_ZULUHED.UnitType = 'O00Y'
     set LEGEND_ZULUHED.StartingXP = 7000

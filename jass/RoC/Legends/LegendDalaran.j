@@ -11,6 +11,7 @@ library LegendDalaran initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing 
     set LEGEND_JAINA = Legend.create()
     set LEGEND_JAINA.Unit = gg_unit_Hjai_1676
+    set LEGEND_JAINA.Essential = true
 
     set LEGEND_MEDIVH = Legend.create()
     set LEGEND_MEDIVH.UnitType = 'Haah'

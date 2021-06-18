@@ -25,6 +25,7 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
     set LEGEND_TYRANDE = Legend.create()
     set LEGEND_TYRANDE.Unit = gg_unit_Etyr_1241
     set LEGEND_TYRANDE.PlayerColor = PLAYER_COLOR_CYAN
+    set LEGEND_TYRANDE.Essential = true
 
     set LEGEND_SHANDRIS = Legend.create()
     set LEGEND_SHANDRIS.Unit = gg_unit_E002_1221

@@ -45,6 +45,7 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_ARTHAS.Unit = gg_unit_Hart_1342
     set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_BLUE
     call LEGEND_ARTHAS.AddUnitDependency(LEGEND_STRATHOLME.Unit)
+    set LEGEND_ARTHAS.Essential = true
   endfunction
 
 endlibrary

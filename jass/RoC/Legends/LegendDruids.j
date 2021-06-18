@@ -23,6 +23,7 @@ library LegendDruids initializer OnInit requires Legend
 
     set LEGEND_MALFURION = Legend.create()
     set LEGEND_MALFURION.UnitType = 'Efur'
+    set LEGEND_MALFURION.Essential = true
 
     set LEGEND_FANDRAL = Legend.create()
     set LEGEND_FANDRAL.Unit = gg_unit_E00K_2993

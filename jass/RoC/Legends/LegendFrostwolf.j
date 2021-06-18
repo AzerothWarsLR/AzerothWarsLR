@@ -22,6 +22,7 @@ library LegendFrostwolf initializer OnInit requires Legend
 
     set LEGEND_THRALL = Legend.create()
     set LEGEND_THRALL.Unit = gg_unit_Othr_1598
+    set LEGEND_THRALL.Essential = true
   
     set LEGEND_THUNDERBLUFF = Legend.create()
     set LEGEND_THUNDERBLUFF.Unit = gg_unit_o00J_1495

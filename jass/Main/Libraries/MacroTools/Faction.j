@@ -28,6 +28,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     private Person person = 0 //One-to-one relationship
     private Team team = 0 //The team this Faction is in
     readonly integer xp = 0 //Stored by DistributeUnits and given out again by DistributeResources
+    private integer storedExperience //Actual hero experience being held by this Faction outside of its heroes
     
     private integer defeatedResearch = 0  //This upgrade is researched for all players only if this Faction slot is defeated
     private integer undefeatedResearch = 0 //This upgrade is researched for all players only if this Faction is undefeated
@@ -48,6 +49,14 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     public integer StartingGold = 0
     public integer StartingLumber = 0
+
+    method operator StoredExperience takes nothing returns integer
+      return this.storedExperience
+    endmethod
+
+    method operator StoredExperience= takes integer value returns nothing
+      set this.storedExperience = value
+    endmethod
 
     method operator ObjectLimitCount takes nothing returns integer
       return this.objectCount

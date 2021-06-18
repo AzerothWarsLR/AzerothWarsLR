@@ -28,6 +28,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_ANASTERIAN.Unit = gg_unit_H00Q_0630
     set LEGEND_ANASTERIAN.PlayerColor = PLAYER_COLOR_MAROON
     call LEGEND_ANASTERIAN.AddUnitDependency(LEGEND_SUNWELL.Unit)
+    set LEGEND_ANASTERIAN.Essential = true
 
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
