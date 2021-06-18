@@ -37,6 +37,24 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
     private boolean hasCustomColor = false
     private playercolor playerColor
     private boolean isCapital = false
+    private boolean essential = false
+    private boolean enableMessages = true
+
+    public method operator Essential takes nothing returns boolean
+      return essential
+    endmethod
+
+    public method operator Essential= takes boolean value returns nothing
+      set this.essential = value
+    endmethod
+
+    public method operator EnableMessages takes nothing returns boolean
+      return enableMessages
+    endmethod
+
+    public method operator EnableMessages= takes boolean value returns nothing
+      set this.enableMessages = value
+    endmethod
 
     public static method operator Count takes nothing returns integer
       return thistype.count
@@ -262,7 +280,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       endif
     endmethod
 
-    private method permaDeath takes nothing returns nothing
+    method PermaDeath takes nothing returns nothing
       local effect tempEffect
       local string displayString
       set TriggerLegend = this
@@ -274,7 +292,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
       endif
-      if this.deathMessage != null and this.deathMessage != "" then
+      if this.deathMessage != null and this.deathMessage != "" and this.enableMessages == true then
         if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then
           set displayString = "\n|cffffcc00CAPITAL DESTROYED|r\n"
         else
@@ -332,7 +350,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       endif
 
       if permaDies or not IsUnitType(this.unit, UNIT_TYPE_HERO) then
-        call permaDeath()
+        call PermaDeath()
         return
       endif
 
@@ -348,7 +366,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
           call GroupRemoveUnit(tempGroup, u)
         endloop
         if anyOwned == false then
-          call permaDeath()
+          call PermaDeath()
         endif
         call DestroyGroup(tempGroup)
         set tempGroup = null
