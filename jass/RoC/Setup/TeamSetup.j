@@ -7,6 +7,7 @@ library TeamSetup requires Team
     Team TEAM_NIGHT_ELVES
     Team TEAM_SOUTH_ALLIANCE
     Team TEAM_FEL_HORDE
+    Team TEAM_NAGA
   endglobals
 
   public function OnInit takes nothing returns nothing 
@@ -29,6 +30,9 @@ library TeamSetup requires Team
 
     set TEAM_FEL_HORDE = Team.create("Fel Horde")
     set TEAM_FEL_HORDE.VictoryMusic = "DarkVictory"
+
+    set TEAM_NAGA = Team.create("Illidari")
+    set TEAM_NAGA.VictoryMusic = "DarkVictory"
   endfunction
 
 endlibrary
