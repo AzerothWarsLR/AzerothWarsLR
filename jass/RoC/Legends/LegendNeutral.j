@@ -26,6 +26,7 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_FOUNTAINOFHEALTH_DALARAN
     Legend LEGEND_FOUNTAINOFBLOOD
     Legend LEGEND_CENTAURKHAN
+    Legend LEGEND_IMMOLTHAR
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -122,6 +123,9 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_CENTAURKHAN = Legend.create()
     set LEGEND_CENTAURKHAN.Unit = gg_unit_ncnk_0573
+
+    set LEGEND_IMMOLTHAR = Legend.create()
+    set LEGEND_IMMOLTHAR.Unit = gg_unit_n04R_1914
   endfunction
 
 endlibrary
