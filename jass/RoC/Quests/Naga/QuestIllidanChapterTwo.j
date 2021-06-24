@@ -1,7 +1,7 @@
-//Illidan Goes to Aetheneum, Finds Immoltar and kills him
-library QuestIllidanChapterOne requires QuestData, QuestItemLegendInRect, QuestItemLegendDead, LegendNaga
+//Escapes Kalimdor, Find the Skull of Guldan
+library QuestIllidanChapterTwo requires QuestData, QuestItemLegendInRect, QuestItemLegendDead, LegendNaga
 
-  struct QuestIllidanChapterOne extends QuestData
+  struct QuestIllidanChapterTwo extends QuestData
     private QuestData questToDiscover
 
     private method operator CompletionPopup takes nothing returns string
@@ -9,7 +9,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendInRect, QuestI
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Chapter One - The Aetheneum Secrets"
+      return "Chapter Two - The Aetheneum Secrets"
     endmethod
 
     private method OnComplete takes nothing returns nothing
