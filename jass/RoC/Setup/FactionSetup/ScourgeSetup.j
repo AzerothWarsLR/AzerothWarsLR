@@ -42,7 +42,7 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('ugar', 8)           //Gargoyle
     call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
     call f.registerObjectLimit('unec', UNLIMITED)   //Necromancer
-    call f.registerObjectLimit('uobs', 2)           //Obsidian Statue
+    call f.registerObjectLimit('uobs', 4)           //Obsidian Statue
     call f.registerObjectLimit('ufro', 4)           //Frost Wyrm
     call f.registerObjectLimit('nska', UNLIMITED)   //Skeleton Archer
     call f.registerObjectLimit('h00H', 6)           //Death Knight
