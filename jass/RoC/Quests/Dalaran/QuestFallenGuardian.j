@@ -1,7 +1,7 @@
-library QuestFallenGuardian requires LegendNeutral, ControlPoint
+library QuestFallenGuardian requires LegendDalaran, LegendNeutral, ControlPoint
 
   globals
-    private constant integer RESEARCH_ID = 'R02R'
+    private constant integer RESEARCH_ID = 'R04K'
     private constant integer MEDIVH_ID = 'Haah'
   endglobals
 
@@ -14,10 +14,6 @@ library QuestFallenGuardian requires LegendNeutral, ControlPoint
       return "You can summon Medivh from the Altar of Knowledge"
     endmethod
 
-    private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
-    endmethod
-
     private method OnAdd takes nothing returns nothing
       call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
       call Holder.modObjectLimit(MEDIVH_ID, 1)
@@ -27,6 +23,7 @@ library QuestFallenGuardian requires LegendNeutral, ControlPoint
       local thistype this = thistype.allocate("The Fallen Guardian", "Medivh's body was corrupted by Sargeras at conception. Now that he is dead, the secrets of the Tomb of Sargeras and Sargeras combined might allow the mages of Dalaran to cleanse his spirit.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00J')))
+      set this.ResearchId = 'R04K'
       return this
     endmethod
   endstruct
