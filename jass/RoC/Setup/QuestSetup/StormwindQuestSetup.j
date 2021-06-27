@@ -6,7 +6,6 @@ library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, Que
     set FACTION_STORMWIND.StartingQuest = newQuest
     //Early duel
     call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
-    call FACTION_STORMWIND.AddQuest(QuestKhadgar.create())
     //Misc
     call FACTION_STORMWIND.AddQuest(QuestKultiras.create())
     call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
