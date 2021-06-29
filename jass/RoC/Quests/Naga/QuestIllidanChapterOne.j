@@ -1,5 +1,5 @@
 //Illidan Goes to Aetheneum, Finds Immoltar and kills him
-library QuestIllidanChapterOne requires QuestData, QuestItemLegendInRect, QuestItemLegendDead, LegendNaga
+library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga
 
   struct QuestIllidanChapterOne extends QuestData
     private QuestData questToDiscover
@@ -9,7 +9,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendInRect, QuestI
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Chapter One - The Aetheneum Secrets"
+      return "Chapter Two - The Skull of Gul'dan"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -17,9 +17,9 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendInRect, QuestI
     endmethod
 
     public static method create takes QuestData questToDiscover returns thistype
-      local thistype this = thistype.allocate("Chapter One - The Aetheneum Secrets", "The hidden Aetheneum library holds many secrets, Illidan most uncover in order to gain the power he craves", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "Aetheneum Library"))
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "Immol'thar Lair"))
+      local thistype this = thistype.allocate("Chapter One: The Aetheneum Secrets", "The hidden Aetheneum library holds many secrets, Illidan most uncover in order to gain the power he craves", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "the Aetheneum Library"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "Immol'thar's Lair"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_IMMOLTHAR))
       set this.questToDiscover = questToDiscover
       return this

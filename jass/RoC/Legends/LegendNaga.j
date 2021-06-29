@@ -6,7 +6,7 @@ library LegendNaga initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing
     set LEGEND_ILLIDAN = Legend.create()
-    set LEGEND_ILLIDAN.UnitType = 'Eill'
+    set LEGEND_ILLIDAN.Unit = gg_unit_Eill_0748
   endfunction
 
 endlibrary
