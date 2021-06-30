@@ -15,7 +15,7 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Chapter Three - Dwellers from the Deep", "Awakening the Naga's will give Illidan the army he needs to achieve his goals", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
+      local thistype this = thistype.allocate("Chapter Three: Dwellers from the Deep", "Awakening the Naga's will give Illidan the army he needs to achieve his goals", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_MaelstromAmbient, "the Maelstrom"))
       return this
     endmethod
