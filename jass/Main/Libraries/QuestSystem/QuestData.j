@@ -114,13 +114,21 @@ library QuestData requires QuestItemData, Event
         call QuestSetDiscovered(this.quest, false)
       endif
       
-      //If the quest isn't incomplete, hide all of the quest markers
-      if this.Progress != QUEST_PROGRESS_INCOMPLETE and GetLocalPlayer() == this.Holder.Player then
-        loop
-          exitwhen i == this.questItemCount
-          call questItems[i].Hide()
-          set i = i + 1
-        endloop
+      //If the quest is incomplete, show its markers. Otherwise, hide them.
+      if GetLocalPlayer() == this.Holder.Player then
+        if this.Progress != QUEST_PROGRESS_INCOMPLETE then
+          loop
+            exitwhen i == this.questItemCount
+            call questItems[i].Hide()
+            set i = i + 1
+          endloop
+        else 
+          loop
+            exitwhen i == this.questItemCount
+            call questItems[i].Show()
+            set i = i + 1
+          endloop
+        endif
       endif
     endmethod
 
