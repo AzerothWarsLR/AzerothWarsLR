@@ -1,5 +1,5 @@
 //Escapes Kalimdor, Find the Skull of Guldan
-library QuestIllidanChapterTwo requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga
+library QuestIllidanChapterTwo requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga, Artifact
 
   struct QuestIllidanChapterTwo extends QuestData
 
@@ -12,6 +12,7 @@ library QuestIllidanChapterTwo requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      set LEGEND_ILLIDAN.UnitType = 'Eevi'
     endmethod
 
     public static method create takes nothing returns thistype

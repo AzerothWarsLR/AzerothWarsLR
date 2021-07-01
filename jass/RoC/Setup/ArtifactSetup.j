@@ -64,9 +64,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddAbility(gg_unit_nbsm_1188, ARTIFACT_HOLDER_ABIL_ID)             //Book of Medivh Pedestal
     call UnitAddItem(gg_unit_nbsm_1188, ARTIFACT_BOOKOFMEDIVH.item) 
 
-    set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', DUMMY_X, DUMMY_Y))    //Skull of Gul'dan
-    call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_SKULLOFGULDAN.setDescription("Legion Quest")
+    set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', 21886, -25219))    //Skull of Gul'dan
+    call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
     set tempArtifact = Artifact.create(CreateItem('I004', DUMMY_X, DUMMY_Y))    //The Doomhammer
     call UnitAddItem(gg_unit_Othr_1598, tempArtifact.item)                      //Thrall
