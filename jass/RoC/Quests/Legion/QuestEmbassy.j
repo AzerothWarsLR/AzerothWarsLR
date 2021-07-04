@@ -16,7 +16,6 @@ library QuestEmbassy requires QuestData, LegionSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

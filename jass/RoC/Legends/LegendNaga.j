@@ -2,6 +2,9 @@ library LegendNaga initializer OnInit requires Legend
 
   globals
     Legend LEGEND_ILLIDAN
+    Legend LEGEND_VASHJ
+    Legend LEGEND_NAJENTUS
+    
     Legend LEGEND_OBELISK
     Legend LEGEND_NAZJATAR
     Legend LEGEND_VAULT
@@ -10,6 +13,12 @@ library LegendNaga initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_ILLIDAN = Legend.create()
     set LEGEND_ILLIDAN.Unit = gg_unit_Eill_0748
+
+    set LEGEND_VASHJ = Legend.create()
+    set LEGEND_VASHJ.Unit = gg_unit_Hvsh_2740
+
+    set LEGEND_NAJENTUS = Legend.create()
+    set LEGEND_NAJENTUS.Unit = gg_unit_U00S_2743
 
     set LEGEND_OBELISK = Legend.create()
     set LEGEND_OBELISK.Unit = gg_unit_nico_3620

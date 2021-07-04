@@ -39,12 +39,11 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('uabo', UNLIMITED)   //Abomination
     call f.registerObjectLimit('umtw', 6)           //Meat Wagon
     call f.registerObjectLimit('ucry', UNLIMITED)   //Crypt Fiend
-    call f.registerObjectLimit('ugar', 8)           //Gargoyle
+    call f.registerObjectLimit('ugar', 12)           //Gargoyle
     call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
     call f.registerObjectLimit('unec', UNLIMITED)   //Necromancer
     call f.registerObjectLimit('uobs', 4)           //Obsidian Statue
     call f.registerObjectLimit('ufro', 4)           //Frost Wyrm
-    call f.registerObjectLimit('nska', UNLIMITED)   //Skeleton Archer
     call f.registerObjectLimit('h00H', 6)           //Death Knight
     call f.registerObjectLimit('ubot', 24)	    //Undead Transport Ship
     call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
@@ -68,10 +67,11 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
     call f.registerObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
     call f.registerObjectLimit('R01X', UNLIMITED)   //Epidemic
-    call f.registerObjectLimit('R00P', UNLIMITED)   //Cold Arrows
     call f.registerObjectLimit('R06M', UNLIMITED)   //Titanomancy
     call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
     call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
+    call f.registerObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery
+    call f.registerObjectLimit('Rusm', UNLIMITED)   //SkeletalLongevity
   endfunction
     
 endlibrary
