@@ -132,8 +132,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("Stormwind and Lordaeron Quest")
 
     set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
-    call UnitAddAbility(gg_unit_H05B_0308, ARTIFACT_HOLDER_ABIL_ID)             //Darius Crowley
-    call UnitAddItem(gg_unit_H05B_0308, ARTIFACT_SCYTHEOFELUNE.item)            //Darius Crowley
+    call UnitAddAbility(gg_unit_Hgam_1450, ARTIFACT_HOLDER_ABIL_ID)             //Arugal
+    call UnitAddItem(gg_unit_Hgam_1450, ARTIFACT_SCYTHEOFELUNE.item)            //Arugal
   endfunction
 
 endlibrary
