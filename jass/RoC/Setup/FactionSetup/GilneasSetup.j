@@ -7,9 +7,9 @@ library GilneasSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_GILNEAS = Faction.create("Gilneas", PLAYER_COLOR_COAL, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNGreymane.blp", 2)
+    set FACTION_GILNEAS = Faction.create("Gilneas", PLAYER_COLOR_COAL, "|cff808080", "ReplaceableTextures\\CommandButtons\\BTNGreymane.blp", 2)
     set f = FACTION_GILNEAS
-    set f.Team = TEAM_NORTH_ALLIANCE
+    set f.Team = TEAM_GILNEAS
 
     //Structures
     call f.registerObjectLimit('h01R', UNLIMITED)   //Town Hall
