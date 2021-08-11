@@ -16,6 +16,7 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
+    set FACTION_GILNEAS.Team = TEAM_NORTH_ALLIANCE
     endmethod
 
     public static method create takes nothing returns thistype
