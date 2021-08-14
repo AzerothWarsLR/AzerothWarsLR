@@ -15,7 +15,7 @@ library QuestGilneasChapterOne requires QuestData, QuestItemLegendReachRect, Leg
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Chapter One: The Aetheneum Secrets", "The hidden Aetheneum library holds many secrets, Illidan most uncover in order to gain the power he craves", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
+      local thistype this = thistype.allocate("Chapter One: The Outskirts", "The road to Gilneas City is full of dangers, hurry to the city", "ReplaceableTextures\\CommandButtons\\BTNworgen.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_Chapter2Map, "Gilneas City"))
       return this
     endmethod
