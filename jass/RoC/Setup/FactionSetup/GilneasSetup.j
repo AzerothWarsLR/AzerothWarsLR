@@ -11,7 +11,7 @@ library GilneasSetup requires Faction, TeamSetup
     set f = FACTION_GILNEAS
     set f.Team = TEAM_GILNEAS
     set f.StartingGold = 150
-    set f.StartingLumber = 400
+    set f.StartingLumber = 200
 
     //Structures
     call f.registerObjectLimit('h01R', UNLIMITED)   //Town Hall
@@ -47,8 +47,7 @@ library GilneasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n06Q', 12)          //Royal Guard
 
     //Upgrades
-
-
+    call f.registerObjectLimit('R04O', UNLIMITED)   //Cleric Training
   endfunction
     
 endlibrary
