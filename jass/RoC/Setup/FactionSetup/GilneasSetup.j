@@ -48,6 +48,7 @@ library GilneasSetup requires Faction, TeamSetup
 
     //Upgrades
     call f.registerObjectLimit('R04O', UNLIMITED)   //Cleric Training
+    call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
   endfunction
     
 endlibrary
