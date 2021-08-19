@@ -45,10 +45,6 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p = Person.create(Player(20))
     set p.Faction = FACTION_GILNEAS
 
-    set p = Person.create(Player(19))
-    set p.Faction = FACTION_GILNEASFRONT
-
-
     call Person.create(Player(14))
     call Person.create(Player(16))
 
