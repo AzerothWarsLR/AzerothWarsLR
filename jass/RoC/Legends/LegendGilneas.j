@@ -7,7 +7,7 @@ library LegendGilneas initializer OnInit requires Legend
     
     Legend LEGEND_LIGHTDAWN
     Legend LEGEND_GILNEASCASTLE
-    Legend LEGEND_OBELISK2
+
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -29,11 +29,6 @@ library LegendGilneas initializer OnInit requires Legend
     set LEGEND_GILNEASCASTLE.Unit = gg_unit_h04I_0101
     set LEGEND_GILNEASCASTLE.DeathMessage = "The Gilneas castle has fallen"
     set LEGEND_GILNEASCASTLE.IsCapital = true
-
-
-    set LEGEND_OBELISK2 = Legend.create()
-    set LEGEND_OBELISK2.Unit = gg_unit_nico_3784
-    set LEGEND_OBELISK2.IsCapital = true
   endfunction
 
 endlibrary

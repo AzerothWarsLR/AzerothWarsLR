@@ -2,7 +2,7 @@
 library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead
 
    globals
-    private constant integer RITUAL_ID = 'A0KY'
+    private constant integer RESEARCH_ID = 'R02R'
   endglobals
  
   struct QuestGilneasChapterThree extends QuestData
@@ -16,11 +16,17 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    set FACTION_GILNEAS.Team = TEAM_NORTH_ALLIANCE
+    call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
 
+    private method OnAdd takes nothing returns nothing
+      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+    endmethod
+
+
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Chapter Three: The dark forest", "Killing Arugal will bring an end to the Worgen Curse, he holds the Scythe of Elune that will give the worgen their sanity", "ReplaceableTextures\\CommandButtons\\BTNfinger of death .blp")
+      local thistype this = thistype.allocate("Chapter Three: The Blackwald", "Killing Arugal will bring an end to the Worgen Curse, he holds the Scythe of Elune that will give the worgen their sanity", "ReplaceableTextures\\CommandButtons\\BTNfinger of death .blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_StartQuest3, "The city is safe"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ARUGAL))
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GENN))

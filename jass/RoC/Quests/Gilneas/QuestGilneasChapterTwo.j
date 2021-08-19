@@ -1,6 +1,10 @@
 //Survive and defend the city
 library QuestGilneasChapterTwo requires QuestData, QuestItemTime, Artifact
 
+  globals
+    private constant integer DARIUS_ID = 'Hpb2'
+  endglobals
+
   struct QuestGilneasChapterTwo extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
@@ -12,6 +16,7 @@ library QuestGilneasChapterTwo requires QuestData, QuestItemTime, Artifact
     endmethod
 
     private method OnComplete takes nothing returns nothing
+    call Holder.modObjectLimit(DARIUS_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
