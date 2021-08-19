@@ -1,5 +1,5 @@
-//Escapes Kalimdor, Find the Skull of Guldan
-library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga
+//Kill Arugal
+library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead
 
    globals
     private constant integer RITUAL_ID = 'A0KY'
@@ -20,10 +20,10 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Chapter Three: Dwellers from the Deep", "Awakening the Naga's will give Illidan the army he needs to achieve his goals", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_StartQuest3, "the exit"))
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_MaelstromAmbient, "the Maelstrom"))
-      call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, true))
+      local thistype this = thistype.allocate("Chapter Three: The dark forest", "Killing Arugal will bring an end to the Worgen Curse, he holds the Scythe of Elune that will give the worgen their sanity", "ReplaceableTextures\\CommandButtons\\BTNfinger of death .blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_StartQuest3, "The city is safe"))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ARUGAL))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GENN))
       return this
     endmethod
   endstruct

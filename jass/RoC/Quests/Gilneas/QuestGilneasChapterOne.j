@@ -17,6 +17,7 @@ library QuestGilneasChapterOne requires QuestData, QuestItemLegendReachRect, Leg
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Chapter One: The Outskirts", "The road to Gilneas City is full of dangers, hurry to the city", "ReplaceableTextures\\CommandButtons\\BTNworgen.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_Chapter2Map, "Gilneas City"))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_TESS))
       return this
     endmethod
   endstruct
