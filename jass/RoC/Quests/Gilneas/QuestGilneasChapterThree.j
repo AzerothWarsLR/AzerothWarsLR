@@ -28,7 +28,7 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Chapter Three: The Blackwald", "Killing Arugal will bring an end to the Worgen Curse, he holds the Scythe of Elune that will give the worgen their sanity", "ReplaceableTextures\\CommandButtons\\BTNfinger of death .blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_StartQuest3, "The city is safe"))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_ARUGAL))
+      call this.AddQuestItem(QuestItemLegendHasArtifact.create(LEGEND_TESS, ARTIFACT_SCYTHEOFELUNE))
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GENN))
       return this
     endmethod

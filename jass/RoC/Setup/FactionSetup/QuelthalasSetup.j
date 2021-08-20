@@ -6,7 +6,7 @@ library QuelthalasSetup requires Faction, TeamSetup
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 2)
+    set FACTION_QUELTHALAS = Faction.create("Quel'thalas", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNSylvanusWindrunner.blp", 0)
     set f = FACTION_QUELTHALAS
     set f.Team = TEAM_NORTH_ALLIANCE
     set f.UndefeatedResearch = 'R05U'

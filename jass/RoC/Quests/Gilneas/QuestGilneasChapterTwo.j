@@ -20,7 +20,7 @@ library QuestGilneasChapterTwo requires QuestData, QuestItemTime, Artifact
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Chapter Two: The Defense of Gilneas", "Defend the city until a cure for the curse of worgen is found. Do not let the Cathedral and Castle be destroyed", "ReplaceableTextures\\CommandButtons\\BTNGuldanSkull.blp")
+      local thistype this = thistype.allocate("Chapter Two: The Defense of Gilneas", "Defend the city until a cure for the curse of worgen is found. Do not let the Cathedral and Castle be destroyed", "ReplaceableTextures\\CommandButtons\\BTNGilneanCastle.blp")
      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_Chapter2Start, "Base camp")) 
      call this.AddQuestItem(QuestItemTime.create(1560))
       return this

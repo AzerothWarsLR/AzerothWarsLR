@@ -7,7 +7,7 @@ library FelHordeSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_FEL_HORDE = Faction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp", 6)
+    set FACTION_FEL_HORDE = Faction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp", 0)
     set f = FACTION_FEL_HORDE
     set f.Team = TEAM_FEL_HORDE
     set f.UndefeatedResearch = 'R05L'

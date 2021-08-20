@@ -7,7 +7,7 @@ library GilneasSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_GILNEAS = Faction.create("Gilneas", PLAYER_COLOR_COAL, "|cff808080", "ReplaceableTextures\\CommandButtons\\BTNGreymane.blp", 2)
+    set FACTION_GILNEAS = Faction.create("Gilneas", PLAYER_COLOR_COAL, "|cff808080", "ReplaceableTextures\\CommandButtons\\BTNGreymane.blp", 0)
     set f = FACTION_GILNEAS
     set f.Team = TEAM_GILNEAS
     set f.StartingGold = 150
@@ -44,10 +44,12 @@ library GilneasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n029', 12)          //Sea Giant
     call f.registerObjectLimit('h03L', UNLIMITED)   //Shotgunner
     call f.registerObjectLimit('o02F', 6)           //Mangonel
+    call f.registerObjectLimit('n06Z', 6)           //Mangonel
     call f.registerObjectLimit('n06Q', 12)          //Royal Guard
 
     //Upgrades
     call f.registerObjectLimit('R04O', UNLIMITED)   //Cleric Training
+    call f.registerObjectLimit('R04P', UNLIMITED)   //Scythe Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
   endfunction
     

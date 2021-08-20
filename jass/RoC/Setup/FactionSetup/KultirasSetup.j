@@ -7,7 +7,7 @@ library KultirasSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_KULTIRAS = Faction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 3)
+    set FACTION_KULTIRAS = Faction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 0)
     set f = FACTION_KULTIRAS
     set f.Team = TEAM_SOUTH_ALLIANCE
 
