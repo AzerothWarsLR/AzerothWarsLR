@@ -8,16 +8,17 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
   struct QuestGilneasChapterThree extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "Illidan must awaken the Naga from the depth of the ocean"
+      return "Tess must acquire the Scythe of Elune without killing Genn Greymane"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Nazjatar and the Naga's loyalty"
+      return "A return to the Alliance of Lordaeron"
     endmethod
 
     private method OnComplete takes nothing returns nothing
     call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+    set FACTION_GILNEAS.Team = TEAM_NORTH_ALLIANCE
     endmethod
 
     private method OnAdd takes nothing returns nothing
