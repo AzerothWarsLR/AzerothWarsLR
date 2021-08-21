@@ -13,6 +13,7 @@ library LegendNaga initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_ILLIDAN = Legend.create()
     set LEGEND_ILLIDAN.Unit = gg_unit_Eill_0748
+    set LEGEND_ILLIDAN.PlayerColor = PLAYER_COLOR_PURPLE
 
     set LEGEND_VASHJ = Legend.create()
     set LEGEND_VASHJ.Unit = gg_unit_Hvsh_2740

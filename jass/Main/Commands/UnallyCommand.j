@@ -7,8 +7,11 @@ library Unally initializer OnInit requires Team, Persons, Faction
   endglobals
 
 	private function Actions takes nothing returns nothing
-    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
-    call triggerPerson.Faction.Unally()
+   local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
+
+    if AreAllianceActive == true then
+      call triggerPerson.Faction.Unally()
+    endif
   endfunction
 
 	private function OnInit takes nothing returns nothing
