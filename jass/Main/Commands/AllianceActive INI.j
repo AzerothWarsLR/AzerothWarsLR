@@ -1,12 +1,16 @@
-library AllianceActive initializer OnInit requires Team
+library AllianceActiveINI initializer OnInit requires Team
+
+   globals
+    boolean AreAllianceActive
+   endglobals
 
  private function Actions takes nothing returns nothing
-    set AreAllianceActive = true
+    set AreAllianceActive = false
  endfunction
 
 	private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
-    call TriggerRegisterTimerEventSingle( trig, 1680.00 )
+    call TriggerRegisterTimerEventSingle( trig, 10.00 )
     call TriggerAddAction( trig, function Actions )
  endfunction
 

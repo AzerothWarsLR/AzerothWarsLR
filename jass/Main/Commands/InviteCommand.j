@@ -44,7 +44,6 @@ library InviteCommand initializer OnInit requires Team
       endif
     else 
       call DisplayTextToPlayer(senderPerson.Player, 0, 0, "You cannot ally yet")
-
     endif 
   endfunction
 

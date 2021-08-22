@@ -11,6 +11,8 @@ library Unally initializer OnInit requires Team, Persons, Faction
 
     if AreAllianceActive == true then
       call triggerPerson.Faction.Unally()
+    else 
+      call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You cannot unally yet")
     endif
   endfunction
 
