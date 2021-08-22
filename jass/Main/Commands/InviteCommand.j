@@ -4,6 +4,7 @@ library InviteCommand initializer OnInit requires Team
 
 	globals
     private constant string COMMAND = "-invite "
+    boolean AreAllianceActive = false
   endglobals
 
 	private function Actions takes nothing returns nothing
