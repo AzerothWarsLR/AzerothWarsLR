@@ -12,21 +12,22 @@ library KultirasSetup requires Faction, TeamSetup
     set f.Team = TEAM_SOUTH_ALLIANCE
 
     //Structures
-    call f.registerObjectLimit('h01R', UNLIMITED)   //Town Hall
-    call f.registerObjectLimit('h023', UNLIMITED)   //Keep
-    call f.registerObjectLimit('h02C', UNLIMITED)   //Castle
-    call f.registerObjectLimit('h02F', UNLIMITED)   //Farm
-    call f.registerObjectLimit('h02X', UNLIMITED)   //Altar
-    call f.registerObjectLimit('h039', UNLIMITED)   //Scout Tower
-    call f.registerObjectLimit('h03A', UNLIMITED)   //Guard Tower
-    call f.registerObjectLimit('h03B', UNLIMITED)   //Cannon Tower
-    call f.registerObjectLimit('h03C', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('h03D', UNLIMITED)   //Arcane Sanctum
-    call f.registerObjectLimit('h03E', UNLIMITED)   //Keep
-    call f.registerObjectLimit('n008', UNLIMITED)   //Marketplace
-    call f.registerObjectLimit('h03H', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('h03O', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('h03Q', UNLIMITED)   //Garrison
+    call f.registerObjectLimit('h062', UNLIMITED)   //Town Hall
+    call f.registerObjectLimit('h064', UNLIMITED)   //Keep
+    call f.registerObjectLimit('h06l', UNLIMITED)   //Castle
+    call f.registerObjectLimit('h07N', UNLIMITED)   //Farm
+    call f.registerObjectLimit('h07M', UNLIMITED)   //Altar
+    call f.registerObjectLimit('h07R', UNLIMITED)   //Scout Tower
+    call f.registerObjectLimit('h07S', UNLIMITED)   //Guard Tower
+    call f.registerObjectLimit('h07T', UNLIMITED)   //Improved Guard Tower
+    call f.registerObjectLimit('h04U', UNLIMITED)   //Cannon Tower
+    call f.registerObjectLimit('h07V', UNLIMITED)   //Improved Cannon Tower
+    call f.registerObjectLimit('h07O', UNLIMITED)   //Blacksmith
+    call f.registerObjectLimit('h07Q', UNLIMITED)   //Arcane Sanctum
+    call f.registerObjectLimit('n07H', UNLIMITED)   //Marketplace
+    call f.registerObjectLimit('h07W', UNLIMITED)   //Shipyard
+    call f.registerObjectLimit('h06R', UNLIMITED)   //Garrison
+    call f.registerObjectLimit('h07P', UNLIMITED)   //Workshop
     
     //Units
     call f.registerObjectLimit('h01E', UNLIMITED)   //Deckhand
@@ -37,9 +38,9 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h04M', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
     call f.registerObjectLimit('n009', UNLIMITED)   //Revenant of the Tides
-    call f.registerObjectLimit('n03L', 6)           //Storm Sorcerer
+    call f.registerObjectLimit('n07G', 6)           //muskateer
     call f.registerObjectLimit('n029', 12)          //Sea Giant
-    call f.registerObjectLimit('h04N', UNLIMITED)   //Musketeer
+    call f.registerObjectLimit('h06J', UNLIMITED)   //Sniper
     call f.registerObjectLimit('o01A', 6)           //Cannon Team
     call f.registerObjectLimit('h04O', 12)          //Bomber
     call f.registerObjectLimit('h04W', 4)           //Siege Tank

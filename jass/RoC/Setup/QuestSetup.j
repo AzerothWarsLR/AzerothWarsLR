@@ -15,6 +15,7 @@ library QuestSetup requires DalaranQuestSetup, DruidsQuestSetup, FelHordeQuestSe
     call WarsongQuestSetup_OnInit()
     call NagaQuestSetup_OnInit()
     call GilneasQuestSetup_OnInit()
+    call KultirasQuestSetup_OnInit()
   endfunction
 
 endlibrary
