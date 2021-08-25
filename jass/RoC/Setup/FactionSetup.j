@@ -16,6 +16,9 @@ library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, Frostwol
     call KultirasSetup_OnInit()
     call NagaSetup_OnInit()
     call GilneasSetup_OnInit()
+    call TrollSetup_OnInit()
+    call GoblinSetup_OnInit()
+    call TwilightSetup_OnInit()
   endfunction
 
 endlibrary

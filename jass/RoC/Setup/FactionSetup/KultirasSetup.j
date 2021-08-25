@@ -9,7 +9,7 @@ library KultirasSetup requires Faction, TeamSetup
     
     set FACTION_KULTIRAS = Faction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 0)
     set f = FACTION_KULTIRAS
-    set f.Team = TEAM_KULTIRAS
+    set f.Team = TEAM_ALLIANCE
 
     //Structures
     call f.registerObjectLimit('h062', UNLIMITED)   //Town Hall

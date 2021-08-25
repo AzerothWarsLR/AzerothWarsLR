@@ -10,7 +10,7 @@ library LegionSetup requires Faction, TeamSetup
     set FACTION_LEGION = Faction.create("Legion", PLAYER_COLOR_PEANUT, "|CFFBF8F4F","ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp", 0)
     set f = FACTION_LEGION
     set f.UndefeatedResearch = 'R04T'
-    set f.Team = TEAM_SCOURGE
+    set f.Team = TEAM_LEGION
     set f.StartingGold = 150
     set f.StartingLumber = 500
     //Structures

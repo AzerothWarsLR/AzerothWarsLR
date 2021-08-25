@@ -10,7 +10,7 @@ library DalaranSetup requires Faction, TeamSetup
     set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp", 0)
     set f = FACTION_DALARAN 
     set f.UndefeatedResearch = 'R05N'
-    set f.Team = TEAM_NORTH_ALLIANCE
+    set f.Team = TEAM_ALLIANCE
     set f.StartingGold = 150
     set f.StartingLumber = 500
     

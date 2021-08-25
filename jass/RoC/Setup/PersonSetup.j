@@ -42,14 +42,24 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p = Person.create(Player(15))
     set p.Faction = FACTION_NAGA
 
+    set p = Person.create(Player(17))
+    set p.Faction = FACTION_TROLL
+
+    set p = Person.create(Player(19))
+    set p.Faction = FACTION_TWILIGHT
+
     set p = Person.create(Player(20))
     set p.Faction = FACTION_GILNEAS
+
+    set p = Person.create(Player(21))
+    set p.Faction = FACTION_GOBLIN
 
     set p = Person.create(Player(22))
     set p.Faction = FACTION_KULTIRAS
 
     call Person.create(Player(14))
-    call Person.create(Player(16))
+    call Person.create(Player(13))
+    call Person.create(Player(12))
 
   endfunction
 

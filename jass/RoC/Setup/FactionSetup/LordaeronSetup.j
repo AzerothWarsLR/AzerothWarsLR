@@ -8,7 +8,7 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     local Faction f
     set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 0)
     set f = FACTION_LORDAERON
-    set f.Team = TEAM_NORTH_ALLIANCE
+    set f.Team = TEAM_ALLIANCE
     set f.UndefeatedResearch = 'R05M'
     set f.StartingGold = 150
     set f.StartingLumber = 500

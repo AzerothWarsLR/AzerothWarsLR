@@ -18,7 +18,7 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     private method OnComplete takes nothing returns nothing
     call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
     call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-    set FACTION_GILNEAS.Team = TEAM_NORTH_ALLIANCE
+    set FACTION_GILNEAS.Team = TEAM_ALLIANCE
     endmethod
 
     private method OnAdd takes nothing returns nothing
