@@ -10,6 +10,8 @@ library KultirasSetup requires Faction, TeamSetup
     set FACTION_KULTIRAS = Faction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 0)
     set f = FACTION_KULTIRAS
     set f.Team = TEAM_ALLIANCE
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     //Structures
     call f.registerObjectLimit('h062', UNLIMITED)   //Town Hall
@@ -37,13 +39,14 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('e007', UNLIMITED)   //Thornspeaker
     call f.registerObjectLimit('h04M', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
+    call f.registerObjectLimit('e00B', UNLIMITED)   //Thornspeaker Bear
     call f.registerObjectLimit('n009', UNLIMITED)   //Revenant of the Tides
     call f.registerObjectLimit('n07G', 6)           //muskateer
     call f.registerObjectLimit('n029', 12)          //Sea Giant
     call f.registerObjectLimit('h06J', UNLIMITED)   //Sniper
     call f.registerObjectLimit('o01A', 6)           //Cannon Team
     call f.registerObjectLimit('h04O', 12)          //Bomber
-    call f.registerObjectLimit('h04W', 4)           //Siege Tank
+    call f.registerObjectLimit('h04W', 3)           //Siege Tank
 
     //Upgrades
     call f.registerObjectLimit('R001', UNLIMITED)   //Rising Tides

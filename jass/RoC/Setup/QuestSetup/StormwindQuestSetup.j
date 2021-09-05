@@ -1,4 +1,4 @@
-library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, QuestHonorHold, QuestKultiras, QuestStromgarde, QuestKingdomOfManStormwind
+library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, QuestHonorHold, QuestStromgarde, QuestKingdomOfManStormwind
 
   public function OnInit takes nothing returns nothing
     //Setup
@@ -7,7 +7,6 @@ library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, Que
     //Early duel
     call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
     //Misc
-    call FACTION_STORMWIND.AddQuest(QuestKultiras.create())
     call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
     call FACTION_STORMWIND.AddQuest(QuestKingdomOfManStormwind.create())
   endfunction
