@@ -16,9 +16,6 @@ library VictoryDefeat requires GameTimer
     loop
       exitwhen i == Team.Count
       set loopTeam = Team.ByIndex(i)
-      if loopTeam.PlayerCount > 0 and loopTeam.ScoreStatus == SCORESTATUS_NORMAL then
-        set loopTeam.ScoreStatus = SCORESTATUS_VICTORIOUS
-      endif
       set i = i + 1
     endloop
     call PlayThematicMusic(loopTeam.VictoryMusic)
@@ -30,7 +27,6 @@ library VictoryDefeat requires GameTimer
       call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\nTEAM DEFEAT!|r\nThe " + whichTeam.Name + " has been defeated.")
       call StartSound(gg_snd_GameFound)
     endif
-    set whichTeam.ScoreStatus = SCORESTATUS_DEFEATED
   endfunction
 
 endlibrary

@@ -60,35 +60,6 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       return total
     endmethod
 
-    //If a team's score status becomes victorious, they get Gold Gathered equal to their Control Point count plus seconds spent in game.
-    //If they're defeated, they instead only get Gold Gathered equal to time spent in game.
-    method operator ScoreStatus= takes integer value returns nothing
-      local integer i = 0
-      local Faction loopFaction
-      local integer cpCount = this.ControlPointCount
-
-      set this.scoreStatus = value
-      loop
-        exitwhen i == this.factions.size
-        set loopFaction = Faction(this.factions[i])
-        if loopFaction.Person != 0 then
-          if GetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED) == 0 then //Don't change score if it has already been set
-            if value == SCORESTATUS_VICTORIOUS then
-              call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()) + cpCount)
-            elseif value == SCORESTATUS_DEFEATED then
-              call SetPlayerState(loopFaction.Player, PLAYER_STATE_GOLD_GATHERED, R2I(GetGameTime()))
-            endif
-          endif
-          if loopFaction.ScoreStatus != value and loopFaction.ScoreStatus == SCORESTATUS_NORMAL then
-            set loopFaction.ScoreStatus = value
-          endif
-        endif
-        set i = i + 1 
-      endloop
-      set thistype.triggerTeam = this
-      call TeamScoreStatusChanged.fire()
-    endmethod
-
     method operator Name takes nothing returns string
       return this.name
     endmethod
