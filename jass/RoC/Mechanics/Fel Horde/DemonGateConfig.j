@@ -22,7 +22,6 @@ library DemonGateConfig initializer OnInit requires DemonGate
     
     call DemonGate.create(gg_unit_n000_0717)
     call DemonGate.create(gg_unit_n05F_3538)
-    call DemonGate.create(gg_unit_n04I_1038)
   endfunction
 
 endlibrary

@@ -20,6 +20,7 @@ library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, Frostwol
     call GoblinSetup_OnInit()
     call TwilightSetup_OnInit()
     call ScarletSetup_OnInit()
+    call ForsakenSetup_OnInit()
   endfunction
 
 endlibrary

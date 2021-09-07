@@ -30,6 +30,9 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p = Person.create(Player(8))
     set p.Faction = FACTION_GOBLIN
 
+    set p = Person.create(Player(9))
+    set p.Faction = FACTION_FORSAKEN
+
     set p = Person.create(Player(10))
     set p.Faction = FACTION_STORMWIND
 

@@ -31,7 +31,6 @@ library QuestSentinelsKillWarsong requires SentinelsSetup, LegendWarsong, Displa
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Green-skinned Brutes", "The Warsong Clan has arrived near Ashenvale and begun threatening the wilds. These invaders must be repelled.", "ReplaceableTextures\\CommandButtons\\BTNRaider.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LUMBERCAMP))
       return this
     endmethod
   endstruct
