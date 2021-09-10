@@ -48,6 +48,7 @@ library QuestGnomeregan requires QuestData, IronforgeSetup, QuestItemKillUnit
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The City of Invention", "The people of Gnomeregan have long been unable to assist the Alliance in its wars due an infestation of troggs and Ice Trolls. Resolve their conflicts for them to gain their services.", "ReplaceableTextures\\CommandButtons\\BTNFlyingMachine.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nitw_1513)) //Ice Troll Warlord
+      call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
   endstruct

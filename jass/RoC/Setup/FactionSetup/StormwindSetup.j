@@ -38,20 +38,25 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
     call f.registerObjectLimit('h02O', UNLIMITED)   //Militia
-    call f.registerObjectLimit('h009', UNLIMITED)   //Brigadier
     call f.registerObjectLimit('h03K', 12)          //Marshal
+    call f.registerObjectLimit('h03Z', 12)          //Marshal
     call f.registerObjectLimit('h00A', UNLIMITED)   //Spearman
     call f.registerObjectLimit('h01B', UNLIMITED)   //Outriders
     call f.registerObjectLimit('h05F', 6)           //Stormwind Champion
+    call f.registerObjectLimit('n05L', 6)           //Conjurer
     call f.registerObjectLimit('h00J', UNLIMITED)   //Clergyman
     call f.registerObjectLimit('n06N', 6)           //Gyrobomber
     call f.registerObjectLimit('n093', UNLIMITED)   //Chaplain
-    call f.registerObjectLimit('hbot', 24)   	    //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 24)   	    //Alliance Frigate
+    call f.registerObjectLimit('hbot', 24)   	      //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 24)   	      //Alliance Frigate
     call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
     call f.registerObjectLimit('h060', 3)           //Arathor Flagship
 
+
     call f.registerObjectLimit('h03W', 1)           //Danath
+
+    call f.modObjectLimit('H00R', 1)           //Varian
+    call f.modObjectLimit('H017', 1)           //Bolvar
 
     //Researches
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training

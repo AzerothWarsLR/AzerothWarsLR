@@ -6,7 +6,6 @@ library TierKatranaPrestor requires StormwindSetup
 
   private function Research takes nothing returns nothing
     call CreateUnit(FACTION_STORMWIND.Player, DEMI_UNITTYPE_ID, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()), 0)
-    call FACTION_STORMWIND.modObjectLimit('n05L', 6)               //Conjurer
   endfunction
 
   public function OnInit takes nothing returns nothing
