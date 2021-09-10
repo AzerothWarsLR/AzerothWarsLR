@@ -24,7 +24,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     local Artifact tempArtifact = 0
 
     set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))
-    call UnitAddItem(gg_unit_H00R_1875, ARTIFACT_CROWNSTORMWIND.item)                      //Variann
+    call UnitAddItem(gg_unit_n021_2624, ARTIFACT_CROWNSTORMWIND.item)                      //Hogger
 
     set ARTIFACT_EYEOFSARGERAS = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
     call UnitAddAbility(gg_unit_n04O_1571, ARTIFACT_HOLDER_ABIL_ID)             //Doom Guard
@@ -43,7 +43,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_nemi_0019, ARTIFACT_CROWNLORDAERON.item)           
 
     set tempArtifact = Artifact.create(CreateItem('I00D', DUMMY_X, DUMMY_Y))    //Shalamayne
-    call UnitAddItem(gg_unit_H00R_1875, tempArtifact.item)                      //Variann
+    call UnitAddItem(gg_unit_n021_2624, tempArtifact.item)                      //Hogger
 
     set tempArtifact = Artifact.create(CreateItem('klmm', DUMMY_X, DUMMY_Y))    //Killmaim
     call UnitAddAbility(gg_unit_H00E_1728, ARTIFACT_HOLDER_ABIL_ID)             //Ramzes the Horror
