@@ -6,7 +6,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   struct QuestStormwindCity extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Stormwind has been literated, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "Stormwind has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -37,7 +37,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1) 
+      call SetPlayerTechResearched(Holder.Player, 'R02S', 1) 
       call this.GrantStormwind(this.Holder.Player)
     endmethod
 

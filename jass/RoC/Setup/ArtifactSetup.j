@@ -102,9 +102,6 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_DREKTHARSSPELLBOOK.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_DREKTHARSSPELLBOOK.setDescription("Frostwolf Quest")
 
-    set tempArtifact = Artifact.create(CreateItem('ktrm', DUMMY_X, DUMMY_Y))    //Urn of Kings
-    call UnitAddItem(gg_unit_Huth_1343, tempArtifact.item)                      //Uther
-
     set ARTIFACT_SOULGEM = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))
     call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_SPECIAL)
     set ARTIFACT_SOULGEM.falseX = -14269

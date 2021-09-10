@@ -49,6 +49,10 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     //Demis
     call f.registerObjectLimit('h012', 1)           //Falric
 
+    call f.registerObjectLimit('Hart', 1)           //Arthas
+    call f.registerObjectLimit('Huth', 1)           //Uther
+
+
     //Upgrades
     call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training
     call f.registerObjectLimit('R00I', UNLIMITED)   //Light's Praise Initiate Training

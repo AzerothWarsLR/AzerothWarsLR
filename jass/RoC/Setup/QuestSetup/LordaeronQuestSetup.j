@@ -2,7 +2,9 @@ library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArt
 
   public function OnInit takes nothing returns nothing
     //Early duel
-    set FACTION_LORDAERON.StartingQuest = FACTION_LORDAERON.AddQuest(QuestShoresOfNorthrend.create())
+    set FACTION_LORDAERON.StartingQuest = FACTION_LORDAERON.AddQuest(QuestStratholme.create())
+    call FACTION_LORDAERON.AddQuest(QuestCapitalCity.create())
+    call FACTION_LORDAERON.AddQuest(QuestShoresOfNorthrend.create())
     call FACTION_LORDAERON.AddQuest(QuestThunderEagle.create())
     call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
     call FACTION_LORDAERON.AddQuest(QuestMograine.create())
