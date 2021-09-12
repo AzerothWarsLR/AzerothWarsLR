@@ -15,7 +15,16 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
 
       //Transfer all Neutral Passive units in Dalaran
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Dalaran, null)
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_DalaranDungeon, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_DalaranDungeon, null)      
       set u = FirstOfGroup(tempGroup)
       loop
       exitwhen u == null
@@ -26,7 +35,7 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
         set u = FirstOfGroup(tempGroup)
       endloop
       call DestroyGroup(tempGroup)
-      set tempGroup = null      
+      set tempGroup = null
     endmethod
 
     private method OnFail takes nothing returns nothing

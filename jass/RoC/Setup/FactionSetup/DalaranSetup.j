@@ -51,6 +51,8 @@ library DalaranSetup requires Faction, TeamSetup
 
     //Demi-heroes
     call f.registerObjectLimit('njks', 1)           //Jailor Kassan
+    call f.registerObjectLimit('Hjai', 1)           //jaina
+    call f.registerObjectLimit('Hant', 1)           //antonidas
 
     //Upgrades
     call f.registerObjectLimit('R01I', UNLIMITED)   //Arcanist Adept Training
