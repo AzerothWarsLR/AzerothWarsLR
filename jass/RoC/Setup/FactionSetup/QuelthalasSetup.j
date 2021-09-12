@@ -51,6 +51,8 @@ library QuelthalasSetup requires Faction, TeamSetup
 
     //Demi-heroes
     call f.registerObjectLimit('n075', 1)           //Vareesa 
+    call f.registerObjectLimit('Hvwd', 1)           //Sylvanas
+    call f.registerObjectLimit('Hssa', 1)           //Anasterian
 
     //Upgrades
     call f.registerObjectLimit('R01S', UNLIMITED)   //Aimed Shot

@@ -91,7 +91,6 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_O02C_2437, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01K', DUMMY_X, DUMMY_Y))    //Green Demon Soul Fragment
-    call UnitAddAbility(gg_unit_O00O_1933, ARTIFACT_HOLDER_ABIL_ID)             //Zul'jin
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('arsh', DUMMY_X, DUMMY_Y))    //Shroud of Nozdormuru
@@ -119,7 +118,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_Hmbr_0628, tempArtifact.item)  
 
     set tempArtifact = Artifact.create(CreateItem('I00J', DUMMY_X, DUMMY_Y))    //Felo'melorn
-    call UnitAddItem(gg_unit_H00Q_0630, tempArtifact.item)                      //Anasterian
+    call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)                      //Zuljin
 
     set tempArtifact = Artifact.create(CreateItem('I00K', DUMMY_X, DUMMY_Y))    //Essence
     call UnitAddItem(gg_unit_n03T_0555, tempArtifact.item)                      //Murmur

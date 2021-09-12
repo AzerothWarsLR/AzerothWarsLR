@@ -16,17 +16,17 @@ library LegendScourge initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing
     set LEGEND_KELTHUZAD = Legend.create()
-    set LEGEND_KELTHUZAD.Unit = gg_unit_U001_1237
+    set LEGEND_KELTHUZAD.UnitType = 'U001'
     set LEGEND_KELTHUZAD.PermaDies = true
     set LEGEND_KELTHUZAD.DeathMessage = "Kel'thuzad has been slain. He lives on in spectral form, and may yet return if he is brought to the Sunwell."
     set LEGEND_KELTHUZAD.DeathSfx = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"
     set LEGEND_KELTHUZAD.Essential = true
 
     set LEGEND_ANUBARAK = Legend.create()
-    set LEGEND_ANUBARAK.Unit = gg_unit_Uanb_0755
+    set LEGEND_ANUBARAK.UnitType = 'Uanb'
 
     set LEGEND_RIVENDARE = Legend.create()
-    set LEGEND_RIVENDARE.Unit = gg_unit_U00A_3741
+    set LEGEND_RIVENDARE.UnitType = 'U00A'
 
     set LEGEND_SYLVANASV = Legend.create()
     set LEGEND_SYLVANASV.UnitType = 'Usyl'

@@ -25,7 +25,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_SUNWELL.IsCapital = true
 
     set LEGEND_ANASTERIAN = Legend.create()
-    set LEGEND_ANASTERIAN.Unit = gg_unit_H00Q_0630
+    set LEGEND_ANASTERIAN.UnitType = 'H00Q'
     set LEGEND_ANASTERIAN.PlayerColor = PLAYER_COLOR_MAROON
     call LEGEND_ANASTERIAN.AddUnitDependency(LEGEND_SUNWELL.Unit)
     set LEGEND_ANASTERIAN.Essential = true
@@ -37,7 +37,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_JENNALLA.UnitType = 'H02B'
     
     set LEGEND_SYLVANAS = Legend.create()
-    set LEGEND_SYLVANAS.Unit = gg_unit_Hvwd_1515
+    set LEGEND_SYLVANAS.UnitType = 'Hvwd'
     set LEGEND_SYLVANAS.PlayerColor = PLAYER_COLOR_GREEN
 
     set LEGEND_KORIALSTRASZ = Legend.create()
