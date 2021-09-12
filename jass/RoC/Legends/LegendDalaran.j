@@ -10,7 +10,7 @@ library LegendDalaran initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing 
     set LEGEND_JAINA = Legend.create()
-    set LEGEND_JAINA.Unit = gg_unit_Hjai_1676
+    set LEGEND_JAINA.UnitType = 'Hjai'
     set LEGEND_JAINA.Essential = true
 
     set LEGEND_MEDIVH = Legend.create()
@@ -23,7 +23,7 @@ library LegendDalaran initializer OnInit requires Legend
     set LEGEND_DALARAN.IsCapital = true
 
     set LEGEND_ANTONIDAS = Legend.create()
-    set LEGEND_ANTONIDAS.Unit = gg_unit_Hant_1675
+    set LEGEND_ANTONIDAS.UnitType = 'Hant'
     call LEGEND_ANTONIDAS.AddUnitDependency(LEGEND_DALARAN.Unit)
     set LEGEND_ANTONIDAS.DeathMessage = "Archmage Antonidas has been cut down, his vast knowledge forever lost with his death. The mages of Dalaran have lost their brightest mind."
   endfunction

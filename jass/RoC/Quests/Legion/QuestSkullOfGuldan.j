@@ -24,7 +24,7 @@ library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemA
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Skull of Gul'dan", "The Skull of the master warlock Gul'dan is protected by the Mages of Dalaran. It rightfully belongs to the Legion.", "ReplaceableTextures\\CommandButtons\\BTNGuldanSkull.blp")
-      set this.questItemAnyUnitInRect = this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Dalaran_Dungeon, "Dalaran Dungeons", true))
+      set this.questItemAnyUnitInRect = this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_DalaranDungeon, "Dalaran Dungeons", true))
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendDead.create(LEGEND_ILLIDAN), QuestItemFactionDefeated.create(FACTION_NAGA)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
