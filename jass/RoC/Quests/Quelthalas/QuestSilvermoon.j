@@ -10,14 +10,14 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Silvermoon"
+      return "Control of all units in Silvermoon and enable Anasterian to be trained at the Altar"
     endmethod
 
-    private method GrantStormwind takes player whichPlayer returns nothing
+    private method GrantSilvermoon takes player whichPlayer returns nothing
       local group tempGroup = CreateGroup()
       local unit u
 
-      //Transfer all Neutral Passive units in Stormwind
+      //Transfer all Neutral Passive units in Silvermoon
       call GroupEnumUnitsInRect(tempGroup, gg_rct_SunwellAmbient, null)
       set u = FirstOfGroup(tempGroup)
       loop
@@ -33,12 +33,12 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method OnFail takes nothing returns nothing
-      call this.GrantStormwind(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call this.GrantSilvermoon(Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R02U', 1) 
-      call this.GrantStormwind(this.Holder.Player)
+      call this.GrantSilvermoon(this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

@@ -10,7 +10,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Stormwind"
+      return "Control of all units in Stormwind and enable Varian to be trained at the altar"
     endmethod
 
     private method GrantStormwind takes player whichPlayer returns nothing

@@ -1,12 +1,16 @@
 library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R038'
+  endglobals
+
   struct QuestDalaran extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Dalaran outskirs are now secure, the mages will join " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Dalaran"
+      return "Control of all units in Dalaran and enables Antonidas to be trained at the Altar"
     endmethod
 
     private method GrantDalaran takes player whichPlayer returns nothing
@@ -43,10 +47,12 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetPlayerTechResearched(Holder.Player, 'R038', 1) 
       call this.GrantDalaran(this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(QUEST_RESEARCH_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

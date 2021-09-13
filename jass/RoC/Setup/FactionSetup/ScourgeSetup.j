@@ -54,6 +54,9 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     //Demi-Heroes
     call f.registerObjectLimit('ubdd', 1)           //Sapphiron
     call f.registerObjectLimit('uswb', 1)           //Banshee
+    call f.registerObjectLimit('Uanb', 1)           //Anubarak
+    call f.registerObjectLimit('U001', 1)           //Keltuzad
+    call f.registerObjectLimit('U00A', 1)           //Rivendare
     
     //Upgrades
     call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
