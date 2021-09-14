@@ -39,14 +39,14 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
     call f.registerObjectLimit('ubot', 24) 	        //Undead Transport SHip
     call f.registerObjectLimit('udes', 24) 	        //Undead Frigate
-    call f.registerObjectLimit('uubs', 12)          //Undead Battleship       
-    call f.registerObjectLimit('o00B', 1)           //Jubei'thos    
+    call f.registerObjectLimit('uubs', 12)          //Undead Battleship         
     call f.registerObjectLimit('n04O', 6)           //Doomguard
     call f.registerObjectLimit('n04L', 6)           //Infernal Juggernaut
     call f.registerObjectLimit('ninf', 12)          //Infernal
     call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
     call f.registerObjectLimit('n04U', 4)           //Dragon
     call f.registerObjectLimit('n03L', 4)           //Barge
+
     call f.registerObjectLimit('n05R', 1)           //Felguard
     call f.registerObjectLimit('n06H', 1)           //Pit Fiend
     call f.registerObjectLimit('n07B', 1)           //Queen
@@ -63,10 +63,12 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
     call f.registerObjectLimit('R03Z', UNLIMITED)   //War Plating
     call f.registerObjectLimit('R040', UNLIMITED)   //Flying horrors
-    call f.registerObjectLimit('R043', UNLIMITED)   //Fel Guard Summoning
     
     //Heroes
     call f.registerObjectLimit('U00L', 1)           //Anetheron
+    call f.registerObjectLimit('Umal', 1)           //Mal'ganis
+    call f.registerObjectLimit('Utic', 1)           //Tichondrius
+
   endfunction
     
 endlibrary

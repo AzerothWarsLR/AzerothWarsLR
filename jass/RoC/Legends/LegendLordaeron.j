@@ -38,6 +38,7 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_UTHER = Legend.create()
     set LEGEND_UTHER.UnitType = 'Huth'
     call LEGEND_UTHER.AddUnitDependency(gg_unit_h000_0406)
+    call LEGEND_UTHER.AddUnitDependency(gg_unit_nico_1237)
     set LEGEND_UTHER.DeathMessage = "Uther the Lightbringer makes his last stand, perishing in the defense of the light. Lordaeron, and humanity itself, has lost one of its finest exemplars in this dark hour."
     set LEGEND_UTHER.PlayerColor = PLAYER_COLOR_LIGHT_BLUE
 
@@ -45,7 +46,9 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_ARTHAS.UnitType = 'Hart'
     set LEGEND_ARTHAS.PlayerColor = PLAYER_COLOR_BLUE
     call LEGEND_ARTHAS.AddUnitDependency(LEGEND_STRATHOLME.Unit)
+    call LEGEND_ARTHAS.AddUnitDependency(gg_unit_nico_1237)
     set LEGEND_ARTHAS.Essential = true
+
   endfunction
 
 endlibrary

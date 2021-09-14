@@ -1,4 +1,4 @@
-library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestKingdomOfManLordaeron, QuestMograine
+library LordaeronQuestSetup requires LordaeronSetup, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestKingdomOfManLordaeron, QuestMograine
 
   public function OnInit takes nothing returns nothing
     //Early duel
@@ -9,7 +9,6 @@ library LordaeronQuestSetup requires LordaeronSetup, QuestGarithos, QuestKingArt
     call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
     call FACTION_LORDAERON.AddQuest(QuestMograine.create())
     //Misc
-    call FACTION_LORDAERON.AddQuest(QuestGarithos.create())
     call FACTION_LORDAERON.AddQuest(QuestKingdomOfManLordaeron.create())
   endfunction
 

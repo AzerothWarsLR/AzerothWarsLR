@@ -2,11 +2,11 @@ library QuestNethergarde requires QuestItemKillUnit, IronforgeSetup, LegendNeutr
 
   struct QuestNethergarde extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Magni has spoken with Falstad nethergarde and secured an alliance with the nethergarde Clan."
+      return "Varian has come to relieve the Nethergarde garrison."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You gain control of Aerie Peak and you can train the hero Falstad nethergarde from the Altar of Fortitude"
+      return "You gain control of the Nethergarde base"
     endmethod
 
     private method GrantNethergarde takes player whichPlayer returns nothing

@@ -1,4 +1,4 @@
-library StormwindQuestSetup requires StormwindSetup, QuestConstructionSites, QuestHonorHold, QuestStromgarde, QuestKingdomOfManStormwind
+library StormwindQuestSetup requires StormwindSetup, QuestHonorHold, QuestStromgarde, QuestKingdomOfManStormwind
 
   public function OnInit takes nothing returns nothing
     //Setup

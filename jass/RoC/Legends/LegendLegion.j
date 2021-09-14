@@ -24,11 +24,11 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_ANETHERON.PlayerColor = PLAYER_COLOR_ORANGE
 
     set LEGEND_TICHONDRIUS = Legend.create()
-    set LEGEND_TICHONDRIUS.Unit = gg_unit_Utic_1234
+    set LEGEND_TICHONDRIUS.UnitType = 'Utic'
     set LEGEND_TICHONDRIUS.PlayerColor = PLAYER_COLOR_RED
 
     set LEGEND_MALGANIS = Legend.create()
-    set LEGEND_MALGANIS.Unit = gg_unit_Umal_0675
+    set LEGEND_MALGANIS.UnitType = 'Umal'
     set LEGEND_MALGANIS.PlayerColor = PLAYER_COLOR_GREEN
 
     set LEGEND_KILJAEDEN = Legend.create()

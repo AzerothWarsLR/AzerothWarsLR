@@ -509,16 +509,16 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
     private method Leave takes nothing returns nothing
       call OnPreLeave()
-      if team.PlayerCount > 1 and team.ScoreStatus == SCORESTATUS_NORMAL then
-        call distributeUnits()
-        call distributeResources()
-        call distributeExperience()
-      else
-        call obliterate()
-      endif
-      set thistype.triggerFaction = this
-      call OnFactionGameLeave.fire()
-      call OnLeave()
+    if team.PlayerCount > 1 and team.ScoreStatus == SCORESTATUS_NORMAL and GetGameTime() > 60 then
+      call distributeUnits()
+      call distributeResources()
+      call distributeExperience()
+     else
+      call obliterate()
+    endif
+    set thistype.triggerFaction = this
+    call OnFactionGameLeave.fire()
+    call OnLeave()
     endmethod 
 
     static method ByHandle takes player whichPlayer returns thistype
