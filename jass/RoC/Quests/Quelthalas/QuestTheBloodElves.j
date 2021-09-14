@@ -70,7 +70,6 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
       local group tempGroup = CreateGroup()
       local unit u
       local integer i = 0
-      call ShowUnit(gg_unit_n08A_3097, false)
       set thistype.SecondChanceUnits = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_BloodElfSecondChanceSpawn, null)
       loop

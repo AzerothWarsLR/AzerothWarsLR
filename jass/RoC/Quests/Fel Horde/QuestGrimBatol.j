@@ -25,7 +25,6 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
         call UnitRescue(u, holderPlayer)
         call GroupRemoveUnit(thistype.GrimBatolUnits, u)
       endloop
-      call UnitRescue(gg_unit_n08A_3097, holderPlayer)  //Neltharauku
       call SetUnitOwner(gg_unit_h01Z_0618, holderPlayer, true)
       call EnableWaygate(gg_unit_n08R_2209) //Grim Batol Tunnels
       call EnableWaygate(gg_unit_n08R_2214) //Grim Batol Tunnels
@@ -59,7 +58,6 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
       local group tempGroup = CreateGroup()
       local unit u
       local integer i = 0
-      call ShowUnit(gg_unit_n08A_3097, false)
       set thistype.GrimBatolUnits = CreateGroup()
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
       loop

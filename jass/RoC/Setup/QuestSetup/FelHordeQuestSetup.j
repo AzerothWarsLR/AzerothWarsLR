@@ -2,13 +2,15 @@ library FelHordeQuestSetup requires FelHordeSetup, QuestFelHordeKillIronforge, Q
 
   public function OnInit takes nothing returns nothing
     //Early duel
-    local QuestData newQuest = FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillStormwind.create())
+    local QuestData newQuest = FACTION_FEL_HORDE.AddQuest(QuestHellfire.create())
     set FACTION_FEL_HORDE.StartingQuest = newQuest
+    call FACTION_FEL_HORDE.AddQuest(QuestKilsorrow.create())
+    call FACTION_FEL_HORDE.AddQuest(QuestBlackrock.create())
     call FACTION_FEL_HORDE.AddQuest(QuestGrimBatol.create())
     call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillIronforge.create())
+    call FACTION_FEL_HORDE.AddQuest(QuestFelHordeKillStormwind.create())
     //Misc
     call FACTION_FEL_HORDE.AddQuest(QuestGuldansLegacy.create())
-    call FACTION_FEL_HORDE.AddQuest(QuestChogall.create())
   endfunction
 
 endlibrary
