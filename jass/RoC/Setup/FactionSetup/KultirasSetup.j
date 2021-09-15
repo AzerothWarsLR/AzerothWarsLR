@@ -16,7 +16,7 @@ library KultirasSetup requires Faction, TeamSetup
     //Structures
     call f.registerObjectLimit('h062', UNLIMITED)   //Town Hall
     call f.registerObjectLimit('h064', UNLIMITED)   //Keep
-    call f.registerObjectLimit('h06l', UNLIMITED)   //Castle
+    call f.registerObjectLimit('h06I', UNLIMITED)   //Castle
     call f.registerObjectLimit('h07N', UNLIMITED)   //Farm
     call f.registerObjectLimit('h07M', UNLIMITED)   //Altar
     call f.registerObjectLimit('h07R', UNLIMITED)   //Scout Tower
@@ -54,14 +54,11 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R01O', UNLIMITED)   //Crushing Wave
     call f.registerObjectLimit('R01T', UNLIMITED)   //Cluster Rockets
     call f.registerObjectLimit('R01U', UNLIMITED)   //Improved Barrage
-    call f.registerObjectLimit('R00L', UNLIMITED)   //Quest Completed: City at Sea
 
     //Heroes
-    call f.registerObjectLimit('H04A', 1)           //Jaina
+    call f.registerObjectLimit('Hapm', 1)           //Admiral
     call f.registerObjectLimit('H05L', 1)           //Lady Ashvane
 
-    //Free upgrades
-    call f.SetObjectLevel('R00L', 1)                //Quest Completed: City at Sea
   endfunction
     
 endlibrary

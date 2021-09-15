@@ -19,7 +19,7 @@ library LegendIronforge initializer OnInit requires Legend
     set LEGEND_FALSTAD.StartingXP = 8800
 
     set LEGEND_MAGNI = Legend.create()
-    set LEGEND_MAGNI.Unit = gg_unit_H00S_1948
+    set LEGEND_MAGNI.UnitType = 'H00S'
     call LEGEND_MAGNI.AddUnitDependency(gg_unit_h001_0180)
     set LEGEND_MAGNI.DeathMessage = "King Magni Bronzebeard has died."
     set LEGEND_MAGNI.Essential = true

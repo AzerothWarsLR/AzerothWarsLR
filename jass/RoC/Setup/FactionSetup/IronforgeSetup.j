@@ -53,6 +53,8 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n00C', UNLIMITED)   //Rune Priest
 
     call f.registerObjectLimit('h01M', 1)           //Baelgun
+    call f.registerObjectLimit('H00S', 1)           //Magni
+    call f.registerObjectLimit('Hmbr', 1)           //Muradin
 
     //Upgrades
     call f.registerObjectLimit('R03H', UNLIMITED)   //Engineering Adept Training
