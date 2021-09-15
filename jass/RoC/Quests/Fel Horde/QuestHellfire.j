@@ -49,6 +49,8 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
       local thistype this = thistype.allocate("The Citadel", "The clans holding Hellfire Citadel do not respect Magtheridon authority yet, destroy Murmur to show them who rules Outland now", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n03T_0555)) //Murmur
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_AUCHINDOUN, false))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01J')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02N')))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

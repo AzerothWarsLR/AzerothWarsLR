@@ -51,6 +51,9 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n05T', 1)           //Kazzak 
     call f.registerObjectLimit('n064', 1)           //Voone 
     call f.registerObjectLimit('n08A', 1)           //neltharaktu
+    call f.registerObjectLimit('Nmag', 1)           //Magtheridon
+    call f.registerObjectLimit('N03D', 1)           //Kargath
+    call f.registerObjectLimit('Nbbc', 1)           //Rend
 
     call f.registerObjectLimit('Robf', UNLIMITED)   //Demonic Flux
     call f.registerObjectLimit('R066', UNLIMITED)   //Burning Oil

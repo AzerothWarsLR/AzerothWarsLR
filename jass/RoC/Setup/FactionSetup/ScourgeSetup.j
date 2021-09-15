@@ -70,7 +70,6 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
     call f.registerObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
     call f.registerObjectLimit('R01X', UNLIMITED)   //Epidemic
-    call f.registerObjectLimit('R06M', UNLIMITED)   //Titanomancy
     call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
     call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
     call f.registerObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery

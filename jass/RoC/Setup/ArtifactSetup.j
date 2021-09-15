@@ -115,7 +115,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_nhcn_2597, ARTIFACT_HORNOFCENARIUS.item)
 
     set tempArtifact = Artifact.create(CreateItem('kgal', DUMMY_X, DUMMY_Y))    //Keg of Thunderwater
-    call UnitAddItem(gg_unit_Hmbr_0628, tempArtifact.item)  
+    call UnitAddItem(gg_unit_hmtm_2086, tempArtifact.item)  
 
     set tempArtifact = Artifact.create(CreateItem('I00J', DUMMY_X, DUMMY_Y))    //Felo'melorn
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)                      //Zuljin
