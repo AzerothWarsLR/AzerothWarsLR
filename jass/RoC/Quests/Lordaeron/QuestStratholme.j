@@ -25,6 +25,7 @@ library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit
           if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
           call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
           endif
+        endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
       endloop

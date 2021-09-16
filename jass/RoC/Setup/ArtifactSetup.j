@@ -79,8 +79,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_O024_0567, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01L', DUMMY_X, DUMMY_Y))    //Black Demon Soul Fragment
-    call UnitAddAbility(gg_unit_O026_1705, ARTIFACT_HOLDER_ABIL_ID)             //Rastakhan
-    call UnitAddItem(gg_unit_O026_1705, tempArtifact.item)
+    call UnitAddAbility(gg_unit_o04E_1559, ARTIFACT_HOLDER_ABIL_ID)             //Rastakhan
+    call UnitAddItem(gg_unit_o04E_1559, tempArtifact.item)
 
     set tempArtifact = Artifact.create(CreateItem('I01J', DUMMY_X, DUMMY_Y))    //Red Demon Soul Fragment
     call UnitAddAbility(gg_unit_O023_0517, ARTIFACT_HOLDER_ABIL_ID)             //Jin'do

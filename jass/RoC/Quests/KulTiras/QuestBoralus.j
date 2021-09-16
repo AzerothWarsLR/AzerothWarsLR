@@ -1,6 +1,6 @@
 library QuestBoralus requires QuestData, ScarletSetup
 
- globals
+  globals
     private constant integer QUEST_RESEARCH_ID = 'R00L'   //This research is given when the quest is completed
   endglobals
 
