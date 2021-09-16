@@ -46,7 +46,7 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Siege of Silvermoon", "Silvermoon has been besieged by Trolls, clear them out and destroy their city of Zul'aman", "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp")
+      local thistype this = thistype.allocate("The Siege of Silvermoon", "Silvermoon has been besieged by Trolls, clear them out and destroy their city of Zul'aman.", "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_O00O_1933)) //Zul'jin
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01L')))
