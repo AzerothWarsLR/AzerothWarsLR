@@ -49,6 +49,9 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R038', 1) 
       call this.GrantDalaran(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\DalaranTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

@@ -43,6 +43,9 @@ library QuestSpiderWar requires QuestData, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call this.GrantIcecrown(this.Holder.Player)
       call SetPlayerTechResearched(Holder.Player, 'R03A', 1) 
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\ScourgeTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

@@ -44,6 +44,9 @@ library QuestMonastery requires QuestData, ScarletSetup
       call WaygateActivateBJ( true, gg_unit_h00T_0786 )
       call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
       set this.Holder.Team = TEAM_SCARLET
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\ScarletCrusade.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

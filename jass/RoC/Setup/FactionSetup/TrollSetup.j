@@ -12,39 +12,36 @@ library TrollSetup requires Faction, TeamSetup
     set f.StartingGold = 150
     set f.StartingLumber = 500
 
-    call f.registerObjectLimit('ogre', UNLIMITED)   //Great Hall
-    call f.registerObjectLimit('ostr', UNLIMITED)   //Stronghold
-    call f.registerObjectLimit('ofrt', UNLIMITED)   //Fortress
-    call f.registerObjectLimit('oalt', UNLIMITED)   //Altar of Storms
-    call f.registerObjectLimit('obar', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('ofor', UNLIMITED)   //War Mill
-    call f.registerObjectLimit('otto', UNLIMITED)   //Tauren Totem
-    call f.registerObjectLimit('osld', UNLIMITED)   //Spirit Lodge
-    call f.registerObjectLimit('otrb', UNLIMITED)   //Orc Burrow
-    call f.registerObjectLimit('owtw', UNLIMITED)   //Watch Tower
-    call f.registerObjectLimit('o002', UNLIMITED)   //Improved Watch Tower
-    call f.registerObjectLimit('ovln', UNLIMITED)   //Voodoo Lounge
-    call f.registerObjectLimit('oshy', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('o01M', UNLIMITED)   //Goblin Laboratory
+    call f.registerObjectLimit('o03R', UNLIMITED)   //Great Hall
+    call f.registerObjectLimit('o03Y', UNLIMITED)   //Stronghold
+    call f.registerObjectLimit('o03Z', UNLIMITED)   //Fortress
+    call f.registerObjectLimit('o040', UNLIMITED)   //Altar of Storms
+    call f.registerObjectLimit('o041', UNLIMITED)   //Barracks
+    call f.registerObjectLimit('o042', UNLIMITED)   //War Mill
+    call f.registerObjectLimit('o044', UNLIMITED)   //Tauren Totem
+    call f.registerObjectLimit('o043', UNLIMITED)   //Spirit Lodge
+    call f.registerObjectLimit('o045', UNLIMITED)   //Orc Burrow
+    call f.registerObjectLimit('o046', UNLIMITED)   //Watch Tower
+    call f.registerObjectLimit('o048', UNLIMITED)   //Improved Watch Tower
+    call f.registerObjectLimit('o047', UNLIMITED)   //Voodoo Lounge
+    call f.registerObjectLimit('o049', UNLIMITED)   //Shipyard
 
-    call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
-    call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
-    call f.registerObjectLimit('otau', UNLIMITED)   //Tauren
-    call f.registerObjectLimit('ohun', UNLIMITED)   //Troll Headhunter
-    call f.registerObjectLimit('ocat', 6)           //Catapult
-    call f.registerObjectLimit('otbr', 12)          //Troll Batrider
-    call f.registerObjectLimit('odoc', UNLIMITED)   //Troll Witch Doctor
-    call f.registerObjectLimit('oshm', UNLIMITED)   //Shaman
-    call f.registerObjectLimit('ospw', UNLIMITED)   //Spirit Walker
-    call f.registerObjectLimit('o00A', 6)           //Far Seer
+    call f.registerObjectLimit('o04A', UNLIMITED)   //Peon
+    call f.registerObjectLimit('h021', UNLIMITED)   //Grunt
+    call f.registerObjectLimit('o04D', UNLIMITED)   //Troll Headhunter
+    call f.registerObjectLimit('n07R', 8)           //WarTurtle
+    call f.registerObjectLimit('e00Z', 6)           //Direhorn
+    call f.registerObjectLimit('o04F', UNLIMITED)   //Troll Witch Doctor
+    call f.registerObjectLimit('o04G', UNLIMITED)   //Haruspex
+    call f.registerObjectLimit('o04E', 6)           //Boneseer
+    call f.registerObjectLimit('h05D', UNLIMITED)   //Raptor Rider 
     call f.registerObjectLimit('obot', 24)  	    //Transport Ship
     call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
-    call f.registerObjectLimit('oosc', UNLIMITED)   //Pack Kodo
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
-    call f.registerObjectLimit('n061', 12)          //Goblin Sapper
-    call f.registerObjectLimit('n062', 8)           //Goblin Shredder
 
-    call f.registerObjectLimit('h00C', 1)           //Drek'thar
+    call f.registerObjectLimit('O026', 1)           //Rasthakan
+    call f.registerObjectLimit('O01J', 1)           //Zul
+    call f.registerObjectLimit('H08M', 1)           //Ju'loa
 
     call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training

@@ -39,6 +39,9 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R02S', 1) 
       call this.GrantStormwind(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\StormwindTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

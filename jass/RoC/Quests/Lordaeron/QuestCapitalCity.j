@@ -38,6 +38,9 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
 
     private method OnComplete takes nothing returns nothing
       call this.GrantCapitalcity(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\CapitalCity.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

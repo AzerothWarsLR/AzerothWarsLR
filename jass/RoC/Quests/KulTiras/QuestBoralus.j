@@ -42,6 +42,9 @@ library QuestBoralus requires QuestData, ScarletSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantKulTiras(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\KultirasTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing
