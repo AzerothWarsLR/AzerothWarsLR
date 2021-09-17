@@ -37,7 +37,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
     call f.registerObjectLimit('h04J', 5)           //Warship
     call f.registerObjectLimit('e007', UNLIMITED)   //Thornspeaker
-    call f.registerObjectLimit('h04M', UNLIMITED)   //Tidesage
+    call f.registerObjectLimit('h05K', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
     call f.registerObjectLimit('e00B', UNLIMITED)   //Thornspeaker Bear
     call f.registerObjectLimit('n009', UNLIMITED)   //Revenant of the Tides

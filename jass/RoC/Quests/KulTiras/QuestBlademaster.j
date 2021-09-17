@@ -6,11 +6,11 @@ library QuestBlademaster requires QuestData, ScarletSetup
 
   struct QuestBlademaster extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "We have recaptured the transport ships."
+      return "We have recaptured the shipyard."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "2 transport ships and the end of the orc attacks"
+      return "A shipyard and the end of the orc attacks"
     endmethod
 
     private method GrantBlademaster takes player whichPlayer returns nothing
@@ -47,7 +47,7 @@ library QuestBlademaster requires QuestData, ScarletSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Remnants of the Second War", "This island is infested by orcs, they have captured the transports. Kill them all", "ReplaceableTextures\\CommandButtons\\BTNHeroBlademaster.blp")
+      local thistype this = thistype.allocate("Remnants of the Second War", "This island is infested by orcs, they have captured the shipyard. Kill them all", "ReplaceableTextures\\CommandButtons\\BTNHeroBlademaster.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_o00G_1521)) //Blademaster
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
