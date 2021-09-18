@@ -14,45 +14,40 @@ library ForsakenSetup requires Faction, TeamSetup
     set f.StartingLumber = 500
 
     //Buildings
-    call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
-    call f.registerObjectLimit('unp1', UNLIMITED)   //Halls of the Dead 
-    call f.registerObjectLimit('unp2', UNLIMITED)   //Black Citadel 
-    call f.registerObjectLimit('uzig', UNLIMITED)   //Ziggurat 
-    call f.registerObjectLimit('uzg1', UNLIMITED)   //Spirit Tower 
-    call f.registerObjectLimit('uzg2', UNLIMITED)   //Nerubian Tower 
-    call f.registerObjectLimit('uaod', UNLIMITED)   //Altar of Darkness 
-    call f.registerObjectLimit('usep', UNLIMITED)   //Crypt 
-    call f.registerObjectLimit('ugrv', UNLIMITED)   //Graveyard 
-    call f.registerObjectLimit('uslh', UNLIMITED)   //Slaughterhouse 
-    call f.registerObjectLimit('utod', UNLIMITED)   //Temple of the Damned 
-    call f.registerObjectLimit('ubon', UNLIMITED)   //Boneyard      
-    call f.registerObjectLimit('utom', UNLIMITED)   //Tomb of Relics   
-    call f.registerObjectLimit('ushp', UNLIMITED)   //Undead Shipyard
-    call f.registerObjectLimit('u002', UNLIMITED)   //Improved Spirit Tower
-    call f.registerObjectLimit('u003', UNLIMITED)   //Improved Nerubian Tower
+    call f.registerObjectLimit('h089', UNLIMITED)   //Necropolis   
+    call f.registerObjectLimit('h08A', UNLIMITED)   //Halls of the Dead 
+    call f.registerObjectLimit('h08B', UNLIMITED)   //Black Citadel 
+    call f.registerObjectLimit('h08C', UNLIMITED)   //Ziggurat 
+    call f.registerObjectLimit('h08D', UNLIMITED)   //Spirit Tower 
+    call f.registerObjectLimit('h08E', UNLIMITED)   //Nerubian Tower 
+    call f.registerObjectLimit('u010', UNLIMITED)   //Altar of Darkness 
+    call f.registerObjectLimit('u011', UNLIMITED)   //Crypt 
+    call f.registerObjectLimit('u01J', UNLIMITED)   //Graveyard 
+    call f.registerObjectLimit('u016', UNLIMITED)   //Slaughterhouse 
+    call f.registerObjectLimit('u014', UNLIMITED)   //Temple of the Damned    
+    call f.registerObjectLimit('u017', UNLIMITED)   //Tomb of Relics   
+    call f.registerObjectLimit('u01A', UNLIMITED)   //Undead Shipyard
+    call f.registerObjectLimit('h08F', UNLIMITED)   //Improved Spirit Tower
     
     //Units
-    call f.registerObjectLimit('uaco', UNLIMITED)   //Acolyte
-    call f.registerObjectLimit('ushd', UNLIMITED)   //Shade
-    call f.registerObjectLimit('ugho', UNLIMITED)   //Ghoul
-    call f.registerObjectLimit('uabo', UNLIMITED)   //Abomination
-    call f.registerObjectLimit('umtw', 6)           //Meat Wagon
-    call f.registerObjectLimit('ucry', UNLIMITED)   //Crypt Fiend
-    call f.registerObjectLimit('ugar', 12)           //Gargoyle
+    call f.registerObjectLimit('u01K', UNLIMITED)   //Acolyte
+    call f.registerObjectLimit('h08O', UNLIMITED)   //Ghoul
+    call f.registerObjectLimit('h08N', UNLIMITED)   //Abomination
+    call f.registerObjectLimit('u01P', 6)           //Plague Catapult
+    call f.registerObjectLimit('n07S', UNLIMITED)   //Deadeye
     call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
-    call f.registerObjectLimit('unec', UNLIMITED)   //Necromancer
-    call f.registerObjectLimit('uobs', 4)           //Obsidian Statue
-    call f.registerObjectLimit('ufro', 4)           //Frost Wyrm
-    call f.registerObjectLimit('h00H', 6)           //Death Knight
+    call f.registerObjectLimit('h08P', UNLIMITED)   //Sorceress
+    call f.registerObjectLimit('u01R', UNLIMITED)   //Apothecary
+    call f.registerObjectLimit('n07W', UNLIMITED)   //Plague Construct
+    call f.registerObjectLimit('n07V', 6)           //Elder Banshee
     call f.registerObjectLimit('ubot', 24)	    //Undead Transport Ship
     call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship
-    call f.registerObjectLimit('ubsp', 4)           //Destroyer
-    call f.registerObjectLimit('nfgl', 2)           //Plague Titan
 
-    //Demi-Heroes
-    call f.registerObjectLimit('ubdd', 1)           //Sapphiron
-    call f.registerObjectLimit('uswb', 1)           //Banshee
+    call f.registerObjectLimit('H049', 1)        //Nathanos
+    call f.registerObjectLimit('U01O', 1)        //Putress
+    call f.registerObjectLimit('Uvar', 1)        //Varimathras
+    call f.registerObjectLimit('Usyl', 1)        //Sylvanas
     
     //Upgrades
     call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
@@ -71,6 +66,7 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
     call f.registerObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery
     call f.registerObjectLimit('Rusm', UNLIMITED)   //SkeletalLongevity
+    call f.registerObjectLimit('R02X', UNLIMITED)   // Open Scholomance
   endfunction
     
 endlibrary

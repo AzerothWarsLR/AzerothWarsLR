@@ -38,6 +38,9 @@ library QuestDominion requires QuestData, ScarletSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantDominion(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\DwarfTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

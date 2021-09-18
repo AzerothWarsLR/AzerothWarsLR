@@ -1,5 +1,9 @@
 library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
 
+  globals
+    private constant integer RESEARCH_ID = 'R04Y'   //This research is given when the quest is completed
+  endglobals
+
   struct QuestCapitalCity extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Capital City has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
@@ -44,6 +48,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
     endmethod
 
     private method OnAdd takes nothing returns nothing
+      call this.Holder.modObjectLimit(RESEARCH_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype
@@ -52,6 +57,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = RESEARCH_ID
       return this
     endmethod
   endstruct

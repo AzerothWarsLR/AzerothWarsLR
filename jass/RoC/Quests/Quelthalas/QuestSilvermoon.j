@@ -39,6 +39,9 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R02U', 1) 
       call this.GrantSilvermoon(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\SilvermoonTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

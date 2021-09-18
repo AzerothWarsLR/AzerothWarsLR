@@ -3,7 +3,6 @@ library ScourgeQuestSetup requires ScourgeSetup, QuestSapphiron QuestCorruptArth
   public function OnInit takes nothing returns nothing
     //Setup
     set FACTION_SCOURGE.StartingQuest = FACTION_SCOURGE.AddQuest(QuestSpiderWar.create())
-    call FACTION_SCOURGE.AddQuest(QuestScholomance.create())
     call FACTION_SCOURGE.AddQuest(QuestPlague.create())
     call FACTION_SCOURGE.AddQuest(QuestSapphiron.create())
     //Early duel
