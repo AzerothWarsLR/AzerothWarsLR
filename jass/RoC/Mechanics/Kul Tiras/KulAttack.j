@@ -25,8 +25,9 @@ library UnitsSpawnIfBlademasterIsAlive initializer OnInit
     endfunction
 
     private function OnPeriodic takes nothing returns nothing
-        call SpawnAndAttackMultipleUnits('ogru', 2)
+        call SpawnAndAttackMultipleUnits('ogru', 3)
         call SpawnAndAttackMultipleUnits('nftr', 1)
+        call SpawnAndAttackMultipleUnits('u00V', 1)
     endfunction
 
     private function OnBlademasterDies takes nothing returns nothing
