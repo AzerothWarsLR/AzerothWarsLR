@@ -18,6 +18,7 @@ library QuestSetup requires DalaranQuestSetup, DruidsQuestSetup, FelHordeQuestSe
     call KultirasQuestSetup_OnInit()
     call ScarletQuestSetup_OnInit()
     call TrollQuestSetup_OnInit()
+    call ForsakenQuestSetup_OnInit()
   endfunction
 
 endlibrary

@@ -110,10 +110,13 @@ library QuestItemData
 
     stub method operator Description= takes string value returns nothing
       set this.description = value
+      if this.questItem != null then
+        call QuestItemSetDescription(this.questItem, this.description)
+      endif
     endmethod
 
     stub method operator PingPath takes nothing returns string
-      return "MinimapQuestObjectivePrimary"
+      return "MinimapQuestObjectivePrimary" 
     endmethod
 
     //Run when added to a Quest

@@ -15,8 +15,6 @@ library QuestItemControlUnit requires QuestItemData
     private method OnUnitChangeOwner takes nothing returns nothing
       if this.Holder.Team.ContainsFaction(Person.ByHandle(GetOwningPlayer(this.target))) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
-      else
-        set this.Progress = QUEST_PROGRESS_FAILED
       endif
     endmethod
 

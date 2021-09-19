@@ -13,12 +13,12 @@ library QuestItemExpire requires QuestItemData, Persons
 
     private method OnExpire takes nothing returns nothing
       call DestroyTimer(this.timer)
-      set this.Progress = QUEST_PROGRESS_FAIL
+      set this.Progress = QUEST_PROGRESS_FAILED
     endmethod
 
     private static method OnAnyTimerExpires takes nothing returns nothing
       if thistype.byTimer[GetHandleId(GetExpiredTimer())] != 0 then
-        call QuestItemTime(thistype.byTimer[GetHandleId(GetExpiredTimer())]).OnExpire()
+        call QuestItemExpire(thistype.byTimer[GetHandleId(GetExpiredTimer())]).OnExpire()
       endif
     endmethod
 
