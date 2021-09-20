@@ -4,9 +4,6 @@ library LegendScourge initializer OnInit requires Legend
     Legend LEGEND_KELTHUZAD
     Legend LEGEND_ANUBARAK
     Legend LEGEND_RIVENDARE
-    Legend LEGEND_SYLVANASV
-
-    Legend LEGEND_SCHOLOMANCE
     Legend LEGEND_LICHKING
 
     constant integer UNITTYPE_KELTHUZAD_NECROMANCER = 'U001'
@@ -27,14 +24,6 @@ library LegendScourge initializer OnInit requires Legend
 
     set LEGEND_RIVENDARE = Legend.create()
     set LEGEND_RIVENDARE.UnitType = 'U00A'
-
-    set LEGEND_SYLVANASV = Legend.create()
-    set LEGEND_SYLVANASV.UnitType = 'Usyl'
-    set LEGEND_SYLVANASV.StartingXP = 5400
-
-    set LEGEND_SCHOLOMANCE = Legend.create()
-    set LEGEND_SCHOLOMANCE.Unit = gg_unit_u012_1149
-    set LEGEND_SCHOLOMANCE.DeathMessage = "Scholomance, the center of the Scourge's operations in Lordaeron, has been destroyed."
 
     set LEGEND_LICHKING = Legend.create()
     set LEGEND_LICHKING.Unit = gg_unit_u000_0649

@@ -10,8 +10,8 @@ library ForsakenSetup requires Faction, TeamSetup
     set FACTION_FORSAKEN = Faction.create("Forsaken", PLAYER_COLOR_LIGHT_BLUE, "|cff8080ff","ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp", 0)
     set f = FACTION_FORSAKEN
     set f.Team = TEAM_LEGION
-    set f.StartingGold = 150
-    set f.StartingLumber = 500
+    set f.StartingGold = 0
+    set f.StartingLumber = 100
 
     //Buildings
     call f.registerObjectLimit('h089', UNLIMITED)   //Necropolis   
