@@ -1,4 +1,4 @@
-library LegendScourge initializer OnInit requires Legend
+library LegendForsaken initializer OnInit requires Legend
 
   globals
     Legend LEGEND_SYLVANASV

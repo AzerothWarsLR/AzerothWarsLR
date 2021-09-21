@@ -24,6 +24,7 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.registerObjectLimit('u011', UNLIMITED)   //Crypt 
     call f.registerObjectLimit('u01J', UNLIMITED)   //Graveyard 
     call f.registerObjectLimit('u016', UNLIMITED)   //Slaughterhouse 
+    call f.registerObjectLimit('u01W', UNLIMITED)   //Royal Sepulcur
     call f.registerObjectLimit('u014', UNLIMITED)   //Temple of the Damned    
     call f.registerObjectLimit('u017', UNLIMITED)   //Tomb of Relics   
     call f.registerObjectLimit('u01A', UNLIMITED)   //Undead Shipyard
@@ -38,8 +39,10 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
     call f.registerObjectLimit('h08P', UNLIMITED)   //Sorceress
     call f.registerObjectLimit('u01R', UNLIMITED)   //Apothecary
-    call f.registerObjectLimit('n07W', UNLIMITED)   //Plague Construct
+    call f.registerObjectLimit('n07W', 12)   //Plague Construct
     call f.registerObjectLimit('n07V', 6)           //Elder Banshee
+    call f.registerObjectLimit('h009', 6)           //dread knight
+    call f.registerObjectLimit('u01V', 2)           //Valyr
     call f.registerObjectLimit('ubot', 24)	    //Undead Transport Ship
     call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
     call f.registerObjectLimit('uubs', 12)          //Undead Battleship
@@ -51,21 +54,7 @@ library ForsakenSetup requires Faction, TeamSetup
     
     //Upgrades
     call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
-    call f.registerObjectLimit('Rubu', UNLIMITED)   //Burrow
-    call f.registerObjectLimit('Ruex', UNLIMITED)   //Exhume Corpses
-    call f.registerObjectLimit('Rufb', UNLIMITED)   //Freezing Breath
-    call f.registerObjectLimit('Rugf', UNLIMITED)   //Ghoul Frenzy
-    call f.registerObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
-    call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web
-    call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
-    call f.registerObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
-    call f.registerObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
-    call f.registerObjectLimit('R01X', UNLIMITED)   //Epidemic
-    call f.registerObjectLimit('R06M', UNLIMITED)   //Titanomancy
-    call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
-    call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
-    call f.registerObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery
-    call f.registerObjectLimit('Rusm', UNLIMITED)   //SkeletalLongevity
+    call f.registerObjectLimit('R051', UNLIMITED)   //Apotechary Training
     call f.registerObjectLimit('R02X', UNLIMITED)   // Open Scholomance
   endfunction
     

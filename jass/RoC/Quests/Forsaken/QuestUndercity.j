@@ -41,8 +41,12 @@ library QuestUndercity requires QuestData, ForsakenSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantUndercity(this.Holder.Player)
-      //call WaygateActivateBJ( true, gg_unit_h00T_0786 )
-      //call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Undercity_Interior) )
+      call WaygateActivateBJ( true, gg_unit_n08F_1739 )
+      call WaygateActivateBJ( true, gg_unit_n08F_1798 )
+      call ShowUnitShow( gg_unit_n08F_1739 )
+      call ShowUnitShow( gg_unit_n08F_1798 )
+      call WaygateSetDestinationLocBJ( gg_unit_n08F_1739, GetRectCenter(gg_rct_Undercity_Interior_2) )
+      call WaygateSetDestinationLocBJ( gg_unit_n08F_1798, GetRectCenter(gg_rct_Undercity_Interior_1) )
       set this.Holder.Team = TEAM_FORSAKEN
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\ForsakenTheme.mp3" )
@@ -55,8 +59,8 @@ library QuestUndercity requires QuestData, ForsakenSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Forsaken Independance", "The Forsaken had enough of living under the tyranny of the Lich King. Sylvanas has vowed to give them their freedom back and a home", "ReplaceableTextures\\CommandButtons\\BTNForsakenArrows.blp")
-      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'R050'))
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_Sylvanas, gg_rct_Terenas, "Capital City"))
+      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h08B'))
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_SYLVANASV, gg_rct_Terenas, "Capital City"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
