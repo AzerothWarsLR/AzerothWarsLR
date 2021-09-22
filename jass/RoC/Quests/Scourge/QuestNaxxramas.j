@@ -32,10 +32,12 @@ library QuestNaxxramas requires QuestData, QuestItemKillUnit
       call this.GrantNaxxramas(this.Holder.Player)
       call SetUnitOwner( gg_unit_e013_1815, this.Holder.Player, true )
       call SetUnitInvulnerable( gg_unit_e013_1815, false )
+      call SetPlayerAbilityAvailableBJ( false, 'A0O2', this.Holder.Player)
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Naxxramas", "Caer Darrow is the perfect place to create the first bastion of the Scourge in Lordaeron and propagate the Plague.", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
+      local thistype this = thistype.allocate("The Dread Citadel", "This fallen necropolis can be transformed into a potent war machine by Kel'tuzad", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_NaxUnlock, "Naxxramas"))
       call this.AddQuestItem(QuestItemCastSpell.create('A0O2', true))
       return this
     endmethod

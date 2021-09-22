@@ -54,6 +54,7 @@ library ForsakenSetup requires Faction, TeamSetup
     
     //Upgrades
     call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
+    call f.registerObjectLimit('R05C', UNLIMITED)   //Banshee Adept Training
     call f.registerObjectLimit('R051', UNLIMITED)   //Apotechary Training
     call f.registerObjectLimit('R02X', UNLIMITED)   // Open Scholomance
   endfunction

@@ -50,7 +50,7 @@ library ScarletSetup requires Faction, TeamSetup
     call f.registerObjectLimit('Hlgr', 1)           //Garithos
 
     //Upgrades
-    call f.registerObjectLimit('R02E', UNLIMITED)   //Chaplain Adept Training
+    call f.registerObjectLimit('R05D', UNLIMITED)   //Chaplain Adept Training
     call f.registerObjectLimit('R00I', UNLIMITED)   //Light's Praise Initiate Training
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
