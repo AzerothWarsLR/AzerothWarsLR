@@ -39,6 +39,9 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R00P', 1) 
       call this.GrantHellfire(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\FelTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing
