@@ -19,6 +19,7 @@ library QuestSetup requires DalaranQuestSetup, DruidsQuestSetup, FelHordeQuestSe
     call ScarletQuestSetup_OnInit()
     call TrollQuestSetup_OnInit()
     call ForsakenQuestSetup_OnInit()
+    call TwilightQuestSetup_OnInit()
   endfunction
 
 endlibrary
