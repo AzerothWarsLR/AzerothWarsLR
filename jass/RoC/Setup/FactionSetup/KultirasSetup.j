@@ -54,6 +54,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('R01O', UNLIMITED)   //Crushing Wave
     call f.registerObjectLimit('R01T', UNLIMITED)   //Cluster Rockets
     call f.registerObjectLimit('R01U', UNLIMITED)   //Improved Barrage
+    call f.registerObjectLimit('R05G', UNLIMITED)   //Thornspeaker Training
 
     //Heroes
     call f.registerObjectLimit('Hapm', 1)           //Admiral
