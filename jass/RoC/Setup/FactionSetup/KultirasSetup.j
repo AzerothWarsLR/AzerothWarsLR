@@ -40,7 +40,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h05K', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
     call f.registerObjectLimit('e00B', UNLIMITED)   //Thornspeaker Bear
-    call f.registerObjectLimit('n009', UNLIMITED)   //Revenant of the Tides
+    call f.registerObjectLimit('n009', 12)          //Revenant of the Tides
     call f.registerObjectLimit('n07G', 6)           //muskateer
     call f.registerObjectLimit('n029', 12)          //Sea Giant
     call f.registerObjectLimit('h06J', UNLIMITED)   //Sniper

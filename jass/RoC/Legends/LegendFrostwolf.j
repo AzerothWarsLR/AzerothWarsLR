@@ -13,7 +13,7 @@ library LegendFrostwolf initializer OnInit requires Legend
 
   private function OnInit takes nothing returns nothing
     set LEGEND_CAIRNE = Legend.create()
-    set LEGEND_CAIRNE.Unit = gg_unit_Ocbh_1163
+    set LEGEND_CAIRNE.UnitType = 'Ocbh'
     set LEGEND_CAIRNE.DeathMessage = "Cairne's spirit has passed on from this world. The Tauren have already begun to revere their fallen ancestor."
   
     set LEGEND_GAZLOWE = Legend.create()
@@ -21,7 +21,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_GAZLOWE.StartingXP = 4000
 
     set LEGEND_THRALL = Legend.create()
-    set LEGEND_THRALL.Unit = gg_unit_Othr_1598
+    set LEGEND_THRALL.UnitType = 'Othr'
     set LEGEND_THRALL.Essential = true
   
     set LEGEND_THUNDERBLUFF = Legend.create()
