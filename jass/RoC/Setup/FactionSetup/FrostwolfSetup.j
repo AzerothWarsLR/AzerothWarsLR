@@ -26,7 +26,6 @@ library FrostwolfSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o002', UNLIMITED)   //Improved Watch Tower
     call f.registerObjectLimit('ovln', UNLIMITED)   //Voodoo Lounge
     call f.registerObjectLimit('oshy', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('o01M', UNLIMITED)   //Goblin Laboratory
 
     call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
     call f.registerObjectLimit('ogru', UNLIMITED)   //Grunt
@@ -42,10 +41,11 @@ library FrostwolfSetup requires Faction, TeamSetup
     call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
     call f.registerObjectLimit('oosc', UNLIMITED)   //Pack Kodo
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
-    call f.registerObjectLimit('n061', 12)          //Goblin Sapper
-    call f.registerObjectLimit('n062', 8)           //Goblin Shredder
 
     call f.registerObjectLimit('h00C', 1)           //Drek'thar
+    call f.registerObjectLimit('Othr', 1)           //Thrall
+    call f.registerObjectLimit('Ocbh', 1)           //Cairne
+    call f.registerObjectLimit('Orkn', 1)           //Voljin
 
     call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training

@@ -14,12 +14,10 @@ library StructurePackingInit initializer OnInit requires StructurePackingConfig
     local unit u
     local integer i = 0
 
-    set Buildings[0] = 'o01M'
+    set Buildings[0] = 'ogre'
     set Buildings[1] = 'ofor'
     set Buildings[2] = 'oalt'
     set Buildings[3] = 'obar'
-    set Buildings[4] = 'otto'
-    set Buildings[5] = 'osld'
 
     call GroupEnumUnitsInRect(tempGroup, gg_rct_CairneStart, null)
     loop
