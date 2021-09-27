@@ -2,15 +2,15 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
 
   public function OnInit takes nothing returns nothing
     //Early duel
-    local QuestData ChapterOne = FACTION_NAGA.AddQuest(QuestIllidanChapterOne.create())
-    local QuestData ChapterTwo = FACTION_NAGA.AddQuest(QuestIllidanChapterTwo.create())
-    local QuestData ChapterThree = FACTION_NAGA.AddQuest(QuestIllidanChapterThree.create())
-  
-    set FACTION_NAGA.StartingQuest = ChapterOne
 
-    set ChapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
-    set ChapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
+    local QuestData chapterThree = QuestIllidanChapterThree.create()
+    local QuestData chapterTwo = QuestIllidanChapterTwo.create(chapterThree)
+    local QuestData chapterOne = QuestIllidanChapterOne.create(chapterTwo)
+    call FACTION_NAGA.AddQuest(chapterOne)
+    call FACTION_NAGA.AddQuest(chapterTwo)
+    call FACTION_NAGA.AddQuest(chapterThree)
 
+    set FACTION_NAGA.StartingQuest = chapterOne
   endfunction
 
 endlibrary
