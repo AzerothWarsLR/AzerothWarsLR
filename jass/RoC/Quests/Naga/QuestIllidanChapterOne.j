@@ -3,6 +3,8 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
 
   struct QuestIllidanChapterOne extends QuestData
 
+    private QuestData questToDiscover
+
     private method operator CompletionPopup takes nothing returns string
       return "Illidan has learned of the existence of the Skull of Gul'dan, hidden in Dalaran"
     endmethod
@@ -20,6 +22,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "the Aetheneum Library"))
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "Immol'thar's Lair"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_IMMOLTHAR))
+      set this.questToDiscover = questToDiscover
       return this
     endmethod
   endstruct
