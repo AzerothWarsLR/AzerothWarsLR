@@ -5,6 +5,7 @@ library FrostwolfQuestSetup requires FrostwolfSetup, WarsongSetup, QuestDrekthar
     local QuestData newQuest = FACTION_FROSTWOLF.AddQuest(QuestSeaWitch.create())
     set FACTION_FROSTWOLF.StartingQuest = newQuest
     call FACTION_FROSTWOLF.AddQuest(QuestThunderBluff.create(FACTION_WARSONG))
+    call FACTION_WARSONG.AddQuest(QuestCrossroads.create(FACTION_WARSONG))
     //Starting duel
     call FACTION_FROSTWOLF.AddQuest(QuestDrektharsSpellbook.create())
     call FACTION_FROSTWOLF.AddQuest(QuestZeppelins.create())
