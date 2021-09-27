@@ -40,7 +40,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       local group tempGroup = CreateGroup()
       local unit u
       //Transfer control of all passive units on island and teleport all Frostwolf units to shore
-      call this.GiveGrantTauren(this.Holder.Player)
+      call this.GrantTauren(this.Holder.Player)
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Darkspear_Island, null)
       loop
         set u = FirstOfGroup(tempGroup)

@@ -50,7 +50,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_H00E_1728, tempArtifact.item) 
 
     set tempArtifact = Artifact.create(CreateItem('I01V', DUMMY_X, DUMMY_Y))    //Gorehowl
-    call UnitAddItem(gg_unit_Ogrh_0249, tempArtifact.item)                      //Grom
+    call UnitAddItem(gg_unit_nrzm_0113, tempArtifact.item)                      //Razomerman Placeholder
 
     set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
     call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_HIDDEN)

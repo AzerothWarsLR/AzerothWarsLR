@@ -65,7 +65,7 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
         call this.GiveLumberJack(this.fallbackFaction.Player)
       else
         call this.GiveCrossroads(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-        call this.GiveLumberjack(this.fallbackFaction.Player)
+        call this.GiveLumberJack(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       endif
     endmethod
 

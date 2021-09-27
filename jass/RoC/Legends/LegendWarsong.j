@@ -35,7 +35,7 @@ library LegendWarsong initializer OnInit requires Legend
     //set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
 
     set LEGEND_GROM = Legend.create()
-    set LEGEND_GROM.Unit = gg_unit_Ogrh_0249
+    set LEGEND_GROM.UnitType = 'Ogrh'
     call LEGEND_GROM.AddUnitDependency(LEGEND_STONEMAUL.Unit)
     //call LEGEND_GROM.AddUnitDependency(LEGEND_ENCAMPMENT.Unit)
     set LEGEND_GROM.DeathMessage = "Grom Hellscream lies broken on the battlefield. It is yet to be seen whether or not the Warsong Clan can survive without his strong leadership."    
