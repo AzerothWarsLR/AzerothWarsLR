@@ -276,6 +276,7 @@ library QuestData requires QuestItemData, Event
       local integer i = 0
       local QuestItemData tempQuestItemData
       local string display = ""
+      call BJDebugMsg("Test3")
       if GetLocalPlayer() == this.Holder.Player then
         set display = display + "\n|cffffcc00QUEST DISCOVERED - " + this.Title + "|r\n" + this.Description + "\n"
         loop 
@@ -288,6 +289,7 @@ library QuestData requires QuestItemData, Event
           endif
           set i = i + 1
         endloop
+        call BJDebugMsg("Test4")
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
         call StartSound(bj_questDiscoveredSound)
       endif

@@ -14,7 +14,9 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     private method OnComplete takes nothing returns nothing
+    call BJDebugMsg("Test1")
     call questToDiscover.DisplayDiscovered()
+    call BJDebugMsg("Test2")
     endmethod
 
     public static method create takes nothing returns thistype
