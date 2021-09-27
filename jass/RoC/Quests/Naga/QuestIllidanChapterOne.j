@@ -14,9 +14,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    call BJDebugMsg("Test1")
     set questToDiscover.Progress = QUEST_PROGRESS_INCOMPLETE
-    call BJDebugMsg("Test2")
     endmethod
 
     public static method create takes QuestData questToDiscover returns thistype

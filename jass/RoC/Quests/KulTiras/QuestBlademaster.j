@@ -24,8 +24,33 @@ library QuestBlademaster requires QuestData, ScarletSetup
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
           call UnitRescue(u, whichPlayer)
-        else 
+        else
+          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
           call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
+          endif
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null      
+    endmethod
+
+    private method GrantShip takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Blademaster
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_ShipAmbient, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
+          call UnitRescue(u, whichPlayer)
+        else
+          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
+          endif
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
@@ -40,6 +65,7 @@ library QuestBlademaster requires QuestData, ScarletSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantBlademaster(this.Holder.Player)
+      call this.GrantShip(this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -47,7 +73,7 @@ library QuestBlademaster requires QuestData, ScarletSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Remnants of the Second War", "This island is infested by orcs, they have captured the shipyard. Kill them all", "ReplaceableTextures\\CommandButtons\\BTNHeroBlademaster.blp")
+      local thistype this = thistype.allocate("Remnants of the Second War", "This island is infested by orcs, they have captured our Flagship. Kill them all", "ReplaceableTextures\\CommandButtons\\BTNHeroBlademaster.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_o00G_1521)) //Blademaster
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
