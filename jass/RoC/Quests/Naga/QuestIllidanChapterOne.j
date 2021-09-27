@@ -15,7 +15,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
 
     private method OnComplete takes nothing returns nothing
     call BJDebugMsg("Test1")
-    call questToDiscover.DisplayDiscovered()
+    set questToDiscover.Progress = QUEST_PROGRESS_INCOMPLETE
     call BJDebugMsg("Test2")
     endmethod
 
