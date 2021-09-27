@@ -10,6 +10,9 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     call FACTION_NAGA.AddQuest(chapterTwo)
     call FACTION_NAGA.AddQuest(chapterThree)
 
+    set chapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
+    set chapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
+
     set FACTION_NAGA.StartingQuest = chapterOne
   endfunction
 
