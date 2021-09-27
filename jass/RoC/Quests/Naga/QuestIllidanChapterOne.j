@@ -12,6 +12,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     private method OnComplete takes nothing returns nothing
+    call questToDiscover.DisplayDiscovered()
     endmethod
 
     public static method create takes nothing returns thistype
