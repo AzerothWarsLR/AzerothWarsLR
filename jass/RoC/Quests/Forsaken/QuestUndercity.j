@@ -6,6 +6,11 @@ library QuestUndercity requires QuestData, ForsakenSetup
   endglobals
 
   struct QuestUndercity extends QuestData
+
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+    
     private method operator CompletionPopup takes nothing returns string
       return "Undercity is now under the " + this.Holder.Team.Name + " and they have declared independance."
     endmethod

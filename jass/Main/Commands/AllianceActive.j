@@ -6,7 +6,7 @@ library AllianceActive initializer OnInit requires Team
 
 	private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger(  )
-    call TriggerRegisterTimerEventSingle( trig, 1680.00 )
+    call TriggerRegisterTimerEventSingle( trig, 10.00 )
     call TriggerAddAction( trig, function Actions )
  endfunction
 

@@ -28,7 +28,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o02T', UNLIMITED)   //Shipyard
     call f.registerObjectLimit('o01T', UNLIMITED)   //Goblin Hardware Shop
 
-    call f.registerObjectLimit('opeo', UNLIMITED)   //Peon
+    call f.registerObjectLimit('o04L', UNLIMITED)   //Peon
     call f.registerObjectLimit('o02M', UNLIMITED)   //Grunt
     call f.registerObjectLimit('orai', UNLIMITED)   //Raider
     call f.registerObjectLimit('n08E', UNLIMITED)   //Hexbinder

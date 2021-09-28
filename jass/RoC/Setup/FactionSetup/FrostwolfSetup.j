@@ -46,6 +46,7 @@ library FrostwolfSetup requires Faction, TeamSetup
     call f.registerObjectLimit('Othr', 1)           //Thrall
     call f.registerObjectLimit('Ocbh', 1)           //Cairne
     call f.registerObjectLimit('Orkn', 1)           //Voljin
+    call f.registerObjectLimit('Orex', 1)           //Rexxar
 
     call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training

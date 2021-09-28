@@ -5,6 +5,11 @@ library QuestCataclysm requires QuestData, TwilightSetup
   endglobals
 
   struct QuestCataclysm extends QuestData
+
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+    
     private method operator CompletionPopup takes nothing returns string
       return "Deathwing is here, Doomsday is at hand, the Cataclysm as begun!"
     endmethod

@@ -15,10 +15,6 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_CAIRNE = Legend.create()
     set LEGEND_CAIRNE.UnitType = 'Ocbh'
     set LEGEND_CAIRNE.DeathMessage = "Cairne's spirit has passed on from this world. The Tauren have already begun to revere their fallen ancestor."
-  
-    set LEGEND_GAZLOWE = Legend.create()
-    set LEGEND_GAZLOWE.UnitType = 'Ntin'
-    set LEGEND_GAZLOWE.StartingXP = 4000
 
     set LEGEND_THRALL = Legend.create()
     set LEGEND_THRALL.UnitType = 'Othr'
@@ -35,7 +31,6 @@ library LegendFrostwolf initializer OnInit requires Legend
 
     set LEGEND_REXXAR = Legend.create()
     set LEGEND_REXXAR.UnitType = 'Orex'
-    set LEGEND_REXXAR.StartingXP = 7000
 
     set LEGEND_ORGRIMMAR = Legend.create()
     set LEGEND_ORGRIMMAR.DeathMessage = "Orgrimmar has been demolished. With it dies the hopes and dreams of a wartorn race seeking refuge in a new world."
