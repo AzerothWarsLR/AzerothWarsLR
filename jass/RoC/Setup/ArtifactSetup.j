@@ -68,7 +68,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
     set tempArtifact = Artifact.create(CreateItem('I004', DUMMY_X, DUMMY_Y))    //The Doomhammer
-    call UnitAddItem(gg_unit_O02L_0340, tempArtifact.item)                      //witch
+    call UnitAddItem(gg_unit_nmrm_3219, tempArtifact.item)                      //Murloc
 
     set tempArtifact = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
     call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)

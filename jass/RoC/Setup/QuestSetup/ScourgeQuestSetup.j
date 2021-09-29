@@ -8,7 +8,6 @@ library ScourgeQuestSetup requires ScourgeSetup, QuestSapphiron QuestCorruptArth
     call FACTION_SCOURGE.AddQuest(QuestSapphiron.create())
     //Early duel
     call FACTION_SCOURGE.AddQuest(QuestCorruptArthas.create())
-    call FACTION_SCOURGE.AddQuest(QuestReanimateSylvanas.create())
     call FACTION_SCOURGE.AddQuest(QuestKelthuzad.create())
     //Misc
     call FACTION_SCOURGE.AddQuest(QuestLichKingArthas.create())

@@ -39,12 +39,12 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('obot', 24)   	    //Transport Ship
     call f.registerObjectLimit('odes', 24)  	     //Orc Frigate
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
-    call f.registerObjectLimit('o021', 12)          //Ravager
-    call f.registerObjectLimit('nftk', 12)          //Warlord
     call f.registerObjectLimit('o00G', 6)           //Blademaster
     call f.registerObjectLimit('n03F', 6)           //Korkron elite
-    call f.registerObjectLimit('o02K', 6)           //Bear Rider
     call f.registerObjectLimit('owyv', 8)           //Wind Rider
+
+    call f.registerObjectLimit('Ogrh', 1)           //Grom
+    call f.registerObjectLimit('O04M', 1)           //Rokkan
 
     call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration

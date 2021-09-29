@@ -2,9 +2,10 @@ library WarsongQuestSetup requires WarsongSetup, FrostwolfSetup, QuestChenStorms
 
   public function OnInit takes nothing returns nothing
     //Setup
-    set FACTION_WARSONG.StartingQuest = FACTION_WARSONG.AddQuest(QuestChenStormstout.create())
+    set FACTION_WARSONG.StartingQuest = FACTION_WARSONG.AddQuest(QuestLumberQuota.create())
+    call FACTION_WARSONG.AddQuest(QuestChenStormstout.create())
+    call FACTION_WARSONG.AddQuest(QuestStonemaul.create())
     call FACTION_WARSONG.AddQuest(QuestFountainOfBlood.create())
-    call FACTION_WARSONG.AddQuest(QuestCrossroads.create(FACTION_FROSTWOLF))
     //Early duel
     call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
     call FACTION_WARSONG.AddQuest(QuestWarsongKillDruids.create())

@@ -20,7 +20,6 @@ library LegendLegion initializer OnInit requires Legend
     
     set LEGEND_ANETHERON = Legend.create()
     set LEGEND_ANETHERON.UnitType = 'U00L'
-    set LEGEND_ANETHERON.StartingXP = 4000
     set LEGEND_ANETHERON.PlayerColor = PLAYER_COLOR_ORANGE
 
     set LEGEND_TICHONDRIUS = Legend.create()

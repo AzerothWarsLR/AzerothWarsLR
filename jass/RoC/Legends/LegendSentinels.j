@@ -12,7 +12,7 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
 
   private function OnInit takes nothing returns nothing
     set LEGEND_MAIEV = Legend.create()
-    set LEGEND_MAIEV.Unit = gg_unit_Ewrd_0451
+    set LEGEND_MAIEV.UnitType = 'Ewrd'
 
     set LEGEND_AUBERDINE = Legend.create()
     set LEGEND_AUBERDINE.Unit = gg_unit_e00J_0320
@@ -23,12 +23,12 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
     set LEGEND_FEATHERMOON.IsCapital = true
 
     set LEGEND_TYRANDE = Legend.create()
-    set LEGEND_TYRANDE.Unit = gg_unit_Etyr_1241
+    set LEGEND_TYRANDE.UnitType = 'Etyr'
     set LEGEND_TYRANDE.PlayerColor = PLAYER_COLOR_CYAN
     set LEGEND_TYRANDE.Essential = true
 
     set LEGEND_SHANDRIS = Legend.create()
-    set LEGEND_SHANDRIS.Unit = gg_unit_E002_1221
+    set LEGEND_SHANDRIS.UnitType = 'E002'
 
     set LEGEND_JALIN = Legend.create()
     set LEGEND_JALIN.UnitType = 'E00S'

@@ -14,11 +14,9 @@ library LegendLordaeron initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_MOGRAINE = Legend.create()
     set LEGEND_MOGRAINE.UnitType = 'H01J'
-    set LEGEND_MOGRAINE.StartingXP = 7000
 
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
-    set LEGEND_GARITHOS.StartingXP = 2800
 
     set LEGEND_CAPITALPALACE = Legend.create()
     set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406
