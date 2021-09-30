@@ -16,10 +16,10 @@ library LegendNaga initializer OnInit requires Legend
     set LEGEND_ILLIDAN.PlayerColor = PLAYER_COLOR_PURPLE
 
     set LEGEND_VASHJ = Legend.create()
-    set LEGEND_VASHJ.Unit = gg_unit_Hvsh_2740
+    set LEGEND_VASHJ.UnitType = 'Hvsh'
 
     set LEGEND_NAJENTUS = Legend.create()
-    set LEGEND_NAJENTUS.Unit = gg_unit_U00S_2743
+    set LEGEND_NAJENTUS.UnitType = 'U00S'
 
     set LEGEND_OBELISK = Legend.create()
     set LEGEND_OBELISK.Unit = gg_unit_nico_3620

@@ -6,7 +6,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Stonemaul"
+      return "Control of all units in Stonemaul and 3000 lumber"
     endmethod
 
     private method GrantStonemaul takes player whichPlayer returns nothing
@@ -34,6 +34,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
 
     private method OnComplete takes nothing returns nothing
       call this.GrantStonemaul(this.Holder.Player)
+      call AdjustPlayerStateBJ( 3000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     private method OnAdd takes nothing returns nothing
