@@ -45,6 +45,12 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R03X')    //High Sorcerer Andromath Aid
     call researchSet.add('R03Y')    //Katrana Prestor Aid
     call researchSet.add('R03R')    //Reginald Windsor Aid
+
+    //Naga Path
+    set researchSet = IncompatibleResearchSet.create()
+    call researchSet.add('R062')   //Redemption path
+    call researchSet.add('R063')   //Exile Path
+    call researchSet.add('R065')   //Madness Path
   endfunction    
     
 endlibrary

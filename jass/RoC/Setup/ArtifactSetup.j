@@ -24,6 +24,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     local Artifact tempArtifact = 0
 
     set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))
+    call UnitAddAbility(gg_unit_n021_2624, ARTIFACT_HOLDER_ABIL_ID)  
     call UnitAddItem(gg_unit_n021_2624, ARTIFACT_CROWNSTORMWIND.item)                      //Hogger
 
     set ARTIFACT_EYEOFSARGERAS = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
@@ -43,14 +44,14 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_nemi_0019, ARTIFACT_CROWNLORDAERON.item)           
 
     set tempArtifact = Artifact.create(CreateItem('I00D', DUMMY_X, DUMMY_Y))    //Shalamayne
+    call UnitAddAbility(gg_unit_n021_2624, ARTIFACT_HOLDER_ABIL_ID)  
     call UnitAddItem(gg_unit_n021_2624, tempArtifact.item)                      //Hogger
 
     set tempArtifact = Artifact.create(CreateItem('klmm', DUMMY_X, DUMMY_Y))    //Killmaim
     call UnitAddAbility(gg_unit_H00E_1728, ARTIFACT_HOLDER_ABIL_ID)             //Ramzes the Horror
     call UnitAddItem(gg_unit_H00E_1728, tempArtifact.item) 
 
-    set tempArtifact = Artifact.create(CreateItem('I01V', DUMMY_X, DUMMY_Y))    //Gorehowl
-    call UnitAddItem(gg_unit_nrzm_0113, tempArtifact.item)                      //Razomerman Placeholder
+    set tempArtifact = Artifact.create(CreateItem('I01V', -10330, 2105))     //Gorehowl
 
     set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
     call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_HIDDEN)
@@ -67,8 +68,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', 21886, -25219))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
-    set tempArtifact = Artifact.create(CreateItem('I004', DUMMY_X, DUMMY_Y))    //The Doomhammer
-    call UnitAddItem(gg_unit_nmrm_3219, tempArtifact.item)                      //Murloc
+    set tempArtifact = Artifact.create(CreateItem('I004', -1480, -2240))     //The Doomhammer
 
     set tempArtifact = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
     call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)

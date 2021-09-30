@@ -26,12 +26,9 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_STONEMAUL.IsCapital = true
 
     set LEGEND_ENCAMPMENT = Legend.create()
-    //set LEGEND_ENCAMPMENT.Unit = gg_unit_o02K_0450
 
     set LEGEND_GROM = Legend.create()
     set LEGEND_GROM.UnitType = 'Ogrh'
-    set LEGEND_GROM.DeathMessage = "Grom Hellscream lies broken on the battlefield. It is yet to be seen whether or not the Warsong Clan can survive without his strong leadership."    
-    set LEGEND_GROM.Essential = true
   endfunction
 
 endlibrary

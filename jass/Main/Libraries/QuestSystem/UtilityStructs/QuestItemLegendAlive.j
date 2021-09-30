@@ -23,6 +23,20 @@ library QuestItemLegendAlive requires QuestItemData, Environment, Legend
       endloop
     endmethod
 
+    private static method OnAnyUnitTrain takes nothing returns nothing
+      local integer i = 0
+      local thistype loopQuestItem
+      local unit triggerUnit = GetTrainedUnit()
+      loop
+        exitwhen i == thistype.count
+        set loopQuestItem = thistype.byIndex[i]
+        if not loopQuestItem.ProgressLocked and loopQuestItem.target == GetUnitTypeId(triggerUnit) and loopQuestItem.Holder.Player == GetOwningPlayer(GetTrainedUnit()) then
+          set loopQuestItem.Progress = QUEST_PROGRESS_COMPLETE
+        endif
+        set i = i + 1
+      endloop
+    endmethod
+
     method OnAdd takes nothing returns nothing
       if UnitAlive(this.target.Unit) then
         set this.Progress = QUEST_PROGRESS_COMPLETE
@@ -45,6 +59,7 @@ library QuestItemLegendAlive requires QuestItemData, Environment, Legend
     private static method onInit takes nothing returns nothing
       local trigger trig = CreateTrigger()
       call OnLegendPermaDeath.register(trig)
+      call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_TRAIN_FINISH, function thistype.OnAnyUnitTrain)
       call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
     endmethod
   endstruct
