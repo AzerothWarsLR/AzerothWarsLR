@@ -43,7 +43,10 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      local QuestData exilePath = QuestExilePath.create()
       call this.GrantNagaSmall(this.Holder.Player)
+      call FACTION_NAGA.AddQuest(exilePath)
+      set exilePath.Progress = QUEST_PROGRESS_UNDISCOVERED
     endmethod
 
     public static method create takes nothing returns thistype

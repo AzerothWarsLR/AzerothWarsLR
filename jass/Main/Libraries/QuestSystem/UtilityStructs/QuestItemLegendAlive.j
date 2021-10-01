@@ -23,14 +23,14 @@ library QuestItemLegendAlive requires QuestItemData, Environment, Legend
       endloop
     endmethod
 
-    private static method OnAnyUnitTrain takes nothing returns nothing
+    private static method OnAnyUnitTrain takes nothing returns nothing  //this will fuck up if a legend is already alive or another one is trained
       local integer i = 0
       local thistype loopQuestItem
       local unit triggerUnit = GetTrainedUnit()
       loop
         exitwhen i == thistype.count
         set loopQuestItem = thistype.byIndex[i]
-        if not loopQuestItem.ProgressLocked and loopQuestItem.target == GetUnitTypeId(triggerUnit) and loopQuestItem.Holder.Player == GetOwningPlayer(GetTrainedUnit()) then
+        if not loopQuestItem.ProgressLocked and loopQuestItem.target.UnitType == GetUnitTypeId(triggerUnit) and loopQuestItem.Holder.Player == GetOwningPlayer(GetTrainedUnit()) then
           set loopQuestItem.Progress = QUEST_PROGRESS_COMPLETE
         endif
         set i = i + 1
