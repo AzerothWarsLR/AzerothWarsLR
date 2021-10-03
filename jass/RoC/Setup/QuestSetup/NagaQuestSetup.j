@@ -10,9 +10,9 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     call FACTION_NAGA.AddQuest(chapterTwo)
     call FACTION_NAGA.AddQuest(chapterThree)
 
-    set EXILE_PATH = QuestExilePath.crate()
-    set MADNESS_PATH = QuestMadnessPath.crate()
-    set REDEMPTION_PATH = QuestRedemptionPath.crate()
+    set EXILE_PATH = QuestExilePath.create()
+    set MADNESS_PATH = QuestMadnessPath.create()
+    set REDEMPTION_PATH = QuestRedemptionPath.create()
 
     set chapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
     set chapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED

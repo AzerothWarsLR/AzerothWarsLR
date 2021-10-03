@@ -15,17 +15,21 @@ library TeamSetup requires Team
   public function OnInit takes nothing returns nothing 
     //Starting teams
     local Team t = 0
-    set TEAM_LEGION = Team.create("Burning Legion")
-    set TEAM_LEGION.VictoryMusic = "DarkVictory"
 
     set TEAM_ALLIANCE = Team.create("Alliance")
     set TEAM_ALLIANCE.VictoryMusic = "HeroicVictory"
+
+    set TEAM_LEGION = Team.create("Burning Legion")
+    set TEAM_LEGION.VictoryMusic = "DarkVictory"
 
     set TEAM_HORDE = Team.create("Horde")
     set TEAM_HORDE.VictoryMusic = "DarkVictory"
 
     set TEAM_NIGHT_ELVES = Team.create("Night Elves")
     set TEAM_NIGHT_ELVES.VictoryMusic = "HeroicVictory"
+
+    set TEAM_OLDGOD = Team.create("Old Gods")
+    set TEAM_OLDGOD.VictoryMusic = "DarkVictory"
 
     set TEAM_NAGA = Team.create("Illidari")
     set TEAM_NAGA.VictoryMusic = "DarkVictory"
@@ -38,9 +42,6 @@ library TeamSetup requires Team
  
     set TEAM_FORSAKEN = Team.create("Forsaken")
     set TEAM_FORSAKEN.VictoryMusic = "DarkVictory"
-
-    set TEAM_OLDGOD = Team.create("Old Gods")
-    set TEAM_OLDGOD.VictoryMusic = "DarkVictory"
   endfunction
 
 endlibrary

@@ -66,6 +66,8 @@ library QuestMadnessPath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
+      set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
       call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       call this.GrantNazjatar(this.Holder.Player)
       call this.GrantAetheneum(this.Holder.Player)
@@ -95,7 +97,7 @@ library QuestMadnessPath requires QuestData, NagaSetup
       local thistype this = thistype.allocate("Voices in the Void", "Illidan follows his heart and seeks forgivness to Malfurion. United by their brotherly bond and their desire to protect Tyrande, they decide to unite forces again.", "ReplaceableTextures\\CommandButtons\\BTNGuardianofTheSea.blp")
       call this.AddQuestItem(QuestItemUpgrade.create('n055', 'nntt'))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NAJENTUS, true))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Nazjatar"))
       set this.ResearchId = QUEST_RESEARCH_ID

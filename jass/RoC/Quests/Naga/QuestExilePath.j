@@ -43,6 +43,8 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
+      set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED
       call this.GrantNazjatar(this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_n07E_1491 )
       call WaygateActivateBJ( true, gg_unit_n07E_0958 )
@@ -59,8 +61,6 @@ library QuestExilePath requires QuestData, NagaSetup
       call this.AddQuestItem(QuestItemUpgrade.create('n055', 'nntt'))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_VASHJ, true))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NAJENTUS, true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Nazjatar"))
       set this.ResearchId = QUEST_RESEARCH_ID
