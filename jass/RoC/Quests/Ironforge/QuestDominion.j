@@ -52,8 +52,7 @@ library QuestDominion requires QuestData, ScarletSetup
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n017')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n014')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n013')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02M')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02X')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03X')))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID
       return this

@@ -43,7 +43,7 @@ library UnitsSpawnIfZulIsAlive initializer OnInit
 
     private function OnInit takes nothing returns nothing
         set ZulDiesTrigger = CreateTrigger()
-        call TriggerRegisterUnitEvent(ZulDiesTrigger, gg_unit_o00G_1521, EVENT_UNIT_DEATH)
+        call TriggerRegisterUnitEvent(ZulDiesTrigger, gg_unit_O00O_1933, EVENT_UNIT_DEATH)
         call TriggerAddAction(ZulDiesTrigger, function OnZulDies)
         
         set SpawnDelayTimer = CreateTimer()

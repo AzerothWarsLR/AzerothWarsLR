@@ -44,9 +44,27 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
 
     private method OnComplete takes nothing returns nothing
       local QuestData exilePath = QuestExilePath.create()
+      local QuestData redemptionPath = QuestRedemptionPath.create()
+      local QuestData madnessPath = QuestMadnessPath.create()
       call this.GrantNagaSmall(this.Holder.Player)
+      call FACTION_NAGA.AddQuest(redemptionPath)
+      set redemptionPath.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(exilePath)
       set exilePath.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_NAGA.AddQuest(madnessPath)
+      set madnessPath.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call WaygateActivateBJ( true, gg_unit_h01D_3378 )
+      call ShowUnitShow( gg_unit_h01D_3378 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
+      call WaygateActivateBJ( true, gg_unit_h01A_0402 )
+      call ShowUnitShow( gg_unit_h01A_0402 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01A_0402, GetRectCenter(gg_rct_NazjatarExit1) )
+      call WaygateActivateBJ( true, gg_unit_h01D_3381 )
+      call ShowUnitShow( gg_unit_h01D_3381 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3381, GetRectCenter(gg_rct_NazjatarEntrance1) )
+      call WaygateActivateBJ( true, gg_unit_h01D_3384 )
+      call ShowUnitShow( gg_unit_h01D_3384 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3384, GetRectCenter(gg_rct_NazjatarEntrance2) )
     endmethod
 
     public static method create takes nothing returns thistype

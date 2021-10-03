@@ -12,11 +12,11 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Undercity is now under the " + this.Holder.Team.Name + " and they have declared independance."
+      return "Nazjatar is now under the influence of the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Undercity, unlock Nathanos and unally the Legion team"
+      return "Control of all units in Nazjatar"
     endmethod
 
     private method GrantNazjatar takes player whichPlayer returns nothing
@@ -44,19 +44,23 @@ library QuestExilePath requires QuestData, NagaSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantNazjatar(this.Holder.Player)
-      call WaygateActivateBJ( true, gg_unit_n08F_1739 )
-      call WaygateActivateBJ( true, gg_unit_n08F_1798 )
-      call ShowUnitShow( gg_unit_n08F_1739 )
-      call ShowUnitShow( gg_unit_n08F_1798 )
-      call WaygateSetDestinationLocBJ( gg_unit_n08F_1739, GetRectCenter(gg_rct_Undercity_Interior_2) )
-      call WaygateSetDestinationLocBJ( gg_unit_n08F_1798, GetRectCenter(gg_rct_Undercity_Interior_1) )
+      call WaygateActivateBJ( true, gg_unit_n07E_1491 )
+      call WaygateActivateBJ( true, gg_unit_n07E_0958 )
+      call ShowUnitShow( gg_unit_n07E_1491  )
+      call ShowUnitShow( gg_unit_n07E_0958 )
+      call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_NazjatarExit3) )
+      call WaygateSetDestinationLocBJ( gg_unit_n07E_0958 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
+      call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, 'R06D', 1)
+      call SetPlayerTechResearched(FACTION_SENTINELS.Player, 'R06D', 1)
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("A Parting of Ways", "The Forsaken had enough of living under the tyranny of the Lich King. Sylvanas has vowed to give them their freedom back and a home", "ReplaceableTextures\\CommandButtons\\BTNForsakenArrows.blp")
+      local thistype this = thistype.allocate("A Parting of Ways", "Illidan has to go his own way to find the power and Outland is the perfect place to acquire it.", "ReplaceableTextures\\CommandButtons\\BTNIllidanDemonicPower.blp")
       call this.AddQuestItem(QuestItemUpgrade.create('n055', 'nntt'))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_VASHJ, true))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NAJENTUS, true))
       call this.AddQuestItem(QuestItemSelfExists.create())
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Nazjatar"))
       set this.ResearchId = QUEST_RESEARCH_ID

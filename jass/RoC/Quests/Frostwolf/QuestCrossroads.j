@@ -14,19 +14,17 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
     endmethod    
 
     private method GiveCrossroads takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
       local unit u
 
       //Transfer all Neutral Passive units in Crossroads to one of the above factions
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_Crossroads, null)
-      set u = FirstOfGroup(tempGroup)
+      set u = FirstOfGroup(udg_Crossroad)
       loop
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
           call UnitRescue(u, whichPlayer)
         endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
+        call GroupRemoveUnit(udg_Crossroad, u)
+        set u = FirstOfGroup(udg_Crossroad)
       endloop
       //Give resources and display message
       call CreateUnit(whichPlayer, 'oeye', -12844, -1975, 0)
@@ -34,8 +32,7 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
       call CreateUnit(whichPlayer, 'oeye', -11922, -824, 0)
 
       //Cleanup
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
+      call DestroyGroup(udg_Crossroad)
     endmethod
 
     private method GiveLumberJack takes player whichPlayer returns nothing
