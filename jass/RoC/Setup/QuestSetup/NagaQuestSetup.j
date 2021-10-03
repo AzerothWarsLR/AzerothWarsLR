@@ -1,4 +1,4 @@
-library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanChapterTwo, QuestIllidanChapterThree
+library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanChapterTwo, QuestIllidanChapterThree, GlobalQuest
 
   public function OnInit takes nothing returns nothing
     //Early duel
@@ -9,6 +9,10 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     call FACTION_NAGA.AddQuest(chapterOne)
     call FACTION_NAGA.AddQuest(chapterTwo)
     call FACTION_NAGA.AddQuest(chapterThree)
+
+    set EXILE_PATH = QuestExilePath.crate()
+    set MADNESS_PATH = QuestMadnessPath.crate()
+    set REDEMPTION_PATH = QuestRedemptionPath.crate()
 
     set chapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
     set chapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED

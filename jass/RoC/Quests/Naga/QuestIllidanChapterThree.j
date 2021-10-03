@@ -1,12 +1,12 @@
 //Escapes Kalimdor, Find the Skull of Guldan
-library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga
+library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga, GlobalQuest
 
    globals
     private constant integer RITUAL_ID = 'A0KY'
   endglobals
  
   struct QuestIllidanChapterThree extends QuestData
-
+  
     method operator Global takes nothing returns boolean
       return true
     endmethod
@@ -43,16 +43,13 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      local QuestData exilePath = QuestExilePath.create()
-      local QuestData redemptionPath = QuestRedemptionPath.create()
-      local QuestData madnessPath = QuestMadnessPath.create()
       call this.GrantNagaSmall(this.Holder.Player)
-      call FACTION_NAGA.AddQuest(redemptionPath)
-      set redemptionPath.Progress = QUEST_PROGRESS_UNDISCOVERED
-      call FACTION_NAGA.AddQuest(exilePath)
-      set exilePath.Progress = QUEST_PROGRESS_UNDISCOVERED
-      call FACTION_NAGA.AddQuest(madnessPath)
-      set madnessPath.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_NAGA.AddQuest(REDEMPTION_PATH)
+      set REDEMPTION_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_NAGA.AddQuest(EXILE_PATH)
+      set EXILE_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_NAGA.AddQuest(MADNESS_PATH)
+      set MADNESS_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
       call WaygateActivateBJ( true, gg_unit_h01D_3378 )
       call ShowUnitShow( gg_unit_h01D_3378 )
       call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
