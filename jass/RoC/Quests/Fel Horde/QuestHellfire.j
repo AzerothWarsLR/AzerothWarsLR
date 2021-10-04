@@ -54,6 +54,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_AUCHINDOUN, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01J')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02N')))
+      call this.AddQuestItem(QuestItemExpire.create(1450))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

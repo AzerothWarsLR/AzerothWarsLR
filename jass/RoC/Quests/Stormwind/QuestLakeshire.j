@@ -43,6 +43,7 @@ library QuestLakeshire requires QuestData, StormwindSetup, QuestItemKillUnit
       local thistype this = thistype.allocate("Marauding Ogres", "The town of Lakeshire is invaded by Ogres, wipe them out!", "ReplaceableTextures\\CommandButtons\\BTNOgreLord.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nogl_0621)) //Ogre Lord
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n011')))
+      call this.AddQuestItem(QuestItemExpire.create(1427))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

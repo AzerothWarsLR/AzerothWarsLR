@@ -49,6 +49,7 @@ library QuestAshenvale requires QuestData, DruidsSetup
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07C')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01Q')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08U')))
+      call this.AddQuestItem(QuestItemExpire.create(1440))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID
       return this

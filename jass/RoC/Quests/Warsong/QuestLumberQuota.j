@@ -56,6 +56,7 @@ library QuestLumberQuota requires QuestData, WarsongSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Warchief Lumber Quota", "Once we have completed this vital mission for the Warchief, he will intercede for us with the Darkspear Trolls", "ReplaceableTextures\\CommandButtons\\BTNOrcLumberMill.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'o02S'))
+      call this.AddQuestItem(QuestItemExpire.create(1500))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

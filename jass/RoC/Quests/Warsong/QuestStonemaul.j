@@ -44,6 +44,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
       local thistype this = thistype.allocate("The Chieftain's Challenge", "The Ogres of Stonemaul follow the strongest, slay the Chieftain to gain control of the base.", "ReplaceableTextures\\CommandButtons\\BTNOneHeadedOgre.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_noga_1228)) //Korgall
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n022')))
+      call this.AddQuestItem(QuestItemExpire.create(1505))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

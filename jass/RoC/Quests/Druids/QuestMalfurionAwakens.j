@@ -39,7 +39,12 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
       set tempGroup = null
     endmethod
 
+    private method OnFail takes nothing returns nothing
+      call this.GiveMoonglade(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
     private method OnComplete takes nothing returns nothing
+      call this.GiveMoonglade(this.Holder.Player)
       if LEGEND_MALFURION.Unit == null then
         call LEGEND_MALFURION.Spawn(Holder.Player, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)
         call SetHeroLevel(LEGEND_MALFURION.Unit, 3, false)
@@ -53,6 +58,8 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
       local thistype this = thistype.allocate("Awakening of Stormrage", "Ever since the War of the Ancients ten thousand years ago, Malfurion Stormrage and his druids have slumbered within the Barrow Den. Now, their help is required once again.", "ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_HORNOFCENARIUS))
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_HORNOFCENARIUS, gg_rct_Moonglade, "The Barrow Den"))
+      call this.AddQuestItem(QuestItemExpire.create(1440))
+      call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
   endstruct

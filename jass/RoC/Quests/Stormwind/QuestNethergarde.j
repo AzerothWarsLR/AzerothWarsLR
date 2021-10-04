@@ -42,6 +42,7 @@ library QuestNethergarde requires QuestItemKillUnit, IronforgeSetup, LegendNeutr
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Nethergarde relief", "The nethergarde fort is holding down the Dark Portal, they will need to be reinforced soon!", "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionBarracks.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_VARIAN, gg_rct_NethergardeUnlock, "Nethergarde"))
+      call this.AddQuestItem(QuestItemExpire.create(1440))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

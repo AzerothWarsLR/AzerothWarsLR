@@ -56,6 +56,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
+      call this.AddQuestItem(QuestItemExpire.create(1472))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID
       return this

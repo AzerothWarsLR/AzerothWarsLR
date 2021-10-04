@@ -11,7 +11,7 @@ library QuestTownWatch requires QuestData
 
     private method OnComplete takes nothing returns nothing
     call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
-    call AdjustPlayerStateBJ( 5000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+    call AdjustPlayerStateBJ( 4000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -22,8 +22,6 @@ library QuestTownWatch requires QuestData
       call this.AddQuestItem(QuestItemResearch.create('Rhse', 'h083'))
       call this.AddQuestItem(QuestItemBuild.create('h084', 8))
       call this.AddQuestItem(QuestItemKillXUnit.create('u01U', 3))
-      call this.AddQuestItem(QuestItemExpire.create(960))
-      
       return this
     endmethod
   endstruct

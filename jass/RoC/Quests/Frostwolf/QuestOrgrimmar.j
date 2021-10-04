@@ -55,6 +55,7 @@ library QuestOrgrimmar requires QuestData, FrostwolfSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("To Tame a Land", "This new continent is ripe for opportunity, if the Horde is going to survive, a new city needs to be built", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'ofrt'))
+      call this.AddQuestItem(QuestItemExpire.create(2100))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

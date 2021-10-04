@@ -54,6 +54,7 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CENTAURKHAN))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_ThunderBluff, "Thunder Bluff", true))
+      call this.AddQuestItem(QuestItemExpire.create(1455))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

@@ -49,6 +49,7 @@ library QuestGrimBatol requires QuestData, FelHordeSetup, LegendIronforge, Legen
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THELSAMAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_DARKSHIRE))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Grim_Batol, "Grim Batol", true))
+      call this.AddQuestItem(QuestItemExpire.create(1440))
       set this.ResearchId = 'R069'
       return this
     endmethod

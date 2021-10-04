@@ -49,6 +49,7 @@ library QuestFeathermoon requires QuestData, ScarletSetup
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_H00E_1728)) //Ramzes the Horror
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n027')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01R')))
+      call this.AddQuestItem(QuestItemExpire.create(1485))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID
       return this

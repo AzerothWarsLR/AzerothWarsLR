@@ -50,6 +50,7 @@ library QuestBlackrock requires QuestData, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00S')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09Y')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0A9')))
+      call this.AddQuestItem(QuestItemExpire.create(1451))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

@@ -76,6 +76,7 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
       set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nrzm_0113)) //Razorman Medicine Man
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01T')))
+      call this.AddQuestItem(QuestItemExpire.create(1460))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

@@ -43,6 +43,7 @@ library QuestDarkshire requires QuestData, StormwindSetup, QuestItemKillUnit
       local thistype this = thistype.allocate("Gnoll troubles", "The town of Darkshire is under attack by Gnoll's, clear them out!", "ReplaceableTextures\\CommandButtons\\BTNGnollArcher.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ngnv_0586)) //Gnoll Overseer
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00V')))
+      call this.AddQuestItem(QuestItemExpire.create(1425))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

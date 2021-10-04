@@ -35,6 +35,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call this.Holder.obliterate()
       call SetUnitOwner(LEGEND_KAEL.Unit, FACTION_QUELTHALAS.Player, true)
       call SetUnitPosition(LEGEND_KAEL.Unit, 4067, -21695)
+      call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
       call this.GiveTempestKeep(this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA
     endmethod

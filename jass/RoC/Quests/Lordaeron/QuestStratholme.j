@@ -48,6 +48,7 @@ library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit
       local thistype this = thistype.allocate("Blackrock and Roll", "The Blackrock clan has taken over Alterac, they must be eliminated for the safety of Lordaeron", "ReplaceableTextures\\CommandButtons\\BTNChaosBlademaster.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_o00B_1316)) //Jubei
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n019')))
+      call this.AddQuestItem(QuestItemExpire.create(1470))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

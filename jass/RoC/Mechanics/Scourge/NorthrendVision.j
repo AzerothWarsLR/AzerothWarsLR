@@ -18,6 +18,7 @@ library NorthrendVision initializer OnInit requires ScourgeSetup
     set ScourgeFogModifiers[6] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Far_Eastern_Northrend, true, true)
     set ScourgeFogModifiers[7] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Coldarra, true, true)
     set ScourgeFogModifiers[8] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_Borean_Tundra, true, true)
+    set ScourgeFogModifiers[9] = CreateFogModifierRect(whichPlayer, FOG_OF_WAR_VISIBLE, gg_rct_IcecrownShipyard, true, true)
     loop
     exitwhen ScourgeFogModifiers[i] == null
       call FogModifierStart(ScourgeFogModifiers[i])
