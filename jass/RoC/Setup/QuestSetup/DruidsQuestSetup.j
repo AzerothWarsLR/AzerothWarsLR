@@ -5,6 +5,7 @@ library DruidsQuestSetup requires DruidsSetup, QuestAndrassil, QuestDruidsKillFr
     local QuestData newQuest = FACTION_DRUIDS.AddQuest(QuestMalfurionAwakens.create())
     set FACTION_DRUIDS.StartingQuest = newQuest
     //Early duel
+    call FACTION_DRUIDS.AddQuest(QuestAshenvale.create())
     call FACTION_DRUIDS.AddQuest(QuestDruidsKillFrostwolf.create())
     call FACTION_DRUIDS.AddQuest(QuestDruidsKillWarsong.create())
     //Misc

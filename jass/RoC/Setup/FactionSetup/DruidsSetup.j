@@ -43,7 +43,8 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('edes', 24) 	    //Night Elf Frigate
     call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
 
-    call f.registerObjectLimit('e015', 1)           //Broll
+    call f.registerObjectLimit('Ecen', 1)           //Cenarius
+    call f.registerObjectLimit('E00K', 1)           //Fandral
 
     call f.registerObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
     call f.registerObjectLimit('Renb', UNLIMITED)   //Nature's Blessing

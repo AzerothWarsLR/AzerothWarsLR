@@ -6,10 +6,6 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
   endglobals
  
   struct QuestIllidanChapterThree extends QuestData
-  
-    method operator Global takes nothing returns boolean
-      return true
-    endmethod
 
     private method operator CompletionPopup takes nothing returns string
       return "Illidan must awaken the Naga from the depth of the ocean"

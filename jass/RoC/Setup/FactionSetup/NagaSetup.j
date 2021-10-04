@@ -10,8 +10,8 @@ library NagaSetup requires Faction, TeamSetup
     set f = FACTION_NAGA
     set f.Team = TEAM_NAGA
     set f.UndefeatedResearch = 'R02L'
-    set f.StartingGold = 250
-    set f.StartingLumber = 2000
+    set f.StartingGold = 0
+    set f.StartingLumber = 500
 
     call f.registerObjectLimit('nntt', UNLIMITED)   //Pillar of Waves
     call f.registerObjectLimit('n04T', UNLIMITED)   //Monument of Currents
