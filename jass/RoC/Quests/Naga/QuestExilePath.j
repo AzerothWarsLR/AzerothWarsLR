@@ -2,7 +2,7 @@ library QuestExilePath requires QuestData, NagaSetup
 
   globals
     private constant integer RESEARCH_ID = 'R063'         //This research is required to complete the quest
-    private constant integer QUEST_RESEARCH_ID = 'R04X'   //This research is given when the quest is completed
+    private constant integer QUEST_RESEARCH_ID = 'R008'   //This research is given when the quest is completed
   endglobals
 
   struct QuestExilePath extends QuestData

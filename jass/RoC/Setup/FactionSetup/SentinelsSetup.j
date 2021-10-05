@@ -27,6 +27,7 @@ library SentinelsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n06J', UNLIMITED)   //Sentinel Outpost
     call f.registerObjectLimit('n06M', UNLIMITED)   //Residence 
     call f.registerObjectLimit('edos', UNLIMITED)   //Roost 
+    call f.registerObjectLimit('e00T', UNLIMITED)   //Bastion
 
     call f.registerObjectLimit('ewsp', UNLIMITED)   //Wisp 
     call f.registerObjectLimit('e006', UNLIMITED)   //Priestess
@@ -34,8 +35,10 @@ library SentinelsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h04L', 6)           //Priestess of the Moon
     call f.registerObjectLimit('earc', UNLIMITED)   //Archer
     call f.registerObjectLimit('esen', UNLIMITED)   //Huntress
+    call f.registerObjectLimit('h08V', UNLIMITED)   //Nightsaber Knight
     call f.registerObjectLimit('ebal', 8)           //Glaive Thrower
     call f.registerObjectLimit('ehpr', 6)           //Hippogryph Rider
+    call f.registerObjectLimit('n034', 12)           //Guild Ranger
     call f.registerObjectLimit('nwat', UNLIMITED)   //Nightblade  
     call f.registerObjectLimit('etrs', 24)   	    //Night Elf Transport Ship
     call f.registerObjectLimit('edes', 24)  	    //Night Elf Frigate
