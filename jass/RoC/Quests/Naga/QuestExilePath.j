@@ -52,7 +52,6 @@ library QuestExilePath requires QuestData, NagaSetup
       call ShowUnitShow( gg_unit_n07E_0958 )
       call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_NazjatarExit3) )
       call WaygateSetDestinationLocBJ( gg_unit_n07E_0958 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
-      call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, 'R06D', 1)
       call SetPlayerTechResearched(FACTION_SENTINELS.Player, 'R06D', 1)
     endmethod
 

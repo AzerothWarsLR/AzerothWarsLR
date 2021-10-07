@@ -30,6 +30,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h07W', UNLIMITED)   //Shipyard
     call f.registerObjectLimit('h06R', UNLIMITED)   //Garrison
     call f.registerObjectLimit('h07P', UNLIMITED)   //Workshop
+    call f.registerObjectLimit('h093', UNLIMITED)   //Workshop
     
     //Units
     call f.registerObjectLimit('h01E', UNLIMITED)   //Deckhand
@@ -37,6 +38,9 @@ library KultirasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
     call f.registerObjectLimit('h04J', 5)           //Warship
     call f.registerObjectLimit('e007', UNLIMITED)   //Thornspeaker
+    call f.registerObjectLimit('n09A', UNLIMITED)   //Ember Cleric
+    call f.registerObjectLimit('n09B', 12)          //Witch Hunter
+    call f.registerObjectLimit('h092', 6)          //Order Inquisitor
     call f.registerObjectLimit('h05K', UNLIMITED)   //Tidesage
     call f.registerObjectLimit('h041', UNLIMITED)   //Marine
     call f.registerObjectLimit('e00B', UNLIMITED)   //Thornspeaker Bear
