@@ -32,8 +32,8 @@ library HarvestAndReturnOil initializer OnInit requires UnitWithOil, FilteredCas
     call UnitAddAbilityBJ(RETURN_SPELL, triggerUnit )
     call targetUnitWithOil.Transfer(triggerUnitWithOil, 20)
     call IssueTargetOrder(triggerUnit, RETURN_ORDER, UnitWithOil.CentralReservoir.unit) //ERORR HERE
-    call BJDebugMsg(R2S(triggerUnitWithOil.OilCount))
-    call BJDebugMsg(R2S(targetUnitWithOil.OilCount))
+    //call BJDebugMsg(R2S(triggerUnitWithOil.OilCount))
+    //call BJDebugMsg(R2S(targetUnitWithOil.OilCount))
   endfunction
 
   private function Return takes nothing returns nothing
@@ -50,8 +50,8 @@ library HarvestAndReturnOil initializer OnInit requires UnitWithOil, FilteredCas
     if UnitAlive(triggerUnitWithOil.LastHarvestedSource.unit) then
       call IssueTargetOrder(triggerUnit, HARVEST_ORDER, triggerUnitWithOil.LastHarvestedSource.unit)
     endif
-    call BJDebugMsg(R2S(triggerUnitWithOil.OilCount))
-    call BJDebugMsg(R2S(targetUnitWithOil.OilCount))
+    //call BJDebugMsg(R2S(triggerUnitWithOil.OilCount))
+    //call BJDebugMsg(R2S(targetUnitWithOil.OilCount))
   endfunction
 
   private function OnInit takes nothing returns nothing

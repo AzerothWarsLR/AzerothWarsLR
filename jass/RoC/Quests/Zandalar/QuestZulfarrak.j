@@ -11,7 +11,7 @@ library QuestZulfarrak requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'farrak, an army of Sandfury trolls, the ability to train Sandfury trolls, and you can summon the hero Gahz'rilla from the Altar of Conquerors"
+      return "Control of Zul'farrak, a lumber trtibute of 500 to the Empire, and you can summon the hero Gahz'rilla from the Altar of Conquerors"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -33,9 +33,8 @@ library QuestZulfarrak requires LegendNeutral
         set u = FirstOfGroup(tempGroup)
       endloop   
       call DestroyGroup(tempGroup)
-      call CreateUnits(this.Holder.Player, 'otbk', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 8)
-      call CreateUnits(this.Holder.Player, 'n08E', GetRectCenterX(gg_rct_Zulfarrak), GetRectCenterY(gg_rct_Zulfarrak), 302, 4)
       call SetPlayerTechResearched(Holder.Player, GAHZRILLA_RESEARCH, 1)
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -44,7 +43,7 @@ library QuestZulfarrak requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Darkspear Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
+      local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Zandalari Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULFARRAK, false))
       return this
     endmethod

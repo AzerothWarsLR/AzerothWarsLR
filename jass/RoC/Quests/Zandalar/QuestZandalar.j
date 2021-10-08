@@ -10,7 +10,7 @@ library QuestZandalar requires QuestData, TrollSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Kul'Tiras and enables Katherine Proodmoure to be trained at the altar"
+      return "Control of all units in Zandalar and enables the Golden Fleet to be built"
     endmethod
 
     private method GrantZandalar takes player whichPlayer returns nothing
@@ -52,8 +52,10 @@ library QuestZandalar requires QuestData, TrollSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("City of Gold", "The City of Gold just lies ahead.", "ReplaceableTextures\\CommandButtons\\BTNHumanShipyard.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_PRIEST, gg_rct_ZandalarUnlock, "Dazar'alor"))
+      local thistype this = thistype.allocate("City of Gold", "The Blood Trolls rebellion has to be put down.", "ReplaceableTextures\\CommandButtons\\BTNBloodTrollMage.blp")
+      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ndtw_2405)) //Dark Troll Warchief
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0A8')))
+      call this.AddQuestItem(QuestItemExpire.create(1420))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

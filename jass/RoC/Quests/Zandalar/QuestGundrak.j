@@ -12,7 +12,7 @@ library QuestGundrak requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Gundrak, the ability to train " + GetObjectName(WARLORD_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
+      return "Control of Gundrak, a tribute of 500 lumber and the ability to train " + GetObjectName(WARLORD_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -20,6 +20,7 @@ library QuestGundrak requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call this.Holder.modObjectLimit(GUNDRAK_RESEARCH, UNLIMITED)
     endmethod
 

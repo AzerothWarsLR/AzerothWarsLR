@@ -20,7 +20,7 @@ library UnitConsumesOil requires AIDS, T32, Environment, UnitWithOil, UnitConsum
       
       loop
         exitwhen i == UnitConsumesOilType.Count
-        call BJDebugMsg(I2S(UnitConsumesOilType.ByIndex(i).UnitTypeId))
+        //call BJDebugMsg(I2S(UnitConsumesOilType.ByIndex(i).UnitTypeId))
         if unitTypeId == UnitConsumesOilType.ByIndex(i).UnitTypeId then
           return true
         endif

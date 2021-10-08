@@ -25,6 +25,7 @@ library TrollSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o048', UNLIMITED)   //Improved Watch Tower
     call f.registerObjectLimit('o047', UNLIMITED)   //Voodoo Lounge
     call f.registerObjectLimit('o049', UNLIMITED)   //Shipyard
+    call f.registerObjectLimit('o04X', UNLIMITED)   //Loa Shrine
 
     call f.registerObjectLimit('o04A', UNLIMITED)   //Peon
     call f.registerObjectLimit('h021', UNLIMITED)   //Grunt
@@ -35,13 +36,12 @@ library TrollSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o04G', UNLIMITED)   //Haruspex
     call f.registerObjectLimit('o04E', 6)           //Boneseer
     call f.registerObjectLimit('h05D', UNLIMITED)   //Raptor Rider 
-    call f.registerObjectLimit('obot', 24)  	    //Transport Ship
-    call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
+    call f.registerObjectLimit('o04W', 24)  	      //Golden Vessel
     call f.registerObjectLimit('ojgn', 12)          //Juggernaught
 
     call f.registerObjectLimit('O026', 1)           //Rasthakan
     call f.registerObjectLimit('O01J', 1)           //Zul
-    call f.registerObjectLimit('H08M', 1)           //Ju'loa
+    call f.registerObjectLimit('H06Q', 1)           //Ju'loa
 
     call f.registerObjectLimit('Rows', UNLIMITED)   //Improved Pulverize
     call f.registerObjectLimit('Rost', UNLIMITED)   //Shaman Adept Training
