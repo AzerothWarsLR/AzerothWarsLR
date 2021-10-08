@@ -29,7 +29,8 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     call f.registerObjectLimit('h007', UNLIMITED)   //Cannon Tower (Improved)
     call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('nmrk', UNLIMITED)   //Marketplace 
-    call f.registerObjectLimit('h06C', UNLIMITED)   //Aviary           
+    call f.registerObjectLimit('h06C', UNLIMITED)   //Aviary         
+    call f.registerObjectLimit('h094', UNLIMITED)   //Siege Camp   
 
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
@@ -45,6 +46,8 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     call f.registerObjectLimit('n03K', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('hcth', UNLIMITED)   //Silver Hand Squire
     call f.registerObjectLimit('h02Q', 6)           //Pegasus Knight
+    call f.registerObjectLimit('e017', 6)           //Mangonel
+    call f.registerObjectLimit('o02F', 8)           //Scorpion
 
     //Demis
     call f.registerObjectLimit('h012', 1)           //Falric
