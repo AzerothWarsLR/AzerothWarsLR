@@ -4,6 +4,11 @@ library QuestHakkar requires TrollSetup, LegendTroll
 
 
   struct QuestHakkar extends QuestData
+    
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+    
     private method operator CompletionPopup takes nothing returns string
       return "Hakkar has emerged from the Drowned Temple"
     endmethod
@@ -21,6 +26,7 @@ library QuestHakkar requires TrollSetup, LegendTroll
       local thistype this = thistype.allocate("The Binding of the Soulflayer", "Hakkar is the most dangerous and powerful of the Troll gods. Only by fusing the Demon Soul would the Zandalari be able to control Hakkar and bind him to their will.", "ReplaceableTextures\\CommandButtons\\BTNWindSerpent2.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_DEMONSOUL))
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_DEMONSOUL, gg_rct_DrownedTemple, "The Drowned Temple"))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00U')))
       return this
     endmethod
   endstruct
