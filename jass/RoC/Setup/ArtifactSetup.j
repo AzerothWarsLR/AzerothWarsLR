@@ -18,6 +18,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_EYEOFSARGERAS
     Artifact ARTIFACT_CROWNEASTERNKINGDOMS
     Artifact ARTIFACT_TROLKALAR
+    Artifact ARTIFACT_DEMONSOUL
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -70,7 +71,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set tempArtifact = Artifact.create(CreateItem('I004', -1480, -2240))     //The Doomhammer
 
-    set tempArtifact = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
+     set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
     call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)
     call tempArtifact.setDescription("Assembled from its fragments")
 

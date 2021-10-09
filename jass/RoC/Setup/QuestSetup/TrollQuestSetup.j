@@ -8,6 +8,7 @@ library TrollQuestSetup requires TrollSetup
     call FACTION_TROLL.AddQuest(QuestZulgurub.create())
     call FACTION_TROLL.AddQuest(QuestGundrak.create())  
     call FACTION_TROLL.AddQuest(QuestJinthaAlor.create())
+    call FACTION_TROLL.AddQuest(QuestHakkar.create())
 
   endfunction
 
