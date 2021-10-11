@@ -37,9 +37,9 @@ library LegionSetup requires Faction, TeamSetup
     call f.registerObjectLimit('ninc', UNLIMITED)   //Burning archer
     call f.registerObjectLimit('n04K', UNLIMITED)   //Succubus
     call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
-    call f.registerObjectLimit('ubot', 24) 	        //Undead Transport SHip
-    call f.registerObjectLimit('udes', 24) 	        //Undead Frigate
-    call f.registerObjectLimit('uubs', 12)          //Undead Battleship         
+    call f.registerObjectLimit('ubot', 12) 	        //Undead Transport SHip
+    call f.registerObjectLimit('udes', 12) 	        //Undead Frigate
+    call f.registerObjectLimit('uubs', 6)          //Undead Battleship         
     call f.registerObjectLimit('n04O', 6)           //Doomguard
     call f.registerObjectLimit('n04L', 6)           //Infernal Juggernaut
     call f.registerObjectLimit('ninf', 12)          //Infernal

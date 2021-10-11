@@ -43,9 +43,9 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n07V', 6)           //Elder Banshee
     call f.registerObjectLimit('h009', 6)           //dread knight
     call f.registerObjectLimit('u01V', 2)           //Valyr
-    call f.registerObjectLimit('ubot', 24)	    //Undead Transport Ship
-    call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
-    call f.registerObjectLimit('uubs', 12)          //Undead Battleship
+    call f.registerObjectLimit('ubot', 12)	    //Undead Transport Ship
+    call f.registerObjectLimit('udes', 12) 	    //Undead Frigate
+    call f.registerObjectLimit('uubs', 6)          //Undead Battleship
 
     call f.registerObjectLimit('H049', 1)        //Nathanos
     call f.registerObjectLimit('U01O', 1)        //Putress

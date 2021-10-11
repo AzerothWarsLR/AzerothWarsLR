@@ -47,9 +47,9 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     call f.registerObjectLimit('h00J', UNLIMITED)   //Clergyman
     call f.registerObjectLimit('n06N', 6)           //Gyrobomber
     call f.registerObjectLimit('n093', UNLIMITED)   //Chaplain
-    call f.registerObjectLimit('hbot', 24)   	      //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 24)   	      //Alliance Frigate
-    call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
+    call f.registerObjectLimit('hbot', 12)   	      //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 12)   	      //Alliance Frigate
+    call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
     call f.registerObjectLimit('h060', 3)           //Arathor Flagship
 
 

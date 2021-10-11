@@ -35,9 +35,9 @@ library DalaranSetup requires Faction, TeamSetup
 
     //Units
     call f.registerObjectLimit('h022', UNLIMITED)   //Shaper
-    call f.registerObjectLimit('hbot', 24)  	    //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 24)  	    //Alliance Frigate
-    call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
+    call f.registerObjectLimit('hbot', 12)  	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 12)  	    //Alliance Frigate
+    call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
     call f.registerObjectLimit('nhym', UNLIMITED)   //Hydromancer
     call f.registerObjectLimit('h032', UNLIMITED)   //Battlemage
     call f.registerObjectLimit('h02D', UNLIMITED)   //Geomancer

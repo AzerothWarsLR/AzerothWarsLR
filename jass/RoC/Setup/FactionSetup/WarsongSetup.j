@@ -36,9 +36,9 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
     call f.registerObjectLimit('o00I', 6)           //Horde War Machine
     call f.registerObjectLimit('okod', 4)           //Kodo Beast
-    call f.registerObjectLimit('obot', 24)   	    //Transport Ship
-    call f.registerObjectLimit('odes', 24)  	     //Orc Frigate
-    call f.registerObjectLimit('ojgn', 12)          //Juggernaught
+    call f.registerObjectLimit('obot', 12)   	    //Transport Ship
+    call f.registerObjectLimit('odes', 12)  	     //Orc Frigate
+    call f.registerObjectLimit('ojgn', 6)          //Juggernaught
     call f.registerObjectLimit('o00G', 6)           //Blademaster
     call f.registerObjectLimit('n03F', 6)           //Korkron elite
     call f.registerObjectLimit('owyv', 8)           //Wind Rider

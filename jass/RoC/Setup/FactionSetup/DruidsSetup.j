@@ -39,9 +39,9 @@ library DruidsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('e00N', 6)           //Keeper of the Grove
     call f.registerObjectLimit('n05H', UNLIMITED)   //Furbolg
     call f.registerObjectLimit('n065', 6)           //Green Dragon
-    call f.registerObjectLimit('etrs', 24)   	    //Night Elf Transport Ship
-    call f.registerObjectLimit('edes', 24) 	    //Night Elf Frigate
-    call f.registerObjectLimit('ebsh', 12)          //Night Elf Battleship
+    call f.registerObjectLimit('etrs', 12)   	    //Night Elf Transport Ship
+    call f.registerObjectLimit('edes', 12) 	    //Night Elf Frigate
+    call f.registerObjectLimit('ebsh', 6)          //Night Elf Battleship
 
     call f.registerObjectLimit('Ecen', 1)           //Cenarius
     call f.registerObjectLimit('E00K', 1)           //Fandral

@@ -34,9 +34,9 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
-    call f.registerObjectLimit('hbot', 24) 	    //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 24) 	    //Alliance Frigate
-    call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
+    call f.registerObjectLimit('hbot', 12) 	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 12) 	    //Alliance Frigate
+    call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
     call f.registerObjectLimit('hfoo', UNLIMITED)   //Footman
     call f.registerObjectLimit('hkni', UNLIMITED)   //Knight
     call f.registerObjectLimit('nchp', UNLIMITED)   //Cleric

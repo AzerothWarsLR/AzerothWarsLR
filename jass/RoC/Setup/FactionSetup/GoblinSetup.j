@@ -28,15 +28,15 @@ library GoblinSetup requires Faction, TeamSetup
 
     call f.registerObjectLimit('o02I', UNLIMITED)   //Peon
     call f.registerObjectLimit('n099', UNLIMITED)   //Ogre
-    call f.registerObjectLimit('h08X', UNLIMITED)   //sapper
-    call f.registerObjectLimit('h08Y', 12)   //Gunner
+    call f.registerObjectLimit('h08X', 8)           //sapper
+    call f.registerObjectLimit('h08Y', UNLIMITED)          //Gunner
     call f.registerObjectLimit('odoc', UNLIMITED)   //GOBLIN Witch Doctor
     call f.registerObjectLimit('o04P', UNLIMITED)   //Mage
     call f.registerObjectLimit('o04O', UNLIMITED)   //Alch
     call f.registerObjectLimit('o04Q', 6)           //Tinker
-    call f.registerObjectLimit('obot', 24)  	    //Transport Ship
-    call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
-    call f.registerObjectLimit('ojgn', 12)          //Juggernaught
+    call f.registerObjectLimit('obot', 12)  	    //Transport Ship
+    call f.registerObjectLimit('odes', 12)  	    //Orc Frigate
+    call f.registerObjectLimit('ojgn', 6)          //Juggernaught
     call f.registerObjectLimit('n062', 12)          //Shredder
     call f.registerObjectLimit('h08Z', 3)           //Tank
     call f.registerObjectLimit('h091', 6)           //Zep

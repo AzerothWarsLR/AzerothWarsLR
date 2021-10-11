@@ -45,9 +45,9 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('uobs', 4)           //Obsidian Statue
     call f.registerObjectLimit('ufro', 4)           //Frost Wyrm
     call f.registerObjectLimit('h00H', 6)           //Death Knight
-    call f.registerObjectLimit('ubot', 24)	    //Undead Transport Ship
-    call f.registerObjectLimit('udes', 24) 	    //Undead Frigate
-    call f.registerObjectLimit('uubs', 12)          //Undead Battleship
+    call f.registerObjectLimit('ubot', 12)	    //Undead Transport Ship
+    call f.registerObjectLimit('udes', 12) 	    //Undead Frigate
+    call f.registerObjectLimit('uubs', 6)          //Undead Battleship
     call f.registerObjectLimit('ubsp', 4)           //Destroyer
     call f.registerObjectLimit('nfgl', 2)           //Plague Titan
 

@@ -34,8 +34,8 @@ library KultirasSetup requires Faction, TeamSetup
     
     //Units
     call f.registerObjectLimit('h01E', UNLIMITED)   //Deckhand
-    call f.registerObjectLimit('hbot', UNLIMITED)   //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', UNLIMITED)   //Alliance Frigate
+    call f.registerObjectLimit('hbot', 12)   //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 12)   //Alliance Frigate
     call f.registerObjectLimit('h04J', 5)           //Warship
     call f.registerObjectLimit('e007', UNLIMITED)   //Thornspeaker
     call f.registerObjectLimit('n09A', UNLIMITED)   //Ember Cleric

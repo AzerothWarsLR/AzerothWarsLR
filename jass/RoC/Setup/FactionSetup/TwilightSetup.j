@@ -37,8 +37,8 @@ library TwilightSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o04K', 6)           //Demolisher
     call f.registerObjectLimit('u01T', UNLIMITED)   //Necrolyte
     call f.registerObjectLimit('n087', UNLIMITED)   //Phase Grenadier
-    call f.registerObjectLimit('obot', 24)  	    //Transport Ship
-    call f.registerObjectLimit('odes', 24)  	    //Orc Frigate
+    call f.registerObjectLimit('obot', 12)  	    //Transport Ship
+    call f.registerObjectLimit('odes', 12)  	    //Orc Frigate
     call f.registerObjectLimit('ojgn', 6)          //Juggernaught
 
     call f.registerObjectLimit('O01P', 1)           //Chogall

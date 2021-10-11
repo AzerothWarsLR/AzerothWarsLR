@@ -38,9 +38,9 @@ library IronforgeSetup requires Faction, TeamSetup
     
     //Units
     call f.registerObjectLimit('h019', UNLIMITED)   //Dwarven Worker
-    call f.registerObjectLimit('hbot', 24)   	    //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 24) 	    //Alliance Frigate
-    call f.registerObjectLimit('hbsh', 12)          //Alliance Battle Ship
+    call f.registerObjectLimit('hbot', 12)   	    //Alliance Transport Ship
+    call f.registerObjectLimit('hdes', 12) 	    //Alliance Frigate
+    call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
     call f.registerObjectLimit('hrif', UNLIMITED)   //Rifleman
     call f.registerObjectLimit('hmtm', 9)           //Mortar Team
     call f.registerObjectLimit('hgyr', 12)          //Flying Machine
