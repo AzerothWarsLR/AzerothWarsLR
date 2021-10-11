@@ -25,9 +25,15 @@ library UnitsSpawnIfBlademasterIsAlive initializer OnInit
     endfunction
 
     private function OnPeriodic takes nothing returns nothing
-        call SpawnAndAttackMultipleUnits('ogru', 3)
-        call SpawnAndAttackMultipleUnits('nftr', 1)
-        call SpawnAndAttackMultipleUnits('u00V', 1)
+        if GetPlayerSlotState(Player(22)) == PLAYER_SLOT_STATE_PLAYING then
+            call SpawnAndAttackMultipleUnits('ogru', 3)
+            call SpawnAndAttackMultipleUnits('nftr', 1)
+            call SpawnAndAttackMultipleUnits('u00V', 1)
+            else 
+            call DestroyTimer(SpawnPeriodicTimer)
+            call DestroyTrigger(BlademasterDiesTrigger)
+            call DestroyTimer(SpawnDelayTimer)
+        endif
     endfunction
 
     private function OnBlademasterDies takes nothing returns nothing

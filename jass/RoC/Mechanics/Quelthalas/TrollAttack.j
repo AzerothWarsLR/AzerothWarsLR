@@ -25,8 +25,14 @@ library UnitsSpawnIfZulIsAlive initializer OnInit
     endfunction
 
     private function OnPeriodic takes nothing returns nothing
-        call SpawnAndAttackMultipleUnits('nftr', 2)
-        call SpawnAndAttackMultipleUnits('nfsp', 1)
+        if GetPlayerSlotState(Player(2)) == PLAYER_SLOT_STATE_PLAYING then
+          call SpawnAndAttackMultipleUnits('nftr', 2)
+          call SpawnAndAttackMultipleUnits('nfsp', 1)
+          else 
+          call DestroyTimer(SpawnPeriodicTimer)
+          call DestroyTrigger(ZulDiesTrigger)
+          call DestroyTimer(SpawnDelayTimer)
+        endif
     endfunction
 
     private function OnZulDies takes nothing returns nothing

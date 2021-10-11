@@ -25,7 +25,13 @@ library UnitsSpawnIfJubeiIsAlive initializer OnInit
     endfunction
 
     private function OnPeriodic takes nothing returns nothing
-        call SpawnAndAttackMultipleUnits('o01F', 3)
+        if GetPlayerSlotState(Player(1)) == PLAYER_SLOT_STATE_PLAYING then
+            call SpawnAndAttackMultipleUnits('o01F', 3)
+            else
+            call DestroyTimer(SpawnPeriodicTimer)
+            call DestroyTrigger(JubeiDiesTrigger)
+            call DestroyTimer(SpawnDelayTimer)
+        endif
     endfunction
 
     private function OnJubeiDies takes nothing returns nothing
