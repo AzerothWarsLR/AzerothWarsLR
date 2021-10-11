@@ -43,7 +43,7 @@ library QuestLumberQuota requires QuestData, WarsongSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantDarkspear(this.Holder.Player)
-      call AdjustPlayerStateBJ( 5000, FACTION_FROSTWOLF.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call AdjustPlayerStateBJ( 3000, FACTION_FROSTWOLF.Player, PLAYER_STATE_RESOURCE_LUMBER )
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\WarsongTheme.mp3" )
       endif

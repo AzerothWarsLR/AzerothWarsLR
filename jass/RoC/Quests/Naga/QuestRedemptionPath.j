@@ -53,10 +53,6 @@ library QuestRedemptionPath requires QuestData, NagaSetup
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
           call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
@@ -66,6 +62,10 @@ library QuestRedemptionPath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call FACTION_NAGA.modObjectLimit('n08H', UNLIMITED)   //Demon Hunter grounds
+      call FACTION_NAGA.modObjectLimit('e00S', UNLIMITED)   //Glaive Warrior
+      call FACTION_NAGA.modObjectLimit('h08W', 6)   //Demon Hunter
+      call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
       set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED
       call this.GrantNazjatar(this.Holder.Player)

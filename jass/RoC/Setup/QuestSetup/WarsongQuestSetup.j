@@ -7,7 +7,6 @@ library WarsongQuestSetup requires WarsongSetup, FrostwolfSetup, QuestChenStorms
     call FACTION_WARSONG.AddQuest(QuestStonemaul.create())
     call FACTION_WARSONG.AddQuest(QuestFountainOfBlood.create())
     //Early duel
-    call FACTION_WARSONG.AddQuest(QuestWarMachine.create())
     call FACTION_WARSONG.AddQuest(QuestWarsongKillDruids.create())
     call FACTION_WARSONG.AddQuest(QuestMoreWyverns.create())
     //Misc

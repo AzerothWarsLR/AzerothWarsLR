@@ -49,6 +49,7 @@ library SentinelsSetup requires Faction, TeamSetup
     call f.registerObjectLimit('Etyr', 1)           //Tyrande
     call f.registerObjectLimit('E002', 1)           //Shandris
     call f.registerObjectLimit('Ewrd', 1)           //Maiev
+    call f.registerObjectLimit('O02E', 1)           //Jarod
 
     call f.registerObjectLimit('R00S', UNLIMITED)   //Priestess Adept Training
     call f.registerObjectLimit('R064', UNLIMITED)   //Sentinel Fortifications

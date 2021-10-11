@@ -39,6 +39,8 @@ library NagaSetup requires Faction, TeamSetup
 
     call f.registerObjectLimit('Hvsh', 1)  	    //Vashj
     call f.registerObjectLimit('U00S', 1)  	    //Najentus
+    call f.registerObjectLimit('Naka', 1)  	    //Akama
+    call f.registerObjectLimit('E015', 1)  	    //Akama
 
     call f.registerObjectLimit('R062', UNLIMITED)   //Redemption path
     call f.registerObjectLimit('R063', UNLIMITED)   //Exile Path

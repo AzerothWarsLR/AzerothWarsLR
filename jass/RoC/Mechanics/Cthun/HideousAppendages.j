@@ -5,7 +5,7 @@ library SpawnTentacle initializer OnInit requires T32
         private constant integer UNIT_ID = 'U00R'
         private constant integer TENTACLE_COUNT_BASE = 5
         private constant integer TENTACLE_ID = 'n073'
-        private constant real RADIUS_OFFSET = 200.  //How far away from the caster to position the Tentacles
+        private constant real RADIUS_OFFSET = 300.  //How far away from the caster to position the Tentacles
     endglobals    
 
     struct tentacleAppendageSet
@@ -36,7 +36,7 @@ library SpawnTentacle initializer OnInit requires T32
             local unit tempUnit = CreateUnit(GetOwningPlayer(this.caster), TENTACLE_ID, x, y, 0)
             call SetUnitAnimation(tempUnit, "birth")
             call QueueUnitAnimation(tempUnit, "stand")
-            call SetUnitVertexColor(tempUnit, 100, 255, 255, 255)
+            call SetUnitVertexColor(tempUnit, 255, 255, 255, 255)
             call UnitAddAbility(tempUnit, 'Aloc')
             call SetUnitPathing(tempUnit, false)
             set this.TentaclesByIndex[index] = tempUnit
@@ -99,21 +99,19 @@ library SpawnTentacle initializer OnInit requires T32
         local tentacleAppendageSet temptentacleAppendageSet = 0
         local unit triggerUnit = null
         local integer triggerUnitHandleId = 0
-        if GetUnitTypeId(GetTrainedUnit()) == UNIT_ID then
-            set triggerUnit = GetTrainedUnit()
-            set triggerUnitHandleId = GetHandleId(triggerUnit)
+            set triggerUnit = gg_unit_U00R_0609
+            set triggerUnitHandleId = UNIT_ID
             set temptentacleAppendageSet = tentacleAppendageSet.tentacleSetsByCasterHandleId[triggerUnitHandleId]
             if temptentacleAppendageSet == 0 then
                 set temptentacleAppendageSet = tentacleAppendageSet.create(triggerUnit)
                 set tentacleAppendageSet.tentacleSetsByCasterHandleId[triggerUnitHandleId] = temptentacleAppendageSet
             endif
             set triggerUnit = null
-        endif
     endfunction
 
     private function OnInit takes nothing returns nothing
         local trigger trig = CreateTrigger()
-        call TriggerRegisterPlayerUnitEventSimple( trig, Player(16), EVENT_PLAYER_UNIT_TRAIN_FINISH )
+        call TriggerRegisterTimerEventSingle( trig, 5 )
         call TriggerAddCondition( trig, Condition(function Built))
     endfunction 
 

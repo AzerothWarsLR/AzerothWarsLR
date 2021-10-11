@@ -18,7 +18,7 @@ library TwilightSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o03B', UNLIMITED)   //Fortress
     call f.registerObjectLimit('o03C', UNLIMITED)   //Altar of Storms
     call f.registerObjectLimit('o03D', UNLIMITED)   //Barracks
-    call f.registerObjectLimit('o031', UNLIMITED)   //War Mill
+    call f.registerObjectLimit('o03J', UNLIMITED)   //War Mill
     call f.registerObjectLimit('o03E', UNLIMITED)   //Spirit Lodge
     call f.registerObjectLimit('o03F', UNLIMITED)   //Bestiary
     call f.registerObjectLimit('o03I', UNLIMITED)   //Shipyard

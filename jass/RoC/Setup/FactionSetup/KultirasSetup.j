@@ -63,6 +63,7 @@ library KultirasSetup requires Faction, TeamSetup
     //Heroes
     call f.registerObjectLimit('Hapm', 1)           //Admiral
     call f.registerObjectLimit('H05L', 1)           //Lady Ashvane
+    call f.registerObjectLimit('E016', 1)           //Lucille
 
   endfunction
     

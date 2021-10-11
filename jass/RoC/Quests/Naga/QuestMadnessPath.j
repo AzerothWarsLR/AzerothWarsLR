@@ -53,10 +53,6 @@ library QuestMadnessPath requires QuestData, NagaSetup
       exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
           call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
         endif
         call GroupRemoveUnit(tempGroup, u)
         set u = FirstOfGroup(tempGroup)
@@ -66,6 +62,13 @@ library QuestMadnessPath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
+      call FACTION_NAGA.modObjectLimit('n08V', UNLIMITED)   //Depth Void Portal
+      call FACTION_NAGA.modObjectLimit('h01Q', 4)   //Immortal Guardian
+      call LEGEND_AZSHARA.Spawn(Holder.Player, GetRectCenterX(gg_rct_InstanceNazjatar), GetRectCenterY(gg_rct_InstanceNazjatar), 270)
+      call SetHeroLevel(LEGEND_AZSHARA.Unit, 9, false)
+      call SetUnitPositionLoc( LEGEND_AZSHARA.Unit, GetRectCenter(gg_rct_NzothIni) )
+      call SetUnitPositionLoc( LEGEND_AZSHARA.Unit, GetRectCenter(gg_rct_IllidanNaga1) )
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
       call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)

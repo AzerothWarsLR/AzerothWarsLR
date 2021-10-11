@@ -4,8 +4,9 @@ library LegendNaga initializer OnInit requires Legend
     Legend LEGEND_ILLIDAN
     Legend LEGEND_VASHJ
     Legend LEGEND_NAJENTUS
+    Legend LEGEND_AZSHARA
+    Legend LEGEND_NZOTH
     
-    Legend LEGEND_OBELISK
     Legend LEGEND_NAZJATAR
     Legend LEGEND_VAULT
   endglobals
@@ -18,18 +19,21 @@ library LegendNaga initializer OnInit requires Legend
     set LEGEND_VASHJ = Legend.create()
     set LEGEND_VASHJ.UnitType = 'Hvsh'
 
+    set LEGEND_AZSHARA = Legend.create()
+    set LEGEND_AZSHARA.UnitType = 'H08U'
+
     set LEGEND_NAJENTUS = Legend.create()
     set LEGEND_NAJENTUS.UnitType = 'U00S'
 
-    set LEGEND_OBELISK = Legend.create()
-    set LEGEND_OBELISK.Unit = gg_unit_nico_3620
-    set LEGEND_OBELISK.IsCapital = true
+    set LEGEND_NZOTH = Legend.create()
+    set LEGEND_NZOTH.Unit = gg_unit_U01Z_1237
+    set LEGEND_NZOTH.DeathMessage = "The Old God N'zoth has fallen"
+    set LEGEND_NZOTH.PermaDies = true
 
     set LEGEND_NAZJATAR = Legend.create()
     set LEGEND_NAZJATAR.Unit = gg_unit_n045_3377
     set LEGEND_NAZJATAR.DeathMessage = "The Temple of Azshara has fallen."
     set LEGEND_NAZJATAR.IsCapital = true
-    set LEGEND_NAZJATAR.Hivemind = true
 
     set LEGEND_VAULT = Legend.create()
     set LEGEND_VAULT.Unit = gg_unit_n05A_2845
