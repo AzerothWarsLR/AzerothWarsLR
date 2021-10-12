@@ -12,6 +12,7 @@ library HintConfig initializer OnInit requires Hint
     call Hint.create("When you unlock a hero through a Quest, you still need to summon that hero from an Altar.")
     call Hint.create("Workers do not require drop site for lumber")
     call Hint.create("All quest to unlock cities will fail at turn 24, turning the city hostile to everyone")
+    call Hint.create("The best way to travel between continent is to use Town portal scrolls!")
   endfunction
 
 endlibrary

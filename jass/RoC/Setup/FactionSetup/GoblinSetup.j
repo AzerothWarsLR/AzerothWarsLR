@@ -25,6 +25,7 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o03W', UNLIMITED)   //Improved Watch Tower
     call f.registerObjectLimit('o03X', UNLIMITED)   //Voodoo Lounge
     call f.registerObjectLimit('o03V', UNLIMITED)   //Shipyard
+    call f.registerObjectLimit('o04R', 8)           //Oil Platform
 
     call f.registerObjectLimit('o02I', UNLIMITED)   //Peon
     call f.registerObjectLimit('n099', UNLIMITED)   //Ogre
@@ -40,6 +41,7 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n062', 12)          //Shredder
     call f.registerObjectLimit('h08Z', 3)           //Tank
     call f.registerObjectLimit('h091', 6)           //Zep
+    call f.registerObjectLimit('o04S', 5)           //Trader
 
     call f.registerObjectLimit('O04N', 1)           //Jastor
     call f.registerObjectLimit('Ntin', 1)           //Gazlowee
