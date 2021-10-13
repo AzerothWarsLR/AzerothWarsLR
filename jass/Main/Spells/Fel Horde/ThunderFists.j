@@ -6,7 +6,7 @@ library ThunderFists initializer OnInit requires FilteredDamageEvents, DummyCast
     private constant integer DUMMY_ABIL_ID = 'A024'
     private constant string DUMMY_ORDER_ID = "forkedlightning"
 
-    private constant real CHANCE = 0.35
+    private constant real CHANCE = 0.15
   endglobals
 
   private function Damaging takes nothing returns nothing

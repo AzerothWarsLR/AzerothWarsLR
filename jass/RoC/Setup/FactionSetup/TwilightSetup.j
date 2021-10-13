@@ -35,6 +35,7 @@ library TwilightSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n083', UNLIMITED)   //Horde Cavarly
     call f.registerObjectLimit('o04I', 6)           //Executioner
     call f.registerObjectLimit('o04K', 6)           //Demolisher
+    call f.registerObjectLimit('n09O', 6)           //DK
     call f.registerObjectLimit('u01T', UNLIMITED)   //Necrolyte
     call f.registerObjectLimit('n087', UNLIMITED)   //Phase Grenadier
     call f.registerObjectLimit('obot', 12)  	    //Transport Ship
@@ -49,6 +50,8 @@ library TwilightSetup requires Faction, TeamSetup
 
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
     call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
+    call f.registerObjectLimit('R06X', UNLIMITED)   //Magic Training
+    call f.registerObjectLimit('R06Z', UNLIMITED)   //Herald Training
 
 
 

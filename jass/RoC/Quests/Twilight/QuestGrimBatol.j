@@ -1,12 +1,16 @@
 library QuestGrimBatol requires QuestData, TwilightSetup, QuestItemKillUnit
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R06Y'   //This research is given when the quest is completed
+  endglobals
+
   struct QuestGrimBatol extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Grim Batol is now under our control, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Grim Batol"
+      return "Control of all units in Grim Batol and able to train Orcish Death Knights"
     endmethod
 
     private method GrantGrimBatol takes player whichPlayer returns nothing
@@ -51,6 +55,7 @@ library QuestGrimBatol requires QuestData, TwilightSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08T')))
       call this.AddQuestItem(QuestItemExpire.create(1428))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct
