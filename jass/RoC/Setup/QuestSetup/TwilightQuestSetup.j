@@ -2,7 +2,9 @@ library TwilightQuestSetup requires TwilightSetup
 
   public function OnInit takes nothing returns nothing
 
-    set FACTION_TWILIGHT.StartingQuest = FACTION_TWILIGHT.AddQuest(QuestBastionBuild.create())
+    set FACTION_TWILIGHT.StartingQuest = FACTION_TWILIGHT.AddQuest(QuestDragonmawPort.create())
+    call FACTION_TWILIGHT.AddQuest(QuestGrimBatol.create())
+    call FACTION_TWILIGHT.AddQuest(QuestSpreadTheWord.create())
     call FACTION_TWILIGHT.AddQuest(QuestCataclysm.create())
 
   endfunction

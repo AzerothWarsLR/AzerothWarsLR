@@ -48,6 +48,7 @@ library TwilightSetup requires Faction, TeamSetup
 
 
     call f.registerObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
+    call f.registerObjectLimit('Rosp', UNLIMITED)   //Spiked Barricades
 
 
 
