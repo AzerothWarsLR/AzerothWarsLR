@@ -26,7 +26,8 @@ library ScarletSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h087', UNLIMITED)   //Guard Tower (Improved)
     call f.registerObjectLimit('hshy', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('h086', UNLIMITED)   //Marketplace 
-    call f.registerObjectLimit('h082', UNLIMITED)   //Aviary           
+    call f.registerObjectLimit('h082', UNLIMITED)   //Aviary      
+    call f.registerObjectLimit('h097', UNLIMITED)   //Training Camp 
 
     //Units
     call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
@@ -34,6 +35,9 @@ library ScarletSetup requires Faction, TeamSetup
     call f.registerObjectLimit('hdes', 12) 	    //Alliance Frigate
     call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
     call f.registerObjectLimit('h08I', UNLIMITED)   //Crusader
+    call f.registerObjectLimit('h08M', UNLIMITED)   //Men-at-arms
+    call f.registerObjectLimit('h095', UNLIMITED)   //Bowman
+    call f.registerObjectLimit('h096', UNLIMITED)   //Light Cavalry
     call f.registerObjectLimit('h08L', UNLIMITED)   //Cavalier
     call f.registerObjectLimit('nchp', UNLIMITED)   //Inquisitor
     call f.registerObjectLimit('h06B', 6)           //Templar
