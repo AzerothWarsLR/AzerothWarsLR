@@ -47,6 +47,8 @@ library TrollSetup requires Faction, TeamSetup
 
     call f.registerObjectLimit('Rers', UNLIMITED)   //Resistant Skin
     call f.registerObjectLimit('R00H', UNLIMITED)   //Animal Companion
+    call f.registerObjectLimit('R070', UNLIMITED)   //Haruspex Training
+    call f.registerObjectLimit('R071', UNLIMITED)   //Hex Training
 
   endfunction
     
