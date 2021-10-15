@@ -43,6 +43,8 @@ library GilneasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o01V', 6)           //Greyguard
     call f.registerObjectLimit('n029', 12)          //Sea Giant
     call f.registerObjectLimit('h03L', UNLIMITED)   //Shotgunner
+    call f.registerObjectLimit('nsgt', UNLIMITED)   //Spider
+    call f.registerObjectLimit('n067', UNLIMITED)   //Spider
     call f.registerObjectLimit('o04U', 6)           //Mangonel
     call f.registerObjectLimit('n06Z', 6)           //Gunship
     call f.registerObjectLimit('n06Q', 12)          //Royal Guard
