@@ -3,7 +3,7 @@ library QuestJinthaAlor requires LegendNeutral
   globals
     private constant integer JINTHAALOR_RESEARCH = 'R02N'
     private constant integer BEAR_RIDER_ID = 'o02K'
-    private constant integer TROLL_SHRINE_ID = 'o01H'
+    private constant integer TROLL_SHRINE_ID = 'o04X'
   endglobals
 
   struct QuestJinthaAlor extends QuestData

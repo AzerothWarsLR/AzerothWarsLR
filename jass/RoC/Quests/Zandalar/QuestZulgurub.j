@@ -2,7 +2,7 @@ library QuestZulgurub requires LegendNeutral
 
   globals
     private constant integer ZULGURUB_RESEARCH = 'R02M'
-    private constant integer TROLL_SHRINE_ID = 'o01H'
+    private constant integer TROLL_SHRINE_ID = 'o04X'
     private constant integer RAVAGER_ID = 'o021'
   endglobals
 

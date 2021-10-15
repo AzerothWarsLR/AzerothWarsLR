@@ -10,7 +10,7 @@ library QuestSpiderWar requires QuestData, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Access to the Scholomance Research at the Frozen Throne"
+      return "Access to the Plague Research at the Frozen Throne, Kel'tuzad and Rivendare trainable and a base in Icecrown"
     endmethod
 
     private method GrantIcecrown takes player whichPlayer returns nothing

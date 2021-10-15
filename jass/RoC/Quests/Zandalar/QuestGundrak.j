@@ -3,7 +3,7 @@ library QuestGundrak requires LegendNeutral
   globals
     private constant integer GUNDRAK_RESEARCH = 'R02Q'
     private constant integer WARLORD_ID = 'nftk'
-    private constant integer TROLL_SHRINE_ID = 'o01H'
+    private constant integer TROLL_SHRINE_ID = 'o04X'
   endglobals
 
   struct QuestGundrak extends QuestData
