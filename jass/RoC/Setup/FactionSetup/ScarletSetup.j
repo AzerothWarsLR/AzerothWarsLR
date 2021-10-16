@@ -44,7 +44,7 @@ library ScarletSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h08J', UNLIMITED)   //Arbalest
     call f.registerObjectLimit('h08K', UNLIMITED)   //Chaplain
     call f.registerObjectLimit('n09N', 6)           //Bishop
-    call f.registerObjectLimit('n07N', 8)           //Airship
+    call f.registerObjectLimit('n07N', 6)           //Airship
     call f.registerObjectLimit('o04C', 6)           //Mortar
 
     //Heroes

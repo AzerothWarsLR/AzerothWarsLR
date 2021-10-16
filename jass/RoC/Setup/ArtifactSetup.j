@@ -52,6 +52,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddAbility(gg_unit_H00E_1728, ARTIFACT_HOLDER_ABIL_ID)             //Ramzes the Horror
     call UnitAddItem(gg_unit_H00E_1728, tempArtifact.item) 
 
+    set tempArtifact = Artifact.create(CreateItem('I004', -1480, -2240))     //The Doomhammer
+    
     set tempArtifact = Artifact.create(CreateItem('I01V', -10330, 2105))     //Gorehowl
 
     set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
@@ -69,11 +71,9 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', 21886, -25219))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
-    set tempArtifact = Artifact.create(CreateItem('I004', -1480, -2240))     //The Doomhammer
-
-     set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
-    call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call tempArtifact.setDescription("Assembled from its fragments")
+    set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
+    call ARTIFACT_DEMONSOUL.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_DEMONSOUL.setDescription("Assembled from its fragments")
 
     set tempArtifact = Artifact.create(CreateItem('I01M', DUMMY_X, DUMMY_Y))    //Bronze Demon Soul Fragment
     call UnitAddAbility(gg_unit_O024_0567, ARTIFACT_HOLDER_ABIL_ID)             //Ukorz
