@@ -45,7 +45,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Tempest Keep", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
+      local thistype this = thistype.allocate("In search of Masters", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IP', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KAEL, true))
       return this

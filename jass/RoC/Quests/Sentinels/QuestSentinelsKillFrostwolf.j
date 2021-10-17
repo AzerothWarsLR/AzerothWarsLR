@@ -11,7 +11,7 @@ library QuestSentinelsKillFrostwolf requires SentinelsSetup, LegendFrostwolf, Di
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Amara"
+      return "The demihero Amara and the hero Jarod"
     endmethod
 
     private method OnComplete takes nothing returns nothing

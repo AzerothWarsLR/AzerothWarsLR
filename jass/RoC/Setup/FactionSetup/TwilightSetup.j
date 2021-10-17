@@ -27,7 +27,7 @@ library TwilightSetup requires Faction, TeamSetup
     call f.registerObjectLimit('u00Y', UNLIMITED)   //Shop
     call f.registerObjectLimit('o03K', UNLIMITED)   //Burrow
 
-    call f.registerObjectLimit('n051', 6)           //Black Drake
+    call f.registerObjectLimit('n051', 4)           //Black Drake
     call f.registerObjectLimit('o04J', 8)           //WindRider
     call f.registerObjectLimit('n07X', UNLIMITED)   //Fel Orc Warlock
     call f.registerObjectLimit('o01H', UNLIMITED)   //Fel Orc Grunt

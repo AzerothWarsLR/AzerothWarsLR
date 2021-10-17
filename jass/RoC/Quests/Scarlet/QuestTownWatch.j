@@ -6,7 +6,7 @@ library QuestTownWatch requires QuestData
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain 5000 lumber and 500 gold"
+      return "Gain 4000 lumber and 500 gold"
     endmethod
 
     private method OnComplete takes nothing returns nothing

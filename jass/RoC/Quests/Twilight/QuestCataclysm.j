@@ -15,7 +15,7 @@ library QuestCataclysm requires QuestData, TwilightSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Cultists all over the world join your cause actively, Deathwing is a super demihero and the 2 elemental ascendant heroes."
+      return "Cultists all over the world join your cause actively, Deathwing as a super demihero and the 2 elemental ascendant heroes."
     endmethod
 
     private method OnComplete takes nothing returns nothing

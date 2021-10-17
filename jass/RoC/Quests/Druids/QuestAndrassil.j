@@ -12,7 +12,7 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Furbolgs and Druids of the Claw, and you can train the hero Ursoc from the Altar of Elders"
+      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Druids of the Claw, and you can train the hero Ursoc from the Altar of Elders"
     endmethod
 
     private method OnComplete takes nothing returns nothing
