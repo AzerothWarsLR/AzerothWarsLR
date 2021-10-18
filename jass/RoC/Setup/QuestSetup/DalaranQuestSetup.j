@@ -2,8 +2,9 @@ library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalG
 
   public function OnInit takes nothing returns nothing
     //Early duel
-    local QuestData newQuest = FACTION_DALARAN.AddQuest(QuestShadowfang.create())
+    local QuestData newQuest = FACTION_DALARAN.AddQuest(QuestSouthshore.create())
     set FACTION_DALARAN.StartingQuest = newQuest
+    call FACTION_DALARAN.AddQuest(QuestShadowfang.create())
     call FACTION_DALARAN.AddQuest(QuestDalaran.create())
     call FACTION_DALARAN.AddQuest(QuestJainaSoulGem.create())
     call FACTION_DALARAN.AddQuest(QuestBlueDragons.create())

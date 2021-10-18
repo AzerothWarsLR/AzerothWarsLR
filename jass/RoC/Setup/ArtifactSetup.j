@@ -25,7 +25,6 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     local Artifact tempArtifact = 0
 
     set ARTIFACT_CROWNSTORMWIND = Artifact.create(CreateItem('I002', DUMMY_X, DUMMY_Y))
-    call UnitAddAbility(gg_unit_n021_2624, ARTIFACT_HOLDER_ABIL_ID)  
     call UnitAddItem(gg_unit_n021_2624, ARTIFACT_CROWNSTORMWIND.item)                      //Hogger
 
     set ARTIFACT_EYEOFSARGERAS = Artifact.create(CreateItem('I003', DUMMY_X, DUMMY_Y))    //Eye of Sargeras
@@ -40,12 +39,11 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  
     call UnitAddItem(gg_unit_u000_0649, ARTIFACT_HELMOFDOMINATION.item)                            
 
-    set ARTIFACT_CROWNLORDAERON = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y))//Crown of Lordaeron
+    set ARTIFACT_CROWNLORDAERON = Artifact.create(CreateItem('I001', DUMMY_X, DUMMY_Y)) //Crown of Lordaeron
     call UnitAddAbility(gg_unit_nemi_0019, ARTIFACT_HOLDER_ABIL_ID)                    //King Terenas
     call UnitAddItem(gg_unit_nemi_0019, ARTIFACT_CROWNLORDAERON.item)           
 
     set tempArtifact = Artifact.create(CreateItem('I00D', DUMMY_X, DUMMY_Y))    //Shalamayne
-    call UnitAddAbility(gg_unit_n021_2624, ARTIFACT_HOLDER_ABIL_ID)  
     call UnitAddItem(gg_unit_n021_2624, tempArtifact.item)                      //Hogger
 
     set tempArtifact = Artifact.create(CreateItem('klmm', DUMMY_X, DUMMY_Y))    //Killmaim

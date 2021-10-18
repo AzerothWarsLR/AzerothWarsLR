@@ -49,9 +49,9 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Clear the Outskirts", "The outskirts of Stormwind are infested by evil creatures. Kill their leader and regain control of the Towns.", "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n021_2624)) //Hogger
+      local thistype this = thistype.allocate("Clear the Outskirts", "The outskirts of Stormwind are infested by evil creatures. Kill their leaders and regain control of the Towns.", "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00V')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00Z')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n011')))
       call this.AddQuestItem(QuestItemExpire.create(1490))
       call this.AddQuestItem(QuestItemSelfExists.create())

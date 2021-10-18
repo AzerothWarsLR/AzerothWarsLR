@@ -6,6 +6,7 @@ library StormwindQuestSetup requires StormwindSetup, QuestHonorHold, QuestStromg
     set FACTION_STORMWIND.StartingQuest = newQuest
     //Early duel
     call FACTION_STORMWIND.AddQuest(QuestLakeshire.create())
+    call FACTION_STORMWIND.AddQuest(QuestGoldshire.create())
     call FACTION_STORMWIND.AddQuest(QuestStormwindCity.create())
     call FACTION_STORMWIND.AddQuest(QuestNethergarde.create())
     //Misc

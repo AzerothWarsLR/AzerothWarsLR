@@ -10,13 +10,11 @@ library QuestGuldansLegacy requires QuestData, FelHordeSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "2 new Demon Gates in Outland and unlock the Blood Runes researches in the War Mill"
+      return "Unlock the Blood Runes and Demonic construction researches in the War Mill"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerAbilityAvailableBJ(true, 'A0MZ', FACTION_FEL_HORDE.Player)  //Demonic Construction
-      call UnitRescue(gg_unit_n081_4074, FACTION_FEL_HORDE.Player)
-      call UnitRescue(gg_unit_n081_1585, FACTION_FEL_HORDE.Player)
       call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
     endmethod
 

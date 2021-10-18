@@ -39,7 +39,7 @@ library ScarletSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h095', UNLIMITED)   //Bowman
     call f.registerObjectLimit('h096', UNLIMITED)   //Light Cavalry
     call f.registerObjectLimit('h08L', UNLIMITED)   //Cavalier
-    call f.registerObjectLimit('nchp', UNLIMITED)   //Inquisitor
+    call f.registerObjectLimit('n068', UNLIMITED)   //Inquisitor
     call f.registerObjectLimit('h06B', 6)           //Templar
     call f.registerObjectLimit('h08J', UNLIMITED)   //Arbalest
     call f.registerObjectLimit('h08K', UNLIMITED)   //Chaplain
@@ -55,7 +55,7 @@ library ScarletSetup requires Faction, TeamSetup
 
     //Upgrades
     call f.registerObjectLimit('R05D', UNLIMITED)   //Chaplain Adept Training
-    call f.registerObjectLimit('R00I', UNLIMITED)   //Light's Praise Initiate Training
+    call f.registerObjectLimit('R04F', UNLIMITED)   //Inquisitor traiing
     call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.registerObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
     call f.registerObjectLimit('Rhac', UNLIMITED)   //Improved Masonry

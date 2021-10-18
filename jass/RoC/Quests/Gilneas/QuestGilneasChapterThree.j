@@ -8,11 +8,11 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
   struct QuestGilneasChapterThree extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "Tess must acquire the Scythe of Elune without killing Genn Greymane"
+      return "Tess has acquired the Scythe of Elune and saved the Worgen."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A return to the Alliance of Lordaeron"
+      return "A return to the Alliance of Lordaeron. If you manage to keep Genn Greymane alive, you gain him as a hero"
     endmethod
 
     private method OnComplete takes nothing returns nothing
