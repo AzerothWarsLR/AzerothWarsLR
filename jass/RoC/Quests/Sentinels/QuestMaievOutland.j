@@ -36,7 +36,6 @@ library QuestMaievOutland requires Persons, QuelthalasSetup, GeneralHelpers
       call SetUnitPosition(LEGEND_MAIEV.Unit, -5252, -27597)
       call UnitRemoveAbilityBJ( 'A0J5', LEGEND_MAIEV.Unit)
       call this.GiveMaievOutland(this.Holder.Player)
-      set this.Holder.Team = TEAM_NAGA
     endmethod
 
     public static method create takes nothing returns thistype

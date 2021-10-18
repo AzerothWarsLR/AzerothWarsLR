@@ -6,6 +6,7 @@ library LegendNaga initializer OnInit requires Legend
     Legend LEGEND_NAJENTUS
     Legend LEGEND_AZSHARA
     Legend LEGEND_NZOTH
+    Legend LEGEND_ALTRUIS
     
     Legend LEGEND_NAZJATAR
     Legend LEGEND_VAULT
@@ -24,6 +25,9 @@ library LegendNaga initializer OnInit requires Legend
 
     set LEGEND_NAJENTUS = Legend.create()
     set LEGEND_NAJENTUS.UnitType = 'U00S'
+
+    set LEGEND_ALTRUIS = Legend.create()
+    set LEGEND_ALTRUIS.UnitType = 'E015'
 
     set LEGEND_NZOTH = Legend.create()
     set LEGEND_NZOTH.Unit = gg_unit_U01Z_1237
