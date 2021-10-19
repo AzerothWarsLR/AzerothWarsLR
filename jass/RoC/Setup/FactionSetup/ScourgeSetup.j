@@ -40,6 +40,9 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.registerObjectLimit('umtw', 6)           //Meat Wagon
     call f.registerObjectLimit('ucry', UNLIMITED)   //Crypt Fiend
     call f.registerObjectLimit('ugar', 12)           //Gargoyle
+    call f.registerObjectLimit('h02G', UNLIMITED)   //Vrykul Warrior
+    call f.registerObjectLimit('h061', 12)           //Vrykul Champion
+    call f.registerObjectLimit('h00P', 4)           //Mammoth rider
     call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
     call f.registerObjectLimit('unec', UNLIMITED)   //Necromancer
     call f.registerObjectLimit('uobs', 4)           //Obsidian Statue

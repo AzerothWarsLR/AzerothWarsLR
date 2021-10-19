@@ -6,11 +6,11 @@ library QuestBlademaster requires QuestData, ScarletSetup
 
   struct QuestBlademaster extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "We have recaptured the shipyard."
+      return "We have recaptured the capital ship."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A shipyard and the end of the orc attacks"
+      return "The capital ship and the end of the orc attacks"
     endmethod
 
     private method GrantBlademaster takes player whichPlayer returns nothing

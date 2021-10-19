@@ -35,6 +35,8 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_LIFE))
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_MANA))
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
+      set this.Holder.Team = TEAM_SCOURGE
+      call UnitRescue(gg_unit_h00O_2516, FACTION_SCOURGE.Player)
     endmethod
 
     public static method create takes nothing returns thistype
