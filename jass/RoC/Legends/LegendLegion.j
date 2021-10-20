@@ -5,7 +5,6 @@ library LegendLegion initializer OnInit requires Legend
     Legend LEGEND_ANETHERON
     Legend LEGEND_TICHONDRIUS
     Legend LEGEND_MALGANIS
-    Legend LEGEND_KILJAEDEN
 
     Legend LEGEND_LEGIONNEXUS
   endglobals
@@ -29,11 +28,6 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_MALGANIS = Legend.create()
     set LEGEND_MALGANIS.UnitType = 'Umal'
     set LEGEND_MALGANIS.PlayerColor = PLAYER_COLOR_GREEN
-
-    set LEGEND_KILJAEDEN = Legend.create()
-    set LEGEND_KILJAEDEN.UnitType = 'U004'
-    set LEGEND_KILJAEDEN.PermaDies = true
-    set LEGEND_KILJAEDEN.DeathMessage = "Kil'jaeden the Deceiver has been annihilated. The Burning Legion is now without its most formidable lieutenants."
 
     set LEGEND_LEGIONNEXUS = Legend.create()
     set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871

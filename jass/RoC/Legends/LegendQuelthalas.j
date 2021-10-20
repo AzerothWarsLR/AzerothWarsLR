@@ -8,6 +8,8 @@ library LegendQuelthalas initializer OnInit requires Legend
     Legend LEGEND_KORIALSTRASZ
     Legend LEGEND_KAEL
     Legend LEGEND_LORTHEMAR
+    Legend LEGEND_KILJAEDEN
+    Legend LEGEND_PATHALEON
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
@@ -32,17 +34,18 @@ library LegendQuelthalas initializer OnInit requires Legend
 
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
+    set LEGEND_ROMMATH.StartingXP = 1800
 
     set LEGEND_JENNALLA = Legend.create()
     set LEGEND_JENNALLA.UnitType = 'H02B'
+
+    set LEGEND_PATHALEON = Legend.create()
+    set LEGEND_PATHALEON.UnitType = 'H098'
+    set LEGEND_PATHALEON.StartingXP = 1800
     
     set LEGEND_SYLVANAS = Legend.create()
     set LEGEND_SYLVANAS.UnitType = 'Hvwd'
     set LEGEND_SYLVANAS.PlayerColor = PLAYER_COLOR_GREEN
-
-    set LEGEND_KORIALSTRASZ = Legend.create()
-    set LEGEND_KORIALSTRASZ.UnitType = 'Edem'
-    set LEGEND_KORIALSTRASZ.PlayerColor = PLAYER_COLOR_RED
 
     set LEGEND_KAEL = Legend.create()
     set LEGEND_KAEL.PlayerColor = PLAYER_COLOR_RED
@@ -50,6 +53,12 @@ library LegendQuelthalas initializer OnInit requires Legend
 
     set LEGEND_LORTHEMAR = Legend.create()
     set LEGEND_LORTHEMAR.UnitType = 'H02E'
+
+    set LEGEND_KILJAEDEN = Legend.create()
+    set LEGEND_KILJAEDEN.UnitType = 'U004'
+    set LEGEND_KILJAEDEN.PermaDies = true
+    set LEGEND_KILJAEDEN.StartingXP = 10800
+    set LEGEND_KILJAEDEN.DeathMessage = "Kil'jaeden the Deceiver has been annihilated. The Burning Legion is now without its most formidable lieutenants."
   endfunction
 
 endlibrary

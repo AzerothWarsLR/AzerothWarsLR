@@ -25,7 +25,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     endmethod
 
     private method operator FailureDescription takes nothing returns string
-      return "You lose everything you control, but you gain Prince Kael'thas and Lorthemar at the Dalaran Dungeons, and you can train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium"
+      return "You lose everything you control, but you gain Prince Kael'thas at the Dalaran Dungeons, and you can train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -38,7 +38,6 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
       local player holderPlayer = this.Holder.Person.Player
       local Legend triggerLegend = GetTriggerLegend()
       set LEGEND_KAEL.StartingXP = GetHeroXP(LEGEND_ANASTERIAN.Unit)
-      set LEGEND_LORTHEMAR.StartingXP = GetHeroXP(LEGEND_SYLVANAS.Unit)
       call this.Holder.obliterate()
       if this.Holder.ScoreStatus != SCORESTATUS_DEFEATED then
         loop
@@ -50,7 +49,6 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
         call DestroyGroup(thistype.SecondChanceUnits)
         call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
         call LEGEND_KAEL.Spawn(this.Holder.Player, -11410, 21975, 110)
-        call LEGEND_LORTHEMAR.Spawn(this.Holder.Player, -11327, 22185.2, 200)
         call UnitAddItem(LEGEND_KAEL.Unit, CreateItem('I00M', GetUnitX(LEGEND_KAEL.Unit), GetUnitY(LEGEND_KAEL.Unit)))
         if GetLocalPlayer() == this.Holder.Player then
           call SetCameraPosition(GetRectCenterX(gg_rct_BloodElfSecondChanceSpawn), GetRectCenterY(gg_rct_BloodElfSecondChanceSpawn))
@@ -90,6 +88,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Blood Elves", "The Elves of Quel'thalas have a deep reliance on the Sunwell's magic. Without it, they would have to turn to darker magicks to sate themselves.", "ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LEGIONNEXUS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ANASTERIAN, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, true))
       return this
     endmethod

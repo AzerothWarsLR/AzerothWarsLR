@@ -12,6 +12,10 @@ library QuelthalasQuestSetup requires QuelthalasSetup, QuestQueldanil, QuestTheB
 
     call FACTION_QUELTHALAS.AddQuest(tempestKeep)
     set tempestKeep.Progress = QUEST_PROGRESS_UNDISCOVERED
+
+    set SUMMON_KIL = QuestSummonKil.create()
+    set GREAT_TREACHERY = QuestGreatTreachery.create()
+    set STAY_LOYAL = QuestStayLoyal.create()
   endfunction
 
 endlibrary

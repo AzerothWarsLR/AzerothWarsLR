@@ -31,8 +31,7 @@ library QuelthalasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h03J', UNLIMITED)   //Academy
     call f.registerObjectLimit('h077', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('nefm', UNLIMITED)   //Residence
-    call f.registerObjectLimit('n06Y', 2)           //Healing Spire
-
+    
     //Units
     call f.registerObjectLimit('nbee', UNLIMITED)   //Elven Worker
     call f.registerObjectLimit('hbot', 12)   	    //Alliance Transport Ship
@@ -53,6 +52,9 @@ library QuelthalasSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n075', 1)           //Vareesa 
     call f.registerObjectLimit('Hvwd', 1)           //Sylvanas
     call f.registerObjectLimit('H00Q', 1)           //Anasterian
+    call f.registerObjectLimit('H098', 1)           //Pathaleone
+    call f.registerObjectLimit('H04F', 1)           //Rommath
+    call f.registerObjectLimit('H02E', 1)           //Lorthemar
 
     //Upgrades
     call f.registerObjectLimit('R01S', UNLIMITED)   //Aimed Shot
