@@ -1,4 +1,4 @@
-library GlobalQuest requires QuestData
+  library GlobalQuest requires QuestData
 
   globals
     QuestData EXILE_PATH
@@ -10,6 +10,10 @@ library GlobalQuest requires QuestData
     QuestData SUMMON_KIL
     QuestData GREAT_TREACHERY
     QuestData STAY_LOYAL
+
+    QuestData CRYSTAL_GOLEM
+    QuestData FALLEN_GUARDIAN
+    QuestData NEW_GUARDIAN
   endglobals
 
 

@@ -37,6 +37,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
       call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
       set this.Holder.Team = TEAM_SCOURGE
       call UnitRescue(gg_unit_h00O_2516, FACTION_SCOURGE.Player)
+      call SetPlayerTechResearched(FACTION_DALARAN.Player, 'R079', 1)
     endmethod
 
     public static method create takes nothing returns thistype
