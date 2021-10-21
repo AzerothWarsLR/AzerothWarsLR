@@ -14,14 +14,13 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
     endmethod
 
     private method OnComplete takes nothing returns nothing 
-      local integer i = 0
-      local Faction loopFaction
-      loop
-        exitwhen i == TEAM_NAGA.PlayerCount
-        set loopFaction = TEAM_NAGA.GetFactionByIndex(i)
-        set loopFaction.Team = TEAM_LEGION
-        set i = i + 1
-      endloop
+      if FACTION_QUELTHALAS.Team == TEAM_NAGA then
+        set FACTION_QUELTHALAS.Team = TEAM_LEGION
+      endif
+      if FACTION_FEL_HORDE.Team == TEAM_NAGA then
+        set FACTION_FEL_HORDE.Team = TEAM_LEGION
+      endif
+      set FACTION_NAGA.Team = TEAM_LEGION
       if FACTION_QUELTHALAS.Team == TEAM_LEGION then
         set SUMMON_KIL.Progress = QUEST_PROGRESS_INCOMPLETE
         set GREAT_TREACHERY.Progress = QUEST_PROGRESS_FAILED

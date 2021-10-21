@@ -34,6 +34,7 @@
     set LEGEND_BLACKTEMPLE = Legend.create()
     set LEGEND_BLACKTEMPLE.Unit = gg_unit_o00F_0659
     set LEGEND_BLACKTEMPLE.IsCapital = true
+    set LEGEND_BLACKTEMPLE.Capturable = true
     
     set LEGEND_HELLFIRECITADEL = Legend.create()
     set LEGEND_HELLFIRECITADEL.Unit = gg_unit_o008_0168

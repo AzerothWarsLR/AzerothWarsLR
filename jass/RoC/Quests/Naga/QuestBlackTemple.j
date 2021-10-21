@@ -21,7 +21,7 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Lord of Outland", "The Fel Horde is weak and complacent, the Illidari will easily conquer them to serve Illidan. ", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_BLACKTEMPLE.Unit))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00R')))
       call this.AddQuestItem(QuestItemResearch.create('R063', 'n055'))
       return this
