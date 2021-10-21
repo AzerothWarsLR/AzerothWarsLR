@@ -6,6 +6,7 @@
     QuestData MADNESS_PATH
     QuestData ALLIANCE_NAGA
     QuestData CONQUER_BLACK_TEMPLE
+    QuestData KILL_FROZEN_THRONE
 
     QuestData SUMMON_KIL
     QuestData GREAT_TREACHERY
@@ -14,6 +15,7 @@
     QuestData CRYSTAL_GOLEM
     QuestData FALLEN_GUARDIAN
     QuestData NEW_GUARDIAN
+    QuestData THE_NEXUS
   endglobals
 
 

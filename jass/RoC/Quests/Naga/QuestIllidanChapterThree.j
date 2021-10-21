@@ -50,6 +50,8 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
       set ALLIANCE_NAGA.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(CONQUER_BLACK_TEMPLE)
       set CONQUER_BLACK_TEMPLE.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_NAGA.AddQuest(KILL_FROZEN_THRONE)
+      set KILL_FROZEN_THRONE.Progress = QUEST_PROGRESS_UNDISCOVERED
       call WaygateActivateBJ( true, gg_unit_h01D_3378 )
       call ShowUnitShow( gg_unit_h01D_3378 )
       call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )

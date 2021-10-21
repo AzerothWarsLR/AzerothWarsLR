@@ -2,12 +2,16 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
   struct QuestTheNexus extends QuestData
 
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+
     private method operator CompletionPopup takes nothing returns string
-      return "The TheNexus have been constructed."
+      return "The Nexus powers have been absorbed by Jaina and she joins the Lich King in the eternal ice of Northrend."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of the The Nexus"
+      return "You become the Nexus faction, allied with the Scourge and enemy with everyone else. Jaina becomes much more powerful"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -52,7 +56,7 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Nexus", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
+      local thistype this = thistype.allocate("The Nexus", "The new Lich King calls for Jaina, tempts her with power. The Nexus needs a master, and Jaina is perfect for it.", "ReplaceableTextures\\CommandButtons\\BTNBlueDragonNexus.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0RB', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_JAINA, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS, false))

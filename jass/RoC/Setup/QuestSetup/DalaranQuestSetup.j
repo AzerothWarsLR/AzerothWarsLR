@@ -8,17 +8,20 @@ library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalG
     call FACTION_DALARAN.AddQuest(QuestDalaran.create())
     call FACTION_DALARAN.AddQuest(QuestJainaSoulGem.create())
     call FACTION_DALARAN.AddQuest(QuestBlueDragons.create())
-    call FACTION_DALARAN.AddQuest(QuestTheNexus.create())
     //Misc
     call FACTION_DALARAN.AddQuest(QuestKarazhan.create())
     call FACTION_DALARAN.AddQuest(QuestTheramore.create())
 
     set CRYSTAL_GOLEM = QuestCrystalGolem.create()
     call FACTION_DALARAN.AddQuest(CRYSTAL_GOLEM)
+
     set FALLEN_GUARDIAN = QuestFallenGuardian.create()
     call FACTION_DALARAN.AddQuest(FALLEN_GUARDIAN)
+
     set NEW_GUARDIAN = QuestNewGuardian.create()
     call FACTION_DALARAN.AddQuest(NEW_GUARDIAN)
+    set THE_NEXUS = QuestTheNexus.create()
+    call FACTION_DALARAN.AddQuest(THE_NEXUS)
   endfunction
 
 endlibrary

@@ -7,11 +7,11 @@ library QuestStayLoyal requires Persons, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Blood Elven Skyship has been built"
+      return "The Blood Elves stay loyal to Illidan"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock the Blood Elven Skypship and stay allied to Illidan"
+      return "Stay allied to Illidan"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
