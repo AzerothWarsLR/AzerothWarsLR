@@ -2,7 +2,7 @@
 library QuestGreatTreachery requires Persons, GeneralHelpers
 
   globals 
-    private constant integer QUEST_RESEARCH_ID = R075   //This research is given when the quest is completed
+    private constant integer QUEST_RESEARCH_ID = 'R075'   //This research is given when the quest is completed
   endglobals
 
   struct QuestGreatTreachery extends QuestData
