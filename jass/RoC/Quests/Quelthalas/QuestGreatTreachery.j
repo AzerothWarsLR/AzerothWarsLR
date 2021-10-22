@@ -2,7 +2,7 @@
 library QuestGreatTreachery requires Persons, GeneralHelpers
 
   globals 
-    private constant integer QUEST_RESEARCH_ID = 'R075'   //This research is given when the quest is completed
+    private constant integer QUEST_RESEARCH_ID = R075   //This research is given when the quest is completed
   endglobals
 
   struct QuestGreatTreachery extends QuestData
@@ -26,6 +26,7 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
       call RemoveUnit(LEGEND_LORTHEMAR.Unit)
       call FACTION_QUELTHALAS.modObjectLimit('H02E',-UNLIMITED)       //Lorthemar
       set this.Holder.Team = TEAM_LEGION
+      set SUMMON_KIL.Progress = QUEST_PROGRESS_INCOMPLETE
     endmethod
 
     public static method create takes nothing returns thistype

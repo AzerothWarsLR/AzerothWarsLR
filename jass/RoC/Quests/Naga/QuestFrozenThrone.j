@@ -16,12 +16,6 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
     private method OnComplete takes nothing returns nothing 
       if FACTION_QUELTHALAS.Team == TEAM_NAGA then
         set FACTION_QUELTHALAS.Team = TEAM_LEGION
-      endif
-      if FACTION_FEL_HORDE.Team == TEAM_NAGA then
-        set FACTION_FEL_HORDE.Team = TEAM_LEGION
-      endif
-      set FACTION_NAGA.Team = TEAM_LEGION
-      if FACTION_QUELTHALAS.Team == TEAM_LEGION then
         set SUMMON_KIL.Progress = QUEST_PROGRESS_INCOMPLETE
         set GREAT_TREACHERY.Progress = QUEST_PROGRESS_FAILED
         set STAY_LOYAL.Progress = QUEST_PROGRESS_FAILED
@@ -29,6 +23,11 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
         call UnitRemoveAbilityBJ( 'A0IF', LEGEND_KAEL.Unit)
         call UnitAddAbility(LEGEND_KAEL.Unit, 'A0R7')
       endif
+      if FACTION_FEL_HORDE.Team == TEAM_NAGA then
+        set FACTION_FEL_HORDE.Team = TEAM_LEGION
+      endif
+      set FACTION_NAGA.Team = TEAM_LEGION
+      call SetPlayerTechResearched(FACTION_QUELTHALAS.Player, 'R075', 1)
     endmethod
 
     public static method create takes nothing returns thistype

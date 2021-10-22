@@ -25,7 +25,6 @@ library QuestSummonKil requires QuestData
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Great Deceiver", "The greater demon Kil'jaeden has been scheming for aeons, will Kael finally be the one to summon him and consume Azeroth?", "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
       call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, true))
-      call this.AddQuestItem(QuestItemCastSpell.create('A0IF', true))
       return this
     endmethod
   endstruct
