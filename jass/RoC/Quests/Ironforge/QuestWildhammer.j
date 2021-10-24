@@ -47,7 +47,6 @@ library QuestWildhammer requires QuestItemKillUnit, IronforgeSetup, LegendNeutra
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Wildhammer Alliance", "The Wildhammer dwarves roam freely over the peaks of the Hinterlands. An audience with Magni himself might earn their cooperation.", "ReplaceableTextures\\CommandButtons\\BTNHeroGriffonWarrior.blp")
-      call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_MAGNI, 8))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Aerie_Peak, "Aerie Peak"))
       return this
     endmethod

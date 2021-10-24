@@ -19,7 +19,6 @@ library QuestJoinAllianceDruid requires Persons, GeneralHelpers
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Join the Alliance", "With a world ending threat happening, the Alliance has reached to the Night Elves to join them", "ReplaceableTextures\\CommandButtons\\BTNalliance.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IG', true))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_MALFURION, true))
       return this
     endmethod
   endstruct

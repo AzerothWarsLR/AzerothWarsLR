@@ -18,7 +18,6 @@ library QuestNewGuardian requires LegendDalaran, Display,
       call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + 20, true)
       call LEGEND_JAINA.ClearUnitDependencies()
       set LEGEND_JAINA.PermaDies = false
-      call FACTION_DALARAN.AddQuest(THE_NEXUS)
       set THE_NEXUS.Progress = QUEST_PROGRESS_FAILED
     endmethod
 
