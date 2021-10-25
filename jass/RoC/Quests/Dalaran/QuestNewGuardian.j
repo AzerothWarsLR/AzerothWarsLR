@@ -11,6 +11,7 @@ library QuestNewGuardian requires LegendDalaran, Display,
 
     private method OnComplete takes nothing returns nothing
       local unit whichUnit = LEGEND_JAINA.Unit
+      call UnitRemoveAbilityBJ( 'A0RB', LEGEND_JAINA.Unit)
       call AddSpecialEffectTarget("war3mapImported\\Soul Armor Cosmic.mdx", whichUnit, "chest")
       call BlzSetUnitName(whichUnit, "Guardian of Tirisfal")
       call UnitAddAbility(whichUnit, 'A0BX') //Guardian of Tirisfal Spellbook
