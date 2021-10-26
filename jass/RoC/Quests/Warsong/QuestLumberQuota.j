@@ -19,7 +19,7 @@ library QuestLumberQuota requires QuestData, WarsongSetup
       local unit u
 
       //Transfer all Neutral Passive units in Darkspear
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_EchoIsleAmbient, null)
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_EchoUnlock, null)
       set u = FirstOfGroup(tempGroup)
       loop
       exitwhen u == null

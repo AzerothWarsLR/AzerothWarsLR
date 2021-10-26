@@ -10,7 +10,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Hellfire Citadel and enable Kargath to be trained at the altar"
+      return "Control of all units in Hellfire Citadel and enable Magtheridon to be trained at the altar"
     endmethod
 
     private method GrantHellfire takes player whichPlayer returns nothing
@@ -22,7 +22,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
       set u = FirstOfGroup(tempGroup)
       loop
       exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
           call UnitRescue(u, whichPlayer)
         endif
         call GroupRemoveUnit(tempGroup, u)
@@ -30,10 +30,6 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null      
-    endmethod
-
-    private method OnFail takes nothing returns nothing
-      call this.GrantHellfire(Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -49,7 +45,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Citadel", "The clans holding Hellfire Citadel do not respect Magtheridon authority yet, destroy Murmur to show them who rules Outland now", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
+      local thistype this = thistype.allocate("The Citadel", "The clans holding Hellfire Citadel do not respect Kargath authority yet, destroy Murmur to finally establish Magtheridon as the undisputable king of Outland", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n03T_0555)) //Murmur
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_AUCHINDOUN, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01J')))

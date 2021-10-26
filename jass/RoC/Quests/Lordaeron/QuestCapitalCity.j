@@ -54,7 +54,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Hearthlands", "The territories of Lordaeron is fragmented, regain control of the old alliance's hold to secure the kingdom.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01M')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01I')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n018')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
       call this.AddQuestItem(QuestItemExpire.create(1472))
       call this.AddQuestItem(QuestItemSelfExists.create())
