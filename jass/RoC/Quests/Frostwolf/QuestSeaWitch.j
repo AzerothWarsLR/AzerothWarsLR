@@ -35,6 +35,33 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       set tempGroup = null      
     endmethod
 
+    private method GrantDarkspear takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Darkspear
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_EchoUnlock, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
+          call UnitRescue(u, whichPlayer)
+        else
+          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
+          endif
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null      
+    endmethod
+
+    private method OnFail takes nothing returns nothing
+      call this.GrantDarkspear(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
     private method OnComplete takes nothing returns nothing
       local Person killingPerson = Person.ByHandle(GetOwningPlayer(GetKillingUnit()))
       local group tempGroup = CreateGroup()
@@ -56,6 +83,10 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       call DestroyGroup(tempGroup)
       call RemoveWeatherEffectBJ(Storm)
       call CreateUnits(this.Holder.Player, 'opeo', -1818, -2070, 270, 3)
+      call this.GrantDarkspear(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\WarsongTheme.mp3" )
+      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -65,6 +96,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SEAWITCH.Unit))
+      call this.AddQuestItem(QuestItemExpire.create(600))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

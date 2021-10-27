@@ -44,7 +44,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.registerObjectLimit('owyv', 8)           //Wind Rider
 
     call f.registerObjectLimit('Ogrh', 1)           //Grom
-    call f.registerObjectLimit('O04M', 1)           //Rokkan
+    call f.registerObjectLimit('Obla', 1)           //Varok
 
     call f.registerObjectLimit('Robs', UNLIMITED)   //Berserker Strength
     call f.registerObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration

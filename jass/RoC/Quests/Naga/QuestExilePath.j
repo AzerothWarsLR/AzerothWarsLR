@@ -57,7 +57,6 @@ library QuestExilePath requires QuestData, NagaSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("A Parting of Ways", "Illidan has to go his own way to find the power and Outland is the perfect place to acquire it.", "ReplaceableTextures\\CommandButtons\\BTNIllidanDemonicPower.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create('n055', 'nntt'))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
       call this.AddQuestItem(QuestItemSelfExists.create())

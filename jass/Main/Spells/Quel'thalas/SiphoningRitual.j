@@ -109,7 +109,7 @@ library SiphoningRitual initializer OnInit requires T32, DummyCast, Set, SpellHe
       local unit u = null
       set this.caster = caster
       set this.tick = 0
-      set this.siphoningBeams = Set.create()
+      set this.siphoningBeams = Set.create("siphoning Beams")
       set this.effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Drain\\DrainCaster.mdl", this.caster, "chest")
 
       call GroupEnumUnitsInRange(tempGroup, x, y, radius, null)

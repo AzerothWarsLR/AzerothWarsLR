@@ -6,7 +6,6 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
   endglobals
 
   struct QuestThunderBluff extends QuestData
-    private Faction fallbackFaction = 0
 
     private method operator CompletionPopup takes nothing returns string
       return "The Crossroads have been constructed."
@@ -42,20 +41,15 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
     endmethod
 
     private method OnFail takes nothing returns nothing
-      if this.fallbackFaction != 0 then
-        call this.GiveThunderBluff(this.fallbackFaction.Player)
-      else
         call this.GiveThunderBluff(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-      endif
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call this.GiveThunderBluff(this.Holder.Player)
     endmethod
 
-    public static method create takes Faction fallbackFaction returns thistype
+    public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Long March", "The Tauren have been wandering for too long. The plains of Mulgore would offer respite from this endless journey.", "ReplaceableTextures\\CommandButtons\\BTNCentaurKhan.blp")
-      set this.fallbackFaction = fallbackFaction
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CENTAURKHAN))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_ThunderBluff, "Thunder Bluff", true))
       call this.AddQuestItem(QuestItemExpire.create(1455))

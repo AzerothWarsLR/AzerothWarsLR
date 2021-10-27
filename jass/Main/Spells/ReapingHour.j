@@ -171,7 +171,7 @@ library ReapingHour initializer OnInit requires T32, Set
       set this.maxDist = maxDist
       set this.damage = damage
       set this.hitGroup = CreateGroup()
-      set this.reapProjectiles = Set.create()
+      set this.reapProjectiles = Set.create("reaping hour")
 
       loop
         exitwhen i == HORSEMEN_COUNT

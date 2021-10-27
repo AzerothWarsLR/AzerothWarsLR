@@ -13,6 +13,7 @@ library AhnqirajSetup requires Faction, TeamSetup
      set f.StartingLumber = 500
 
             //Units
+            call f.registerObjectLimit('n071', UNLIMITED)   //Pillars of C'thun
             call f.registerObjectLimit('o00R', UNLIMITED)   //Black Pyramid
             call f.registerObjectLimit('ushp', UNLIMITED)   //Undead Shipyard
             call f.registerObjectLimit('o00D', UNLIMITED)   //Ancient Tomb
@@ -20,8 +21,11 @@ library AhnqirajSetup requires Faction, TeamSetup
             call f.registerObjectLimit('u01G', UNLIMITED)   //Spirit Hall
             call f.registerObjectLimit('u01H', UNLIMITED)   //Void Portal
             call f.registerObjectLimit('u01I', UNLIMITED)   //Chamber of Wonders
-            call f.registerObjectLimit('n073', UNLIMITED)   //Ahn'Qiraj Nexus
-            call f.registerObjectLimit('n071', UNLIMITED)   //Pillars of C'thun
+            call f.registerObjectLimit('u020', UNLIMITED)   //Monument
+            call f.registerObjectLimit('u021', UNLIMITED)   //Temple
+            call f.registerObjectLimit('u022', UNLIMITED)   //Nexus
+
+            
 
             //Structures
             call f.registerObjectLimit('u019', UNLIMITED)   //Cultist        
@@ -38,7 +42,7 @@ library AhnqirajSetup requires Faction, TeamSetup
 
             //Upgrades
             call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web
-            call f.registerObjectLimit('R03G', UNLIMITED)   //Void Infusion
+            call f.registerObjectLimit('R02A', UNLIMITED)   //Void Infusion
 
             //Masteries
 

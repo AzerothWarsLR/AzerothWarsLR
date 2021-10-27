@@ -1,5 +1,9 @@
 library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R03S'   //This research is given when the quest is completed
+  endglobals
+
   struct QuestStonemaul extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "Stonemaul has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
@@ -34,7 +38,6 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
 
     private method OnComplete takes nothing returns nothing
       call this.GrantStonemaul(this.Holder.Player)
-      call AdjustPlayerStateBJ( 3000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     private method OnAdd takes nothing returns nothing

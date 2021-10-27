@@ -29,8 +29,8 @@ library Hint initializer OnInit requires Set, Display
     endmethod
 
     static method onInit takes nothing returns nothing
-      set all = Set.create()
-      set unread = Set.create()
+      set all = Set.create("Hint all")
+      set unread = Set.create("Hint unread")
     endmethod
 
   endstruct

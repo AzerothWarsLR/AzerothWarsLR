@@ -238,8 +238,8 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
       local Team this = Team.allocate()
       
       set this.name = name
-      set this.factions = Set.create()
-      set this.invitees = Set.create()
+      set this.factions = Set.create("factions in " + name)
+      set this.invitees = Set.create("invitees of " + name)
       
       if thistype.teamsByName[StringCase(name, false)] == 0 then
         set thistype.teamsByName[StringCase(name, false)] = this

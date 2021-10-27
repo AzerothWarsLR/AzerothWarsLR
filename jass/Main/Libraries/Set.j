@@ -6,6 +6,7 @@ library Set requires Table
     private Table index //Index location for each integer in the set
     private Table list  //Continous list of integers in the set. Index starts at 1
     readonly integer size = 0
+    private string name
 
     method destroy takes nothing returns nothing
       call index.destroy()
@@ -14,23 +15,12 @@ library Set requires Table
 
     method operator [] takes integer index returns integer
       if list[index] == 0 then
-        call BJDebugMsg("ERROR: Set " + I2S(this) + " Table index " + I2S(index) + " out of bounds")
+        call BJDebugMsg("ERROR: Set " + name + " " + I2S(this) + " Table index " + I2S(index) + " out of bounds")
         return 0
       endif
       return list[index]
     endmethod
-
-    method copy takes nothing returns thistype
-      local Set newSet = thistype.create()
-      local integer i = 0
-      loop
-        exitwhen i == size
-        call newSet.add(list[i])
-        set i = i + 1
-      endloop
-      return newSet
-    endmethod
-
+    
     method print takes nothing returns nothing
       local integer i = 0
       call BJDebugMsg("Count: " + I2S(size))
@@ -58,7 +48,7 @@ library Set requires Table
         set index[i] = size
         set size = size + 1
       else
-        call BJDebugMsg("ERROR: Set already contains " + I2S(i))
+        call BJDebugMsg("ERROR: Set " + name + " already contains " + I2S(i))
       endif
     endmethod
 
@@ -78,7 +68,7 @@ library Set requires Table
         set index[i] = 0                               //Remove the index for the item at the end
         set size = size - 1
       else
-        call BJDebugMsg("ERROR: Set does not contain " + I2S(i))
+        call BJDebugMsg("ERROR: Set " + name + " does not contain " + I2S(i))
       endif
     endmethod
 
@@ -88,11 +78,12 @@ library Set requires Table
       endif
     endmethod
 
-    static method create takes nothing returns thistype
+    static method create takes string name returns thistype
       local thistype this = thistype.allocate()
       set size = 0
       set index = Table.create()
       set list = Table.create()
+      set name = name
       return this
     endmethod
   endstruct
