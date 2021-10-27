@@ -3,6 +3,7 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
 
   globals
     private group ThunderBluffUnits
+    private constant integer QUEST_RESEARCH_ID = 'R05I' 
   endglobals
 
   struct QuestThunderBluff extends QuestData
@@ -46,6 +47,9 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
 
     private method OnComplete takes nothing returns nothing
       call this.GiveThunderBluff(this.Holder.Player)
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\TaurenTheme.mp3" )
+      endif
     endmethod
 
     public static method create takes nothing returns thistype
@@ -54,6 +58,7 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_ThunderBluff, "Thunder Bluff", true))
       call this.AddQuestItem(QuestItemExpire.create(1455))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct
