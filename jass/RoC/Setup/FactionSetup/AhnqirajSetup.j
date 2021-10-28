@@ -30,6 +30,8 @@ library AhnqirajSetup requires Faction, TeamSetup
             //Structures
             call f.registerObjectLimit('u019', UNLIMITED)   //Cultist        
             call f.registerObjectLimit('h01K', 12)          //Silithid Overlord
+            call f.registerObjectLimit('o02N', 24)          //Wasp
+            call f.registerObjectLimit('h01N', 8)          //Corrupter
             call f.registerObjectLimit('o000', 6)           //Silithid Colossus
             call f.registerObjectLimit('o00L', UNLIMITED)   //Silithid Reaver
             call f.registerObjectLimit('n06I', UNLIMITED)   //Faceless One
@@ -38,7 +40,8 @@ library AhnqirajSetup requires Faction, TeamSetup
             call f.registerObjectLimit('n060', UNLIMITED)   //Silithid Tunneler
             call f.registerObjectLimit('o001', 6)           //Tol'vir Statue
 
-            call f.registerObjectLimit('U00R', 1)           //Cthun
+            call f.registerObjectLimit('U00Z', 1)           //Moam
+            call f.registerObjectLimit('E005', 1)           //Skeram
 
             //Upgrades
             call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web

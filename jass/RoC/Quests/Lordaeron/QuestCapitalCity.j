@@ -41,6 +41,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call SetUnitInvulnerable( gg_unit_nemi_0019, true )
       call this.GrantCapitalcity(this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\CapitalCity.mp3" )

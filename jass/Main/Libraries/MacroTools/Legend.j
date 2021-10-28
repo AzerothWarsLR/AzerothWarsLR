@@ -156,10 +156,10 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
         call TriggerRegisterUnitEvent(ownerTrig, unit, EVENT_UNIT_CHANGE_OWNER)
         call TriggerAddAction(ownerTrig, function thistype.onUnitChangeOwner)
         //
-        if this.playerColor == null then
-          call SetUnitColor(unit, GetPlayerColor(GetOwningPlayer(unit)))
-        else
+        if this.hasCustomColor then
           call SetUnitColor(unit, this.playerColor)
+        else
+          call SetUnitColor(unit, GetPlayerColor(GetOwningPlayer(unit)))
         endif
         //Set XP to starting XP
         if GetHeroXP(unit) < this.startingXP then

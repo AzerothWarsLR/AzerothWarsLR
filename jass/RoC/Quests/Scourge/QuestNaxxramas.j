@@ -36,7 +36,7 @@ library QuestNaxxramas requires QuestData, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Dread Citadel", "This fallen necropolis can be transformed into a potent war machine by Kel'tuzad", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
+      local thistype this = thistype.allocate("The Dread Citadel", "This fallen necropolis can be transformed into a potent war machine by the Lich Kel'tuzad", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_NaxUnlock, "Naxxramas"))
       call this.AddQuestItem(QuestItemCastSpell.create('A0O2', true))
       return this
