@@ -1,4 +1,4 @@
-library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeSetup, LordaeronSetup, IronforgeSetup, DalaranSetup, QuelthalasSetup, FrostwolfSetup, WarsongSetup, SentinelsSetup, StormwindSetup, DruidsSetup, NagaSetup, AhnqirajSetup
+library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeSetup, LordaeronSetup, IronforgeSetup, DalaranSetup, QuelthalasSetup, FrostwolfSetup, WarsongSetup, SentinelsSetup, StormwindSetup, DruidsSetup, NagaSetup, CthunSetup
 
   public function OnInit takes nothing returns nothing
     local Person p
@@ -46,7 +46,7 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p.Faction = FACTION_NAGA
 
     set p = Person.create(Player(16))
-    set p.Faction = FACTION_AHNQIRAJ
+    set p.Faction = FACTION_CTHUN
 
     set p = Person.create(Player(17))
     set p.Faction = FACTION_TROLL

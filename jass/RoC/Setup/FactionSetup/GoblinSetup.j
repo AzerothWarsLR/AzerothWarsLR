@@ -41,6 +41,7 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('n062', 12)          //Shredder
     call f.registerObjectLimit('h08Z', 3)           //Tank
     call f.registerObjectLimit('h091', 6)           //Zep
+    call f.registerObjectLimit('nzep', 8)           //Trading Zeppelin
     call f.registerObjectLimit('o04S', 5)           //Trader
 
     call f.registerObjectLimit('O04N', 1)           //Jastor
