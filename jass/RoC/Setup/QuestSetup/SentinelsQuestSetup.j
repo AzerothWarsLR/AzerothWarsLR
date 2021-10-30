@@ -10,7 +10,7 @@ library SentinelsQuestSetup requires SentinelsSetup, QuestSentinelsKillFrostwolf
     call FACTION_SENTINELS.AddQuest(QuestScepterOfTheQueenSentinels.create())
     //Misc
     call FACTION_SENTINELS.AddQuest(QuestVaultoftheWardens.create())
-    call FACTION_SENTINELS.AddQuest(QuestJoinAllianceSentinel.create())
+    //call FACTION_SENTINELS.AddQuest(QuestJoinAllianceSentinel.create())
   endfunction
 
 endlibrary

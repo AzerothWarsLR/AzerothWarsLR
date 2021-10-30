@@ -13,7 +13,7 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     set EXILE_PATH = QuestExilePath.create()
     set MADNESS_PATH = QuestMadnessPath.create()
     set REDEMPTION_PATH = QuestRedemptionPath.create()
-    set ALLIANCE_NAGA = QuestJoinAllianceNaga.create()
+    //set ALLIANCE_NAGA = QuestJoinAllianceNaga.create()
     set CONQUER_BLACK_TEMPLE = QuestBlackTemple.create()
     set KILL_FROZEN_THRONE = QuestFrozenThrone.create()
 

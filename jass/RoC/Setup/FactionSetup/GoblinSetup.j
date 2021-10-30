@@ -26,6 +26,7 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('o03X', UNLIMITED)   //Voodoo Lounge
     call f.registerObjectLimit('o03V', UNLIMITED)   //Shipyard
     call f.registerObjectLimit('n0AQ', 8)           //Oil Platform
+    call f.registerObjectLimit('h011', 1)           //Artillery
 
     call f.registerObjectLimit('o02I', UNLIMITED)   //Peon
     call f.registerObjectLimit('n099', UNLIMITED)   //Ogre
@@ -43,6 +44,7 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h091', 6)           //Zep
     call f.registerObjectLimit('nzep', 16)           //Trading Zeppelin
     call f.registerObjectLimit('o04S', 10)           //Trader
+    call f.registerObjectLimit('u028', 2)           //Fuel Tanker
 
     call f.registerObjectLimit('O04N', 1)           //Jastor
     call f.registerObjectLimit('Ntin', 1)           //Gazlowee

@@ -14,6 +14,9 @@ library QuestBusinessExpansion requires QuestData
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      if GetLocalPlayer() == this.Holder.Player then
+        call PlayThematicMusicBJ( "war3mapImported\\GoblinTheme.mp3" )
+      endif
     endmethod
 
     public static method create takes nothing returns thistype

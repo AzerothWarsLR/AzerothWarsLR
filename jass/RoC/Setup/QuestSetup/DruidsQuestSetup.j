@@ -11,7 +11,7 @@ library DruidsQuestSetup requires DruidsSetup, QuestAndrassil, QuestDruidsKillFr
     //Misc
     call FACTION_DRUIDS.AddQuest(QuestAndrassil.create())
     call FACTION_DRUIDS.AddQuest(QuestTortolla.create())
-    call FACTION_DRUIDS.AddQuest(QuestJoinAllianceDruid.create())
+    //call FACTION_DRUIDS.AddQuest(QuestJoinAllianceDruid.create())
   endfunction
 
 endlibrary
