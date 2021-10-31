@@ -10,11 +10,10 @@ library QuestGoblinEmpire requires QuestData, KultirasSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Not sure of the reward yet"
+      return "Unlock the Intercontinental Artillery"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-
     endmethod
 
     public static method create takes nothing returns thistype

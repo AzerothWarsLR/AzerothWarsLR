@@ -49,6 +49,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n022')))
       call this.AddQuestItem(QuestItemExpire.create(1505))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

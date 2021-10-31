@@ -34,7 +34,6 @@ library QuestKilsorrow requires QuestData
 
     private method OnComplete takes nothing returns nothing
       call this.GrantKilsorrow(this.Holder.Player)
-      call UnitRescue(gg_unit_n000_0717, FACTION_FEL_HORDE.Player)
       call UnitRescue(gg_unit_n05F_3538, FACTION_FEL_HORDE.Player)
       call UnitRescue(gg_unit_n081_4142, FACTION_FEL_HORDE.Player)
     endmethod

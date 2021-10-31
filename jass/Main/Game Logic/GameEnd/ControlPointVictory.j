@@ -4,8 +4,8 @@
 library ControlPointVictory initializer OnInit requires Team, ControlPoint
 
   globals
-    private constant integer CPS_VICTORY = 80 //This many Control Points gives an instant win
-    private constant integer CPS_WARNING = 70 //How many Control Points to start the warning at
+    private constant integer CPS_VICTORY = 90 //This many Control Points gives an instant win
+    private constant integer CPS_WARNING = 75 //How many Control Points to start the warning at
     private constant string VICTORY_COLOR = "|cff911499"
     
     private Team VictoriousTeam = 0

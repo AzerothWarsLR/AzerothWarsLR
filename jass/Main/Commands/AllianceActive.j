@@ -1,7 +1,7 @@
 library AllianceActive initializer OnInit requires Team
 
  private function Actions takes nothing returns nothing
-    set AreAllianceActive = true
+    set AreAllianceActive = false
  endfunction
 
 	private function OnInit takes nothing returns nothing
