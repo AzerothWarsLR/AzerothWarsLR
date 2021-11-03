@@ -21,7 +21,8 @@ library QuestCataclysm requires QuestData, TwilightSetup
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, CATACLYSM_RESEARCH, 1)
       call PlayThematicMusicBJ( "war3mapImported\\TwilightTheme.mp3" )
-      set this.Holder.Team = TEAM_OLDGOD
+      call SetPlayerTechResearched(FACTION_CTHUN.Player, 'R07D', 1)
+      call IssueImmediateOrderBJ( gg_unit_h02U_2413, "unrobogoblin" )
     endmethod
 
     private method OnAdd takes nothing returns nothing

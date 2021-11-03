@@ -29,6 +29,7 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
 
     set LEGEND_SHANDRIS = Legend.create()
     set LEGEND_SHANDRIS.UnitType = 'E002'
+    set LEGEND_SHANDRIS.StartingXP = 1000
 
     set LEGEND_JALIN = Legend.create()
     set LEGEND_JALIN.UnitType = 'E00S'

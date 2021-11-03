@@ -20,6 +20,7 @@ library LegendDruids initializer OnInit requires Legend
     set LEGEND_CENARIUS.DeathMessage = "The Lord of the Forest, Cenarius, has fallen. The druids of the Kaldorei have lost their greatest mentor."
     set LEGEND_CENARIUS.DeathSfx = "Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl"
     set LEGEND_CENARIUS.PlayerColor = PLAYER_COLOR_CYAN
+    set LEGEND_CENARIUS.StartingXP = 1000
 
     set LEGEND_MALFURION = Legend.create()
     set LEGEND_MALFURION.UnitType = 'Efur'
@@ -30,6 +31,7 @@ library LegendDruids initializer OnInit requires Legend
 
     set LEGEND_URSOC = Legend.create()
     set LEGEND_URSOC.UnitType = 'E00A'
+    set LEGEND_URSOC.StartingXP = 2800
 
     set LEGEND_NORDRASSIL = Legend.create()
     set LEGEND_NORDRASSIL.Unit = gg_unit_n002_0130
@@ -38,6 +40,7 @@ library LegendDruids initializer OnInit requires Legend
 
     set LEGEND_TORTOLLA = Legend.create()
     set LEGEND_TORTOLLA.UnitType = 'H04U'
+    set LEGEND_TORTOLLA.StartingXP = 1800
   endfunction
 
 endlibrary

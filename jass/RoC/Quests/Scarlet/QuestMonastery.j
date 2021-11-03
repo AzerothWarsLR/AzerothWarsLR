@@ -6,6 +6,11 @@ library QuestMonastery requires QuestData, ScarletSetup
   endglobals
 
   struct QuestMonastery extends QuestData
+
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+
     private method operator CompletionPopup takes nothing returns string
       return "The Scarlet Monastery Hand is complete and ready to join the " + this.Holder.Team.Name + "."
     endmethod
@@ -47,9 +52,7 @@ library QuestMonastery requires QuestData, ScarletSetup
       call WaygateActivateBJ( true, gg_unit_h00T_0786 )
       call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
       set this.Holder.Team = TEAM_SCARLET
-      if GetLocalPlayer() == this.Holder.Player then
-        call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
-      endif
+      call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
     endmethod
 
     private method OnAdd takes nothing returns nothing

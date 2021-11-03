@@ -19,6 +19,7 @@ library LegendStormwind initializer OnInit requires Legend
 
     set LEGEND_GALEN = Legend.create()
     set LEGEND_GALEN.UnitType = 'H00Z'
+    set LEGEND_GALEN.StartingXP = 1000
 
     set LEGEND_BOLVAR = Legend.create()
     set LEGEND_BOLVAR.UnitType = 'H017'

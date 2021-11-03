@@ -31,6 +31,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_ANASTERIAN.PlayerColor = PLAYER_COLOR_MAROON
     call LEGEND_ANASTERIAN.AddUnitDependency(LEGEND_SUNWELL.Unit)
     set LEGEND_ANASTERIAN.Essential = true
+    set LEGEND_ANASTERIAN.StartingXP = 1000
 
     set LEGEND_ROMMATH = Legend.create()
     set LEGEND_ROMMATH.UnitType = 'H04F'
@@ -53,6 +54,7 @@ library LegendQuelthalas initializer OnInit requires Legend
 
     set LEGEND_LORTHEMAR = Legend.create()
     set LEGEND_LORTHEMAR.UnitType = 'H02E'
+    set LEGEND_LORTHEMAR.StartingXP = 2800
 
     set LEGEND_KILJAEDEN = Legend.create()
     set LEGEND_KILJAEDEN.UnitType = 'U004'

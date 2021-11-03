@@ -202,7 +202,60 @@ library UnitTypeConfig initializer OnInit requires UnitType
     set unitType.Refund = true         
     
     set unitType = UnitType.create('ncop')      //Tavern selector
-    set unitType.Meta = true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    set unitType.Meta = true                 
+
+    set unitType = UnitType.create('opeo')      //Workers
+    set unitType.Refund = true        
+
+    set unitType = UnitType.create('hpea')      //Workers
+    set unitType.Refund = true           
+
+    set unitType = UnitType.create('nbee')      //Workers
+    set unitType.Refund = true     
+
+    set unitType = UnitType.create('uaco')      //Workers
+    set unitType.Refund = true  
+
+    set unitType = UnitType.create('h019')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('o04L')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('ncpn')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('h022')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('o02I')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('u01K')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('ewsp')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('nmpe')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('u019')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('o04A')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('o04B')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('h01E')      //Workers
+    set unitType.Refund = true 
+
+    set unitType = UnitType.create('u00D')      //Workers
+    set unitType.Refund = true 
+                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
  
  endfunction    
 

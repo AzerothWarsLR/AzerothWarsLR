@@ -52,6 +52,7 @@ library QuestGrimBatol requires QuestData, TwilightSetup, QuestItemKillUnit
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Cursed Fortress", "The mountain fortress of Grim Batol will be the perfect stronghold for the Twilight hammer clan. It has served well in the past and will do so again.", "ReplaceableTextures\\CommandButtons\\BTNFortressWC2.blp")
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_VAELASTRASZ))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03X')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n04V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09F')))

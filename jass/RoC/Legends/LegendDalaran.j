@@ -15,6 +15,7 @@ library LegendDalaran initializer OnInit requires Legend
 
     set LEGEND_MEDIVH = Legend.create()
     set LEGEND_MEDIVH.UnitType = 'Haah'
+    set LEGEND_MEDIVH.StartingXP = 2800
 
     set LEGEND_DALARAN = Legend.create()
     set LEGEND_DALARAN.Unit = gg_unit_h002_0230
@@ -23,6 +24,7 @@ library LegendDalaran initializer OnInit requires Legend
 
     set LEGEND_ANTONIDAS = Legend.create()
     set LEGEND_ANTONIDAS.UnitType = 'Hant'
+    set LEGEND_ANTONIDAS.StartingXP = 1000
     call LEGEND_ANTONIDAS.AddUnitDependency(LEGEND_DALARAN.Unit)
     set LEGEND_ANTONIDAS.DeathMessage = "Archmage Antonidas has been cut down, his vast knowledge forever lost with his death. The mages of Dalaran have lost their brightest mind."
   endfunction

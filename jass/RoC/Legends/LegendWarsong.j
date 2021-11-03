@@ -7,12 +7,18 @@ library LegendWarsong initializer OnInit requires Legend
     Legend LEGEND_STONEMAUL
     Legend LEGEND_ENCAMPMENT
     Legend LEGEND_CHEN
+    Legend LEGEND_SAURFANG
   endglobals
 
   private function OnInit takes nothing returns nothing
 
     set LEGEND_CHEN = Legend.create()
     set LEGEND_CHEN.UnitType = 'Nsjs'
+    set LEGEND_CHEN.StartingXP = 1000
+
+    set LEGEND_SAURFANG = Legend.create()
+    set LEGEND_SAURFANG.UnitType = 'Obla'
+    set LEGEND_SAURFANG.StartingXP = 2800
 
     set LEGEND_JERGOSH = Legend.create()
     set LEGEND_JERGOSH.UnitType = 'Oths'

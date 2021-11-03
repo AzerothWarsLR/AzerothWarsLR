@@ -14,9 +14,11 @@ library LegendLordaeron initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_MOGRAINE = Legend.create()
     set LEGEND_MOGRAINE.UnitType = 'H01J'
+    set LEGEND_MOGRAINE.StartingXP = 2800
 
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
+    set LEGEND_GARITHOS.StartingXP = 2800
 
     set LEGEND_CAPITALPALACE = Legend.create()
     set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406
@@ -39,6 +41,7 @@ library LegendLordaeron initializer OnInit requires Legend
     call LEGEND_UTHER.AddUnitDependency(gg_unit_nico_0666)
     set LEGEND_UTHER.DeathMessage = "Uther the Lightbringer makes his last stand, perishing in the defense of the light. Lordaeron, and humanity itself, has lost one of its finest exemplars in this dark hour."
     set LEGEND_UTHER.PlayerColor = PLAYER_COLOR_LIGHT_BLUE
+    set LEGEND_UTHER.StartingXP = 1000
 
     set LEGEND_ARTHAS = Legend.create()
     set LEGEND_ARTHAS.UnitType = 'Hart'
