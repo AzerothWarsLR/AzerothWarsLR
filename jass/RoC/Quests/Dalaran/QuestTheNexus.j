@@ -50,6 +50,7 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
       call UnitRemoveAbilityBJ( 'A0RB', LEGEND_JAINA.Unit)
       set this.Holder.Team = TEAM_SCOURGE
+      set FACTION_SCOURGE.Team = TEAM_SCOURGE
     endmethod
 
     public static method create takes nothing returns thistype

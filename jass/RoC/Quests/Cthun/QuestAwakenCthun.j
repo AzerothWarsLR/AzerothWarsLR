@@ -23,7 +23,6 @@ library QuestAwakenCthun requires QuestData, QuestItemKillUnit
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Awakening of C'thun", "The Old God C'thun is still slumbering, Skeram will need to awaken him with an unholy ritual.", "ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_SKERAM, gg_rct_CthunSummon, "Near Cthun"))
-      call this.AddQuestItem(QuestItemBuild.create('n0AH', 1))
       call this.AddQuestItem(QuestItemCastSpell.create('A01O', true))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

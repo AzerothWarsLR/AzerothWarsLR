@@ -36,7 +36,7 @@ library Shore requires Instance
     local real tempDistance = 0
     loop
     exitwhen i == Shore.shoreCount
-      set tempDistance = GetDistanceBetweenPoints(x, y, Shore.shoresByIndex[i].x, Shore.shoresByIndex[i].y)
+      set tempDistance = GetDistanceBetweenPointsEx(x, y, Shore.shoresByIndex[i].x, Shore.shoresByIndex[i].y)
       if tempDistance < nearestDistance then
         set nearestDistance = tempDistance
         set nearestShore = Shore.shoresByIndex[i]

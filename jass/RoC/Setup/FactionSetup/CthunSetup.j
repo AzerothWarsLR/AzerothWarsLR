@@ -6,7 +6,7 @@ library CthunSetup requires Faction, TeamSetup
 
     public function OnInit takes nothing returns nothing
      local Faction f   
-     set FACTION_CTHUN = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp", 5)
+     set FACTION_CTHUN = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp", 0)
      set f = FACTION_CTHUN
      set f.Team = TEAM_OLDGOD
      set f.StartingGold = 150
@@ -24,7 +24,6 @@ library CthunSetup requires Faction, TeamSetup
             call f.registerObjectLimit('u020', UNLIMITED)   //Monument
             call f.registerObjectLimit('u021', UNLIMITED)   //Temple
             call f.registerObjectLimit('u022', UNLIMITED)   //Nexus
-            call f.registerObjectLimit('n0AH', 1)           //Obelisk
 
             
 

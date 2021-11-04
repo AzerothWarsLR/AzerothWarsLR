@@ -11,9 +11,7 @@ library ObserverCommand initializer OnInit
     local group tempGroup = CreateGroup()
 
     if triggerPerson != 0 then
-      if triggerPerson.Faction.ScoreStatus == SCORESTATUS_NORMAL then
-        set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
-      endif
+      set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
     endif
   endfunction
 

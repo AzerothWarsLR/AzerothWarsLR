@@ -11,7 +11,7 @@ library QuestZulfarrak requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'farrak, a lumber trtibute of 500 to the Empire, and you can summon the hero Gahz'rilla from the Altar of Conquerors"
+      return "Control of Zul'farrak and you can summon the hero Gahz'rilla from the Altar of Conquerors"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -34,7 +34,6 @@ library QuestZulfarrak requires LegendNeutral
       endloop   
       call DestroyGroup(tempGroup)
       call SetPlayerTechResearched(Holder.Player, GAHZRILLA_RESEARCH, 1)
-      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     private method OnAdd takes nothing returns nothing

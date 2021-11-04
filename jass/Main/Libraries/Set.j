@@ -83,7 +83,7 @@ library Set requires Table
       set size = 0
       set index = Table.create()
       set list = Table.create()
-      set name = name
+      set this.name = name
       return this
     endmethod
   endstruct

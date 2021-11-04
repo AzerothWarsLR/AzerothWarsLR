@@ -12,11 +12,10 @@ library QuestZulgurub requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'Gurub, a tribute of 500 lumber and the ability to train " + GetObjectName(RAVAGER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
+      return "Control of Zul'Gurub and the ability to train " + GetObjectName(RAVAGER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call SetPlayerTechResearched(Holder.Player, ZULGURUB_RESEARCH, 1)
     endmethod
 
