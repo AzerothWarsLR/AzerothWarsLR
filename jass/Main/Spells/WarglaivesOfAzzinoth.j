@@ -3,9 +3,9 @@ library WarglaivesOfAzzinoth initializer OnInit requires FilteredDamageEvents
   globals
     private constant integer ABIL_ID = 'A0YW'
 
-    private constant real RADIUS = 200
-    private constant real DAMAGE_BASE = 5
-    private constant real DAMAGE_LEVEL = 15
+    private constant real RADIUS = 150
+    private constant real DAMAGE_BASE = 4
+    private constant real DAMAGE_LEVEL = 14
     private constant real DAMAGE_MULT_DEMON = 0.2   //How much extra damage % to do versus demons
 
     private constant string EFFECT = "war3mapImported\\Culling Cleave.mdx"

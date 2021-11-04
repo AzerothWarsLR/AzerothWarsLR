@@ -15,7 +15,7 @@ library LegendFrostwolf initializer OnInit requires Legend
     set LEGEND_CAIRNE = Legend.create()
     set LEGEND_CAIRNE.UnitType = 'Ocbh'
     set LEGEND_CAIRNE.DeathMessage = "Cairne's spirit has passed on from this world. The Tauren have already begun to revere their fallen ancestor."
-    set LEGEND_SAURFANG.StartingXP = 1000
+    set LEGEND_CAIRNE.StartingXP = 1000
 
     set LEGEND_THRALL = Legend.create()
     set LEGEND_THRALL.UnitType = 'Othr'

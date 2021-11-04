@@ -1,4 +1,4 @@
-library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, FrostwolfSetup, IronforgeSetup, LegionSetup, LordaeronSetup, QuelthalasSetup, ScourgeSetup, SentinelsSetup, StormwindSetup, WarsongSetup, NagaSetup, CthunSetup
+library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, FrostwolfSetup, IronforgeSetup, LegionSetup, LordaeronSetup, QuelthalasSetup, ScourgeSetup, SentinelsSetup, StormwindSetup, WarsongSetup, NagaSetup, CthunSetup, BlackEmpireSetup
 
   public function OnInit takes nothing returns nothing
     call ScourgeSetup_OnInit()

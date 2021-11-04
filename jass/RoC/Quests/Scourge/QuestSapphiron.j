@@ -24,8 +24,9 @@ library QuestSapphiron requires QuestData, ScourgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Sapphiron", "Kill Sapphiron the Blue Dragon to reanimate her as a Frost Wyrm. Sapphiron can be found in Northrend.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
+      local thistype this = thistype.allocate("Sapphiron", "Kill Sapphiron the Blue Dragon to have Kel'Tuzad reanimate her as a Frost Wyrm. Sapphiron can be found in Northrend.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ubdr_0668))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KELTHUZAD, false))
       return this
     endmethod
   endstruct
