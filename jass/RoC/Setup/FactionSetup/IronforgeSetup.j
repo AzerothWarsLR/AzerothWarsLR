@@ -32,7 +32,7 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.registerObjectLimit('h07K', UNLIMITED)   //Cannon Tower (Improved)
     call f.registerObjectLimit('h07D', UNLIMITED)   //Alliance Shipyard
     call f.registerObjectLimit('n07U', UNLIMITED)   //Marketplace
-    call f.registerObjectLimit('h00B', 6)           //Dwarven Keep Tower
+    call f.registerObjectLimit('h00B', 4)           //Dwarven Keep Tower
     call f.registerObjectLimit('h07I', UNLIMITED)   //Guard Tower
     call f.registerObjectLimit('h07L', UNLIMITED)   //Guard Tower (Improved)
     

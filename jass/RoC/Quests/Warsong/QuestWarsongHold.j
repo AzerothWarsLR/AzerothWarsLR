@@ -33,7 +33,7 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
       call CreateStructureForced(this.Holder.Player, 'o028', -6656, 15616, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'o028', -6912, 15744, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'n08E', -8299.43, 16110.51, 1.850517*bj_RADTODEG, 128)
-      call CreateStructureForced(this.Holder.Player, 'o01M', -8512, 15936, 4.712389*bj_RADTODEG, 128)
+      call CreateStructureForced(this.Holder.Player, 'o02Q', -8512, 15936, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'n08E', -8513.6, 16171.06, 1.126743*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'o01S', -8192, 16576, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'o02M', -8048.254, 16427.75, -0.7628738*bj_RADTODEG, 128)
