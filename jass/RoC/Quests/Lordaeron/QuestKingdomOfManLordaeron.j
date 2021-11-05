@@ -44,6 +44,7 @@ library QuestKingdomOfManLordaeron requires LordaeronSetup, QuestItemControlPoin
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNLORDAERON))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNSTORMWIND))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n010')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01G')))
       return this

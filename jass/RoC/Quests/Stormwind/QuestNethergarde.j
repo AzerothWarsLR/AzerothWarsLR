@@ -34,6 +34,7 @@ library QuestNethergarde requires QuestItemKillUnit, IronforgeSetup, LegendNeutr
 
     private method OnComplete takes nothing returns nothing
       call this.GrantNethergarde(this.Holder.Player)
+      call FACTION_STORMWIND.modObjectLimit('h03F',1)               //Reginald windsor
     endmethod
 
     private method OnAdd takes nothing returns nothing
