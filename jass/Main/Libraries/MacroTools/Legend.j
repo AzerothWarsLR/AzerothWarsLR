@@ -234,6 +234,8 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
     public method Spawn takes player owner, real x, real y, real face returns nothing
       if Unit == null then
         set Unit = CreateUnit(owner, unitType, x, y, face)
+        set TriggerLegend = this
+        call OnLegendChangeOwner.fire()
       elseif not UnitAlive(Unit) then
         call ReviveHero(Unit, x, y, false)
       else

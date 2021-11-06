@@ -31,7 +31,7 @@ library QuestHonorHold requires QuestData, StormwindSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Honor Hold", "Despite Outland's incredibly harsh climate, some Alliance forces have managed to make a home there - a town called Honor Hold", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_HELLFIRECITADEL.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HELLFIRECITADEL))
       return this
     endmethod
   endstruct

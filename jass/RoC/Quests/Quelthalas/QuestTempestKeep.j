@@ -67,6 +67,9 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
       call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 400, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      if GetLocalPlayer() == this.Holder.Player then
+          call SetCameraPosition(GetRectCenterX(gg_rct_TempestKeepSpawn), GetRectCenterY(gg_rct_TempestKeepSpawn))
+        endif
     endmethod
 
     public static method create takes nothing returns thistype
