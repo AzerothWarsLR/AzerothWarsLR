@@ -47,6 +47,7 @@ library CthunSetup requires Faction, TeamSetup
             call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web
             call f.registerObjectLimit('R02A', UNLIMITED)   //Void Infusion
             call f.registerObjectLimit('R07I', UNLIMITED)   //Shadow weaver training
+            call f.registerObjectLimit('R07J', UNLIMITED)   //Shadow weaver training
 
             //Masteries
 

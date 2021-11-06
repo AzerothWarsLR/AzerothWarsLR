@@ -13,7 +13,7 @@ library QuestFelHordeKillStormwind requires QuestData, FelHordeSetup, QuestItemL
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID)
+      return "Teron Gorefiend can be trained at the altar and learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing

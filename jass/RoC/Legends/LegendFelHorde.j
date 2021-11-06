@@ -6,6 +6,7 @@
     Legend LEGEND_CHOGALL
     Legend LEGEND_NEKROSH
     Legend LEGEND_REND
+    Legend LEGEND_TERON
     
     Legend LEGEND_BLACKROCKSPIRE
     Legend LEGEND_BLACKTEMPLE
@@ -32,6 +33,11 @@
 
     set LEGEND_CHOGALL = Legend.create()
     set LEGEND_CHOGALL.UnitType = 'O01P'
+
+    set LEGEND_TERON = Legend.create()
+    set LEGEND_TERON.UnitType = 'U02D'
+    set LEGEND_TERON.StartingXP = 5400
+    set LEGEND_TERON.PlayerColor = PLAYER_COLOR_MAROON
 
     set LEGEND_BLACKROCKSPIRE = Legend.create()
     set LEGEND_BLACKROCKSPIRE.Unit = gg_unit_o013_2507
