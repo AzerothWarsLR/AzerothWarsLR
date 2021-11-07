@@ -19,9 +19,6 @@ library DemonGateConfig initializer OnInit requires DemonGate
     call DemonGateType.create('n06G', 'n08C', 80,  1)  //T2 Void
     call DemonGateType.create('n07M', 'n088', 130, 1)  //T2 Voidlord
     call DemonGateType.create('n07O', 'o014', 240, 1)  //T2 Void Hunter
-    
-    call DemonGate.create(gg_unit_n000_0717)
-    call DemonGate.create(gg_unit_n05F_3538)
   endfunction
 
 endlibrary

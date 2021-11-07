@@ -33,7 +33,8 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call UnitRescue(gg_unit_n000_0717, FACTION_FEL_HORDE.Player)
+      call UnitRescue(gg_unit_n081_0882, FACTION_FEL_HORDE.Player)
+      call UnitRescue(gg_unit_n081_0717, FACTION_FEL_HORDE.Player)
       call SetPlayerTechResearched(Holder.Player, 'R00P', 1) 
       call this.GrantHellfire(this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
