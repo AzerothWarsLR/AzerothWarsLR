@@ -10,6 +10,8 @@ library QuestFirstObelisk requires QuestData, QuestItemKillUnit
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call RemoveDestructable( gg_dest_ATg2_35869 )
+      call RemoveDestructable( gg_dest_ATg3_35872 )
     endmethod
 
     public static method create takes nothing returns thistype

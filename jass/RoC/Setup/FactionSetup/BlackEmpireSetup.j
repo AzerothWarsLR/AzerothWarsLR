@@ -32,7 +32,7 @@ library BlackEmpireSetup requires Faction, TeamSetup
             
 
             //Structures
-            call f.registerObjectLimit('n05B', UNLIMITED)   //Cultist        
+            call f.registerObjectLimit('n0B5', UNLIMITED)   //Cultist        
             call f.registerObjectLimit('o04Z', 12)          //Flying horror
             call f.registerObjectLimit('n0AH', 4)          //Deformed Chimera
             call f.registerObjectLimit('n0B4', 6)           //Reaper
@@ -46,6 +46,8 @@ library BlackEmpireSetup requires Faction, TeamSetup
             call f.registerObjectLimit('U02A', 1)           //R'khem
             call f.registerObjectLimit('E01D', 1)           //Volazj
             call f.registerObjectLimit('U02B', 1)           //Soggoth
+
+            call f.registerObjectLimit('u02E', 1)           //Herald
 
             //Upgrades
             call f.registerObjectLimit('R02A', UNLIMITED)   //Void Infusion

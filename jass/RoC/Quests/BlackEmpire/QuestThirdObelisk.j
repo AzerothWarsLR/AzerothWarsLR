@@ -34,6 +34,8 @@ library QuestThirdObelisk requires QuestData, QuestItemKillUnit
 
       call WaygateActivateBJ( true, gg_unit_n07F_1069 )
       call WaygateSetDestinationLocBJ( gg_unit_n07F_1069, GetRectCenter(gg_rct_Ny_Twilight_Highlands_Interior) )
+
+      call WaygateActivateBJ( false, gg_unit_h03V_0257 )
     
     endmethod
 
