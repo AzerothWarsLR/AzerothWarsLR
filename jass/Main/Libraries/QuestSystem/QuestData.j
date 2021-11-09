@@ -216,10 +216,12 @@ library QuestData requires QuestItemData, Event
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = questItems[i]
-          if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-            set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
-          else
-            set display = display + " - " + tempQuestItemData.Description + "\n"
+          if tempQuestItemData.ShowsInQuestLog then
+            if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
+              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+            else
+              set display = display + " - " + tempQuestItemData.Description + "\n"
+            endif
           endif
           set i = i + 1
         endloop
@@ -241,12 +243,14 @@ library QuestData requires QuestItemData, Event
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = this.questItems[i]
-          if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-            set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
-          elseif tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
-            set display = display + " - |cffCD5C5C" + tempQuestItemData.Description + " (Failed)|r\n"
-          else
-            set display = display + " - " + tempQuestItemData.Description + "\n"
+          if tempQuestItemData.ShowsInQuestLog then
+            if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
+              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+            elseif tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
+              set display = display + " - |cffCD5C5C" + tempQuestItemData.Description + " (Failed)|r\n"
+            else
+              set display = display + " - " + tempQuestItemData.Description + "\n"
+            endif
           endif
           set i = i + 1
         endloop
@@ -264,7 +268,9 @@ library QuestData requires QuestItemData, Event
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = this.questItems[i]
-          set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+          if tempQuestItemData.ShowsInQuestLog then
+            set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+          endif
           set i = i + 1
         endloop
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
@@ -281,10 +287,12 @@ library QuestData requires QuestItemData, Event
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = questItems[i]
-          if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-            set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
-          else
-            set display = display + " - " + tempQuestItemData.Description + "\n"
+          if tempQuestItemData.ShowsInQuestLog then
+            if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
+              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+            else
+              set display = display + " - " + tempQuestItemData.Description + "\n"
+            endif
           endif
           set i = i + 1
         endloop

@@ -31,7 +31,6 @@ library QuestItemSelfExists initializer OnInit requires QuestItemData, Faction
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       set this.Progress = QUEST_PROGRESS_COMPLETE
-      set this.Description = "You have not been defeated"
       return this
     endmethod
   endstruct
