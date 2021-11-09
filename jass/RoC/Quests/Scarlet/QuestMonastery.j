@@ -16,7 +16,7 @@ library QuestMonastery requires QuestData, ScarletSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in the Scarlet Monastery"
+      return "Control of all units in the Scarlet Monastery and you will unally the alliance"
     endmethod
 
     private method GrantMonastery takes player whichPlayer returns nothing

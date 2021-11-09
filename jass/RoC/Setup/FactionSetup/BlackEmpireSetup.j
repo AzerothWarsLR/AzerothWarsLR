@@ -51,6 +51,8 @@ library BlackEmpireSetup requires Faction, TeamSetup
 
             //Upgrades
             call f.registerObjectLimit('R02A', UNLIMITED)   //Void Infusion
+            call f.registerObjectLimit('R07N', UNLIMITED)   //Sorcerer Training
+            call f.registerObjectLimit('R07O', UNLIMITED)   //Fateweaver Training
 
             //Masteries
 

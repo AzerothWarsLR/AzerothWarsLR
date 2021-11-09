@@ -50,6 +50,9 @@ library GoblinSetup requires Faction, TeamSetup
     call f.registerObjectLimit('Ntin', 1)           //Gazlowee
     call f.registerObjectLimit('Nalc', 1)           //Noggenfogger
 
+    call f.registerObjectLimit('R07L', UNLIMITED)   //Wizard Training
+    call f.registerObjectLimit('R07M', UNLIMITED)   //Alchemist Training
+
   endfunction
     
 endlibrary

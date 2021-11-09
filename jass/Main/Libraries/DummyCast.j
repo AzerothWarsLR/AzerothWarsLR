@@ -66,6 +66,16 @@ library DummyCast requires DummyCaster
     endloop
   endfunction
 
+  function DummyCastUnitId takes player whichPlayer, integer abilId, integer orderId, integer level, unit u returns nothing
+    call SetUnitOwner(DUMMY, whichPlayer, false)
+    call SetUnitX(DUMMY, GetUnitX(u))
+    call SetUnitY(DUMMY, GetUnitY(u))
+    call UnitAddAbility(DUMMY, abilId)
+    call SetUnitAbilityLevel(DUMMY, abilId, level)
+    call IssueTargetOrderById(DUMMY, orderId, u)
+    call UnitRemoveAbility(DUMMY,abilId)        
+  endfunction
+
   function DummyCastOnUnitsInCircle takes unit caster, integer abilId, string orderId, integer level, real x, real y, real radius, CastFilter castFilter returns nothing
     local unit u
     call GroupEnumUnitsInRange(TempGroup, x, y, radius, null)

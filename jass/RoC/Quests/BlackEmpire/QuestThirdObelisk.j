@@ -1,5 +1,9 @@
 library QuestThirdObelisk requires QuestData, QuestItemKillUnit
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R07K'   //This research is given when the quest is completed
+  endglobals
+
   struct QuestThirdObelisk extends QuestData
 
     method operator Global takes nothing returns boolean
@@ -35,7 +39,7 @@ library QuestThirdObelisk requires QuestData, QuestItemKillUnit
       call WaygateActivateBJ( true, gg_unit_n07F_1069 )
       call WaygateSetDestinationLocBJ( gg_unit_n07F_1069, GetRectCenter(gg_rct_Ny_Twilight_Highlands_Interior) )
 
-      call WaygateActivateBJ( false, gg_unit_h03V_0257 )
+      call WaygateActivateBJ( false, gg_unit_h03V_0183 )
 
       call FACTION_BLACKEMPIRE.registerObjectLimit('u02E', -UNLIMITED)           //Herald
     
@@ -45,6 +49,7 @@ library QuestThirdObelisk requires QuestData, QuestItemKillUnit
       local thistype this = thistype.allocate("The Merging of Realities", "The Third Obelisk will finally complete the merging of Ny'alotha with Azeroth, it must be summoned in Tanaris", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
       call this.AddQuestItem(QuestItemBuild.create('n0BA', 3))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct
