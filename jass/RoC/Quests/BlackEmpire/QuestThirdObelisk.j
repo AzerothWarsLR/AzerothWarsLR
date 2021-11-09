@@ -36,12 +36,15 @@ library QuestThirdObelisk requires QuestData, QuestItemKillUnit
       call WaygateSetDestinationLocBJ( gg_unit_n07F_1069, GetRectCenter(gg_rct_Ny_Twilight_Highlands_Interior) )
 
       call WaygateActivateBJ( false, gg_unit_h03V_0257 )
+
+      call FACTION_BLACKEMPIRE.registerObjectLimit('u02E', -UNLIMITED)           //Herald
     
     endmethod
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Merging of Realities", "The Third Obelisk will finally complete the merging of Ny'alotha with Azeroth, it must be summoned in Tanaris", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
       call this.AddQuestItem(QuestItemBuild.create('n0BA', 3))
+      call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
   endstruct
