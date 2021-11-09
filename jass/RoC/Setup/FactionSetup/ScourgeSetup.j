@@ -15,68 +15,68 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     set f.StartingLumber = 500
 
     //Buildings
-    call f.registerObjectLimit('unpl', UNLIMITED)   //Necropolis   
-    call f.registerObjectLimit('unp1', UNLIMITED)   //Halls of the Dead 
-    call f.registerObjectLimit('unp2', UNLIMITED)   //Black Citadel 
-    call f.registerObjectLimit('uzig', UNLIMITED)   //Ziggurat 
-    call f.registerObjectLimit('uzg1', UNLIMITED)   //Spirit Tower 
-    call f.registerObjectLimit('uzg2', UNLIMITED)   //Nerubian Tower 
-    call f.registerObjectLimit('uaod', UNLIMITED)   //Altar of Darkness 
-    call f.registerObjectLimit('usep', UNLIMITED)   //Crypt 
-    call f.registerObjectLimit('ugrv', UNLIMITED)   //Graveyard 
-    call f.registerObjectLimit('uslh', UNLIMITED)   //Slaughterhouse 
-    call f.registerObjectLimit('utod', UNLIMITED)   //Temple of the Damned 
-    call f.registerObjectLimit('ubon', UNLIMITED)   //Boneyard      
-    call f.registerObjectLimit('utom', UNLIMITED)   //Tomb of Relics   
-    call f.registerObjectLimit('ushp', UNLIMITED)   //Undead Shipyard
-    call f.registerObjectLimit('u002', UNLIMITED)   //Improved Spirit Tower
-    call f.registerObjectLimit('u003', UNLIMITED)   //Improved Nerubian Tower
+    call f.ModObjectLimit('unpl', UNLIMITED)   //Necropolis   
+    call f.ModObjectLimit('unp1', UNLIMITED)   //Halls of the Dead 
+    call f.ModObjectLimit('unp2', UNLIMITED)   //Black Citadel 
+    call f.ModObjectLimit('uzig', UNLIMITED)   //Ziggurat 
+    call f.ModObjectLimit('uzg1', UNLIMITED)   //Spirit Tower 
+    call f.ModObjectLimit('uzg2', UNLIMITED)   //Nerubian Tower 
+    call f.ModObjectLimit('uaod', UNLIMITED)   //Altar of Darkness 
+    call f.ModObjectLimit('usep', UNLIMITED)   //Crypt 
+    call f.ModObjectLimit('ugrv', UNLIMITED)   //Graveyard 
+    call f.ModObjectLimit('uslh', UNLIMITED)   //Slaughterhouse 
+    call f.ModObjectLimit('utod', UNLIMITED)   //Temple of the Damned 
+    call f.ModObjectLimit('ubon', UNLIMITED)   //Boneyard      
+    call f.ModObjectLimit('utom', UNLIMITED)   //Tomb of Relics   
+    call f.ModObjectLimit('ushp', UNLIMITED)   //Undead Shipyard
+    call f.ModObjectLimit('u002', UNLIMITED)   //Improved Spirit Tower
+    call f.ModObjectLimit('u003', UNLIMITED)   //Improved Nerubian Tower
     
     //Units
-    call f.registerObjectLimit('uaco', UNLIMITED)   //Acolyte
-    call f.registerObjectLimit('ushd', UNLIMITED)   //Shade
-    call f.registerObjectLimit('ugho', UNLIMITED)   //Ghoul
-    call f.registerObjectLimit('uabo', UNLIMITED)   //Abomination
-    call f.registerObjectLimit('umtw', 6)           //Meat Wagon
-    call f.registerObjectLimit('ucry', UNLIMITED)   //Crypt Fiend
-    call f.registerObjectLimit('ugar', 12)           //Gargoyle
-    call f.registerObjectLimit('h02G', UNLIMITED)   //Vrykul Warrior
-    call f.registerObjectLimit('h061', 12)           //Vrykul Champion
-    call f.registerObjectLimit('h00P', 4)           //Mammoth rider
-    call f.registerObjectLimit('uban', UNLIMITED)   //Banshee
-    call f.registerObjectLimit('unec', UNLIMITED)   //Necromancer
-    call f.registerObjectLimit('uobs', 4)           //Obsidian Statue
-    call f.registerObjectLimit('ufro', 4)           //Frost Wyrm
-    call f.registerObjectLimit('h00H', 6)           //Death Knight
-    call f.registerObjectLimit('ubot', 12)	    //Undead Transport Ship
-    call f.registerObjectLimit('udes', 12) 	    //Undead Frigate
-    call f.registerObjectLimit('uubs', 6)          //Undead Battleship
-    call f.registerObjectLimit('ubsp', 4)           //Destroyer
-    call f.registerObjectLimit('nfgl', 2)           //Plague Titan
+    call f.ModObjectLimit('uaco', UNLIMITED)   //Acolyte
+    call f.ModObjectLimit('ushd', UNLIMITED)   //Shade
+    call f.ModObjectLimit('ugho', UNLIMITED)   //Ghoul
+    call f.ModObjectLimit('uabo', UNLIMITED)   //Abomination
+    call f.ModObjectLimit('umtw', 6)           //Meat Wagon
+    call f.ModObjectLimit('ucry', UNLIMITED)   //Crypt Fiend
+    call f.ModObjectLimit('ugar', 12)           //Gargoyle
+    call f.ModObjectLimit('h02G', UNLIMITED)   //Vrykul Warrior
+    call f.ModObjectLimit('h061', 12)           //Vrykul Champion
+    call f.ModObjectLimit('h00P', 4)           //Mammoth rider
+    call f.ModObjectLimit('uban', UNLIMITED)   //Banshee
+    call f.ModObjectLimit('unec', UNLIMITED)   //Necromancer
+    call f.ModObjectLimit('uobs', 4)           //Obsidian Statue
+    call f.ModObjectLimit('ufro', 4)           //Frost Wyrm
+    call f.ModObjectLimit('h00H', 6)           //Death Knight
+    call f.ModObjectLimit('ubot', 12)	    //Undead Transport Ship
+    call f.ModObjectLimit('udes', 12) 	    //Undead Frigate
+    call f.ModObjectLimit('uubs', 6)          //Undead Battleship
+    call f.ModObjectLimit('ubsp', 4)           //Destroyer
+    call f.ModObjectLimit('nfgl', 2)           //Plague Titan
 
     //Demi-Heroes
-    call f.registerObjectLimit('ubdd', 1)           //Sapphiron
-    call f.registerObjectLimit('uswb', 1)           //Banshee
-    call f.registerObjectLimit('Uanb', 1)           //Anubarak
-    call f.registerObjectLimit('U001', 1)           //Keltuzad
-    call f.registerObjectLimit('U00A', 1)           //Rivendare
+    call f.ModObjectLimit('ubdd', 1)           //Sapphiron
+    call f.ModObjectLimit('uswb', 1)           //Banshee
+    call f.ModObjectLimit('Uanb', 1)           //Anubarak
+    call f.ModObjectLimit('U001', 1)           //Keltuzad
+    call f.ModObjectLimit('U00A', 1)           //Rivendare
     
     //Upgrades
-    call f.registerObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
-    call f.registerObjectLimit('Rubu', UNLIMITED)   //Burrow
-    call f.registerObjectLimit('Ruex', UNLIMITED)   //Exhume Corpses
-    call f.registerObjectLimit('Rufb', UNLIMITED)   //Freezing Breath
-    call f.registerObjectLimit('Rugf', UNLIMITED)   //Ghoul Frenzy
-    call f.registerObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
-    call f.registerObjectLimit('Ruwb', UNLIMITED)   //Web
-    call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
-    call f.registerObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
-    call f.registerObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
-    call f.registerObjectLimit('R01X', UNLIMITED)   //Epidemic
-    call f.registerObjectLimit('R01D', UNLIMITED)   //Piercing Screech
-    call f.registerObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
-    call f.registerObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery
-    call f.registerObjectLimit('Rusm', UNLIMITED)   //SkeletalLongevity
+    call f.ModObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
+    call f.ModObjectLimit('Rubu', UNLIMITED)   //Burrow
+    call f.ModObjectLimit('Ruex', UNLIMITED)   //Exhume Corpses
+    call f.ModObjectLimit('Rufb', UNLIMITED)   //Freezing Breath
+    call f.ModObjectLimit('Rugf', UNLIMITED)   //Ghoul Frenzy
+    call f.ModObjectLimit('Rune', UNLIMITED)   //Necromancer Adept Training
+    call f.ModObjectLimit('Ruwb', UNLIMITED)   //Web
+    call f.ModObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
+    call f.ModObjectLimit('R00Q', UNLIMITED)   //Chilling Aura
+    call f.ModObjectLimit('R04V', UNLIMITED)   //Improved Hypothermic Breath
+    call f.ModObjectLimit('R01X', UNLIMITED)   //Epidemic
+    call f.ModObjectLimit('R01D', UNLIMITED)   //Piercing Screech
+    call f.ModObjectLimit('R06N', UNLIMITED)   //Improved Orb of Annihilation
+    call f.ModObjectLimit('Rusl', UNLIMITED)   //SkeletalMastery
+    call f.ModObjectLimit('Rusm', UNLIMITED)   //SkeletalLongevity
   endfunction
     
 endlibrary

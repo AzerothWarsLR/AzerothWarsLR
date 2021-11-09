@@ -24,7 +24,7 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
       call UnitRemoveAbilityBJ( 'A0IF', LEGEND_KAEL.Unit)
       call UnitRemoveAbilityBJ( 'A0IK', LEGEND_KAEL.Unit)
       call RemoveUnit(LEGEND_LORTHEMAR.Unit)
-      call FACTION_QUELTHALAS.modObjectLimit('H02E',-UNLIMITED)       //Lorthemar
+      call FACTION_QUELTHALAS.ModObjectLimit('H02E',-UNLIMITED)       //Lorthemar
       set this.Holder.Team = TEAM_LEGION
       set SUMMON_KIL.Progress = QUEST_PROGRESS_INCOMPLETE
     endmethod

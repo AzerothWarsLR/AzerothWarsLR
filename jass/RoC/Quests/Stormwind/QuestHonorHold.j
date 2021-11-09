@@ -19,7 +19,7 @@ library QuestHonorHold requires QuestData, StormwindSetup, GeneralHelpers
       call UnitRescue(gg_unit_h03W_1656, this.Holder.Player)  //Danath Trollbane
       call UnitRescue(gg_unit_hgtw_3320, this.Holder.Player)  //Guard Tower
       call UnitRescue(gg_unit_hars_3321, this.Holder.Player)  //Arcane Sanctum
-      call FACTION_STORMWIND.modObjectLimit('h03W',1)               //Danath Trollbane
+      call FACTION_STORMWIND.ModObjectLimit('h03W',1)               //Danath Trollbane
       //Set animations of doodads within Honor Hold
       call SetDoodadAnimationRectBJ( "hide", 'ISrb', gg_rct_HonorHold )
       call SetDoodadAnimationRectBJ( "hide", 'LSst', gg_rct_HonorHold )

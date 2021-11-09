@@ -45,7 +45,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(QUEST_RESEARCH_ID, 1)
+      call this.Holder.ModObjectLimit(QUEST_RESEARCH_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

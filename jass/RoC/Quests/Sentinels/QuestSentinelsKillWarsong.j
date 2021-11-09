@@ -18,7 +18,7 @@ library QuestSentinelsKillWarsong requires SentinelsSetup, LegendWarsong, Displa
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

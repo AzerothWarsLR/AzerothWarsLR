@@ -23,8 +23,8 @@ library TierKnowledgeOfHonorHold initializer OnInit requires StormwindSetup
   endfunction
 
   private function Research takes nothing returns nothing
-    call FACTION_STORMWIND.modObjectLimit('R03X', UNLIMITED)       //High Sorcerer Andromath
-    call FACTION_STORMWIND.modObjectLimit('R03Y', UNLIMITED)       //Katrana Prestor    
+    call FACTION_STORMWIND.ModObjectLimit('R03X', UNLIMITED)       //High Sorcerer Andromath
+    call FACTION_STORMWIND.ModObjectLimit('R03Y', UNLIMITED)       //Katrana Prestor    
     call EnablePortals()
   endfunction
 

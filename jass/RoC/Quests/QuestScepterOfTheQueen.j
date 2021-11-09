@@ -35,7 +35,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
     endmethod
 
     private method OnFail takes nothing returns nothing
-      call this.Holder.modObjectLimit(thistype.researchId, -UNLIMITED)
+      call this.Holder.ModObjectLimit(thistype.researchId, -UNLIMITED)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -45,7 +45,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(thistype.researchId, UNLIMITED)
+      call this.Holder.ModObjectLimit(thistype.researchId, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

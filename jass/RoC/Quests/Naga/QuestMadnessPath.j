@@ -63,8 +63,8 @@ library QuestMadnessPath requires QuestData, NagaSetup
 
     private method OnComplete takes nothing returns nothing
       call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
-      call FACTION_NAGA.modObjectLimit('n08V', UNLIMITED)   //Depth Void Portal
-      call FACTION_NAGA.modObjectLimit('h01Q', 4)   //Immortal Guardian
+      call FACTION_NAGA.ModObjectLimit('n08V', UNLIMITED)   //Depth Void Portal
+      call FACTION_NAGA.ModObjectLimit('h01Q', 4)   //Immortal Guardian
       call LEGEND_AZSHARA.Spawn(Holder.Player, GetRectCenterX(gg_rct_InstanceNazjatar), GetRectCenterY(gg_rct_InstanceNazjatar), 270)
       call SetHeroLevel(LEGEND_AZSHARA.Unit, 9, false)
       call SetUnitPositionLoc( LEGEND_AZSHARA.Unit, GetRectCenter(gg_rct_NzothIni) )

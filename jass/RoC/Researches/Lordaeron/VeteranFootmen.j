@@ -5,8 +5,8 @@ library VeteranFootmen initializer OnInit requires Persons, LordaeronSetup
   endglobals
 
   private function Research takes nothing returns nothing
-    call FACTION_LORDAERON.modObjectLimit('hfoo', -UNLIMITED)  //Footman
-    call FACTION_LORDAERON.modObjectLimit('h029', UNLIMITED)   //Veteran Footman
+    call FACTION_LORDAERON.ModObjectLimit('hfoo', -UNLIMITED)  //Footman
+    call FACTION_LORDAERON.ModObjectLimit('h029', UNLIMITED)   //Veteran Footman
   endfunction
 
   private function OnInit takes nothing returns nothing

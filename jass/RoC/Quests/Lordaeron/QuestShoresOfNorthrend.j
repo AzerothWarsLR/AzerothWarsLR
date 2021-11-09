@@ -14,7 +14,7 @@ library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, General
     endmethod
 
     private method OnFail takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -49,11 +49,11 @@ library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, General
       call CreateStructureForced(this.Holder.Player, 'hgtw', 1472, 16384, 4.712389*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hkni', 893.3604, 16175.58, 4.130178*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'nchp', -931.2155, 16554.75, 5.458206*bj_RADTODEG, 256)
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

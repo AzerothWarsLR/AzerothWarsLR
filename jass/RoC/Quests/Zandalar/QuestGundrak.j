@@ -20,7 +20,7 @@ library QuestGundrak requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(GUNDRAK_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(GUNDRAK_RESEARCH, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

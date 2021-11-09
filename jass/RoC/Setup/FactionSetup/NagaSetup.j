@@ -13,38 +13,38 @@ library NagaSetup requires Faction, TeamSetup
     set f.StartingGold = 0
     set f.StartingLumber = 500
 
-    call f.registerObjectLimit('nntt', UNLIMITED)   //Pillar of Waves
-    call f.registerObjectLimit('n04T', UNLIMITED)   //Monument of Currents
-    call f.registerObjectLimit('n055', UNLIMITED)   //Temple of Tides
-    call f.registerObjectLimit('nnad', UNLIMITED)   //Altar of the Depths
-    call f.registerObjectLimit('nnsg', UNLIMITED)   //Spawning Grounds
-    call f.registerObjectLimit('h06S', UNLIMITED)   //Coral Forge
-    call f.registerObjectLimit('n0A3', UNLIMITED)   //Royal Pyramid
-    call f.registerObjectLimit('nnsa', UNLIMITED)   //Temple of Azshara
-    call f.registerObjectLimit('nnfm', UNLIMITED)   //Coral Beds
-    call f.registerObjectLimit('nntg', UNLIMITED)   //Tidal Guardian
-    call f.registerObjectLimit('n005', UNLIMITED)   //Improved Tidal Guardian
-    call f.registerObjectLimit('nmrb', UNLIMITED)   //Deep Sea Vault
+    call f.ModObjectLimit('nntt', UNLIMITED)   //Pillar of Waves
+    call f.ModObjectLimit('n04T', UNLIMITED)   //Monument of Currents
+    call f.ModObjectLimit('n055', UNLIMITED)   //Temple of Tides
+    call f.ModObjectLimit('nnad', UNLIMITED)   //Altar of the Depths
+    call f.ModObjectLimit('nnsg', UNLIMITED)   //Spawning Grounds
+    call f.ModObjectLimit('h06S', UNLIMITED)   //Coral Forge
+    call f.ModObjectLimit('n0A3', UNLIMITED)   //Royal Pyramid
+    call f.ModObjectLimit('nnsa', UNLIMITED)   //Temple of Azshara
+    call f.ModObjectLimit('nnfm', UNLIMITED)   //Coral Beds
+    call f.ModObjectLimit('nntg', UNLIMITED)   //Tidal Guardian
+    call f.ModObjectLimit('n005', UNLIMITED)   //Improved Tidal Guardian
+    call f.ModObjectLimit('nmrb', UNLIMITED)   //Deep Sea Vault
 
-    call f.registerObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
-    call f.registerObjectLimit('nmyr', UNLIMITED)   //Myrmidon
-    call f.registerObjectLimit('nsnp', UNLIMITED)   //Snap Dragon
-    call f.registerObjectLimit('nnsw', UNLIMITED)   //Siren
-    call f.registerObjectLimit('nmsc', UNLIMITED)   //Shadowcaster
-    call f.registerObjectLimit('nnsu', 6)           //Summoner
-    call f.registerObjectLimit('nnrg', 6)           //Royal Guard
-    call f.registerObjectLimit('nhyc', 8)           //Dragon Turtle
-    call f.registerObjectLimit('nwgs', 8)   	    //Couatl
-    call f.registerObjectLimit('e00Y', 4)  	    //Scylla
+    call f.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
+    call f.ModObjectLimit('nmyr', UNLIMITED)   //Myrmidon
+    call f.ModObjectLimit('nsnp', UNLIMITED)   //Snap Dragon
+    call f.ModObjectLimit('nnsw', UNLIMITED)   //Siren
+    call f.ModObjectLimit('nmsc', UNLIMITED)   //Shadowcaster
+    call f.ModObjectLimit('nnsu', 6)           //Summoner
+    call f.ModObjectLimit('nnrg', 6)           //Royal Guard
+    call f.ModObjectLimit('nhyc', 8)           //Dragon Turtle
+    call f.ModObjectLimit('nwgs', 8)   	    //Couatl
+    call f.ModObjectLimit('e00Y', 4)  	    //Scylla
 
-    call f.registerObjectLimit('Hvsh', 1)  	    //Vashj
-    call f.registerObjectLimit('U00S', 1)  	    //Najentus
-    call f.registerObjectLimit('Naka', 1)  	    //Akama
-    call f.registerObjectLimit('E015', 1)  	    //Akama
+    call f.ModObjectLimit('Hvsh', 1)  	    //Vashj
+    call f.ModObjectLimit('U00S', 1)  	    //Najentus
+    call f.ModObjectLimit('Naka', 1)  	    //Akama
+    call f.ModObjectLimit('E015', 1)  	    //Akama
 
-    call f.registerObjectLimit('R062', UNLIMITED)   //Redemption path
-    call f.registerObjectLimit('R063', UNLIMITED)   //Exile Path
-    call f.registerObjectLimit('R065', UNLIMITED)   //Madness Path
+    call f.ModObjectLimit('R062', UNLIMITED)   //Redemption path
+    call f.ModObjectLimit('R063', UNLIMITED)   //Exile Path
+    call f.ModObjectLimit('R065', UNLIMITED)   //Madness Path
 
   endfunction
 

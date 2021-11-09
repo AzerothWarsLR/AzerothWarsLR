@@ -30,16 +30,16 @@ library QuestTheramore requires QuestData
 
     private method OnFail takes nothing returns nothing
       call thistype.GrantToPlayer(Player(PLAYER_NEUTRAL_AGGRESSIVE))
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call thistype.GrantToPlayer(this.Holder.Player)
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)  
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)  
     endmethod
 
     public static method create takes nothing returns thistype

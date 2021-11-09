@@ -16,8 +16,8 @@ library QuestZeppelins requires LegendSentinels, Display
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     private method OnComplete takes nothing returns nothing

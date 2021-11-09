@@ -16,12 +16,12 @@ library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
       call DisplayResearchAcquired(Holder.Player, RESEARCH_ID, 1)
-      call Holder.modObjectLimit('n096', -6)
-      call Holder.modObjectLimit('n0AD', 6)
+      call Holder.ModObjectLimit('n096', -6)
+      call Holder.ModObjectLimit('n0AD', 6)
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

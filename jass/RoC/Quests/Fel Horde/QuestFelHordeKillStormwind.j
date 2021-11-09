@@ -21,8 +21,8 @@ library QuestFelHordeKillStormwind requires QuestData, FelHordeSetup, QuestItemL
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
-      call Holder.modObjectLimit(UNITTYPE_ID, UNIT_LIMIT)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(UNITTYPE_ID, UNIT_LIMIT)
     endmethod
 
     public static method create takes nothing returns thistype

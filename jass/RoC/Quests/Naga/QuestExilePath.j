@@ -39,9 +39,9 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call FACTION_NAGA.modObjectLimit('n08W', UNLIMITED)   //Lost One Den
-      call FACTION_NAGA.modObjectLimit('ndrn', UNLIMITED)   //Vindicator
-      call FACTION_NAGA.modObjectLimit('ndrs', 6)   //Seer
+      call FACTION_NAGA.ModObjectLimit('n08W', UNLIMITED)   //Lost One Den
+      call FACTION_NAGA.ModObjectLimit('ndrn', UNLIMITED)   //Vindicator
+      call FACTION_NAGA.ModObjectLimit('ndrs', 6)   //Seer
       call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
       set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED

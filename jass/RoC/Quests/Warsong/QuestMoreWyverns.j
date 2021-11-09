@@ -15,7 +15,7 @@ library QuestMoreWyverns requires LegendSentinels, Display, QuestItemLegendDead
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.Holder.modObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
+      call this.Holder.ModObjectLimit(UNITTYPE_ID, LIMIT_CHANGE)
       call DisplayUnitLimit(this.Holder, UNITTYPE_ID)
     endmethod
 

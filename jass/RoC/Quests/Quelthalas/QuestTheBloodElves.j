@@ -58,9 +58,9 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(QUEST_RESEARCH_ID, UNLIMITED)
-      call Holder.modObjectLimit(UNITTYPE_ID, 6)
-      call Holder.modObjectLimit(HERO_ID, 1)
+      call Holder.ModObjectLimit(QUEST_RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(UNITTYPE_ID, 6)
+      call Holder.ModObjectLimit(HERO_ID, 1)
     endmethod
 
     private static method onInit takes nothing returns nothing

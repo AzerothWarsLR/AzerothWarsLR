@@ -14,45 +14,45 @@ library GilneasSetup requires Faction, TeamSetup
     set f.StartingLumber = 200
 
     //Structures
-    call f.registerObjectLimit('h01R', UNLIMITED)   //Town Hall
-    call f.registerObjectLimit('h023', UNLIMITED)   //Keep
-    call f.registerObjectLimit('h02C', UNLIMITED)   //Castle
-    call f.registerObjectLimit('h02F', UNLIMITED)   //Farm
-    call f.registerObjectLimit('h02X', UNLIMITED)   //Altar
-    call f.registerObjectLimit('h039', UNLIMITED)   //Scout Tower
-    call f.registerObjectLimit('h03A', UNLIMITED)   //Guard Tower
-    call f.registerObjectLimit('h03B', UNLIMITED)   //Cannon Tower
-    call f.registerObjectLimit('h03D', UNLIMITED)   //Temple of the cursed
-    call f.registerObjectLimit('h03E', UNLIMITED)   //Training Hall
-    call f.registerObjectLimit('n008', UNLIMITED)   //Marketplace
-    call f.registerObjectLimit('h03H', UNLIMITED)   //Shipyard
-    call f.registerObjectLimit('h03O', UNLIMITED)   //Blacksmith
-    call f.registerObjectLimit('h03Q', UNLIMITED)   //Garrison
-    call f.registerObjectLimit('h052', UNLIMITED)   //Improved Guard Tower
-    call f.registerObjectLimit('h04N', UNLIMITED)   //Improved Cannon Tower
+    call f.ModObjectLimit('h01R', UNLIMITED)   //Town Hall
+    call f.ModObjectLimit('h023', UNLIMITED)   //Keep
+    call f.ModObjectLimit('h02C', UNLIMITED)   //Castle
+    call f.ModObjectLimit('h02F', UNLIMITED)   //Farm
+    call f.ModObjectLimit('h02X', UNLIMITED)   //Altar
+    call f.ModObjectLimit('h039', UNLIMITED)   //Scout Tower
+    call f.ModObjectLimit('h03A', UNLIMITED)   //Guard Tower
+    call f.ModObjectLimit('h03B', UNLIMITED)   //Cannon Tower
+    call f.ModObjectLimit('h03D', UNLIMITED)   //Temple of the cursed
+    call f.ModObjectLimit('h03E', UNLIMITED)   //Training Hall
+    call f.ModObjectLimit('n008', UNLIMITED)   //Marketplace
+    call f.ModObjectLimit('h03H', UNLIMITED)   //Shipyard
+    call f.ModObjectLimit('h03O', UNLIMITED)   //Blacksmith
+    call f.ModObjectLimit('h03Q', UNLIMITED)   //Garrison
+    call f.ModObjectLimit('h052', UNLIMITED)   //Improved Guard Tower
+    call f.ModObjectLimit('h04N', UNLIMITED)   //Improved Cannon Tower
     
     //Units
-    call f.registerObjectLimit('hpea', UNLIMITED)   //Peasant
-    call f.registerObjectLimit('hbot', 12)   //Alliance Transport Ship
-    call f.registerObjectLimit('hdes', 12)   //Alliance Frigate
-    call f.registerObjectLimit('hbsh', 6)          //Alliance Battle Ship
-    call f.registerObjectLimit('n06K', UNLIMITED)   //Wildsoul
-    call f.registerObjectLimit('h04M', UNLIMITED)   //Cleric
-    call f.registerObjectLimit('h04E', UNLIMITED)   //Protector
-    call f.registerObjectLimit('n06L', UNLIMITED)   //Armored Wolf
-    call f.registerObjectLimit('o01V', 6)           //Greyguard
-    call f.registerObjectLimit('n029', 12)          //Sea Giant
-    call f.registerObjectLimit('h03L', UNLIMITED)   //Shotgunner
-    call f.registerObjectLimit('nsgt', UNLIMITED)   //Spider
-    call f.registerObjectLimit('n067', UNLIMITED)   //Spider
-    call f.registerObjectLimit('o04U', 6)           //Mangonel
-    call f.registerObjectLimit('n06Z', 6)           //Gunship
-    call f.registerObjectLimit('n06Q', 12)          //Royal Guard
+    call f.ModObjectLimit('hpea', UNLIMITED)   //Peasant
+    call f.ModObjectLimit('hbot', 12)   //Alliance Transport Ship
+    call f.ModObjectLimit('hdes', 12)   //Alliance Frigate
+    call f.ModObjectLimit('hbsh', 6)          //Alliance Battle Ship
+    call f.ModObjectLimit('n06K', UNLIMITED)   //Wildsoul
+    call f.ModObjectLimit('h04M', UNLIMITED)   //Cleric
+    call f.ModObjectLimit('h04E', UNLIMITED)   //Protector
+    call f.ModObjectLimit('n06L', UNLIMITED)   //Armored Wolf
+    call f.ModObjectLimit('o01V', 6)           //Greyguard
+    call f.ModObjectLimit('n029', 12)          //Sea Giant
+    call f.ModObjectLimit('h03L', UNLIMITED)   //Shotgunner
+    call f.ModObjectLimit('nsgt', UNLIMITED)   //Spider
+    call f.ModObjectLimit('n067', UNLIMITED)   //Spider
+    call f.ModObjectLimit('o04U', 6)           //Mangonel
+    call f.ModObjectLimit('n06Z', 6)           //Gunship
+    call f.ModObjectLimit('n06Q', 12)          //Royal Guard
 
     //Upgrades
-    call f.registerObjectLimit('R04O', UNLIMITED)   //Cleric Training
-    call f.registerObjectLimit('R04P', UNLIMITED)   //Scythe Training
-    call f.registerObjectLimit('R00K', UNLIMITED)   //Power Infusion
+    call f.ModObjectLimit('R04O', UNLIMITED)   //Cleric Training
+    call f.ModObjectLimit('R04P', UNLIMITED)   //Scythe Training
+    call f.ModObjectLimit('R00K', UNLIMITED)   //Power Infusion
   endfunction
     
 endlibrary

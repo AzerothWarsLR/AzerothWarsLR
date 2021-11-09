@@ -28,7 +28,7 @@ library QuestWarMachine requires QuestData, ScourgeSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit('R021', UNLIMITED)
+      call this.Holder.ModObjectLimit('R021', UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -26,7 +26,7 @@ library QuestCataclysm requires QuestData, TwilightSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(CATACLYSM_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(CATACLYSM_RESEARCH, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

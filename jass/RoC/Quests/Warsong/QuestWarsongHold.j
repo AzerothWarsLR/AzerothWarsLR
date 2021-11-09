@@ -48,11 +48,11 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
       call CreateStructureForced(this.Holder.Player, 'n03E', -7808, 16128, 4.712389*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'orai', -7319.426, 15134.72, 0.467489*bj_RADTODEG, 128)
       call CreateStructureForced(this.Holder.Player, 'o02T', -8672, 15328, 4.712389*bj_RADTODEG, 128)
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

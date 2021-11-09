@@ -10,9 +10,9 @@ library QuestKarazhan requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
-      call Holder.modObjectLimit('R03M', UNLIMITED)   //Methods of Control
-      call Holder.modObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
+      call Holder.ModObjectLimit('R020', UNLIMITED)   //Rain: An Amalgam
+      call Holder.ModObjectLimit('R03M', UNLIMITED)   //Methods of Control
+      call Holder.ModObjectLimit('R01B', UNLIMITED)   //A Treatise on Barriers
     endmethod
 
     public static method create takes nothing returns thistype

@@ -15,8 +15,8 @@ library QuestFallenGuardian requires LegendDalaran, LegendNeutral, ControlPoint
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
-      call Holder.modObjectLimit(MEDIVH_ID, 1)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(MEDIVH_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

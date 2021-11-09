@@ -20,7 +20,7 @@ library QuestSapphiron requires QuestData, ScourgeSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(SAPPHIRON_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(SAPPHIRON_RESEARCH, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

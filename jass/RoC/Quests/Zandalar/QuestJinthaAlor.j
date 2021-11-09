@@ -20,7 +20,7 @@ library QuestJinthaAlor requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(JINTHAALOR_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(JINTHAALOR_RESEARCH, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

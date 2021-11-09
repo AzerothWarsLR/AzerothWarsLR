@@ -25,8 +25,8 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(CHEN_RESEARCH, UNLIMITED)
-      call this.Holder.modObjectLimit(CHEN_ID, 1)
+      call this.Holder.ModObjectLimit(CHEN_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(CHEN_ID, 1)
       call SetUnitInvulnerable(gg_unit_Nsjs_1887, true)
     endmethod
 

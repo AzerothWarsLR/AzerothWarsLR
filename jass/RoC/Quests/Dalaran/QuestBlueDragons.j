@@ -21,8 +21,8 @@ library QuestBlueDragons requires QuestItemControlLegend, LegendDalaran, Display
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(DRAGON_ID, 6)
-      call this.Holder.modObjectLimit(MANADAM_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(DRAGON_ID, 6)
+      call this.Holder.ModObjectLimit(MANADAM_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -16,7 +16,7 @@ library QuestMograine requires LordaeronSetup, LegendLordaeron, QuestItemLegendD
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(HERO_ID, 1)
+      call this.Holder.ModObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

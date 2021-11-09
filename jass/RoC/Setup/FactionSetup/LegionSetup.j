@@ -14,60 +14,60 @@ library LegionSetup requires Faction, TeamSetup
     set f.StartingGold = 150
     set f.StartingLumber = 500
     //Structures
-    call f.registerObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
-    call f.registerObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon
-    call f.registerObjectLimit('u00F', UNLIMITED)   //Dormant Spire
-    call f.registerObjectLimit('u00C', UNLIMITED)   //Legion Bastion
-    call f.registerObjectLimit('u00N', UNLIMITED)   //Burning Citadel
-    call f.registerObjectLimit('u00U', UNLIMITED)   //Hell Palace
-    call f.registerObjectLimit('n040', UNLIMITED)   //Armory
-    call f.registerObjectLimit('u009', UNLIMITED)   //Undead Shipyard
-    call f.registerObjectLimit('u00E', UNLIMITED)   //Generator
-    call f.registerObjectLimit('u01N', UNLIMITED)   //Burning Altar
-    call f.registerObjectLimit('u015', UNLIMITED)   //Unholy Reliquary
-    call f.registerObjectLimit('u006', UNLIMITED)   //Void Summoning Spire
-    call f.registerObjectLimit('ndmg', UNLIMITED)   //Demon Gate
-    call f.registerObjectLimit('n04N', UNLIMITED)   //Infernal Machine Factory
-    call f.registerObjectLimit('n04Q', UNLIMITED)   //Nether Pit
+    call f.ModObjectLimit('u00H', UNLIMITED)   //Legion Defensive Pylon
+    call f.ModObjectLimit('u00I', UNLIMITED)   //Improved Defensive Pylon
+    call f.ModObjectLimit('u00F', UNLIMITED)   //Dormant Spire
+    call f.ModObjectLimit('u00C', UNLIMITED)   //Legion Bastion
+    call f.ModObjectLimit('u00N', UNLIMITED)   //Burning Citadel
+    call f.ModObjectLimit('u00U', UNLIMITED)   //Hell Palace
+    call f.ModObjectLimit('n040', UNLIMITED)   //Armory
+    call f.ModObjectLimit('u009', UNLIMITED)   //Undead Shipyard
+    call f.ModObjectLimit('u00E', UNLIMITED)   //Generator
+    call f.ModObjectLimit('u01N', UNLIMITED)   //Burning Altar
+    call f.ModObjectLimit('u015', UNLIMITED)   //Unholy Reliquary
+    call f.ModObjectLimit('u006', UNLIMITED)   //Void Summoning Spire
+    call f.ModObjectLimit('ndmg', UNLIMITED)   //Demon Gate
+    call f.ModObjectLimit('n04N', UNLIMITED)   //Infernal Machine Factory
+    call f.ModObjectLimit('n04Q', UNLIMITED)   //Nether Pit
   
     //Units
-    call f.registerObjectLimit('u00D', UNLIMITED)   //Legion Herald
-    call f.registerObjectLimit('u007', 6)           //Dreadlord
-    call f.registerObjectLimit('n04P', UNLIMITED)   //Warlock
-    call f.registerObjectLimit('ninc', UNLIMITED)   //Burning archer
-    call f.registerObjectLimit('n04K', UNLIMITED)   //Succubus
-    call f.registerObjectLimit('n04J', UNLIMITED)   //Felstalker
-    call f.registerObjectLimit('ubot', 12) 	        //Undead Transport SHip
-    call f.registerObjectLimit('udes', 12) 	        //Undead Frigate
-    call f.registerObjectLimit('uubs', 6)          //Undead Battleship         
-    call f.registerObjectLimit('n04O', 6)           //Doomguard
-    call f.registerObjectLimit('n04L', 6)           //Infernal Juggernaut
-    call f.registerObjectLimit('ninf', 12)          //Infernal
-    call f.registerObjectLimit('n04H', UNLIMITED)   //Fel Guard
-    call f.registerObjectLimit('n04U', 4)           //Dragon
-    call f.registerObjectLimit('n03L', 4)           //Barge
+    call f.ModObjectLimit('u00D', UNLIMITED)   //Legion Herald
+    call f.ModObjectLimit('u007', 6)           //Dreadlord
+    call f.ModObjectLimit('n04P', UNLIMITED)   //Warlock
+    call f.ModObjectLimit('ninc', UNLIMITED)   //Burning archer
+    call f.ModObjectLimit('n04K', UNLIMITED)   //Succubus
+    call f.ModObjectLimit('n04J', UNLIMITED)   //Felstalker
+    call f.ModObjectLimit('ubot', 12) 	        //Undead Transport SHip
+    call f.ModObjectLimit('udes', 12) 	        //Undead Frigate
+    call f.ModObjectLimit('uubs', 6)          //Undead Battleship         
+    call f.ModObjectLimit('n04O', 6)           //Doomguard
+    call f.ModObjectLimit('n04L', 6)           //Infernal Juggernaut
+    call f.ModObjectLimit('ninf', 12)          //Infernal
+    call f.ModObjectLimit('n04H', UNLIMITED)   //Fel Guard
+    call f.ModObjectLimit('n04U', 4)           //Dragon
+    call f.ModObjectLimit('n03L', 4)           //Barge
 
-    call f.registerObjectLimit('n05R', 1)           //Felguard
-    call f.registerObjectLimit('n06H', 1)           //Pit Fiend
-    call f.registerObjectLimit('n07B', 1)           //Queen
-    call f.registerObjectLimit('n07D', 1)           //Maiden
-    call f.registerObjectLimit('n07o', 1)           //Terror
-    call f.registerObjectLimit('n07N', 1)           //Lord
+    call f.ModObjectLimit('n05R', 1)           //Felguard
+    call f.ModObjectLimit('n06H', 1)           //Pit Fiend
+    call f.ModObjectLimit('n07B', 1)           //Queen
+    call f.ModObjectLimit('n07D', 1)           //Maiden
+    call f.ModObjectLimit('n07o', 1)           //Terror
+    call f.ModObjectLimit('n07N', 1)           //Lord
 
     //Researches
-    call f.registerObjectLimit('R02C', UNLIMITED)   //Acute Sensors
-    call f.registerObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
-    call f.registerObjectLimit('R028', UNLIMITED)   //Shadow Priest Adept Training
-    call f.registerObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
-    call f.registerObjectLimit('R01Y', UNLIMITED)   //Astral Walk
-    call f.registerObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
-    call f.registerObjectLimit('R03Z', UNLIMITED)   //War Plating
-    call f.registerObjectLimit('R040', UNLIMITED)   //Flying horrors
+    call f.ModObjectLimit('R02C', UNLIMITED)   //Acute Sensors
+    call f.ModObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
+    call f.ModObjectLimit('R028', UNLIMITED)   //Shadow Priest Adept Training
+    call f.ModObjectLimit('R027', UNLIMITED)   //Warlock Adept Training
+    call f.ModObjectLimit('R01Y', UNLIMITED)   //Astral Walk
+    call f.ModObjectLimit('R04G', UNLIMITED)   //Improved Carrion Swarm
+    call f.ModObjectLimit('R03Z', UNLIMITED)   //War Plating
+    call f.ModObjectLimit('R040', UNLIMITED)   //Flying horrors
     
     //Heroes
-    call f.registerObjectLimit('U00L', 1)           //Anetheron
-    call f.registerObjectLimit('Umal', 1)           //Mal'ganis
-    call f.registerObjectLimit('Utic', 1)           //Tichondrius
+    call f.ModObjectLimit('U00L', 1)           //Anetheron
+    call f.ModObjectLimit('Umal', 1)           //Mal'ganis
+    call f.ModObjectLimit('Utic', 1)           //Tichondrius
 
   endfunction
     

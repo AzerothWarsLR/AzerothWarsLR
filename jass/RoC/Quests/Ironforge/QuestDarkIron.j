@@ -34,8 +34,8 @@ library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
-      call Holder.modObjectLimit(HERO_ID, 1)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -10,7 +10,7 @@ library TierKatranaPrestor requires StormwindSetup
 
   public function OnInit takes nothing returns nothing
     call RegisterResearchFinishedAction('R03Y', function Research)
-    call FACTION_STORMWIND.modObjectLimit(DEMI_UNITTYPE_ID, 1)
+    call FACTION_STORMWIND.ModObjectLimit(DEMI_UNITTYPE_ID, 1)
   endfunction
 
 endlibrary

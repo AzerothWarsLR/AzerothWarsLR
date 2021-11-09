@@ -145,7 +145,7 @@ library QuestData requires QuestItemData, Event
       endif
       set this.holder = value
       if this.researchId != 0 then
-        call Holder.modObjectLimit(this.researchId, 1)
+        call Holder.ModObjectLimit(this.researchId, 1)
       endif
       call this.OnAdd()
       if this.FailurePopup != null then

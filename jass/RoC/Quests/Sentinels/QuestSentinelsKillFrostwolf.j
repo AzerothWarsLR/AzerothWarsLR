@@ -20,8 +20,8 @@ library QuestSentinelsKillFrostwolf requires SentinelsSetup, LegendFrostwolf, Di
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(AMARA_ID, 1)
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(AMARA_ID, 1)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

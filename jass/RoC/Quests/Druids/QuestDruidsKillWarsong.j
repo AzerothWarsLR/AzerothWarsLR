@@ -20,7 +20,7 @@ library QuestDruidsKillWarsong requires DruidsSetup, LegendWarsong, Display
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(UNITTYPE_ID, 6) //Siege Ancient
+      call this.Holder.ModObjectLimit(UNITTYPE_ID, 6) //Siege Ancient
     endmethod
 
     public static method create takes nothing returns thistype

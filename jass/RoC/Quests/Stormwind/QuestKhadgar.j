@@ -15,7 +15,7 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit(HERO_ID, 1)
+      call Holder.ModObjectLimit(HERO_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

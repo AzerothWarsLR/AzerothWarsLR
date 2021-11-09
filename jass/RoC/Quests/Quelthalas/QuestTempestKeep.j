@@ -43,15 +43,15 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       set GREAT_TREACHERY.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_QUELTHALAS.AddQuest(STAY_LOYAL)
       set STAY_LOYAL.Progress = QUEST_PROGRESS_UNDISCOVERED
-      call FACTION_QUELTHALAS.modObjectLimit('H00Q',-UNLIMITED)       //Anasterian
-      call FACTION_QUELTHALAS.modObjectLimit('Hvwd',-UNLIMITED)       //Sylvanas
-      call FACTION_QUELTHALAS.modObjectLimit('n075',-UNLIMITED)       //Vareesa
-      call FACTION_QUELTHALAS.modObjectLimit('n00A',-UNLIMITED)       //Farstrider
-      call FACTION_QUELTHALAS.modObjectLimit('hhes',-UNLIMITED)       //Swordsman
-      call FACTION_QUELTHALAS.modObjectLimit('nbel',UNLIMITED)        //Sunfury
-      call FACTION_QUELTHALAS.modObjectLimit('n09S',6)               //Ranger
-      call FACTION_QUELTHALAS.modObjectLimit('n02F',6)               //Felblood Warlock
-      call FACTION_QUELTHALAS.modObjectLimit('e01B',6)               //Arcane Anihilator
+      call FACTION_QUELTHALAS.ModObjectLimit('H00Q',-UNLIMITED)       //Anasterian
+      call FACTION_QUELTHALAS.ModObjectLimit('Hvwd',-UNLIMITED)       //Sylvanas
+      call FACTION_QUELTHALAS.ModObjectLimit('n075',-UNLIMITED)       //Vareesa
+      call FACTION_QUELTHALAS.ModObjectLimit('n00A',-UNLIMITED)       //Farstrider
+      call FACTION_QUELTHALAS.ModObjectLimit('hhes',-UNLIMITED)       //Swordsman
+      call FACTION_QUELTHALAS.ModObjectLimit('nbel',UNLIMITED)        //Sunfury
+      call FACTION_QUELTHALAS.ModObjectLimit('n09S',6)               //Ranger
+      call FACTION_QUELTHALAS.ModObjectLimit('n02F',6)               //Felblood Warlock
+      call FACTION_QUELTHALAS.ModObjectLimit('e01B',6)               //Arcane Anihilator
 
       call SetUnitOwner(LEGEND_KAEL.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
       call SetUnitOwner(LEGEND_LORTHEMAR.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)

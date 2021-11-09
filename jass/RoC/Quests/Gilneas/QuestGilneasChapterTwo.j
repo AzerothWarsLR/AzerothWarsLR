@@ -16,7 +16,7 @@ library QuestGilneasChapterTwo requires QuestData, QuestItemTime, Artifact
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    call Holder.modObjectLimit(DARIUS_ID, 1)
+    call Holder.ModObjectLimit(DARIUS_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

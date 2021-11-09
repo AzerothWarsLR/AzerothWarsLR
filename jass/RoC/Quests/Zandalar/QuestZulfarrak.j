@@ -37,8 +37,8 @@ library QuestZulfarrak requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(GAHZRILLA_RESEARCH, UNLIMITED)
-      call this.Holder.modObjectLimit(GAHZRILLA_ID, 1)
+      call this.Holder.ModObjectLimit(GAHZRILLA_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(GAHZRILLA_ID, 1)
     endmethod
 
     public static method create takes nothing returns thistype

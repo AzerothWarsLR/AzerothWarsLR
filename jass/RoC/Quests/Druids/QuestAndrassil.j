@@ -21,9 +21,9 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsSetup
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call Holder.modObjectLimit('R05X', UNLIMITED)
-      call Holder.modObjectLimit(URSOC_ID, 1)
-      call Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call Holder.ModObjectLimit('R05X', UNLIMITED)
+      call Holder.ModObjectLimit(URSOC_ID, 1)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

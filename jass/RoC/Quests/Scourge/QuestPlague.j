@@ -18,12 +18,12 @@ library QuestPlague requires QuestData, ScourgeSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
       call TriggerExecute( gg_trg_Plague_Actions )
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(RESEARCH_ID, UNLIMITED)
+      call this.Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

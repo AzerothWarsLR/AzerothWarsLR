@@ -41,7 +41,7 @@ library QuestThirdObelisk requires QuestData, QuestItemKillUnit
 
       call WaygateActivateBJ( false, gg_unit_h03V_0183 )
 
-      call FACTION_BLACKEMPIRE.registerObjectLimit('u02E', -UNLIMITED)           //Herald
+      call FACTION_BLACKEMPIRE.ModObjectLimit('u02E', -UNLIMITED)           //Herald
     
     endmethod
 

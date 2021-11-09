@@ -20,7 +20,7 @@ library QuestZulgurub requires LegendNeutral
     endmethod
 
     private method OnAdd takes nothing returns nothing
-      call this.Holder.modObjectLimit(ZULGURUB_RESEARCH, UNLIMITED)
+      call this.Holder.ModObjectLimit(ZULGURUB_RESEARCH, UNLIMITED)
     endmethod
 
     public static method create takes nothing returns thistype

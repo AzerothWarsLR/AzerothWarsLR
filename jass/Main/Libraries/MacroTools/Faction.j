@@ -311,7 +311,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       call this.OnSetObjectLevel(object, level)
     endmethod
 
-    method modObjectLimit takes integer id, integer limit returns nothing
+    method ModObjectLimit takes integer id, integer limit returns nothing
       local Person affectedPerson = 0
 
       if this.objectLimits.exists(id) then
@@ -372,11 +372,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
         call BJDebugMsg("ERROR: attempted to set defeated research for faction " + this.name + " but one is already set")
       endif
     endmethod                   
-
-    //Depecrated
-    method registerObjectLimit takes integer id, integer limit returns nothing
-      call modObjectLimit(id, limit)     
-    endmethod
 
     //Any time the player loses the game. E.g. Frozen Throne loss, Kil'jaeden loss
     method obliterate takes nothing returns nothing
