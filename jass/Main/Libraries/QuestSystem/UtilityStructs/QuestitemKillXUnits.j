@@ -17,9 +17,8 @@ library QuestItemKillXUnit requires QuestItemData
       set this.objectId = objectId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
-      set this.CurrentKillXUnitCount = 0
       set this.targetKillXUnitCount = targetKillXUnitCount
-      set this.Description = "Kill " + I2S(targetKillXUnitCount) + " " + GetObjectName(objectId)
+      set this.CurrentKillXUnitCount = 0
       return this
     endmethod
 

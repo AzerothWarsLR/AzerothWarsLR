@@ -17,9 +17,8 @@ library QuestItemTrain requires QuestItemData
       set this.objectId = objectId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
-      set this.CurrentTrainCount = 0
       set this.targetTrainCount = targetTrainCount
-      set this.Description = "Train " + I2S(targetTrainCount) + " " + GetObjectName(objectId)
+      set this.CurrentTrainCount = 0
       return this
     endmethod
 

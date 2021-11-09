@@ -17,9 +17,8 @@ library QuestItemBuild requires QuestItemData
       set this.objectId = objectId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
-      set this.CurrentBuildCount = 0
       set this.targetBuildCount = targetBuildCount
-      set this.Description = "Build " + I2S(targetBuildCount) + " " + GetObjectName(objectId)
+      set this.CurrentBuildCount = 0
       return this
     endmethod
 
