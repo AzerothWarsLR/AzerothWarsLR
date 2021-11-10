@@ -5,6 +5,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     Event OnFactionTeamLeave
     Event OnFactionTeamJoin
     Event OnFactionGameLeave
+    Event FactionNameChanged
+    Event FactionIconChanged
     Event FactionScoreStatusChanged
 
     constant integer UNLIMITED = 200    //This is used in Persons and Faction for effectively unlimited unit production
@@ -150,6 +152,24 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     method operator Name takes nothing returns string
       return this.name
+    endmethod
+
+    method operator Name= takes string value returns nothing
+      set thistype.factionsByName[this.name] = 0
+      set this.name = value
+      set thistype.triggerFaction = this
+      set thistype.factionsByName[StringCase(value,false)] = this
+      call FactionNameChanged.fire()
+    endmethod
+
+    method operator Icon takes nothing returns string
+      return this.icon
+    endmethod
+
+    method operator Icon= takes string value returns nothing
+      set this.icon = value
+      set thistype.triggerFaction = this
+      call FactionIconChanged.fire()
     endmethod
 
     method operator Player takes nothing returns player
@@ -563,6 +583,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       set OnFactionTeamJoin = Event.create()
       set OnFactionGameLeave = Event.create()
       set FactionScoreStatusChanged = Event.create()
+      set FactionNameChanged = Event.create()
+      set FactionIconChanged = Event.create()
 
       call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_RESEARCH_FINISH, function thistype.OnAnyResearch) //TODO: use filtered events
     endmethod 

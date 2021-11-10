@@ -129,6 +129,10 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       endif
     endmethod
 
+    private static method OnFactionNameChanged takes nothing returns nothing
+      call Instance.UpdateFactionRow(GetTriggerFaction())
+    endmethod
+
     private static method onInit takes nothing returns nothing
       local trigger trig
       call TriggerSleepAction(1)
@@ -141,6 +145,11 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       call TeamScoreStatusChanged.register(trig)
       call FactionScoreStatusChanged.register(trig)
       call TriggerAddAction(trig, function thistype.RenderInstance)
+
+      set trig = CreateTrigger()
+      call FactionNameChanged.register(trig)
+      call FactionIconChanged.register(trig)
+      call TriggerAddAction(trig, function thistype.OnFactionNameChanged)
 
       set trig = CreateTrigger()
       call OnControlPointLoss.register(trig)
