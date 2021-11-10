@@ -22,13 +22,9 @@ library JoinCommand initializer OnInit requires Team
       set targetTeam = Team.teamsByName[content]
       if targetTeam != 0 then
         if targetTeam.IsFactionInvited(triggerPerson.Faction) then
-          if targetTeam.MaxWeight >= targetTeam.Weight + triggerPerson.Faction.Weight then
-            set triggerPerson.Faction.Team = targetTeam
-            call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have joined " + targetTeam.Name + ".")
-            call targetTeam.DisplayText(triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has joined the " + targetTeam.Name + ".")
-          else
-            call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "That team is already full.")
-          endif
+          set triggerPerson.Faction.Team = targetTeam
+          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have joined " + targetTeam.Name + ".")
+          call targetTeam.DisplayText(triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has joined the " + targetTeam.Name + ".")
         else
           call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have not been invited to join " + targetTeam.Name + ".")
         endif

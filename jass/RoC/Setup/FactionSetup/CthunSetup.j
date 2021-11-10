@@ -6,7 +6,7 @@ library CthunSetup requires Faction, TeamSetup
 
     public function OnInit takes nothing returns nothing
      local Faction f   
-     set FACTION_CTHUN = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp", 0)
+     set FACTION_CTHUN = Faction.create("Ahn'qiraj", PLAYER_COLOR_WHEAT, "|cFFFFDF80","ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp")
      set f = FACTION_CTHUN
      set f.Team = TEAM_OLDGOD
      set f.StartingGold = 150

@@ -24,7 +24,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     readonly playercolor playCol = null
     readonly string prefixCol = null
     readonly string icon = null
-    private integer weight //An estimation of this Faction's tech-tree strength. Used to calculate how many Factions can fit in a team before they incur penalties
     private integer scoreStatus
 
     private Person person = 0 //One-to-one relationship
@@ -62,10 +61,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     method operator ObjectLimitCount takes nothing returns integer
       return this.objectCount
-    endmethod
-
-    stub method operator Weight takes nothing returns integer
-      return this.weight
     endmethod
 
     method operator Gold takes nothing returns real
@@ -303,14 +298,6 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       return questData
     endmethod
 
-    method modWeight takes integer value returns nothing
-      if this.weight + value < 0 then
-        call BJDebugMsg("ERROR: Attempted to reduce weight of Faction " + this.name + " to " + I2S(value)) 
-        return
-      endif
-      set this.weight = this.weight + value
-    endmethod
-
     method GetObjectLevel takes integer object returns integer
       return this.objectLevels[object]
     endmethod
@@ -544,14 +531,13 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       return thistype.factionsByName[s]
     endmethod
 
-    static method create takes string name, playercolor playCol, string prefixCol, string icon, integer weight returns Faction
+    static method create takes string name, playercolor playCol, string prefixCol, string icon returns Faction
       local Faction this = Faction.allocate()
     
       set this.name = name
       set this.playCol = playCol
       set this.prefixCol = prefixCol
       set this.icon = icon
-      set this.weight = weight
       set this.objectLimits = Table.create()
       set this.objectLevels = Table.create()
       set this.scoreStatus = SCORESTATUS_NORMAL
