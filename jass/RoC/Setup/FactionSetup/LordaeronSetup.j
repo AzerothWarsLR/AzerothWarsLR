@@ -6,7 +6,7 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp", 0)
+    set FACTION_LORDAERON = Faction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
     set f = FACTION_LORDAERON
     set f.Team = TEAM_ALLIANCE
     set f.UndefeatedResearch = 'R05M'

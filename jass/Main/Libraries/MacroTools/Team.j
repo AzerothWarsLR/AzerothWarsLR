@@ -1,10 +1,7 @@
 library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
   globals
-    private integer DEFAULT_MAX_WEIGHT = 6  //All Teams have this much maximum weight
-
     Event OnTeamCreate = 0
     Event OnTeamSizeChange = 0
-    Event OnTeamWeightChange = 0
     Event TeamScoreStatusChanged
   endglobals
 
@@ -78,23 +75,6 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
         set loopFaction = factions[i]
         if loopFaction.Person != 0 and loopFaction.ScoreStatus != SCORESTATUS_DEFEATED then
           set total = total + 1
-        endif
-        set i = i + 1
-      endloop
-      return total
-    endmethod
-
-    method operator MaxWeight takes nothing returns integer
-      return DEFAULT_MAX_WEIGHT
-    endmethod
-
-    method operator Weight takes nothing returns integer
-      local integer i = 0
-      local integer total = 0
-      loop
-        exitwhen i == factions.size
-        if Faction(factions[i]).Person != 0 then
-          set total = total + Faction(factions[i]).Weight
         endif
         set i = i + 1
       endloop
@@ -269,7 +249,6 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
   private function OnInit takes nothing returns nothing
     set OnTeamCreate = Event.create()
     set OnTeamSizeChange = Event.create()
-    set OnTeamWeightChange = Event.create()
     set TeamScoreStatusChanged = Event.create()
   endfunction
 
