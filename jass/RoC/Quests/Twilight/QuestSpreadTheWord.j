@@ -23,7 +23,7 @@ library QuestSpreadTheWord requires QuestData
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Spread the Whispers of the Old God", "The world shall hear the whispers of the Old God. Spread the visions of the end", "ReplaceableTextures\\CommandButtons\\BTNOldGodWhispers.blp")
       call this.AddQuestItem(QuestItemBuild.create('o03C', 1))
-      call this.AddQuestItem(QuestItemTrain.create('obot', 3))
+      call this.AddQuestItem(QuestItemTrain.create('obot','o03I', 3))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

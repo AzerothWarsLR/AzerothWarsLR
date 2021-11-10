@@ -4,17 +4,19 @@ library QuestItemTrain requires QuestItemData
     private static integer count = 0
     private static thistype array byIndex
     private integer objectId
+    private integer trainFromId
     private integer currentTrainCount
     private integer targetTrainCount
 
     private method operator CurrentTrainCount= takes integer value returns nothing
       set this.currentTrainCount = value
-      set this.Description = "Train " + GetObjectName(objectId) + "s (" + I2S(currentTrainCount) + "/" + I2S(targetTrainCount) + ")"
+      set this.Description = "Train " + GetObjectName(objectId) + "s from the " + GetObjectName(trainFromId) + " (" + I2S(currentTrainCount) + "/" + I2S(targetTrainCount) + ")"
     endmethod
 
-    static method create takes integer objectId, integer targetTrainCount returns thistype
+    static method create takes integer objectId, integer trainFromId, integer targetTrainCount returns thistype
       local thistype this = thistype.allocate()
       set this.objectId = objectId
+      set this.trainFromId = trainFromId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       set this.targetTrainCount = targetTrainCount

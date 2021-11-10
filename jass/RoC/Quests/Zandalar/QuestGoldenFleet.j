@@ -22,7 +22,7 @@ library QuestGoldenFleet requires QuestData
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Golden Fleet", "The King has ordered for the greatest armada in the world, the construction for the Golden Fleet has begun", "ReplaceableTextures\\CommandButtons\\BTNTrollConjurer.blp")
-      call this.AddQuestItem(QuestItemTrain.create('o04W', 5))
+      call this.AddQuestItem(QuestItemTrain.create('o04W','o049', 5))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

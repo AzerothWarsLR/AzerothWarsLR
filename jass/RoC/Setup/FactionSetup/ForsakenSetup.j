@@ -57,6 +57,7 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R05C', UNLIMITED)   //Banshee Adept Training
     call f.ModObjectLimit('R051', UNLIMITED)   //Apotechary Training
     call f.ModObjectLimit('R02X', UNLIMITED)   // Open Scholomance
+    call f.ModObjectLimit('R02A', UNLIMITED)   //Chaos Infusion
   endfunction
     
 endlibrary

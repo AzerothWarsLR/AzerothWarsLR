@@ -12,11 +12,11 @@ library QuestMadnessPath requires QuestData, NagaSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Nazjatar and the Aetheneum is now under the influence of the Old Gods."
+      return "Nazjatar is now under the influence of the Old Gods and the portal is opened to Ny'alotha."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Nazjatar and Aetheneum. Join the Old Gods team"
+      return "Control of all units in Nazjatar and a portal is opened to Ny'alotha. Join the Old Gods team"
     endmethod
 
     private method GrantNazjatar takes player whichPlayer returns nothing
@@ -42,25 +42,6 @@ library QuestMadnessPath requires QuestData, NagaSetup
       set tempGroup = null      
     endmethod
 
-    private method GrantAetheneum takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_AethneumCatacombs, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnComplete takes nothing returns nothing
       call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
       call FACTION_NAGA.ModObjectLimit('n08V', UNLIMITED)   //Depth Void Portal
@@ -73,26 +54,11 @@ library QuestMadnessPath requires QuestData, NagaSetup
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
       call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       call this.GrantNazjatar(this.Holder.Player)
-      call this.GrantAetheneum(this.Holder.Player)
-      call WaygateActivateBJ( true, gg_unit_h01D_3387 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3385 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3379 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3380 )
-      call ShowUnitShow( gg_unit_h01D_3387  )
-      call ShowUnitShow( gg_unit_h01D_3385 )
-      call ShowUnitShow( gg_unit_h01D_3380  )
-      call ShowUnitShow( gg_unit_h01D_3379 )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3387, GetRectCenter(gg_rct_AetheneumTombExit2) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3385 , GetRectCenter(gg_rct_AethneumTombExit) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_AetheneumTombEntrance2) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3379 , GetRectCenter(gg_rct_AethneumLibraryEntrance) )
-      call DestructableRestoreLife( gg_dest_YT24_0267, GetDestructableMaxLife(GetLastCreatedDestructable()), true )
+      call WaygateActivateBJ( true, gg_unit_h03V_0183 )
+      call WaygateSetDestinationLocBJ( gg_unit_h03V_0183, GetRectCenter(gg_rct_NazjatarExit3) )
       call WaygateActivateBJ( true, gg_unit_n07E_0958 )
       call ShowUnitShow( gg_unit_n07E_0958  )
-      call WaygateSetDestinationLocBJ( gg_unit_n07E_0958, GetRectCenter(gg_rct_AetheneumtoNazjatar) )
-      call WaygateActivateBJ( true, gg_unit_n07E_1154 )
-      call ShowUnitShow( gg_unit_n07E_1154  )
-      call WaygateSetDestinationLocBJ( gg_unit_n07E_1154, GetRectCenter(gg_rct_NazjatarExit3) )
+      call WaygateSetDestinationLocBJ( gg_unit_n07E_0958, GetRectCenter(gg_rct_Ny_Nazjatar_Interior) )
       set this.Holder.Team = TEAM_OLDGOD
     endmethod
 

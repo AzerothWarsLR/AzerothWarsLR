@@ -18,7 +18,7 @@ library QuestExplosiveEngineering requires QuestData
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Explosive Engineering", "The world shall hear the whispers of the Old God. Spread the visions of the end", "ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
-      call this.AddQuestItem(QuestItemTrain.create('n0AQ', 4))
+      call this.AddQuestItem(QuestItemTrain.create('n0AQ','h04Z', 4))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
