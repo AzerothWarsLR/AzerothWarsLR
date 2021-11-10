@@ -39,6 +39,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
     private boolean isCapital = false
     private boolean essential = false
     private boolean enableMessages = true
+    private string name = null
 
     public method operator Essential takes nothing returns boolean
       return essential
@@ -65,15 +66,25 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
     endmethod
 
     public method operator Name takes nothing returns string
+      if this.name != null then
+        return this.name
+      endif
+
       if this.unit == null and this.unitType != 0 then
         return GetObjectName(this.unitType)
       endif
+
       if IsUnitType(this.unit, UNIT_TYPE_HERO) == true then
         return GetHeroProperName(this.unit)
       else
         return GetUnitName(this.unit)
       endif
+
       return "NONAME"
+    endmethod
+
+    public method operator Name= takes string value returns nothing
+      set this.name = value
     endmethod
 
     public method operator IsCapital takes nothing returns boolean
