@@ -11,7 +11,7 @@ library QuestSecondObelisk requires QuestData, QuestItemKillUnit
 
     private method OnComplete takes nothing returns nothing
       call RemoveDestructable( gg_dest_ATg2_35871 )
-      call RemoveDestructable( gg_dest_ATg1_35873 )
+      call RemoveDestructable( gg_dest_ATg3_35869 )
     endmethod
 
     public static method create takes nothing returns thistype
