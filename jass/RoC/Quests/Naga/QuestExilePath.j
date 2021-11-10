@@ -53,6 +53,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_NazjatarExit3) )
       call WaygateSetDestinationLocBJ( gg_unit_n07E_0958 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
       call SetPlayerTechResearched(FACTION_SENTINELS.Player, 'R06D', 1)
+      set this.Holder.Name = "Illidari"
     endmethod
 
     public static method create takes nothing returns thistype

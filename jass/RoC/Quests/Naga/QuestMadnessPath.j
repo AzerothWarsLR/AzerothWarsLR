@@ -60,6 +60,8 @@ library QuestMadnessPath requires QuestData, NagaSetup
       call ShowUnitShow( gg_unit_n07E_0958  )
       call WaygateSetDestinationLocBJ( gg_unit_n07E_0958, GetRectCenter(gg_rct_Ny_Nazjatar_Interior) )
       set this.Holder.Team = TEAM_OLDGOD
+      set this.Holder.Name = "Nazjatar"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp"
     endmethod
 
     public static method create takes nothing returns thistype

@@ -53,7 +53,7 @@ library QuestMonastery requires QuestData, ScarletSetup
       call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
       set this.Holder.Team = TEAM_SCARLET
       set this.Holder.Name = "Scarlet"
-      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNHeroArchMage.blp"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNSaidan Dathrohan.blp"
       call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
     endmethod
 

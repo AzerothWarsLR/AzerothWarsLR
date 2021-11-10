@@ -55,6 +55,8 @@ library QuestUndercity requires QuestData, ForsakenSetup
       call WaygateSetDestinationLocBJ( gg_unit_n08F_1739, GetRectCenter(gg_rct_Undercity_Interior_2) )
       call WaygateSetDestinationLocBJ( gg_unit_n08F_1798, GetRectCenter(gg_rct_Undercity_Interior_1) )
       set this.Holder.Team = TEAM_FORSAKEN
+      set this.Holder.Name = "Forsaken"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp"
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\ForsakenTheme.mp3" )
       endif

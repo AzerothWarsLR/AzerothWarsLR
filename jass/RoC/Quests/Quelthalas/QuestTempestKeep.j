@@ -67,6 +67,8 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
       call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 400, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      set this.Holder.Name = "Blood Elves"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBloodMage2.blp"
       if GetLocalPlayer() == this.Holder.Player then
           call SetCameraPosition(GetRectCenterX(gg_rct_TempestKeepSpawn), GetRectCenterY(gg_rct_TempestKeepSpawn))
         endif
