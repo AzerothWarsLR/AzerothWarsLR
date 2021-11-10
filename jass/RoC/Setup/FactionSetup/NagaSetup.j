@@ -6,7 +6,7 @@ library NagaSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_NAGA = Faction.create("Illidan", PLAYER_COLOR_VIOLET, "|cffff00ff","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp", 0)
+    set FACTION_NAGA = Faction.create("Illidan", PLAYER_COLOR_VIOLET, "|cffff00ff","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
     set f = FACTION_NAGA
     set f.Team = TEAM_NAGA
     set f.UndefeatedResearch = 'R02L'
