@@ -1,4 +1,4 @@
-library QuestItemControlPoint initializer OnInit requires QuestItemData, ControlPoint
+library QuestItemControlPoint initializer OnInit requires QuestItemData, ControlPoint, Faction
 
   struct QuestItemControlPoint extends QuestItemData
     private static trigger unitDies = CreateTrigger()
@@ -34,7 +34,8 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       loop
         exitwhen i == thistype.count
         set loopItem = thistype.byIndex[i]
-        if loopItem.target.owner == GetFactionChangingTeam() then
+        call BJDebugMsg(GetPlayerName(loopItem.target.owner))
+        if loopItem.target.owner != GetTriggerFaction().Person.Player then
           call loopItem.OnTargetChangeOwner()
         endif
         set i = i + 1
@@ -66,11 +67,11 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
 
   private function OnInit takes nothing returns nothing
     local trigger trigOwnerChange = CreateTrigger()
-    local trigger trigTeamSizeChange = CreateTrigger()
+    local trigger trigFaction = CreateTrigger()
     call OnControlPointOwnerChange.register(trigOwnerChange) 
-    call OnTeamSizeChange.register(trigTeamSizeChange) 
+    call OnFactionTeamLeave.register(trigFaction) 
     call TriggerAddAction(trigOwnerChange, function QuestItemControlPoint.OnAnyControlPointChangeOwner)
-    call TriggerAddAction(trigTeamSizeChange, function QuestItemControlPoint.OnTeamSizeChange)
+    call TriggerAddAction(trigFaction, function QuestItemControlPoint.OnTeamSizeChange)
   endfunction
 
 endlibrary

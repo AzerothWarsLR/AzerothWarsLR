@@ -45,7 +45,7 @@ library QuestKingdomOfManStormwind requires StormwindSetup, QuestItemControlPoin
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_VARIAN))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNLORDAERON))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNSTORMWIND))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BLACKTEMPLE))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n010')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01G')))
       return this
