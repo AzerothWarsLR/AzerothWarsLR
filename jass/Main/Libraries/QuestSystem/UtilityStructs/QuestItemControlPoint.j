@@ -28,19 +28,18 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       endif
     endmethod
 
-//    public static method OnAnyTeamChange takes nothing returns nothing
-//      local integer i = 0
-//      local thistype loopItem
-//      loop
-//        exitwhen i == thistype.count
- //       set loopItem = thistype.byIndex[i]
- //       if loopItem.target == ??? then 
-//          call loopItem.OnTargetChangeOwner()
-//        endif
-//        set i = i + 1
-//      endloop
-//    endmethod
-
+    public static method OnTeamSizeChange takes nothing returns nothing
+      local integer i = 0
+      local thistype loopItem
+      loop
+        exitwhen i == thistype.count
+        set loopItem = thistype.byIndex[i]
+        if loopItem.target.owner == GetFactionChangingTeam() then
+          call loopItem.OnTargetChangeOwner()
+        endif
+        set i = i + 1
+      endloop
+    endmethod
 
     public static method OnAnyControlPointChangeOwner takes nothing returns nothing
       local integer i = 0
@@ -66,10 +65,12 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
   endstruct
 
   private function OnInit takes nothing returns nothing
-    local trigger trig = CreateTrigger()
-    call OnControlPointOwnerChange.register(trig) 
-    //call OnAnyTeamChange.register(trig) 
-    call TriggerAddAction(trig, function QuestItemControlPoint.OnAnyControlPointChangeOwner)
+    local trigger trigOwnerChange = CreateTrigger()
+    local trigger trigTeamSizeChange = CreateTrigger()
+    call OnControlPointOwnerChange.register(trigOwnerChange) 
+    call OnTeamSizeChange.register(trigTeamSizeChange) 
+    call TriggerAddAction(trigOwnerChange, function QuestItemControlPoint.OnAnyControlPointChangeOwner)
+    call TriggerAddAction(trigTeamSizeChange, function QuestItemControlPoint.OnTeamSizeChange)
   endfunction
 
 endlibrary
