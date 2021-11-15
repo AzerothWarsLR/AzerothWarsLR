@@ -19,6 +19,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_CROWNEASTERNKINGDOMS
     Artifact ARTIFACT_TROLKALAR
     Artifact ARTIFACT_DEMONSOUL
+    Artifact ARTIFACT_THUNDERFURY
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -100,7 +101,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_DREKTHARSSPELLBOOK.setDescription("Frostwolf Quest")
 
     set ARTIFACT_SOULGEM = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))
-    call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_SPECIAL)
+    call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_SOULGEM.setDescription("Dalaran's Quest")
     set ARTIFACT_SOULGEM.falseX = -14269
     set ARTIFACT_SOULGEM.falseY = 22281
 
@@ -128,6 +130,14 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_Hgam_1450, ARTIFACT_HOLDER_ABIL_ID)             //Arugal
     call UnitAddItem(gg_unit_Hgam_1450, ARTIFACT_SCYTHEOFELUNE.item)            //Arugal
+
+    set ARTIFACT_THUNDERFURY = Artifact.create(CreateItem('I00Z', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_THUNDERFURY.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_THUNDERFURY.setDescription("Twilight Hammer's Quest")
+    set ARTIFACT_THUNDERFURY.falseX = -1649
+    set ARTIFACT_THUNDERFURY.falseY = 7628
+
+
   endfunction
 
 endlibrary

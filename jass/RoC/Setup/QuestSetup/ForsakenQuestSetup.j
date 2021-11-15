@@ -5,6 +5,7 @@ library ForsakenQuestSetup requires ForsakenSetup
     set FACTION_FORSAKEN.StartingQuest = FACTION_FORSAKEN.AddQuest(QuestScholomanceBuild.create())
     call FACTION_FORSAKEN.AddQuest(QuestReanimateSylvanas.create())
     call FACTION_FORSAKEN.AddQuest(QuestUndercity.create())
+    call FACTION_FORSAKEN.AddQuest(QuestTakeRevenge.create())
 
   endfunction
 

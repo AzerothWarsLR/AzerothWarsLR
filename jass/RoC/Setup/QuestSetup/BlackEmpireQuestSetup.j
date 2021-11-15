@@ -5,6 +5,8 @@ library BlackEmpireQuestSetup requires BlackEmpireSetup
     set FACTION_BLACKEMPIRE.StartingQuest = FACTION_BLACKEMPIRE.AddQuest(QuestFirstObelisk.create())
     call FACTION_BLACKEMPIRE.AddQuest(QuestSecondObelisk.create())
     call FACTION_BLACKEMPIRE.AddQuest(QuestThirdObelisk.create())
+    call FACTION_BLACKEMPIRE.AddQuest(QuestDragonSoul.create())
+    call FACTION_BLACKEMPIRE.AddQuest(QuestYoggSaron.create())
   endfunction
 
 endlibrary
