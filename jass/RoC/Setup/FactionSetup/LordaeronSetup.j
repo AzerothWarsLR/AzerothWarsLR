@@ -46,8 +46,8 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     call f.ModObjectLimit('n03K', UNLIMITED)   //Chaplain
     call f.ModObjectLimit('hcth', UNLIMITED)   //Silver Hand Squire
     call f.ModObjectLimit('h02Q', 6)           //Pegasus Knight
-    call f.ModObjectLimit('e017', 6)           //Mangonel
-    call f.ModObjectLimit('o02F', 8)           //Scorpion
+    call f.ModObjectLimit('e017', 8)           //Scorpion
+    call f.ModObjectLimit('o02F', 6)           //Mangonel
 
     //Demis
     call f.ModObjectLimit('h012', 1)           //Falric

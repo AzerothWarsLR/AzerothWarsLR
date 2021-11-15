@@ -1,4 +1,4 @@
-library QuestDominion requires QuestData, ScarletSetup
+library QuestDominion requires QuestData, IronforgeSetup
 
   globals
     private constant integer RESEARCH_ID = 'R043'   //This research is given when the quest is completed

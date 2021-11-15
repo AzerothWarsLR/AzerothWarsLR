@@ -7,7 +7,7 @@ library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
 
   struct QuestDarkIron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Ragnaros has been slain. The Dark Iron are free."
+      return "The peace talk were succesful, The Dark Iron will join the Dwarven Empire."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

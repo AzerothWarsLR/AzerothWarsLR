@@ -53,6 +53,11 @@ library ScarletSetup requires Faction, TeamSetup
     call f.ModObjectLimit('H00Y', 1)           //Brigitte
     call f.ModObjectLimit('Hlgr', 1)           //Garithos
 
+    call f.ModObjectLimit('h09I', 1)           //Renault
+    call f.ModObjectLimit('h09J', 1)           //Goodchild
+    call f.ModObjectLimit('h09H', 1)           //Herod
+    call f.ModObjectLimit('h05W', 1)           //Isilien
+
     //Upgrades
     call f.ModObjectLimit('R05D', UNLIMITED)   //Chaplain Adept Training
     call f.ModObjectLimit('R04F', UNLIMITED)   //Inquisitor traiing

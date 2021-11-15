@@ -35,7 +35,7 @@ library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, General
       call CreateStructureForced(this.Holder.Player, 'hdes', 582.6755, 15512.92, 4.3173*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hshy', 800, 15776, 4.712389*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hcas', -512, 15744, 4.712389*bj_RADTODEG, 512)
-      call CreateStructureForced(this.Holder.Player, 'hlum', 672, 16928, 4.712389*bj_RADTODEG, 256)
+      call CreateStructureForced(this.Holder.Player, 'hbla', 672, 16928, 4.712389*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hfoo', 771.1509, 16064.29, 0.6401012*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hgtw', -448, 16128, 4.712389*bj_RADTODEG, 256)
       call CreateStructureForced(this.Holder.Player, 'hwtw', 704, 17152, 4.712389*bj_RADTODEG, 256)

@@ -1,9 +1,5 @@
 library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
 
-  globals
-    private constant integer LEVEL_REQUIREMENT = 15
-  endglobals
-
   struct QuestLichKingArthas extends QuestData
     method operator Global takes nothing returns boolean
       return true

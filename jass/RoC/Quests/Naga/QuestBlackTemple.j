@@ -17,13 +17,13 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
     private method OnComplete takes nothing returns nothing 
       set FACTION_FEL_HORDE.Team = TEAM_NAGA
       call RemoveUnit(LEGEND_MAGTHERIDON.Unit)
+      call FACTION_FEL_HORDE.ModObjectLimit('Nmag', -UNLIMITED)           //Magtheridon
     endmethod
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Lord of Outland", "The Fel Horde is weak and complacent, the Illidari will easily conquer them to serve Illidan. ", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00R')))
-      call FACTION_FEL_HORDE.ModObjectLimit('Nmag', -UNLIMITED)           //Magtheridon
       call this.AddQuestItem(QuestItemResearch.create('R063', 'n055'))
       return this
     endmethod

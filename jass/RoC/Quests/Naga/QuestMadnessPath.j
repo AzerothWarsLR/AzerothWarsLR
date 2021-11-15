@@ -65,7 +65,7 @@ library QuestMadnessPath requires QuestData, NagaSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Voices in the Void", "Illidan follows his heart and seeks forgivness to Malfurion. United by their brotherly bond and their desire to protect Tyrande, they decide to unite forces again.", "ReplaceableTextures\\CommandButtons\\BTNGuardianofTheSea.blp")
+      local thistype this = thistype.allocate("Voices in the Void", "Azshara takes command of the Naga in the name of N'zoth. Illidan reign is no more.", "ReplaceableTextures\\CommandButtons\\BTNGuardianofTheSea.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
       call this.AddQuestItem(QuestItemSelfExists.create())

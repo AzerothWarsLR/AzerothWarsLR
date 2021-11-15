@@ -28,6 +28,20 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       endif
     endmethod
 
+//    public static method OnAnyTeamChange takes nothing returns nothing
+//      local integer i = 0
+//      local thistype loopItem
+//      loop
+//        exitwhen i == thistype.count
+ //       set loopItem = thistype.byIndex[i]
+ //       if loopItem.target == ??? then 
+//          call loopItem.OnTargetChangeOwner()
+//        endif
+//        set i = i + 1
+//      endloop
+//    endmethod
+
+
     public static method OnAnyControlPointChangeOwner takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
@@ -54,6 +68,7 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call OnControlPointOwnerChange.register(trig) 
+    //call OnAnyTeamChange.register(trig) 
     call TriggerAddAction(trig, function QuestItemControlPoint.OnAnyControlPointChangeOwner)
   endfunction
 
