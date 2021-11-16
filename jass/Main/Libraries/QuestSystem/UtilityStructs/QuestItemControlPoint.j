@@ -34,7 +34,6 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       loop
         exitwhen i == thistype.count
         set loopItem = thistype.byIndex[i]
-        call BJDebugMsg(GetPlayerName(loopItem.target.owner))
         if loopItem.target.owner != GetTriggerFaction().Person.Player then
           call loopItem.OnTargetChangeOwner()
         endif
