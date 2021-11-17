@@ -28,13 +28,16 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
       endif
     endmethod
 
-    public static method OnTeamSizeChange takes nothing returns nothing
+    public static method OnFactionTeamJoin takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
+      local Team loopItemHolderTeam
       loop
         exitwhen i == thistype.count
+        //Iterate across all QuestItemControlPoints held by Factions in either the Team that was left or the Team that was joined
         set loopItem = thistype.byIndex[i]
-        if loopItem.target.owner != GetTriggerFaction().Person.Player then
+        set loopItemHolderTeam = loopItem.Holder.Team
+        if loopItemHolderTeam == GetTriggerFaction().Team or loopItemHolderTeam == GetTriggerFactionPrevTeam() then
           call loopItem.OnTargetChangeOwner()
         endif
         set i = i + 1
@@ -68,9 +71,9 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
     local trigger trigOwnerChange = CreateTrigger()
     local trigger trigFaction = CreateTrigger()
     call OnControlPointOwnerChange.register(trigOwnerChange) 
-    call OnFactionTeamLeave.register(trigFaction) 
+    call OnFactionTeamJoin.register(trigFaction) 
     call TriggerAddAction(trigOwnerChange, function QuestItemControlPoint.OnAnyControlPointChangeOwner)
-    call TriggerAddAction(trigFaction, function QuestItemControlPoint.OnTeamSizeChange)
+    call TriggerAddAction(trigFaction, function QuestItemControlPoint.OnFactionTeamJoin)
   endfunction
 
 endlibrary
