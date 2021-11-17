@@ -1,6 +1,6 @@
 //Anyone on the Night Elves team approaches Moonglade with a unit with the Horn of Cenarius,
 //Causing Malfurion to spawn.
-library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDruids, Display, 
+library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDruids, Display, GeneralHelpers
 
   globals
     private group MoongladeUnits
@@ -48,7 +48,7 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
       if LEGEND_MALFURION.Unit == null then
         call LEGEND_MALFURION.Spawn(Holder.Player, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)
         call SetHeroLevel(LEGEND_MALFURION.Unit, 3, false)
-        call UnitAddItem(LEGEND_MALFURION.Unit, ARTIFACT_GHANIR.item)
+        call UnitAddItemSafe(LEGEND_MALFURION.Unit, ARTIFACT_GHANIR.item)
       else
         call SetItemPosition(ARTIFACT_GHANIR.item, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
       endif

@@ -1,4 +1,4 @@
-library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemAnyUnitInRect, QuestItemEitherOf, QuestItemFactionDefeated, QuestItemLegendDead
+library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemAnyUnitInRect, QuestItemEitherOf, QuestItemFactionDefeated, QuestItemLegendDead, GeneralHelpers
 
   struct QuestSkullOfGuldan extends QuestData
     private QuestItemAnyUnitInRect questItemAnyUnitInRect
@@ -13,8 +13,7 @@ library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemA
 
     private method OnComplete takes nothing returns nothing
       call ARTIFACT_SKULLOFGULDAN.setStatus(ARTIFACT_STATUS_GROUND)
-      call SetItemPosition(ARTIFACT_SKULLOFGULDAN.item, GetUnitX(this.questItemAnyUnitInRect.TriggerUnit), GetUnitY(this.questItemAnyUnitInRect.TriggerUnit))
-      call UnitAddItem(questItemAnyUnitInRect.TriggerUnit, ARTIFACT_SKULLOFGULDAN.item)
+      call UnitAddItemSafe(questItemAnyUnitInRect.TriggerUnit, ARTIFACT_SKULLOFGULDAN.item)
     endmethod
 
     private method OnFail takes nothing returns nothing

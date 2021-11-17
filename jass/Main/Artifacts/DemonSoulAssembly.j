@@ -1,4 +1,4 @@
-library DemonSoulAssembly initializer OnInit requires Artifact, Persons, FilteredItemEvents
+library DemonSoulAssembly initializer OnInit requires Artifact, Persons, FilteredItemEvents, GeneralHelpers
 
   globals
     private constant real DUMMY_X = 22700
@@ -26,7 +26,7 @@ library DemonSoulAssembly initializer OnInit requires Artifact, Persons, Filtere
       call Consume('I01L')
       set tempArtifact = Artifact.artifactsByType['I01A']
       set tempItem = tempArtifact.item
-      call UnitAddItem(triggerUnit, tempItem)
+      call UnitAddItemSafe(triggerUnit, tempItem)
       set triggerPerson = Person.ByHandle(GetOwningPlayer(GetTriggerUnit()))
       call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has assembled the Demon Soul!" )
       set tempItem = null

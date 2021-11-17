@@ -1,4 +1,4 @@
-library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral, 
+library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral, GeneralHelpers
 
   globals
     private constant integer HERO_ID = 'H00Z'
@@ -42,8 +42,7 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral,
 
     private method OnComplete takes nothing returns nothing
       call this.GiveStromgarde(this.Holder.Player)
-      call SetItemPosition(ARTIFACT_TROLKALAR.item, GetUnitX(this.questItemAnyUnitInRect.TriggerUnit), GetUnitY(this.questItemAnyUnitInRect.TriggerUnit))
-      call UnitAddItem(this.questItemAnyUnitInRect.TriggerUnit, ARTIFACT_TROLKALAR.item)
+      call UnitAddItemSafe(this.questItemAnyUnitInRect.TriggerUnit, ARTIFACT_TROLKALAR.item)
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
     endmethod
 

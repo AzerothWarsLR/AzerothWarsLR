@@ -167,5 +167,11 @@ library GeneralHelpers
       set i = i + 1
     endloop
   endfunction
+
+  //Add an item to a unit. If the unit's inventory is full, drop it on the ground near them instead.
+  function UnitAddItemSafe takes unit whichUnit, item whichItem returns nothing
+    call SetItemPosition(whichItem, GetUnitX(whichUnit), GetUnitY(whichUnit))
+    call UnitAddItem(whichUnit, whichItem)
+  endfunction
     
 endlibrary

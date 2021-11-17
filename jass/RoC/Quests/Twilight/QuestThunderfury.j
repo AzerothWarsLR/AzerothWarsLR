@@ -1,4 +1,4 @@
-library QuestThunderfury requires QuestData, Artifact, LegendTwilight
+library QuestThunderfury requires QuestData, Artifact, LegendTwilight, GeneralHelpers
 
   struct QuestThunderfury extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -10,7 +10,7 @@ library QuestThunderfury requires QuestData, Artifact, LegendTwilight
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call UnitAddItem(LEGEND_CHOGALL.Unit, ARTIFACT_THUNDERFURY.item) 
+      call UnitAddItemSafe(LEGEND_CHOGALL.Unit, ARTIFACT_THUNDERFURY.item) 
     endmethod
 
     public static method create takes nothing returns thistype

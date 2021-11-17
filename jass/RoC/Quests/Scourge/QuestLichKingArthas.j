@@ -1,4 +1,4 @@
-library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
+library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact, GeneralHelpers
 
   struct QuestLichKingArthas extends QuestData
     method operator Global takes nothing returns boolean
@@ -30,7 +30,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact
       set LEGEND_ARTHAS.DeathMessage = "The great Lich King has been destroyed. With no central mind to command them, the forces of the Undead have gone rogue."
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_LIFE))
       call SetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_ARTHAS.Unit, UNIT_STATE_MAX_MANA))
-      call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
+      call UnitAddItemSafe(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
       set this.Holder.Team = TEAM_SCOURGE
       call UnitRescue(gg_unit_h00O_2516, FACTION_SCOURGE.Player)
     endmethod

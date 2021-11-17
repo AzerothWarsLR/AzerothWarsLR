@@ -1,5 +1,5 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
-library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron
+library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron, GeneralHelpers
 
   struct QuestKingArthas extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -15,8 +15,7 @@ library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron
       call BlzSetUnitName(gg_unit_nemi_0019, "King Emeritus Terenas Menethil")
       call RemoveUnit(gg_unit_nemi_0019)
       call AddHeroXP(LEGEND_ARTHAS.Unit, 2000, true)
-      call SetItemPosition(ARTIFACT_CROWNLORDAERON.item, GetUnitX(LEGEND_ARTHAS.Unit), GetUnitY(LEGEND_ARTHAS.Unit))
-      call UnitAddItem(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
+      call UnitAddItemSafe(LEGEND_ARTHAS.Unit, ARTIFACT_CROWNLORDAERON.item)
       call LEGEND_ARTHAS.ClearUnitDependencies()
     endmethod
 

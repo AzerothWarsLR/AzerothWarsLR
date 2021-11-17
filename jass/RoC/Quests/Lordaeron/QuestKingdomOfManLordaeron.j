@@ -1,4 +1,4 @@
-library QuestKingdomOfManLordaeron requires LordaeronSetup, QuestItemControlPoint
+library QuestKingdomOfManLordaeron requires LordaeronSetup, QuestItemControlPoint, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R01N'
@@ -22,7 +22,7 @@ library QuestKingdomOfManLordaeron requires LordaeronSetup, QuestItemControlPoin
       local unit crownHolder = ARTIFACT_CROWNSTORMWIND.OwningUnit
       call RemoveItem(ARTIFACT_CROWNLORDAERON.item)
       call RemoveItem(ARTIFACT_CROWNSTORMWIND.item)
-      call UnitAddItem(crownHolder, ARTIFACT_CROWNEASTERNKINGDOMS.item)
+      call UnitAddItemSafe(crownHolder, ARTIFACT_CROWNEASTERNKINGDOMS.item)
       call ARTIFACT_CROWNLORDAERON.setStatus(ARTIFACT_STATUS_HIDDEN)
       call ARTIFACT_CROWNLORDAERON.setDescription("Melted down")
       call ARTIFACT_CROWNSTORMWIND.setStatus(ARTIFACT_STATUS_HIDDEN)

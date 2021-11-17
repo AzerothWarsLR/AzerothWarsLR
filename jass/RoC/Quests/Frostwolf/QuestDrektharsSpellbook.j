@@ -1,4 +1,4 @@
-library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect
+library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, LegendFrostwolf, LegendDruids, QuestItemControlLegend, QuestItemAnyUnitInRect, GeneralHelpers
 
   struct QuestDrektharsSpellbook extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -11,8 +11,7 @@ library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, Le
 
     private method OnComplete takes nothing returns nothing
       call ARTIFACT_DREKTHARSSPELLBOOK.setStatus(ARTIFACT_STATUS_GROUND)
-      call SetItemPosition(ARTIFACT_DREKTHARSSPELLBOOK.item, GetUnitX(LEGEND_THRALL.Unit), GetUnitY(LEGEND_THRALL.Unit))
-      call UnitAddItem(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
+      call UnitAddItemSafe(LEGEND_THRALL.Unit, ARTIFACT_DREKTHARSSPELLBOOK.item)
     endmethod
 
     public static method create takes nothing returns thistype
