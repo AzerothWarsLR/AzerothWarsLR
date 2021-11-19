@@ -8,12 +8,13 @@ library Unally initializer OnInit requires Team, Persons, Faction
 
 	private function Actions takes nothing returns nothing
    local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
+     call triggerPerson.Faction.Unally()
 
-    if AreAllianceActive == true then
-      call triggerPerson.Faction.Unally()
-    else 
-      call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You cannot unally yet")
-    endif
+   // if AreAllianceActive == true then
+   //   call triggerPerson.Faction.Unally()
+   // else 
+   //   call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You cannot unally yet")
+   // endif
   endfunction
 
 	private function OnInit takes nothing returns nothing
