@@ -32,6 +32,14 @@ library QuestItemKillUnit requires QuestItemData, Event
       endif
     endmethod
 
+    private method InitializeDescription takes nothing returns nothing
+      if IsUnitType(this.target, UNIT_TYPE_STRUCTURE) or IsUnitType(this.target, UNIT_TYPE_ANCIENT) then
+        set this.Description = "Destroy " + GetUnitName(this.target)
+        return
+      endif
+      set this.Description = "Kill " + GetUnitName(this.target)
+    endmethod
+
     private static method OnAnyUnitDeath takes nothing returns nothing
       local integer i = 0
       local thistype loopItem
@@ -50,8 +58,8 @@ library QuestItemKillUnit requires QuestItemData, Event
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, unitToKill, EVENT_UNIT_DEATH)    
       call TriggerAddAction(trig, function thistype.OnAnyUnitDeath)
-      set this.Description = "Kill " + GetUnitName(unitToKill)
       set this.target = unitToKill
+      call InitializeDescription()
       call GroupAddUnit(thistype.targets, unitToKill)
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
