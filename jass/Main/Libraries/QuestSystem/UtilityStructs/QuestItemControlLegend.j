@@ -1,4 +1,4 @@
-library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
+library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend, Environment
 
   struct QuestItemControlLegend extends QuestItemData
     private Legend target = 0
@@ -7,14 +7,14 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
     private boolean canFail
 
     method operator X takes nothing returns real
-      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target.Unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or IsPlayerNeutralHostile(GetOwningPlayer(target.Unit)) then
         return GetUnitX(target.Unit)
       endif
       return 0.
     endmethod
 
     method operator Y takes nothing returns real
-      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target.Unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+      if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) or IsPlayerNeutralHostile(GetOwningPlayer(target.Unit)) then
         return GetUnitY(target.Unit)
       endif
       return 0.

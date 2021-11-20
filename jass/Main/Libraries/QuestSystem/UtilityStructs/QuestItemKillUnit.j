@@ -1,4 +1,4 @@
-library QuestItemKillUnit requires QuestItemData, Event
+library QuestItemKillUnit requires QuestItemData, Event, Environment
 
   struct QuestItemKillUnit extends QuestItemData
     private static group targets = CreateGroup()
@@ -7,14 +7,14 @@ library QuestItemKillUnit requires QuestItemData, Event
     private static thistype array byIndex
 
     method operator X takes nothing returns real
-      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or IsPlayerNeutralHostile(GetOwningPlayer(target)) then
         return GetUnitX(target)
       endif
       return 0.
     endmethod
 
     method operator Y takes nothing returns real
-      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or GetOwningPlayer(target) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+      if IsUnitType(target, UNIT_TYPE_STRUCTURE) or IsPlayerNeutralHostile(GetOwningPlayer(target)) then
         return GetUnitY(target)
       endif
       return 0.

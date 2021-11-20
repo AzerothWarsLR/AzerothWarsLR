@@ -9,6 +9,14 @@ library Environment initializer OnInit
   native GetUnitGoldCost takes integer unitid returns integer
   native GetUnitWoodCost takes integer unitid returns integer
 
+  //Player(21) is used as a hostile computer player in this map. Use this to check if a player is neutral hostile or this pseudo-player.
+  function IsPlayerNeutralHostile takes player whichPlayer returns boolean
+    if whichPlayer == Player(21) or whichPlayer == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
+      return true
+    endif
+    return false
+  endfunction
+
   function GetPositionZ takes real x, real y returns real
     call SetUnitX(PosUnit,x)
     call SetUnitY(PosUnit,y)
