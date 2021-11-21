@@ -4,6 +4,7 @@ library LegendGilneas initializer OnInit requires Legend
     Legend LEGEND_TESS
     Legend LEGEND_GENN
     Legend LEGEND_DARIUS
+    Legend LEGEND_GOLDRINN
     
     Legend LEGEND_LIGHTDAWN
     Legend LEGEND_GILNEASCASTLE
@@ -13,6 +14,10 @@ library LegendGilneas initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_TESS = Legend.create()
     set LEGEND_TESS.Unit = gg_unit_Ewar_0424
+
+    set LEGEND_GOLDRINN = Legend.create()
+    set LEGEND_GOLDRINN.UnitType = 'E0E1'
+    set LEGEND_GOLDRINN.StartingXP = 8800
 
     set LEGEND_GENN = Legend.create()
     set LEGEND_GENN.Unit = gg_unit_Hhkl_1500

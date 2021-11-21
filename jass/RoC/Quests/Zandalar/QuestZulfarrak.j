@@ -7,11 +7,11 @@ library QuestZulfarrak requires LegendNeutral
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + ", and Gahz'rilla awakens from its slumber."
+      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + ", you can train Storm Wyrms and Gahz'rilla awakens from its slumber."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'farrak and you can summon the hero Gahz'rilla from the Altar of Conquerors"
+      return "Control of Zul'farrak, enable to train Storm Wyrm and you can summon the hero Gahz'rilla from the Altar of Conquerors"
     endmethod
 
     private method OnComplete takes nothing returns nothing

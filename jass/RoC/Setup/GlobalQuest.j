@@ -16,6 +16,9 @@
     QuestData FALLEN_GUARDIAN
     QuestData NEW_GUARDIAN
     QuestData THE_NEXUS
+
+    QuestData GOLDRINNELVE_PATH
+    QuestData GOLDRINNHUMAN_PATH
   endglobals
 
 

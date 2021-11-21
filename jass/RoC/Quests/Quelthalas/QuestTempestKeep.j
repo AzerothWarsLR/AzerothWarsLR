@@ -53,13 +53,13 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call FACTION_QUELTHALAS.ModObjectLimit('n02F',6)               //Felblood Warlock
       call FACTION_QUELTHALAS.ModObjectLimit('e01B',6)               //Arcane Anihilator
 
-      call SetUnitOwner(LEGEND_KAEL.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
-      call SetUnitOwner(LEGEND_LORTHEMAR.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
-      call this.Holder.obliterate()
-      call SetUnitOwner(LEGEND_KAEL.Unit, FACTION_QUELTHALAS.Player, true)
-      call SetUnitOwner(LEGEND_LORTHEMAR.Unit, FACTION_QUELTHALAS.Player, true)
+      call FACTION_QUELTHALAS.ModObjectLimit('H00Q',-UNLIMITED)       //Anasterian
+      call FACTION_QUELTHALAS.ModObjectLimit('Hvwd',-UNLIMITED)       //sylvanas
+      call RemoveUnit(LEGEND_ANASTERIAN.Unit)
+      call RemoveUnit(LEGEND_SYLVANAS.Unit)
+
       call SetUnitPosition(LEGEND_KAEL.Unit, 4067, -21695)
-      call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 2067, -19395)
+      call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 20000, 18584)
       call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
       call this.GiveTempestKeep(this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA

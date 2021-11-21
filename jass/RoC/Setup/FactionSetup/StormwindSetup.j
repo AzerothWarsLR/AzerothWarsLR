@@ -53,7 +53,6 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     call f.ModObjectLimit('h060', 3)           //Arathor Flagship
 
 
-    call f.ModObjectLimit('h03W', 1)           //Danath
 
     call f.ModObjectLimit('H00R', 1)           //Varian
     call f.ModObjectLimit('H017', 1)           //Bolvar

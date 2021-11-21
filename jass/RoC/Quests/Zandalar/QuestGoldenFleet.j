@@ -6,11 +6,11 @@ library QuestGoldenFleet requires QuestData
 
   struct QuestGoldenFleet extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Rastakhan is now trainable"
+      return "Rastakhan is now trainable and Direhorn are available"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Rastakhan is trainable at the altar"
+      return "Rastakhan is trainable at the altar and Direhorns are trainable"
     endmethod
 
     private method OnComplete takes nothing returns nothing
