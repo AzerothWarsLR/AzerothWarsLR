@@ -52,6 +52,7 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
       if controlPoint != 0 and controlPoint == BlackEmpirePortal.Objective.NearbyControlPoint then
         set thistype.byCaster[GetUnitId(caster)] = thistype.create(caster, controlPoint, DURATION)
         call SetUnitInvulnerable(caster, false)
+        call SetUnitOwner(this.obeliskUnit, GetOwningPlayer(this.caster), true)
       else
         call IssueImmediateOrder(caster, "stop")
       endif
