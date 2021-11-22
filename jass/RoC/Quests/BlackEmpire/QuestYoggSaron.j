@@ -18,7 +18,7 @@ library QuestYoggSaron requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Fiend of a Thousand Faces", "Yogg-Saron is still imprisonned in Northrend, he needs to be freed and join the Black Empire", "ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
+      local thistype this = thistype.allocate("Fiend of a Thousand Faces", "Yogg-Saron was imprisoned beneath Northrend by the Titans countless millenia ago. ", "ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n053')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02S')))

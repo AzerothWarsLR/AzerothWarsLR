@@ -1,92 +1,58 @@
-library QuestThirdObelisk requires QuestData, QuestItemKillUnit
+library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R07K'   //This research is given when the quest is completed
-    private timer NyalothaFailTimer
-    private boolean QuestFailed = false
   endglobals
 
-      private function OnTimeElapsed takes nothing returns nothing
-      if QuestFailed == true then
-        call RemoveDestructable( gg_dest_ATg2_35871 )
-        call RemoveDestructable( gg_dest_ATg1_35873 )
-        call RemoveDestructable( gg_dest_ATg3_35869 )
-        call RemoveDestructable( gg_dest_ATg3_35872 )
-        call GroupClear( udg_BlackEmpirePortals )
-        call WaygateActivateBJ( true, gg_unit_h03V_0257 )
-        call WaygateSetDestinationLocBJ( gg_unit_h03V_0257, GetRectCenter(gg_rct_NyTanaris) )
-
-        call WaygateActivateBJ( true, gg_unit_h03V_1110 )
-        call WaygateSetDestinationLocBJ( gg_unit_h03V_1110, GetRectCenter(gg_rct_NyNorth) )
-
-        call WaygateActivateBJ( true, gg_unit_h03V_0396 )
-        call WaygateSetDestinationLocBJ( gg_unit_h03V_0396, GetRectCenter(gg_rct_NyHighland) )
-
-        call WaygateActivateBJ( true, gg_unit_n07F_1101 )
-        call WaygateSetDestinationLocBJ( gg_unit_n07F_1101, GetRectCenter(gg_rct_Ny_Ulduar_Interior) )
-
-        call WaygateActivateBJ( true, gg_unit_n07F_1001 )
-        call WaygateSetDestinationLocBJ( gg_unit_n07F_1001, GetRectCenter(gg_rct_Ny_Silithus_Interior) )
-
-        call WaygateActivateBJ( true, gg_unit_n07F_1069 )
-        call WaygateSetDestinationLocBJ( gg_unit_n07F_1069, GetRectCenter(gg_rct_Ny_Twilight_Highlands_Interior) )
-
-      endif
-    endfunction
-
   struct QuestThirdObelisk extends QuestData
-
     method operator Global takes nothing returns boolean
       return true
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Ny'alotha has been linked to the world of Azeroth permanently."
+      return "The Merging of Realities has come to pass. The Nya'lothan portals to Storm Peaks, Northern Highlands, and Tanaris have been permanently opened."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Ny'alotha portals will be permanently opened and the Old God Yogg'saron will be available to be freed"
+      return "The Nya'lothan portals to Storm Peaks, Northern Highlands, and Tanaris will be permanently opened"
     endmethod
 
-    private method OnFail takes nothing returns nothing
-      set QuestFailed = true
+    //Opens the central portals in Nyalotha permanently.
+    private method OpenPortals takes nothing returns nothing
+      call this.Holder.ModObjectLimit('u02E', -UNLIMITED) //Herald
+      call this.Holder.ModObjectLimit(QUEST_RESEARCH_ID, 1)
+      call BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.Open()
+      set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.IsLocked = true
+      call BLACKEMPIREPORTAL_TANARIS.Open()
+      set BLACKEMPIREPORTAL_TANARIS.IsLocked = true
+      call BLACKEMPIREPORTAL_NORTHREND.Open()
+      set BLACKEMPIREPORTAL_NORTHREND.IsLocked = true
+      call RemoveDestructable(gg_dest_ATg2_35871)
+      call RemoveDestructable(gg_dest_ATg1_35873)
+      call RemoveDestructable(gg_dest_ATg3_35869)
+      call RemoveDestructable(gg_dest_ATg3_35872)
+      call RemoveUnit(Herald.Instance.unit)
+      call BlackEmpirePortal.GoToNext()
+      if GetLocalPlayer() == this.Holder.Player then
+        call SetCameraPosition(-25528, -1979)
+      endif
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      
-      call GroupClear( udg_BlackEmpirePortals )
-      call WaygateActivateBJ( true, gg_unit_h03V_0257 )
-      call WaygateSetDestinationLocBJ( gg_unit_h03V_0257, GetRectCenter(gg_rct_NyTanaris) )
+      call PlayThematicMusicBJ("war3mapImported\\BlackEmpireTheme.mp3")
+      call this.OpenPortals()
+    endmethod
 
-      call WaygateActivateBJ( true, gg_unit_h03V_1110 )
-      call WaygateSetDestinationLocBJ( gg_unit_h03V_1110, GetRectCenter(gg_rct_NyNorth) )
-
-      call WaygateActivateBJ( true, gg_unit_h03V_0396 )
-      call WaygateSetDestinationLocBJ( gg_unit_h03V_0396, GetRectCenter(gg_rct_NyHighland) )
-
-      call WaygateActivateBJ( true, gg_unit_n07F_1101 )
-      call WaygateSetDestinationLocBJ( gg_unit_n07F_1101, GetRectCenter(gg_rct_Ny_Ulduar_Interior) )
-
-      call WaygateActivateBJ( true, gg_unit_n07F_1001 )
-      call WaygateSetDestinationLocBJ( gg_unit_n07F_1001, GetRectCenter(gg_rct_Ny_Silithus_Interior) )
-
-      call WaygateActivateBJ( true, gg_unit_n07F_1069 )
-      call WaygateSetDestinationLocBJ( gg_unit_n07F_1069, GetRectCenter(gg_rct_Ny_Twilight_Highlands_Interior) )
-
-      call WaygateActivateBJ( false, gg_unit_h03V_0183 )
-
-      call FACTION_BLACKEMPIRE.ModObjectLimit('u02E', -UNLIMITED)           //Herald
-      call PlayThematicMusicBJ( "war3mapImported\\BlackEmpireTheme.mp3" )
+    private method OnFail takes nothing returns nothing
+      call this.OpenPortals()
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Merging of Realities", "The Third Obelisk will finally complete the merging of Ny'alotha with Azeroth, it must be summoned in Tanaris", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
-      call this.AddQuestItem(QuestItemBuild.create('n0BA', 3))
-      call this.AddQuestItem(QuestItemSelfExists.create())
-      set this.ResearchId = QUEST_RESEARCH_ID
-
-      set NyalothaFailTimer = CreateTimer()
-      call TimerStart(NyalothaFailTimer, 960, false, function OnTimeElapsed)
+      local thistype this = thistype.allocate("Merging of Realities", "Reality frays at the seams as madness threatents to overtake it. Once an Obelisk has been established at Tanaris, the mirror worlds of Azeroth and Ny'alotha will finally be one, and the Black Empire will be unleashed.", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n02S')))
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n04V')))
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n020')))
+      call this.AddQuestItem(QuestItemExpire.create(960))
       return this
     endmethod
   endstruct

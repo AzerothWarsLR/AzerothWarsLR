@@ -1,42 +1,25 @@
-library QuestFirstObelisk requires QuestData, QuestItemKillUnit
+library QuestFirstObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal, Herald
 
   struct QuestFirstObelisk extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The first Obelisk has been set. The next one will be summoned in the Twilight Highlands"
+      return "The first Obelisk has been summoned, but Ny'alotha's connection to Azeroth is not yet stable. More Obelisks must be erected."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The first Obelisk will be placed in Storm Peaks"
-    endmethod
-
-    private method GiveNyalotha takes player whichPlayer returns nothing
-      local unit u
-
-      set u = FirstOfGroup(udg_NyalothaGroup1)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(udg_NyalothaGroup1, u)
-        set u = FirstOfGroup(udg_NyalothaGroup1)
-      endloop
-
-      //Cleanup
-      call DestroyGroup(udg_NyalothaGroup1)
+      return "Unlock the northern zone of Nya'lotha, and the next Herald you train will open a temporary portal to Northern Highlands."
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GiveNyalotha(this.Holder.Player)
-      call RemoveDestructable( gg_dest_ATg1_35873 )
-      call RemoveDestructable( gg_dest_ATg3_35872 )
+      call RescueUnitsInGroup(udg_NyalothaGroup1, this.Holder.Player)
+      call RemoveDestructable(gg_dest_ATg1_35873)
+      call RemoveDestructable(gg_dest_ATg3_35872)
+      call RemoveUnit(Herald.Instance.unit)
+      call BlackEmpirePortal.GoToNext()
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The First Obelisk", "The twisted reality of Ny'alotha is disconnected from Azeroth. 3 Obelisks will be needed to link the 2 realities together. The first Obelisk will be planted in Northrend", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create('n0AS', 'n0AR'))
-      call this.AddQuestItem(QuestItemTrain.create('u02E','n0B6', 1))
-      call this.AddQuestItem(QuestItemBuild.create('n0BA', 1))
+      local thistype this = thistype.allocate("The First Obelisk", "The twisted reality of Ny'alotha is a mere shadow of Azeroth, but that will soon change. The first step in merging the two realities is to establish an Obelisk in Northrend.", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n02S')))
       return this
     endmethod
   endstruct

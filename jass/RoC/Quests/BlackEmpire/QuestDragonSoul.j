@@ -14,7 +14,7 @@ library QuestDragonSoul requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Siege of Wyrmrest Temple", "Yor'sahj the Unsleeping's mission is to destroy the Wyrmrest temple, assist him and he will join the Black Empire", "ReplaceableTextures\\CommandButtons\\BTNHeroMastermind.blp")
+      local thistype this = thistype.allocate("Siege of Wyrmrest Temple", "Yor'sahj the Unsleeping's mission is to destroy the Wyrmrest temple, assist him and he will join the Black Empire", "ReplaceableTextures\\CommandButtons\\BTNHeroMastermind.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02Q')))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SARAGOSA))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_VAELASTRASZ))

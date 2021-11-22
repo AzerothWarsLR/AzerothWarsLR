@@ -107,6 +107,19 @@ library GeneralHelpers
     call SetUnitOwner(whichUnit, whichPlayer, true)
   endfunction
 
+  function RescueUnitsInGroup takes group whichGroup, player whichPlayer returns nothing
+    local group tempGroup = CreateGroup()
+    local unit u
+    call BlzGroupAddGroupFast(whichGroup, tempGroup)
+    loop
+      set u = FirstOfGroup(tempGroup)
+      exitwhen u == null
+      call UnitRescue(u, whichPlayer)
+      call GroupRemoveUnit(tempGroup, u)
+    endloop
+    call DestroyGroup(tempGroup)
+  endfunction
+
   function RescueHostileUnitsInRect takes rect whichRect, player whichPlayer returns nothing
     local group tempGroup = CreateGroup()
     local unit u
