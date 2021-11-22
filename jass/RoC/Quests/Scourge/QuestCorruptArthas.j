@@ -23,7 +23,6 @@ library QuestCorruptArthas requires GeneralHelpers, LegendLordaeron, LordaeronSe
       set LEGEND_ARTHAS.UnitType = 'Uear'
       call LEGEND_ARTHAS.ClearUnitDependencies()
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call SetPlayerTechResearched(FACTION_DALARAN.Player, 'R079', 1)
     endmethod
 
     private method OnAdd takes nothing returns nothing

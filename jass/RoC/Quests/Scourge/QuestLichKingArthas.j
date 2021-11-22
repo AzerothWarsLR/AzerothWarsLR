@@ -39,6 +39,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact, GeneralH
       local thistype this = thistype.allocate("The Ascension", "From within the depths of the Frozen Throne, the Lich King Ner'zhul cries out for his champion. Release the Helm of Domination from its confines and merge its power with that of the Scourge's greatest Death Knight.", "ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, false))
       call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_ARTHAS, 12))
+      call this.AddQuestItem(QuestItemResearch.create('R07X', 'u000'))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_LichKing, "Icecrown Citadel"))
       return this
     endmethod
