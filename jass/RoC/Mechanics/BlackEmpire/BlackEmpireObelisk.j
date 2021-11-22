@@ -4,6 +4,9 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
     private constant integer ABIL_ID = 'A06Z'
     private constant real DURATION = 10.
     private constant integer OBELISK_ID = 'n0BA'
+    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
+    private constant real PROGRESS_SCALE = 1.5
+    private constant real PROGRESS_HEIGHT = 225.
 
     Event BlackEmpireObeliskSummoned
   endglobals
@@ -16,14 +19,16 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
     private real elapsedDuration = 0.
     private ControlPoint controlPoint
     private unit obeliskUnit
+    private effect sfxProgress = null
     static thistype triggerObelisk
 
-    method operator X takes nothing returns real
-      return GetUnitX(controlPoint.Unit)
-    endmethod
-
-    method operator Y takes nothing returns real
-      return GetUnitY(controlPoint.Unit)
+    private method destroy takes nothing returns nothing
+      call BlzSetSpecialEffectPosition(this.sfxProgress, -100000, -100000, 0)    //Has no death animation so needs to be moved off the map
+      call DestroyEffect(this.sfxProgress)
+      set this.obeliskUnit = null
+      set this.sfxProgress = null
+      call this.stopPeriodic()
+      call this.deallocate()
     endmethod
 
     public method operator ControlPoint takes nothing returns ControlPoint
@@ -37,8 +42,6 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
       else
         call RemoveUnit(this.obeliskUnit)
       endif
-      set this.obeliskUnit = null
-      call this.stopPeriodic()
       call this.destroy()
     endmethod
 
@@ -52,7 +55,7 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
       if controlPoint != 0 and controlPoint == BlackEmpirePortal.Objective.NearbyControlPoint then
         set thistype.byCaster[GetUnitId(caster)] = thistype.create(caster, controlPoint, DURATION)
         call SetUnitInvulnerable(caster, false)
-        call SetUnitOwner(this.obeliskUnit, GetOwningPlayer(this.caster), true)
+        call SetUnitOwner(GetSpellTargetUnit(), GetOwningPlayer(caster), true)
       else
         call IssueImmediateOrder(caster, "stop")
       endif
@@ -71,7 +74,14 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
       set this.controlPoint = controlPoint
       set this.elapsedDuration = 0
       set this.maxDuration = duration
-      set this.obeliskUnit = CreateUnit(GetOwningPlayer(caster), OBELISK_ID, GetUnitX(controlPoint.u), GetUnitY(controlPoint.u), 270)
+      set this.obeliskUnit = CreateUnit(GetOwningPlayer(caster), OBELISK_ID, GetUnitX(controlPoint.Unit), GetUnitY(controlPoint.Unit), 270)
+
+      set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(controlPoint.Unit), GetUnitY(controlPoint.Unit))
+      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
+      call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
+      call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
+      call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT)
+
       call this.startPeriodic()      
       return this
     endmethod
