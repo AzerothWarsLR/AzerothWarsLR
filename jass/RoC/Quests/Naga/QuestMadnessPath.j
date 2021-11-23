@@ -1,4 +1,4 @@
-library QuestMadnessPath requires QuestData, NagaSetup
+library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R065'         //This research is required to complete the quest
@@ -6,7 +6,6 @@ library QuestMadnessPath requires QuestData, NagaSetup
   endglobals
 
   struct QuestMadnessPath extends QuestData
-
     method operator Global takes nothing returns boolean
       return true
     endmethod
@@ -16,52 +15,45 @@ library QuestMadnessPath requires QuestData, NagaSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Nazjatar and a portal is opened to Ny'alotha. Join the Old Gods team"
+      return "You gain control of all units in Nazjatar, a portal is opened to Ny'alotha, and you join the Old Gods team"
     endmethod
 
-    private method GrantNazjatar takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_NagaUnlock2, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
+    private method GrantNazjatar takes nothing returns nothing
+      call SetUnitOwner(gg_unit_n07E_0958, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
+      call ShowUnit(gg_unit_n07E_0958, true)
+      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
     endmethod
 
-    private method OnComplete takes nothing returns nothing
-      call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
-      call FACTION_NAGA.ModObjectLimit('n08V', UNLIMITED)   //Depth Void Portal
-      call FACTION_NAGA.ModObjectLimit('h01Q', 4)   //Immortal Guardian
-      call LEGEND_AZSHARA.Spawn(Holder.Player, GetRectCenterX(gg_rct_InstanceNazjatar), GetRectCenterY(gg_rct_InstanceNazjatar), 270)
-      call SetHeroLevel(LEGEND_AZSHARA.Unit, 9, false)
-      call SetUnitPositionLoc( LEGEND_AZSHARA.Unit, GetRectCenter(gg_rct_NzothIni) )
-      call SetUnitPositionLoc( LEGEND_AZSHARA.Unit, GetRectCenter(gg_rct_IllidanNaga1) )
-      set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
-      set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
-      call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
-      call this.GrantNazjatar(this.Holder.Player)
-      call WaygateActivateBJ( true, gg_unit_h03V_0183 )
-      call WaygateSetDestinationLocBJ( gg_unit_h03V_0183, GetRectCenter(gg_rct_NazjatarExit3) )
-      call WaygateActivateBJ( true, gg_unit_n07E_0958 )
-      call ShowUnitShow( gg_unit_n07E_0958  )
-      call WaygateSetDestinationLocBJ( gg_unit_n07E_0958, GetRectCenter(gg_rct_Ny_Nazjatar_Interior) )
+    private method RenameIllidanFaction takes nothing returns nothing
       set this.Holder.Team = TEAM_OLDGOD
       set this.Holder.Name = "Nazjatar"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp"
+    endmethod
+
+    private method FailQuests takes nothing returns nothing
+      set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
+      set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
+    endmethod
+
+    private method TransferHeroes takes nothing returns nothing
+      call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
+      call LEGEND_AZSHARA.Spawn(Holder.Player, GetRectCenterX(gg_rct_InstanceNazjatar), GetRectCenterY(gg_rct_InstanceNazjatar), 270)
+      call SetHeroLevel(LEGEND_AZSHARA.Unit, 9, false)
+      call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
+    endmethod
+
+    private method AdjustTechtree takes nothing returns nothing
+      call FACTION_NAGA.ModObjectLimit('n08V', UNLIMITED) //Depth Void Portal
+      call FACTION_NAGA.ModObjectLimit('h01Q', 4) //Immortal Guardian
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+      call this.GrantNazjatar()
+      call this.AdjustTechtree()
+      call this.FailQuests()
+      call this.TransferHeroes()
+      set BLACKEMPIREPORTAL_ILLIDAN.PortalState = BLACKEMPIREPORTALSTATE_OPEN
+      call this.RenameIllidanFaction()
     endmethod
 
     public static method create takes nothing returns thistype
