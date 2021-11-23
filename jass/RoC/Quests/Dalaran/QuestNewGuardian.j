@@ -1,4 +1,4 @@
-library QuestNewGuardian requires LegendDalaran, Display, 
+library QuestNewGuardian requires LegendDalaran, Display, GeneralHelpers
 
   struct QuestNewGuardian extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -16,7 +16,7 @@ library QuestNewGuardian requires LegendDalaran, Display,
       call BlzSetUnitName(whichUnit, "Guardian of Tirisfal")
       call UnitAddAbility(whichUnit, 'A0BX') //Guardian of Tirisfal Spellbook
       call BlzSetUnitWeaponIntegerField(whichUnit, UNIT_WEAPON_IF_ATTACK_ATTACK_TYPE, 0, 5) //Chaos
-      call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + 20, true)
+      call AddHeroAttributes(whichUnit, 0, 0, 20)
       call LEGEND_JAINA.ClearUnitDependencies()
       set LEGEND_JAINA.PermaDies = false
       set THE_NEXUS.Progress = QUEST_PROGRESS_FAILED

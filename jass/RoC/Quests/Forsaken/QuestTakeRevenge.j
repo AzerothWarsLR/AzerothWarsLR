@@ -1,4 +1,4 @@
-library QuestTakeRevenge requires QuestData, ForsakenSetup
+library QuestTakeRevenge requires QuestData, ForsakenSetup, GeneralHelpers
 
   struct QuestTakeRevenge extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -14,8 +14,7 @@ library QuestTakeRevenge requires QuestData, ForsakenSetup
       call BlzSetUnitName(whichUnit, "Banshee Queen")
       call AddSpecialEffectTarget("war3mapImported\\SoulArmor.mdx", whichUnit, "chest")
       call BlzSetUnitWeaponIntegerField(whichUnit, UNIT_WEAPON_IF_ATTACK_ATTACK_TYPE, 0, 5) //Chaos
-      call SetHeroInt(whichUnit, GetHeroInt(whichUnit, false) + 20, true)
-      call SetHeroStr(whichUnit, GetHeroStr(whichUnit, false) + 20, true)
+      call AddHeroAttributes(whichUnit, 20, 0, 20)
       call LEGEND_SYLVANASV.ClearUnitDependencies()
     endmethod
 
