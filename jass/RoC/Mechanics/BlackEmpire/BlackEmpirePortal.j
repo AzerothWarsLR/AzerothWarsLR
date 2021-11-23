@@ -1,5 +1,11 @@
 library BlackEmpirePortal requires GameSetup
 
+  globals
+    constant integer BLACKEMPIREPORTALSTATE_CLOSED = 0
+    constant integer BLACKEMPIREPORTALSTATE_EXITONLY = 1
+    constant integer BLACKEMPIREPORTALSTATE_OPEN = 2
+  endglobals
+
   struct BlackEmpirePortal
     private static thistype array byIndex
     private static integer count = 0
@@ -11,11 +17,9 @@ library BlackEmpirePortal requires GameSetup
     private unit exteriorWaygate
     private destructable interiorPortal
     private ControlPoint nearbyControlPoint //This Control Point is the closest one to the exterior Waygate
-
-    private boolean isOpen = true
-    private boolean isLocked = false
     private BlackEmpirePortal next //The portal that needs to be opened after this one.
     private string name
+    private integer portalState
 
     public method operator NearbyControlPoint takes nothing returns ControlPoint
       return this.nearbyControlPoint
@@ -29,40 +33,36 @@ library BlackEmpirePortal requires GameSetup
       return this.name
     endmethod
 
-    public method operator IsOpen takes nothing returns boolean
-      return this.isOpen
+    public method operator PortalState takes nothing returns integer
+      return this.portalState
     endmethod
 
-    public method operator IsLocked takes nothing returns boolean
-      return this.isLocked
-    endmethod
+    public method operator PortalState= takes integer value returns nothing
+      set this.portalState = value
 
-    public method operator IsLocked= takes boolean value returns nothing
-      set this.isLocked = value
-    endmethod
-
-    public method Open takes nothing returns nothing
-      if this.isOpen == true or this.isLocked == true then
-        return
+      if this.portalState == BLACKEMPIREPORTALSTATE_CLOSED then
+        call WaygateActivate(interiorWaygate, false)
+        call WaygateActivate(exteriorWaygate, false)
+        call SetDestructableAnimation(this.interiorPortal, "death")
+        call SetUnitAnimation(this.exteriorWaygate, "death")
+        call SetUnitVertexColor(this.interiorWaygate, 255, 50, 50, 255)
       endif
-      set this.isOpen = true
-      call WaygateActivate(interiorWaygate, true)
-      call WaygateActivate(exteriorWaygate, true)
-      call SetDestructableAnimation(this.interiorPortal, "birth")
-      call SetUnitAnimation(this.exteriorWaygate, "birth")
-      call SetUnitVertexColor(this.interiorWaygate, 255, 255, 255, 255)
-    endmethod
 
-    public method Close takes nothing returns nothing
-      if this.isOpen == false or this.isLocked == true then
-        return
+      if this.portalState == BLACKEMPIREPORTALSTATE_EXITONLY then
+        call WaygateActivate(interiorWaygate, true)
+        call WaygateActivate(exteriorWaygate, false)
+        call SetDestructableAnimation(this.interiorPortal, "birth")
+        call SetUnitAnimation(this.exteriorWaygate, "death")
+        call SetUnitVertexColor(this.interiorWaygate, 150, 150, 255, 230)
       endif
-      set this.isOpen = false
-      call WaygateActivate(interiorWaygate, false)
-      call WaygateActivate(exteriorWaygate, false)
-      call SetDestructableAnimation(this.interiorPortal, "death")
-      call SetUnitAnimation(this.exteriorWaygate, "death")
-      call SetUnitVertexColor(this.interiorWaygate, 255, 50, 50, 255)
+
+      if this.portalState == BLACKEMPIREPORTALSTATE_OPEN then
+        call WaygateActivate(interiorWaygate, true)
+        call WaygateActivate(exteriorWaygate, true)
+        call SetDestructableAnimation(this.interiorPortal, "birth")
+        call SetUnitAnimation(this.exteriorWaygate, "birth")
+        call SetUnitVertexColor(this.interiorWaygate, 255, 255, 255, 255)
+      endif
     endmethod
 
     private method SetupWaygateDestinations takes nothing returns nothing
@@ -100,7 +100,7 @@ library BlackEmpirePortal requires GameSetup
       set thistype.count = thistype.count + 1
 
       call FogModifierStart(CreateFogModifierRadius(Player(14), FOG_OF_WAR_VISIBLE, GetUnitX(exteriorWaygate), GetUnitY(exteriorWaygate), 700, true, true))
-      call this.Close()
+      set this.PortalState = BLACKEMPIREPORTALSTATE_CLOSED
       return this
     endmethod
   endstruct

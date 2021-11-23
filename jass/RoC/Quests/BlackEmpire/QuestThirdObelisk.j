@@ -21,12 +21,9 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
     private method OpenPortals takes nothing returns nothing
       call this.Holder.ModObjectLimit('u02E', -UNLIMITED) //Herald
       call this.Holder.ModObjectLimit(QUEST_RESEARCH_ID, 1)
-      call BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.Open()
-      set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.IsLocked = true
-      call BLACKEMPIREPORTAL_TANARIS.Open()
-      set BLACKEMPIREPORTAL_TANARIS.IsLocked = true
-      call BLACKEMPIREPORTAL_NORTHREND.Open()
-      set BLACKEMPIREPORTAL_NORTHREND.IsLocked = true
+      set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.PortalState = BLACKEMPIREPORTALSTATE_OPEN
+      set BLACKEMPIREPORTAL_TANARIS.PortalState = BLACKEMPIREPORTALSTATE_OPEN
+      set BLACKEMPIREPORTAL_NORTHREND.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       call RemoveDestructable(gg_dest_ATg2_35871)
       call RemoveDestructable(gg_dest_ATg1_35873)
       call RemoveDestructable(gg_dest_ATg3_35869)

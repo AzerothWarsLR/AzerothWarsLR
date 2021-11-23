@@ -14,13 +14,15 @@ library Herald requires BlackEmpirePortalSetup, AIDS, ReturnToNyalotha
     endmethod
 
     private method UnlinkToPortal takes nothing returns nothing
-      call this.linkedPortal.Close()
+      if this.linkedPortal.PortalState == BLACKEMPIREPORTALSTATE_EXITONLY then
+        set this.linkedPortal.PortalState = BLACKEMPIREPORTALSTATE_CLOSED
+      endif
       set this.linkedPortal = 0
     endmethod
 
     private method LinkToPortal takes BlackEmpirePortal whichPortal returns nothing
       set this.linkedPortal = whichPortal
-      call this.linkedPortal.Open()
+      set this.linkedPortal.PortalState = BLACKEMPIREPORTALSTATE_EXITONLY
     endmethod
 
     private method AIDS_onCreate takes nothing returns nothing
