@@ -1,7 +1,8 @@
-library Herald requires BlackEmpirePortalSetup, AIDS, ReturnToNyalotha
+library Herald initializer OnInit requires BlackEmpirePortalSetup, AIDS, ReturnToNyalotha, FilteredDeathEvents
 
   globals
     private constant integer HERALD_ID = 'u02E'
+    private constant string DEATH_EFFECT = "Abilities\\Spells\\Items\\AIre\\AIreTarget.mdl"
   endglobals
 
   struct Herald extends array
@@ -51,5 +52,14 @@ library Herald requires BlackEmpirePortalSetup, AIDS, ReturnToNyalotha
       return false
     endmethod
   endstruct
+
+  private function OnHeraldDeath takes nothing returns nothing
+    call DestroyEffect(AddSpecialEffect(DEATH_EFFECT, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit())))
+    call RemoveUnit(GetTriggerUnit())
+  endfunction
+
+  private function OnInit takes nothing returns nothing
+    call RegisterUnitTypeDiesAction(HERALD_ID, function OnHeraldDeath)
+  endfunction
 
 endlibrary
