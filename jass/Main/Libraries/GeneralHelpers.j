@@ -102,9 +102,14 @@ library GeneralHelpers
   endfunction
 
   function UnitRescue takes unit whichUnit, player whichPlayer returns nothing
+    //If the unit costs 10 food, that means it should be owned by neutral passive instead of the rescuing player.
+    if GetUnitFoodUsed(whichUnit) == 10 then
+      call SetUnitOwner(whichUnit, Player(PLAYER_NEUTRAL_PASSIVE), true)
+    else
+      call SetUnitOwner(whichUnit, whichPlayer, true)
+    endif
     call ShowUnit(whichUnit, true)
     call SetUnitInvulnerable(whichUnit, false)
-    call SetUnitOwner(whichUnit, whichPlayer, true)
   endfunction
 
   function RescueUnitsInGroup takes group whichGroup, player whichPlayer returns nothing
