@@ -20,7 +20,7 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
     //Opens the central portals in Nyalotha permanently.
     private method OpenPortals takes nothing returns nothing
       call this.Holder.ModObjectLimit('u02E', -UNLIMITED) //Herald
-      call this.Holder.ModObjectLimit(QUEST_RESEARCH_ID, 1)
+      call this.Holder.SetObjectLevel(QUEST_RESEARCH_ID, 1)
       set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       set BLACKEMPIREPORTAL_TANARIS.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       set BLACKEMPIREPORTAL_NORTHREND.PortalState = BLACKEMPIREPORTALSTATE_OPEN
