@@ -6,6 +6,8 @@ library BlackEmpirePortal requires GameSetup
     private static thistype objective //The portal that needs to be opened now
 
     private unit interiorWaygate
+    private real interiorDestinationX
+    private real interiorDestinationY
     private unit exteriorWaygate
     private destructable interiorPortal
     private ControlPoint nearbyControlPoint //This Control Point is the closest one to the exterior Waygate
@@ -65,7 +67,7 @@ library BlackEmpirePortal requires GameSetup
 
     private method SetupWaygateDestinations takes nothing returns nothing
       call WaygateSetDestination(interiorWaygate, GetUnitX(exteriorWaygate), GetUnitY(exteriorWaygate))
-      call WaygateSetDestination(exteriorWaygate, GetUnitX(interiorWaygate), GetUnitY(interiorWaygate))
+      call WaygateSetDestination(exteriorWaygate, interiorDestinationX, interiorDestinationY)
     endmethod
 
     public method operator Next= takes BlackEmpirePortal value returns nothing
@@ -85,9 +87,11 @@ library BlackEmpirePortal requires GameSetup
       return thistype.objective
     endmethod
 
-    public static method create takes unit interiorWaygate, destructable interiorPortal, unit exteriorWaygate, string name returns thistype
+    public static method create takes unit interiorWaygate, destructable interiorPortal, real interiorDestinationX, real interiorDestinationY, unit exteriorWaygate, string name returns thistype
       local thistype this = thistype.allocate()
       set this.interiorWaygate = interiorWaygate
+      set this.interiorDestinationX = interiorDestinationX
+      set this.interiorDestinationY = interiorDestinationY
       set this.exteriorWaygate = exteriorWaygate
       set this.interiorPortal = interiorPortal
       set this.name = name
