@@ -10,32 +10,10 @@ library QuestMaievOutland requires Persons, QuelthalasSetup, GeneralHelpers
       return "Control of Maiev's Outland outpost and moves Maiev to Outland"
     endmethod    
 
-    private method GiveMaievOutland takes player whichPlayer returns nothing
-      local unit u
-
-      //Transfer all Neutral Passive units in MaievOutland to one of the above factions
-      set u = FirstOfGroup(udg_MaievUnlockOutland)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(udg_MaievUnlockOutland, u)
-        set u = FirstOfGroup(udg_MaievUnlockOutland)
-      endloop
-
-      //Cleanup
-      call DestroyGroup(udg_MaievUnlockOutland)
-    endmethod
-
     private method OnComplete takes nothing returns nothing
       call SetUnitPosition(LEGEND_MAIEV.Unit, -5252, -27597)
       call UnitRemoveAbilityBJ( 'A0J5', LEGEND_MAIEV.Unit)
-      call this.GiveMaievOutland(this.Holder.Player)
+      call RescueUnitsInGroup(udg_MaievUnlockOutland, this.Holder.Player)
     endmethod
 
     public static method create takes nothing returns thistype

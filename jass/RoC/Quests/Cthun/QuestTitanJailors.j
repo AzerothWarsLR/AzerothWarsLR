@@ -1,4 +1,4 @@
-library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit
+library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit, GeneralHelpers
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R07B'   //This research is given when the quest is completed
@@ -13,31 +13,8 @@ library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit
       return "Control of all units in Ahn'qirak inner temple and unlock the awakening spell for C'thun"
     endmethod
 
-    private method GrantAhnqiraj takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Ahnqiraj
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_TunnelUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantAhnqiraj(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_TunnelUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call WaygateActivateBJ( true, gg_unit_h03V_0591 )
       call WaygateSetDestinationLocBJ( gg_unit_h03V_0591, GetRectCenter(gg_rct_Silithus_Stone_Interior) )
     endmethod
@@ -45,7 +22,7 @@ library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call WaygateActivateBJ( true, gg_unit_h03V_0591 )
       call WaygateSetDestinationLocBJ( gg_unit_h03V_0591, GetRectCenter(gg_rct_Silithus_Stone_Interior) )
-      call this.GrantAhnqiraj(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_TunnelUnlock, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

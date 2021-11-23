@@ -16,37 +16,12 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
       return "Control of Thunder Bluff"
     endmethod    
 
-    private method GiveThunderBluff takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Crossroads to one of the above factions
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_ThunderBluff, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-
-      //Cleanup
-      call DestroyGroup(tempGroup)
-      set tempGroup = null
-    endmethod
-
     private method OnFail takes nothing returns nothing
-        call this.GiveThunderBluff(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+        call RescueNeutralUnitsInRect(gg_rct_ThunderBluff, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GiveThunderBluff(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_ThunderBluff, this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\TaurenTheme.mp3" )
       endif

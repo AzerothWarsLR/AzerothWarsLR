@@ -85,7 +85,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       call CreateUnits(this.Holder.Player, 'opeo', -1818, -2070, 270, 3)
       call this.GrantDarkspear(this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
-        call PlayThematicMusicBJ( "war3mapImported\\WarsongTheme.mp3" )
+        call PlayThematicMusicBJ("war3mapImported\\WarsongTheme.mp3")
       endif
     endmethod
 

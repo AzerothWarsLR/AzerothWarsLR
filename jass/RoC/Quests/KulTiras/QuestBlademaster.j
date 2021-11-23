@@ -1,4 +1,4 @@
-library QuestBlademaster requires QuestData, ScarletSetup
+library QuestBlademaster requires QuestData, ScarletSetup, GeneralHelpers
 
  globals
     private constant integer QUEST_RESEARCH_ID = 'R04U'   //This research is given when the quest is completed
@@ -13,59 +13,13 @@ library QuestBlademaster requires QuestData, ScarletSetup
       return "The capital ship and the end of the orc attacks"
     endmethod
 
-    private method GrantBlademaster takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Blademaster
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_BlademasterUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
-    private method GrantShip takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Blademaster
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_ShipAmbient, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantBlademaster(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_BlademasterUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantBlademaster(this.Holder.Player)
-      call this.GrantShip(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_BlademasterUnlock, this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

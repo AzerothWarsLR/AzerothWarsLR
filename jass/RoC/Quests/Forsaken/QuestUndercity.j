@@ -1,4 +1,4 @@
-library QuestUndercity requires QuestData, ForsakenSetup
+library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R050'         //This research is required to complete the quest
@@ -19,35 +19,12 @@ library QuestUndercity requires QuestData, ForsakenSetup
       return "Control of all units in Undercity, unlock Nathanos and unally the Legion team"
     endmethod
 
-    private method GrantUndercity takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_UndercityUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantUndercity(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantUndercity(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_n08F_1739 )
       call WaygateActivateBJ( true, gg_unit_n08F_1798 )
       call ShowUnitShow( gg_unit_n08F_1739 )

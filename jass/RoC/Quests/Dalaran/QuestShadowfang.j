@@ -1,4 +1,4 @@
-library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit
+library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit, GeneralHelpers
 
 
   struct QuestShadowfang extends QuestData
@@ -10,35 +10,12 @@ library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit
       return "Control of all units in Shadowfang"
     endmethod
 
-    private method GrantShadowfang takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Shadowfang
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_ShadowfangUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantShadowfang(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_ShadowfangUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantShadowfang(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_ShadowfangUnlock, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing
