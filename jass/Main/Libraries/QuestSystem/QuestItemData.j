@@ -7,6 +7,8 @@ library QuestItemData
     private string description = ""
     private questitem questItem
     private minimapicon minimapIcon = null
+    private effect mapEffect = null //The visual effect that appears on the map, usually a Circle of Power
+    private string mapEffectPath = null
 
     private static Event progressChanged
     private static thistype triggerQuestItemData = 0
@@ -17,6 +19,14 @@ library QuestItemData
 
     static method operator ProgressChanged takes nothing returns Event
       return thistype.progressChanged
+    endmethod
+
+    method operator MapEffectPath takes nothing returns string
+      return this.mapEffectPath
+    endmethod
+
+    method operator MapEffectPath= takes string value returns nothing
+      set this.mapEffectPath = value
     endmethod
 
     method operator ParentQuestItem= takes QuestItemData value returns nothing
@@ -132,6 +142,11 @@ library QuestItemData
         elseif this.minimapIcon != null then
           call SetMinimapIconVisible(this.minimapIcon, true)
         endif
+
+        if this.mapEffectPath != null and this.mapEffect == null then
+          set this.mapEffect = AddSpecialEffect(this.mapEffectPath, this.X, this.Y)
+          call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
+        endif
       endif
     endmethod
 
@@ -139,6 +154,10 @@ library QuestItemData
       local integer i = 0
       if this.minimapIcon != null then
         call SetMinimapIconVisible(this.minimapIcon, false)
+      endif
+      if this.mapEffect != null then
+        call DestroyEffect(this.mapEffect)
+        set this.mapEffect = null
       endif
     endmethod
 
