@@ -1,4 +1,4 @@
-library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
+library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemControlPoint, QuestItemExpire, QuestItemSelfExists, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R04Y'   //This research is given when the quest is completed
@@ -13,38 +13,15 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
       return "Control of all units in Capital City"
     endmethod
 
-    private method GrantCapitalcity takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Capitalcity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_Terenas, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantCapitalcity(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_Terenas, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantCapitalcity(this.Holder.Player)
-      call SetUnitInvulnerable( gg_unit_nemi_0019, true )
+      call RescueNeutralUnitsInRect(gg_rct_Terenas, this.Holder.Player)
+      call SetUnitInvulnerable(gg_unit_nemi_0019, true)
       if GetLocalPlayer() == this.Holder.Player then
-        call PlayThematicMusicBJ( "war3mapImported\\CapitalCity.mp3" )
+        call PlayThematicMusicBJ("war3mapImported\\CapitalCity.mp3")
       endif
     endmethod
 
@@ -53,7 +30,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Hearthlands", "The territories of Lordaeron is fragmented, regain control of the old alliance's hold to secure the kingdom.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+      local thistype this = thistype.allocate("Hearthlands", "The territories of Lordaeron are fragmented. Regain control of the old Alliance's hold to secure the kingdom.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
       call this.AddQuestItem(QuestItemExpire.create(1472))

@@ -1,4 +1,4 @@
-library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit
+library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit, GeneralHelpers
 
 
   struct QuestStratholme extends QuestData
@@ -10,35 +10,12 @@ library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit
       return "Control of all units in Stratholme"
     endmethod
 
-    private method GrantStratholme takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Stratholme
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_StratholmeUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantStratholme(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_StratholmeUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantStratholme(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_StratholmeUnlock, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

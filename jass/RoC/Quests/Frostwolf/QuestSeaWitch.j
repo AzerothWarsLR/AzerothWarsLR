@@ -16,50 +16,8 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       return "Gain control of all neutral units on the Darkspear Isles and teleport to shore"
     endmethod
 
-    private method GrantTauren takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Tauren
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_CairneStart, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
-    private method GrantDarkspear takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Darkspear
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_EchoUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantDarkspear(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_EchoUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -67,7 +25,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       local group tempGroup = CreateGroup()
       local unit u
       //Transfer control of all passive units on island and teleport all Frostwolf units to shore
-      call this.GrantTauren(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_CairneStart, this.Holder.Player)
       call GroupEnumUnitsInRect(tempGroup, gg_rct_Darkspear_Island, null)
       loop
         set u = FirstOfGroup(tempGroup)
@@ -83,7 +41,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       call DestroyGroup(tempGroup)
       call RemoveWeatherEffectBJ(Storm)
       call CreateUnits(this.Holder.Player, 'opeo', -1818, -2070, 270, 3)
-      call this.GrantDarkspear(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_EchoUnlock, this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ("war3mapImported\\WarsongTheme.mp3")
       endif

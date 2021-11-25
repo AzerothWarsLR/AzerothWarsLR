@@ -1,4 +1,4 @@
-library QuestMonastery requires QuestData, ScarletSetup
+library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, QuestItemSelfExists, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R03P'         //This research is required to complete the quest
@@ -19,36 +19,13 @@ library QuestMonastery requires QuestData, ScarletSetup
       return "Control of all units in the Scarlet Monastery and you will unally the alliance"
     endmethod
 
-    private method GrantMonastery takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Monastery
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_ScarletAmbient, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantMonastery(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_ScarletAmbient, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(FACTION_KULTIRAS.Player, 'R06V', 1)
-      call this.GrantMonastery(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_ScarletAmbient, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_h00T_0786 )
       call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
       set this.Holder.Team = TEAM_SCARLET

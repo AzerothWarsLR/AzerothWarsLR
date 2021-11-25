@@ -19,25 +19,6 @@ library QuestExilePath requires QuestData, NagaSetup
       return "Control of all units in Nazjatar"
     endmethod
 
-    private method GrantNazjatar takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_NagaUnlock2, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnComplete takes nothing returns nothing
       call FACTION_NAGA.ModObjectLimit('n08W', UNLIMITED)   //Lost One Den
       call FACTION_NAGA.ModObjectLimit('ndrn', UNLIMITED)   //Vindicator
@@ -45,7 +26,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
       set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED
-      call this.GrantNazjatar(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_n07E_1491 )
       call WaygateActivateBJ( true, gg_unit_n07E_0958 )
       call ShowUnitShow( gg_unit_n07E_1491  )

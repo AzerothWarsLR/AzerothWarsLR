@@ -1,4 +1,4 @@
-library QuestGrimBatol requires QuestData, TwilightSetup, QuestItemKillUnit
+library QuestGrimBatol requires QuestData, TwilightSetup, GeneralHelpers
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R06Y'   //This research is given when the quest is completed
@@ -13,38 +13,15 @@ library QuestGrimBatol requires QuestData, TwilightSetup, QuestItemKillUnit
       return "Control of all units in Grim Batol and able to train Orcish Death Knights"
     endmethod
 
-    private method GrantGrimBatol takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in GrimBatol
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_Grim_Batol, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantGrimBatol(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_Grim_Batol, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetUnitOwner(gg_unit_h01Z_0618, this.Holder.Player, true)
       call WaygateActivateBJ( true, gg_unit_n08R_2209 )
       call WaygateActivateBJ( true, gg_unit_n08R_2214 )
-      call this.GrantGrimBatol(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_Grim_Batol, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

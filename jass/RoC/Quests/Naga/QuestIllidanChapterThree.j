@@ -1,5 +1,5 @@
 //Escapes Kalimdor, Find the Skull of Guldan
-library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemLegendDead, LegendNaga, GlobalQuest
+library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, QuestItemCastSpell, LegendNaga, GlobalQuest, GeneralHelpers
 
    globals
     private constant integer RITUAL_ID = 'A0KY'
@@ -15,31 +15,8 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
       return "Nazjatar and the Naga's loyalty"
     endmethod
 
-    private method GrantNagaSmall takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Nagastarting base
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_NagaUnlock1, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnComplete takes nothing returns nothing
-      call this.GrantNagaSmall(this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock1, this.Holder.Player)
       call FACTION_NAGA.AddQuest(REDEMPTION_PATH)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(EXILE_PATH)

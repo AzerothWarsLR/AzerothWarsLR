@@ -14,28 +14,6 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       return "Control of the TempestKeep"
     endmethod    
 
-    private method GiveTempestKeep takes player whichPlayer returns nothing
-      local unit u
-
-      //Transfer all Neutral Passive units in TempestKeep to one of the above factions
-      set u = FirstOfGroup(udg_TempestKeep)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(udg_TempestKeep, u)
-        set u = FirstOfGroup(udg_TempestKeep)
-      endloop
-
-      //Cleanup
-      call DestroyGroup(udg_TempestKeep)
-    endmethod
-
     private method OnComplete takes nothing returns nothing
       call FACTION_QUELTHALAS.AddQuest(SUMMON_KIL)
       set SUMMON_KIL.Progress = QUEST_PROGRESS_UNDISCOVERED
@@ -61,7 +39,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call SetUnitPosition(LEGEND_KAEL.Unit, 4067, -21695)
       call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 20000, 18584)
       call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
-      call this.GiveTempestKeep(this.Holder.Player)
+      call RescueUnitsInGroup(udg_TempestKeep, this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IK')
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
@@ -75,7 +53,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("In Search of Masters", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
+      local thistype this = thistype.allocate("In Search of Masters", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight.", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IP', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KAEL, true))
       set this.ResearchId = QUEST_RESEARCH_ID
