@@ -11,12 +11,14 @@ library QuestAstranaar requires QuestData, SentinelsSetup, GeneralHelpers
 
     private method OnFail takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_AstranaarUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
-      call RescueNeutralUnitsInRect(gg_rct_TeldrassilAmbient, Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock1, Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock2, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_AstranaarUnlock, this.Holder.Player)
-      call RescueNeutralUnitsInRect(gg_rct_TeldrassilAmbient, this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock1, this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock2, this.Holder.Player)
     endmethod
 
     public static method create takes nothing returns thistype

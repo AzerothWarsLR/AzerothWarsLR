@@ -21,6 +21,7 @@ library QuestGoldrinnElvePath requires QuestData, GilneasSetup
     private method OnComplete takes nothing returns nothing
       set GOLDRINNHUMAN_PATH.Progress = QUEST_PROGRESS_FAILED
       set this.Holder.Team = TEAM_NIGHT_ELVES
+      call RescueNeutralUnitsInRect(gg_rct_DarnassusWorgen, this.Holder.Player)
     endmethod
 
     public static method create takes nothing returns thistype
