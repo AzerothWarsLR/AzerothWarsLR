@@ -432,6 +432,28 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       set owningPlayer = null
     endmethod
 
+    private static method onUnitRevive takes nothing returns nothing
+      local integer i = 0
+      local unit revivingUnit = GetRevivingUnit()
+      local player owningPlayer = GetOwningPlayer(revivingUnit)
+      local Person tempPerson
+
+      loop
+        exitwhen i == thistype.count
+        if thistype.byIndex[i].UnitType == GetUnitTypeId(revivingUnit) then
+          set thistype.byIndex[i].Unit = revivingUnit
+          set LegendPreviousOwner = null
+          set TriggerLegend = thistype.byIndex[i]
+          call OnLegendChangeOwner.fire()
+          return
+        endif
+        set i = i + 1
+      endloop
+
+      set revivingUnit = null
+      set owningPlayer = null
+    endmethod
+
     private method destroy takes nothing returns nothing
       call this.deallocate()
       call UnitDropAllItems(unit)
@@ -442,6 +464,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
 
     private static method onInit takes nothing returns nothing
       call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_TRAIN_FINISH, function thistype.onUnitTrain) //TODO: use filtered events
+      call PlayerUnitEventAddAction(EVENT_PLAYER_HERO_REVIVE_FINISH, function thistype.onUnitRevive)
       set thistype.byHandle = Table.create()
       set OnLegendChangeOwner = Event.create()
       set OnLegendPermaDeath = Event.create()
