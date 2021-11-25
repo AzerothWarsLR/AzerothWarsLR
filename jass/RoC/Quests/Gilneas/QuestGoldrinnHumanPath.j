@@ -11,7 +11,7 @@ library QuestGoldrinnHumanPath requires QuestData, GilneasSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Goldrinn is now trainable."
+      return "Goldrinn as joined Gilneas and they remain in the Alliance"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

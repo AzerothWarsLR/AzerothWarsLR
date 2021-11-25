@@ -23,6 +23,7 @@ library QuestAstranaar requires QuestData, SentinelsSetup, GeneralHelpers
       local thistype this = thistype.allocate("Astranaar Stronghold", "Darkshore is under attack by some Murloc. We should deal with them swiftly and then make for the Astranaar Outpost. Clearing the Murlocs will also reestablish communication with Darnassus.", "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TYRANDE, gg_rct_AstranaarUnlock, "Astranaar Outpost"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02U')))
+      call this.AddQuestItem(QuestItemUpgrade.create('n06P', 'no6J'))
       call this.AddQuestItem(QuestItemExpire.create(1430))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

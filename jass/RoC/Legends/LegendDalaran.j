@@ -4,6 +4,8 @@ library LegendDalaran initializer OnInit requires Legend
     Legend LEGEND_ANTONIDAS
     Legend LEGEND_MEDIVH
     Legend LEGEND_JAINA
+    Legend LEGEND_KALECGOS
+    Legend LEGEND_MALYGOS
 
     Legend LEGEND_DALARAN
   endglobals
@@ -16,6 +18,14 @@ library LegendDalaran initializer OnInit requires Legend
     set LEGEND_MEDIVH = Legend.create()
     set LEGEND_MEDIVH.UnitType = 'Haah'
     set LEGEND_MEDIVH.StartingXP = 2800
+
+    set LEGEND_KALECGOS = Legend.create()
+    set LEGEND_KALECGOS.UnitType = 'U027'
+    set LEGEND_KALECGOS.StartingXP = 9800
+
+    set LEGEND_MALYGOS = Legend.create()
+    set LEGEND_MALYGOS.UnitType = 'U026'
+    set LEGEND_MALYGOS.StartingXP = 10900
 
     set LEGEND_DALARAN = Legend.create()
     set LEGEND_DALARAN.Unit = gg_unit_h002_0230

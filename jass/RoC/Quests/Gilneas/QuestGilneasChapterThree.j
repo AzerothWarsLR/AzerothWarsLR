@@ -18,10 +18,6 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     private method OnComplete takes nothing returns nothing
     call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
     call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-    call FACTION_GILNEAS.AddQuest(GOLDRINNELVE_PATH)
-    set GOLDRINNELVE_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
-    call FACTION_GILNEAS.AddQuest(GOLDRINNHUMAN_PATH)
-    set GOLDRINNHUMAN_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
     endmethod
 
     private method OnAdd takes nothing returns nothing

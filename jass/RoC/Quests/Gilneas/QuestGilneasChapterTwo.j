@@ -12,6 +12,10 @@ library QuestGilneasChapterTwo requires QuestData, QuestItemTime, Artifact
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call FACTION_GILNEAS.AddQuest(GOLDRINNELVE_PATH)
+      set GOLDRINNELVE_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call FACTION_GILNEAS.AddQuest(GOLDRINNHUMAN_PATH)
+      set GOLDRINNHUMAN_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
     endmethod
 
     public static method create takes nothing returns thistype

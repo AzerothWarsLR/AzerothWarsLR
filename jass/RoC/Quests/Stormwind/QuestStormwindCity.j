@@ -53,6 +53,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00Z')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n011')))
+      call this.AddQuestItem(QuestItemUpgrade.create('h06N', 'h06K'))
       call this.AddQuestItem(QuestItemExpire.create(1490))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

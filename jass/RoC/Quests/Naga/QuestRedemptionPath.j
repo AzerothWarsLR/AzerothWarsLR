@@ -90,6 +90,18 @@ library QuestRedemptionPath requires QuestData, NagaSetup
       call WaygateSetDestinationLocBJ( gg_unit_n07E_1154, GetRectCenter(gg_rct_NazjatarExit3) )
       set this.Holder.Team = TEAM_NIGHT_ELVES
       call DestructableRestoreLife( gg_dest_YT24_0267, GetDestructableMaxLife(GetLastCreatedDestructable()), true )
+      call WaygateActivateBJ( true, gg_unit_h01D_3378 )
+      call ShowUnitShow( gg_unit_h01D_3378 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
+      call WaygateActivateBJ( true, gg_unit_h01A_0402 )
+      call ShowUnitShow( gg_unit_h01A_0402 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01A_0402, GetRectCenter(gg_rct_NazjatarExit1) )
+      call WaygateActivateBJ( true, gg_unit_h01D_3381 )
+      call ShowUnitShow( gg_unit_h01D_3381 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3381, GetRectCenter(gg_rct_NazjatarEntrance1) )
+      call WaygateActivateBJ( true, gg_unit_h01D_3384 )
+      call ShowUnitShow( gg_unit_h01D_3384 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3384, GetRectCenter(gg_rct_NazjatarEntrance2) )
     endmethod
 
     public static method create takes nothing returns thistype

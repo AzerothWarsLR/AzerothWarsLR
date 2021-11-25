@@ -16,7 +16,7 @@ library LegendGilneas initializer OnInit requires Legend
     set LEGEND_TESS.Unit = gg_unit_Ewar_0424
 
     set LEGEND_GOLDRINN = Legend.create()
-    set LEGEND_GOLDRINN.UnitType = 'E0E1'
+    set LEGEND_GOLDRINN.UnitType = 'E01E'
     set LEGEND_GOLDRINN.StartingXP = 8800
 
     set LEGEND_GENN = Legend.create()

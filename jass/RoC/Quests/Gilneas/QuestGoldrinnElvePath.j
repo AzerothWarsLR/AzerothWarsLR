@@ -11,7 +11,7 @@ library QuestGoldrinnElvePath requires QuestData, GilneasSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Goldrinn is now trainable and you have joined the Night Elf team"
+      return "Goldrinn as joined Gilneas and they have joined the Night Elves"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

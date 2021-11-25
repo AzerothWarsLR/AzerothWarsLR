@@ -26,6 +26,7 @@ library QuestScholomanceBuild requires QuestData
       call this.AddQuestItem(QuestItemBuild.create('h08C', 20))
       call this.AddQuestItem(QuestItemBuild.create('u014', 1))
       call this.AddQuestItem(QuestItemBuild.create('u01J', 2))
+      call this.AddQuestItem(QuestItemUpgrade.create('h08B', 'h089'))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

@@ -55,6 +55,7 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_O00O_1933)) //Zul'jin
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01L')))
+      call this.AddQuestItem(QuestItemUpgrade.create('h03T', 'h033'))
       call this.AddQuestItem(QuestItemExpire.create(1480))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

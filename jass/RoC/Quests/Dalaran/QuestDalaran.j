@@ -63,6 +63,7 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01D')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n018')))
+      call this.AddQuestItem(QuestItemUpgrade.create('h068', 'h065'))
       call this.AddQuestItem(QuestItemExpire.create(1445))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
