@@ -17,7 +17,7 @@ library QuestFeludius requires QuestData, TwilightSetup, QuestItemLegendDead
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Gift of the Windlord", "Bringing the Legendary Sword, Thunderfury, to Uldum will grant us the favors of Al'akir, the great Wind Elemental Lord", "ReplaceableTextures\\CommandButtons\\BTNfuryoftheair.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BD')))
-      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_THUNDERFURY, gg_rct_Uldum, "Uldum"))
+      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_THUNDERFURY, gg_rct_UldumAmbiance, "Uldum"))
       set this.ResearchId = RESEARCH_ID
       return this
     endmethod

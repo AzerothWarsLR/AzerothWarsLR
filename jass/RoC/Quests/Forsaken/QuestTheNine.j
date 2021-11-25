@@ -16,7 +16,7 @@ library QuestTheNine requires QuestData, ForsakenSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Nine", "Most of the Val'kyr are still in Northrend, under the influence of the Lich King, they need to join the Forsaken cause", "ReplaceableTextures\\CommandButtons\\BTNPaleValkyr.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SYLVANAS, false))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SYLVANASV, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02J')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03U')))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
