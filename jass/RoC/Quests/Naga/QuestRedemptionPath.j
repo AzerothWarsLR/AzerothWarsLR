@@ -1,4 +1,4 @@
-library QuestRedemptionPath requires QuestData, NagaSetup
+library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
 
   globals
     private constant integer RESEARCH_ID = 'R062'         //This research is required to complete the quest
@@ -19,57 +19,15 @@ library QuestRedemptionPath requires QuestData, NagaSetup
       return "Control of all units in Nazjatar and Aetheneum. Join the Night Elves"
     endmethod
 
-    private method GrantNazjatar takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_NagaUnlock2, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
-    private method GrantAetheneum takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Undercity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_AethneumCatacombs, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnComplete takes nothing returns nothing
       call FACTION_NAGA.ModObjectLimit('n08H', UNLIMITED)   //Demon Hunter grounds
       call FACTION_NAGA.ModObjectLimit('e00S', UNLIMITED)   //Glaive Warrior
       call FACTION_NAGA.ModObjectLimit('h08W', 6)   //Demon Hunter
       call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
-      set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED
-      call this.GrantNazjatar(this.Holder.Player)
-      call this.GrantAetheneum(this.Holder.Player)
+      set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED      
+      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_h01D_3387 )
       call WaygateActivateBJ( true, gg_unit_h01D_3385 )
       call WaygateActivateBJ( true, gg_unit_h01D_3379 )

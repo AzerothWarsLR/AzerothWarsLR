@@ -1,4 +1,4 @@
-library QuestStrahnbrad requires QuestData, LordaeronSetup, QuestItemKillUnit
+library QuestStrahnbrad requires QuestData, LordaeronSetup, QuestItemControlPoint, QuestItemExpire, QuestItemSelfExists, GeneralHelpers
 
 
   struct QuestStrahnbrad extends QuestData
@@ -10,38 +10,12 @@ library QuestStrahnbrad requires QuestData, LordaeronSetup, QuestItemKillUnit
       return "Control of all buildings in Strahnbrad"
     endmethod
 
-    private method GrantStrahnbrad takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Strahnbrad
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_StrahnbradUnlock, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method OnFail takes nothing returns nothing
-      call this.GrantStrahnbrad(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      call RescueNeutralUnitsInRect(gg_rct_StrahnbradUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantStrahnbrad(this.Holder.Player)
-    endmethod
-
-    private method OnAdd takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_StrahnbradUnlock, this.Holder.Player)
     endmethod
 
     public static method create takes nothing returns thistype

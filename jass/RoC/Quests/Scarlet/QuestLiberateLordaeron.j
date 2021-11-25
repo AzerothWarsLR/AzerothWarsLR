@@ -9,36 +9,13 @@ library QuestLiberateLordaeron requires QuestData, ScarletSetup
       return "The lands of Lordaeron have been purged from Undeath and Corruption"
     endmethod
 
-    private method GrantScarletHarbor takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
-      local unit u
-
-      //Transfer all Neutral Passive units in Capitalcity
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_ScarletHarbor, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) and GetUnitFoodUsed(u) != 10  then
-          call UnitRescue(u, whichPlayer)
-        else
-          if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
-          call UnitRescue(u, Player(PLAYER_NEUTRAL_PASSIVE))
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
-    endmethod
-
     private method operator CompletionDescription takes nothing returns string
       return "Enable to train Commander Goodchild and Isilien, Unlock New Hearthglen in Northrend and the Scarlet Harbor"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call RemoveDestructable( gg_dest_DTg6_36078 )
-      call this.GrantScarletHarbor(this.Holder.Player)
+      call RemoveDestructable(gg_dest_DTg6_36078)
+      call RescueNeutralUnitsInRect(gg_rct_ScarletHarbor, this.Holder.Player)
       call KillNeutralHostileUnitsInRadius(415.2, 16521, 2300)
       call KillNeutralHostileUnitsInRadius(-2190, 16803, 700)
       call CreateStructureForced(this.Holder.Player, 'h08J', -51.33152, 16679.69, 4.757993*bj_RADTODEG, 256)
