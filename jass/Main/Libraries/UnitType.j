@@ -22,6 +22,7 @@ library UnitType requires Environment
     integer UNITCATEGORY_UPGRADEDTOWER2_B = 14 //Tower that's been upgraded twice
   endglobals
 
+  //Stores extra data about UnitTypeIds.
   struct UnitType
     private static Table byId
     readonly integer unitId = 0
@@ -30,14 +31,17 @@ library UnitType requires Environment
     readonly string iconPath = null
     private integer unitCategory = 0
 
+    //How much gold the UnitType costs to train or build.
     method operator GoldCost takes nothing returns integer
       return GetUnitGoldCost(unitId)
     endmethod
 
+    //How much lumber the UnitType costs to train or build.
     method operator LumberCost takes nothing returns integer
       return GetUnitWoodCost(unitId)
     endmethod
     
+    //Whether or not the unit should be deleted without refund when the player leaves.
     method operator Meta takes nothing returns boolean
       return meta
     endmethod
@@ -46,14 +50,16 @@ library UnitType requires Environment
       set meta = b
     endmethod
     
-    method operator Refund= takes boolean b returns nothing
-      set refund = b        
-    endmethod
-
+    //Whether or not the unit should be refunded when the player leaves.
     method operator Refund takes nothing returns boolean
       return refund
     endmethod   
 
+    method operator Refund= takes boolean b returns nothing
+      set refund = b        
+    endmethod
+
+    //An arbitrary category, like "Shipyard" or "Shop".
     method operator UnitCategory takes nothing returns integer
       return unitCategory
     endmethod
@@ -62,10 +68,12 @@ library UnitType requires Environment
       set this.unitCategory = unitCategory
     endmethod     
 
+    //Returns the UnitType representation of a unit on the map.
     static method ByHandle takes unit whichUnit returns thistype
       return thistype.byId[GetUnitTypeId(whichUnit)]
     endmethod
 
+    //Returns the UnitType representation of a particular UnitTypeId.
     static method ById takes integer id returns thistype
       return thistype.byId[id]
     endmethod
