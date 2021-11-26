@@ -20,7 +20,6 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
 
     private method OnComplete takes nothing returns nothing
       set STAY_LOYAL.Progress = QUEST_PROGRESS_FAILED
-      call UnitAddAbility(LEGEND_KAEL.Unit, 'A0R7')
       call UnitRemoveAbilityBJ( 'A0IF', LEGEND_KAEL.Unit)
       call UnitRemoveAbilityBJ( 'A0IK', LEGEND_KAEL.Unit)
       call RemoveUnit(LEGEND_LORTHEMAR.Unit)

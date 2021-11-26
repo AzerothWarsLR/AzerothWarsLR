@@ -5,7 +5,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private constant string EFFECT = "Abilities\\Spells\\Other\\Drain\\ManaDrainCaster.mdl"
     private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
     private constant real PROGRESS_SCALE = 1.5
-    private constant real PROGRESS_HEIGHT = 225.
+    private constant real PROGRESS_HEIGHT = 325.
   endglobals
 
   private function RectToRegion takes rect whichRect returns region
@@ -24,11 +24,15 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private effect sfxProgress = null
     private effect sfx = null
     private QuestItemChannelRect questItemChannelRect
+    private timer channelingTimer
+    private timerdialog channelingDialog
 
     private method destroy takes nothing returns nothing
       call BlzSetSpecialEffectPosition(this.sfxProgress, -100000, -100000, 0)    //Has no death animation so needs to be moved off the map
       call DestroyEffect(this.sfxProgress)
       call DestroyEffect(this.sfx)
+      call DestroyTimer(ChannelingTimer)
+      call DestroyTimerDialog (channelingDialog)
 
       set thistype.byCaster[GetUnitId(caster)] = 0
       call this.stopPeriodic()
@@ -68,15 +72,23 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
 
       call SetUnitX(caster, questItemChannelRect.X)
       call SetUnitY(caster, questItemChannelRect.Y)
-      set this.sfxProgress = AddSpecialEffectTarget(PROGRESS_EFFECT, caster, "overhead")
+      set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(caster), GetUnitY(caster))
       call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
       call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
       call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
-      call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT)
+      call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT + GetPositionZ(questItemChannelRect.X, questItemChannelRect.Y))
       set this.sfx = AddSpecialEffect(EFFECT, GetUnitX(caster), GetUnitY(caster))
       call PauseUnit(caster, true)
       call SetUnitAnimation(caster, "channel")
       call BlzSetUnitFacingEx(caster, facing)
+
+      set ChannelingTimer = CreateTimer()
+      call TimerStart(ChannelingTimer, maxDuration, false, function End)
+      set channelingDialog = CreateTimerDialog (ChannelingTimer)
+      call TimerDialogSetTitle (channelingDialog, "questname")
+      call TimerDialogDisplay (channelingDialog, true)
+
+
 
       set thistype.byCaster[GetUnitId(caster)] = this
 

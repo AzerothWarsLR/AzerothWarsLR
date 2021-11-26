@@ -54,7 +54,7 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Nexus", "The new Lich King calls for Jaina, tempts her with power. The Nexus needs a master, and Jaina is perfect for it.", "ReplaceableTextures\\CommandButtons\\BTNBlueDragonNexus.blp")
-      call this.AddQuestItem(QuestItemCastSpell.create('A0RB', true))
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_JainaChannel, "The Sunwell", LEGEND_JAINA, 15, 270))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_JAINA, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS, false))
       return this
