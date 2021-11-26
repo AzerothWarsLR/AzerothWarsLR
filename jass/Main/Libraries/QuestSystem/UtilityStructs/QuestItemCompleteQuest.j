@@ -6,9 +6,9 @@ library QuestItemCompleteQuest initializer OnInit requires QuestData, Faction
     private static thistype array byIndex
 
     public method OnQuestProgressChanged takes nothing returns nothing
-      if this.target == QUEST_PROGRESS_COMPLETE then
+      if this.target.Progress == QUEST_PROGRESS_COMPLETE then
         set this.Progress = QUEST_PROGRESS_COMPLETE
-      elseif this.target == QUEST_PROGRESS_FAILED then
+      elseif this.target.Progress == QUEST_PROGRESS_FAILED then
         set this.Progress = QUEST_PROGRESS_FAILED
       endif
     endmethod
@@ -29,7 +29,7 @@ library QuestItemCompleteQuest initializer OnInit requires QuestData, Faction
     static method create takes QuestData target returns thistype
       local thistype this = thistype.allocate()
 
-      if this.target == 0 then
+      if target == 0 then
         call BJDebugMsg("Parameter target of QuestItemCompleteQuest cannot be 0")
       endif
 
