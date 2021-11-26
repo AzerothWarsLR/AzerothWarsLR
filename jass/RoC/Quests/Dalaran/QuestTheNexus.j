@@ -15,9 +15,6 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
     endmethod    
 
     private method OnComplete takes nothing returns nothing
-      set NEW_GUARDIAN.Progress = QUEST_PROGRESS_FAILED
-      set FALLEN_GUARDIAN.Progress = QUEST_PROGRESS_FAILED
-      set CRYSTAL_GOLEM.Progress = QUEST_PROGRESS_FAILED
       call FACTION_DALARAN.ModObjectLimit('h069',-UNLIMITED)       //Military Quarters
       call FACTION_DALARAN.ModObjectLimit('h067',-UNLIMITED)       //Laboratory
       call FACTION_DALARAN.ModObjectLimit('n096',-UNLIMITED)       //Golem

@@ -19,7 +19,6 @@ library QuestNewGuardian requires LegendDalaran, Display, GeneralHelpers
       call AddHeroAttributes(whichUnit, 0, 0, 20)
       call LEGEND_JAINA.ClearUnitDependencies()
       set LEGEND_JAINA.PermaDies = false
-      set THE_NEXUS.Progress = QUEST_PROGRESS_FAILED
     endmethod
 
     public static method create takes nothing returns thistype
