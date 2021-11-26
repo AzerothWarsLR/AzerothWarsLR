@@ -414,13 +414,15 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       local integer i = 0
       local player owningPlayer = GetOwningPlayer(whichUnit)
       local Person tempPerson
+      local Legend loopLegend
 
       loop
         exitwhen i == thistype.count
-        if thistype.byIndex[i].UnitType == GetUnitTypeId(whichUnit) then
+        set loopLegend = thistype.byIndex[i]
+        if loopLegend.UnitType == GetUnitTypeId(whichUnit) and loopLegend.Unit != whichUnit then
           set thistype.byIndex[i].Unit = whichUnit
           set LegendPreviousOwner = null
-          set TriggerLegend = thistype.byIndex[i]
+          set TriggerLegend = loopLegend
           call OnLegendChangeOwner.fire()
           return
         endif
