@@ -1,11 +1,17 @@
-library QuestData requires QuestItemData, Event
+library QuestData initializer OnInit requires QuestItemData, Event
 
   globals
     constant integer QUEST_PROGRESS_UNDISCOVERED = 0
     constant integer QUEST_PROGRESS_INCOMPLETE = 1
     constant integer QUEST_PROGRESS_COMPLETE = 2
     constant integer QUEST_PROGRESS_FAILED = 3
+
+    Event QuestProgressChanged
   endglobals
+
+  function GetTriggerQuest takes nothing returns QuestData
+    return QuestData.triggerQuest
+  endfunction
 
   struct QuestData
     private string title = "DEFAULTTITLE"
@@ -18,6 +24,8 @@ library QuestData requires QuestItemData, Event
 
     private QuestItemData array questItems[10]
     private integer questItemCount = 0
+
+    readonly thistype triggerQuest = 0
 
     stub method operator Title takes nothing returns string
       return this.title
@@ -130,6 +138,9 @@ library QuestData requires QuestItemData, Event
           endloop
         endif
       endif
+
+      set thistype.triggerQuest = this
+      call QuestProgressChanged.fire()
     endmethod
 
     //The faction that can complete this quest
@@ -373,5 +384,9 @@ library QuestData requires QuestItemData, Event
       call TriggerAddAction(trig, function thistype.OnAnyQuestItemProgressChanged)
     endmethod
   endstruct
+
+  private function OnInit takes nothing returns nothing
+    set QuestProgressChanged = Event.create()
+  endfunction
 
 endlibrary
