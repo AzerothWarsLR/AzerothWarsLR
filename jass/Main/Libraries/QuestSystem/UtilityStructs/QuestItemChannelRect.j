@@ -5,7 +5,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private constant string EFFECT = "Abilities\\Spells\\Other\\Drain\\ManaDrainCaster.mdl"
     private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
     private constant real PROGRESS_SCALE = 1.5
-    private constant real PROGRESS_HEIGHT = 325.
+    private constant real PROGRESS_HEIGHT = 285.
   endglobals
 
   private function RectToRegion takes rect whichRect returns region
@@ -31,7 +31,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call BlzSetSpecialEffectPosition(this.sfxProgress, -100000, -100000, 0)    //Has no death animation so needs to be moved off the map
       call DestroyEffect(this.sfxProgress)
       call DestroyEffect(this.sfx)
-      call DestroyTimer(ChannelingTimer)
+      call DestroyTimer(channelingTimer)
       call DestroyTimerDialog (channelingDialog)
 
       set thistype.byCaster[GetUnitId(caster)] = 0
@@ -82,12 +82,13 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call SetUnitAnimation(caster, "channel")
       call BlzSetUnitFacingEx(caster, facing)
 
-      set ChannelingTimer = CreateTimer()
-      call TimerStart(ChannelingTimer, maxDuration, false, function End)
-      set channelingDialog = CreateTimerDialog (ChannelingTimer)
-      call TimerDialogSetTitle (channelingDialog, "questname")
-      call TimerDialogDisplay (channelingDialog, true)
-
+      if this.questItemChannelRect.ParentQuest.Global == true then
+        set this.channelingTimer = CreateTimer()
+        call TimerStart(this.channelingTimer, maxDuration, false, null)
+        set this.channelingDialog = CreateTimerDialog(this.channelingTimer)
+        call TimerDialogSetTitle(this.channelingDialog, this.questItemChannelRect.ParentQuest.Title)
+        call TimerDialogDisplay(this.channelingDialog, true)
+      endif
 
 
       set thistype.byCaster[GetUnitId(caster)] = this
