@@ -6,6 +6,7 @@ library GoblinQuestSetup requires GoblinSetup
     call FACTION_GOBLIN.AddQuest(QuestExplosiveEngineering.create())
     call FACTION_GOBLIN.AddQuest(QuestGadgetzan.create())
     call FACTION_GOBLIN.AddQuest(QuestWesternExpansion.create())
+    call FACTION_GOBLIN.AddQuest(QuestLumberMarket.create())
     call FACTION_GOBLIN.AddQuest(QuestGoblinEmpire.create())
 
   endfunction

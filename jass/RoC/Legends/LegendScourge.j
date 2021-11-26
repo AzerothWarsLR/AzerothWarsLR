@@ -19,7 +19,7 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_KELTHUZAD.DeathMessage = "Kel'thuzad has been slain. He lives on in spectral form, and may yet return if he is brought to the Sunwell."
     set LEGEND_KELTHUZAD.DeathSfx = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"
     set LEGEND_KELTHUZAD.Essential = true
-    set LEGEND_VASHJ.StartingXP = 1000
+    set LEGEND_KELTHUZAD.StartingXP = 1000
 
     set LEGEND_ANUBARAK = Legend.create()
     set LEGEND_ANUBARAK.UnitType = 'Uanb'

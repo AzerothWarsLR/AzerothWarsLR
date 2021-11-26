@@ -4,7 +4,7 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
     Legend LEGEND_MAIEV
     Legend LEGEND_TYRANDE
     Legend LEGEND_SHANDRIS
-    Legend LEGEND_JALIN
+    Legend LEGEND_JAROD
 
     Legend LEGEND_AUBERDINE
     Legend LEGEND_FEATHERMOON
@@ -31,8 +31,9 @@ library LegendSentinels initializer OnInit requires Legend, LegendDruids
     set LEGEND_SHANDRIS.UnitType = 'E002'
     set LEGEND_SHANDRIS.StartingXP = 1000
 
-    set LEGEND_JALIN = Legend.create()
-    set LEGEND_JALIN.UnitType = 'E00S'
+    set LEGEND_JAROD = Legend.create()
+    set LEGEND_JAROD.UnitType = 'O02E'
+    set LEGEND_JAROD.StartingXP = 4000
   endfunction
 
 endlibrary
