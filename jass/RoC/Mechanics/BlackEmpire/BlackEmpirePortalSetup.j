@@ -9,7 +9,7 @@ library BlackEmpirePortalSetup initializer OnInit requires BlackEmpirePortal
 
   private function OnInit takes nothing returns nothing
     set BLACKEMPIREPORTAL_TANARIS = BlackEmpirePortal.create(gg_unit_h03V_0257, gg_dest_OTsp_35728, GetRectCenterX(gg_rct_Ny_Silithus_Interior), GetRectCenterY(gg_rct_Ny_Silithus_Interior), gg_unit_n07F_1001, "Uldum")
-    set BLACKEMPIREPORTAL_TANARIS.NearbyControlPoint = ControlPoint.ByUnitType('n020')
+    set BLACKEMPIREPORTAL_TANARIS.NearbyControlPoint = ControlPoint.ByUnitType('n0BD')
 
     set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS = BlackEmpirePortal.create(gg_unit_h03V_0396, gg_dest_OTsp_19293, GetRectCenterX(gg_rct_Ny_Twilight_Highlands_Interior), GetRectCenterY(gg_rct_Ny_Twilight_Highlands_Interior), gg_unit_n07F_1069, "Twilight")
     set BLACKEMPIREPORTAL_TWILIGHTHIGHLANDS.Next = BLACKEMPIREPORTAL_TANARIS

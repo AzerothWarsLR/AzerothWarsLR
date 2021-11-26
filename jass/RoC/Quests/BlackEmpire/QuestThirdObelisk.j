@@ -48,7 +48,7 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
       local thistype this = thistype.allocate("Merging of Realities", "Reality frays at the seams as madness threatents to overtake it. Once an Obelisk has been established at Tanaris, the mirror worlds of Azeroth and Ny'alotha will finally be one, and the Black Empire will be unleashed.", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n02S')))
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n04V')))
-      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n020')))
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n0BD')))
       call this.AddQuestItem(QuestItemExpire.create(960))
       return this
     endmethod
