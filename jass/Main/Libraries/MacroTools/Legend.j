@@ -409,17 +409,16 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onCast()
     endmethod
 
-    //When any unit is trained, check if it has the unittype of a Legend, and assign it to that Legend if so
-    private static method onUnitTrain takes nothing returns nothing
+    //Check if a given unit matches any Legend. If it does, assign it to that Legend.
+    private static method TryAssignToLegend takes unit whichUnit returns nothing
       local integer i = 0
-      local unit trainedUnit = GetTrainedUnit()
-      local player owningPlayer = GetOwningPlayer(trainedUnit)
+      local player owningPlayer = GetOwningPlayer(whichUnit)
       local Person tempPerson
 
       loop
         exitwhen i == thistype.count
-        if thistype.byIndex[i].UnitType == GetUnitTypeId(trainedUnit) then
-          set thistype.byIndex[i].Unit = trainedUnit
+        if thistype.byIndex[i].UnitType == GetUnitTypeId(whichUnit) then
+          set thistype.byIndex[i].Unit = whichUnit
           set LegendPreviousOwner = null
           set TriggerLegend = thistype.byIndex[i]
           call OnLegendChangeOwner.fire()
@@ -428,30 +427,15 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
         set i = i + 1
       endloop
 
-      set trainedUnit = null
       set owningPlayer = null
     endmethod
 
+    private static method onUnitTrain takes nothing returns nothing
+      call TryAssignToLegend(GetTrainedUnit())
+    endmethod
+
     private static method onUnitRevive takes nothing returns nothing
-      local integer i = 0
-      local unit revivingUnit = GetRevivingUnit()
-      local player owningPlayer = GetOwningPlayer(revivingUnit)
-      local Person tempPerson
-
-      loop
-        exitwhen i == thistype.count
-        if thistype.byIndex[i].UnitType == GetUnitTypeId(revivingUnit) then
-          set thistype.byIndex[i].Unit = revivingUnit
-          set LegendPreviousOwner = null
-          set TriggerLegend = thistype.byIndex[i]
-          call OnLegendChangeOwner.fire()
-          return
-        endif
-        set i = i + 1
-      endloop
-
-      set revivingUnit = null
-      set owningPlayer = null
+      call TryAssignToLegend(GetRevivingUnit())
     endmethod
 
     private method destroy takes nothing returns nothing
