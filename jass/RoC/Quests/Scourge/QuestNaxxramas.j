@@ -1,4 +1,4 @@
-library QuestNaxxramas requires QuestData, QuestItemKillUnit
+library QuestNaxxramas requires QuestData, QuestItemChannelRect, LegendScourge
 
   struct QuestNaxxramas extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -37,8 +37,8 @@ library QuestNaxxramas requires QuestData, QuestItemKillUnit
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Dread Citadel", "This fallen necropolis can be transformed into a potent war machine by the Lich Kel'tuzad", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_NaxUnlock, "Naxxramas"))
-      call this.AddQuestItem(QuestItemCastSpell.create('A0O2', true))
+      local QuestItemChannelRect questItemChannelRect = this.AddQuestItem(QuestItemChannelRect.create(gg_rct_NaxUnlock, "Naxxramas", LEGEND_KELTHUZAD, 120, 270))
+      set questItemChannelRect.RequiredUnitTypeId = UNITTYPE_KELTHUZAD_LICH
       return this
     endmethod
   endstruct

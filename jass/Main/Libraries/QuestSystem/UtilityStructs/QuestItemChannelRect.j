@@ -93,6 +93,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private Legend targetLegend
     private Channel channel = 0
     private real facing //Which way the unit faces while it is channeling
+    private int requiredUnitTypeId = 0
 
     private static trigger entersRectTrig = CreateTrigger()
     private static integer count = 0
@@ -107,9 +108,16 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       return GetRectCenterY(this.targetRect)
     endmethod
 
+    //The Unit Type ID the entering unit must have to start channeling
+    method operator RequiredUnitTypeId= takes integer value returns nothing
+      set this.requiredUnitTypeId = value
+    endmethod
+
     private method OnRegionEnter takes unit whichUnit returns nothing
       if GetOwningPlayer(whichUnit) == this.Holder.Player and UnitAlive(whichUnit) and Legend.ByHandle(GetTriggerUnit()) == this.targetLegend and this.channel == 0 and this.Progress == QUEST_PROGRESS_INCOMPLETE then
-        set this.channel = Channel.create(whichUnit, this.duration, this.facing, this)
+        if this.requiredUnitTypeId == 0 or this.requiredUnitTypeId == GetUnitTypeId(GetTriggerUnit()) then
+          set this.channel = Channel.create(whichUnit, this.duration, this.facing, this)
+        endif
       endif
     endmethod
 
