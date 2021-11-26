@@ -18,7 +18,7 @@ library RefundZeroLimitUnits initializer OnInit requires Persons, UnitType
   endfunction
 
   private function OnAnyUnitTrained takes nothing returns nothing
-    call VerifyUnitIntegrity(GetTriggerUnit())
+    call VerifyUnitIntegrity(GetTrainedUnit())
   endfunction
 
   private function OnAnyUnitRevived takes nothing returns nothing
