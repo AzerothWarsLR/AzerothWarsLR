@@ -24,7 +24,6 @@ library QuestStayLoyal requires Persons, GeneralHelpers
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Refuse Kil'Jaeden's Offer", "Kil'jaeden has approached Kael with an offer of power and salvation, he should refuse it and resist the temptation of fel power", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IK', true))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KAEL, true))
       call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_KAEL, 6))
       return this
     endmethod
