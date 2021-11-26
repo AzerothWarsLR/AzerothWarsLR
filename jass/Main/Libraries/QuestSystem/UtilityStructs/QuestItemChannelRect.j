@@ -68,7 +68,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
 
       call SetUnitX(caster, questItemChannelRect.X)
       call SetUnitY(caster, questItemChannelRect.Y)
-      set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(caster), GetUnitY(caster))
+      set this.sfxProgress = AddSpecialEffectTarget(PROGRESS_EFFECT, caster, "overhead")
       call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
       call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
       call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
@@ -93,7 +93,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private Legend targetLegend
     private Channel channel = 0
     private real facing //Which way the unit faces while it is channeling
-    private int requiredUnitTypeId = 0
+    private integer requiredUnitTypeId = 0
 
     private static trigger entersRectTrig = CreateTrigger()
     private static integer count = 0

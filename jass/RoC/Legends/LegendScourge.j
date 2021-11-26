@@ -20,6 +20,7 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_KELTHUZAD.DeathSfx = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"
     set LEGEND_KELTHUZAD.Essential = true
     set LEGEND_KELTHUZAD.StartingXP = 1000
+    set LEGEND_KELTHUZAD.Name = "Kel'thuzad"
 
     set LEGEND_ANUBARAK = Legend.create()
     set LEGEND_ANUBARAK.UnitType = 'Uanb'

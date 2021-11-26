@@ -25,7 +25,7 @@ library QuestData initializer OnInit requires QuestItemData, Event
     private QuestItemData array questItems[10]
     private integer questItemCount = 0
 
-    readonly thistype triggerQuest = 0
+    readonly static thistype triggerQuest = 0
 
     stub method operator Title takes nothing returns string
       return this.title

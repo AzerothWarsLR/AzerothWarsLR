@@ -34,7 +34,7 @@ library QuestItemCompleteQuest initializer OnInit requires QuestData, Faction
       endif
 
       set this.target = target
-      set this.Description = "Complete the quest " + target.Name
+      set this.Description = "Complete the quest " + target.Title
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this
@@ -45,7 +45,7 @@ library QuestItemCompleteQuest initializer OnInit requires QuestData, Faction
   private function OnInit takes nothing returns nothing
     local trigger trig = CreateTrigger()
     call QuestProgressChanged.register(trig) 
-    call TriggerAddAction(trig, function QuestItemControlLegend.OnAnyQuestProgressChanged)
+    call TriggerAddAction(trig, function QuestItemCompleteQuest.OnAnyQuestProgressChanged)
   endfunction  
 
 endlibrary

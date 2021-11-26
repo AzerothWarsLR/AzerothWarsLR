@@ -20,6 +20,7 @@ library QuestGoblinEmpire requires QuestData, KultirasSetup
       local thistype this = thistype.allocate("Goblin Empire", "All the Goblin syndicates towns must be reunited under one banner", "ReplaceableTextures\\CommandButtons\\BTNGoblinWarZeppelin.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01X')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00L')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07Y')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01E')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n04Z')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05C')))
