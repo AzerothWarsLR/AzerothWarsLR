@@ -146,6 +146,7 @@ library QuestItemData
         if this.mapEffectPath != null and this.mapEffect == null then
           set this.mapEffect = AddSpecialEffect(this.mapEffectPath, this.X, this.Y)
           call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
+          call BlzSetSpecialEffectHeight(this.mapEffect, 200)
         endif
       endif
     endmethod

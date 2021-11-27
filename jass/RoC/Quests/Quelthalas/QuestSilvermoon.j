@@ -39,7 +39,9 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R02U', 1) 
       call this.GrantSilvermoon(this.Holder.Player)
-      call SetUnitInvulnerable(LEGEND_SILVERMOON.Unit, true )
+      if UnitAlive(gg_unit_h00D_2122) == true then
+        call SetUnitInvulnerable(LEGEND_SILVERMOON.Unit, true )
+      endif
       call SetUnitInvulnerable(LEGEND_SUNWELL.Unit, true )
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\SilvermoonTheme.mp3" )

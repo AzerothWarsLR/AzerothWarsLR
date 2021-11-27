@@ -47,6 +47,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call WaygateActivateBJ( true, gg_unit_h01D_3384 )
       call ShowUnitShow( gg_unit_h01D_3384 )
       call WaygateSetDestinationLocBJ( gg_unit_h01D_3384, GetRectCenter(gg_rct_NazjatarEntrance2) )
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
     endmethod
 
     public static method create takes nothing returns thistype

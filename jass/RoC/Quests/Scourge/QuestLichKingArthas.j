@@ -33,6 +33,7 @@ library QuestLichKingArthas requires QuestData, ScourgeSetup, Artifact, GeneralH
       call UnitAddItemSafe(LEGEND_ARTHAS.Unit, ARTIFACT_HELMOFDOMINATION.item)
       set this.Holder.Team = TEAM_SCOURGE
       call UnitRescue(gg_unit_h00O_2516, FACTION_SCOURGE.Player)
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
     endmethod
 
     public static method create takes nothing returns thistype

@@ -34,6 +34,7 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
       set this.Holder.Team = TEAM_FORSAKEN
       set this.Holder.Name = "Forsaken"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp"
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\ForsakenTheme.mp3" )
       endif

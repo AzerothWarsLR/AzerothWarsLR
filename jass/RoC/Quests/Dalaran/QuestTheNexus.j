@@ -47,9 +47,9 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
       call UnitRemoveAbilityBJ( 'A0RB', LEGEND_JAINA.Unit)
       set this.Holder.Team = TEAM_SCOURGE
-      set FACTION_SCOURGE.Team = TEAM_SCOURGE
       set this.Holder.Name = "The Nexus"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNJaina_Archmage.blp"
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
     endmethod
 
     public static method create takes nothing returns thistype
