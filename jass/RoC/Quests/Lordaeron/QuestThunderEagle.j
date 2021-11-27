@@ -21,7 +21,7 @@ library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronSe
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("To the Skies!", "The Thunder Eagles of the Storm Peaks live in fear of the Legion. Wipe out the Legion Nexus to bring these great birds out into the open.", "ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LEGIONNEXUS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02S')))
       return this
     endmethod

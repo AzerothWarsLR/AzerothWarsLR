@@ -87,7 +87,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Blood Elves", "The Elves of Quel'thalas have a deep reliance on the Sunwell's magic. Without it, they would have to turn to darker magicks to sate themselves.", "ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp")
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LEGIONNEXUS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ANASTERIAN, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, true))
       return this

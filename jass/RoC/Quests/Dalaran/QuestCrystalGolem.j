@@ -27,7 +27,7 @@ library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Crystalsong Forest", "The living crystal of the Crystalsong Forest suffers from its proximity to the Legion. Freed from that corruption, it could be used to empower Dalaran's constructs.", "ReplaceableTextures\\CommandButtons\\BTNRockGolem.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02R')))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LEGIONNEXUS))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       return this
     endmethod
   endstruct

@@ -6,7 +6,6 @@ library LegendLegion initializer OnInit requires Legend
     Legend LEGEND_TICHONDRIUS
     Legend LEGEND_MALGANIS
 
-    Legend LEGEND_LEGIONNEXUS
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -29,10 +28,6 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_MALGANIS.UnitType = 'Umal'
     set LEGEND_MALGANIS.PlayerColor = PLAYER_COLOR_GREEN
 
-    set LEGEND_LEGIONNEXUS = Legend.create()
-    set LEGEND_LEGIONNEXUS.Unit = gg_unit_u01Q_3871
-    set LEGEND_LEGIONNEXUS.DeathMessage = "The Legion Nexus was destroyed. The Burning Legion is now cut off from Azeroth."
-    set LEGEND_LEGIONNEXUS.IsCapital = true
   endfunction
 
 endlibrary

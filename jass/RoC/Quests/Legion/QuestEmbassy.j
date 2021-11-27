@@ -1,7 +1,6 @@
 library QuestEmbassy requires QuestData, LegionSetup
 
   globals
-    private constant integer OBJECT_ID = 'u00U'
     private constant integer HERO_ID = 'U00L'
     private constant integer ALTAR_ID = 'u01N'
   endglobals
@@ -20,7 +19,7 @@ library QuestEmbassy requires QuestData, LegionSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Infernal Foothold", "A stronger foothold in this world will be required to field the Burning Legion's war machines and to call in more of its lieutenants.", "ReplaceableTextures\\CommandButtons\\BTNDemonBlackCitadel.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create(OBJECT_ID, 'u00N'))
+      call this.AddQuestItem(QuestItemUpgrade.create('e01H', 'e01F'))
       set this.ResearchId = 'R042'
       return this
     endmethod
