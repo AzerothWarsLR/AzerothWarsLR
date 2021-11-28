@@ -123,20 +123,24 @@ library QuestData initializer OnInit requires QuestItemData, Event
       endif
       
       //If the quest is incomplete, show its markers. Otherwise, hide them.
-      if GetLocalPlayer() == this.Holder.Player then
-        if this.Progress != QUEST_PROGRESS_INCOMPLETE then
-          loop
-            exitwhen i == this.questItemCount
-            call questItems[i].Hide()
-            set i = i + 1
-          endloop
-        else 
-          loop
-            exitwhen i == this.questItemCount
-            call questItems[i].Show()
-            set i = i + 1
-          endloop
-        endif
+      if this.Progress != QUEST_PROGRESS_INCOMPLETE then
+        loop
+          exitwhen i == this.questItemCount
+          if GetLocalPlayer() == this.Holder.Player then
+            call questItems[i].HideLocal()
+          endif
+          call questItems[i].HideSync()
+          set i = i + 1
+        endloop
+      else 
+        loop
+          exitwhen i == this.questItemCount
+          if GetLocalPlayer() == this.Holder.Player then
+            call questItems[i].ShowLocal()
+          endif
+          call questItems[i].ShowSync()
+          set i = i + 1
+        endloop
       endif
 
       set thistype.triggerQuest = this
@@ -184,22 +188,44 @@ library QuestData initializer OnInit requires QuestItemData, Event
 
     endmethod
 
-    method Show takes nothing returns nothing
+    //Enables the local aspects of all child QuestItems.
+    method ShowLocal takes nothing returns nothing
       local integer i = 0
       call QuestSetEnabled(this.quest, true)
       loop
         exitwhen i == this.questItemCount
-        call questItems[i].Show()
+        call questItems[i].ShowLocal()
         set i = i + 1
       endloop
     endmethod
 
-    method Hide takes nothing returns nothing
+    //Enables the synchronous aspects of all child QuestItems.
+    method ShowSync takes nothing returns nothing
+      local integer i = 0
+      loop
+        exitwhen i == this.questItemCount
+        call questItems[i].ShowSync()
+        set i = i + 1
+      endloop
+    endmethod
+
+    //Disables the local aspects of all child QuestItems.
+    method HideLocal takes nothing returns nothing
       local integer i = 0
       call QuestSetEnabled(this.quest, false)
       loop
         exitwhen i == this.questItemCount
-        call questItems[i].Hide()
+        call questItems[i].HideLocal()
+        set i = i + 1
+      endloop
+    endmethod
+
+    //Disables the synchronous aspects of all child QuestItems.
+    method HideSync takes nothing returns nothing
+      local integer i = 0
+      loop
+        exitwhen i == this.questItemCount
+        call questItems[i].HideSync()
         set i = i + 1
       endloop
     endmethod

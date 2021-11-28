@@ -97,13 +97,15 @@ library QuestItemData
         if value == QUEST_PROGRESS_INCOMPLETE then
           call QuestItemSetCompleted(this.questItem, false)
           if GetLocalPlayer() == this.Holder.Player then
-            call this.Show()
+            call this.ShowLocal()
           endif
+          call this.ShowSync()
         elseif value == QUEST_PROGRESS_COMPLETE then
           call QuestItemSetCompleted(this.questItem, true)
           if GetLocalPlayer() == this.Holder.Player then
-            call this.Hide()
+            call this.HideLocal()
           endif
+          call this.HideSync()
         elseif value == QUEST_PROGRESS_UNDISCOVERED then
           call QuestItemSetCompleted(this.questItem, false)
         elseif value == QUEST_PROGRESS_FAILED then
@@ -134,7 +136,8 @@ library QuestItemData
 
     endmethod
 
-    method Show takes nothing returns nothing
+    //Shows the local aspects of this QuestItem, namely the minimap icon.
+    method ShowLocal takes nothing returns nothing
       local integer i = 0
       if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.ParentQuest.Progress == QUEST_PROGRESS_INCOMPLETE then
         if this.minimapIcon == null and this.X != 0 and this.Y != 0 then
@@ -142,7 +145,12 @@ library QuestItemData
         elseif this.minimapIcon != null then
           call SetMinimapIconVisible(this.minimapIcon, true)
         endif
+      endif
+    endmethod
 
+    //Shows the synchronous aspects of this QuestItem, namely the visible target circle.
+    method ShowSync takes nothing returns nothing
+      if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.ParentQuest.Progress == QUEST_PROGRESS_INCOMPLETE then
         if this.mapEffectPath != null and this.mapEffect == null then
           set this.mapEffect = AddSpecialEffect(this.mapEffectPath, this.X, this.Y)
           call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
@@ -151,11 +159,16 @@ library QuestItemData
       endif
     endmethod
 
-    method Hide takes nothing returns nothing
+    //Hides the synchronous aspects of this QuestItem, namely the minimap icon.
+    method HideLocal takes nothing returns nothing
       local integer i = 0
       if this.minimapIcon != null then
         call SetMinimapIconVisible(this.minimapIcon, false)
       endif
+    endmethod
+
+    //Hides the synchronous aspects of this QuestItem, namely the minimap icon.
+    method HideSync takes nothing returns nothing
       if this.mapEffect != null then
         call DestroyEffect(this.mapEffect)
         set this.mapEffect = null

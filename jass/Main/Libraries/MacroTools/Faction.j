@@ -267,26 +267,31 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       return this.unitTypeByCategory[unitCategory]
     endmethod
 
+    //Shows all of the Faction's quest, rendering them in the quest log,
+    //showing them on the minimap, and showing them on the map.
     method ShowAllQuests takes nothing returns nothing
       local integer i = 0
-      if GetLocalPlayer() == this.Player then
-        loop
-          exitwhen i == this.questCount
-          call this.quests[i].Show()
-          set i = i + 1
-        endloop
-      endif
+      loop
+        exitwhen i == this.questCount
+        if GetLocalPlayer() == this.Player then
+          call quests[i].ShowLocal()
+        endif
+        call quests[i].ShowSync()
+        set i = i + 1
+      endloop
     endmethod
 
+    //Hides all of the Faction's quests.
     method HideAllQuests takes nothing returns nothing
       local integer i = 0
-      if GetLocalPlayer() == this.Player then
-        loop
-          exitwhen i == this.questCount
-          call quests[i].Hide()
-          set i = i + 1
-        endloop
-      endif
+      loop
+        exitwhen i == this.questCount
+        if GetLocalPlayer() == this.Player then
+          call quests[i].HideLocal()
+        endif
+        call quests[i].HideSync()
+        set i = i + 1
+      endloop
     endmethod
 
     method AddQuest takes QuestData questData returns QuestData
@@ -294,8 +299,9 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       set this.quests[this.questCount] = questData
       set this.questCount = this.questCount + 1
       if GetLocalPlayer() == this.Player then
-        call questData.Show()
+        call questData.ShowLocal()
       endif
+      call questData.ShowSync()
       return questData
     endmethod
 
