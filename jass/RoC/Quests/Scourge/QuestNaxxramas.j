@@ -37,7 +37,7 @@ library QuestNaxxramas requires QuestData, QuestItemChannelRect, LegendScourge
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Dread Citadel", "This fallen necropolis can be transformed into a potent war machine by the Lich Kel'tuzad", "ReplaceableTextures\\CommandButtons\\BTNBlackCitadel.blp")
-      local QuestItemChannelRect questItemChannelRect = this.AddQuestItem(QuestItemChannelRect.create(gg_rct_NaxUnlock, "Naxxramas", LEGEND_KELTHUZAD, 120, 270))
+      local QuestItemChannelRect questItemChannelRect = this.AddQuestItem(QuestItemChannelRect.create(gg_rct_NaxUnlock, "Naxxramas", LEGEND_KELTHUZAD, 60, 270))
       set questItemChannelRect.RequiredUnitTypeId = UNITTYPE_KELTHUZAD_LICH
       return this
     endmethod
