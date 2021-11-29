@@ -165,15 +165,26 @@ library QuestItemData
 
     //Shows the synchronous aspects of this QuestItem, namely the visible target circle.
     method ShowSync takes nothing returns nothing
+      local string effectPath
       if this.Progress == QUEST_PROGRESS_INCOMPLETE and this.ParentQuest.Progress == QUEST_PROGRESS_INCOMPLETE then
         if this.mapEffectPath != null and this.mapEffect == null then
-          set this.mapEffect = AddSpecialEffect(this.mapEffectPath, this.X, this.Y)
+          if GetLocalPlayer() == this.Holder.Player then
+            set effectPath = this.mapEffectPath
+          else
+            set effectPath = ""
+          endif
+          set this.mapEffect = AddSpecialEffect(effectPath, this.X, this.Y)
           call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
           call BlzSetSpecialEffectHeight(this.mapEffect, 200)
         endif
 
         if this.overheadEffectPath != null and this.overheadEffect == null and this.TargetWidget != null then
-          set this.overheadEffect = AddSpecialEffectTarget(this.overheadEffectPath, this.TargetWidget, "overhead")
+          if GetLocalPlayer() == this.Holder.Player then
+            set effectPath = this.overheadEffectPath
+          else
+            set effectPath = ""
+          endif
+          set this.overheadEffect = AddSpecialEffectTarget(effectPath, this.TargetWidget, "overhead")
         endif
       endif
     endmethod
