@@ -70,6 +70,7 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
       set this.target = target
       set this.Description = "Your team controls " + target.Name
       set this.canFail = canFail
+      set this.targetWidget = target.Unit
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

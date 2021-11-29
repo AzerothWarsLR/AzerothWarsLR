@@ -61,6 +61,7 @@ library QuestItemKillUnit requires QuestItemData, Event, Environment
       set this.target = unitToKill
       call InitializeDescription()
       call GroupAddUnit(thistype.targets, unitToKill)
+      set this.targetWidget = unitToKill
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

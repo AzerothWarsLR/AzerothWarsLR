@@ -29,6 +29,7 @@ library QuestItemControlUnit requires QuestItemData
       call TriggerAddAction(trig, function thistype.OnAnyUnitChangeOwner)
       set this.Description = "Your team controls " + GetUnitName(target)
       set this.target = target
+      set this.targetWidget = target
       set thistype.byHandleId[GetHandleId(target)] = this
       return this
     endmethod

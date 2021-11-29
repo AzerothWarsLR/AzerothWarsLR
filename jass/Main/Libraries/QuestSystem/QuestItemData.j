@@ -7,8 +7,13 @@ library QuestItemData
     private string description = ""
     private questitem questItem
     private minimapicon minimapIcon = null
+
     private effect mapEffect = null //The visual effect that appears on the map, usually a Circle of Power
     private string mapEffectPath = null
+
+    private effect overheadEffect = null
+    private string overheadEffectPath = null
+    widget targetWidget = null
 
     private static Event progressChanged
     private static thistype triggerQuestItemData = 0
@@ -19,6 +24,16 @@ library QuestItemData
 
     static method operator ProgressChanged takes nothing returns Event
       return thistype.progressChanged
+    endmethod
+
+    //Overhead effects get rendered over the target widget.
+    method operator TargetWidget takes nothing returns widget
+      return this.targetWidget
+    endmethod
+
+    //The file path for the overhead effect to use for this item.
+    method operator OverheadEffectPath takes nothing returns string
+      return this.overheadEffectPath
     endmethod
 
     method operator MapEffectPath takes nothing returns string
@@ -156,6 +171,10 @@ library QuestItemData
           call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
           call BlzSetSpecialEffectHeight(this.mapEffect, 200)
         endif
+
+        if this.overheadEffectPath != null and this.overheadEffect == null and this.TargetWidget != null then
+          set this.overheadEffect = AddSpecialEffectTarget(this.overheadEffectPath, this.TargetWidget, "overhead")
+        endif
       endif
     endmethod
 
@@ -173,6 +192,10 @@ library QuestItemData
         call DestroyEffect(this.mapEffect)
         set this.mapEffect = null
       endif
+      if this.overheadEffectPath != null then
+        call DestroyEffect(this.overheadEffect)
+        set this.overheadEffect = null
+      endif
     endmethod
 
     private method destroy takes nothing returns nothing
@@ -181,6 +204,7 @@ library QuestItemData
 
     static method create takes nothing returns thistype
       local thistype this = thistype.allocate()
+      set this.overheadEffectPath = "Abilities\\Spells\\Other\\TalkToMe\\TalkToMe"
       return this
     endmethod
 

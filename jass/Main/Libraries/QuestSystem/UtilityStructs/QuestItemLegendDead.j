@@ -40,6 +40,7 @@ library QuestItemLegendDead requires QuestItemData, Legend
     static method create takes Legend target returns thistype
       local thistype this = thistype.allocate()
       set this.target = target
+      set this.targetWidget = target.Unit
       if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) then
         set this.Description = target.Name + " is destroyed"
       else
