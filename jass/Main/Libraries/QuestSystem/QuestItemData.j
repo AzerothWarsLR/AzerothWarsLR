@@ -175,7 +175,7 @@ library QuestItemData
           endif
           set this.mapEffect = AddSpecialEffect(effectPath, this.X, this.Y)
           call BlzSetSpecialEffectColorByPlayer(this.mapEffect, this.Holder.Player)
-          call BlzSetSpecialEffectHeight(this.mapEffect, 200)
+          call BlzSetSpecialEffectHeight(this.mapEffect, 100 + GetPositionZ(this.X, this.Y))
         endif
 
         if this.overheadEffectPath != null and this.overheadEffect == null and this.TargetWidget != null then
