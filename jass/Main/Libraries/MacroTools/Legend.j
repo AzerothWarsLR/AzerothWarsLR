@@ -243,20 +243,27 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
     endmethod
 
     public method Spawn takes player owner, real x, real y, real face returns nothing
+      call BJDebugMsg("Spawn first")
       if Unit == null then
+        call BJDebugMsg("Spawn if unit is null")
         set Unit = CreateUnit(owner, unitType, x, y, face)
         set TriggerLegend = this
         call OnLegendChangeOwner.fire()
       elseif not UnitAlive(Unit) then
+        call BJDebugMsg("if unit is not alive")
         call ReviveHero(Unit, x, y, false)
       else
+        call BJDebugMsg("Else?")
         call SetUnitX(Unit, x)
         call SetUnitY(Unit, y)
         call SetUnitFacing(Unit, face)
       endif
+      call BJDebugMsg("after first endif")
       if GetOwningPlayer(this.unit) != owner then
         call SetUnitOwner(Unit, owner, true)
+        call BJDebugMsg("if ownning player is not owner")
       endif
+      call BJDebugMsg("end of line")
       call refreshDummy()
     endmethod
 
@@ -304,6 +311,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
         call DestroyEffect(tempEffect)
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
+        set this.unit = null
       endif
       if this.deathMessage != null and this.deathMessage != "" and this.enableMessages == true then
         if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then

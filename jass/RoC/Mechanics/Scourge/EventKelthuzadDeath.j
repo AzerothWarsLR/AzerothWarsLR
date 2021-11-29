@@ -10,11 +10,11 @@ library EventKelthuzadDeath initializer OnInit requires LegendScourge
   endglobals
 
   private function Dies takes nothing returns nothing
-    if LEGEND_KELTHUZAD == GetTriggerLegend() and GetUnitTypeId(GetTriggerLegend().Unit) == UNITTYPE_KELTHUZAD_NECROMANCER then
+    if LEGEND_KELTHUZAD == GetTriggerLegend() and GetTriggerLegend().UnitType == UNITTYPE_KELTHUZAD_NECROMANCER then
       set KelthuzadExp = GetHeroXP(LEGEND_KELTHUZAD.Unit)
       set LEGEND_KELTHUZAD.UnitType = UNITTYPE_KELTHUZAD_GHOST
       set LEGEND_KELTHUZAD.PermaDies = false
-      call ReviveHero(LEGEND_KELTHUZAD.Unit, GetRectCenterX(gg_rct_FTSummon), GetRectCenterY(gg_rct_FTSummon), false)
+      call LEGEND_KELTHUZAD.Spawn(FACTION_SCOURGE.Player, GetRectCenterX(gg_rct_FTSummon), GetRectCenterY(gg_rct_FTSummon), 270)
       call DestroyTrigger(GetTriggeringTrigger())         
     endif
   endfunction
