@@ -6,15 +6,11 @@ library QuestArgusControl requires QuestData, LegionSetup
 
   struct QuestArgusControl extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Argus and the Diamond Mine are now under our control and you can research Astral Walk"
+      return "Enable to research Astral Walk and build a shop"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "control of the Diamond Mine and enable to research Astral Walk"
-    endmethod
-
-    private method OnComplete takes nothing returns nothing
-      call SetUnitOwner(gg_unit_n0BE_3105, this.Holder.Player, true)
+      return "Enable to research Astral Walk and build a shop"
     endmethod
 
     public static method create takes nothing returns thistype

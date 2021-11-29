@@ -9,6 +9,7 @@ library LegionQuestSetup requires LegionSetup, QuestDemonGateMonastery, QuestLeg
     call FACTION_LEGION.AddQuest(QuestLegionKillLordaeron.create())
     //Misc
     call FACTION_LEGION.AddQuest(QuestSummonLegion.create())
+    call FACTION_LEGION.AddQuest(QuestConsumeTree.create())
   endfunction
 
 endlibrary
