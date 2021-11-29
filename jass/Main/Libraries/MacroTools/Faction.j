@@ -107,7 +107,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
         call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
         call this.Leave()
-        call CreateFogModifierRectBJ( true, this.Player, FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
+       // call CreateFogModifierRectBJ( true, this.Player, FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
       elseif value == SCORESTATUS_VICTORIOUS and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_VICTORY)
       endif

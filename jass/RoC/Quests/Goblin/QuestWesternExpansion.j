@@ -17,6 +17,7 @@ library QuestWesternExpansion requires LegendSentinels, Display, QuestItemLegend
       local thistype this = thistype.allocate("Western Expansion", "Feathermoon Stronghold and Auberdine give the Elves a grip on the western shore of Kalimdor. We need to destroy them to clear a way for our business expansion west!", "ReplaceableTextures\\CommandButtons\\BTNNightElfShipyard.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

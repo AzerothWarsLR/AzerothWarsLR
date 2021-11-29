@@ -41,6 +41,7 @@ library NagaSetup requires Faction, TeamSetup
     call f.ModObjectLimit('U00S', 1)  	    //Najentus
     call f.ModObjectLimit('Naka', 1)  	    //Akama
     call f.ModObjectLimit('E015', 1)  	    //Akama
+    call f.ModObjectLimit('Eevi', 1)  	    //Illidan
 
     call f.ModObjectLimit('R062', UNLIMITED)   //Redemption path
     call f.ModObjectLimit('R063', UNLIMITED)   //Exile Path

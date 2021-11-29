@@ -12,6 +12,7 @@ library ObserverCommand initializer OnInit
 
     if triggerPerson != 0 then
       set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
+      call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
     endif
   endfunction
 

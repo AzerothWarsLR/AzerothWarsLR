@@ -25,7 +25,7 @@ library QuestConsumeTree requires Persons, LegionSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Twilight of the Gods", "Consuming the World Tree will grant Archimonde immeasurable power and eliminate his mortal enemies, the Druids of Kalimdor, forever .", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ArchimondeChannel, "The World Tree", LEGEND_ARCHIMONDE, 100, 90))
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ArchimondeChannel, "The World Tree", LEGEND_ARCHIMONDE, 420, 90))
       return this
     endmethod
   endstruct
