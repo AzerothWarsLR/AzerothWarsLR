@@ -304,7 +304,6 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
         call DestroyEffect(tempEffect)
         call UnitDropAllItems(unit)
         call RemoveUnit(unit)
-        set this.unit = null
       endif
       if this.deathMessage != null and this.deathMessage != "" and this.enableMessages == true then
         if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then
@@ -410,12 +409,12 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       call thistype(thistype.byHandle[GetHandleId(GetTriggerUnit())]).onCast()
     endmethod
 
-    //Check if a given unit matches any Legend. If it does, assign it to that Legend.
-    private static method TryAssignToLegend takes unit whichUnit returns nothing
+    //When any unit is trained, check if it has the unittype of a Legend, and assign it to that Legend if so
+    private static method onUnitTrain takes nothing returns nothing
       local integer i = 0
-      local player owningPlayer = GetOwningPlayer(whichUnit)
+      local unit trainedUnit = GetTrainedUnit()
+      local player owningPlayer = GetOwningPlayer(trainedUnit)
       local Person tempPerson
-      local Legend loopLegend
 
       //Just remove the hero outright if the player is already at their hero cap
       if IsHeroUnitId(GetUnitTypeId(trainedUnit)) and GetHeroCount(owningPlayer) > GetHeroLimit(owningPlayer) then
@@ -431,31 +430,20 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
 
       loop
         exitwhen i == thistype.count
-        set loopLegend = thistype.byIndex[i]
-        if loopLegend.UnitType == GetUnitTypeId(whichUnit) and loopLegend.Unit != whichUnit then
-          set thistype.byIndex[i].Unit = whichUnit
+        if thistype.byIndex[i].UnitType == GetUnitTypeId(trainedUnit) then
+          set thistype.byIndex[i].Unit = trainedUnit
           set LegendPreviousOwner = null
-          set TriggerLegend = loopLegend
+          set TriggerLegend = thistype.byIndex[i]
           call OnLegendChangeOwner.fire()
           return
         endif
         set i = i + 1
       endloop
 
+      set trainedUnit = null
       set owningPlayer = null
     endmethod
 
-<<<<<<< HEAD
-    private static method onUnitTrain takes nothing returns nothing
-      call TryAssignToLegend(GetTrainedUnit())
-    endmethod
-
-    private static method onUnitRevive takes nothing returns nothing
-      call TryAssignToLegend(GetRevivingUnit())
-    endmethod
-
-=======
->>>>>>> parent of 82583f97 (Updated legend.j)
     private method destroy takes nothing returns nothing
       call this.deallocate()
       call UnitDropAllItems(unit)
