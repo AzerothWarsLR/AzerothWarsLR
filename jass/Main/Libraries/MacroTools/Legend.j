@@ -445,6 +445,7 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       set owningPlayer = null
     endmethod
 
+<<<<<<< HEAD
     private static method onUnitTrain takes nothing returns nothing
       call TryAssignToLegend(GetTrainedUnit())
     endmethod
@@ -453,6 +454,8 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
       call TryAssignToLegend(GetRevivingUnit())
     endmethod
 
+=======
+>>>>>>> parent of 82583f97 (Updated legend.j)
     private method destroy takes nothing returns nothing
       call this.deallocate()
       call UnitDropAllItems(unit)
@@ -463,7 +466,6 @@ library Legend requires GeneralHelpers, Event, HeroLimit, GeneralHelpers
 
     private static method onInit takes nothing returns nothing
       call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_TRAIN_FINISH, function thistype.onUnitTrain) //TODO: use filtered events
-      call PlayerUnitEventAddAction(EVENT_PLAYER_HERO_REVIVE_FINISH, function thistype.onUnitRevive)
       set thistype.byHandle = Table.create()
       set OnLegendChangeOwner = Event.create()
       set OnLegendPermaDeath = Event.create()

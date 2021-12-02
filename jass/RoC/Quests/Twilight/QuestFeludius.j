@@ -1,4 +1,4 @@
-library QuestFeludius requires QuestData, TwilightSetup, QuestItemLegendDead
+library QuestFeludius requires QuestData, TwilightSetup,  QuestItemControlPoint, QuestItemArtifactInRect, Artifact, ArtifactSetup
 
   globals
     private constant integer RESEARCH_ID = 'R07T'
@@ -6,11 +6,11 @@ library QuestFeludius requires QuestData, TwilightSetup, QuestItemLegendDead
 
   struct QuestFeludius extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The great Al'akir has gifted one of our followers with Ascendance"
+      return "The great Al'akir has joined us!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Feludius from the Altar"
+      return "You can summon Al-akir from the Altar"
     endmethod
 
 
