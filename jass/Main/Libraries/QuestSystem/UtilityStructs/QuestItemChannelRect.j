@@ -82,13 +82,13 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call SetUnitAnimation(caster, "channel")
       call BlzSetUnitFacingEx(caster, facing)
 
-      if this.questItemChannelRect.ParentQuest.Global == true then
-        set this.channelingTimer = CreateTimer()
-        call TimerStart(this.channelingTimer, maxDuration, false, null)
-        set this.channelingDialog = CreateTimerDialog(this.channelingTimer)
-        call TimerDialogSetTitle(this.channelingDialog, this.questItemChannelRect.ParentQuest.Title)
-        call TimerDialogDisplay(this.channelingDialog, true)
-      endif
+      //if this.questItemChannelRect.ParentQuest.Global == true then
+      //  set this.channelingTimer = CreateTimer()
+      //  call TimerStart(this.channelingTimer, maxDuration, false, null)
+      //  set this.channelingDialog = CreateTimerDialog(this.channelingTimer)
+      //  call TimerDialogSetTitle(this.channelingDialog, this.questItemChannelRect.ParentQuest.Title)
+      //  call TimerDialogDisplay(this.channelingDialog, true)
+     // endif
 
 
       set thistype.byCaster[GetUnitId(caster)] = this
