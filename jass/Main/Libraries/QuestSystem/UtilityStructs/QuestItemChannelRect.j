@@ -1,9 +1,9 @@
 library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, FilteredDeathEvents
 
   globals
-    private constant string TARGET_EFFECT = "war3mapImported\\Fortitude Rune Aura.mdx" //Make it so this renders in the world on the target location
+    private constant string TARGET_EFFECT = "buildings\\other\\CircleOfPower\\CircleOfPower" //Make it so this renders in the world on the target location
     private constant string EFFECT = "Abilities\\Spells\\Other\\Drain\\ManaDrainCaster.mdl"
-    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar10sec.mdx"
+    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
     private constant real PROGRESS_SCALE = 1.5
     private constant real PROGRESS_HEIGHT = 285.
   endglobals
@@ -16,7 +16,6 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
 
   //The channel animation and duration tracker.
   private struct Channel
-    private static thistype array byCaster
     private unit caster
     private real tick = 0.
     private real maxDuration = 0.
@@ -32,9 +31,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call DestroyEffect(this.sfxProgress)
       call DestroyEffect(this.sfx)
       call DestroyTimer(channelingTimer)
-      call DestroyTimerDialog (channelingDialog)
-
-      set thistype.byCaster[GetUnitId(caster)] = 0
+      call DestroyTimerDialog(channelingDialog)
       call this.stopPeriodic()
       call this.deallocate()
     endmethod
@@ -42,21 +39,27 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     //Finished is true if the channel ended successfully, and false if it was interrupted.
     private method End takes boolean finished returns nothing
       call PauseUnit(caster, false)
-      call SetUnitAnimation(caster, "spell")
-      call QueueUnitAnimation(caster, "stand")
+      if finished then
+        call SetUnitAnimation(caster, "spell")
+      endif
+      if UnitAlive(this.caster) then
+        call QueueUnitAnimation(caster, "stand")
+      endif
       call questItemChannelRect.OnChannelEnd(this, finished)
       call this.destroy()
     endmethod
 
-    public static method OnAnyUnitDeath takes nothing returns nothing
-      call thistype.byCaster[GetUnitId(GetTriggerUnit())].End(false)
-    endmethod
-
     private method periodic takes nothing returns nothing    
       set this.tick = this.tick+1
-      set this.elapsedDuration = this.elapsedDuration + 1./T32_FPS
-      call BJDebugMsg(this.questItemChannelRect.Description + " " + R2S(this.elapsedDuration))
 
+      if this.tick > T32_FPS then
+        set this.tick = 0
+        if this.caster == null or not UnitAlive(this.caster) then
+          call this.End(false)
+        endif
+      endif
+
+      set this.elapsedDuration = this.elapsedDuration + 1./T32_FPS
       if this.elapsedDuration >= this.maxDuration then
         call this.End(true)
       endif
@@ -74,7 +77,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call SetUnitX(caster, questItemChannelRect.X)
       call SetUnitY(caster, questItemChannelRect.Y)
       set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(caster), GetUnitY(caster))
-      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 10./duration)
+      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
       call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
       call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
       call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT + GetPositionZ(questItemChannelRect.X, questItemChannelRect.Y))
@@ -83,16 +86,13 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call SetUnitAnimation(caster, "channel")
       call BlzSetUnitFacingEx(caster, facing)
 
-      //if this.questItemChannelRect.ParentQuest.Global == true then
-      //  set this.channelingTimer = CreateTimer()
-      //  call TimerStart(this.channelingTimer, maxDuration, false, null)
-      //  set this.channelingDialog = CreateTimerDialog(this.channelingTimer)
-      //  call TimerDialogSetTitle(this.channelingDialog, this.questItemChannelRect.ParentQuest.Title)
-      //  call TimerDialogDisplay(this.channelingDialog, true)
-     // endif
-
-
-      set thistype.byCaster[GetUnitId(caster)] = this
+      if this.questItemChannelRect.ParentQuest.Global == true then
+        set this.channelingTimer = CreateTimer()
+        call TimerStart(this.channelingTimer, maxDuration, false, null)
+        set this.channelingDialog = CreateTimerDialog(this.channelingTimer)
+        call TimerDialogSetTitle(this.channelingDialog, this.questItemChannelRect.ParentQuest.Title)
+        call TimerDialogDisplay(this.channelingDialog, true)
+      endif
 
       call this.startPeriodic()      
       return this
@@ -167,7 +167,6 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       set this.Description = "Have " + whichLegend.Name + " channel at " + rectName + " for " + I2S(R2I(duration)) + " seconds"
       set this.facing = facing
       call TriggerRegisterEnterRegion(thistype.entersRectTrig, this.target, null)
-      call RegisterUnitTypeDiesAction(whichLegend.UnitType, function Channel.OnAnyUnitDeath) //This is very bizzare, but only the Channel struct needs to keep track of deaths, and it only needs to do so for valid Legends
       set this.MapEffectPath = TARGET_EFFECT
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
