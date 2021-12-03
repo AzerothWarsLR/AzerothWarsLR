@@ -44,7 +44,7 @@ library TeamSetup requires Team
     set TEAM_FORSAKEN = Team.create("Forsaken")
     set TEAM_FORSAKEN.VictoryMusic = "DarkVictory"
 
-    set TEAM_SCOURGE = Team.create("Scourge")
+    set TEAM_SCOURGE = Team.create("Northrend")
     set TEAM_SCOURGE.VictoryMusic = "DarkVictory"
   endfunction
 

@@ -9,10 +9,12 @@ library ObserverCommand initializer OnInit
   private function Actions takes nothing returns nothing
     local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
     local group tempGroup = CreateGroup()
+    local fogmodifier = ObsFogModifier
 
     if triggerPerson != 0 then
       set triggerPerson.Faction.ScoreStatus = SCORESTATUS_DEFEATED
-      call CreateFogModifierRectBJ( true, GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
+      set ObsFogModifier = CreateFogModifierRect(GetTriggerPlayer(), FOG_OF_WAR_VISIBLE, GetPlayableMapRect(), false, false)
+      call FogModifierStart(ObsFogModifier)
     endif
   endfunction
 

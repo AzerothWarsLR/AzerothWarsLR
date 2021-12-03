@@ -50,6 +50,9 @@ library GilneasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('n06Q', 12)          //Royal Guard
 
     call f.ModObjectLimit('E01E', 1)          //Goldrinn
+    call f.ModObjectLimit('Ewar', 1)          //Tess
+    call f.ModObjectLimit('Hhkl', 1)          //Genn
+    call f.ModObjectLimit('Hpb2', 1)          //Darius
 
     //Upgrades
     call f.ModObjectLimit('R04O', UNLIMITED)   //Cleric Training

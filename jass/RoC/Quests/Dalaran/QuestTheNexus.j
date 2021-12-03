@@ -33,6 +33,7 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
       call FACTION_DALARAN.ModObjectLimit('U026',1)               //Malygos
       call FACTION_DALARAN.ModObjectLimit('U027',1)               //Kalecgos
+      call FACTION_DALARAN.ModObjectLimit('H04A',1)               //Nexus Jaina
 
       call FACTION_DALARAN.ModObjectLimit('n0A1',6)               //Elite
       call FACTION_DALARAN.ModObjectLimit('h09C',UNLIMITED)               //Worker

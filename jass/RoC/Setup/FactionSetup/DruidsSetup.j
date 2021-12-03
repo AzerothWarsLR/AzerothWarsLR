@@ -45,6 +45,7 @@ library DruidsSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('Ecen', 1)           //Cenarius
     call f.ModObjectLimit('E00K', 1)           //Fandral
+    call f.ModObjectLimit('Efur', 1)           //Fandral
 
     call f.ModObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
     call f.ModObjectLimit('Renb', UNLIMITED)   //Nature's Blessing
