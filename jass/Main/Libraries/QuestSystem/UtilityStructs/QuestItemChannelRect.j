@@ -55,6 +55,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
     private method periodic takes nothing returns nothing    
       set this.tick = this.tick+1
       set this.elapsedDuration = this.elapsedDuration + 1./T32_FPS
+      call BJDebugMsg(this.questItemChannelRect.Description + " " + R2S(this.elapsedDuration))
 
       if this.elapsedDuration >= this.maxDuration then
         call this.End(true)
