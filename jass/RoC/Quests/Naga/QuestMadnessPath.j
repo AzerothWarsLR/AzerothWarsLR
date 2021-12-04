@@ -52,6 +52,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
       call this.AdjustTechtree()
       call this.FailQuests()
       call this.TransferHeroes()
+      call FACTION_NAGA.ModObjectLimit('Eevi', -UNLIMITED)  	    //Illidan
       set BLACKEMPIREPORTAL_ILLIDAN.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       call this.RenameIllidanFaction()
       call WaygateActivateBJ( true, gg_unit_h01D_3378 )

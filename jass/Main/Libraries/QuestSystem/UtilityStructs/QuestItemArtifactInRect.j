@@ -37,7 +37,7 @@ library QuestItemArtifactInRect requires QuestItemData, Artifact
 
     private method OnRegionEnter takes unit whichUnit returns nothing
       if targetArtifact.OwningUnit == GetEnteringUnit() then
-        call BJDebugMsg("On Region Enter" + GetUnitName(GetEnteringUnit()))
+        //call BJDebugMsg("On Region Enter" + GetUnitName(GetEnteringUnit()))
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_INCOMPLETE
@@ -46,7 +46,7 @@ library QuestItemArtifactInRect requires QuestItemData, Artifact
 
     private method OnRegionExit takes nothing returns nothing
       if IsArtifactInRect() then
-        call BJDebugMsg("On Region Exit")
+        //call BJDebugMsg("On Region Exit")
         set this.Progress = QUEST_PROGRESS_COMPLETE
       else
         set this.Progress = QUEST_PROGRESS_INCOMPLETE      
@@ -90,7 +90,7 @@ library QuestItemArtifactInRect requires QuestItemData, Artifact
 
     private static method onInit takes nothing returns nothing
       call TriggerAddAction(thistype.entersRectTrig, function thistype.OnAnyRegionEnter)
-      call TriggerAddAction(thistype.exitsRectTrig, function thistype.OnAnyRegionEnter)
+      call TriggerAddAction(thistype.exitsRectTrig, function thistype.OnAnyRegionExit)
     endmethod
 
   endstruct

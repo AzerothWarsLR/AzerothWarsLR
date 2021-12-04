@@ -1,9 +1,9 @@
 library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, FilteredDeathEvents
 
   globals
-    private constant string TARGET_EFFECT = "buildings\\other\\CircleOfPower\\CircleOfPower" //Make it so this renders in the world on the target location
+    private constant string TARGET_EFFECT = "war3mapImported\\Fortitude Rune Aura.mdx" //Make it so this renders in the world on the target location
     private constant string EFFECT = "Abilities\\Spells\\Other\\Drain\\ManaDrainCaster.mdl"
-    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
+    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar10sec.mdx"
     private constant real PROGRESS_SCALE = 1.5
     private constant real PROGRESS_HEIGHT = 285.
   endglobals

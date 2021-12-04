@@ -10,7 +10,7 @@ library QuestThePlaguelands requires QuestData, ForsakenSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    call FACTION_FORSAKEN.ModObjectLimit('u01V', 4)           //Valyr
+    call FACTION_FORSAKEN.ModObjectLimit('u01V', 2)           //Valyr
     call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 

@@ -10,7 +10,7 @@ library QuestTheNine requires QuestData, ForsakenSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    call FACTION_FORSAKEN.ModObjectLimit('u01V', 9)           //Valyr
+    call FACTION_FORSAKEN.ModObjectLimit('u01V', 5)           //Valyr
     endmethod
 
 

@@ -9,7 +9,7 @@ library ShoreSetup requires Shore
     call Shore.create(-20970, -8588)    //Feathermoon Stronghold
     call Shore.create(-20307, -12244)   //Isle of Dread
     call Shore.create(-14197, -17303)   //Weird little Stormreaver cove on the bottom of Kalimdor
-    call Shore.create(-835, -18336)     //Weird little pirate cove on the bottom of Kalimdor
+    call Shore.create(-835, -17536)     //Weird little pirate cove on the bottom of Kalimdor
     call Shore.create(-7563, -13900)    //Gadgetzan
     call Shore.create(-6778, -9465)     //Theramore
     call Shore.create(-10440, -5025)    //Grom shipwreck

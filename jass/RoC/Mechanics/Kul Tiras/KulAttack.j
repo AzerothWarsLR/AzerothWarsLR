@@ -26,7 +26,7 @@ library UnitsSpawnIfBlademasterIsAlive initializer OnInit
 
     private function OnPeriodic takes nothing returns nothing
         if GetPlayerSlotState(Player(22)) == PLAYER_SLOT_STATE_PLAYING then
-            call SpawnAndAttackMultipleUnits('ogru', 3)
+            call SpawnAndAttackMultipleUnits('ogru', 2)
             call SpawnAndAttackMultipleUnits('nftr', 1)
             call SpawnAndAttackMultipleUnits('u00V', 1)
             else 
