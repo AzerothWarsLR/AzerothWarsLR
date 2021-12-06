@@ -28,6 +28,11 @@ library ScarletSetup requires Faction, TeamSetup
     call f.ModObjectLimit('h086', UNLIMITED)   //Marketplace 
     call f.ModObjectLimit('h082', UNLIMITED)   //Aviary      
     call f.ModObjectLimit('h097', UNLIMITED)   //Training Camp 
+    call f.ModObjectLimit('h09M', UNLIMITED)   //Training Camp 2
+    call f.ModObjectLimit('h09N', UNLIMITED)   //Training Camp 3
+    call f.ModObjectLimit('h09P', UNLIMITED)   //Training Camp 4
+    call f.ModObjectLimit('h09O', UNLIMITED)   //Training Camp 5
+    call f.ModObjectLimit('h09Q', UNLIMITED)   //Training Camp 6
 
     //Units
     call f.ModObjectLimit('hpea', UNLIMITED)   //Peasant

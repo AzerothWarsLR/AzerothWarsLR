@@ -25,7 +25,7 @@ library QuestGoldrinnHumanPath requires QuestData, GilneasSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Twilight Grove", "To understand the plight of her people, Tess will go to the Shrine of Goldrinn in Duskwood to understand what it is to be a Worgen.", "ReplaceableTextures\\CommandButtons\\BTNWorgenHunger.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_GoldrinnDuskwood, "Shrine of Goldrinn in Duskwood"))
-      call this.AddQuestItem(QuestItemLegendHasArtifact.create(LEGEND_TESS, ARTIFACT_SCYTHEOFELUNE))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GENN))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
