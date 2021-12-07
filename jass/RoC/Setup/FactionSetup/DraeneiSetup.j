@@ -8,7 +8,7 @@ library DraeneiSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRAENEI = Faction.create("Draenei", PLAYER_COLOR_NAVY, "|cff000080","ReplaceableTextures\\CommandButtons\\BTNBOSSVelen.blp")
+    set FACTION_DRAENEI = Faction.create("The Exodar", PLAYER_COLOR_NAVY, "|cff000080","ReplaceableTextures\\CommandButtons\\BTNBOSSVelen.blp")
     set f = FACTION_DRAENEI
     set f.Team = TEAM_NIGHT_ELVES
     set f.UndefeatedResearch = 'R06E'
