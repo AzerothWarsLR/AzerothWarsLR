@@ -24,6 +24,7 @@ library QuestGoblinEmpire requires QuestData, KultirasSetup
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01E')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n04Z')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05C')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0A6')))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
