@@ -49,7 +49,7 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n02S')))
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n04V')))
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n0BD')))
-      call this.AddQuestItem(QuestItemExpire.create(960))
+      call this.AddQuestItem(QuestItemExpire.create(1800))
       return this
     endmethod
   endstruct

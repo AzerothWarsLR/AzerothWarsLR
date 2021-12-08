@@ -15,7 +15,9 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
     endmethod
 
     private method OnComplete takes nothing returns nothing 
-      set FACTION_FEL_HORDE.Team = TEAM_NAGA
+      if FACTION_NAGA.Team == TEAM_NAGA then
+        set FACTION_FEL_HORDE.Team = TEAM_NAGA
+      endif
       call RemoveUnit(LEGEND_MAGTHERIDON.Unit)
       call FACTION_FEL_HORDE.ModObjectLimit('Nmag', -UNLIMITED)           //Magtheridon
     endmethod

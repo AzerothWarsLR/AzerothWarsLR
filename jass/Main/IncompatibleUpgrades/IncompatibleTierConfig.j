@@ -41,10 +41,8 @@ library IncompatibleTierConfig initializer OnInit
         
     //Stormwind Tier 3 (Wizard's Sanctum & Cathedral of Light)
     set researchSet = IncompatibleResearchSet.create()
-    call researchSet.add('R03P')    //Archbishop Benedictus Aid
     call researchSet.add('R03X')    //High Sorcerer Andromath Aid
     call researchSet.add('R03Y')    //Katrana Prestor Aid
-    call researchSet.add('R03R')    //Reginald Windsor Aid
 
     //Naga Path
     set researchSet = IncompatibleResearchSet.create()

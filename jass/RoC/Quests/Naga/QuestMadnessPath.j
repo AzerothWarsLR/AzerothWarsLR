@@ -72,7 +72,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Voices in the Void", "Azshara takes command of the Naga in the name of N'zoth. Illidan reign is no more.", "ReplaceableTextures\\CommandButtons\\BTNGuardianofTheSea.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
+      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_ILLIDAN))
       call this.AddQuestItem(QuestItemSelfExists.create())
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Nazjatar"))
       set this.ResearchId = QUEST_RESEARCH_ID

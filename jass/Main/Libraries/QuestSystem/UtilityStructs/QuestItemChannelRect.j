@@ -77,7 +77,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       call SetUnitX(caster, questItemChannelRect.X)
       call SetUnitY(caster, questItemChannelRect.Y)
       set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(caster), GetUnitY(caster))
-      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
+      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 10./duration)
       call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
       call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
       call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT + GetPositionZ(questItemChannelRect.X, questItemChannelRect.Y))
