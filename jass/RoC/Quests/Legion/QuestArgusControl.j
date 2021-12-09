@@ -13,6 +13,11 @@ library QuestArgusControl requires QuestData, LegionSetup
       return "Enable to research Astral Walk and build a shop"
     endmethod
 
+    private method OnComplete takes nothing returns nothing
+      call UnitRescue(gg_unit_n0BE_3261, FACTION_LEGION.Player)
+      call UnitRescue(gg_unit_n0BE_3262, FACTION_LEGION.Player)
+    endmethod
+
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Argus Incursion", "The planet of Argus is not fully under the control of the Legion, bring it under control!", "ReplaceableTextures\\CommandButtons\\BTNMastersLodge.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BF')))
