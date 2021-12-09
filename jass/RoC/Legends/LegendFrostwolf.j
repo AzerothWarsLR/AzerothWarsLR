@@ -2,7 +2,6 @@ library LegendFrostwolf initializer OnInit requires Legend
 
   globals
     Legend LEGEND_CAIRNE
-    Legend LEGEND_GAZLOWE
     Legend LEGEND_THRALL
     Legend LEGEND_REXXAR
 
