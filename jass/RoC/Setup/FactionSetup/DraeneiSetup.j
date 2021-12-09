@@ -12,7 +12,7 @@ library DraeneiSetup requires Faction, TeamSetup
     set f = FACTION_DRAENEI
     set f.Team = TEAM_NIGHT_ELVES
     set f.UndefeatedResearch = 'R06E'
-    set f.StartingGold = 40
+    set f.StartingGold = 150
     set f.StartingLumber = 800
 
     call f.ModObjectLimit('o02P', UNLIMITED)   //Crystal Hall
