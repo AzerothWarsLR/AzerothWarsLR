@@ -12,60 +12,45 @@ library DraeneiSetup requires Faction, TeamSetup
     set f = FACTION_DRAENEI
     set f.Team = TEAM_NIGHT_ELVES
     set f.UndefeatedResearch = 'R06E'
-    set f.StartingGold = 150
-    set f.StartingLumber = 500
+    set f.StartingGold = 40
+    set f.StartingLumber = 800
 
-    call f.ModObjectLimit('etol', UNLIMITED)   //Tree of Life  
-    call f.ModObjectLimit('etoa', UNLIMITED)   //Tree of Ages
-    call f.ModObjectLimit('etoe', UNLIMITED)   //Tree of Eternity  
-    call f.ModObjectLimit('emow', UNLIMITED)   //Moon Well
-    call f.ModObjectLimit('eate', UNLIMITED)   //Altar of Elders
-    call f.ModObjectLimit('eaoe', UNLIMITED)   //Ancient of Lore
-    call f.ModObjectLimit('eaow', UNLIMITED)   //Ancient of Wind
-    call f.ModObjectLimit('eaom', UNLIMITED)   //Ancient of war
-    call f.ModObjectLimit('etrp', UNLIMITED)   //Ancient Protector
-    call f.ModObjectLimit('e010', UNLIMITED)   //Hunter's Hall
-    call f.ModObjectLimit('e019', UNLIMITED)   //Ancient of Wonders  
-    call f.ModObjectLimit('eshy', UNLIMITED)   //Night Elf Shipyard 
-    call f.ModObjectLimit('e000', UNLIMITED)   //Improved Ancient Protector 
+    call f.ModObjectLimit('o02P', UNLIMITED)   //Crystal Hall
+    call f.ModObjectLimit('o050', UNLIMITED)   //Metropolis
+    call f.ModObjectLimit('o051', UNLIMITED)   //Divine Citadel
+    call f.ModObjectLimit('o058', UNLIMITED)   //Altar of Light
+    call f.ModObjectLimit('o052', UNLIMITED)   //Ceremonial Altar
+    call f.ModObjectLimit('o053', UNLIMITED)   //Smithery
+    call f.ModObjectLimit('o054', UNLIMITED)   //Astral Sanctum
+    call f.ModObjectLimit('o055', UNLIMITED)   //Crystal Spire
+    call f.ModObjectLimit('o056', UNLIMITED)   //Arcane Well
+    call f.ModObjectLimit('o057', UNLIMITED)   //Vaults of Relic
+    call f.ModObjectLimit('u00U', UNLIMITED)   //Crystal Protector
+    call f.ModObjectLimit('u01Q', UNLIMITED)   //Crystal Protector improved
+    call f.ModObjectLimit('o059', UNLIMITED)   //Improved Ancient Protector 
 
-    call f.ModObjectLimit('ewsp', UNLIMITED)   //Wisp 
-    call f.ModObjectLimit('edry', UNLIMITED)   //Dryad
-    call f.ModObjectLimit('edot', UNLIMITED)   //Druid of the Talon 
-    call f.ModObjectLimit('emtg', 12)          //Mountain Giant
-    call f.ModObjectLimit('efdr', 6)           //Faerie Dragon 
-    call f.ModObjectLimit('edoc', UNLIMITED)   //Druid of the Claw
-    call f.ModObjectLimit('edcm', UNLIMITED)   //Druid of the Claw bear form
-    call f.ModObjectLimit('e00N', 6)           //Keeper of the Grove
-    call f.ModObjectLimit('n05H', UNLIMITED)   //Furbolg
-    call f.ModObjectLimit('n065', 6)           //Green Dragon
+    call f.ModObjectLimit('o05A', UNLIMITED)   //Wisp 
+    call f.ModObjectLimit('o05B', UNLIMITED)   //Defender
+    call f.ModObjectLimit('h09T', UNLIMITED)   //Rangari
+    call f.ModObjectLimit('e01K', 3)           //Polybolos
+    call f.ModObjectLimit('o05D', UNLIMITED)   //Elementalist
+    call f.ModObjectLimit('o05C', UNLIMITED)   //Luminarch
+    call f.ModObjectLimit('h09R', 6)           //Vindicator
+    call f.ModObjectLimit('nmdr', UNLIMITED)   //Elekk
+    call f.ModObjectLimit('h09U', 4)           //Elekk Knight
+    call f.ModObjectLimit('u02H', 6)           //Nether Ray
+
     call f.ModObjectLimit('etrs', 12)   	    //Night Elf Transport Ship
-    call f.ModObjectLimit('edes', 12) 	    //Night Elf Frigate
+    call f.ModObjectLimit('edes', 12) 	      //Night Elf Frigate
     call f.ModObjectLimit('ebsh', 6)          //Night Elf Battleship
 
-    call f.ModObjectLimit('Ecen', 1)           //Cenarius
-    call f.ModObjectLimit('E00K', 1)           //Fandral
-    call f.ModObjectLimit('Efur', 1)           //Fandral
+    call f.ModObjectLimit('H09S', 1)           //Maraad
+    call f.ModObjectLimit('E01I', 1)           //Velen
+    call f.ModObjectLimit('E01J', 1)           //Nobundo
 
-    call f.ModObjectLimit('Redt', UNLIMITED)   //Druid of the Talon Adept Training
-    call f.ModObjectLimit('Renb', UNLIMITED)   //Nature's Blessing
-    call f.ModObjectLimit('Rers', UNLIMITED)   //Resistant Skin
-    call f.ModObjectLimit('Reuv', UNLIMITED)   //Ultravision
-    call f.ModObjectLimit('Rews', UNLIMITED)   //Well Spring
-    call f.ModObjectLimit('R01H', UNLIMITED)   //Malorne's Power Infusion
-    call f.ModObjectLimit('Redc', UNLIMITED)   //Druid of the Claw Adept Training
-    call f.ModObjectLimit('R04E', UNLIMITED)   //Ysera's Gift
-    call f.ModObjectLimit('R02G', UNLIMITED)   //Emerald Flames
-    call f.ModObjectLimit('R05X', UNLIMITED)   //Blessing of Ursoc
-    call f.ModObjectLimit('R002', UNLIMITED)   //Blackwald Enhancement
-    call f.ModObjectLimit('R00A', UNLIMITED)   //Improved Thorns
-    call f.ModObjectLimit('R02T', UNLIMITED)   //Improved Moonwells
-    call f.ModObjectLimit('R033', UNLIMITED)   //Limber Timber
-    call f.ModObjectLimit('R046', UNLIMITED)   //Grasping Vines
-    call f.ModObjectLimit('R047', UNLIMITED)   //Crippling Poison
-    call f.ModObjectLimit('R048', UNLIMITED)   //Deadly Poison
-    call f.ModObjectLimit('R008', UNLIMITED)   //Improved Natures FuryR015
-    call f.ModObjectLimit('R015', UNLIMITED)   //Improved Mana Flare
+    call f.ModObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
+    call f.ModObjectLimit('R078', UNLIMITED)   //Elementalist training
+    call f.ModObjectLimit('R07C', UNLIMITED)   //Luminarch training
 
   endfunction
     

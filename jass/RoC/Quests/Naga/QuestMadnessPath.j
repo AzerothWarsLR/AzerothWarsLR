@@ -38,7 +38,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     private method TransferHeroes takes nothing returns nothing
       call SetUnitOwner(LEGEND_NZOTH.Unit, this.Holder.Player, true)
       call LEGEND_AZSHARA.Spawn(Holder.Player, GetRectCenterX(gg_rct_InstanceNazjatar), GetRectCenterY(gg_rct_InstanceNazjatar), 270)
-      call SetHeroLevel(LEGEND_AZSHARA.Unit, 9, false)
+      call SetHeroLevel(LEGEND_AZSHARA.Unit, 7, false)
       call SetUnitOwner(LEGEND_ILLIDAN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
     endmethod
 

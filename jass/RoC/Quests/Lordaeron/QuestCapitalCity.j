@@ -33,6 +33,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemControlPoi
       local thistype this = thistype.allocate("Hearthlands", "The territories of Lordaeron are fragmented. Regain control of the old Alliance's hold to secure the kingdom.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01I')))
       call this.AddQuestItem(QuestItemExpire.create(1472))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID

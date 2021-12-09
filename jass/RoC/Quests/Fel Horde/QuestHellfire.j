@@ -48,8 +48,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Citadel", "The clans holding Hellfire Citadel do not respect Kargath authority yet, destroy Murmur to finally establish Magtheridon as the undisputable king of Outland", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n03T_0555)) //Murmur
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_AUCHINDOUN, false))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01J')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02N')))
       call this.AddQuestItem(QuestItemUpgrade.create('o030', 'o02Y'))
