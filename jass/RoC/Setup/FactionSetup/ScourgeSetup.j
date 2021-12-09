@@ -62,7 +62,6 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.ModObjectLimit('U00M', 1)           //Ghost
     call f.ModObjectLimit('U00A', 1)           //Rivendare
     call f.ModObjectLimit('Uktl', 1)           //Kel Lich
-    call f.ModObjectLimit('Uear', 1)           //DK ArthasU00M
     
     //Upgrades
     call f.ModObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training
