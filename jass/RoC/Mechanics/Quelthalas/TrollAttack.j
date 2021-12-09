@@ -10,7 +10,7 @@ library UnitsSpawnIfZulIsAlive initializer OnInit
     endglobals
 
     private function SpawnAndAttack takes integer unitTypeToSpawn returns nothing
-        local unit spawnedUnit = CreateUnit(Player(21), unitTypeToSpawn, GetRectCenterX(gg_rct_TrollAttackSpawn), GetRectCenterY(gg_rct_TrollAttackSpawn), 0)
+        local unit spawnedUnit = CreateUnit(Player(24), unitTypeToSpawn, GetRectCenterX(gg_rct_TrollAttackSpawn), GetRectCenterY(gg_rct_TrollAttackSpawn), 0)
         call IssuePointOrder(spawnedUnit, "attack", GetRectCenterX(gg_rct_TrollTarget), GetRectCenterY(gg_rct_TrollTarget))
         set spawnedUnit = null
     endfunction
