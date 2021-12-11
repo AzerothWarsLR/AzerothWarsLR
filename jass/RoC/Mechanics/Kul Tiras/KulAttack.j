@@ -10,7 +10,7 @@ library UnitsSpawnIfBlademasterIsAlive initializer OnInit
     endglobals
 
     private function SpawnAndAttack takes integer unitTypeToSpawn returns nothing
-        local unit spawnedUnit = CreateUnit(Player(24), unitTypeToSpawn, GetRectCenterX(gg_rct_KulAttack), GetRectCenterY(gg_rct_KulAttack), 0)
+        local unit spawnedUnit = CreateUnit(Player(21), unitTypeToSpawn, GetRectCenterX(gg_rct_KulAttack), GetRectCenterY(gg_rct_KulAttack), 0)
         call IssuePointOrder(spawnedUnit, "attack", GetRectCenterX(gg_rct_KulTarget), GetRectCenterY(gg_rct_KulTarget))
         set spawnedUnit = null
     endfunction

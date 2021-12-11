@@ -7,6 +7,25 @@ library QuestExilePath requires QuestData, NagaSetup
 
   struct QuestExilePath extends QuestData
 
+    private method GrantAkama takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Exiled
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_AkamaUnlock, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null      
+    endmethod
+
     method operator Global takes nothing returns boolean
       return true
     endmethod
@@ -20,6 +39,7 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call this.GrantAkama(this.Holder.Player)
       call FACTION_NAGA.ModObjectLimit('n08W', UNLIMITED)   //Lost One Den
       call FACTION_NAGA.ModObjectLimit('ndrn', UNLIMITED)   //Vindicator
       call FACTION_NAGA.ModObjectLimit('ndrs', 6)   //Seer

@@ -19,7 +19,7 @@ library QuestHakkar requires TrollSetup, LegendTroll
 
     private method OnComplete takes nothing returns nothing
       call LEGEND_HAKKAR.Spawn(Holder.Player, GetRectCenterX(gg_rct_DrownedTemple), GetRectCenterY(gg_rct_DrownedTemple), 270)
-      call SetHeroLevel(LEGEND_HAKKAR.Unit, 8, false)
+      call SetHeroLevel(LEGEND_HAKKAR.Unit, 12, false)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -10,7 +10,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Hellfire Citadel and enable Magtheridon to be trained at the altar"
+      return "Control of all units in Hellfire Citadel and enable Kargath to be trained at the altar"
     endmethod
 
     private method GrantHellfire takes player whichPlayer returns nothing

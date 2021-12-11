@@ -17,6 +17,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_HORNOFCENARIUS
     Artifact ARTIFACT_EYEOFSARGERAS
     Artifact ARTIFACT_CROWNEASTERNKINGDOMS
+    Artifact ARTIFACT_CROWNTRIUMVIRATE
     Artifact ARTIFACT_TROLKALAR
     Artifact ARTIFACT_DEMONSOUL
     Artifact ARTIFACT_THUNDERFURY
@@ -126,6 +127,10 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_CROWNEASTERNKINGDOMS = Artifact.create(CreateItem('I00U', DUMMY_X, DUMMY_Y))
     call ARTIFACT_CROWNEASTERNKINGDOMS.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("Stormwind and Lordaeron Quest")
+
+    set ARTIFACT_CROWNTRIUMVIRATE = Artifact.create(CreateItem('I011', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_CROWNTRIUMVIRATE.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_CROWNTRIUMVIRATE.setDescription("Draenei Quest")
 
     set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_Hgam_1450, ARTIFACT_HOLDER_ABIL_ID)             //Arugal

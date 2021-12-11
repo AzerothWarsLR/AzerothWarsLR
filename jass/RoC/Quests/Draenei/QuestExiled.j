@@ -16,7 +16,7 @@ library QuestExiled requires QuestData, DraeneiSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Azuremyst and teleports all your units away from Outland"
+      return "Control of all units in Azuremyst, gain 200 gold, 500 lumber and teleports all your units away from Outland"
     endmethod
 
     private method GrantExiled takes player whichPlayer returns nothing
@@ -66,9 +66,14 @@ library QuestExiled requires QuestData, DraeneiSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call FACTION_DRAENEI.AddQuest(SHIP_ARGUS)
+      set SHIP_ARGUS.Progress = QUEST_PROGRESS_INCOMPLETE
       call this.GrantExiled(this.Holder.Player)
       call this.EscapeOutland(this.Holder.Player)
-      call KillUnit(gg_unit_h09W_3303)
+      call RemoveUnit(gg_unit_h09W_3303)
+      call KillUnit(gg_unit_o02P_2291)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\DraeneiTheme.mp3" )
       endif
@@ -76,8 +81,7 @@ library QuestExiled requires QuestData, DraeneiSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Exile from Outland", "The Draenei need to escape Outland through the Exodar ship. We will need to power it up with a Divine Citadel first. The longer you hold out, the better the rewards will be", "ReplaceableTextures\\CommandButtons\\BTNUndeadAirBarge.blp")
-      call this.AddQuestItem(QuestItemUpgrade.create('o051', 'o050'))
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'h09W'), QuestItemTime.create(900)))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'h09W'), QuestItemTime.create(782)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUESTRESEARCH_ID
       return this

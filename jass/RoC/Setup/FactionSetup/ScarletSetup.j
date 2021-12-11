@@ -68,6 +68,7 @@ library ScarletSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R04F', UNLIMITED)   //Inquisitor traiing
     call f.ModObjectLimit('R00K', UNLIMITED)   //Power Infusion
     call f.ModObjectLimit('Rhse', UNLIMITED)   //Magic Sentry
+    call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.ModObjectLimit('R06Q', UNLIMITED)   //Paladin Adept Training
 

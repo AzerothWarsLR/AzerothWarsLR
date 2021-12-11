@@ -14,6 +14,8 @@
 
     QuestData GOLDRINNELVE_PATH
     QuestData GOLDRINNHUMAN_PATH
+
+    QuestData SHIP_ARGUS
   endglobals
 
 

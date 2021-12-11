@@ -59,6 +59,8 @@ library KultirasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R01T', UNLIMITED)   //Cluster Rockets
     call f.ModObjectLimit('R01U', UNLIMITED)   //Improved Barrage
     call f.ModObjectLimit('R05G', UNLIMITED)   //Thornspeaker Training
+    call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
+    call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
 
     //Heroes
     call f.ModObjectLimit('Hapm', 1)           //Admiral

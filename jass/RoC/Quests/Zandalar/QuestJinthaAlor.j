@@ -12,11 +12,12 @@ library QuestJinthaAlor requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Jintha'Alor and the ability to train " + GetObjectName(BEAR_RIDER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
+      return "Control of Jintha'Alor, 300 gold tribute and the ability to train " + GetObjectName(BEAR_RIDER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, JINTHAALOR_RESEARCH, 1)
+      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     private method OnAdd takes nothing returns nothing

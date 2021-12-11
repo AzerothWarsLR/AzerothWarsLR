@@ -58,6 +58,8 @@ library GilneasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R04O', UNLIMITED)   //Cleric Training
     call f.ModObjectLimit('R04P', UNLIMITED)   //Scythe Training
     call f.ModObjectLimit('R00K', UNLIMITED)   //Power Infusion
+    call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
+    call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
   endfunction
     
 endlibrary

@@ -12,11 +12,12 @@ library QuestZulgurub requires LegendNeutral
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'Gurub and the ability to train " + GetObjectName(RAVAGER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
+      return "Control of Zul'Gurub, 300 gold tribute and the ability to train " + GetObjectName(RAVAGER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, ZULGURUB_RESEARCH, 1)
+      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     private method OnAdd takes nothing returns nothing

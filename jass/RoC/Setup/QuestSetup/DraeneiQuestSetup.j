@@ -8,6 +8,9 @@ library DraeneiQuestSetup requires DraeneiSetup
     call FACTION_DRAENEI.AddQuest(QuestFirstWave.create())
     call FACTION_DRAENEI.AddQuest(QuestSurvivorsShattrah.create())
     call FACTION_DRAENEI.AddQuest(QuestBrokenOne.create())
+    call FACTION_DRAENEI.AddQuest(QuestTriumvirate.create())
+
+    set SHIP_ARGUS = QuestShipArgus.create()
     //Misc
   endfunction
 

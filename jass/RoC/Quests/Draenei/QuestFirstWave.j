@@ -18,8 +18,8 @@ library QuestFirstWave requires QuestData, DraeneiSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The First Wave", "The forest needs healing. Regain control of it to summon it's Guardian, the Demigod Cenarius", "ReplaceableTextures\\CommandButtons\\BTNKeeperC.blp")
-      call this.AddQuestItem(QuestItemTime.create(420))
+      local thistype this = thistype.allocate("Broken Civilisation", "The Fel Orc attack will begin at any moment, the Draenei need to evacuate their civilians aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNDraeneiDivineCitadel.blp")
+      call this.AddQuestItem(QuestItemTime.create(600))
       call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
