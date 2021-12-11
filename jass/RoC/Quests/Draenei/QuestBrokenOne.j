@@ -18,6 +18,7 @@ library QuestBrokenOne requires QuestData, DraeneiSetup
       local thistype this = thistype.allocate("The Broken One", "The great shaman Nobundo is fighting to enable Velen and most of the Draenei to escape. If the Draenei hold out long enough, he might have time to join the survivors aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNAkamanew.blp")
       call this.AddQuestItem(QuestItemTime.create(780))
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendAlive.create(LEGEND_EXODARSHIP), QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X'))))
+      set this.ResearchId = QUESTRESEARCH_ID
       return this
     endmethod
   endstruct
