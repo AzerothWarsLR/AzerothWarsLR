@@ -27,7 +27,7 @@ library QuestGoldrinnElvePath requires QuestData, GilneasSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Shrine of the Wolf God", "To understand the plight of her people, Tess will go to the Night Elves to understand what it is to be a Worgen. She needs to reach the Shrine of Goldrinn in Mount Hyjal", "ReplaceableTextures\\CommandButtons\\BTNWorgenMoon.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_GoldrinnHyjal, "Shrine of Goldrinn in Mount Hyjal"))
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_GENN))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_GENN))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

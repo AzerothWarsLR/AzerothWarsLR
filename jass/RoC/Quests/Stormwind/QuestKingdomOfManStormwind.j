@@ -42,7 +42,7 @@ library QuestKingdomOfManStormwind requires StormwindSetup, QuestItemControlPoin
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Kingdom of Man", "Before the First War, all of humanity was united under the banner of the Arathorian Empire. Reclaim its greatness by uniting mankind once again.", "ReplaceableTextures\\CommandButtons\\BTNFireKingCrown.blp")
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_VARIAN))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_VARIAN))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNLORDAERON))
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_CROWNSTORMWIND))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))

@@ -21,7 +21,7 @@ library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron, Gen
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Line of Succession", "Arthas Menethil is the one true heir of the Kingdom of Lordaeron. The only thing standing in the way of his coronation is the world-ending threat of the Scourge.", "ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_CAPITALPALACE))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_CAPITALPALACE))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_King_Arthas_crown, "King Terenas"))

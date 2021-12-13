@@ -17,7 +17,7 @@ library QuestSurvivorsShattrah requires QuestData, DraeneiSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Survivors of Shattrah", "The Shattrah massacre was swift and brutal, if the Draenei hold long enough in Outland, they might regroup with some of the survivors.", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
       call this.AddQuestItem(QuestItemTime.create(480))
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_EXODARSHIP))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUESTRESEARCH_ID
       return this

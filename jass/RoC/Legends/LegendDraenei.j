@@ -15,6 +15,7 @@ library LegendDraenei initializer OnInit requires Legend
 
     set LEGEND_NOBUNDO = Legend.create()
     set LEGEND_NOBUNDO.UnitType = 'E01J'
+    set LEGEND_NOBUNDO.StartingXP = 1800
 
     set LEGEND_EXODAR = Legend.create()
     set LEGEND_EXODAR.Unit = gg_unit_o05E_1583

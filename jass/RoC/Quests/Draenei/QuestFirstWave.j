@@ -20,7 +20,7 @@ library QuestFirstWave requires QuestData, DraeneiSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Broken Civilisation", "The Fel Orc attack will begin at any moment, the Draenei need to evacuate their civilians aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNDraeneiDivineCitadel.blp")
       call this.AddQuestItem(QuestItemTime.create(600))
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_EXODARSHIP))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

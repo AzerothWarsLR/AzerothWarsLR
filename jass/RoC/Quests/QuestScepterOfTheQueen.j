@@ -16,7 +16,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Royal Plunder", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Feathermoon Stronghold falls, it would become a simple matter to slaughter the Highborne and plunder their artifacts.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_STONEMAUL))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_STONEMAUL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
       return this
@@ -50,7 +50,7 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Return to the Fold", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Stonemaul falls, it would be safe for them to come out.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_FEATHERMOON))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
       call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
       return this

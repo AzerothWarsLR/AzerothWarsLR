@@ -23,7 +23,7 @@ library QuestTriumvirate requires DraeneiSetup, QuestItemControlPoint, GeneralHe
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BH')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BL')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X')))
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_VELEN))
+      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_VELEN))
       return this
     endmethod
   endstruct

@@ -45,6 +45,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     private method AdjustTechtree takes nothing returns nothing
       call FACTION_NAGA.ModObjectLimit('n08V', UNLIMITED) //Depth Void Portal
       call FACTION_NAGA.ModObjectLimit('h01Q', 4) //Immortal Guardian
+      call FACTION_NAGA.ModObjectLimit('H08U', 1) //Azshara
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -72,7 +73,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Voices in the Void", "Azshara takes command of the Naga in the name of N'zoth. Illidan reign is no more.", "ReplaceableTextures\\CommandButtons\\BTNGuardianofTheSea.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
-      call this.AddQuestItem(QuestItemLegendAlive.create(LEGEND_ILLIDAN))
+      call this.AddQuestItem(QuestItemLegendNotDead.create(LEGEND_ILLIDAN))
       call this.AddQuestItem(QuestItemSelfExists.create())
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Nazjatar"))
       set this.ResearchId = QUEST_RESEARCH_ID
