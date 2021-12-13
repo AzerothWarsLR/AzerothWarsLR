@@ -1,6 +1,6 @@
-library QuestItemLegendAlive requires QuestItemData, Environment, Legend
+library QuestItemLegendNotPermanentlyDead requires QuestItemData, Environment, Legend
 
-  struct QuestItemLegendAlive extends QuestItemData
+  struct QuestItemLegendNotPermanentlyDead extends QuestItemData
     private Legend target = 0
     private static integer count = 0
     private static thistype array byIndex

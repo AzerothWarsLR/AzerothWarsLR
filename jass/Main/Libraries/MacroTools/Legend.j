@@ -14,6 +14,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
     Event OnLegendChangeOwner
     Event OnLegendPrePermaDeath //Fired before the unit is removed
     Event OnLegendPermaDeath
+    Event OnLegendDeath
   endglobals
 
   struct Legend
@@ -357,7 +358,10 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       local group tempGroup
       local boolean anyOwned = false
       local unit u
-      
+
+      set TriggerLegend = this
+      call OnLegendDeath.fire()
+
       if GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and deathMessage != "" and deathMessage != null then
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00LEGENDARY CREEP DEATH|r\n" + deathMessage)
       endif
@@ -445,6 +449,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       set thistype.byHandle = Table.create()
       set OnLegendChangeOwner = Event.create()
       set OnLegendPermaDeath = Event.create()
+      set OnLegendDeath = Event.create()
       set OnLegendPrePermaDeath = Event.create()
     endmethod
 
