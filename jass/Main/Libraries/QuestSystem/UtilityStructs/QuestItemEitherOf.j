@@ -27,7 +27,13 @@ library QuestItemEitherOf initializer OnInit requires QuestItemData
       return this
     endmethod
 
-    private method OnQuestItemProgressChanged takes nothing returns nothing
+    method OnAdd takes nothing returns nothing
+      call this.questItemA.OnAdd()
+      call this.questItemB.OnAdd()
+      call CheckChildStatus()
+    endmethod
+
+    private method CheckChildStatus takes nothing returns nothing
       if this.questItemA.Progress == QUEST_PROGRESS_COMPLETE or this.questItemB.Progress == QUEST_PROGRESS_COMPLETE then
         set this.Progress = QUEST_PROGRESS_COMPLETE
         return
@@ -44,7 +50,7 @@ library QuestItemEitherOf initializer OnInit requires QuestItemData
       loop
         exitwhen i == thistype.count
         if triggerQuestItemData == thistype.byIndex[i].questItemA or triggerQuestItemData == thistype.byIndex[i].questItemB then
-          call thistype.byIndex[i].OnQuestItemProgressChanged()
+          call thistype.byIndex[i].CheckChildStatus()
         endif
         set i = i + 1
       endloop
