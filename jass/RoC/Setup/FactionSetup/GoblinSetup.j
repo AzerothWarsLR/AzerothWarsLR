@@ -52,6 +52,7 @@ library GoblinSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('R07L', UNLIMITED)   //Wizard Training
     call f.ModObjectLimit('R07M', UNLIMITED)   //Alchemist Training
+    call f.ModObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
 
   endfunction
     

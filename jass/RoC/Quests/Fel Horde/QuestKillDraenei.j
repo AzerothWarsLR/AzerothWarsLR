@@ -10,8 +10,26 @@ library QuestKillDraenei requires QuestData
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call RemoveDestructable( gg_dest_B023_23223 )
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_InstanceOutland, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == FACTION_DRAENEI.Player then
+          if IsUnitType(u, UNIT_TYPE_STRUCTURE) and not IsUnitType(u, UNIT_TYPE_ANCIENT) then
+            call KillUnit(u)
+          endif
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null 
     endmethod
 
     public static method create takes nothing returns thistype

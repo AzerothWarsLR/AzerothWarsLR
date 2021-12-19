@@ -44,6 +44,7 @@ library TrollSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('O026', 1)           //Rasthakan
     call f.ModObjectLimit('O01J', 1)           //Zul
+    call f.ModObjectLimit('U023', 1)           //Hakkar
 
     call f.ModObjectLimit('Rers', UNLIMITED)   //Resistant Skin
     call f.ModObjectLimit('R00H', UNLIMITED)   //Animal Companion

@@ -15,11 +15,12 @@ library QuestFirstWave requires QuestData, DraeneiSetup
       call KillUnit(gg_unit_o059_3317)
       call KillUnit(gg_unit_o055_3337)
       call KillUnit(gg_unit_o054_3338)
+      call KillUnit(gg_unit_edes_3396)
     endmethod
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Broken Civilisation", "The Fel Orc attack will begin at any moment, the Draenei need to evacuate their civilians aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNDraeneiDivineCitadel.blp")
-      call this.AddQuestItem(QuestItemTime.create(600))
+      call this.AddQuestItem(QuestItemTime.create(660))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

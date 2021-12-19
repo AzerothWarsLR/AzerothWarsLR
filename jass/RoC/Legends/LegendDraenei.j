@@ -10,8 +10,6 @@ library LegendDraenei initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
-    set LEGEND_VELEN = Legend.create()
-    set LEGEND_VELEN.UnitType = 'E01I'
 
     set LEGEND_NOBUNDO = Legend.create()
     set LEGEND_NOBUNDO.UnitType = 'E01J'
@@ -26,6 +24,11 @@ library LegendDraenei initializer OnInit requires Legend
 
     set LEGEND_MARAAD = Legend.create()
     set LEGEND_MARAAD.UnitType = 'H09S'
+
+    set LEGEND_VELEN = Legend.create()
+    set LEGEND_VELEN.UnitType = 'E01I'
+    call LEGEND_VELEN.AddUnitDependency(LEGEND_EXODAR.Unit)
+    call LEGEND_VELEN.AddUnitDependency(LEGEND_EXODARSHIP.Unit)
   endfunction
 
 endlibrary
