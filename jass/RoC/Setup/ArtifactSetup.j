@@ -21,6 +21,9 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_TROLKALAR
     Artifact ARTIFACT_DEMONSOUL
     Artifact ARTIFACT_THUNDERFURY
+    Artifact ARTIFACT_LIVINGSHADOW
+    Artifact ARTIFACT_ASHBRINGER
+    Artifact ARTIFACT_XALATATH
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -142,6 +145,24 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_THUNDERFURY.falseX = -1649
     set ARTIFACT_THUNDERFURY.falseY = 7628
 
+
+    set ARTIFACT_LIVINGSHADOW = Artifact.create(CreateItem('odef', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_LIVINGSHADOW.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_LIVINGSHADOW.setDescription("Lordaeron's Quest")
+    set ARTIFACT_LIVINGSHADOW.falseX = -19525
+    set ARTIFACT_LIVINGSHADOW.falseY = -5192
+
+    set ARTIFACT_ASHBRINGER = Artifact.create(CreateItem('I012', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_ASHBRINGER.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_ASHBRINGER.setDescription("Lordaeron's Quest")
+    set ARTIFACT_ASHBRINGER.falseX = 10569
+    set ARTIFACT_ASHBRINGER.falseY = -5280
+
+    set ARTIFACT_XALATATH = Artifact.create(CreateItem('I015', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_XALATATH.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_XALATATH.setDescription("Ahn'Qiraj's Quest")
+    set ARTIFACT_XALATATH.falseX = 7121
+    set ARTIFACT_XALATATH.falseY = 10000
 
   endfunction
 

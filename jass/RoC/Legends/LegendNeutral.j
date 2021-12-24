@@ -31,6 +31,7 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_VAELASTRASZ
     Legend LEGEND_OCCULUS
     Legend LEGEND_SARAGOSA
+    Legend LEGEND_CAERDARROW
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -143,6 +144,9 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_ARUGAL = Legend.create()
     set LEGEND_ARUGAL.Unit = gg_unit_Hgam_1450
+
+    set LEGEND_CAERDARROW = Legend.create()
+    set LEGEND_CAERDARROW.Unit = gg_unit_u01M_0484
   endfunction
 
 endlibrary

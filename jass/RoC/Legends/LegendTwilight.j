@@ -5,6 +5,8 @@ library LegendTwilight initializer OnInit requires Legend
     Legend LEGEND_FELUDIUS
     Legend LEGEND_IGNACIOUS
     Legend LEGEND_AZIL
+
+    Legend LEGEND_TWILIGHTCITADEL
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -16,6 +18,7 @@ library LegendTwilight initializer OnInit requires Legend
     set LEGEND_AZIL = Legend.create()
     set LEGEND_AZIL.UnitType = 'H08Q'
     set LEGEND_AZIL.StartingXP = 1800
+    call LEGEND_AZIL.AddUnitDependency(LEGEND_TWILIGHTCITADEL.Unit)
 
     set LEGEND_FELUDIUS = Legend.create()
     set LEGEND_FELUDIUS.UnitType = 'U01S'
@@ -24,6 +27,11 @@ library LegendTwilight initializer OnInit requires Legend
     set LEGEND_IGNACIOUS = Legend.create()
     set LEGEND_IGNACIOUS.UnitType = 'O04H'
     set LEGEND_IGNACIOUS.StartingXP = 2800
+
+    set LEGEND_TWILIGHTCITADEL = Legend.create()
+    set LEGEND_TWILIGHTCITADEL.Unit = gg_unit_h05U_0015
+    set LEGEND_TWILIGHTCITADEL.DeathMessage = "The Twilight Citadel has been destroyed"
+    set LEGEND_TWILIGHTCITADEL.IsCapital = true
 
 endfunction
 
