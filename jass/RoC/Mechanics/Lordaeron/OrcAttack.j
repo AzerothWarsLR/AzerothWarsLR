@@ -11,7 +11,7 @@ library UnitsSpawnIfJubeiIsAlive initializer OnInit
 
     private function SpawnAndAttack takes integer unitTypeToSpawn returns nothing
         local unit spawnedUnit = CreateUnit(Player(21), unitTypeToSpawn, GetRectCenterX(gg_rct_Lord2), GetRectCenterY(gg_rct_Lord2), 0)
-        call IssuePointOrder(spawnedUnit, "attack", GetRectCenterX(gg_rct_Lord3), GetRectCenterY(gg_rct_Lord3))
+        call IssuePointOrder(spawnedUnit, "attack", GetRectCenterX(gg_rct_AndhoralTaxe), GetRectCenterY(gg_rct_AndhoralTaxe))
         set spawnedUnit = null
     endfunction
 

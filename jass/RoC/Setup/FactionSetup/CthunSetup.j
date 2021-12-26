@@ -42,6 +42,7 @@ library CthunSetup requires Faction, TeamSetup
 
             call f.ModObjectLimit('U00Z', 1)           //Moam
             call f.ModObjectLimit('E005', 1)           //Skeram
+            call f.ModObjectLimit('U02A', 1)           //Yorsahj
 
             //Upgrades
             call f.ModObjectLimit('Ruwb', UNLIMITED)   //Web

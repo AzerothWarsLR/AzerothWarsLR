@@ -1,4 +1,4 @@
-library DemonSoulAssembly initializer OnInit requires Artifact, Persons, FilteredItemEvents, GeneralHelpers
+library ZinrokhAssembly initializer OnInit requires Artifact, Persons, FilteredItemEvents, GeneralHelpers
 
   globals
     private constant real DUMMY_X = 22700
@@ -24,11 +24,11 @@ library DemonSoulAssembly initializer OnInit requires Artifact, Persons, Filtere
       call Consume('I01M')  
       call Consume('I01I')   
       call Consume('I01L')
-      set tempArtifact = Artifact.artifactsByType['I01A']
+      set tempArtifact = Artifact.artifactsByType['I016']
       set tempItem = tempArtifact.item
       call UnitAddItemSafe(triggerUnit, tempItem)
       set triggerPerson = Person.ByHandle(GetOwningPlayer(GetTriggerUnit()))
-      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has assembled the Demon Soul!" )
+      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has assembled Zin'rokh, Destroyer of Worlds!" )
       set tempItem = null
       call DestroyTrigger(GetTriggeringTrigger())  
     endif

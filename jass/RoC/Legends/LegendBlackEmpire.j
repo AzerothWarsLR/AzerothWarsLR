@@ -12,10 +12,6 @@ library LegendBlackEmpire initializer OnInit requires Legend
     set LEGEND_YOGG.PermaDies = true
     set LEGEND_YOGG.DeathMessage = "The Old God Yogg-Saron has fallen"
 
-    set LEGEND_YOR = Legend.create()
-    set LEGEND_YOR.UnitType = 'U02A'
-    set LEGEND_YOR.StartingXP = 5800
-
   endfunction
 
 endlibrary

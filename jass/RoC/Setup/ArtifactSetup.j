@@ -24,6 +24,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_LIVINGSHADOW
     Artifact ARTIFACT_ASHBRINGER
     Artifact ARTIFACT_XALATATH
+    Artifact ARTIFACT_ZINROKH
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -74,9 +75,9 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', 21886, -25219))    //Skull of Gul'dan
     call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
-    set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))    //Demon Soul
-    call ARTIFACT_DEMONSOUL.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_DEMONSOUL.setDescription("Assembled from its fragments")
+    set ARTIFACT_ZINROKH = Artifact.create(CreateItem('I016', DUMMY_X, DUMMY_Y))    //Zin'rokh
+    call ARTIFACT_ZINROKH.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_ZINROKH.setDescription("Assembled from its fragments")
 
     set tempArtifact = Artifact.create(CreateItem('I01M', DUMMY_X, DUMMY_Y))    //Bronze Demon Soul Fragment
     call UnitAddAbility(gg_unit_O024_0567, ARTIFACT_HOLDER_ABIL_ID)             //Ukorz
@@ -160,9 +161,15 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set ARTIFACT_XALATATH = Artifact.create(CreateItem('I015', DUMMY_X, DUMMY_Y))
     call ARTIFACT_XALATATH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_XALATATH.setDescription("Ahn'Qiraj's Quest")
+    call ARTIFACT_XALATATH.setDescription("Black Empire's Quest")
     set ARTIFACT_XALATATH.falseX = 7121
     set ARTIFACT_XALATATH.falseY = 10000
+
+    set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))
+    call ARTIFACT_DEMONSOUL.setStatus(ARTIFACT_STATUS_HIDDEN)
+    call ARTIFACT_DEMONSOUL.setDescription("Ahn'Qiraj's Quest")
+    set ARTIFACT_DEMONSOUL.falseX = 12508
+    set ARTIFACT_DEMONSOUL.falseY = -11437
 
   endfunction
 

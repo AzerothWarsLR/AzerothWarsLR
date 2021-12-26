@@ -44,7 +44,6 @@ library BlackEmpireSetup requires Faction, TeamSetup
             call f.ModObjectLimit('h09F', UNLIMITED)           //Gladiator
             call f.ModObjectLimit('u02F', 2)           //Forgotten one
 
-            call f.ModObjectLimit('U02A', 1)           //R'khem
             call f.ModObjectLimit('E01D', 1)           //Volazj
             call f.ModObjectLimit('U02B', 1)           //Soggoth
 

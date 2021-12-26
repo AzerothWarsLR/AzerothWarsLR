@@ -6,6 +6,8 @@ library CthunQuestSetup requires CthunSetup
     call FACTION_CTHUN.AddQuest(QuestAwakenCthun.create())
     call FACTION_CTHUN.AddQuest(QuestEndlessRanks.create())
     call FACTION_CTHUN.AddQuest(QuestGatesofAhnqiraj.create())
+    call FACTION_CTHUN.AddQuest(QuestDragonSoul.create())
+    call FACTION_CTHUN.AddQuest(QuestWyrmrestTemple.create())
   endfunction
 
 endlibrary

@@ -22,6 +22,10 @@ library LegendCthun initializer OnInit requires Legend
     set LEGEND_GATESAHNQIRAJ = Legend.create()
     set LEGEND_GATESAHNQIRAJ.Unit = gg_unit_h02U_2413
 
+    set LEGEND_YOR = Legend.create()
+    set LEGEND_YOR.UnitType = 'U02A'
+    set LEGEND_YOR.StartingXP = 8800
+
   endfunction
 
 endlibrary
