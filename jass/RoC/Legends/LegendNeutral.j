@@ -147,6 +147,7 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_CAERDARROW = Legend.create()
     set LEGEND_CAERDARROW.Unit = gg_unit_u01M_0484
+    set LEGEND_CAERDARROW.Capturable = true
   endfunction
 
 endlibrary

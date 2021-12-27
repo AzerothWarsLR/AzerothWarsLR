@@ -22,9 +22,8 @@ library QuestKilsorrow requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Kill'sorrow Fortress", "This sinister fortress will serve the Fel Horde well, clear the surrounding lands to establish it", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
+      local thistype this = thistype.allocate("Kil'sorrow Fortress", "This sinister fortress will serve the Fel Horde well, clear the surrounding lands to establish it", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00B')))
       call this.AddQuestItem(QuestItemExpire.create(1452))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

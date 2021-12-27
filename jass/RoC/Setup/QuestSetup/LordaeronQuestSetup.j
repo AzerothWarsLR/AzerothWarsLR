@@ -9,8 +9,10 @@ library LordaeronQuestSetup requires LordaeronSetup, QuestKingArthas, QuestShore
     call FACTION_LORDAERON.AddQuest(QuestShoresOfNorthrend.create())
     call FACTION_LORDAERON.AddQuest(QuestThunderEagle.create())
     call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
-    call FACTION_LORDAERON.AddQuest(QuestMograine.create())
+    call FACTION_LORDAERON.AddQuest(QuestLivingShadow.create())
     call FACTION_LORDAERON.AddQuest(QuestKingdomOfManLordaeron.create())
+
+    set THE_ASHBRINGER = QuestAshbringer.create()
 
   endfunction
 

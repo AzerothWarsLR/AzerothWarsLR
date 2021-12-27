@@ -10,6 +10,11 @@ library LegendTwilight initializer OnInit requires Legend
   endglobals
 
   private function OnInit takes nothing returns nothing
+    set LEGEND_TWILIGHTCITADEL = Legend.create()
+    set LEGEND_TWILIGHTCITADEL.Unit = gg_unit_h05U_0015
+    set LEGEND_TWILIGHTCITADEL.DeathMessage = "The Twilight Citadel has been destroyed"
+    set LEGEND_TWILIGHTCITADEL.IsCapital = true
+   
     set LEGEND_DEATHWING = Legend.create()
     set LEGEND_DEATHWING.Unit = gg_unit_u01Y_0071
     set LEGEND_DEATHWING.PermaDies = true
@@ -27,11 +32,6 @@ library LegendTwilight initializer OnInit requires Legend
     set LEGEND_IGNACIOUS = Legend.create()
     set LEGEND_IGNACIOUS.UnitType = 'O04H'
     set LEGEND_IGNACIOUS.StartingXP = 2800
-
-    set LEGEND_TWILIGHTCITADEL = Legend.create()
-    set LEGEND_TWILIGHTCITADEL.Unit = gg_unit_h05U_0015
-    set LEGEND_TWILIGHTCITADEL.DeathMessage = "The Twilight Citadel has been destroyed"
-    set LEGEND_TWILIGHTCITADEL.IsCapital = true
 
 endfunction
 

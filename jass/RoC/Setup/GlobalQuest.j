@@ -16,6 +16,7 @@
     QuestData GOLDRINNHUMAN_PATH
 
     QuestData SHIP_ARGUS
+    QuestData THE_ASHBRINGER
   endglobals
 
 
