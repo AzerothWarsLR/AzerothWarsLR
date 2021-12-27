@@ -20,6 +20,7 @@ library WarsongSetup requires Faction, TeamSetup
     call f.ModObjectLimit('o01S', UNLIMITED)   //Barracks
     call f.ModObjectLimit('o009', UNLIMITED)   //War Mill
     call f.ModObjectLimit('o006', UNLIMITED)   //Ogre Barrack
+    call f.ModObjectLimit('o05G', UNLIMITED)   //Siege Workshop
     call f.ModObjectLimit('o02Q', UNLIMITED)   //Bestiary
     call f.ModObjectLimit('o028', UNLIMITED)   //Orc Burrow
     call f.ModObjectLimit('n03E', UNLIMITED)   //Watch Tower
@@ -35,6 +36,8 @@ library WarsongSetup requires Faction, TeamSetup
     call f.ModObjectLimit('otbk', UNLIMITED)   //Troll Berseker
     call f.ModObjectLimit('nogn', UNLIMITED)   //Stonemaul Ogre Magi
     call f.ModObjectLimit('o00I', 6)           //Horde War Machine
+    call f.ModObjectLimit('e01L', 2)           //War Station
+    call f.ModObjectLimit('e01M', 4)           //Azerite Siege Engine
     call f.ModObjectLimit('okod', 4)           //Kodo Beast
     call f.ModObjectLimit('obot', 12)   	    //Transport Ship
     call f.ModObjectLimit('odes', 12)  	     //Orc Frigate

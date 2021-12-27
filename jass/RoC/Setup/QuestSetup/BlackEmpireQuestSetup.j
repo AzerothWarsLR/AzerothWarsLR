@@ -5,6 +5,9 @@ library BlackEmpireQuestSetup requires BlackEmpireSetup
     call FACTION_BLACKEMPIRE.AddQuest(QuestSecondObelisk.create())
     call FACTION_BLACKEMPIRE.AddQuest(QuestThirdObelisk.create())
     call FACTION_BLACKEMPIRE.AddQuest(QuestYoggSaron.create())
+    call FACTION_BLACKEMPIRE.AddQuest(QuestBladeOfTheBlackEmpire.create())
+
+    set TOMB_OF_TYR = QuestIntoTheVoid.create()
   endfunction
 
 endlibrary

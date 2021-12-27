@@ -4,6 +4,7 @@ library LegendCthun initializer OnInit requires Legend
     Legend LEGEND_SKERAM
     Legend LEGEND_GATESAHNQIRAJ
     Legend LEGEND_CTHUN
+    Legend LEGEND_YOR
 
   endglobals
 

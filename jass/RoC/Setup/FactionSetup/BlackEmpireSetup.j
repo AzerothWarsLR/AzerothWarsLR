@@ -46,8 +46,9 @@ library BlackEmpireSetup requires Faction, TeamSetup
 
             call f.ModObjectLimit('E01D', 1)           //Volazj
             call f.ModObjectLimit('U02B', 1)           //Soggoth
+            call f.ModObjectLimit('U00P', 1)           //Zakajz
 
-            call f.ModObjectLimit('u02E', 1)           //Herald
+            call f.ModObjectLimit('u02E', 1)           //Heralds
 
             //Upgrades
             call f.ModObjectLimit('R02A', UNLIMITED)   //Void Infusion
