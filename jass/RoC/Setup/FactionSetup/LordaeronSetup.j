@@ -54,6 +54,7 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
 
     call f.ModObjectLimit('Hart', 1)           //Arthas
     call f.ModObjectLimit('Huth', 1)           //Uther
+    call f.ModObjectLimit('H01J', 1)           //Mograine
 
 
     //Upgrades
