@@ -17,7 +17,7 @@ library QuestExplosiveEngineering requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Explosive Engineering", "The world shall hear the whispers of the Old God. Spread the visions of the end", "ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
+      local thistype this = thistype.allocate("Explosive Engineering", "The Goblin chief engineer, Gazlowee, is overseeing the construction of the oversea oil platforms.", "ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
       call this.AddQuestItem(QuestItemTrain.create('n0AQ','h04Z', 4))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
