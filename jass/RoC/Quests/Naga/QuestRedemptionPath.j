@@ -26,7 +26,6 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
       call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED
       set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED      
-      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
       call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_h01D_3387 )
       call WaygateActivateBJ( true, gg_unit_h01D_3385 )

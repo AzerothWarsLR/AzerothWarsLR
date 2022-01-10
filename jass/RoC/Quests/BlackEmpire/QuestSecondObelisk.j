@@ -6,7 +6,7 @@ library QuestSecondObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock the southern zone of Nya'lotha, and the next Herald you train will open a temporary portal to Tanaris."
+      return "Unlock the southern zone of Nya'lotha, and the next Herald you train will open a temporary portal to the Twilight Highlands."
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -19,8 +19,8 @@ library QuestSecondObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Second Obelisk", "The convergence of realities grows ever closer. An Obelisk must be established in the Twilight Highlands, near the Maw of Madness.", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
-      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n04V')))
+      local thistype this = thistype.allocate("Second Obelisk", "The convergence of realities grows ever closer. An Obelisk must be established in Uldum.", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
+      call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n0BD')))
       return this
     endmethod
   endstruct

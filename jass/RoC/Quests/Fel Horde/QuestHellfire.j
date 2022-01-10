@@ -42,6 +42,10 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
       endif
     endmethod
 
+    private method OnFail takes nothing returns nothing
+      call this.GrantHellfire(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
     private method OnAdd takes nothing returns nothing
       call this.Holder.ModObjectLimit(QUEST_RESEARCH_ID, 1)
     endmethod

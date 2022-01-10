@@ -21,7 +21,6 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     private method GrantNazjatar takes nothing returns nothing
       call SetUnitOwner(gg_unit_n07E_0958, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       call ShowUnit(gg_unit_n07E_0958, true)
-      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
     endmethod
 
     private method RenameIllidanFaction takes nothing returns nothing

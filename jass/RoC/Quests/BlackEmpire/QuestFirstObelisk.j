@@ -6,7 +6,7 @@ library QuestFirstObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal,
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock the northern zone of Nya'lotha, and the next Herald you train will open a temporary portal to Northern Highlands."
+      return "Unlock the northern zone of Nya'lotha, and the next Herald you train will open a temporary portal to Uldum."
     endmethod
 
     private method OnComplete takes nothing returns nothing

@@ -16,6 +16,7 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
       call RescueNeutralUnitsInRect(gg_rct_NagaUnlock1, this.Holder.Player)
       call FACTION_NAGA.AddQuest(REDEMPTION_PATH)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
@@ -29,6 +30,7 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
       set CONQUER_BLACK_TEMPLE.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(KILL_FROZEN_THRONE)
       set KILL_FROZEN_THRONE.Progress = QUEST_PROGRESS_UNDISCOVERED
+      call SetUnitInvulnerable(gg_unit_n045_3377, true)
     endmethod
 
     public static method create takes nothing returns thistype
