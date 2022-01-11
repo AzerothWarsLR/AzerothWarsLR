@@ -6,14 +6,38 @@ library QuestBusinessExpansion requires QuestData
 
   struct QuestBusinessExpansion extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Jastor Gallywix now trainable"
+      return "Noggenfogger is now trainable and you unlock Gadgetzan"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
       return "Jastor Gallywix is trainable at the altar"
     endmethod
 
+     private method GrantGadetzan takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Gadetzan
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_GadgetUnlock, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null      
+    endmethod
+
+    private method OnFail takes nothing returns nothing
+      call this.GrantGadetzan(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+
     private method OnComplete takes nothing returns nothing
+      call this.GrantGadetzan(this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\GoblinTheme.mp3" )
       endif

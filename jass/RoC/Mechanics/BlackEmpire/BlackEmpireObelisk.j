@@ -2,11 +2,11 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
 
   globals
     private constant integer ABIL_ID = 'A06Z'
-    private constant real DURATION = 10.
+    private constant real DURATION = 180.      //This duration needs to match the in-editor duration of the channel spell
     private constant integer OBELISK_ID = 'n0BA'
-    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar.mdx"
+    private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar10sec.mdx"
     private constant real PROGRESS_SCALE = 1.5
-    private constant real PROGRESS_HEIGHT = 225.
+    private constant real PROGRESS_HEIGHT = 125.
 
     Event BlackEmpireObeliskSummoned
   endglobals
@@ -77,10 +77,10 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
       set this.obeliskUnit = CreateUnit(GetOwningPlayer(caster), OBELISK_ID, GetUnitX(controlPoint.Unit), GetUnitY(controlPoint.Unit), 270)
 
       set this.sfxProgress = AddSpecialEffect(PROGRESS_EFFECT, GetUnitX(controlPoint.Unit), GetUnitY(controlPoint.Unit))
-      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 1./duration)
+      call BlzSetSpecialEffectTimeScale(this.sfxProgress, 10./duration)
       call BlzSetSpecialEffectColorByPlayer(this.sfxProgress, GetOwningPlayer(caster))
       call BlzSetSpecialEffectScale(sfxProgress, PROGRESS_SCALE)
-      call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT)
+      call BlzSetSpecialEffectHeight(sfxProgress, PROGRESS_HEIGHT + GetPositionZ(GetUnitX(controlPoint.Unit), GetUnitY(controlPoint.Unit)))
 
       call this.startPeriodic()      
       return this

@@ -31,11 +31,11 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Nazjatar is now under the influence of the " + this.Holder.Team.Name + "."
+      return "Illidan has invaded Outland and has allied himself with the Draenei Broken Ones."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Nazjatar"
+      return "Open a portal to Outland, grants you the Draenei village near it, enables you to train Akama, Najentus and Draenei units, grants you 300 food limit and grants you 800 gold"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -67,6 +67,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call ShowUnitShow( gg_unit_h01D_3384 )
       call WaygateSetDestinationLocBJ( gg_unit_h01D_3384, GetRectCenter(gg_rct_NazjatarEntrance2) )
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
+      call AdjustPlayerStateBJ( 800, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype

@@ -16,7 +16,7 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Nazjatar and Aetheneum. Join the Night Elves"
+      return "Control of all units in the Aetheneum. Join the Night Elves and enable to train Altruis."
     endmethod
 
     private method OnComplete takes nothing returns nothing

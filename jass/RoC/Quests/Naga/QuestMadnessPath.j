@@ -15,7 +15,7 @@ library QuestMadnessPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You gain control of all units in Nazjatar, a portal is opened to Ny'alotha, and you join the Old Gods team"
+      return "A portal is opened to Ny'alotha, Illidan turns Hostile, Aszhara appears and you join the Old Gods team"
     endmethod
 
     private method GrantNazjatar takes nothing returns nothing

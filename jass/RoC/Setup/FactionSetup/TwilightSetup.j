@@ -10,8 +10,8 @@ library TwilightSetup requires Faction, TeamSetup
     set FACTION_TWILIGHT = Faction.create("Twilight", PLAYER_COLOR_LAVENDER, "|cff9178a8","ReplaceableTextures\\CommandButtons\\BTNChogall.blp")
     set f = FACTION_TWILIGHT
     set f.Team = TEAM_OLDGOD
-    set f.StartingGold = 0
-    set f.StartingLumber = 0
+    set f.StartingGold = 150
+    set f.StartingLumber = 350
 
     call f.ModObjectLimit('o039', UNLIMITED)   //Great Hall
     call f.ModObjectLimit('o03A', UNLIMITED)   //Stronghold
