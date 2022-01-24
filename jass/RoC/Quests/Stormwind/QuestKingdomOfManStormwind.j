@@ -11,7 +11,7 @@ library QuestKingdomOfManStormwind requires StormwindSetup, QuestItemControlPoin
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The people of the Eastern Kingdoms have been united under the banner of Lordaeron. Long live High King Varian Wrynn!"
+      return "The people of the Eastern Kingdoms have been united under the banner of Stormwind. Long live High King Varian Wrynn!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string

@@ -51,7 +51,7 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
     call f.ModObjectLimit('ubot', 12)	    //Undead Transport Ship
     call f.ModObjectLimit('udes', 12) 	    //Undead Frigate
     call f.ModObjectLimit('uubs', 6)          //Undead Battleship
-    call f.ModObjectLimit('ubsp', 4)           //Destroyer
+    call f.ModObjectLimit('ubsp', 6)           //Destroyer
     call f.ModObjectLimit('nfgl', 2)           //Plague Titan
 
     //Demi-Heroes
