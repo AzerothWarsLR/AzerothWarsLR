@@ -88,6 +88,7 @@ library QuestExiled requires QuestData, DraeneiSetup
 
     private method OnComplete takes nothing returns nothing
       call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( ( 2000 - GetResourceAmount(gg_unit_ngol_3272) ), Player(13), PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call FACTION_DRAENEI.AddQuest(SHIP_ARGUS)
       set SHIP_ARGUS.Progress = QUEST_PROGRESS_INCOMPLETE

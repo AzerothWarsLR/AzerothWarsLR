@@ -20,7 +20,7 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Keeper of the Eternal Watch", "At the end of the Second War, Khadgar remained in Draenor to seal the Dark Portal, effectively ending the conflict. He has been stranded deep in Outland ever since.", "ReplaceableTextures\\CommandButtons\\BTNMageWC2.blp")
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BLACKTEMPLE))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       set this.ResearchId = 'R016'
       return this
     endmethod
