@@ -3,7 +3,7 @@ library CPCapture initializer OnInit requires AIDS
 
   //**CONFIG
   globals
-    private constant real CAPTURE_THRESHOLD = 0.85   //Percentage of maximum HP; below this, the CP will go to the damager
+    private constant real CAPTURE_THRESHOLD = 0.6   //Percentage of maximum HP; below this, the CP will go to the damager
   endglobals
   //*ENDCONFIG
 
@@ -17,7 +17,9 @@ library CPCapture initializer OnInit requires AIDS
       if hp < CAPTURE_THRESHOLD then
         call BlzSetEventDamage(0)
         call SetUnitOwner(attacked, GetOwningPlayer(attacker), true)
-        call SetUnitLifePercentBJ(attacked, 100)
+        call BlzSetUnitMaxHP(attacked, 10000)
+        call SetUnitLifePercentBJ(attacked, 70)
+        call UnitAddAbility(attacked, 'A0UT')
       endif  
     endif      
 

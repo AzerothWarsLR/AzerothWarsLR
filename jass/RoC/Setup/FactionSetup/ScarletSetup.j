@@ -51,12 +51,15 @@ library ScarletSetup requires Faction, TeamSetup
     call f.ModObjectLimit('n09N', 6)           //Bishop
     call f.ModObjectLimit('n07N', 6)           //Airship
     call f.ModObjectLimit('o04C', 6)           //Mortar
+    call f.ModObjectLimit('o00X', 3)           //Archangel
+    call f.ModObjectLimit('h09X', 12)           //Mounted Archer
 
     //Heroes
     call f.ModObjectLimit('H08G', 1)           //Saiden
     call f.ModObjectLimit('H08H', 1)           //Isilien
     call f.ModObjectLimit('H00Y', 1)           //Brigitte
     call f.ModObjectLimit('Hlgr', 1)           //Garithos
+    call f.ModObjectLimit('H09Z', 1)           //Tirion
 
     call f.ModObjectLimit('h09I', 1)           //Renault
     call f.ModObjectLimit('h09J', 1)           //Goodchild

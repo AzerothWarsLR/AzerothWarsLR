@@ -36,12 +36,12 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.ModObjectLimit('h08N', UNLIMITED)   //Abomination
     call f.ModObjectLimit('u01P', 6)           //Plague Catapult
     call f.ModObjectLimit('n07S', UNLIMITED)   //Deadeye
-    call f.ModObjectLimit('uban', UNLIMITED)   //Banshee
     call f.ModObjectLimit('h08P', UNLIMITED)   //Sorceress
     call f.ModObjectLimit('u01R', UNLIMITED)   //Apothecary
     call f.ModObjectLimit('n07W', 12)   //Plague Construct
     call f.ModObjectLimit('u02G', 12) 	    //Undercity Guardian
     call f.ModObjectLimit('n07V', 6)           //Elder Banshee
+    call f.ModObjectLimit('o05H', 8)           //PlagueFlyer
     call f.ModObjectLimit('h009', 6)           //dread knight
     call f.ModObjectLimit('u01V', 2)           //Valyr
     call f.ModObjectLimit('ubot', 12)	    //Undead Transport Ship

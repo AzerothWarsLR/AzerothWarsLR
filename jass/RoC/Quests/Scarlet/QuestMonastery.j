@@ -25,6 +25,7 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(FACTION_KULTIRAS.Player, 'R06V', 1)
+      call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
       call RescueNeutralUnitsInRect(gg_rct_ScarletAmbient, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_h00T_0786 )
       call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
