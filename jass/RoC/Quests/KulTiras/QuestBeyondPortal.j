@@ -4,7 +4,7 @@ library QuestBeyondPortal requires QuestData, KultirasSetup, GeneralHelpers
     private constant integer QUEST_RESEARCH_ID = 'R085'   //This research is given when the quest is completed
   endglobals
 
-  struct QuestBlademaster extends QuestData
+  struct QuestBeyondPortal extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "The orcs are no more and we can now train Fusillier."
     endmethod
