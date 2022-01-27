@@ -4,6 +4,8 @@ library ScarletQuestSetup requires ScarletSetup, QuestMonastery
     //Early duel
     set FACTION_SCARLET.StartingQuest = FACTION_SCARLET.AddQuest(QuestTownWatch.create())
     call FACTION_SCARLET.AddQuest(QuestMonastery.create())
+    call FACTION_SCARLET.AddQuest(QuestArgentDawn.create())
+    call FACTION_SCARLET.AddQuest(QuestArathiVolunteers.create())
     call FACTION_SCARLET.AddQuest(QuestTyr.create())
     call FACTION_SCARLET.AddQuest(QuestLiberateLordaeron.create())
   endfunction

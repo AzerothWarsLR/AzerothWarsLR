@@ -51,6 +51,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('o01A', 6)           //Cannon Team
     call f.ModObjectLimit('h04O', 12)          //Bomber
     call f.ModObjectLimit('h04W', 3)           //Siege Tank
+    call f.ModObjectLimit('h0A0', 8)           //Fusillier
 
     //Upgrades
     call f.ModObjectLimit('R001', UNLIMITED)   //Rising Tides

@@ -2,17 +2,7 @@ library IncompatibleTierConfig initializer OnInit
 
   private function OnInit takes nothing returns nothing
     local IncompatibleResearchSet researchSet = 0
-                                
-    //Fel Horde Tier 1
-    set researchSet = IncompatibleResearchSet.create()
-    call researchSet.add('R02L')    //Shattered Hand Clan
-    call researchSet.add('R03L')    //Shadow Council Reformed  
-        
-    //Fel Horde Tier 2
-    set researchSet = IncompatibleResearchSet.create()
-    call researchSet.add('R036')    //Dragonmaw Clan
-    call researchSet.add('R047')    //Shadowmoon Clan Remnants
-
+  
                     
     //Stormwind Tier 1 (Champion Hall)
     set researchSet = IncompatibleResearchSet.create()
@@ -34,7 +24,7 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R03V')    //Stomrgrade
     call researchSet.add('R03W')    //Knowledge of Honor Hold
         
-    //Stormwind Tier 3 (hampion Hall)
+    //Stormwind Tier 3 (Champion Hall)
     set researchSet = IncompatibleResearchSet.create()
     call researchSet.add('R030')    //Code of Chivalry
     call researchSet.add('R031')    //Expedition Survivors
@@ -49,6 +39,12 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R062')   //Redemption path
     call researchSet.add('R063')   //Exile Path
     call researchSet.add('R065')   //Madness Path
+
+    //Scarlet Path
+    set researchSet = IncompatibleResearchSet.create()
+    call researchSet.add('R088')   //Argent Dawn
+    call researchSet.add('R03P')   //Unleash the Crusade
+
   endfunction    
     
 endlibrary
