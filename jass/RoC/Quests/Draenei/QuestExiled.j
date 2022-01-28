@@ -92,6 +92,7 @@ library QuestExiled requires QuestData, DraeneiSetup
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call FACTION_DRAENEI.AddQuest(SHIP_ARGUS)
       set SHIP_ARGUS.Progress = QUEST_PROGRESS_INCOMPLETE
+      call UnitRemoveAbilityBJ( 'ACm2', LEGEND_VELEN.Unit)
       call this.GrantExiled(this.Holder.Player)
       call this.EscapeOutland(this.Holder.Player)
       call RemoveUnit(gg_unit_h09W_3303)

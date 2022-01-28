@@ -18,6 +18,7 @@ library QuestBoralus requires QuestData, ScarletSetup, GeneralHelpers
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
       call RescueNeutralUnitsInRect(gg_rct_Kultiras, this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\KultirasTheme.mp3" )
