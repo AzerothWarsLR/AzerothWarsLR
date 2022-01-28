@@ -6,11 +6,11 @@ library QuestBusinessExpansion requires QuestData
 
   struct QuestBusinessExpansion extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Noggenfogger is now trainable and you unlock Gadgetzan"
+      return "You can now build shipyards and ships"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Jastor Gallywix is trainable at the altar"
+      return "The shipyard will be buildable"
     endmethod
 
      private method GrantGadetzan takes player whichPlayer returns nothing

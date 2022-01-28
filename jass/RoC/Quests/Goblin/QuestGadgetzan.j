@@ -48,7 +48,7 @@ library QuestGadgetzan requires QuestData, GoblinSetup, QuestItemKillUnit
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05C')))
       call this.AddQuestItem(QuestItemExpire.create(1522))
       call this.AddQuestItem(QuestItemSelfExists.create())
-         set this.ResearchId = QUEST_RESEARCH_ID
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct
