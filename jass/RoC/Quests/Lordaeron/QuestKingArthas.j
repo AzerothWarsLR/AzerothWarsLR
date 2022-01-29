@@ -1,6 +1,10 @@
 //Prince Arthas goes to the Frozen Throne after it's destroyed. He becomes King Arthas, gets the Crown of Lordaeron, and Terenas dies.
 library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron, LegendNeutral, GeneralHelpers
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R08A'   //This research is given when the quest is completed
+  endglobals
+
   struct QuestKingArthas extends QuestData
     private method operator CompletionPopup takes nothing returns string
       return "With the Lich King eliminated, the Kingdom of Lordaeron is free of its greatest threat. King Terenas Menethil proudly abdicates in favor of his son."
@@ -25,6 +29,7 @@ library QuestKingArthas requires QuestData, LordaeronSetup, LegendLordaeron, Leg
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_ARTHAS, gg_rct_King_Arthas_crown, "King Terenas"))
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

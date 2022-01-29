@@ -2,7 +2,7 @@ library QuestShipArgus requires QuestData, QuestItemChannelRect
 
   struct QuestShipArgus extends QuestData
 
-    private method Global takes nothing returns boolean
+    method operator Global takes nothing returns boolean
       return true
     endmethod
 

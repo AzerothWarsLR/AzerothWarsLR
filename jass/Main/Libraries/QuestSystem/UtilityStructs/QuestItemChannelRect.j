@@ -54,7 +54,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
 
       if this.tick > T32_FPS then
         set this.tick = 0
-        if this.caster == null or not UnitAlive(this.caster) then
+        if this.caster == null or not UnitAlive(this.caster) or GetDistanceBetweenPoints(GetUnitX(caster), GetUnitY(caster), this.questItemChannelRect.X, this.questItemChannelRect.Y) > 100 then
           call this.End(false)
         endif
       endif

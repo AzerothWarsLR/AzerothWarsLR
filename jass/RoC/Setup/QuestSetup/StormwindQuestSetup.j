@@ -11,8 +11,9 @@ library StormwindQuestSetup requires StormwindSetup, QuestHonorHold, QuestStromg
     call FACTION_STORMWIND.AddQuest(QuestNethergarde.create())
     //Misc
     call FACTION_STORMWIND.AddQuest(QuestStromgarde.create())
-    call FACTION_STORMWIND.AddQuest(QuestKingdomOfManStormwind.create())
     call FACTION_STORMWIND.AddQuest(QuestHonorHold.create())
+    call FACTION_STORMWIND.AddQuest(QuestKhadgar.create())
+    call FACTION_STORMWIND.AddQuest(QuestClosePortal.create())
   endfunction
 
 endlibrary
