@@ -29,9 +29,9 @@ library QuestZandalar requires QuestData, TrollSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("City of Gold", "The Blood Trolls rebellion has to be put down.", "ReplaceableTextures\\CommandButtons\\BTNBloodTrollMage.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ndtw_2405)) //Dark Troll Warchief
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0A8')))
+      local thistype this = thistype.allocate("City of Gold", "We need to regain control of our land.", "ReplaceableTextures\\CommandButtons\\BTNBloodTrollMage.blp")
+      call this.AddQuestItem(QuestItemResearch.create('R04R', 'o03Z'))
+      call this.AddQuestItem(QuestItemUpgrade.create('o03Z', 'o03Y'))
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_PRIEST, gg_rct_ZandalarUnlock, "Dazar'alor"))
       call this.AddQuestItem(QuestItemExpire.create(1420))
       call this.AddQuestItem(QuestItemSelfExists.create())
