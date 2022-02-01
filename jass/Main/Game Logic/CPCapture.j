@@ -18,7 +18,7 @@ library CPCapture initializer OnInit requires AIDS
         call BlzSetEventDamage(0)
         call SetUnitOwner(attacked, GetOwningPlayer(attacker), true)
         call BlzSetUnitMaxHP(attacked, 10000)
-        call SetUnitLifePercentBJ(attacked, 90)
+        call SetUnitLifePercentBJ(attacked, 85)
         call UnitAddAbility(attacked, 'A0UT')
       endif  
     endif      

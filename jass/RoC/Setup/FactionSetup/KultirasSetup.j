@@ -62,6 +62,7 @@ library KultirasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R05G', UNLIMITED)   //Thornspeaker Training
     call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
+    call f.ModObjectLimit('R08B', UNLIMITED)   //Long Rifles
 
     //Heroes
     call f.ModObjectLimit('Hapm', 1)           //Admiral
