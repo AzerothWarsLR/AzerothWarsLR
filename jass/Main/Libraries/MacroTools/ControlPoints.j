@@ -5,6 +5,9 @@ library ControlPoint initializer OnInit requires AIDS
     ControlPoint array CPData
     Event OnControlPointLoss    
     Event OnControlPointOwnerChange   
+
+    private constant integer REGENERATION_ABILITY = 'A0UT' //An ability that increases hit point regeneration
+    private constant integer MAX_HITPOINTS = 10000 //All Control Points get given this many hitpoints
   endglobals
   
   struct ControlPoint
@@ -106,6 +109,10 @@ library ControlPoint initializer OnInit requires AIDS
       
       call GroupAddUnit(ControlPoints,u)
       call GroupAddUnit(person.cpGroup, u)
+
+      call BlzSetUnitMaxHP(u, MAX_HITPOINTS)
+      call UnitAddAbility(u, REGENERATION_ABILITY)
+      call SetUnitLifePercentBJ(u, 100)
 
       set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue + this.value
       set OwningPerson.ControlPointCount = OwningPerson.ControlPointCount + 1
