@@ -18,7 +18,7 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     public static method create takes QuestData questToDiscover returns thistype
-      local thistype this = thistype.allocate("Chapter One: The Aetheneum Secrets", "The hidden Aetheneum library holds many secrets, Illidan most uncover in order to gain the power he craves", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
+      local thistype this = thistype.allocate("Chapter One: The Aetheneum Secrets", "In order to gain the power he craves, Illidan must plunder the hidden Aetheneum library for its secrets.", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_Dire_Maul_Entrance, "Feralas"))
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "the Aetheneum Library"))
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "Immol'thar's Lair"))

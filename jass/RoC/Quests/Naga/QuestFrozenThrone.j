@@ -31,7 +31,7 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("A Symphony of Frost and Flame", "Kil'jaeden has ordered Illidan to destroy the Frozen Throne, and he shall obey", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
+      local thistype this = thistype.allocate("A Symphony of Frost and Flame", "Kil'jaeden has ordered Illidan to destroy the Frozen Throne, and he shall obey.", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_LICHKING.Unit))
       call this.AddQuestItem(QuestItemResearch.create('R063', 'n055'))
       return this

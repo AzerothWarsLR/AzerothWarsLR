@@ -17,7 +17,7 @@ library QuestBladeOfTheBlackEmpire requires QuestData, Artifact, LegendBlackEmpi
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Blade of the Black Empire", "Xal'alath is one of the oldest and most powerful entities serving the Old Gods, living inside a cursed blade. A human priestess stole it long ago, the blade is entombed with her in Duskwood Crypt", "ReplaceableTextures\\CommandButtons\\BTNmidnightGS.blp")
+      local thistype this = thistype.allocate("The Blade of the Black Empire", "Xal'alath is one of the oldest and most powerful entities serving the Old Gods, living inside a cursed blade. A human priestess stole it long ago; the blade is entombed with her in Duskwood Crypt.", "ReplaceableTextures\\CommandButtons\\BTNmidnightGS.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_VOLAZJ, gg_rct_DuskwoodCrypt, "Duskwood Graveyard Crypt"))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DUSKWOODGRAVEYARD, false))
       return this

@@ -44,7 +44,7 @@ library QuestBusinessExpansion requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Business Expansion", "Trade Prince Gallywix will need a great amount of wealth to rule the future Goblin Empire, he needs to expand his business all over the world quickly", "ReplaceableTextures\\CommandButtons\\BTNGoblinPrince.blp")
+      local thistype this = thistype.allocate("Business Expansion", "Trade Prince Gallywix will need a great amount of wealth to rule the future Goblin Empire; he needs to expand his business all over the world quickly.", "ReplaceableTextures\\CommandButtons\\BTNGoblinPrince.blp")
       call this.AddQuestItem(QuestItemTrain.create('nzep','o04M', 16))
       call this.AddQuestItem(QuestItemTrain.create('o04S','o04M', 10))
       set this.ResearchId = QUEST_RESEARCH_ID

@@ -21,7 +21,7 @@ library QuestJoinCrusade requires Persons, KultirasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Join the Crusade", "Daelin Proudmoore sees the plight of the Scarlet Crusade. As human survivors of horrible war, they should join forces", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
+      local thistype this = thistype.allocate("Join the Crusade", "Daelin Proudmoore sees the plight of the Scarlet Crusade. As fellow human survivors of horrible war, they should join forces with Kul'tiras.", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0JB', true))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

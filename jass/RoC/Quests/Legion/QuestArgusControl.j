@@ -6,7 +6,7 @@ library QuestArgusControl requires QuestData, LegionSetup
 
   struct QuestArgusControl extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Enable to research Astral Walk and build a shop"
+      return "Enable to research Astral Walk and build a shop" //Todo: where is Astral Walk researched? What is the shop called?
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -19,7 +19,7 @@ library QuestArgusControl requires QuestData, LegionSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Argus Incursion", "The planet of Argus is not fully under the control of the Legion, bring it under control!", "ReplaceableTextures\\CommandButtons\\BTNMastersLodge.blp")
+      local thistype this = thistype.allocate("Argus Incursion", "The planet of Argus is not fully under the control of the Legion. Bring it under control!", "ReplaceableTextures\\CommandButtons\\BTNMastersLodge.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_h09U_3138)) //Knight
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BF')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BH')))

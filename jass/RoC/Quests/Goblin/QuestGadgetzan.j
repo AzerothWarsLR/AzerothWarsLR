@@ -44,7 +44,7 @@ library QuestGadgetzan requires QuestData, GoblinSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Gadgetzan", "The city of Gadgetzan is a perfect foothold into Kalimdor", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
+      local thistype this = thistype.allocate("Gadgetzan", "The city of Gadgetzan is a perfect foothold into Kalimdor.", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05C')))
       call this.AddQuestItem(QuestItemExpire.create(1522))
       call this.AddQuestItem(QuestItemSelfExists.create())

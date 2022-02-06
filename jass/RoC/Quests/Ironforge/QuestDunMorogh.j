@@ -38,7 +38,7 @@ library QuestDunMorogh requires QuestData, ScarletSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Mountain Village", "A small troll skirmish is attacking Dun Morogh, push them back", "ReplaceableTextures\\CommandButtons\\BTNIceTrollShadowPriest.blp")
+      local thistype this = thistype.allocate("Mountain Village", "A small troll skirmish is attacking Dun Morogh. Push them back!", "ReplaceableTextures\\CommandButtons\\BTNIceTrollShadowPriest.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nith_1625)) //Troll
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n014')))
       call this.AddQuestItem(QuestItemExpire.create(1435))

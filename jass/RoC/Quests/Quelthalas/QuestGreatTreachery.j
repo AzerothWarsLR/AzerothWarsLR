@@ -29,7 +29,7 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Great Treachery", "Kil'jaeden has approached Kael with an offer of power and salvation for his people. Only by accepting will his hunger for magic by satiated", "ReplaceableTextures\\CommandButtons\\BTNFelKaelthas.blp")
+      local thistype this = thistype.allocate("The Great Treachery", "Kil'jaeden has approached Kael with an offer of power and salvation for his people. Only by accepting will his hunger for magic by satiated.", "ReplaceableTextures\\CommandButtons\\BTNFelKaelthas.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IF', true))
       call this.AddQuestItem(QuestItemLegendLevel.create(LEGEND_KAEL, 6))
       set this.ResearchId = QUEST_RESEARCH_ID

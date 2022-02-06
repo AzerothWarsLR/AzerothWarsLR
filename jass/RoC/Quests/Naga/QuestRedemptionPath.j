@@ -62,7 +62,7 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Brothers Stormrage", "Illidan follows his heart and seeks forgivness to Malfurion. United by their brotherly bond and their desire to protect Tyrande, they decide to unite forces again.", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
+      local thistype this = thistype.allocate("The Brothers Stormrage", "Illidan follows his heart and seeks forgivness from Malfurion. United by their brotherly bond and their desire to protect Tyrande, they decide to unite their forces once again.", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ILLIDAN, true))
       call this.AddQuestItem(QuestItemSelfExists.create())

@@ -18,7 +18,7 @@ library QuestSafeSea requires QuestData, KultirasSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Safe Sea Decree", "The sea's must be secured and the Kul'tiras navy must be returned to it's once former glory!", "ReplaceableTextures\\CommandButtons\\BTNKulTirasDreadnought.blp")
+      local thistype this = thistype.allocate("Safe Sea Decree", "The seas must be secured and the Kul'tiras navy must be returned to its former glory!", "ReplaceableTextures\\CommandButtons\\BTNKulTirasDreadnought.blp")
       call this.AddQuestItem(QuestItemTrain.create('hdes','hshy', 2))
       call this.AddQuestItem(QuestItemTrain.create('h04J','hshy', 1))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01W')))

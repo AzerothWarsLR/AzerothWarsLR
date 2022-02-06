@@ -47,7 +47,7 @@ library QuestLiberateLordaeron requires QuestData, ScarletSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Liberation of Lordaeron", "The Lands of Lordaeron are overrun by corruption, everything must be purged", "ReplaceableTextures\\CommandButtons\\BTNNorthrendCastle.blp")
+      local thistype this = thistype.allocate("Liberation of Lordaeron", "The lands of Lordaeron are overrun by corruption. Everything must be purged!", "ReplaceableTextures\\CommandButtons\\BTNNorthrendCastle.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BRIGITTE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01F')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03P')))

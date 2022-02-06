@@ -19,7 +19,7 @@ library QuestIntoTheVoid requires QuestData, Artifact, BlackEmpireSetup, General
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Tomb of Tyr", "Long ago, Zakajz the Corruptor was killed by the Keeper Tyr and entombed with him. Only Xal'atath, the Black Blade, will be powerful enough to summon him.", "ReplaceableTextures\\CommandButtons\\BTNGeneralVezax.blp")
+      local thistype this = thistype.allocate("The Tomb of Tyr", "Long ago, Zakajz the Corruptor was killed by the Keeper Tyr and entombed with him. Only Xal'atath, the Black Blade, is powerful enough to summon him.", "ReplaceableTextures\\CommandButtons\\BTNGeneralVezax.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_XALATATH))
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_XALATATH, gg_rct_TyrsFall, "Tyr's Fall"))
       call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_TyrsFall, "The Tomb of Tyr", LEGEND_VOLAZJ, 120, 170))

@@ -38,7 +38,7 @@ library QuestThelsamar requires QuestData, ScarletSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Murloc Menace", "A vile group of Murloc is terrorizing Thelsamar, destroy them", "ReplaceableTextures\\CommandButtons\\BTNMurlocNightCrawler.blp")
+      local thistype this = thistype.allocate("Murloc Menace", "A vile group of Murloc is terrorizing Thelsamar. Destroy them!", "ReplaceableTextures\\CommandButtons\\BTNMurlocNightCrawler.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_N089_1494)) //Murloc
       call this.AddQuestItem(QuestItemExpire.create(1435))
       call this.AddQuestItem(QuestItemSelfExists.create())

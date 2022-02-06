@@ -48,7 +48,7 @@ library QuestDominion requires QuestData, IronforgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Dwarven Dominion", "The Dwarven Dominion must be established before Ironforge can join the war", "ReplaceableTextures\\CommandButtons\\BTNNorthrendCastle.blp")
+      local thistype this = thistype.allocate("Dwarven Dominion", "The Dwarven Dominion must be established before Ironforge can join the war.", "ReplaceableTextures\\CommandButtons\\BTNNorthrendCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n017')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n014')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n013')))

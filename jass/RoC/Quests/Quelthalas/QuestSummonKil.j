@@ -23,7 +23,7 @@ library QuestSummonKil requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Great Deceiver", "The greater demon Kil'jaeden has been scheming for aeons, will Kael finally be the one to summon him and consume Azeroth?", "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
+      local thistype this = thistype.allocate("The Great Deceiver", "The greater demon Kil'jaeden has been scheming for aeons. Will Kael finally be the one to summon him and consume Azeroth?", "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
       call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_KaelSunwellChannel, "The Sunwell", LEGEND_KAEL, 180, 270))
       return this
     endmethod

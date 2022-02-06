@@ -53,7 +53,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("In Search of Masters", "The Blood Elves are starved for magic, they need to search for more powerful sources of it. Maybe Outland is the answer to their plight.", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
+      local thistype this = thistype.allocate("In Search of Masters", "The Blood Elves are starved for magic; they need to search for more powerful sources of it. Maybe Outland is the answer to their plight.", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IP', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KAEL, true))
       set this.ResearchId = QUEST_RESEARCH_ID

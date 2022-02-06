@@ -39,7 +39,7 @@ library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Dark Iron Alliance", "The Dark Iron dwarves are renegades. Bring Magni to their capital to open negotiations for an alliance", "ReplaceableTextures\\CommandButtons\\BTNRPGDarkIron.blp")
+      local thistype this = thistype.allocate("Dark Iron Alliance", "The Dark Iron dwarves are renegades. Bring Magni to their capital to open negotiations for an alliance.", "ReplaceableTextures\\CommandButtons\\BTNRPGDarkIron.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Shadowforge_gate, "Shadowforge"))
       return this
     endmethod

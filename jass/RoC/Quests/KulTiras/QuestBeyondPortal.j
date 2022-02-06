@@ -14,7 +14,7 @@ library QuestBeyondPortal requires QuestData, KultirasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Beyond the Dark Portal", "The Orc threat from Draenor still looms over all, eliminate every trace of the Orcs and their bases", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
+      local thistype this = thistype.allocate("Beyond the Dark Portal", "The Orc threat from Draenor still looms over all. Eliminate every trace of the Orcs and their bases.", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HELLFIRECITADEL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BLACKROCKSPIRE))

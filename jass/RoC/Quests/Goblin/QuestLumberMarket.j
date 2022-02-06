@@ -19,7 +19,7 @@ library QuestLumberMarket requires GoblinSetup, LegendDruids
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Lumber Market Krash", "The World Tree would provide enough lumber to completly crash the lumber market, forcing our Shredders to specialise more on war.","ReplaceableTextures\\CommandButtons\\BTNJunkGolem.blp")
+      local thistype this = thistype.allocate("Lumber Market Krash", "The World Tree would provide enough lumber to completely crash the lumber market, forcing our Shredders to specialise more on war.", "ReplaceableTextures\\CommandButtons\\BTNJunkGolem.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

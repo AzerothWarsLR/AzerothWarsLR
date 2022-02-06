@@ -41,7 +41,7 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Secret Cloister", "The Scarlet Monastery is the perfect place for the secret base of the Scarlet Crusade ", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
+      local thistype this = thistype.allocate("The Secret Cloister", "The Scarlet Monastery is the perfect place for the secret base of the Scarlet Crusade.", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h00T'))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID

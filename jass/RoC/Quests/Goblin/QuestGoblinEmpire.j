@@ -17,7 +17,7 @@ library QuestGoblinEmpire requires QuestData, KultirasSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Goblin Empire", "All the Goblin syndicates towns must be reunited under one banner", "ReplaceableTextures\\CommandButtons\\BTNGoblinWarZeppelin.blp")
+      local thistype this = thistype.allocate("Goblin Empire", "All the Goblin syndicates' towns must be reunited under one banner.", "ReplaceableTextures\\CommandButtons\\BTNGoblinWarZeppelin.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01X')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00L')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07Y')))

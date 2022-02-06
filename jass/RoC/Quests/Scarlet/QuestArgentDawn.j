@@ -30,7 +30,7 @@ library QuestArgentDawn requires QuestData, ScarletSetup, QuestItemResearch, Que
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Argent Dawn", "The Militia of Lordaeron has been solidified into the Argent Dawn, a strong military force lead by Tirion Fording ", "ReplaceableTextures\\CommandButtons\\BTNResurrection.blp")
+      local thistype this = thistype.allocate("The Argent Dawn", "The Militia of Lordaeron has been solidified into the Argent Dawn, a strong military force lead by Tirion Fording.", "ReplaceableTextures\\CommandButtons\\BTNResurrection.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h00T'))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
