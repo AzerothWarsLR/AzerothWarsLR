@@ -14,7 +14,7 @@ library QuestDragonSoul requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Dragon Soul", "The Dragon Soul was lost in the Blackrock Mountain long ago, Skeram might be powerful enough to restore it", "ReplaceableTextures\\CommandButtons\\BTNBrokenAmulet.blp")
+      local thistype this = thistype.allocate("The Dragon Soul", "The Dragon Soul was lost in the Blackrock Mountain long ago. Skeram might be powerful enough to restore it.", "ReplaceableTextures\\CommandButtons\\BTNBrokenAmulet.blp")
       call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_DragonSoulChannel, "Burning Steppe", LEGEND_SKERAM, 240, 160))
       return this
     endmethod

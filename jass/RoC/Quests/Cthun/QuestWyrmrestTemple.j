@@ -14,6 +14,8 @@ library QuestWyrmrestTemple requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
+      //Todo: the flavour of this doesn't add up. The description implies you need to do something to Wyrmrest Temple, 
+      //but actually you need to take the Demon Soul there and kill 3 dragons. What's the connection to the Demon Soul in particular?
       local thistype this = thistype.allocate("The Siege of Wyrmrest Temple", "Yor'sahj the Unsleeping's mission is to destroy the Wyrmrest temple, assist him and he will join the Black Empire", "ReplaceableTextures\\CommandButtons\\BTNHeroMastermind.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_DEMONSOUL))
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_DEMONSOUL, gg_rct_WyrmrestTemple, "Wyrmrest Temple"))
