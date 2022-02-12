@@ -42,9 +42,6 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
       call RemoveWeatherEffectBJ(Storm)
       call CreateUnits(this.Holder.Player, 'opeo', -1818, -2070, 270, 3)
       call RescueNeutralUnitsInRect(gg_rct_EchoUnlock, this.Holder.Player)
-      if GetLocalPlayer() == this.Holder.Player then
-        call PlayThematicMusicBJ("war3mapImported\\WarsongTheme.mp3")
-      endif
     endmethod
 
     private method OnAdd takes nothing returns nothing

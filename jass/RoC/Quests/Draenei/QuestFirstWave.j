@@ -7,16 +7,14 @@ library QuestFirstWave requires QuestData, DraeneiSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Divine Citadel, Shipyard, Ships, Astral Sanctum and Crystal Spire will not be deleted from Azuremyst"
+      return "The Divine Citadel, Teleporter, Astral Sanctum and Crystal Spire will not be deleted from Azuremyst"
     endmethod
 
     private method OnFail takes nothing returns nothing
       call KillUnit(gg_unit_o051_3356)
-      call KillUnit(gg_unit_o059_3317)
       call KillUnit(gg_unit_o055_3337)
       call KillUnit(gg_unit_o054_3338)
-      call KillUnit(gg_unit_edes_3396)
-      call KillUnit(gg_unit_etrs_3383)
+      call KillUnit(gg_unit_n0BU_0220)
     endmethod
 
     public static method create takes nothing returns thistype
