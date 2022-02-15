@@ -32,7 +32,7 @@ library QuestBoralus requires QuestData, ScarletSetup, GeneralHelpers
       local thistype this = thistype.allocate("The City at Sea", "Proudmoore is stranded at sea. Rejoin Boralus to take control of the city.", "ReplaceableTextures\\CommandButtons\\BTNHumanShipyard.blp")
       call this.AddQuestItem(QuestItemResearch.create('R04R', 'h06I'))
       call this.AddQuestItem(QuestItemUpgrade.create('h06I', 'h062'))
-      call this.AddQuestItem(QuestItemExpire.create(1465))
+      call this.AddQuestItem(QuestItemExpire.create(900))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
