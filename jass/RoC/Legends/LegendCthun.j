@@ -13,7 +13,7 @@ library LegendCthun initializer OnInit requires Legend
     set LEGEND_CTHUN = Legend.create()
     set LEGEND_CTHUN.Unit = gg_unit_U00R_0609
     set LEGEND_CTHUN.PermaDies = true
-    set LEGEND_CTHUN.DeathMessage = "The Old God C'thun has fallen"
+    set LEGEND_CTHUN.DeathMessage = "C'thun, God of the Qiraji, was once defeated by the Titans, and then again by the combined Dragonflights. Today he experiences his third defeat and his first true death."
 
     set LEGEND_SKERAM = Legend.create()
     set LEGEND_SKERAM.UnitType = 'E005'

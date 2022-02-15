@@ -61,7 +61,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_KILJAEDEN.UnitType = 'U004'
     set LEGEND_KILJAEDEN.PermaDies = true
     set LEGEND_KILJAEDEN.StartingXP = 10800
-    set LEGEND_KILJAEDEN.DeathMessage = "Kil'jaeden the Deceiver has been annihilated. The Burning Legion is now without its most formidable lieutenants."
+    set LEGEND_KILJAEDEN.DeathMessage = "Kil'jaeden the Deceiver has been annihilated, but it is too late for the Blood Elves, who will continue to live and die with demonic taint coursing through their veins."
   endfunction
 
 endlibrary
