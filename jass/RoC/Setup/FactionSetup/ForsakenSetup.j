@@ -42,7 +42,7 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.ModObjectLimit('u02G', 12) 	    //Undercity Guardian
     call f.ModObjectLimit('n07V', 6)           //Elder Banshee
     call f.ModObjectLimit('o05H', 8)           //PlagueFlyer
-    call f.ModObjectLimit('h009', 6)           //dread knight
+    call f.ModObjectLimit('n0BY', 6)           //dread knight
     call f.ModObjectLimit('u01V', 2)           //Valyr
     call f.ModObjectLimit('ubot', 12)	    //Undead Transport Ship
     call f.ModObjectLimit('udes', 12) 	    //Undead Frigate
