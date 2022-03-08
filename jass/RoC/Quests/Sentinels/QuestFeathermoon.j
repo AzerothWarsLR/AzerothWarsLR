@@ -10,7 +10,7 @@ library QuestFeathermoon requires QuestData, ScarletSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Feathermoon Stronghold and make Shandris trainable at the Altar"
+      return "Control of all units in Feathermoon Stronghold and make Shandris and Maiev trainable at the Altar"
     endmethod
 
     private method GrantFeathermoon takes player whichPlayer returns nothing

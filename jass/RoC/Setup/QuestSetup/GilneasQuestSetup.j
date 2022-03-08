@@ -12,7 +12,7 @@ library GilneasQuestSetup requires GilneasSetup, QuestIllidanChapterOne, QuestIl
     set ChapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
 
     set GOLDRINNELVE_PATH = QuestGoldrinnElvePath.create()
-    set GOLDRINNHUMAN_PATH = QuestGoldrinnHumanPath.create()
+    //set GOLDRINNHUMAN_PATH = QuestGoldrinnHumanPath.create()
 
   endfunction
 

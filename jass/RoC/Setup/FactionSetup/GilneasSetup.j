@@ -9,7 +9,7 @@ library GilneasSetup requires Faction, TeamSetup
     
     set FACTION_GILNEAS = Faction.create("Gilneas", PLAYER_COLOR_COAL, "|cff808080", "ReplaceableTextures\\CommandButtons\\BTNGreymane.blp")
     set f = FACTION_GILNEAS
-    set f.Team = TEAM_ALLIANCE
+    set f.Team = TEAM_NIGHT_ELVES
     set f.StartingGold = 150
     set f.StartingLumber = 200
 

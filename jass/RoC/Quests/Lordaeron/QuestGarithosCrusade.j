@@ -1,6 +1,6 @@
 //If Quel'thalas destroys the Legion Nexus, they can train Kael'thas and Blood Mages.
 //If they instead lose the Sunwell, they lose everything. If that doesn't defeat them, they get Kael'thalas, Lorthemar, and some free units at Dalaran Dungeons.
-library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQuelthalas, Display
+library QuestGarithosCrusade requires QuelthalasSetup, LegendLegion, LegendQuelthalas, Display
 
   globals
     private constant integer QUEST_RESEARCH_ID = 'R04Q'
@@ -9,7 +9,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     private constant integer HERO_ID = 'Hkal'
   endglobals
 
-  struct QuestTheBloodElves extends QuestData
+  struct QuestGarithosCrusade extends QuestData
     private static group SecondChanceUnits
 
     private method operator CompletionPopup takes nothing returns string
@@ -34,7 +34,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
       local Legend triggerLegend = GetTriggerLegend()
       set LEGEND_KAEL.StartingXP = GetHeroXP(LEGEND_ANASTERIAN.Unit)
       call this.Holder.obliterate()
-        call RecueUnitsInGroup(thistype.SecondChanceUnits, this.Holder.Player)
+        call RescueUnitsInGroup(thistype.SecondChanceUnits, this.Holder.Player)
         call DestroyGroup(thistype.SecondChanceUnits)
         call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
         call LEGEND_KAEL.Spawn(this.Holder.Player, -11410, 21975, 110)
