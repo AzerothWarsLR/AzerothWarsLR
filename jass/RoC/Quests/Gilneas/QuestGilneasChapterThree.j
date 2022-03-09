@@ -32,6 +32,7 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_StartQuest3, "The city is safe"))
       call this.AddQuestItem(QuestItemLegendHasArtifact.create(LEGEND_TESS, ARTIFACT_SCYTHEOFELUNE))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_GENN))
+      call RescueNeutralUnitsInRect(gg_rct_DarnassusWorgen, this.Holder.Player)
       return this
     endmethod
   endstruct
