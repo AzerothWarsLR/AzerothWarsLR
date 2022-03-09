@@ -2,11 +2,6 @@
 //If they instead lose the Sunwell, they lose everything. If that doesn't defeat them, they get GARITHOS'thalas, Lorthemar, and some free units at Dalaran Dungeons.
 library QuestGarithosCrusade requires LordaeronSetup, LegendLordaeron, Display
 
-  globals
-    private constant integer QUEST_RESEARCH_ID = 'R04Q'
-    private constant integer UNITTYPE_ID = 'n048'
-  endglobals
-
   struct QuestGarithosCrusade extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
@@ -18,23 +13,35 @@ library QuestGarithosCrusade requires LordaeronSetup, LegendLordaeron, Display
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      local unit u
       local player holderPlayer = this.Holder.Person.Player
-      local Legend triggerLegend = GetTriggerLegend()
+      call FACTION_LORDAERON.ModObjectLimit('h00F', -UNLIMITED)           //Paladin 
+      call FACTION_LORDAERON.ModObjectLimit('R06Q', -UNLIMITED)   //Paladin Adept Training
+      call FACTION_LORDAERON.ModObjectLimit('h012', -UNLIMITED)           //Falric
+      call FACTION_LORDAERON.ModObjectLimit('Hart', -UNLIMITED)           //Arthas
+      call FACTION_LORDAERON.ModObjectLimit('Huth', -UNLIMITED)           //Uther
+      call FACTION_LORDAERON.ModObjectLimit('H01J', -UNLIMITED)           //Mograine
+      call FACTION_LORDAERON.ModObjectLimit('Harf', -UNLIMITED)           //Arthas
+
+      set this.Holder.Team = TEAM_SCARLET
+      set this.Holder.Name = "Garithos"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp"
+      
       set LEGEND_GARITHOS.StartingXP = GetHeroXP(LEGEND_ARTHAS.Unit)
       call this.Holder.obliterate()
-        call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
-        call LEGEND_GARITHOS.Spawn(this.Holder.Player, -11410, 21975, 110)
-        call UnitAddItem(LEGEND_GARITHOS.Unit, CreateItem('I00M', GetUnitX(LEGEND_GARITHOS.Unit), GetUnitY(LEGEND_GARITHOS.Unit)))
-        if GetLocalPlayer() == this.Holder.Player then
-          call SetCameraPosition(GetRectCenterX(gg_rct_BloodElfSecondChanceSpawn), GetRectCenterY(gg_rct_BloodElfSecondChanceSpawn))
-        endif
-      call SetTriggerLegend(triggerLegend)
+      call LEGEND_GARITHOS.Spawn(this.Holder.Player, 19410, 7975, 110)
+      call CreateUnits(this.Holder.Player, 'hkni', GetRectCenterX(gg_rct_GarithosCrusadeSpawn), GetRectCenterY(gg_rct_GarithosCrusadeSpawn), 270, 12)
+      call CreateUnits(this.Holder.Player, 'hpea', GetRectCenterX(gg_rct_GarithosCrusadeSpawn), GetRectCenterY(gg_rct_GarithosCrusadeSpawn), 270, 6)
+      call CreateUnits(this.Holder.Player, 'hfoo', GetRectCenterX(gg_rct_GarithosCrusadeSpawn), GetRectCenterY(gg_rct_GarithosCrusadeSpawn), 270, 12)
+      call AdjustPlayerStateBJ( 450, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 900, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      if GetLocalPlayer() == this.Holder.Player then
+        call SetCameraPosition(GetRectCenterX(gg_rct_GarithosCrusadeSpawn), GetRectCenterY(gg_rct_GarithosCrusadeSpawn))
+      endif
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Garithos' Crusade", "The Elves of Quel'thalas have a deep reliance on the Sunwell's magic. Without it, they would have to turn to darker magicks to sate themselves.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
-      call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h08B'))
+      local thistype this = thistype.allocate("Garithos' Crusade", "Garithos has always had a distrust of other races, he might be tempted to join the Scarlet Crusade.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
+      call this.AddQuestItem(QuestItemResearch.create('R08E', 'hbla'))
       return this
     endmethod
   endstruct

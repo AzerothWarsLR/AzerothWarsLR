@@ -73,6 +73,9 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     call f.ModObjectLimit('R04A', UNLIMITED)   //Rapid Fire
     call f.ModObjectLimit('R00B', UNLIMITED)   //Veteran Footmen
     call f.ModObjectLimit('R01Q', UNLIMITED)   //Pegasus Taming
+
+    call f.ModObjectLimit('R08E', UNLIMITED)   //Garithos Crusade
+    call f.ModObjectLimit('R08F', UNLIMITED)   //Mind Control
   endfunction
     
 endlibrary

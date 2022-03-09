@@ -11,6 +11,8 @@ library LordaeronQuestSetup requires LordaeronSetup, QuestKingArthas, QuestShore
     call FACTION_LORDAERON.AddQuest(QuestKingArthas.create())
     call FACTION_LORDAERON.AddQuest(QuestLivingShadow.create())
     call FACTION_LORDAERON.AddQuest(QuestKingdomOfManLordaeron.create())
+    call FACTION_LORDAERON.AddQuest(QuestGarithosCrusade.create())
+    call FACTION_LORDAERON.AddQuest(QuestGarithosMindControl.create())
 
     set THE_ASHBRINGER = QuestAshbringer.create()
 

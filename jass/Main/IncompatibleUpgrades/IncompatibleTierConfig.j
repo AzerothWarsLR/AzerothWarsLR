@@ -45,6 +45,11 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R088')   //Argent Dawn
     call researchSet.add('R03P')   //Unleash the Crusade
 
+    //Lordaeron Path
+    set researchSet = IncompatibleResearchSet.create()
+    call researchSet.add('R08F')   //Mind Control
+    call researchSet.add('R08E')   //Join Crusade
+
   endfunction    
     
 endlibrary

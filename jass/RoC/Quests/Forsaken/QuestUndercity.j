@@ -25,6 +25,8 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
 
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, this.Holder.Player)
+      call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R08G', 1)
+      call SetPlayerTechResearched(FACTION_LEGION.Player, 'R08G', 1)
       call WaygateActivateBJ( true, gg_unit_n08F_1739 )
       call WaygateActivateBJ( true, gg_unit_n08F_1798 )
       call ShowUnitShow( gg_unit_n08F_1739 )
