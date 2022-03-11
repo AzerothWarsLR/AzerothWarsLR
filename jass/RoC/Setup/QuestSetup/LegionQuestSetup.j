@@ -10,6 +10,7 @@ library LegionQuestSetup requires LegionSetup, QuestDemonGateMonastery, QuestLeg
     //Misc
     call FACTION_LEGION.AddQuest(QuestSummonLegion.create())
     call FACTION_LEGION.AddQuest(QuestConsumeTree.create())
+    call FACTION_LEGION.AddQuest(QuestDreadlordInsurgent.create())
   endfunction
 
 endlibrary

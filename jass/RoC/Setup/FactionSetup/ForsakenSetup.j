@@ -48,9 +48,7 @@ library ForsakenSetup requires Faction, TeamSetup
     call f.ModObjectLimit('udes', 12) 	    //Undead Frigate
     call f.ModObjectLimit('uubs', 6)          //Undead Battleship
 
-    call f.ModObjectLimit('H049', 1)        //Nathanos
     call f.ModObjectLimit('U01O', 1)        //Putress
-    call f.ModObjectLimit('Uvar', 1)        //Varimathras
     call f.ModObjectLimit('Usyl', 1)        //Sylvanas
     
     //Upgrades

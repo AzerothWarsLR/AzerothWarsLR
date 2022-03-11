@@ -22,6 +22,10 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
       call FACTION_LORDAERON.ModObjectLimit('H01J', -UNLIMITED)           //Mograine
       call FACTION_LORDAERON.ModObjectLimit('Harf', -UNLIMITED)           //Arthas
 
+      call FACTION_LORDAERON.ModObjectLimit('h009', 6)           //Dark Knight
+      call FACTION_LORDAERON.ModObjectLimit('H049', 1)        //Nathanos
+      call FACTION_LORDAERON.ModObjectLimit('Hlgr', 1)        //Garithos
+
       set this.Holder.Team = TEAM_FORSAKEN
       set this.Holder.Name = "|cff8080ffGarithos|r"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp"
@@ -30,9 +34,11 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
       set LEGEND_GARITHOS.StartingXP = GetHeroXP(LEGEND_ARTHAS.Unit)
       call this.Holder.obliterate()
       call LEGEND_GARITHOS.Spawn(this.Holder.Player, 9090, 8743, 110)
+      call LEGEND_NATHANOS.Spawn(this.Holder.Player, 9090, 8743, 110)
       call CreateUnits(this.Holder.Player, 'hkni', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 12)
       call CreateUnits(this.Holder.Player, 'hpea', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 6)
       call CreateUnits(this.Holder.Player, 'hfoo', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 12)
+      call CreateUnits(this.Holder.Player, 'h009', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 2)
       call AdjustPlayerStateBJ( 450, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 900, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       if GetLocalPlayer() == this.Holder.Player then
@@ -41,7 +47,7 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Garithos' MindControl", "Garithos has always had a distrust of other races, he might be tempted to join the Scarlet MindControl.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
+      local thistype this = thistype.allocate("Garithos' Mind-Control", "Garithos has always had a distrust of other races, he might be tempted to join the Scarlet MindControl.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
       call this.AddQuestItem(QuestItemResearch.create('R08F', 'hbla'))
       return this
     endmethod

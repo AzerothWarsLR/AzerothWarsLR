@@ -14,7 +14,7 @@ library LegendForsaken initializer OnInit requires Legend
 
     set LEGEND_NATHANOS = Legend.create()
     set LEGEND_NATHANOS.UnitType = 'H049'
-    set LEGEND_NATHANOS.StartingXP = 7000
+    set LEGEND_NATHANOS.StartingXP = 4000
 
     set LEGEND_VARIMATHRAS = Legend.create()
     set LEGEND_VARIMATHRAS.UnitType = 'Uvar'

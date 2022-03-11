@@ -5,6 +5,7 @@ library LegendLordaeron initializer OnInit requires Legend
     Legend LEGEND_ARTHAS
     Legend LEGEND_MOGRAINE
     Legend LEGEND_GARITHOS
+    Legend LEGEND_GOODCHILD
 
     Legend LEGEND_CAPITALPALACE
     Legend LEGEND_STRATHOLME
@@ -19,6 +20,10 @@ library LegendLordaeron initializer OnInit requires Legend
     set LEGEND_GARITHOS = Legend.create()
     set LEGEND_GARITHOS.UnitType = 'Hlgr'
     set LEGEND_GARITHOS.StartingXP = 2800
+
+    set LEGEND_GOODCHILD = Legend.create()
+    set LEGEND_GOODCHILD.UnitType = 'E00O'
+    set LEGEND_GOODCHILD.StartingXP = 2800
 
     set LEGEND_CAPITALPALACE = Legend.create()
     set LEGEND_CAPITALPALACE.Unit = gg_unit_h000_0406

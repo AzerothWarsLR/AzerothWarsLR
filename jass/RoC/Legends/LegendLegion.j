@@ -5,6 +5,7 @@ library LegendLegion initializer OnInit requires Legend
     Legend LEGEND_ANETHERON
     Legend LEGEND_TICHONDRIUS
     Legend LEGEND_MALGANIS
+    Legend LEGEND_LILIAN
 
   endglobals
 
@@ -20,6 +21,10 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_ANETHERON.UnitType = 'U00L'
     set LEGEND_ANETHERON.PlayerColor = PLAYER_COLOR_ORANGE
     set LEGEND_ANETHERON.StartingXP = 4000
+
+    set LEGEND_LILIAN = Legend.create()
+    set LEGEND_LILIAN.UnitType = 'E01O'
+    set LEGEND_LILIAN.StartingXP = 4000
 
     set LEGEND_TICHONDRIUS = Legend.create()
     set LEGEND_TICHONDRIUS.UnitType = 'Utic'
