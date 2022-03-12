@@ -35,6 +35,7 @@ library QuestZulfarrak requires LegendNeutral
       call DestroyGroup(tempGroup)
       call SetPlayerTechResearched(Holder.Player, GAHZRILLA_RESEARCH, 1)
       call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call SetUnitOwner(LEGEND_ZULFARRAK.Unit, this.Holder.Player, true)
     endmethod
 
     private method OnAdd takes nothing returns nothing

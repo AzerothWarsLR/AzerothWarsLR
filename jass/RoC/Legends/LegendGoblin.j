@@ -11,11 +11,10 @@ library LegendGoblin initializer OnInit requires Legend
 
     set LEGEND_GALLYWIX = Legend.create()
     set LEGEND_GALLYWIX.UnitType = 'O04N'
-    set LEGEND_GALLYWIX.StartingXP = 1800
 
     set LEGEND_NOGGENFOGGER = Legend.create()
     set LEGEND_NOGGENFOGGER.UnitType = 'Nalc'
-    set LEGEND_NOGGENFOGGER.StartingXP = 1800
+    set LEGEND_NOGGENFOGGER.StartingXP = 800
 
     set LEGEND_GAZLOWE = Legend.create()
     set LEGEND_GAZLOWE.UnitType = 'Ntin'

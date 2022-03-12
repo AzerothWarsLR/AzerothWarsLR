@@ -21,8 +21,19 @@ library QuestArgentDawn requires QuestData, ScarletSetup, QuestItemResearch, Que
 
     private method OnComplete takes nothing returns nothing
       set this.Holder.Name = "Argent"
+      set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNTirionPaladin.blp"
       call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
       call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
+      call SetPlayerColor(this.Holder.Player, PLAYER_COLOR_SNOW )
+
+      call FACTION_SCARLET.ModObjectLimit('h08I', -UNLIMITED)           //Crusader
+      call FACTION_SCARLET.ModObjectLimit('h09I', UNLIMITED)                 //Argent Crusader
+
+      call FACTION_SCARLET.ModObjectLimit('h08L', -UNLIMITED)           //Cavalier
+      call FACTION_SCARLET.ModObjectLimit('h0A3', UNLIMITED)                 //Lilian
+
+      call FACTION_SCARLET.ModObjectLimit('h08J', -UNLIMITED)           //Arbalest
+      call FACTION_SCARLET.ModObjectLimit('h09J', UNLIMITED)                 //Lilian
     endmethod
 
     private method OnAdd takes nothing returns nothing

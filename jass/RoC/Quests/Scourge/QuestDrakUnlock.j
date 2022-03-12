@@ -1,5 +1,9 @@
 library QuestDrakUnlock requires QuestData, ScourgeSetup, QuestItemControlPoint, QuestItemExpire, QuestItemSelfExists, GeneralHelpers
 
+  globals
+    private constant integer QUEST_RESEARCH_ID = 'R08J'
+  endglobals
+
 
   struct QuestDrakUnlock extends QuestData
     private method operator CompletionPopup takes nothing returns string
@@ -24,6 +28,7 @@ library QuestDrakUnlock requires QuestData, ScourgeSetup, QuestItemControlPoint,
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       call this.AddQuestItem(QuestItemExpire.create(1140))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

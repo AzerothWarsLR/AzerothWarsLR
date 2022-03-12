@@ -38,6 +38,8 @@ library QuestFeathermoon requires QuestData, ScarletSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantFeathermoon(this.Holder.Player)
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\SentinelTheme.mp3" )
       endif
@@ -46,8 +48,8 @@ library QuestFeathermoon requires QuestData, ScarletSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Feathermoon Stronghold", "Feathermoon Stronghold stood guard for ten thousand years, it is time to relieve the guards from their duty.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TYRANDE, gg_rct_FeathermoonUnlock, "Feathermoon Stronghold"))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n027')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01R')))
+      call this.AddQuestItem(QuestItemUpgrade.create('n06P', 'n06J'))
       call this.AddQuestItem(QuestItemExpire.create(1485))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID

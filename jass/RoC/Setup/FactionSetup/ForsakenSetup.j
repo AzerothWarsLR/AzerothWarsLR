@@ -50,6 +50,7 @@ library ForsakenSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('U01O', 1)        //Putress
     call f.ModObjectLimit('Usyl', 1)        //Sylvanas
+    call f.ModObjectLimit('U02I', 1)        //Farenell
     
     //Upgrades
     call f.ModObjectLimit('Ruba', UNLIMITED)   //Banshee Adept Training

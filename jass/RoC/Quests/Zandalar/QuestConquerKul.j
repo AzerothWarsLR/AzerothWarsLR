@@ -46,7 +46,7 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Conquer Boralus", "The Kul'tiran people and their fleet have been a threat to the Zandalari Empire for ages, it is time to put them to rest. ", "ReplaceableTextures\\CommandButtons\\BTNGalleonIcon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DAZARALOR, true))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BORALUS, false))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BORALUS))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
