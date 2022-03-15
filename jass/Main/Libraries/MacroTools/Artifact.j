@@ -144,9 +144,29 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore, Envir
     private unit owningUnit = null
     readonly integer status = 0
     readonly string description = null                  //More like a situation describer; eg "Owned by xx..." or "Unknown location"
+    private boolean titanforged = false
+    private integer titanforgedAbility = 'A0VJ'         //The extra ability the Artifact gains when it's Titanforged
 
     real falseX = 0                                     //Where the map should ping this artifact when it is in SPECIAL status mode
     real falseY = 0                                     //^        
+
+    public method operator TitanforgedAbility= takes integer value returns nothing
+      set this.titanforgedAbility = value
+    endmethod
+
+    public method operator Titanforged takes nothing returns boolean
+      return this.titanforged
+    endmethod
+
+    //Grant the Artifact an additional, predefined ability.
+    public method Titanforge takes nothing returns nothing
+      if this.titanforged == false then
+        set this.titanforged = true
+        call BlzItemAddAbility(this.item, this.titanforgedAbility)
+        call BlzSetItemExtendedTooltip(this.item, BlzGetItemExtendedTooltip(this.item) + "|n|n|cff800000Titanforged|r|n" + BlzGetAbilityExtendedTooltip(this.titanforgedAbility, 0))
+        call BlzSetItemDescription(this.item, BlzGetItemDescription(this.item) + "|n|cff800000Titanforged|r")
+      endif
+    endmethod
 
     method updateFaction takes nothing returns nothing
       set thistype.triggerArtifact = this

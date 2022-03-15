@@ -39,7 +39,8 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set tempArtifact = Artifact.create(CreateItem('I00H', DUMMY_X, DUMMY_Y))    //Sulfuras
     call UnitAddAbility(gg_unit_N00D_1457, ARTIFACT_HOLDER_ABIL_ID)             //Ragnaros
-    call UnitAddItem(gg_unit_N00D_1457, tempArtifact.item)   
+    call UnitAddItem(gg_unit_N00D_1457, tempArtifact.item) 
+    set tempArtifact.TitanforgedAbility = 'A0VN'
 
     set ARTIFACT_HELMOFDOMINATION = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  
@@ -63,6 +64,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
     call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_TROLKALAR.setDescription("Stormwind Quest")
+    set ARTIFACT_TROLKALAR.TitanforgedAbility = 'A0VM'
 
     set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_n085_2846, ARTIFACT_HOLDER_ABIL_ID)             //The Atheneum
@@ -78,6 +80,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     set ARTIFACT_ZINROKH = Artifact.create(CreateItem('I016', DUMMY_X, DUMMY_Y))    //Zin'rokh
     call ARTIFACT_ZINROKH.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_ZINROKH.setDescription("Assembled from its fragments")
+    set ARTIFACT_ZINROKH.TitanforgedAbility = 'A0VM'
 
     set tempArtifact = Artifact.create(CreateItem('I01M', DUMMY_X, DUMMY_Y))    //Bronze Demon Soul Fragment
     call UnitAddAbility(gg_unit_O024_0567, ARTIFACT_HOLDER_ABIL_ID)             //Ukorz
@@ -124,6 +127,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set tempArtifact = Artifact.create(CreateItem('I00J', DUMMY_X, DUMMY_Y))    //Felo'melorn
     call UnitAddItem(gg_unit_O00O_1933, tempArtifact.item)                      //Zuljin
+    set tempArtifact.TitanforgedAbility = 'A0VN'
 
     set tempArtifact = Artifact.create(CreateItem('I00K', DUMMY_X, DUMMY_Y))    //Essence
     call UnitAddItem(gg_unit_n03T_0555, tempArtifact.item)                      //Murmur
@@ -145,7 +149,6 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_THUNDERFURY.setDescription("Twilight Hammer's Quest")
     set ARTIFACT_THUNDERFURY.falseX = -1649
     set ARTIFACT_THUNDERFURY.falseY = 7628
-
 
     set ARTIFACT_LIVINGSHADOW = Artifact.create(CreateItem('odef', DUMMY_X, DUMMY_Y))
     call ARTIFACT_LIVINGSHADOW.setStatus(ARTIFACT_STATUS_HIDDEN)
