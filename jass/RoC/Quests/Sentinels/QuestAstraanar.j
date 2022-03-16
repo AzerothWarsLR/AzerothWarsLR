@@ -19,8 +19,8 @@ library QuestAstranaar requires QuestData, SentinelsSetup, GeneralHelpers
       call RescueNeutralUnitsInRect(gg_rct_AstranaarUnlock, this.Holder.Player)
       call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock1, this.Holder.Player)
       call RescueNeutralUnitsInRect(gg_rct_TeldrassilUnlock2, this.Holder.Player)
-      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
-      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call AdjustPlayerStateBJ( 100, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype

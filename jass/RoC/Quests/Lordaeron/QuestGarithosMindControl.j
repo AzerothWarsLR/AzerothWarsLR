@@ -39,7 +39,7 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
       call CreateUnits(this.Holder.Player, 'hpea', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 6)
       call CreateUnits(this.Holder.Player, 'hfoo', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 12)
       call CreateUnits(this.Holder.Player, 'h009', GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas), 270, 2)
-      call AdjustPlayerStateBJ( 450, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 900, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       if GetLocalPlayer() == this.Holder.Player then
         call SetCameraPosition(GetRectCenterX(gg_rct_Terenas), GetRectCenterY(gg_rct_Terenas))

@@ -20,7 +20,7 @@ library QuestAwakenCthun requires QuestData, QuestItemChannelRect
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Awakening of C'thun", "The Old God C'thun slumbers beneath the ruins of Ahn'qiraj. Skeram will need to awaken him with an unholy ritual.", "ReplaceableTextures\\CommandButtons\\BTNCthunIcon.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_CthunSummon, "C'thun", LEGEND_SKERAM, 180, 270))
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_CthunSummon, "C'thun", LEGEND_SKERAM, 420, 270))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

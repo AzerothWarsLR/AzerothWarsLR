@@ -19,6 +19,8 @@ library QuestEndlessRanks requires QuestData, QuestItemKillUnit
       call this.AddQuestItem(QuestItemTrain.create('n06I','o00R', 24))
       call this.AddQuestItem(QuestItemTrain.create('u013','o00R', 6))
       call this.AddQuestItem(QuestItemTrain.create('o02N', 'u01H', 24))
+      call this.AddQuestItem(QuestItemTrain.create('n05V', 'u01G', 12))
+      call this.AddQuestItem(QuestItemTrain.create('n060', 'u01G', 12))
       call this.AddQuestItem(QuestItemTrain.create('h01K','u01H', 8))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

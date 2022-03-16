@@ -15,6 +15,9 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod    
 
     private method OnComplete takes nothing returns nothing
+      call SetUnitOwner(LEGEND_KAEL.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
+      call this.Holder.obliterate()
+      call SetUnitOwner(LEGEND_KAEL.Unit, this.Holder.Player, true)
       call FACTION_QUELTHALAS.AddQuest(SUMMON_KIL)
       set SUMMON_KIL.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_QUELTHALAS.AddQuest(GREAT_TREACHERY)
@@ -37,14 +40,14 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call RemoveUnit(LEGEND_SYLVANAS.Unit)
 
       call SetUnitPosition(LEGEND_KAEL.Unit, 4067, -21695)
-      call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 20000, 18584)
+      call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 4067, -21695)
       call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
       call RescueUnitsInGroup(udg_TempestKeep, this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IK')
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
-      call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
-      call AdjustPlayerStateBJ( 400, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 4000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       set this.Holder.Name = "Blood Elves"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBloodMage2.blp"
       if GetLocalPlayer() == this.Holder.Player then

@@ -16,11 +16,11 @@ library QuestGilneasChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
-    call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
-    call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-    set GOLDRINNELVE_PATH.Progress = QUEST_PROGRESS_INCOMPLETE
-    set GOLDRINNHUMAN_PATH.Progress = QUEST_PROGRESS_INCOMPLETE
-    call RescueNeutralUnitsInRect(gg_rct_DarnassusWorgen, this.Holder.Player)
+      call Holder.ModObjectLimit(RESEARCH_ID, UNLIMITED)
+      call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
+      set GOLDRINNELVE_PATH.Progress = QUEST_PROGRESS_INCOMPLETE
+      set GOLDRINNHUMAN_PATH.Progress = QUEST_PROGRESS_INCOMPLETE
+      call RescueNeutralUnitsInRect(gg_rct_DarnassusWorgen, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

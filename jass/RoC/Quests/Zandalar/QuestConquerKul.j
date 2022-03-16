@@ -40,7 +40,6 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
         set u = FirstOfGroup(tempGroup)
       endloop   
       call DestroyGroup(tempGroup)
-      call LEGEND_KATHERINE.Spawn(this.Holder.Player, -15223, -22856, 110)
     endmethod
 
     public static method create takes nothing returns thistype

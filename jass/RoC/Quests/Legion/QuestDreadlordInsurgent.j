@@ -15,12 +15,12 @@ library QuestDreadlordInsurgent requires LegionSetup, LegendLegion, Display
     private method OnComplete takes nothing returns nothing
       local player holderPlayer = this.Holder.Person.Player
 
-      call FACTION_LORDAERON.ModObjectLimit('Utic', -UNLIMITED)           //Tichondrius
-      call FACTION_LORDAERON.ModObjectLimit('Umal', -UNLIMITED)           //maglanis
-      call FACTION_LORDAERON.ModObjectLimit('U00L', -UNLIMITED)           //Anatheron
+      call FACTION_LEGION.ModObjectLimit('Utic', -UNLIMITED)           //Tichondrius
+      call FACTION_LEGION.ModObjectLimit('Umal', -UNLIMITED)           //maglanis
+      call FACTION_LEGION.ModObjectLimit('U00L', -UNLIMITED)           //Anatheron
 
-      call FACTION_LORDAERON.ModObjectLimit('E01O', 1)        //Lilian
-      call FACTION_LORDAERON.ModObjectLimit('Uvar', 1)        //Vari
+      call FACTION_LEGION.ModObjectLimit('E01O', 1)        //Lilian
+      call FACTION_LEGION.ModObjectLimit('Uvar', 1)        //Vari
 
       set this.Holder.Team = TEAM_FORSAKEN
       set this.Holder.Name = "|cff8080ffInsurgents|r"
@@ -36,7 +36,7 @@ library QuestDreadlordInsurgent requires LegionSetup, LegendLegion, Display
       call CreateUnits(this.Holder.Player, 'u00D', GetRectCenterX(gg_rct_Vandermar_Village), GetRectCenterY(gg_rct_Vandermar_Village), 270, 6)
       call CreateUnits(this.Holder.Player, 'ninc', GetRectCenterX(gg_rct_Vandermar_Village), GetRectCenterY(gg_rct_Vandermar_Village), 270, 12)
       call CreateUnits(this.Holder.Player, 'u007', GetRectCenterX(gg_rct_Vandermar_Village), GetRectCenterY(gg_rct_Vandermar_Village), 270, 2)
-      call AdjustPlayerStateBJ( 450, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 900, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       if GetLocalPlayer() == this.Holder.Player then
         call SetCameraPosition(GetRectCenterX(gg_rct_Vandermar_Village), GetRectCenterY(gg_rct_Vandermar_Village))

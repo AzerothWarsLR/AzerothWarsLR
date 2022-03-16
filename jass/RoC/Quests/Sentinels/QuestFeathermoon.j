@@ -38,8 +38,8 @@ library QuestFeathermoon requires QuestData, ScarletSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantFeathermoon(this.Holder.Player)
-      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
-      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\SentinelTheme.mp3" )
       endif

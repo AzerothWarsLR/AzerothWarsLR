@@ -111,8 +111,8 @@ library ControlPoint initializer OnInit requires AIDS
       call GroupAddUnit(person.cpGroup, u)
 
       call BlzSetUnitMaxHP(u, MAX_HITPOINTS)
-      call UnitAddAbility(u, REGENERATION_ABILITY)
-      call SetUnitLifePercentBJ(u, 100)
+      //call UnitAddAbility(u, REGENERATION_ABILITY)
+      call SetUnitLifePercentBJ(u, 80)
 
       set OwningPerson.ControlPointValue = OwningPerson.ControlPointValue + this.value
       set OwningPerson.ControlPointCount = OwningPerson.ControlPointCount + 1

@@ -20,7 +20,6 @@ library QuestLumberQuota requires QuestData, WarsongSetup, QuestItemResearch, Qu
 
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_Orgrimmar, this.Holder.Player)
-      call AdjustPlayerStateBJ(3000, FACTION_FROSTWOLF.Player, PLAYER_STATE_RESOURCE_LUMBER)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ("war3mapImported\\OrgrimmarTheme.mp3")
       endif

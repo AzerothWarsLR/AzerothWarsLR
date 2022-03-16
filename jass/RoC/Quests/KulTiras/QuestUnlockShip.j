@@ -34,6 +34,7 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
       endif
       call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
       call PauseUnitBJ( false, gg_unit_h08T_0260 )
+      call SetUnitOwner(gg_unit_h08T_0260, this.Holder.Player, true)
     endmethod
 
     public static method create takes nothing returns thistype

@@ -38,6 +38,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
 
     private method OnComplete takes nothing returns nothing
       call this.GrantStonemaul(this.Holder.Player)
+      call AdjustPlayerStateBJ(3000, FACTION_FROSTWOLF.Player, PLAYER_STATE_RESOURCE_LUMBER)
     endmethod
 
     private method OnAdd takes nothing returns nothing
