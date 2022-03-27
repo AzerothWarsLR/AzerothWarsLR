@@ -1,17 +1,16 @@
-library NagaSetup requires Faction, TeamSetup
+library NzothSetup requires Faction, TeamSetup
   globals
-    Faction FACTION_NAGA
+    Faction FACTION_NZOTH
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_NAGA = Faction.create("Illidan", PLAYER_COLOR_VIOLET, "|cffff00ff","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
-    set f = FACTION_NAGA
-    set f.Team = TEAM_NIGHT_ELVES
-    set f.UndefeatedResearch = 'R02L'
-    set f.StartingGold = 0
-    set f.StartingLumber = 2500
+    set FACTION_NZOTH = Faction.create("Nazjatar", PLAYER_COLOR_SNOW, "|cffffffff","ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp")
+    set f = FACTION_NZOTH
+    set f.Team = TEAM_OLDGOD
+    set f.StartingGold = 150
+    set f.StartingLumber = 500
 
     call f.ModObjectLimit('nntt', UNLIMITED)   //Pillar of Waves
     call f.ModObjectLimit('n04T', UNLIMITED)   //Monument of Currents
@@ -39,13 +38,6 @@ library NagaSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('Hvsh', 1)  	    //Vashj
     call f.ModObjectLimit('U00S', 1)  	    //Najentus
-    call f.ModObjectLimit('Naka', 1)  	    //Akama
-    call f.ModObjectLimit('E015', 1)  	    //Akama
-    call f.ModObjectLimit('Eevi', 1)  	    //Illidan
-
-    call f.ModObjectLimit('R062', UNLIMITED)   //Redemption path
-    call f.ModObjectLimit('R063', UNLIMITED)   //Exile Path
-    call f.ModObjectLimit('R065', UNLIMITED)   //Madness Path
 
   endfunction
 

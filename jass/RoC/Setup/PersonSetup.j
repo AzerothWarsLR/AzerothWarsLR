@@ -72,7 +72,9 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p = Person.create(Player(23))
     set p.Faction = FACTION_LEGION
 
-    call Person.create(Player(21))
+    set p = Person.create(Player(21))
+    set p.Faction = FACTION_NZOTH
+
 
   endfunction
 

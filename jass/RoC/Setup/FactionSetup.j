@@ -24,6 +24,7 @@ library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, Frostwol
     call ForsakenSetup_OnInit()
     call BlackEmpireSetup_OnInit()
     call DraeneiSetup_OnInit()
+    call NzothSetup_OnInit()
   endfunction
 
 endlibrary
