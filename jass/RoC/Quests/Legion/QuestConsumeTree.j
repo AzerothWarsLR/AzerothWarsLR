@@ -20,7 +20,7 @@ library QuestConsumeTree requires Persons, LegionSetup, GeneralHelpers
       call BlzSetUnitName(whichUnit, "Devourer of Worlds")
       call AddSpecialEffectTarget("Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl", whichUnit, "hand, right")
       call AddSpecialEffectTarget("Abilities\\Weapons\\GreenDragonMissile\\GreenDragonMissile.mdl", whichUnit, "hand, left")
-      call AddHeroAttributes(whichUnit, 80, 80, 80)
+      call AddHeroAttributes(whichUnit, 50, 50, 50)
     endmethod
 
     public static method create takes nothing returns thistype

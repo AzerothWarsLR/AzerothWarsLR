@@ -10,11 +10,13 @@ library QuestCivilWar requires QuestData, ScourgeSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unally from the Legion team"
+      return "Unally from the Legion team and the Scourge and Legion factions will gain 2000 gold"
     endmethod
 
     private method OnComplete takes nothing returns nothing
     set this.Holder.Team = TEAM_SCOURGE
+    call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+    call AdjustPlayerStateBJ( 2000, FACTION_LEGION.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype
