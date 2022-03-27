@@ -140,9 +140,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call ARTIFACT_CROWNTRIUMVIRATE.setStatus(ARTIFACT_STATUS_HIDDEN)
     call ARTIFACT_CROWNTRIUMVIRATE.setDescription("Draenei Quest")
 
-    set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
-    call UnitAddAbility(gg_unit_Hgam_1450, ARTIFACT_HOLDER_ABIL_ID)             //Arugal
-    call UnitAddItem(gg_unit_Hgam_1450, ARTIFACT_SCYTHEOFELUNE.item)            //Arugal
+    set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', 3000, 3000))
 
     set ARTIFACT_THUNDERFURY = Artifact.create(CreateItem('I00Z', DUMMY_X, DUMMY_Y))
     call ARTIFACT_THUNDERFURY.setStatus(ARTIFACT_STATUS_HIDDEN)

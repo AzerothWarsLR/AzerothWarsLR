@@ -142,9 +142,6 @@ library LegendNeutral initializer OnInit requires Legend
     set LEGEND_SARAGOSA = Legend.create()
     set LEGEND_SARAGOSA.Unit = gg_unit_nadr_0658
 
-    set LEGEND_ARUGAL = Legend.create()
-    set LEGEND_ARUGAL.Unit = gg_unit_Hgam_1450
-
     set LEGEND_CAERDARROW = Legend.create()
     set LEGEND_CAERDARROW.Unit = gg_unit_u01M_0484
     set LEGEND_CAERDARROW.Capturable = true
