@@ -12,32 +12,33 @@ library NzothSetup requires Faction, TeamSetup
     set f.StartingGold = 150
     set f.StartingLumber = 500
 
-    call f.ModObjectLimit('nntt', UNLIMITED)   //Pillar of Waves
-    call f.ModObjectLimit('n04T', UNLIMITED)   //Monument of Currents
-    call f.ModObjectLimit('n055', UNLIMITED)   //Temple of Tides
-    call f.ModObjectLimit('nnad', UNLIMITED)   //Altar of the Depths
-    call f.ModObjectLimit('nnsg', UNLIMITED)   //Spawning Grounds
-    call f.ModObjectLimit('h06S', UNLIMITED)   //Coral Forge
-    call f.ModObjectLimit('n0A3', UNLIMITED)   //Royal Pyramid
-    call f.ModObjectLimit('nnsa', UNLIMITED)   //Temple of Azshara
-    call f.ModObjectLimit('nnfm', UNLIMITED)   //Coral Beds
-    call f.ModObjectLimit('nntg', UNLIMITED)   //Tidal Guardian
-    call f.ModObjectLimit('n005', UNLIMITED)   //Improved Tidal Guardian
-    call f.ModObjectLimit('nmrb', UNLIMITED)   //Deep Sea Vault
+    call f.ModObjectLimit('n0C2', UNLIMITED)   //Pillar of Waves
+    call f.ModObjectLimit('n0C8', UNLIMITED)   //Monument of Currents
+    call f.ModObjectLimit('n0C9', UNLIMITED)   //Temple of Tides
+    call f.ModObjectLimit('n0C0', UNLIMITED)   //Altar of the Depths
+    call f.ModObjectLimit('n0C4', UNLIMITED)   //Spawning Grounds
+    call f.ModObjectLimit('n0C7', UNLIMITED)   //Coral Forge
+    call f.ModObjectLimit('n0C3', UNLIMITED)   //Royal Pyramid
+    call f.ModObjectLimit('n08V', UNLIMITED)   //Temple of Azshara
+    call f.ModObjectLimit('n0C1', UNLIMITED)   //Coral Beds
+    call f.ModObjectLimit('h0A4', UNLIMITED)   //Forge
+    call f.ModObjectLimit('n0C5', UNLIMITED)   //Tidal Guardian
+    call f.ModObjectLimit('n0C6', UNLIMITED)   //Improved Tidal Guardian
+    call f.ModObjectLimit('n0BZ', UNLIMITED)   //Deep Sea Vault
 
     call f.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
-    call f.ModObjectLimit('nmyr', UNLIMITED)   //Myrmidon
-    call f.ModObjectLimit('nsnp', UNLIMITED)   //Snap Dragon
-    call f.ModObjectLimit('nnsw', UNLIMITED)   //Siren
-    call f.ModObjectLimit('nmsc', UNLIMITED)   //Shadowcaster
-    call f.ModObjectLimit('nnsu', 6)           //Summoner
-    call f.ModObjectLimit('nnrg', 6)           //Royal Guard
-    call f.ModObjectLimit('nhyc', 8)           //Dragon Turtle
+    call f.ModObjectLimit('n0CA', UNLIMITED)   //Myrmidon
+    call f.ModObjectLimit('n0CE', UNLIMITED)   //Snap Dragon
+    call f.ModObjectLimit('n0CB', UNLIMITED)   //Siren
+    call f.ModObjectLimit('n0CD', UNLIMITED)   //Shadowcaster
+    call f.ModObjectLimit('h02P', 6)           //Royal Guard
+    call f.ModObjectLimit('n0CL', 8)           //Dragon Turtle
     call f.ModObjectLimit('nwgs', 8)   	    //Couatl
-    call f.ModObjectLimit('e00Y', 4)  	    //Scylla
+    call f.ModObjectLimit('u02J', 4)  	    //Scylla
+    call f.ModObjectLimit('h01Q', 4)  	    //Immortal Guardian
 
-    call f.ModObjectLimit('Hvsh', 1)  	    //Vashj
-    call f.ModObjectLimit('U00S', 1)  	    //Najentus
+    call f.ModObjectLimit('H08U', 1)  	    //Aszhara
+    call f.ModObjectLimit('H0A5', 1)  	    //Najentus
 
   endfunction
 

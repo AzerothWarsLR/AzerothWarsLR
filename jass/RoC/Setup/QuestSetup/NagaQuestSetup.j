@@ -11,7 +11,6 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     call FACTION_NAGA.AddQuest(chapterThree)
 
     set EXILE_PATH = QuestExilePath.create()
-    set MADNESS_PATH = QuestMadnessPath.create()
     set REDEMPTION_PATH = QuestRedemptionPath.create()
     //set ALLIANCE_NAGA = QuestJoinAllianceNaga.create()
     set CONQUER_BLACK_TEMPLE = QuestBlackTemple.create()

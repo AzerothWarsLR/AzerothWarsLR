@@ -45,7 +45,6 @@ library QuestExilePath requires QuestData, NagaSetup
       call FACTION_NAGA.ModObjectLimit('ndrs', 6)   //Seer
       call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
-      set MADNESS_PATH.Progress = QUEST_PROGRESS_FAILED
       call WaygateActivateBJ( true, gg_unit_n07E_1491 )
       call WaygateActivateBJ( true, gg_unit_n07E_0958 )
       call ShowUnitShow( gg_unit_n07E_1491  )

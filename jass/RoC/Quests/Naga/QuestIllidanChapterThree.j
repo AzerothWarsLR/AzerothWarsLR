@@ -16,21 +16,15 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock2, this.Holder.Player)
-      call RescueNeutralUnitsInRect(gg_rct_NagaUnlock1, this.Holder.Player)
+      call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call FACTION_NAGA.AddQuest(REDEMPTION_PATH)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(EXILE_PATH)
       set EXILE_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
-      call FACTION_NAGA.AddQuest(MADNESS_PATH)
-      set MADNESS_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
-      //call FACTION_NAGA.AddQuest(ALLIANCE_NAGA)
-      //set ALLIANCE_NAGA.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(CONQUER_BLACK_TEMPLE)
       set CONQUER_BLACK_TEMPLE.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(KILL_FROZEN_THRONE)
       set KILL_FROZEN_THRONE.Progress = QUEST_PROGRESS_UNDISCOVERED
-      call SetUnitInvulnerable(gg_unit_n045_3377, true)
     endmethod
 
     public static method create takes nothing returns thistype
