@@ -84,6 +84,10 @@ library QuestExiled requires QuestData, DraeneiSetup
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null 
+      call SetCameraBoundsToRectForPlayerBJ( this.Holder.Player, GetEntireMapRect() )
+      if GetLocalPlayer() == this.Holder.Player then
+        call BlzChangeMinimapTerrainTex("war3mapMap.blp")
+      endif
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -97,7 +101,9 @@ library QuestExiled requires QuestData, DraeneiSetup
       call this.EscapeOutland(this.Holder.Player)
       call RemoveUnit(gg_unit_h09W_3303)
       call KillUnit(gg_unit_o02P_2291)
+      call SetCameraBoundsToRectForPlayerBJ( this.Holder.Player, GetEntireMapRect() )
       if GetLocalPlayer() == this.Holder.Player then
+        call BlzChangeMinimapTerrainTex("war3mapMap.blp")
         call PlayThematicMusicBJ( "war3mapImported\\DraeneiTheme.mp3" )
       endif
     endmethod

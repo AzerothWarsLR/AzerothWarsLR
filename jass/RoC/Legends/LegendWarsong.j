@@ -21,7 +21,8 @@ library LegendWarsong initializer OnInit requires Legend
     set LEGEND_SAURFANG.StartingXP = 2800
 
     set LEGEND_JERGOSH = Legend.create()
-    set LEGEND_JERGOSH.UnitType = 'Oths'
+    set LEGEND_JERGOSH.UnitType = 'O05O'
+    set LEGEND_JERGOSH.StartingXP = 2800
 
     set LEGEND_MANNOROTH = Legend.create()
     set LEGEND_MANNOROTH.UnitType = 'Nman'

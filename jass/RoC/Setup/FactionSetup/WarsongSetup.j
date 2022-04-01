@@ -48,6 +48,8 @@ library WarsongSetup requires Faction, TeamSetup
 
     call f.ModObjectLimit('Ogrh', 1)           //Grom
     call f.ModObjectLimit('Obla', 1)           //Varok
+    call f.ModObjectLimit('O05O', 1)           //Jargosh
+    call f.ModObjectLimit('n0CN', 1)           //Gibbs
 
     call f.ModObjectLimit('Robs', UNLIMITED)   //Berserker Strength
     call f.ModObjectLimit('Rotr', UNLIMITED)   //Troll Regeneration

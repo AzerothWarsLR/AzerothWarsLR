@@ -11,6 +11,7 @@ library WarsongQuestSetup requires WarsongSetup, FrostwolfSetup, QuestChenStorms
     call FACTION_WARSONG.AddQuest(QuestMoreWyverns.create())
     //Misc
     call FACTION_WARSONG.AddQuest(QuestWarsongHold.create())
+    call FACTION_WARSONG.AddQuest(QuestJergosh.create())
 
   endfunction
 
