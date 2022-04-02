@@ -2,16 +2,19 @@ library GilneasQuestSetup requires GilneasSetup, QuestIllidanChapterOne, QuestIl
 
   public function OnInit takes nothing returns nothing
     //Early duel
-    //local QuestData ChapterOne = FACTION_GILNEAS.AddQuest(QuestGilneasChapterOne.create())
-    //local QuestData ChapterTwo = FACTION_GILNEAS.AddQuest(QuestGilneasChapterTwo.create())
-    //local QuestData ChapterThree = FACTION_GILNEAS.AddQuest(QuestGilneasChapterThree.create())
+    local QuestData Quest1 = FACTION_GILNEAS.AddQuest(QuestTempestReach.create())
+    local QuestData Quest2 = FACTION_GILNEAS.AddQuest(QuestStormglen.create())
+    local QuestData Quest3 = FACTION_GILNEAS.AddQuest(QuestDuskhaven.create())
+    local QuestData Quest4 = FACTION_GILNEAS.AddQuest(QuestKeelHarbor.create())
+    local QuestData Quest5 = FACTION_GILNEAS.AddQuest(QuestGilneasCity.create())
   
-   // set FACTION_GILNEAS.StartingQuest = ChapterOne
+    set FACTION_GILNEAS.StartingQuest = Quest1
 
-    //set ChapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
-    //set ChapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
+    set Quest2.Progress = QUEST_PROGRESS_UNDISCOVERED
+    set Quest3.Progress = QUEST_PROGRESS_UNDISCOVERED
+    set Quest4.Progress = QUEST_PROGRESS_UNDISCOVERED
 
-    //set GOLDRINNELVE_PATH = QuestGoldrinnElvePath.create()
+    set GOLDRINNELVE_PATH = QuestGoldrinnElvePath.create()
     //set GOLDRINNHUMAN_PATH = QuestGoldrinnHumanPath.create()
 
   endfunction

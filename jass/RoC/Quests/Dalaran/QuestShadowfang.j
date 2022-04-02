@@ -23,7 +23,7 @@ library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit, G
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Shadows of Silverspine Forest", "The woods of Silverspine are unsafe for travellers, they need to be investigated", "ReplaceableTextures\\CommandButtons\\BTNworgen.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_o02J_0984)) //Worgen
+      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nwld_0984)) //Worgen
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01D')))
       call this.AddQuestItem(QuestItemExpire.create(1444))
       call this.AddQuestItem(QuestItemSelfExists.create())

@@ -19,8 +19,8 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
 
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
-      call PauseUnitBJ( false, gg_unit_h08T_0260 )
-      call SetUnitInvulnerable(gg_unit_h08T_0260, false)
+      call PauseUnitBJ( false, gg_unit_h05V_0260 )
+      call SetUnitInvulnerable(gg_unit_h05V_0260, false)
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -34,11 +34,12 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
         call SetCameraPosition(GetRectCenterX(gg_rct_ShipAmbient), GetRectCenterY(gg_rct_ShipAmbient))
       endif
       call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
-      call PauseUnitBJ( false, gg_unit_h08T_0260 )
-      call SetUnitOwner(gg_unit_h08T_0260, this.Holder.Player, true)
+      call PauseUnitBJ( false, gg_unit_h05V_0260 )
+      call SetUnitOwner(gg_unit_h05V_0260, this.Holder.Player, true)
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
-      call SetUnitInvulnerable(gg_unit_h08T_0260, false)
-      call IssuePointOrderLocBJ( gg_unit_h08T_0260, "move", GetRectCenter(gg_rct_SouthshoreUnlock) )
+      call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+      call SetUnitInvulnerable(gg_unit_h05V_0260, false)
+      call IssuePointOrderLocBJ( gg_unit_h05V_0260, "move", GetRectCenter(gg_rct_SouthshoreUnlock) )
     endmethod
 
     public static method create takes nothing returns thistype
