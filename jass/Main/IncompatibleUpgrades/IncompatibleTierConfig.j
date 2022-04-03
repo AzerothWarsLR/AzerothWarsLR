@@ -50,6 +50,11 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R08F')   //Mind Control
     call researchSet.add('R08E')   //Join Crusade
 
+     //Twilight Path
+    set researchSet = IncompatibleResearchSet.create()
+    call researchSet.add('R08S')   //Twilight
+    call researchSet.add('R08R')   //Dragonmaw
+
   endfunction    
     
 endlibrary
