@@ -36,9 +36,13 @@ library NzothSetup requires Faction, TeamSetup
     call f.ModObjectLimit('nwgs', 8)   	    //Couatl
     call f.ModObjectLimit('u02J', 4)  	    //Scylla
     call f.ModObjectLimit('h01Q', 4)  	    //Immortal Guardian
+    call f.ModObjectLimit('n0CO', 2)  	    //Immortal Guardian
 
     call f.ModObjectLimit('H08U', 1)  	    //Aszhara
     call f.ModObjectLimit('H0A5', 1)  	    //Najentus
+
+    call f.ModObjectLimit('R08O', UNLIMITED)   //Bloodking Training
+    call f.ModObjectLimit('R08P', UNLIMITED)   //Deepseer Training
 
   endfunction
 

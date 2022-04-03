@@ -24,6 +24,7 @@ library QuestSetup requires DalaranQuestSetup, DruidsQuestSetup, FelHordeQuestSe
     call GoblinQuestSetup_OnInit()
     call BlackEmpireQuestSetup_OnInit()
     call DraeneiQuestSetup_OnInit()
+    call NzothQuestSetup_OnInit()
   endfunction
 
 endlibrary

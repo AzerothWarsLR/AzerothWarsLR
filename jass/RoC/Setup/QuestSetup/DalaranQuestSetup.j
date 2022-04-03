@@ -1,4 +1,4 @@
-library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalGolem, QuestJainaSoulGem, QuestKarazhan, QuestNewGuardian, QuestTheramore, QuestFallenGuardian
+library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalGolem, QuestJainaSoulGem, QuestKarazhan, QuestNewGuardian, QuestFallenGuardian
 
   public function OnInit takes nothing returns nothing
     local QuestNewGuardian newGuardian = QuestNewGuardian.create()
@@ -21,7 +21,6 @@ library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalG
     call FACTION_DALARAN.AddQuest(QuestBlueDragons.create())
     //Misc
     call FACTION_DALARAN.AddQuest(QuestKarazhan.create())
-    call FACTION_DALARAN.AddQuest(QuestTheramore.create())
 
     call FACTION_DALARAN.AddQuest(crystalGolem)
     call FACTION_DALARAN.AddQuest(fallenGuardian)

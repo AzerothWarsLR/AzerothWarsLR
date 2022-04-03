@@ -21,6 +21,7 @@ library LegendGilneas initializer OnInit requires Legend
 
     set LEGEND_GENN = Legend.create()
     set LEGEND_GENN.UnitType = 'Hhkl'
+    set LEGEND_GENN.StartingXP = 2800
 
     set LEGEND_DARIUS = Legend.create()
     set LEGEND_DARIUS.UnitType = 'Hpb2'
