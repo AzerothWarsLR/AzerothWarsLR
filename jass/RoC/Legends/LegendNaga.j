@@ -46,7 +46,6 @@ library LegendNaga initializer OnInit requires Legend
     set LEGEND_NAZJATAR.Unit = gg_unit_n045_3377
     set LEGEND_NAZJATAR.DeathMessage = "The Eternal Palace, the royal seat of Queen Azshara and the Nazjatar Empire, has been destroyed."
     set LEGEND_NAZJATAR.IsCapital = true
-    set LEGEND_NAZJATAR.Hivemind = true
 
     set LEGEND_VAULT = Legend.create()
     set LEGEND_VAULT.Unit = gg_unit_n05A_2845
