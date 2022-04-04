@@ -55,6 +55,11 @@ library IncompatibleTierConfig initializer OnInit
     call researchSet.add('R08S')   //Twilight
     call researchSet.add('R08R')   //Dragonmaw
 
+     //Dwarf Path
+    set researchSet = IncompatibleResearchSet.create()
+    call researchSet.add('R08U')   //Normal
+    call researchSet.add('R08T')   //Ragnaros
+
   endfunction    
     
 endlibrary

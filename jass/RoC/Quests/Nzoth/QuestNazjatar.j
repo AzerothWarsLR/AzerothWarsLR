@@ -1,9 +1,17 @@
 library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCastSpell, LegendNaga, GlobalQuest, GeneralHelpers
  
+  globals 
+    private constant integer QUEST_RESEARCH_ID = 'R08V'   //This research is given when the quest is completed
+  endglobals
+  
   struct QuestNazjatar extends QuestData
 
+    method operator Global takes nothing returns boolean
+      return true
+    endmethod
+
     private method operator CompletionPopup takes nothing returns string
-      return "Aszhara must amass enough resource to build the Nazjatar Empire"
+      return "Aszhara has rebuilt the Nazjatar Empire!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -27,6 +35,7 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
       call this.AddQuestItem(QuestItemResearch.create('R08Q', 'n0C9'))
       call this.AddQuestItem(QuestItemExpire.create(1445))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

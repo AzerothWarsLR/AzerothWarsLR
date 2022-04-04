@@ -15,7 +15,7 @@ library QuestEastRaid requires QuestData, NzothSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Raiders from the Sea", "The southern coast of the Alliance is rip with riches, they are an easy target for our raiders", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
+      local thistype this = thistype.allocate("Raiders from the Sea", "The southern coast of the Alliance is ripe with riches, they are an easy target for our raiders", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n084')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06W')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))

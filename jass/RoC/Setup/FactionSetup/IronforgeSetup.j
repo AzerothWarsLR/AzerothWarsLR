@@ -32,7 +32,6 @@ library IronforgeSetup requires Faction, TeamSetup
     call f.ModObjectLimit('h07K', UNLIMITED)   //Cannon Tower (Improved)
     call f.ModObjectLimit('h07D', UNLIMITED)   //Alliance Shipyard
     call f.ModObjectLimit('n07U', UNLIMITED)   //Marketplace
-    call f.ModObjectLimit('h00B', 4)           //Dwarven Keep Tower
     call f.ModObjectLimit('h07I', UNLIMITED)   //Guard Tower
     call f.ModObjectLimit('h07L', UNLIMITED)   //Guard Tower (Improved)
     

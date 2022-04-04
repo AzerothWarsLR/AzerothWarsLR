@@ -25,6 +25,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     Artifact ARTIFACT_ASHBRINGER
     Artifact ARTIFACT_XALATATH
     Artifact ARTIFACT_ZINROKH
+    Artifact ARTIFACT_SULFURAS
   endglobals
 
   public function OnInit takes nothing returns nothing
@@ -37,10 +38,10 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddAbility(gg_unit_n04O_1571, ARTIFACT_HOLDER_ABIL_ID)             //Doom Guard
     call UnitAddItem(gg_unit_n04O_1571, ARTIFACT_EYEOFSARGERAS.item)  
 
-    set tempArtifact = Artifact.create(CreateItem('I00H', DUMMY_X, DUMMY_Y))    //Sulfuras
+    set ARTIFACT_SULFURAS = Artifact.create(CreateItem('I00H', DUMMY_X, DUMMY_Y))    //Sulfuras
     call UnitAddAbility(gg_unit_N00D_1457, ARTIFACT_HOLDER_ABIL_ID)             //Ragnaros
-    call UnitAddItem(gg_unit_N00D_1457, tempArtifact.item) 
-    set tempArtifact.TitanforgedAbility = 'A0VN'
+    call UnitAddItem(gg_unit_N00D_1457, ARTIFACT_SULFURAS.item) 
+    set ARTIFACT_SULFURAS.TitanforgedAbility = 'A0VN'
 
     set ARTIFACT_HELMOFDOMINATION = Artifact.create(CreateItem('I01Y', DUMMY_X, DUMMY_Y))    //Helm of Domination
     call UnitAddAbility(gg_unit_u000_0649, ARTIFACT_HOLDER_ABIL_ID)                          //Frozen Throne  

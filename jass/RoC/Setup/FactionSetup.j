@@ -26,6 +26,7 @@ library FactionSetup requires DalaranSetup, DruidsSetup, FelHordeSetup, Frostwol
     call DraeneiSetup_OnInit()
     call NzothSetup_OnInit()
     call DragonmawSetup_OnInit()
+    call RagnarosSetup_OnInit()
   endfunction
 
 endlibrary

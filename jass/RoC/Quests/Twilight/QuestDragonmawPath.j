@@ -63,7 +63,6 @@ library QuestDragonmawPath requires Persons, TwilightSetup, GeneralHelpers
       call DisableTrigger( gg_trg_CorruptWorker )
       call DisableTrigger( gg_trg_GoldCultistLoop )
 
-      call IssueImmediateOrderBJ( gg_unit_h01Z_0618, "berserk" )
 
       //call SetPlayerAllianceStateBJ( Player(0), Player(19), bj_ALLIANCE_UNALLIED )
      // call SetPlayerAllianceStateBJ( Player(1), Player(19), bj_ALLIANCE_UNALLIED )
@@ -83,6 +82,8 @@ library QuestDragonmawPath requires Persons, TwilightSetup, GeneralHelpers
 
       set this.Holder.Person.Faction = FACTION_DRAGONMAW
       call RescueNeutralUnitsInRect(gg_rct_DragonmawPathUnlock, FACTION_DRAGONMAW.Player)
+      call AdjustPlayerStateBJ( 250, FACTION_DRAGONMAW.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 500, FACTION_DRAGONMAW.Player, PLAYER_STATE_RESOURCE_LUMBER )
 
     endmethod
 

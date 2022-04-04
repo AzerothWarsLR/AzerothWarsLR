@@ -7,12 +7,17 @@ library LegendIronforge initializer OnInit requires Legend
 
     Legend LEGEND_GREATFORGE
     Legend LEGEND_THELSAMAR
+    Legend LEGEND_EXECUTUS
   endglobals
 
   private function OnInit takes nothing returns nothing
     set LEGEND_DAGRAN = Legend.create()
     set LEGEND_DAGRAN.UnitType = 'H03G'
-    set LEGEND_DAGRAN.StartingXP = 1000
+    set LEGEND_DAGRAN.StartingXP = 4800
+
+    set LEGEND_EXECUTUS = Legend.create()
+    set LEGEND_EXECUTUS.UnitType = 'U00W'
+    set LEGEND_EXECUTUS.StartingXP = 4800
 
     set LEGEND_FALSTAD = Legend.create()
     set LEGEND_FALSTAD.UnitType = 'H028'

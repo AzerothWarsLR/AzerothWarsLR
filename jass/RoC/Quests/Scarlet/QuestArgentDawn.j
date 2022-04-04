@@ -24,7 +24,6 @@ library QuestArgentDawn requires QuestData, ScarletSetup, QuestItemResearch, Que
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNTirionPaladin.blp"
       call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
       call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
-      call SetPlayerColor(this.Holder.Player, PLAYER_COLOR_SNOW )
 
       call FACTION_SCARLET.ModObjectLimit('h08I', -UNLIMITED)           //Crusader
       call FACTION_SCARLET.ModObjectLimit('h09I', UNLIMITED)                 //Argent Crusader

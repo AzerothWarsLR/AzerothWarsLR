@@ -16,8 +16,8 @@ library QuestGilneasCity requires QuestData
     private method OnFail takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_GilneasUnlock5, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call RescueNeutralUnitsInRect(gg_rct_GilneasUnlock6, Player(PLAYER_NEUTRAL_AGGRESSIVE))
-      call SetUnitInvulnerable(gg_unit_o05Q_2234, true)
-      call SetUnitInvulnerable(gg_unit_o05Q_2212, true)
+      call RemoveUnit(gg_unit_o05Q_2212)
+      call RemoveUnit(gg_unit_o05Q_2234)
     endmethod
 
     private method OnComplete takes nothing returns nothing
