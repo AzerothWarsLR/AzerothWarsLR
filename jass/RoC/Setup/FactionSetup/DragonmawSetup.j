@@ -20,32 +20,30 @@ library DragonmawSetup requires Faction, TeamSetup
     call f.ModObjectLimit('o03D', UNLIMITED)   //Barracks
     call f.ModObjectLimit('o03J', UNLIMITED)   //War Mill
     call f.ModObjectLimit('o03E', UNLIMITED)   //Spirit Lodge
-    call f.ModObjectLimit('o03F', UNLIMITED)   //Bestiary
+    call f.ModObjectLimit('o05J', UNLIMITED)   //Bestiary
     call f.ModObjectLimit('o03I', UNLIMITED)   //Shipyard
     call f.ModObjectLimit('o03G', UNLIMITED)   //Watch Tower
     call f.ModObjectLimit('o03H', UNLIMITED)   //Improved Watch Tower
     call f.ModObjectLimit('u00Y', UNLIMITED)   //Shop
     call f.ModObjectLimit('o03K', UNLIMITED)   //Burrow
 
-    call f.ModObjectLimit('n051', 4)           //Black Drake
-    call f.ModObjectLimit('o04J', 8)           //WindRider
+    call f.ModObjectLimit('n0CP', 2)           //Black Drake
+    call f.ModObjectLimit('o05M', 8)           //WindRider
     call f.ModObjectLimit('n07X', UNLIMITED)   //Fel Orc Warlock
-    call f.ModObjectLimit('o01H', UNLIMITED)   //Fel Orc Grunt
-    call f.ModObjectLimit('o04B', UNLIMITED)   //Fel Orc Peon
-    call f.ModObjectLimit('n083', UNLIMITED)   //Horde Cavarly
+    call f.ModObjectLimit('o05K', UNLIMITED)   //Fel Orc Grunt
+    call f.ModObjectLimit('o05P', UNLIMITED)   //Fel Orc Peon
+    call f.ModObjectLimit('n0CQ', UNLIMITED)   //Fel Orc Peon
     call f.ModObjectLimit('o04I', 6)           //Executioner
     call f.ModObjectLimit('o04K', 6)           //Demolisher
     call f.ModObjectLimit('n09O', 6)           //DK
     call f.ModObjectLimit('u01T', UNLIMITED)   //Necrolyte
-    call f.ModObjectLimit('n087', UNLIMITED)   //Phase Grenadier
+    call f.ModObjectLimit('o05L', UNLIMITED)   //Phase Grenadier
     call f.ModObjectLimit('obot', 12)  	    //Transport Ship
     call f.ModObjectLimit('odes', 12)  	    //Orc Frigate
     call f.ModObjectLimit('ojgn', 6)          //Juggernaught
 
-    call f.ModObjectLimit('O01P', 1)           //Chogall
-    call f.ModObjectLimit('H08Q', 1)           //Azil
-    call f.ModObjectLimit('U01S', 1)           //Feludius
-    call f.ModObjectLimit('O04H', 1)           //ignacius
+    call f.ModObjectLimit('O01Q', 1)           //Nekrosh
+    call f.ModObjectLimit('O00Y', 1)           //Zuluhead
 
 
     call f.ModObjectLimit('R023', UNLIMITED)   //Spiritual Infusion
