@@ -23,7 +23,6 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
       call FACTION_NAGA.ModObjectLimit('n08H', UNLIMITED)   //Demon Hunter grounds
       call FACTION_NAGA.ModObjectLimit('e00S', UNLIMITED)   //Glaive Warrior
       call FACTION_NAGA.ModObjectLimit('h08W', 6)   //Demon Hunter
-      call SetUnitOwner(LEGEND_NZOTH.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED     
       call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call WaygateActivateBJ( true, gg_unit_h01D_3387 )
