@@ -44,6 +44,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call FACTION_NAGA.ModObjectLimit('ndrn', UNLIMITED)   //Vindicator
       call FACTION_NAGA.ModObjectLimit('ndrs', 6)   //Seer
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
+      set this.Holder.Team = TEAM_NAGA
       call WaygateActivateBJ( true, gg_unit_n07E_1491 )
       call ShowUnitShow( gg_unit_n07E_1491  )
       call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_AetheneumTombExit2) )

@@ -41,7 +41,6 @@ library GilneasSetup requires Faction, TeamSetup
     call f.ModObjectLimit('h04E', UNLIMITED)   //Protector
     call f.ModObjectLimit('n06L', UNLIMITED)   //Armored Wolf
     call f.ModObjectLimit('o01V', 6)           //Greyguard
-    call f.ModObjectLimit('n029', 12)          //Sea Giant
     call f.ModObjectLimit('h03L', UNLIMITED)   //Shotgunner
     call f.ModObjectLimit('nsgt', UNLIMITED)   //Spider
     call f.ModObjectLimit('n067', UNLIMITED)   //Spider

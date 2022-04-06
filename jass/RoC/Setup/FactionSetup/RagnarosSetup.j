@@ -55,14 +55,26 @@ library RagnarosSetup requires Faction, TeamSetup
     call f.ModObjectLimit('H03G', 1)           //Dagran
 
     //Upgrades
+    call f.ModObjectLimit('R03H', UNLIMITED)   //Engineering Adept Training
     call f.ModObjectLimit('R00K', UNLIMITED)   //Power Infusion
-
+    call f.ModObjectLimit('R00F', UNLIMITED)   //Mithril Armor
+    call f.ModObjectLimit('Rhfl', UNLIMITED)   //Flare
+    call f.ModObjectLimit('Rhfs', UNLIMITED)   //Dragmentation Shards
     call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
-
+    call f.ModObjectLimit('Rhri', UNLIMITED)   //Long Rifles
+    call f.ModObjectLimit('Rhhb', UNLIMITED)   //Storm Hammers
     call f.ModObjectLimit('R063', UNLIMITED)   //Thunder Ale
     call f.ModObjectLimit('Rhme', UNLIMITED)   //Copper Forged Weaponry
     call f.ModObjectLimit('Rhar', UNLIMITED)   //Copper Armor Plating
+    call f.ModObjectLimit('R014', UNLIMITED)   //Deeprun Tram
+    call f.ModObjectLimit('R00V', UNLIMITED)   //Rune Priest Adept Training
+    call f.ModObjectLimit('R00Z', UNLIMITED)   //Armor Penetration Rounds
+    call f.ModObjectLimit('R010', UNLIMITED)   //Improved Spell Resistance
+    call f.ModObjectLimit('R00T', UNLIMITED)   //Overclock 
+    call f.ModObjectLimit('R00N', UNLIMITED)   //Improved Swig
+    call f.ModObjectLimit('R08K', UNLIMITED)   //Titanforge Artifact
+  endfunction
 
   endfunction
     
