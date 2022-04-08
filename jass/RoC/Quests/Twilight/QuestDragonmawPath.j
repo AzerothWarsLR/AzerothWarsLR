@@ -79,12 +79,14 @@ library QuestDragonmawPath requires Persons, TwilightSetup, GeneralHelpers
     //  call SetPlayerAllianceStateBJ( Player(23), Player(19), bj_ALLIANCE_UNALLIED )
 
       call SetPlayerAbilityAvailableBJ( false, 'A0BW', Player(19) )
+      call SetPlayerAbilityAvailableBJ( false, 'A0OI', Player(19) )
 
       set this.Holder.Person.Faction = FACTION_DRAGONMAW
       call RescueNeutralUnitsInRect(gg_rct_DragonmawPathUnlock, FACTION_DRAGONMAW.Player)
       call AdjustPlayerStateBJ( 250, FACTION_DRAGONMAW.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 500, FACTION_DRAGONMAW.Player, PLAYER_STATE_RESOURCE_LUMBER )
-
+      call RemoveUnit(gg_unit_o03I_0466)
+    
     endmethod
 
     private method OnFail takes nothing returns nothing

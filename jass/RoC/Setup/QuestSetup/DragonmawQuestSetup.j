@@ -4,6 +4,7 @@ library DragonmawQuestSetup requires DragonmawSetup
 
     set FACTION_DRAGONMAW.StartingQuest = FACTION_DRAGONMAW.AddQuest(QuestDragonmawPort.create())
     call FACTION_DRAGONMAW.AddQuest(QuestGrimBatol.create())
+    call FACTION_DRAGONMAW.AddQuest(QuestOrgrimmarPortal.create())
 
   endfunction
 

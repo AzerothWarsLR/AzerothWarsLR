@@ -34,11 +34,12 @@ library QuestGilneasCity requires QuestData
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Liberation of Gilneas", "Gilneas has been under the curse of the Worgen. Eliminate all of them to free Gilneas of the curse", "ReplaceableTextures\\CommandButtons\\BTNGilneasCathedral.blp")
-      call this.AddQuestItem(QuestItemKillXUnit.create('o02J', 15))
-      call this.AddQuestItem(QuestItemKillXUnit.create('O038', 5))
+      call this.AddQuestItem(QuestItemKillXUnit.create('o02J', 11))
+      call this.AddQuestItem(QuestItemKillXUnit.create('O038', 4))
       call this.AddQuestItem(QuestItemUpgrade.create('h02C', 'h01R'))
       call this.AddQuestItem(QuestItemExpire.create(1380))
       call this.AddQuestItem(QuestItemSelfExists.create())
+      set this.ResearchId = RESEARCH_ID
       return this
     endmethod
   endstruct

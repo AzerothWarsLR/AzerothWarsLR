@@ -31,9 +31,9 @@ library QuestAshbringer requires QuestData, Artifact, LordaeronSetup, GeneralHel
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Ashbringer", "The Living Shadow must be purged, with enough Holy Magic and the craftiness of the Dwarves, it could be reforged into the strongest weapon of the Light", "ReplaceableTextures\\CommandButtons\\BTNAshbringer2.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_LIVINGSHADOW))
-      call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_GREATFORGE))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n015')))
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_LIVINGSHADOW, gg_rct_AshbringerForge, "The Great Forge"))
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_AshbringerForge, "The Great Forge", LEGEND_UTHER, 60, 340))
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_AshbringerForge, "The Great Forge", LEGEND_UTHER, 120, 340))
       return this
     endmethod
   endstruct

@@ -74,7 +74,6 @@ library RagnarosSetup requires Faction, TeamSetup
     call f.ModObjectLimit('R00T', UNLIMITED)   //Overclock 
     call f.ModObjectLimit('R00N', UNLIMITED)   //Improved Swig
     call f.ModObjectLimit('R08K', UNLIMITED)   //Titanforge Artifact
-  endfunction
 
   endfunction
     

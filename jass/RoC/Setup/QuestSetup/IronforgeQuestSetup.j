@@ -10,6 +10,7 @@ library IronforgeQuestSetup requires IronforgeSetup, QuestDarkIron, QuestGnomere
     call FACTION_IRONFORGE.AddQuest(QuestGnomeregan.create())
     call FACTION_IRONFORGE.AddQuest(QuestDarkIron.create())
     call FACTION_IRONFORGE.AddQuest(QuestWildhammer.create())
+    call FACTION_IRONFORGE.AddQuest(QuestThreatEliminated.create())
     call FACTION_IRONFORGE.AddQuest(QuestRagnarosPath.create())
     //Misc
   endfunction

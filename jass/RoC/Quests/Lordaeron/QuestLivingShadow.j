@@ -19,7 +19,8 @@ library QuestLivingShadow requires QuestData, Artifact, LegendLordaeron, LegendT
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Living Embodiment of Shadow", "The Dark Fortress looming over the Twilight Highlands is a beacon of darkness. Destroy it and clear the surrounding lands of evil.", "ReplaceableTextures\\CommandButtons\\BTNShadow Orb.blp")
       call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_UTHER, gg_rct_TwilightOutside, "Twilight Citadel"))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TWILIGHTCITADEL))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09F')))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_GRIMBATOL, false))
       return this
     endmethod
   endstruct

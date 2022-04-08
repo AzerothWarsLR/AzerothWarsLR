@@ -1,4 +1,4 @@
-library LordaeronQuestSetup requires LordaeronSetup, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestKingdomOfManLordaeron, QuestMograine
+library LordaeronQuestSetup requires LordaeronSetup, QuestKingArthas, QuestShoresOfNorthrend, QuestThunderEagle, QuestKingdomOfManLordaeron
 
   public function OnInit takes nothing returns nothing
     //Early duel
