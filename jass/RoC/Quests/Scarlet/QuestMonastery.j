@@ -28,8 +28,8 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
       call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R06V', 1)
       call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
       call RescueNeutralUnitsInRect(gg_rct_ScarletAmbient, this.Holder.Player)
-      call WaygateActivateBJ( true, gg_unit_h00T_0786 )
-      call WaygateSetDestinationLocBJ( gg_unit_h00T_0786, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
+      call WaygateActivateBJ( true, gg_unit_h03V_2337 )
+      call WaygateSetDestinationLocBJ( gg_unit_h03V_2337, GetRectCenter(gg_rct_Scarlet_Monastery_Interior) )
       set this.Holder.Team = TEAM_SCARLET
       set this.Holder.Name = "Scarlet"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNSaidan Dathrohan.blp"

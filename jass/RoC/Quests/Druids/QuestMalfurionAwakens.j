@@ -44,6 +44,7 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call UnitRescue(LEGEND_NORDRASSIL.Unit, this.Holder.Player)
       call this.GiveMoonglade(this.Holder.Player)
       if LEGEND_MALFURION.Unit == null then
         call LEGEND_MALFURION.Spawn(Holder.Player, GetRectCenterX(gg_rct_Moonglade), GetRectCenterY(gg_rct_Moonglade), 270)

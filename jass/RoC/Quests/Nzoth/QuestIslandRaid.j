@@ -17,7 +17,7 @@ library QuestIslandRaid requires QuestData, NzothSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Plunder the Islands", "The Sea rejects many treasures on the islands. Control the area to uncover those lost ressources", "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05Y')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BW')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08Q')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09C')))
       return this
     endmethod

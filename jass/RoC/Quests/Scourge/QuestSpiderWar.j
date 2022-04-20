@@ -34,7 +34,7 @@ library QuestSpiderWar requires QuestData, QuestItemKillUnit, QuestItemExpire, Q
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08D')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00G')))
-      call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n074_1565)) //Nezar'azret
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_NEZARAZRET))
       call this.AddQuestItem(QuestItemUpgrade.create('unp2', 'unpl'))
       call this.AddQuestItem(QuestItemExpire.create(1480))
       call this.AddQuestItem(QuestItemSelfExists.create())

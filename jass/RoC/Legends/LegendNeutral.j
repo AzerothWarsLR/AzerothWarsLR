@@ -3,6 +3,7 @@ library LegendNeutral initializer OnInit requires Legend
   globals
     Legend LEGEND_RAGNAROS
     Legend LEGEND_SEAWITCH
+    Legend LEGEND_NEZARAZRET
 
     Legend LEGEND_AUCHINDOUN
     Legend LEGEND_DRAKTHARONKEEP
@@ -41,6 +42,9 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_SEAWITCH = Legend.create()
     set LEGEND_SEAWITCH.Unit = gg_unit_O02L_0340
+
+    set LEGEND_NEZARAZRET = Legend.create()
+    set LEGEND_NEZARAZRET.Unit = gg_unit_n074_1565
 
     set LEGEND_AUCHINDOUN = Legend.create()
     set LEGEND_AUCHINDOUN.Capturable = true
