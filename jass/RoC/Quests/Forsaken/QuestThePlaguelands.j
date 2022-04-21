@@ -17,7 +17,7 @@ library QuestThePlaguelands requires QuestData, ForsakenSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Plaguelands", "The ravaged lands of Lordaeron must be conquered by the Forsaken, their survival depends on it", "ReplaceableTextures\\CommandButtons\\BTNNathanosBlightcaller.blp")
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NATHANOS, false))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_UNDERCITY, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01F')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n044')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01H')))

@@ -11,7 +11,7 @@ library QuestSapphiron requires QuestData, ScourgeSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The demihero Sapphiron"
+      return "The demihero Sapphiron and Frost Wyrms"
     endmethod
 
     private method OnComplete takes nothing returns nothing

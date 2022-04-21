@@ -50,7 +50,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
-      call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_SEAWITCH.Unit))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SEAWITCH))
       call this.AddQuestItem(QuestItemExpire.create(600))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

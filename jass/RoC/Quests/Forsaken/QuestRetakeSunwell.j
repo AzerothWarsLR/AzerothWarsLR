@@ -16,7 +16,7 @@ library QuestRetakeSunwell requires QuestData, ForsakenSetup, LegendForsaken, Le
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Retaking the Sunwell", "Even in undeath, the Sunwell's energy call to the Forsaken banshees. Reclaim it to bolster their vitality", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
-      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NATHANOS, false))
+      call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_UNDERCITY, false))
       return this
     endmethod
   endstruct
