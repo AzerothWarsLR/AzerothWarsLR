@@ -59,8 +59,8 @@ library QuestExiled requires QuestData, DraeneiSetup
       endloop
       call DestroyGroup(tempGroup)
       set tempGroup = null      
-      call SetUnitOwner(LEGEND_OSHUGUN.Unit, PLAYER_NEUTRAL_AGGRESSIVE, true)
-      call SetUnitOwner(LEGEND_AUCHINDOUN.Unit, PLAYER_NEUTRAL_AGGRESSIVE, true)
+      call SetUnitOwner(LEGEND_OSHUGUN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
+      call SetUnitOwner(LEGEND_AUCHINDOUN.Unit, Player(PLAYER_NEUTRAL_AGGRESSIVE), true)
     endmethod
 
     private method OnFail takes nothing returns nothing

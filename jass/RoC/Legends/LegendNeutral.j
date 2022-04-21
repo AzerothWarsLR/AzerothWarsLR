@@ -42,6 +42,7 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_SEAWITCH = Legend.create()
     set LEGEND_SEAWITCH.Unit = gg_unit_O02L_0340
+    set LEGEND_SEAWITCH.PermaDies = true
 
     set LEGEND_NEZARAZRET = Legend.create()
     set LEGEND_NEZARAZRET.Unit = gg_unit_n074_1565
