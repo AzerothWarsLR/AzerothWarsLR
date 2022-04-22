@@ -26,7 +26,7 @@ library NzothSetup requires Faction, TeamSetup
     call f.ModObjectLimit('n0C6', UNLIMITED)   //Improved Tidal Guardian
     call f.ModObjectLimit('n0BZ', UNLIMITED)   //Deep Sea Vault
 
-    call f.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
+    call f.ModObjectLimit('nmpe', 7)   //Mur'gul Slave
     call f.ModObjectLimit('n0CA', UNLIMITED)   //Myrmidon
     call f.ModObjectLimit('n0CE', UNLIMITED)   //Snap Dragon
     call f.ModObjectLimit('n0CB', UNLIMITED)   //Siren

@@ -27,10 +27,11 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
       local unit u
       local player holderPlayer = this.Holder.Person.Player
       set LEGEND_KATHERINE.StartingXP = GetHeroXP(LEGEND_KATHERINE.Unit)
+      call this.Holder.obliterate()
       call LEGEND_KATHERINE.Spawn(this.Holder.Player, -15223, -22856, 110)
+      call LEGEND_ADMIRAL.Spawn(this.Holder.Player, -15223, -22856, 110)
       call ReviveHero(LEGEND_KATHERINE.Unit, -15223, -22856, true)
       call ReviveHero(LEGEND_ADMIRAL.Unit, -15223, -22856, true)
-      call UnitAddItem(LEGEND_KATHERINE.Unit, CreateItem('I00E', GetUnitX(LEGEND_KATHERINE.Unit), GetUnitY(LEGEND_KATHERINE.Unit)))
       if GetLocalPlayer() == this.Holder.Player then
         call SetCameraPosition(GetRectCenterX(gg_rct_ShipAmbient), GetRectCenterY(gg_rct_ShipAmbient))
       endif

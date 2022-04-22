@@ -15,7 +15,7 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You will unlock Nazjatar, N'zoth and your food limit will raise to 200"
+      return "You will unlock Nazjatar, N'zoth, Pillar of Waves and your food limit will raise to 200. Your workers will be unlimited"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -28,6 +28,11 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
       call SetUnitInvulnerable(gg_unit_n045_3377, true)
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 200 )
       set BLACKEMPIREPORTAL_ILLIDAN.PortalState = BLACKEMPIREPORTALSTATE_OPEN
+      call FACTION_NZOTH.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
+      call WaygateActivateBJ( true, gg_unit_h01A_0402 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01A_0402 , GetRectCenter(gg_rct_NazjatarExit1) )
+      call WaygateActivateBJ( true, gg_unit_h01D_3378 )
+      call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
     endmethod
 
     public static method create takes nothing returns thistype
