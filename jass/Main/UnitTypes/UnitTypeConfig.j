@@ -254,6 +254,9 @@ library UnitTypeConfig initializer OnInit requires UnitType
 
     set unitType = UnitType.create('u00D')      //Workers
     set unitType.Refund = true 
+
+    set unitType = UnitType.create('o05A')      //Workers
+    set unitType.Refund = true 
                                                
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
  

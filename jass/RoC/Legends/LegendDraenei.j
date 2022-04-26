@@ -23,6 +23,7 @@ library LegendDraenei initializer OnInit requires Legend
     set LEGEND_EXODARSHIP.Unit = gg_unit_h09W_3303
 
     set LEGEND_MARAAD = Legend.create()
+    set LEGEND_MARAAD.StartingXP = 1800
     set LEGEND_MARAAD.UnitType = 'H09S'
 
     set LEGEND_VELEN = Legend.create()

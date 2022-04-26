@@ -6,14 +6,19 @@ library QuestScholomanceBuild requires QuestData
 
   struct QuestScholomanceBuild extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Putress is now trainable."
+      return "Putress is now trainable and you now have access to the Shadowvault."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Putress is trainable at the altar"
+      return "Putress is trainable at the altar and unlock the base in Northrend"
     endmethod
 
+    private method OnFail takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_ShadowvaultUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
+    endmethod
+    
     private method OnComplete takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_ShadowvaultUnlock, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -27,6 +32,7 @@ library QuestScholomanceBuild requires QuestData
       call this.AddQuestItem(QuestItemBuild.create('u014', 1))
       call this.AddQuestItem(QuestItemBuild.create('u01J', 2))
       call this.AddQuestItem(QuestItemUpgrade.create('h08B', 'h089'))
+      call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

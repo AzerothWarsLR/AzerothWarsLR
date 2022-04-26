@@ -6,6 +6,7 @@ library LegendScourge initializer OnInit requires Legend
     Legend LEGEND_RIVENDARE
     Legend LEGEND_LICHKING
     Legend LEGEND_UTGARDE
+    Legend LEGEND_SAPPHIRON
 
     constant integer UNITTYPE_KELTHUZAD_NECROMANCER = 'U001'
     constant integer UNITTYPE_KELTHUZAD_GHOST = 'U00M'
@@ -32,6 +33,9 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_UTGARDE = Legend.create()
     set LEGEND_UTGARDE.Unit = gg_unit_h00O_2516
     set LEGEND_UTGARDE.Capturable = true
+
+    set LEGEND_SAPPHIRON = Legend.create()
+    set LEGEND_SAPPHIRON.Unit = gg_unit_ubdr_0668
 
     set LEGEND_LICHKING = Legend.create()
     set LEGEND_LICHKING.Unit = gg_unit_u000_0649

@@ -10,8 +10,7 @@ library TitanForgeArtifact initializer OnInit requires ArtifactSetup, FilteredRe
     if (heldItem != null and heldArtifact != 0 and heldArtifact.Titanforged == false) then
       call heldArtifact.Titanforge()
     else
-      call AdjustPlayerStateBJ(1000, GetTriggerPlayer(), PLAYER_STATE_RESOURCE_GOLD)
-      call AdjustPlayerStateBJ(750, GetTriggerPlayer(), PLAYER_STATE_RESOURCE_LUMBER)
+      call AdjustPlayerStateBJ(75, GetTriggerPlayer(), PLAYER_STATE_RESOURCE_LUMBER)
     endif
     call SetPlayerTechResearched(GetTriggerPlayer(), RESEARCH_ID, 1)
   endfunction

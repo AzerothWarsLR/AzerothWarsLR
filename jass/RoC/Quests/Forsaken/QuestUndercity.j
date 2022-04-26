@@ -16,15 +16,45 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Undercity, unlock Nathanos and unally the Legion team"
+      return "Control of all units in Undercity, unlock Nathanos and unally the Legion team. All your units in Northrend will go Hostile!"
     endmethod
 
+    private method EmptyNR takes player whichPlayer returns nothing
+      local group tempGroup = CreateGroup()
+      local unit u
+
+      //Transfer all Neutral Passive units in Dalaran
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_Northrend_Ambiance, null)
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == this.Holder.Player then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call GroupEnumUnitsInRect(tempGroup, gg_rct_InstanceAzjolNerub, null)      
+      set u = FirstOfGroup(tempGroup)
+      loop
+      exitwhen u == null
+        if GetOwningPlayer(u) == this.Holder.Player then
+          call UnitRescue(u, whichPlayer)
+        endif
+        call GroupRemoveUnit(tempGroup, u)
+        set u = FirstOfGroup(tempGroup)
+      endloop
+      call DestroyGroup(tempGroup)
+      set tempGroup = null
+    endmethod
+    
     private method OnFail takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, this.Holder.Player)
+      call this.EmptyNR(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R08G', 1)
       call SetPlayerTechResearched(FACTION_LEGION.Player, 'R08G', 1)
       call WaygateActivateBJ( true, gg_unit_n08F_1739 )

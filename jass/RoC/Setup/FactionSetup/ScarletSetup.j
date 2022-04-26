@@ -72,6 +72,7 @@ library ScarletSetup requires Faction, TeamSetup
     call f.ModObjectLimit('Rhlh', UNLIMITED)   //Improved Lumber Harvesting
     call f.ModObjectLimit('Rhac', UNLIMITED)   //Improved Masonry
     call f.ModObjectLimit('R06Q', UNLIMITED)   //Paladin Adept Training
+    call f.ModObjectLimit('R01P', UNLIMITED)   //Ensnare
 
   endfunction
     

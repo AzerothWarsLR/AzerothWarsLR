@@ -41,6 +41,7 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
 
     private method OnComplete takes nothing returns nothing
       call this.GiveCrossroads(this.Holder.Player)
+      call AdjustPlayerStateBJ( 300, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype

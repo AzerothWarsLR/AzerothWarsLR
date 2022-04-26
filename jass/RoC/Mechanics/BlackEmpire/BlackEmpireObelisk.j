@@ -2,7 +2,7 @@ library BlackEmpireObelisk initializer OnInit requires ControlPoint
 
   globals
     private constant integer ABIL_ID = 'A06Z'
-    private constant real DURATION = 180.      //This duration needs to match the in-editor duration of the channel spell
+    private constant real DURATION = 300.      //This duration needs to match the in-editor duration of the channel spell
     private constant integer OBELISK_ID = 'n0BA'
     private constant string PROGRESS_EFFECT = "war3mapImported\\Progressbar10sec.mdx"
     private constant real PROGRESS_SCALE = 1.5
