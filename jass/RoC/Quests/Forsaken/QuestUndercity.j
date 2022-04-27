@@ -47,8 +47,8 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
       call DestroyGroup(tempGroup)
       set tempGroup = null
     endmethod
-    
-    private method OnFail takes nothing returns nothing
+
+    private method UnhideUnit takes nothing returns nothing
       local unit u
       loop
         set u = FirstOfGroup(udg_HiddenUnits3)
@@ -57,18 +57,15 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
         call GroupRemoveUnit(udg_HiddenUnits3, u)
       endloop
       call DestroyGroup(udg_HiddenUnits3)
+    endmethod
+    
+    private method OnFail takes nothing returns nothing
+      call UnhideUnit()
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-     local unit u
-      loop
-        set u = FirstOfGroup(udg_HiddenUnits3)
-        exitwhen u == null
-        call ShowUnitShow(u)
-        call GroupRemoveUnit(udg_HiddenUnits3, u)
-      endloop
-      call DestroyGroup(udg_HiddenUnits3)
+      call UnhideUnit()
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, this.Holder.Player)
       call this.EmptyNR(Player(PLAYER_NEUTRAL_AGGRESSIVE))
       call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R08G', 1)

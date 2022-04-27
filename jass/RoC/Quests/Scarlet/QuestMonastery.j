@@ -19,7 +19,7 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
       return "Control of all units in the Scarlet Monastery and you will unally the alliance"
     endmethod
 
-    private method OnFail takes nothing returns nothing
+    private method UnhideUnit takes nothing returns nothing
       local unit u
       loop
         set u = FirstOfGroup(udg_HiddenUnits4)
@@ -28,18 +28,15 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
         call GroupRemoveUnit(udg_HiddenUnits4, u)
       endloop
       call DestroyGroup(udg_HiddenUnits4)
+    endmethod
+
+    private method OnFail takes nothing returns nothing
+      call UnhideUnit()
       call RescueNeutralUnitsInRect(gg_rct_ScarletAmbient, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      local unit u
-      loop
-        set u = FirstOfGroup(udg_HiddenUnits4)
-        exitwhen u == null
-        call ShowUnitShow(u)
-        call GroupRemoveUnit(udg_HiddenUnits4, u)
-      endloop
-      call DestroyGroup(udg_HiddenUnits4)
+      call UnhideUnit()
       call SetPlayerTechResearched(FACTION_KULTIRAS.Player, 'R06V', 1)
       call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R06V', 1)
       call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
