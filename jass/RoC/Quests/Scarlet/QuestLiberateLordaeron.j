@@ -14,6 +14,14 @@ library QuestLiberateLordaeron requires QuestData, ScarletSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      local unit u
+      loop
+        set u = FirstOfGroup(udg_HiddenUnits6)
+        exitwhen u == null
+        call ShowUnitShow(u)
+        call GroupRemoveUnit(udg_HiddenUnits6, u)
+      endloop
+      call DestroyGroup(udg_HiddenUnits6)
       call RemoveDestructable(gg_dest_DTg6_36078)
       call RescueNeutralUnitsInRect(gg_rct_ScarletHarbor, this.Holder.Player)
       call KillNeutralHostileUnitsInRadius(415.2, 16521, 2300)

@@ -10,22 +10,17 @@ library QuestNaxxramas requires QuestData, QuestItemChannelRect, LegendScourge
     endmethod
 
     private method GrantNaxxramas takes player whichPlayer returns nothing
-      local group tempGroup = CreateGroup()
       local unit u
-
-      //Transfer all Neutral Passive units in Naxxramas
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_NaxAmbient, null)
-      set u = FirstOfGroup(tempGroup)
       loop
-      exitwhen u == null
+        set u = FirstOfGroup(udg_HiddenUnits5)
+        exitwhen u == null
         if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) then
           call UnitRescue(u, whichPlayer)
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
+          call ShowUnitShow(u)
+          endif
+          call GroupRemoveUnit(udg_HiddenUnits5, u)
       endloop
-      call DestroyGroup(tempGroup)
-      set tempGroup = null      
+      call DestroyGroup(udg_HiddenUnits5)
     endmethod
 
     private method OnComplete takes nothing returns nothing

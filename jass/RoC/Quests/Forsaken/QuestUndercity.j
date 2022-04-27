@@ -20,10 +20,26 @@ library QuestUndercity requires QuestData, ForsakenSetup, GeneralHelpers
     endmethod
 
     private method OnFail takes nothing returns nothing
+      local unit u
+      loop
+        set u = FirstOfGroup(udg_HiddenUnits3)
+        exitwhen u == null
+        call ShowUnitShow(u)
+        call GroupRemoveUnit(udg_HiddenUnits3, u)
+      endloop
+      call DestroyGroup(udg_HiddenUnits3)
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     endmethod
 
     private method OnComplete takes nothing returns nothing
+     local unit u
+      loop
+        set u = FirstOfGroup(udg_HiddenUnits3)
+        exitwhen u == null
+        call ShowUnitShow(u)
+        call GroupRemoveUnit(udg_HiddenUnits3, u)
+      endloop
+      call DestroyGroup(udg_HiddenUnits3)
       call RescueNeutralUnitsInRect(gg_rct_UndercityUnlock, this.Holder.Player)
       call SetPlayerTechResearched(FACTION_LORDAERON.Player, 'R08G', 1)
       call SetPlayerTechResearched(FACTION_LEGION.Player, 'R08G', 1)
