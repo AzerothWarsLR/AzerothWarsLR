@@ -48,7 +48,7 @@ globals
     private constant real INTERVAL = 0.10 //Update interval in seconds.
                                          //[in multiplayer, the camera positions will only get updated every 0.05-0.1 seconds, so setting it to a lower value than 0.05 makes no sense]
                                          //[update frequency can be much higher in single player mode!]
-    private constant integer DRAW_DISTANCE = 3072 //the radius around the camera target in which the tiles are considered visible; should be about the same as sight radius (not diameter) of the camera; for 3d cams, use the FarZ value
+    private constant integer DRAW_DISTANCE = 5120 //the radius around the camera target in which the tiles are considered visible; should be about the same as sight radius (not diameter) of the camera; for 3d cams, use the FarZ value
                                                  //Use multiples of 1024 for maximum efficiency on square division. Recommended value: 5120
     private constant integer TILE_RESOLUTION = 12 //amount of tiles spread over DRAW_DISTANCE
                                         //- higher resolution = more overhead to incrementing loop variables, but less amounts of destructables checked when moving the camera
