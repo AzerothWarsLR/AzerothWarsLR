@@ -6,11 +6,11 @@ library QuestAshenvale requires QuestData, DruidsSetup
 
   struct QuestAshenvale extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Ashenvale is under control and Cenarius can now be awaken"
+      return "Ashenvale is under control and the forest has been awakened"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Ashenvale and make Cenarius trainable at the Altar"
+      return "Control of all units in Ashenvale and summon Saplings all around the Warsong Lumber Camp"
     endmethod
 
     private method GrantAshenvale takes player whichPlayer returns nothing
@@ -38,13 +38,14 @@ library QuestAshenvale requires QuestData, DruidsSetup
 
     private method OnComplete takes nothing returns nothing
       call this.GrantAshenvale(this.Holder.Player)
+      call TriggerExecute( gg_trg_AshenvaleUnleashed)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\DruidTheme.mp3" )
       endif
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The forest needs healing. Regain control of it to summon it's Guardian, the Demigod Cenarius", "ReplaceableTextures\\CommandButtons\\BTNKeeperC.blp")
+      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The forest needs healing. Regain control of it to unleash it's wrath on the Horde", "ReplaceableTextures\\CommandButtons\\BTNKeeperC.blp")
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_MALFURION, gg_rct_AshenvaleUnlock, "Ashenvale"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07C')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01Q')))

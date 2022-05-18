@@ -18,7 +18,7 @@ library QuestStormglen requires QuestData, GilneasSetup, QuestItemControlPoint, 
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Stormglen", "The next village is right next to the Blackwald, south east of Tempest Reach. We will need to purify the forest too", "ReplaceableTextures\\CommandButtons\\BTNGilneasWizardTower.blp")
+      local thistype this = thistype.allocate("Stormglen", "The next village is right next to the Blackwald, south west of Tempest Reach. We will need to purify the forest too", "ReplaceableTextures\\CommandButtons\\BTNGilneasWizardTower.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n084')))
       call this.AddQuestItem(QuestItemExpire.create(950))

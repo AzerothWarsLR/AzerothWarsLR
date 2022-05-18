@@ -38,6 +38,7 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
     private method OnComplete takes nothing returns nothing
       call PlayThematicMusicBJ("war3mapImported\\BlackEmpireTheme.mp3")
       call this.OpenPortals()
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 200 )
     endmethod
 
     private method OnFail takes nothing returns nothing

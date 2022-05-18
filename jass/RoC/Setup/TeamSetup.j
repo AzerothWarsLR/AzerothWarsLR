@@ -11,6 +11,7 @@ library TeamSetup requires Team
     Team TEAM_FORSAKEN
     Team TEAM_OLDGOD
     Team TEAM_SCOURGE
+    Team TEAM_DRAENEI
   endglobals
 
   public function OnInit takes nothing returns nothing 
@@ -37,6 +38,9 @@ library TeamSetup requires Team
 
     set TEAM_GILNEAS = Team.create("Gilneas")
     set TEAM_GILNEAS.VictoryMusic = "HeroicVictory"
+
+    set TEAM_DRAENEI = Team.create("Draenei")
+    set TEAM_DRAENEI.VictoryMusic = "HeroicVictory"
 
     set TEAM_SCARLET = Team.create("Scarlet Crusade")
     set TEAM_SCARLET.VictoryMusic = "DarkVictory"

@@ -2,11 +2,11 @@ library QuestKilsorrow requires QuestData
 
   struct QuestKilsorrow extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Kil'sorrow is now established, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "Kil'sorrow is now established, The Black Temple and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Kil'sorrow and 3 new Demon Gates"
+      return "Control of all units in Kil'sorrow, The Black Temple and 3 new Demon Gates"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -16,6 +16,7 @@ library QuestKilsorrow requires QuestData
     private method OnComplete takes nothing returns nothing
       call RescueNeutralUnitsInRect(gg_rct_KilsorrowUnlock, this.Holder.Player)
       call UnitRescue(gg_unit_n081_4142, FACTION_FEL_HORDE.Player)
+      call UnitRescue(LEGEND_BLACKTEMPLE.Unit, this.Holder.Player)
     endmethod
 
     private method OnAdd takes nothing returns nothing

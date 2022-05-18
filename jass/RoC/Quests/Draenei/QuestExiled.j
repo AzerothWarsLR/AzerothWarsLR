@@ -68,6 +68,7 @@ library QuestExiled requires QuestData, DraeneiSetup
       local unit u
       
       call this.GrantExiled(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      set this.Holder.Team = TEAM_NIGHT_ELVES
       call KillUnit(gg_unit_o02P_2291)
       call KillUnit(gg_unit_o02P_2291)
       call KillUnit(LEGEND_VELEN.Unit )
@@ -94,6 +95,7 @@ library QuestExiled requires QuestData, DraeneiSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      set this.Holder.Team = TEAM_NIGHT_ELVES
       call AdjustPlayerStateBJ( 200, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( ( 2000 - GetResourceAmount(gg_unit_ngol_3272) ), Player(13), PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )

@@ -7,7 +7,7 @@ library QuestOrgrimmarPortal requires QuestData, QuestItemChannelRect
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Zuluhead has opened the portal to Orgrimmar"
+      return "Zuluhead has opened the portal to Orgrimmar. Hurry, it will collapse in 3 mins"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
@@ -22,6 +22,7 @@ library QuestOrgrimmarPortal requires QuestData, QuestItemChannelRect
       call WaygateActivateBJ( true, gg_unit_n07E_0775)
       call ShowUnitShow( gg_unit_n07E_0775)
       call WaygateSetDestinationLocBJ( gg_unit_n07E_0775, GetRectCenter(gg_rct_OrgrimmarPortal) )
+      call TriggerExecute( gg_trg_PortalCollapse )
 
     endmethod
 

@@ -19,6 +19,7 @@ library QuestPlague requires QuestData, ScourgeSetup
 
     private method OnComplete takes nothing returns nothing
       call this.Holder.ModObjectLimit(RESEARCH_ID, -UNLIMITED)
+      call SetUnitInvulnerable( gg_unit_n035_1269, false )
       call TriggerExecute( gg_trg_Plague_Actions )
     endmethod
 

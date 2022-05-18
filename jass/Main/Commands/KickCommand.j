@@ -21,13 +21,13 @@ library BootCommand initializer OnInit requires Faction
         return
       endif
 
-      if AreAllianceActive == true then
-        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "Alliances are open")
+      if targetFaction == 0 then
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
         return
       endif
 
-      if targetFaction == 0 then
-        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
+      if targetFaction != FACTION_FEL_HORDE then
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "This faction cannot be booted.")
         return
       endif
 
@@ -41,7 +41,7 @@ library BootCommand initializer OnInit requires Faction
         return
       endif
 
-      if FACTION_FEL_HORDE.Team != TEAM_NAGA then
+      if GetOwningPlayer(LEGEND_BLACKTEMPLE.Unit) == FACTION_NAGA.Player then
         call DisplayTextToPlayer(senderPerson.Player, 0, 0, " " + targetFaction.ColoredName + " is not your vassal.")
         return
       endif

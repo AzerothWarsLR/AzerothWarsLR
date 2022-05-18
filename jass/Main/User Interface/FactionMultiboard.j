@@ -85,7 +85,7 @@ library FactionMultiboard requires ControlPoint, Faction, Team
       local Team loopTeam = 0
       call DestroyMultiboard(this.multiboard)
       set this.multiboard = CreateMultiboardBJ(COLUMN_COUNT, 3, TITLE)
-      call MultiboardSetRowCount(this.multiboard, 30)
+      call MultiboardSetRowCount(this.multiboard, 32)
       call UpdateHeaderRow()
       set row = row + 1
       loop
