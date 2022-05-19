@@ -6,6 +6,7 @@
     QuestData ALLIANCE_NAGA
     QuestData CONQUER_BLACK_TEMPLE
     QuestData KILL_FROZEN_THRONE
+    QuestData CHANNEL_EYE
 
     QuestData SUMMON_KIL
     QuestData GREAT_TREACHERY

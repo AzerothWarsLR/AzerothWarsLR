@@ -33,6 +33,7 @@ library NagaSetup requires Faction, TeamSetup
     call f.ModObjectLimit('nmsc', UNLIMITED)   //Shadowcaster
     call f.ModObjectLimit('nnsu', 6)           //Summoner
     call f.ModObjectLimit('nnrg', 6)           //Royal Guard
+    call f.ModObjectLimit('h0AC', 6)           //Sea Witch
     call f.ModObjectLimit('nhyc', 8)           //Dragon Turtle
     call f.ModObjectLimit('nwgs', 8)   	    //Couatl
     call f.ModObjectLimit('e00Y', 4)  	    //Scylla

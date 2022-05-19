@@ -39,6 +39,7 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call this.GrantAkama(this.Holder.Player)
       call FACTION_NAGA.ModObjectLimit('n08W', UNLIMITED)   //Lost One Den
       call FACTION_NAGA.ModObjectLimit('ndrn', UNLIMITED)   //Vindicator

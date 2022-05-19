@@ -16,7 +16,7 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
+      call SetUnitOwner(gg_unit_o01I_1505, this.Holder.Player, true)
       call FACTION_NAGA.AddQuest(REDEMPTION_PATH)
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(EXILE_PATH)
@@ -25,6 +25,9 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
       set CONQUER_BLACK_TEMPLE.Progress = QUEST_PROGRESS_UNDISCOVERED
       call FACTION_NAGA.AddQuest(KILL_FROZEN_THRONE)
       set KILL_FROZEN_THRONE.Progress = QUEST_PROGRESS_UNDISCOVERED
+
+      call FACTION_NAGA.AddQuest(CHANNEL_EYE)
+      set CHANNEL_EYE.Progress = QUEST_PROGRESS_UNDISCOVERED
     endmethod
 
     public static method create takes nothing returns thistype

@@ -20,6 +20,7 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
       call FACTION_NAGA.ModObjectLimit('n08H', UNLIMITED)   //Demon Hunter grounds
       call FACTION_NAGA.ModObjectLimit('e00S', UNLIMITED)   //Glaive Warrior
       call FACTION_NAGA.ModObjectLimit('h08W', 6)   //Demon Hunter

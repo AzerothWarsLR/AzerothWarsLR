@@ -7,6 +7,7 @@ library NzothQuestSetup requires NzothSetup
     call FACTION_NZOTH.AddQuest(QuestEastRaid.create())
     call FACTION_NZOTH.AddQuest(QuestWestRaid.create())
     call FACTION_NZOTH.AddQuest(QuestIslandRaid.create())
+    call FACTION_NZOTH.AddQuest(QuestDefeatIllidan.create())
 
 
   endfunction

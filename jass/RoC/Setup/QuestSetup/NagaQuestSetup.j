@@ -10,11 +10,14 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     call FACTION_NAGA.AddQuest(chapterTwo)
     call FACTION_NAGA.AddQuest(chapterThree)
 
+    call FACTION_NAGA.AddQuest(QuestDefeatAzshara.create())
+
     set EXILE_PATH = QuestExilePath.create()
     set REDEMPTION_PATH = QuestRedemptionPath.create()
     //set ALLIANCE_NAGA = QuestJoinAllianceNaga.create()
     set CONQUER_BLACK_TEMPLE = QuestBlackTemple.create()
     set KILL_FROZEN_THRONE = QuestFrozenThrone.create()
+    set CHANNEL_EYE = QuestChannelEye.create()
 
     set chapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
     set chapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
