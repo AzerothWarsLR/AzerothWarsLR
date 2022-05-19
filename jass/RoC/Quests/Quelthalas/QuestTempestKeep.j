@@ -42,17 +42,23 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call SetUnitPosition(LEGEND_KAEL.Unit, 4067, -21695)
       call SetUnitPosition(LEGEND_LORTHEMAR.Unit, 4067, -21695)
       call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
+      call SetPlayerTechResearchedSwap( 'R076', 1, this.Holder.Player )
       call RescueUnitsInGroup(udg_TempestKeep, this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IK')
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
+      
+      if ( not ( IsUnitHiddenBJ(gg_unit_n07E_1491) == true ) ) then
+            call IssueImmediateOrderBJ( LEGEND_KAEL.Unit, "thunderclap" )
+      endif
+
       call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 4000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       set this.Holder.Name = "Blood Elves"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBloodMage2.blp"
       if GetLocalPlayer() == this.Holder.Player then
           call SetCameraPosition(GetRectCenterX(gg_rct_TempestKeepSpawn), GetRectCenterY(gg_rct_TempestKeepSpawn))
-        endif
+      endif
     endmethod
 
     public static method create takes nothing returns thistype
