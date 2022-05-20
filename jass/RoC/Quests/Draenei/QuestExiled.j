@@ -72,7 +72,6 @@ library QuestExiled requires QuestData, DraeneiSetup
       call KillUnit(gg_unit_o02P_2291)
       call KillUnit(gg_unit_o02P_2291)
       call KillUnit(LEGEND_VELEN.Unit )
-      call RemoveDestructable( gg_dest_B023_23223 )
       call GroupEnumUnitsInRect(tempGroup, gg_rct_InstanceOutland, null)
       set u = FirstOfGroup(tempGroup)
       loop
@@ -104,6 +103,7 @@ library QuestExiled requires QuestData, DraeneiSetup
       call UnitRemoveAbilityBJ( 'ACm2', LEGEND_VELEN.Unit)
       call this.GrantExiled(this.Holder.Player)
       call this.EscapeOutland(this.Holder.Player)
+      call KillUnit(gg_unit_h09W_3303)
       call RemoveUnit(gg_unit_h09W_3303)
       call KillUnit(gg_unit_o02P_2291)
       call SetCameraBoundsToRectForPlayerBJ( this.Holder.Player, GetEntireMapRect() )

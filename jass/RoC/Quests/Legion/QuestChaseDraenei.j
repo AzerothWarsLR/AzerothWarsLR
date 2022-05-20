@@ -17,6 +17,7 @@ library QuestChaseDraenei requires QuestData
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Genocide of the Draenei", "The Draenei race existence insults the Eredar overlords of the Burning Legion, destroy them all ", "ReplaceableTextures\\CommandButtons\\BTNEredarRed.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
       return this
     endmethod
   endstruct

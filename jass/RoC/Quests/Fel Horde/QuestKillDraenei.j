@@ -15,7 +15,6 @@ library QuestKillDraenei requires QuestData
 
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
-      call RemoveDestructable( gg_dest_B023_23223 )
       call GroupEnumUnitsInRect(tempGroup, gg_rct_InstanceOutland, null)
       set u = FirstOfGroup(tempGroup)
       loop
@@ -36,6 +35,11 @@ library QuestKillDraenei requires QuestData
       local thistype this = thistype.allocate("The Shattrah Massacre", "The Draenei race existence insults the Fel Horde demon masters, slaughter them all ", "ReplaceableTextures\\CommandButtons\\BTNChaosWolfRider.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X')))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod
