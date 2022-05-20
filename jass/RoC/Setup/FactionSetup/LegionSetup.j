@@ -28,9 +28,6 @@ library LegionSetup requires Faction, TeamSetup
     call f.ModObjectLimit('ndmg', UNLIMITED)   //Demon Gate
     call f.ModObjectLimit('n04N', UNLIMITED)   //Infernal Machine Factory
     call f.ModObjectLimit('n04Q', UNLIMITED)   //Nether Pit
-    call f.ModObjectLimit('e01F', 1)   //Monolith
-    call f.ModObjectLimit('e01G', 1)   //Satue
-    call f.ModObjectLimit('e01H', 1)   //Fortress
   
     //Units
     call f.ModObjectLimit('u00D', UNLIMITED)   //Legion Herald
