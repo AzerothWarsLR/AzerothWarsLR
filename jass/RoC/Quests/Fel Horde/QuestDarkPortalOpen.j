@@ -15,6 +15,7 @@ library QuestDarkPortalOpen requires QuestData, FelHordeSetup, GeneralHelpers
     endmethod
 
     private method OpenPortal takes nothing returns nothing
+      call SetUnitInvulnerable(gg_unit_n05J_3375, false)
       call WaygateActivateBJ( true, gg_unit_n036_2719 )
       call WaygateSetDestinationLocBJ( gg_unit_n036_2719, GetRectCenter(gg_rct_Dark_Portal_Exit_3) )
 

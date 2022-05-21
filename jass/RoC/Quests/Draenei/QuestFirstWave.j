@@ -7,14 +7,14 @@ library QuestFirstWave requires QuestData, DraeneiSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Divine Citadel, Teleporter, Astral Sanctum and Crystal Spire will not be deleted from Azuremyst"
+      return "The Divine Citadel, Astral Sanctum and Crystal Spire will not be deleted from Azuremyst. You will not lose the bonus gold from the gold you mined in Outland."
     endmethod
 
     private method OnFail takes nothing returns nothing
       call KillUnit(gg_unit_o051_3356)
       call KillUnit(gg_unit_o055_3337)
       call KillUnit(gg_unit_o054_3338)
-      call KillUnit(gg_unit_n0BU_0220)
+      call AdjustPlayerStateBJ( -( 2000 - GetResourceAmount(gg_unit_ngol_3272) ), Player(13), PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype
