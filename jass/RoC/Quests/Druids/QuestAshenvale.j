@@ -1,7 +1,7 @@
 library QuestAshenvale requires QuestData, DruidsSetup
 
   globals
-    private constant integer RESEARCH_ID = 'R06R'   //This research is given when the quest is completed
+    private constant integer QUESTRESEARCH_ID = 'R06R'   //This research is given when the quest is completed
   endglobals
 
   struct QuestAshenvale extends QuestData
@@ -37,11 +37,13 @@ library QuestAshenvale requires QuestData, DruidsSetup
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      call this.GrantAshenvale(this.Holder.Player)
       call TriggerExecute( gg_trg_AshenvaleUnleashed)
+      
+      call this.GrantAshenvale(this.Holder.Player)
       if GetLocalPlayer() == this.Holder.Player then
         call PlayThematicMusicBJ( "war3mapImported\\DruidTheme.mp3" )
       endif
+
     endmethod
 
     public static method create takes nothing returns thistype
@@ -49,11 +51,11 @@ library QuestAshenvale requires QuestData, DruidsSetup
       call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_MALFURION, gg_rct_AshenvaleUnlock, "Ashenvale"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07C')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01Q')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08U')))
-      call this.AddQuestItem(QuestItemUpgrade.create('etoa', 'etol'))
+      call this.AddQuestItem(QuestItemResearch.create('R091', 'n002'))
+      call this.AddQuestItem(QuestItemUpgrade.create('etoe', 'etol'))
       call this.AddQuestItem(QuestItemExpire.create(1440))
       call this.AddQuestItem(QuestItemSelfExists.create())
-      set this.ResearchId = RESEARCH_ID
+      set this.ResearchId = QUESTRESEARCH_ID
       return this
     endmethod
   endstruct

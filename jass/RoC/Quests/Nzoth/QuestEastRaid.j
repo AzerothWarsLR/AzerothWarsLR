@@ -19,6 +19,8 @@ library QuestEastRaid requires QuestData, NzothSetup
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n084')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06W')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08Q')))
+      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05Y')))
       return this
     endmethod
   endstruct

@@ -24,6 +24,7 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
 
 
     private method OnComplete takes nothing returns nothing
+      call FACTION_NZOTH.ModObjectLimit('n0C2', UNLIMITED)   //Pillar of Waves
       call RescueNeutralUnitsInRect(gg_rct_NagaUnlock, this.Holder.Player)
       call SetUnitInvulnerable(gg_unit_n045_3377, true)
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 200 )

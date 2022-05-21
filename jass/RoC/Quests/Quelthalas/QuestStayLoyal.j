@@ -1,5 +1,8 @@
-
 library QuestStayLoyal requires Persons, GeneralHelpers
+
+  globals 
+    private constant integer QUEST_RESEARCH_ID = 'R08Z'   //This research is given when the quest is completed
+  endglobals
 
   struct QuestStayLoyal extends QuestData
     private method operator Global takes nothing returns boolean
@@ -24,6 +27,7 @@ library QuestStayLoyal requires Persons, GeneralHelpers
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Refuse Kil'Jaeden's Offer", "Kil'jaeden has approached Kael with an offer of power and salvation. He should refuse it and resist the temptation of Fel power.", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IK', true))
+      set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod
   endstruct

@@ -14,6 +14,7 @@ library QuestKilsorrow requires QuestData
     endmethod
 
     private method OnComplete takes nothing returns nothing
+      call ShowUnitShow(gg_unit_ngol_3386)
       call RescueNeutralUnitsInRect(gg_rct_KilsorrowUnlock, this.Holder.Player)
       call UnitRescue(gg_unit_n081_4142, FACTION_FEL_HORDE.Player)
       call UnitRescue(LEGEND_BLACKTEMPLE.Unit, this.Holder.Player)

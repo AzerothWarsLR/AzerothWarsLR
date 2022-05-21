@@ -34,11 +34,23 @@ library QuestBlackrock requires QuestData, QuestItemKillUnit
 
     private method OnFail takes nothing returns nothing
       call this.GrantBlackrock(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+
+      call WaygateActivateBJ( true, gg_unit_h03V_0220 )
+      call WaygateSetDestinationLocBJ( gg_unit_h03V_0220, GetRectCenter(gg_rct_BlackrockExit2) )
+
+      call WaygateActivateBJ( true, gg_unit_n033_0108 )
+      call WaygateSetDestinationLocBJ( gg_unit_n033_0108, GetRectCenter(gg_rct_BlackrockExit1) )
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, 'R03C', 1) 
       call this.GrantBlackrock(this.Holder.Player)
+
+      call WaygateActivateBJ( true, gg_unit_h03V_0220 )
+      call WaygateSetDestinationLocBJ( gg_unit_h03V_0220, GetRectCenter(gg_rct_BlackrockExit2) )
+
+      call WaygateActivateBJ( true, gg_unit_n033_0108 )
+      call WaygateSetDestinationLocBJ( gg_unit_n033_0108, GetRectCenter(gg_rct_BlackrockExit1) )
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -47,9 +59,8 @@ library QuestBlackrock requires QuestData, QuestItemKillUnit
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Blackrock Unification", "Make contact with the Blackrock clan and convince them to join Magtheridon", "ReplaceableTextures\\CommandButtons\\BTNBlackhand.blp")
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00S')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09Y')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0A9')))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create('R090', 'o00F'), QuestItemTime.create(960)))
       call this.AddQuestItem(QuestItemExpire.create(1451))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

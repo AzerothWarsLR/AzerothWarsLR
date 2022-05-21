@@ -46,6 +46,7 @@ library QuestZulfarrak requires LegendNeutral
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Zandalari Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULFARRAK, false))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_PRIEST, gg_rct_Zulfarrak, "Zulfarrak"))
       return this
     endmethod
   endstruct

@@ -22,24 +22,22 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
     endmethod
 
     private method OnFail takes nothing returns nothing
-      local unit u
-      local group tempGroup
-      set tempGroup = CreateGroup()
-      call GroupEnumUnitsInRect(tempGroup, gg_rct_Zulfarrak, null)
-      set u = FirstOfGroup(tempGroup)
-      loop
-      exitwhen u == null
-        if GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(u) == Player(PLAYER_NEUTRAL_AGGRESSIVE) then
-          if IsUnitType(u, UNIT_TYPE_HERO) == true then
-            call KillUnit(u)
-          else
-            call UnitRescue(u, this.Holder.Player)
-          endif
-        endif
-        call GroupRemoveUnit(tempGroup, u)
-        set u = FirstOfGroup(tempGroup)
-      endloop   
-      call DestroyGroup(tempGroup)
+      call ReviveHero(LEGEND_PRIEST.Unit, -9160, -17544, true)
+      call ReviveHero(LEGEND_RASTAKHAN.Unit, -9160, -17544, true)
+      call LEGEND_PRIEST.Spawn(this.Holder.Player, -9160, -17544, 110)
+      call LEGEND_RASTAKHAN.Spawn(this.Holder.Player, -9160, -17544, 110)
+      call SetUnitOwner(LEGEND_PRIEST.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
+      call SetUnitOwner(LEGEND_RASTAKHAN.Unit, Player(PLAYER_NEUTRAL_PASSIVE), true)
+      call this.Holder.obliterate()
+      call SetUnitOwner(LEGEND_PRIEST.Unit, this.Holder.Player, true)
+      call SetUnitOwner(LEGEND_RASTAKHAN.Unit, this.Holder.Player, true)
+
+      call TriggerExecute( gg_trg_SecondChanceAction)
+      if GetLocalPlayer() == this.Holder.Player then
+        call SetCameraPosition(GetRectCenterX(gg_rct_TrollSecondChance), GetRectCenterY(gg_rct_TrollSecondChance))
+      endif
+      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
     endmethod
 
     public static method create takes nothing returns thistype
