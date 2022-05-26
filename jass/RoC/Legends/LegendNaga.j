@@ -8,6 +8,7 @@ library LegendNaga initializer OnInit requires Legend
     Legend LEGEND_NZOTH
     Legend LEGEND_ALTRUIS
     Legend LEGEND_AKAMA
+    Legend LEGEND_NAZJAR
     
     Legend LEGEND_NAZJATAR
     Legend LEGEND_VAULT
@@ -24,6 +25,9 @@ library LegendNaga initializer OnInit requires Legend
 
     set LEGEND_AZSHARA = Legend.create()
     set LEGEND_AZSHARA.UnitType = 'H08U'
+
+    set LEGEND_NAZJAR = Legend.create()
+    set LEGEND_NAZJAR.UnitType = 'H0A5'
 
     set LEGEND_NAJENTUS = Legend.create()
     set LEGEND_NAJENTUS.UnitType = 'U00S'

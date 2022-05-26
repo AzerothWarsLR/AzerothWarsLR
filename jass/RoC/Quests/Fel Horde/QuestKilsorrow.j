@@ -23,14 +23,13 @@ library QuestKilsorrow requires QuestData
       set LEGEND_MAGTHERIDON.DeathMessage = "Magtheridon’s eternal demon soul has been consumed, and his life permanently extinguished. The Lord of Outland has fallen."
     endmethod
 
-    private method OnAdd takes nothing returns nothing
-    endmethod
-
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Kil'sorrow Fortress", "This sinister fortress will serve the Fel Horde well, clear the surrounding lands to establish it", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
       call this.AddQuestItem(QuestItemExpire.create(1452))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

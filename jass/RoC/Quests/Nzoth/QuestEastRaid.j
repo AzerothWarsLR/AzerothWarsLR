@@ -20,7 +20,7 @@ library QuestEastRaid requires QuestData, NzothSetup
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06W')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08Q')))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05Y')))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_NAZJAR, gg_rct_Broken_Isles, "Broken Isles"))
       return this
     endmethod
   endstruct

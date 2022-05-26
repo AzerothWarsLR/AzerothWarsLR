@@ -9,7 +9,7 @@ library LegendScarlet initializer OnInit requires Legend
 
     set LEGEND_BRIGITTE = Legend.create()
     set LEGEND_BRIGITTE.UnitType = 'H00Y'
-    set LEGEND_BRIGITTE.StartingXP = 7000
+    set LEGEND_BRIGITTE.StartingXP = 10800
 
     set LEGEND_TIRION = Legend.create()
     set LEGEND_TIRION.UnitType = 'H09Z'
