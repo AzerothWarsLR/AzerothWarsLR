@@ -27,7 +27,7 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
       call FACTION_NZOTH.ModObjectLimit('n0C2', UNLIMITED)   //Pillar of Waves
       call RescueNeutralUnitsInRect(gg_rct_NagaUnlock, this.Holder.Player)
       call SetUnitInvulnerable(gg_unit_n045_3377, true)
-      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 200 )
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 150 )
       set BLACKEMPIREPORTAL_ILLIDAN.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       call FACTION_NZOTH.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
       call WaygateActivateBJ( true, gg_unit_h01A_0402 )

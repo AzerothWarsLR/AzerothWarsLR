@@ -13,6 +13,8 @@ library LegendQuelthalas initializer OnInit requires Legend
 
     Legend LEGEND_SILVERMOON
     Legend LEGEND_SUNWELL
+
+    Legend LEGEND_TEMPESTKEEP
   endglobals
 
   private function OnInit takes nothing returns nothing
@@ -25,6 +27,9 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_SUNWELL.Unit = gg_unit_n001_0165
     set LEGEND_SUNWELL.Capturable = true
     set LEGEND_SUNWELL.IsCapital = true
+
+    set LEGEND_TEMPESTKEEP = Legend.create()
+    set LEGEND_TEMPESTKEEP.Unit = gg_unit_n05X_1493
 
     set LEGEND_ANASTERIAN = Legend.create()
     set LEGEND_ANASTERIAN.UnitType = 'H00Q'

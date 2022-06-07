@@ -50,7 +50,7 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
       set this.Holder.Team = TEAM_SCOURGE
       set this.Holder.Name = "The Nexus"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNJaina_Archmage.blp"
-      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
     endmethod
 
     public static method create takes nothing returns thistype

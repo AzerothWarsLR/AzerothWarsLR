@@ -47,7 +47,7 @@ library QuestMonastery requires QuestData, ScarletSetup, QuestItemResearch, Ques
       set this.Holder.Name = "Scarlet"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNSaidan Dathrohan.blp"
       call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
-      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
     endmethod
 
     private method OnAdd takes nothing returns nothing

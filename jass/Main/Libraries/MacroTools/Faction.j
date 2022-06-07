@@ -516,7 +516,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     endmethod
 
     //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
-    private method Leave takes nothing returns nothing
+    method Leave takes nothing returns nothing
       call OnPreLeave()
     if team.PlayerCount > 1 and team.ScoreStatus == SCORESTATUS_NORMAL and GetGameTime() > 60 then
       call distributeUnits()

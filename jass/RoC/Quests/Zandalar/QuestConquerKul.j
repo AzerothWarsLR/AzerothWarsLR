@@ -10,7 +10,7 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock shipyards"
+      return "Unlock shipyards and 750 gold"
     endmethod
 
     private method operator FailurePopup takes nothing returns string
@@ -36,8 +36,12 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
       if GetLocalPlayer() == this.Holder.Player then
         call SetCameraPosition(GetRectCenterX(gg_rct_TrollSecondChance), GetRectCenterY(gg_rct_TrollSecondChance))
       endif
-      call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+      call AdjustPlayerStateBJ( 1500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
+    endmethod
+
+    private method OnComplete takes nothing returns nothing
+        call AdjustPlayerStateBJ( 750, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
     public static method create takes nothing returns thistype

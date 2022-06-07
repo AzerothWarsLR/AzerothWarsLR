@@ -18,8 +18,11 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
       if FACTION_NAGA.Team == TEAM_NAGA then
         set FACTION_FEL_HORDE.Team = TEAM_NAGA
       endif
+      set LEGEND_GRUUL.StartingXP = GetHeroXP(LEGEND_MAGTHERIDON.Unit)
       call RemoveUnit(LEGEND_MAGTHERIDON.Unit)
       call FACTION_FEL_HORDE.ModObjectLimit('Nmag', -UNLIMITED)           //Magtheridon
+      call FACTION_FEL_HORDE.ModObjectLimit('n0D3', UNLIMITED)           //Ogron
+      call LEGEND_GRUUL.Spawn(FACTION_FEL_HORDE.Player, GetRectCenterX(gg_rct_KilsorrowUnlock), GetRectCenterY(gg_rct_KilsorrowUnlock), 270)
     endmethod
 
     public static method create takes nothing returns thistype

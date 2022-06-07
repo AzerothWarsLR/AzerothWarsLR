@@ -8,6 +8,7 @@
     Legend LEGEND_REND
     Legend LEGEND_TERON
     Legend LEGEND_KARGATH
+    Legend LEGEND_GRUUL
     
     Legend LEGEND_BLACKROCKSPIRE
     Legend LEGEND_BLACKTEMPLE
@@ -19,6 +20,9 @@
     set LEGEND_MAGTHERIDON.UnitType = 'Nmag'
     set LEGEND_MAGTHERIDON.Essential = true
 
+    set LEGEND_GRUUL = Legend.create()
+    set LEGEND_GRUUL.UnitType = 'E01G'
+    
     set LEGEND_REND = Legend.create()
     set LEGEND_REND.UnitType = 'Nbbc'
     set LEGEND_REND.StartingXP = 2800

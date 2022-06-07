@@ -44,6 +44,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call UnitRemoveAbilityBJ( 'A0IP', LEGEND_KAEL.Unit)
       call SetPlayerTechResearchedSwap( 'R076', 1, this.Holder.Player )
       call RescueUnitsInGroup(udg_TempestKeep, this.Holder.Player)
+      call RescueUnitsInGroup(udg_TempestKeep2, this.Holder.Player)
       set this.Holder.Team = TEAM_NAGA
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IK')
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')

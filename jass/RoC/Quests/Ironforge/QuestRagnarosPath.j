@@ -35,7 +35,7 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
 
     private method OnComplete takes nothing returns nothing
       
-      call this.Holder.obliterate()
+      call this.Holder.Leave()
       call this.RemoveCreeps()
 
       set this.Holder.Person.Faction = FACTION_RAGNAROS

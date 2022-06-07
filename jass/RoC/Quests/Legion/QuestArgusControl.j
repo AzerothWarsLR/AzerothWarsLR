@@ -6,11 +6,11 @@ library QuestArgusControl requires QuestData, LegionSetup
 
   struct QuestArgusControl extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Enable to research Astral Walk and build a shop" //Todo: where is Astral Walk researched? What is the shop called?
+      return "You have can now build Unholy Reliquary " //Todo: where is Astral Walk researched? What is the shop called?
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Enable to research Astral Walk and build a shop"
+      return "Unlock the Unholy Reliquary"
     endmethod
 
     public static method create takes nothing returns thistype

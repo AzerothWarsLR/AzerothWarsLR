@@ -57,7 +57,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call ShowUnitShow( gg_unit_h01D_3380 )
       call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
 
-      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 300 )
+      call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
       call AdjustPlayerStateBJ( 800, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     endmethod
 
