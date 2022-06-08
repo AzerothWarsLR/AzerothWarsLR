@@ -1,13 +1,13 @@
 library ForsakenSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_FORSAKEN
+    LiegeFaction FACTION_FORSAKEN
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_FORSAKEN = Faction.create("Cult", PLAYER_COLOR_LIGHT_BLUE, "|cff8080ff","ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
+    set FACTION_FORSAKEN = LiegeFaction.create("Cult", PLAYER_COLOR_LIGHT_BLUE, "|cff8080ff","ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
     set f = FACTION_FORSAKEN
     set f.Team = TEAM_LEGION
     set f.StartingGold = 0

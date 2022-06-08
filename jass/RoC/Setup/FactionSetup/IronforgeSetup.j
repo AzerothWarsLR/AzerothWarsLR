@@ -1,13 +1,13 @@
 library IronforgeSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_IRONFORGE
+    LiegeFaction FACTION_IRONFORGE
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_IRONFORGE = Faction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
+    set FACTION_IRONFORGE = LiegeFaction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
     set f = FACTION_IRONFORGE
     set f.Team = TEAM_ALLIANCE
     set f.UndefeatedResearch = 'R05T'

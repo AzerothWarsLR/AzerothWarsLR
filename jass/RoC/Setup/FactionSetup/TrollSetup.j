@@ -1,12 +1,12 @@
 library TrollSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_TROLL
+    LiegeFaction FACTION_TROLL
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_TROLL = Faction.create("Zandalar", PLAYER_COLOR_PEACH, "|cffff8c6c","ReplaceableTextures\\CommandButtons\\BTNHeadHunterBerserker.blp")
+    set FACTION_TROLL = LiegeFaction.create("Zandalar", PLAYER_COLOR_PEACH, "|cffff8c6c","ReplaceableTextures\\CommandButtons\\BTNHeadHunterBerserker.blp")
     set f = FACTION_TROLL
     set f.Team = TEAM_HORDE
     set f.StartingGold = 150

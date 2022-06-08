@@ -11,6 +11,7 @@ library GameSetup initializer OnInit requires ObserverSetup, ArtifactSetup, Inst
     call QuestSetup_OnInit()
     call ResearchSetup_OnInit()
     call ObserverSetup_OnInit()
+    call MercSetup_OnInit()
   endfunction
 
 endlibrary

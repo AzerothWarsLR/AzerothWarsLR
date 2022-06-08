@@ -2,13 +2,13 @@
 library DruidsSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_DRUIDS
+    LiegeFaction FACTION_DRUIDS
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = Faction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+    set FACTION_DRUIDS = LiegeFaction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
     set f = FACTION_DRUIDS
     set f.Team = TEAM_NIGHT_ELVES
     set f.UndefeatedResearch = 'R06E'

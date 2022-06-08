@@ -1,12 +1,12 @@
 library WarsongSetup requires Faction, TeamSetup
   globals
-    Faction FACTION_WARSONG
+    LiegeFaction FACTION_WARSONG
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_WARSONG = Faction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+    set FACTION_WARSONG = LiegeFaction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
     set f = FACTION_WARSONG
     set f.Team = TEAM_HORDE
     set f.UndefeatedResearch = 'R05W'

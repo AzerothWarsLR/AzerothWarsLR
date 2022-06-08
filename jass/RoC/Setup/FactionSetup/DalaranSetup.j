@@ -1,13 +1,13 @@
 library DalaranSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_DALARAN
+    LiegeFaction FACTION_DALARAN
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DALARAN = Faction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp")
+    set FACTION_DALARAN = LiegeFaction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp")
     set f = FACTION_DALARAN 
     set f.UndefeatedResearch = 'R05N'
     set f.Team = TEAM_ALLIANCE

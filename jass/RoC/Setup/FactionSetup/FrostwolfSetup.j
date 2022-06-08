@@ -1,12 +1,12 @@
 library FrostwolfSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_FROSTWOLF
+    LiegeFaction FACTION_FROSTWOLF
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_FROSTWOLF = Faction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
+    set FACTION_FROSTWOLF = LiegeFaction.create("Frostwolf", PLAYER_COLOR_RED, "|c00ff0303","ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
     set f = FACTION_FROSTWOLF
     set f.Team = TEAM_HORDE
     set f.UndefeatedResearch = 'R05V'

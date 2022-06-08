@@ -1,12 +1,12 @@
 library NzothSetup requires Faction, TeamSetup
   globals
-    Faction FACTION_NZOTH
+    LiegeFaction FACTION_NZOTH
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_NZOTH = Faction.create("Nazjatar", PLAYER_COLOR_SNOW, "|cffffffff","ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp")
+    set FACTION_NZOTH = LiegeFaction.create("Nazjatar", PLAYER_COLOR_SNOW, "|cffffffff","ReplaceableTextures\\CommandButtons\\BTNNagaSummoner.blp")
     set f = FACTION_NZOTH
     set f.Team = TEAM_OLDGOD
     set f.StartingGold = 150

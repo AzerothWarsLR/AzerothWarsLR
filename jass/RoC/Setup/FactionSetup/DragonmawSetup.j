@@ -1,13 +1,13 @@
 library DragonmawSetup requires Faction, TeamSetup
 
   globals
-    Faction FACTION_DRAGONMAW
+    LiegeFaction FACTION_DRAGONMAW
   endglobals
 
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRAGONMAW = Faction.create("Dragonmaw", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNNecroMagus.blp")
+    set FACTION_DRAGONMAW = LiegeFaction.create("Dragonmaw", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNNecroMagus.blp")
     set f = FACTION_DRAGONMAW
     set f.Team = TEAM_HORDE
     set f.StartingGold = 150
