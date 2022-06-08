@@ -9,7 +9,7 @@ library MercFaction requires Faction
   struct MercFaction extends Faction
     private static thistype array byIndex
     private static integer count = 0
-    private Faction liege
+    private LiegeFaction liege
     private integer research
     private Legend legend
     private integer teleportItemType = 0
@@ -35,6 +35,7 @@ library MercFaction requires Faction
     endmethod
 
     method operator Liege= takes LiegeFaction liege returns nothing
+      call this.liege.RemoveMerc(this)
       set this.liege = liege
       call liege.AddMerc(this)
     endmethod
@@ -49,7 +50,7 @@ library MercFaction requires Faction
       endif
     endmethod
 
-    static method create takes string name, playercolor playCol, string prefixCol, string icon, Faction liege, Legend legend returns thistype
+    static method create takes string name, playercolor playCol, string prefixCol, string icon, Legend legend returns thistype
       local thistype this = thistype.allocate(name, playCol, prefixCol, icon)
       set this.Liege = liege
       set this.Team = this.Liege.Team

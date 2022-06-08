@@ -1,14 +1,23 @@
 library LiegeFaction requires Faction, Set
 
+  globals
+    private constant integer ATTACK_UPGRADE = 'Rhme'
+    private constant integer ARMOR_UPGRADE = 'Rhar'
+  endglobals
+
   struct LiegeFaction extends Faction
     private Set mercs
     private force mercBannedPlayers
 
-    //Apply object level changes to mercs too
     private method OnSetObjectLevel takes integer object, integer level returns nothing
+      call CopyObjectLevelToMercenaries(object, level)
+    endmethod
+
+    //Apply object level changes to mercs too
+    private method CopyObjectLevelToMercenaries takes integer object, integer level returns nothing
       local integer i = 0
       local Faction mercFaction
-      if not (object == 'Rhme' or object == 'Rhar') then //Probably shouldn't be hardcoded like this
+      if not (object == ATTACK_UPGRADE or object == ARMOR_UPGRADE) then //Probably shouldn't be hardcoded like this
         return
       endif
       loop
@@ -45,19 +54,22 @@ library LiegeFaction requires Faction, Set
       endloop
     endmethod
 
-    method AddMerc takes MercFaction merc returns nothing
-      if (mercs.contains(merc)) then
-        call BJDebugMsg("Attempted to add merc " + merc.Name + " to liege " + this.name + " but it is already present")
+    method AddMerc takes MercFaction mercToAdd returns nothing
+      if (mercs.contains(mercToAdd)) then
+        call BJDebugMsg("Attempted to add merc " + mercToAdd.Name + " to liege " + this.name + " but it is already present")
         return
       endif
-      if merc.Liege != this and merc.Liege != 0 then
-        call BJDebugMsg("Attempted to add merc " + merc.Name + " to liege " + this.name + " but it already has the liege " + merc.Liege.Name)
+      if mercToAdd.Liege != this and mercToAdd.Liege != 0 then
+        call BJDebugMsg("Attempted to add merc " + mercToAdd.Name + " to liege " + this.name + " but it already has the liege " + mercToAdd.Liege.Name)
         return
       endif
-      call mercs.add(merc)
-      if merc.Liege != this then
-        set merc.Liege = this
-      endif
+      call CopyObjectLevelToMercenaries(ARMOR_UPGRADE, GetObjectLevel(ARMOR_UPGRADE))
+      call CopyObjectLevelToMercenaries(ARMOR_UPGRADE, GetObjectLevel(ARMOR_UPGRADE))
+      call mercs.add(mercToAdd)
+    endmethod
+
+    method RemoveMerc takes MercFaction mercToRemove returns nothing
+      call this.mercs.remove(mercToRemove)
     endmethod
 
     method IsPlayerBannedFromBecomingMerc takes player whichPlayer returns boolean
