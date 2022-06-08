@@ -35,9 +35,16 @@ library MercFaction requires Faction
     endmethod
 
     method operator Liege= takes LiegeFaction liege returns nothing
-      call this.liege.RemoveMerc(this)
+      if this.liege != 0 then 
+        call this.liege.RemoveMerc(this)
+      endif
       set this.liege = liege
-      call liege.AddMerc(this)
+      if liege != 0 then
+        call liege.AddMerc(this)
+        set this.Team = this.Liege.Team
+      else
+        set this.Team = 0
+      endif
     endmethod
 
     private method Unally takes nothing returns nothing
@@ -52,8 +59,6 @@ library MercFaction requires Faction
 
     static method create takes string name, playercolor playCol, string prefixCol, string icon, Legend legend returns thistype
       local thistype this = thistype.allocate(name, playCol, prefixCol, icon)
-      set this.Liege = liege
-      set this.Team = this.Liege.Team
       set this.legend = legend
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

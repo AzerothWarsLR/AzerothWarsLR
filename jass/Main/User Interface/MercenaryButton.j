@@ -14,10 +14,13 @@
 
 
   private function MercLauncherClick takes nothing returns nothing
-    local integer pId = 0
-    set pId = GetPlayerId(GetTriggerPlayer())
+  
     call BlzFrameSetEnable(MercMenuLauncher, false)
     call BlzFrameSetEnable(MercMenuLauncher, true)
+
+    if GetLocalPlayer() == GetTriggerPlayer() then
+      call SetCameraPosition(GetRectCenterX(gg_rct_MercTavern), GetRectCenterY(gg_rct_MercTavern))
+    endif
   endfunction
 
   private function CreateMercLauncher takes nothing returns nothing

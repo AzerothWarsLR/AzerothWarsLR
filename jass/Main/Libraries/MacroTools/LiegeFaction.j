@@ -69,7 +69,7 @@ library LiegeFaction requires Faction, Set
     endmethod
 
     method RemoveMerc takes MercFaction mercToRemove returns nothing
-      call this.mercs.remove(mercToRemove)
+        call this.mercs.remove(mercToRemove)
     endmethod
 
     method IsPlayerBannedFromBecomingMerc takes player whichPlayer returns boolean
