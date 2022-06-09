@@ -22,6 +22,8 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
     endmethod
 
     private method OnFail takes nothing returns nothing
+      set FACTION_KULTIRAS.Team = TEAM_ALLIANCE
+      set FACTION_TROLL.Team = TEAM_HORDE
       call ReviveHero(LEGEND_PRIEST.Unit, -9160, -17544, true)
       call ReviveHero(LEGEND_RASTAKHAN.Unit, -9160, -17544, true)
       call LEGEND_PRIEST.Spawn(this.Holder.Player, -9160, -17544, 110)
@@ -42,6 +44,8 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
 
     private method OnComplete takes nothing returns nothing
         call AdjustPlayerStateBJ( 750, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+        set FACTION_KULTIRAS.Team = TEAM_ALLIANCE
+        set FACTION_TROLL.Team = TEAM_HORDE
     endmethod
 
     public static method create takes nothing returns thistype

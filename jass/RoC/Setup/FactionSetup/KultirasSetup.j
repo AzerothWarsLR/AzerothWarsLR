@@ -9,7 +9,7 @@ library KultirasSetup requires Faction, TeamSetup
     
     set FACTION_KULTIRAS = LiegeFaction.create("Kul'tiras", PLAYER_COLOR_EMERALD, "|cff00781e", "ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp")
     set f = FACTION_KULTIRAS
-    set f.Team = TEAM_ALLIANCE
+    set f.Team = TEAM_KULTIRAS
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

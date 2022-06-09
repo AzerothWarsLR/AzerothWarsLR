@@ -21,6 +21,8 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
       call RescueNeutralUnitsInRect(gg_rct_ShipAmbient, this.Holder.Player)
       call PauseUnitBJ( false, gg_unit_h05V_0260 )
       call SetUnitInvulnerable(gg_unit_h05V_0260, false)
+      set FACTION_KULTIRAS.Team = TEAM_ALLIANCE
+      set FACTION_TROLL.Team = TEAM_HORDE
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -46,6 +48,8 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
       call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call SetUnitInvulnerable(gg_unit_h05V_0260, false)
       call IssuePointOrderLocBJ( gg_unit_h05V_0260, "move", GetRectCenter(gg_rct_SouthshoreUnlock) )
+      set FACTION_KULTIRAS.Team = TEAM_ALLIANCE
+      set FACTION_TROLL.Team = TEAM_HORDE
     endmethod
 
     public static method create takes nothing returns thistype
