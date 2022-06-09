@@ -1,4 +1,4 @@
-library TestEdwin requires Test, EdwinCrusadeSetup
+library TestEdwin requires Test, EdwinSetup
 
   struct TestEdwin extends Test
     method Run takes nothing returns nothing

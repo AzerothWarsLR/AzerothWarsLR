@@ -2,8 +2,7 @@ library MercFaction requires Faction
 
   globals
     private constant real MERC_INCOME_PER_MINUTE = 60
-    private constant real MERC_STARTING_GOLD = 150
-    private constant integer MERC_STARTING_LUMBER = 150
+    private constant real MERC_STARTING_GOLD = 450
   endglobals
 
   struct MercFaction extends Faction
@@ -32,6 +31,10 @@ library MercFaction requires Faction
 
     method operator CanBeInvited takes nothing returns boolean
       return false
+    endmethod
+
+    stub method DetermineLiege takes nothing returns LiegeFaction
+      return FACTION_SCOURGE
     endmethod
 
     method operator Liege= takes LiegeFaction liege returns nothing
@@ -106,7 +109,6 @@ library MercFaction requires Faction
         call SelectUnit(this.legend.Unit, true)
       endif
       call whichPerson.addGold(MERC_STARTING_GOLD)
-      call AdjustPlayerStateBJ(MERC_STARTING_LUMBER, whichPerson.Player, PLAYER_STATE_RESOURCE_LUMBER)
     endmethod
 
     private static method OnResearch takes nothing returns nothing
