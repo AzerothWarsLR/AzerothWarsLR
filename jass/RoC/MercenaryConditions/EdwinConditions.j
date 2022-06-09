@@ -4,7 +4,6 @@ globals
   private constant integer EDWIN_RESEARCH = 'R076'
   private boolean ForsakenAreUnleashed
   private boolean ScarletCrusadeUnleashed
-  private boolean StormwindIsGone
 endglobals
 
 struct EdwinConditions
@@ -17,7 +16,7 @@ struct EdwinConditions
       if ScarletCrusadeUnleashed == true then
         call EnableEdwin()
       else 
-        if StormwindIsGone == true then
+        if FACTION_STORMWIND.ScoreStatus == SCORESTATUS_DEFEATED then
           call EnableEdwin()
         endif
       endif

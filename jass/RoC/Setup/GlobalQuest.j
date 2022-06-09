@@ -18,6 +18,9 @@
     QuestData SHIP_ARGUS
     QuestData THE_ASHBRINGER
     QuestData TOMB_OF_TYR
+
+    QuestData QUEST_UNDERCITY
+    QuestData QUEST_MONASTERY
   endglobals
 
 

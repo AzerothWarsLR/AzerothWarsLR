@@ -34,7 +34,7 @@ library MercFaction requires Faction
     endmethod
 
     stub method DetermineLiege takes nothing returns LiegeFaction
-      return liege
+      return 0
     endmethod
 
     method operator Liege= takes LiegeFaction liege returns nothing
