@@ -115,7 +115,7 @@ library QuestExiled requires QuestData, DraeneiSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Exile from Outland", "The Draenei need to escape Outland through the Exodar ship. We will need to power it up with a Divine Citadel first. The longer you hold out, the better the rewards will be", "ReplaceableTextures\\CommandButtons\\BTNUndeadAirBarge.blp")
-      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'h09W'), QuestItemTime.create(782)))
+      call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'h09W'), QuestItemTime.create(662)))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUESTRESEARCH_ID
