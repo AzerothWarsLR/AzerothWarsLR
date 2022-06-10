@@ -80,6 +80,12 @@ library MercFaction requires Faction
       local ControlPoint highestValueCP
 
       local LiegeFaction liegeCandidate = this.DetermineLiege()
+          
+          if UnitAlive(this.legend.Unit) == true then
+            call DisplayTextToPlayer(whichPerson.Player, 0, 0, "This Merc is already taken")
+            return
+          endif
+          
           if liegeCandidate != 0 then
             set this.Liege = liegeCandidate
           else
@@ -91,13 +97,14 @@ library MercFaction requires Faction
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You can't become your own Merc.")
         return
       endif
-      if whichPerson.Faction!= 0 and whichPerson.Faction.getType() == MercFaction.typeid then
+      if whichPerson.Faction!= 0 and whichPerson.Faction.getType() == MercFaction.typeid or whichPerson.Faction.getType() == MmmrrrggglllMercFaction.typeid or whichPerson.Faction.getType() == SnarlmaneMercFaction.typeid or whichPerson.Faction.getType() == EdwinMercFaction.typeid then
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You are already a Merc.")
         return
       endif
 
       set highestValueCP = ControlPoint.GetHighestValueCP(this.Liege.Person)
       if highestValueCP == 0 then
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "This faction has no control point.")
         return
       endif
       call whichPerson.Faction.Leave()

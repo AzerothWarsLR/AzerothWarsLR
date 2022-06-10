@@ -35,7 +35,7 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Open a portal to Outland, grants you the Draenei village near it, enables you to train Akama, Najentus and Draenei units, grants you 300 food limit and grants you 800 gold"
+      return "Open a portal to Outland, grants you the Draenei village near it, enables you to train Akama, Najentus and Draenei units, grants you 250 food limit and grants you 800 gold"
     endmethod
 
     private method OnComplete takes nothing returns nothing
