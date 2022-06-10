@@ -41,19 +41,13 @@ library LiegeFaction requires Faction, Set
     endmethod
 
     //Make mercs leave too
-    private method OnLeave takes nothing returns nothing
+    private method OnPreLeave takes nothing returns nothing
       local integer i = 0
-      local LiegeFaction liegeCandidate
-      local MercFaction loopMercenary
       loop
         exitwhen i == mercs.size
-        set loopMercenary = mercs[i]
-        set liegeCandidate = loopMercenary.DetermineLiege()
-        if liegeCandidate != 0 then
-          set loopMercenary.Liege = liegeCandidate
-        else
-          call loopMercenary.Leave()
-          set loopMercenary.Person.Faction = 0
+        if mercs[i] != 0 then
+          call MercFaction(mercs[i]).Leave()
+          set MercFaction(mercs[i]).Person.Faction = 0
         endif
         set i = i + 1
       endloop
