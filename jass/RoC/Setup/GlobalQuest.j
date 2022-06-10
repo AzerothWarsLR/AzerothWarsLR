@@ -21,6 +21,9 @@
 
     QuestData QUEST_UNDERCITY
     QuestData QUEST_MONASTERY
+
+    QuestData QUEST_NEXUS
+    QuestData QUEST_CIVILWAR
   endglobals
 
 

@@ -6,11 +6,12 @@ library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalG
     local QuestCrystalGolem crystalGolem = QuestCrystalGolem.create()
     local QuestFallenGuardian fallenGuardian = QuestFallenGuardian.create()
     local QuestSouthshore questSouthshore = QuestSouthshore.create()
+    set QUEST_NEXUS = QuestTheNexus.create()
 
-    call newGuardian.AddQuestItem(QuestItemDontCompleteQuest.create(theNexus))
-    call crystalGolem.AddQuestItem(QuestItemDontCompleteQuest.create(theNexus))
-    call fallenGuardian.AddQuestItem(QuestItemDontCompleteQuest.create(theNexus))
-    call theNexus.AddQuestItem(QuestItemDontCompleteQuest.create(newGuardian))
+    call newGuardian.AddQuestItem(QuestItemDontCompleteQuest.create(QUEST_NEXUS))
+    call crystalGolem.AddQuestItem(QuestItemDontCompleteQuest.create(QUEST_NEXUS))
+    call fallenGuardian.AddQuestItem(QuestItemDontCompleteQuest.create(QUEST_NEXUS))
+    call QUEST_NEXUS.AddQuestItem(QuestItemDontCompleteQuest.create(newGuardian))
 
     //Early duel
     call FACTION_DALARAN.AddQuest(questSouthshore)
@@ -25,7 +26,8 @@ library DalaranQuestSetup requires DalaranSetup, QuestBlueDragons, QuestCrystalG
     call FACTION_DALARAN.AddQuest(crystalGolem)
     call FACTION_DALARAN.AddQuest(fallenGuardian)
     call FACTION_DALARAN.AddQuest(newGuardian)
-    call FACTION_DALARAN.AddQuest(theNexus)
+    call FACTION_DALARAN.AddQuest(QUEST_NEXUS)
+
   endfunction
 
 endlibrary

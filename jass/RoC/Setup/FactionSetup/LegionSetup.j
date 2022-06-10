@@ -35,7 +35,7 @@ library LegionSetup requires Faction, TeamSetup
     call f.ModObjectLimit('n04P', UNLIMITED)   //Warlock
     call f.ModObjectLimit('ninc', UNLIMITED)   //Burning archer
     call f.ModObjectLimit('n04K', UNLIMITED)   //Succubus
-    call f.ModObjectLimit('n04J', UNLIMITED)   //Felstalker
+    call f.ModObjectLimit('o060', UNLIMITED)   //Annhihilan Guard
     call f.ModObjectLimit('ubot', 12) 	        //Undead Transport SHip
     call f.ModObjectLimit('udes', 12) 	        //Undead Frigate
     call f.ModObjectLimit('uubs', 6)          //Undead Battleship         

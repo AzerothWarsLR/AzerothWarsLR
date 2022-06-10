@@ -8,8 +8,8 @@ library ScourgeQuestSetup requires ScourgeSetup, QuestSapphiron QuestCorruptArth
     local QuestSapphiron questSapphiron = QuestSapphiron.create()
     local QuestCorruptArthas questCorruptArthas = QuestCorruptArthas.create()
     local QuestNaxxramas questNaxxramas = QuestNaxxramas.create() 
-    local QuestCivilWar questCivilWar = QuestCivilWar.create()
     local QuestLichKingArthas questLichKingArthas = QuestLichKingArthas.create()
+    set QUEST_CIVILWAR = QuestCivilWar.create()
 
     call questNaxxramas.AddQuestItem(QuestItemCompleteQuest.create(questKelthuzad))
 
@@ -23,7 +23,7 @@ library ScourgeQuestSetup requires ScourgeSetup, QuestSapphiron QuestCorruptArth
     call FACTION_SCOURGE.AddQuest(questCorruptArthas)
     call FACTION_SCOURGE.AddQuest(questKelthuzad)
     call FACTION_SCOURGE.AddQuest(questNaxxramas)
-    call FACTION_SCOURGE.AddQuest(questCivilWar)
+    call FACTION_SCOURGE.AddQuest(QUEST_CIVILWAR)
     //Misc
     call FACTION_SCOURGE.AddQuest(questLichKingArthas)
   endfunction
