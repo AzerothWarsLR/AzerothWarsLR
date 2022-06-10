@@ -1,13 +1,16 @@
 library EdwinSetup requires Faction
 
   globals
-    MercFaction MERC_EDWIN
+    EdwinMercFaction MERC_EDWIN
   endglobals
 
   public function OnInit takes nothing returns nothing
-    set MERC_EDWIN = MercFaction.create("Defias", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", LEGEND_EDWIN)
+    set MERC_EDWIN = EdwinMercFaction.create("Defias", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", LEGEND_EDWIN)
     set MERC_EDWIN.TeleportItemType = 'I00V'  
 
+    call MERC_EDWIN.ModObjectLimit('o05W', UNLIMITED)           //Axeman
+    call MERC_EDWIN.ModObjectLimit('o05X', UNLIMITED)           //Spearman
+    call MERC_EDWIN.ModObjectLimit('n0DC', UNLIMITED)           //Mage
     call MERC_EDWIN.ModObjectLimit('h0AI', 4)           //Assassin
 
 

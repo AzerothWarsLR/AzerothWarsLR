@@ -78,6 +78,15 @@ library MercFaction requires Faction
 
     private method SelectForPerson takes Person whichPerson returns nothing
       local ControlPoint highestValueCP
+
+      local LiegeFaction liegeCandidate = this.DetermineLiege()
+          if liegeCandidate != 0 then
+            set this.Liege = liegeCandidate
+          else
+            call DisplayTextToPlayer(whichPerson.Player, 0, 0,"There is no available Employer for this Mercenary.")
+            return
+          endif
+    
       if whichPerson.Faction == this.Liege then
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You can't become your own Merc.")
         return
@@ -86,10 +95,7 @@ library MercFaction requires Faction
         call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You are already a Merc.")
         return
       endif
-      if this.Liege.IsPlayerBannedFromBecomingMerc(whichPerson.Player) then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You're permanently banned from becoming a Merc of " + this.Liege.prefixCol + this.Liege.name + "|r.")
-        return
-      endif
+
       set highestValueCP = ControlPoint.GetHighestValueCP(this.Liege.Person)
       if highestValueCP == 0 then
         return

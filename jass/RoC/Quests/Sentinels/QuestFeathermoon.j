@@ -47,8 +47,7 @@ library QuestFeathermoon requires QuestData, ScarletSetup
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Feathermoon Stronghold", "Feathermoon Stronghold stood guard for ten thousand years, it is time to relieve the guards from their duty.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TYRANDE, gg_rct_FeathermoonUnlock, "Feathermoon Stronghold"))
-      call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01R')))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_FeathermoonUnlock, "Feathermoon", false))
       call this.AddQuestItem(QuestItemUpgrade.create('n06P', 'n06J'))
       call this.AddQuestItem(QuestItemExpire.create(1485))
       call this.AddQuestItem(QuestItemSelfExists.create())

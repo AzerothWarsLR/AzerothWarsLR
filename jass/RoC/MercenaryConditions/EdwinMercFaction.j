@@ -3,17 +3,25 @@ library EdwinMercFaction requires MercFaction
 struct EdwinMercFaction extends MercFaction
 
   method DetermineLiege takes nothing returns LiegeFaction
-    if FACTION_FORSKAEN.GetQuestProgress(QUEST_UNDERCITY) == QUEST_PROGRESS_COMPLETE then
+    if QUEST_UNDERCITY.Progress == QUEST_PROGRESS_COMPLETE then
        return FACTION_FORSAKEN
-    else
+    endif
     
-    if FACTION_SCARLET.GetQuestProgress(QUEST_MONASTERY) == QUEST_PROGRESS_COMPLETE then
+    if QUEST_MONASTERY.Progress == QUEST_PROGRESS_COMPLETE then
       return FACTION_SCARLET
-    else
+    endif
     
-    if FACTION_STORMWIND.ScoreStatus == SCORESTATUS_DEFEATED then
+    if FACTION_STORMWIND.ScoreStatus == SCORESTATUS_DEFEATED and FACTION_LORDAERON.ScoreStatus != SCORESTATUS_DEFEATED then
       return FACTION_LORDAERON
-    else
+    endif
+
+    if FACTION_LORDAERON.ScoreStatus == SCORESTATUS_DEFEATED and FACTION_DALARAN.ScoreStatus != SCORESTATUS_DEFEATED then
+      return FACTION_DALARAN
+    endif
+
+    if FACTION_DALARAN.ScoreStatus == SCORESTATUS_DEFEATED and FACTION_STORMWIND.ScoreStatus != SCORESTATUS_DEFEATED then
+      return FACTION_STORMWIND
+    endif
 
     return 0
   endmethod

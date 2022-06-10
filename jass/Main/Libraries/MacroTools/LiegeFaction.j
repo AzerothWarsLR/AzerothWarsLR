@@ -7,7 +7,6 @@ library LiegeFaction requires Faction, Set
 
   struct LiegeFaction extends Faction
     private Set mercs
-    private force mercBannedPlayers
 
     private method OnSetObjectLevel takes integer object, integer level returns nothing
       call CopyObjectLevelToMercenaries(object, level)
@@ -72,18 +71,10 @@ library LiegeFaction requires Faction, Set
         call this.mercs.remove(mercToRemove)
     endmethod
 
-    method IsPlayerBannedFromBecomingMerc takes player whichPlayer returns boolean
-      return IsPlayerInForce(whichPlayer, this.mercBannedPlayers)
-    endmethod
-
-    method BanPlayerFromBecomingMerc takes player whichPlayer returns nothing
-      call ForceAddPlayer(this.mercBannedPlayers, whichPlayer)
-    endmethod
 
     static method create takes string name, playercolor playCol, string prefixCol, string icon returns thistype
       local thistype this = thistype.allocate(name, playCol, prefixCol, icon)
       set this.mercs = Set.create(name +  "s mercenaries")
-      set this.mercBannedPlayers = CreateForce()
       return this
     endmethod
   endstruct
