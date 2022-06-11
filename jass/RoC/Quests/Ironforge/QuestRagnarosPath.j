@@ -51,7 +51,6 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
         call SetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MAX_MANA))
         call UnitAddItemSafe(LEGEND_RAGNAROS.Unit, ARTIFACT_SULFURAS.item)
       else
-        call BJDebugMsg("|cFFFF0000Error using AIDS:|r Trying to get the index of null unit.")
         call ReviveHero(LEGEND_RAGNAROS.Unit, GetRectCenterX(gg_rct_DarkIronPathUnlock), GetRectCenterY(gg_rct_DarkIronPathUnlock), true)
         call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
         set LEGEND_RAGNAROS.UnitType = 'U02K'
