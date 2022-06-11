@@ -34,14 +34,13 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
     endmethod  
 
     private method OnComplete takes nothing returns nothing
-      
       call this.Holder.Leave()
       call this.RemoveCreeps()
 
+      call this.Holder.CopyObjectLevels(FACTION_RAGNAROS)
       set this.Holder.Person.Faction = FACTION_RAGNAROS
       call RescueNeutralUnitsInRect(gg_rct_Shadowforge_City, FACTION_RAGNAROS.Player)
       call RescueNeutralUnitsInRect(gg_rct_DarkIronPathUnlock, FACTION_RAGNAROS.Player)
-
 
       if UnitAlive(gg_unit_N00D_1457) then
         call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
@@ -51,24 +50,20 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
         call SetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MAX_LIFE))
         call SetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MAX_MANA))
         call UnitAddItemSafe(LEGEND_RAGNAROS.Unit, ARTIFACT_SULFURAS.item)
-        else
-          call BJDebugMsg("|cFFFF0000Error using AIDS:|r Trying to get the index of null unit.")
-          call ReviveHero(LEGEND_RAGNAROS.Unit, GetRectCenterX(gg_rct_DarkIronPathUnlock), GetRectCenterY(gg_rct_DarkIronPathUnlock), true)
-          call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
-          set LEGEND_RAGNAROS.UnitType = 'U02K'
-          set LEGEND_RAGNAROS.PermaDies = true
-          set LEGEND_RAGNAROS.DeathMessage = "The Firelord has finally been defeated and sent back to the Elemental plane."
+      else
+        call BJDebugMsg("|cFFFF0000Error using AIDS:|r Trying to get the index of null unit.")
+        call ReviveHero(LEGEND_RAGNAROS.Unit, GetRectCenterX(gg_rct_DarkIronPathUnlock), GetRectCenterY(gg_rct_DarkIronPathUnlock), true)
+        call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
+        set LEGEND_RAGNAROS.UnitType = 'U02K'
+        set LEGEND_RAGNAROS.PermaDies = true
+        set LEGEND_RAGNAROS.DeathMessage = "The Firelord has finally been defeated and sent back to the Elemental plane."
       endif
-
 
       set this.Holder.Team = TEAM_OLDGOD
       call AdjustPlayerStateBJ( 2000, FACTION_RAGNAROS.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 2000, FACTION_RAGNAROS.Player, PLAYER_STATE_RESOURCE_LUMBER )
       call LEGEND_DAGRAN.Spawn(FACTION_RAGNAROS.Player, GetRectCenterX(gg_rct_DagranSpawn), GetRectCenterY(gg_rct_DagranSpawn), 270)
-
-
     endmethod
-
 
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("The Firelord Awakens", "The Dragonmaw clan is still roaming in the Twilight Highlands.", "ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp")

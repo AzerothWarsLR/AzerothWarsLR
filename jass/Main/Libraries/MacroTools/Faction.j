@@ -530,6 +530,16 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     call OnLeave()
     endmethod 
 
+    //Copy all object levels to another faction.
+    method CopyObjectLevels takes Faction otherFaction returns nothing
+      local integer i = 0
+      loop
+      exitwhen i == this.objectLevelCount
+        call otherFaction.SetObjectLevel(this.objectLevelList[i], this.objectLevels[this.objectLevelList[i]])
+        set i = i + 1
+      endloop
+    endmethod
+
     static method ByHandle takes player whichPlayer returns thistype
       return Person.ByHandle(whichPlayer).Faction
     endmethod
