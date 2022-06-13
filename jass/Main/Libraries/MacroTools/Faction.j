@@ -142,6 +142,10 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       return this.Person.ControlPointValue
     endmethod
 
+    stub method operator IsMercenary takes nothing returns boolean
+      return false
+    endmethod
+
     method operator ColoredName takes nothing returns string
       return this.prefixCol + this.name + "|r"
     endmethod
