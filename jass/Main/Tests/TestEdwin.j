@@ -2,11 +2,16 @@ library TestEdwin requires Test, EdwinSetup
 
   struct TestEdwin extends Test
     method Run takes nothing returns nothing
-      local Person druidsPerson = FACTION_DRUIDS.Person
-      set MERC_EDWIN.Liege = FACTION_LORDAERON
-      set druidsPerson.Faction = MERC_EDWIN
-      call this.Assert(druidsPerson.Faction == MERC_EDWIN, "Expected Druids player to change to the Edwin faction")
-      call this.Assert(MERC_EDWIN.Team == FACTION_LORDAERON.Team, "Expected Edwin to be on the same team as Lorderon")
+      local integer i
+          call BJDebugMsg("Test Edwin")
+          set i = 0
+          loop
+          exitwhen i > MAX_PLAYERS
+              call SetPlayerTechResearched(Player(i), MERC_EDWIN.AbsenceResearch, 1)
+              call SetPlayerTechResearched(Player(i), MERC_MMMRRRGGGLLL.AbsenceResearch, 1)
+              call SetPlayerTechResearched(Player(i), MERC_SNARLMANE.AbsenceResearch, 1)
+            set i = i + 1
+          endloop
     endmethod
 
     private static method onInit takes nothing returns nothing 
