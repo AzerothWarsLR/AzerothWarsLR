@@ -9,7 +9,7 @@ library LordaeronSetup requires Faction, TeamSetup, UnitTypesLordaeron
     set FACTION_LORDAERON = LiegeFaction.create("Lordaeron", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNArthas.blp")
     set f = FACTION_LORDAERON
     set f.Team = TEAM_ALLIANCE
-    set f.PresentResearch = 'R05M'
+    set f.PresenceResearch = 'R05M'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

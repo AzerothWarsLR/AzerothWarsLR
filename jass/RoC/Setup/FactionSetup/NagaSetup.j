@@ -9,7 +9,7 @@ library NagaSetup requires Faction, TeamSetup
     set FACTION_NAGA = LiegeFaction.create("Illidan", PLAYER_COLOR_VIOLET, "|cffff00ff","ReplaceableTextures\\CommandButtons\\BTNEvilIllidan.blp")
     set f = FACTION_NAGA
     set f.Team = TEAM_NIGHT_ELVES
-    set f.PresentResearch = 'R02L'
+    set f.PresenceResearch = 'R02L'
     set f.StartingGold = 0
     set f.StartingLumber = 2500
 

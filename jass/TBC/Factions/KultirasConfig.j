@@ -10,7 +10,7 @@ library KultirasConfig initializer OnInit requires Faction, TeamSetup
     set FACTION_KULTIRAS = LiegeFaction.create("Kul'tiras", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNProudmoore.blp", 2)
     set f = FACTION_KULTIRAS 
     set f.VictoryMusic = "HumanVictory"
-    set f.PresentResearch = 'R05N'
+    set f.PresenceResearch = 'R05N'
     set f.Team = TEAM_WESTALLIANCE
   endfunction
     

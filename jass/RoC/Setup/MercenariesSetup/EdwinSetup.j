@@ -6,7 +6,8 @@ library EdwinSetup requires Faction
 
   public function OnInit takes nothing returns nothing
     set MERC_EDWIN = EdwinMercFaction.create("Defias", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", LEGEND_EDWIN)
-    set MERC_EDWIN.TeleportItemType = 'I00V'  
+    set MERC_EDWIN.TeleportItemType = 'I00V' 
+    set MERC_EDWIN.AbsenceResearch = 'R02C'
 
     call MERC_EDWIN.ModObjectLimit('o05W', UNLIMITED)           //Axeman
     call MERC_EDWIN.ModObjectLimit('o05X', UNLIMITED)           //Spearman

@@ -11,7 +11,7 @@ library DraeneiSetup requires Faction, TeamSetup
     set FACTION_DRAENEI = LiegeFaction.create("The Exodar", PLAYER_COLOR_NAVY, "|cff000080","ReplaceableTextures\\CommandButtons\\BTNBOSSVelen.blp")
     set f = FACTION_DRAENEI
     set f.Team = TEAM_DRAENEI
-    set f.PresentResearch = 'R06E'
+    set f.PresenceResearch = 'R06E'
     set f.StartingGold = 200
     set f.StartingLumber = 500
 

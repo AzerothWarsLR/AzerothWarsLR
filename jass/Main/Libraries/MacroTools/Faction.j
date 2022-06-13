@@ -31,8 +31,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     readonly integer xp = 0 //Stored by DistributeUnits and given out again by DistributeResources
     private integer storedExperience //Actual hero experience being held by this Faction outside of its heroes
     
-    private integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is absent
-    private integer presentResearch = 0 //This upgrade is researched for all players only if this Faction is present
+    readonly integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is absent
+    readonly integer presenceResearch = 0 //This upgrade is researched for all players only if this Faction is present
     
     readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
     readonly integer array objectList[100] //An index for objectLimits
@@ -93,17 +93,17 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     method operator ScoreStatus= takes integer value returns nothing
       local integer i = 0
-      //Change absent/present researches
-      if value == SCORESTATUS_Absence then
+      //Change absence/presence researches
+      if value == SCORESTATUS_DEFEATED then
         loop
           exitwhen i == MAX_PLAYERS
           call SetPlayerTechResearched(Player(i), this.absenceResearch, 1)
-          call SetPlayerTechResearched(Player(i), this.presentResearch, 0)
+          call SetPlayerTechResearched(Player(i), this.presenceResearch, 0)
           set i = i + 1
         endloop
       endif
       //Remove player from game if necessary
-      if value == SCORESTATUS_Absence and this.Player != null then
+      if value == SCORESTATUS_DEFEATED and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
         call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
         call this.Leave()
@@ -355,21 +355,21 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       endif
     endmethod
 
-    method operator PresentResearch takes nothing returns integer
-      return this.presentResearch
+    method operator PresenceResearch takes nothing returns integer
+      return this.presenceResearch
     endmethod
 
-    method operator PresentResearch= takes integer research returns nothing
+    method operator PresenceResearch= takes integer research returns nothing
       local integer i = 0
-      if this.presentResearch == 0 then
-        set this.presentResearch = research
+      if this.presenceResearch == 0 then
+        set this.presenceResearch = research
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.presentResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.presenceResearch, 1)
           set i = i + 1
         endloop                
       else
-        call BJDebugMsg("ERROR: attempted to set present research for faction " + this.name + " but one is already set")
+        call BJDebugMsg("ERROR: attempted to set presence research for faction " + this.name + " but one is already set")
       endif
     endmethod
 

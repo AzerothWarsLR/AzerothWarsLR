@@ -12,7 +12,7 @@ library DruidsSetup initializer OnInit requires Faction, TeamSetup
     set f = FACTION_DRUIDS
     set f.VictoryMusic = "NightElfVictory"
     set f.Team = TEAM_WESTALLIANCE
-    set f.PresentResearch = 'R06E'
+    set f.PresenceResearch = 'R06E'
 
     call f.ModObjectLimit('etol', UNLIMITED)   //Tree of Life  
     call f.ModObjectLimit('etoa', UNLIMITED)   //Tree of Ages
