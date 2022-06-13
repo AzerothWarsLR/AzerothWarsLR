@@ -39,6 +39,14 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
 
       //Unapply old faction
       if this.faction != 0 then   
+        //Toggle absence and presence researches for this faction
+        set i = 0
+        loop
+        exitwhen i > MAX_PLAYERS
+          call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 0)
+          set i = i + 1
+        endloop
         set this.faction = 0 
         if this.prevFaction != 0 then
           set this.prevFaction.Person = 0 //Referential integrity
@@ -54,6 +62,18 @@ library Persons initializer OnInit requires Math, GeneralHelpers, Event, Filters
           if newFaction.Person != this then
             set newFaction.Person = this 
           endif
+           //Toggle absence and presence researches for this faction
+          set i = 0
+          loop
+          exitwhen i > MAX_PLAYERS
+            if this.faction.absenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.absenceResearch, 0)
+            endif
+            if this.faction.presenceResearch != 0 then
+              call SetPlayerTechResearched(Player(i), this.faction.presenceResearch, 1)
+            endif
+            set i = i + 1
+          endloop
         else
           call BJDebugMsg("Error: attempted to set Person " + GetPlayerName(this.p) + " to already occupied faction with name " + newFaction.name)
         endif
