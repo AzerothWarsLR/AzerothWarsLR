@@ -9,7 +9,7 @@ library WarsongSetup requires Faction, TeamSetup
     set FACTION_WARSONG = LiegeFaction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
     set f = FACTION_WARSONG
     set f.Team = TEAM_HORDE
-    set f.UndefeatedResearch = 'R05W'
+    set f.PresentResearch = 'R05W'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

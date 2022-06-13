@@ -31,8 +31,8 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     readonly integer xp = 0 //Stored by DistributeUnits and given out again by DistributeResources
     private integer storedExperience //Actual hero experience being held by this Faction outside of its heroes
     
-    private integer defeatedResearch = 0  //This upgrade is researched for all players only if this Faction slot is defeated
-    private integer undefeatedResearch = 0 //This upgrade is researched for all players only if this Faction is undefeated
+    private integer absenceResearch = 0  //This upgrade is researched for all players only if this Faction slot is absent
+    private integer presentResearch = 0 //This upgrade is researched for all players only if this Faction is present
     
     readonly Table objectLimits //This is how many units, researches or structures of a given type this faction can build
     readonly integer array objectList[100] //An index for objectLimits
@@ -93,17 +93,17 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     method operator ScoreStatus= takes integer value returns nothing
       local integer i = 0
-      //Change defeated/undefeated researches
-      if value == SCORESTATUS_DEFEATED then
+      //Change absent/present researches
+      if value == SCORESTATUS_Absence then
         loop
           exitwhen i == MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.defeatedResearch, 1)
-          call SetPlayerTechResearched(Player(i), this.undefeatedResearch, 0)
+          call SetPlayerTechResearched(Player(i), this.absenceResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.presentResearch, 0)
           set i = i + 1
         endloop
       endif
       //Remove player from game if necessary
-      if value == SCORESTATUS_DEFEATED and this.Player != null then
+      if value == SCORESTATUS_Absence and this.Player != null then
         call RemovePlayer(this.Player, PLAYER_GAME_RESULT_DEFEAT)
         call SetPlayerState(this.Player, PLAYER_STATE_OBSERVER, 1)
         call this.Leave()
@@ -355,39 +355,39 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       endif
     endmethod
 
-    method operator UndefeatedResearch takes nothing returns integer
-      return this.undefeatedResearch
+    method operator PresentResearch takes nothing returns integer
+      return this.presentResearch
     endmethod
 
-    method operator UndefeatedResearch= takes integer research returns nothing
+    method operator PresentResearch= takes integer research returns nothing
       local integer i = 0
-      if this.undefeatedResearch == 0 then
-        set this.undefeatedResearch = research
+      if this.presentResearch == 0 then
+        set this.presentResearch = research
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.undefeatedResearch, 1)
+          call SetPlayerTechResearched(Player(i), this.presentResearch, 1)
           set i = i + 1
         endloop                
       else
-        call BJDebugMsg("ERROR: attempted to set undefeated research for faction " + this.name + " but one is already set")
+        call BJDebugMsg("ERROR: attempted to set present research for faction " + this.name + " but one is already set")
       endif
     endmethod
 
-    method operator DefeatedResearch takes nothing returns integer
-      return this.defeatedResearch
+    method operator AbsenceResearch takes nothing returns integer
+      return this.AbsenceResearch
     endmethod
 
-    method operator DefeatedResearch= takes integer research returns nothing
+    method operator AbsenceResearch= takes integer research returns nothing
       local integer i = 0
-      if this.defeatedResearch == 0 then
-        set this.defeatedResearch = research
+      if this.AbsenceResearch == 0 then
+        set this.AbsenceResearch = research
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.defeatedResearch, 0)
+          call SetPlayerTechResearched(Player(i), this.AbsenceResearch, 0)
           set i = i + 1
         endloop
       else
-        call BJDebugMsg("ERROR: attempted to set defeated research for faction " + this.name + " but one is already set")
+        call BJDebugMsg("ERROR: attempted to set Absence research for faction " + this.name + " but one is already set")
       endif
     endmethod                   
 
@@ -519,7 +519,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
 
     endmethod
 
-    //This should get used any time a player exits the game without being defeated; IE they left, went afk, became an observer, or triggered an event that causes this
+    //This should get used any time a player exits the game without being Absence; IE they left, went afk, became an observer, or triggered an event that causes this
     method Leave takes nothing returns nothing
       call OnPreLeave()
     if team.PlayerCount > 1 and team.ScoreStatus == SCORESTATUS_NORMAL and GetGameTime() > 60 then

@@ -10,7 +10,7 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
     set FACTION_STORMWIND = LiegeFaction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
     set f = FACTION_STORMWIND
     set f.Team = TEAM_ALLIANCE
-    set f.UndefeatedResearch = 'R060'
+    set f.PresentResearch = 'R060'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

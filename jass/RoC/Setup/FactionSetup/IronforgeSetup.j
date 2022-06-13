@@ -10,7 +10,7 @@ library IronforgeSetup requires Faction, TeamSetup
     set FACTION_IRONFORGE = LiegeFaction.create("Ironforge", PLAYER_COLOR_YELLOW, "|C00FFFC01","ReplaceableTextures\\CommandButtons\\BTNHeroMountainKing.blp")
     set f = FACTION_IRONFORGE
     set f.Team = TEAM_ALLIANCE
-    set f.UndefeatedResearch = 'R05T'
+    set f.PresentResearch = 'R05T'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

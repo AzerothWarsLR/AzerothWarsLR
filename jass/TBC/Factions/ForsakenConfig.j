@@ -10,7 +10,7 @@ library ForsakenConfig initializer OnInit requires Faction, TeamSetup
     set FACTION_FORSAKEN = LiegeFaction.create("Forsaken", PLAYER_COLOR_PEACH, "|c00F8A48B","ReplaceableTextures\\CommandButtons\\BTNBansheeRanger.blp", 2)
     set f = FACTION_FORSAKEN 
     set f.VictoryMusic = "HumanVictory"
-    set f.UndefeatedResearch = 'R05N'
+    set f.PresentResearch = 'R05N'
     set f.Team = TEAM_FORSAKEN
   endfunction
     

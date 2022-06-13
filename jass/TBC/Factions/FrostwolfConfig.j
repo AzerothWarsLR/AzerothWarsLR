@@ -10,7 +10,7 @@ library FrostwolfSetup initializer OnInit requires Faction, TeamSetup
     set f = FACTION_FROSTWOLF
     set f.VictoryMusic = "OrcVictory"
     set f.Team = TEAM_WESTALLIANCE
-    set f.UndefeatedResearch = 'R05V'
+    set f.PresentResearch = 'R05V'
 
     call f.ModObjectLimit('ogre', UNLIMITED)   //Great Hall
     call f.ModObjectLimit('ostr', UNLIMITED)   //Stronghold

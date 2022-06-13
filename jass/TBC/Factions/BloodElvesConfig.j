@@ -10,7 +10,7 @@ library BloodElvesConfig initializer OnInit requires Faction, TeamSetup
     set FACTION_BLOODELVES = LiegeFaction.create("Blood Elves", PLAYER_COLOR_CYAN, "|C0000FFFF","ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp", 2)
     set f = FACTION_BLOODELVES 
     set f.VictoryMusic = "HumanVictory"
-    set f.UndefeatedResearch = 'R05N'
+    set f.PresentResearch = 'R05N'
     set f.Team = TEAM_ILLIDARI
   endfunction
     

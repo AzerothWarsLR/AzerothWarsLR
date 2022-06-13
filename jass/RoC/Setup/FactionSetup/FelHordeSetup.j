@@ -10,7 +10,7 @@ library FelHordeSetup requires Faction, TeamSetup
     set FACTION_FEL_HORDE = LiegeFaction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
     set f = FACTION_FEL_HORDE
     set f.Team = TEAM_LEGION
-    set f.UndefeatedResearch = 'R05L'
+    set f.PresentResearch = 'R05L'
     set f.StartingGold = 300
     set f.StartingLumber = 600
 

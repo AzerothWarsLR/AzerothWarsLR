@@ -10,7 +10,7 @@ library ScarletCrusadeConfig initializer OnInit requires Faction, TeamSetup
     set FACTION_SCARLETCRUSADE = LiegeFaction.create("Scarlet Crusade", PLAYER_COLOR_MAROON, "|c009B0000","ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp", 2)
     set f = FACTION_SCARLETCRUSADE 
     set f.VictoryMusic = "HumanVictory"
-    set f.UndefeatedResearch = 'R05N'
+    set f.PresentResearch = 'R05N'
     set f.Team = TEAM_SCARLETCRUSADE
   endfunction
     

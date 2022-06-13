@@ -10,7 +10,7 @@ library SentinelsSetup requires Faction, TeamSetup
     set FACTION_SENTINELS = LiegeFaction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp")
     set f = FACTION_SENTINELS
     set f.Team = TEAM_NIGHT_ELVES
-    set f.UndefeatedResearch = 'R05Y'
+    set f.PresentResearch = 'R05Y'
     set f.StartingGold = 150
     set f.StartingLumber = 500
 

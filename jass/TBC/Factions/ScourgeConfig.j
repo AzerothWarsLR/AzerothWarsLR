@@ -11,7 +11,7 @@ library ScourgeSetup initializer OnInit requires Faction, TeamSetup, UnitTypesSc
     set f = FACTION_SCOURGE
     set f.VictoryMusic = "UndeadVictory"
     set f.Team = TEAM_SCOURGE
-    set f.UndefeatedResearch = 'R05K'
+    set f.PresentResearch = 'R05K'
 
     //Buildings
     call f.ModObjectLimit('unpl', UNLIMITED)   //Necropolis   

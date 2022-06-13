@@ -9,7 +9,7 @@ library DalaranSetup requires Faction, TeamSetup
     
     set FACTION_DALARAN = LiegeFaction.create("Dalaran", PLAYER_COLOR_PINK, "|c00e55bb0","ReplaceableTextures\\CommandButtons\\BTNJaina.blp")
     set f = FACTION_DALARAN 
-    set f.UndefeatedResearch = 'R05N'
+    set f.PresentResearch = 'R05N'
     set f.Team = TEAM_ALLIANCE
     set f.StartingGold = 150
     set f.StartingLumber = 500
