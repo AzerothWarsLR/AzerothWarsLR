@@ -55,6 +55,7 @@ library FelHordeSetup requires Faction, TeamSetup
     call f.ModObjectLimit('N03D', 1)           //Kargath
     call f.ModObjectLimit('Nbbc', 1)           //Rend
     call f.ModObjectLimit('U02D', 1)           //Teron
+    call f.ModObjectLimit('E01G', 1)           //Gruul
 
     call f.ModObjectLimit('Robf', UNLIMITED)   //Demonic Flux
     call f.ModObjectLimit('R066', UNLIMITED)   //Burning Oil
