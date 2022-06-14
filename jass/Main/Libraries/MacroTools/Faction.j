@@ -374,22 +374,30 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     endmethod
 
     method operator AbsenceResearch takes nothing returns integer
-      return this.AbsenceResearch
+      return this.absenceResearch
     endmethod
 
     method operator AbsenceResearch= takes integer research returns nothing
       local integer i = 0
+      local integer researchLevel
       if this.AbsenceResearch == 0 then
-        set this.AbsenceResearch = research
+        set this.absenceResearch = research
+
+        if this.Player == null then
+          set researchLevel = 1
+        else
+          set researchLevel = 0
+        endif
+
         loop
         exitwhen i > MAX_PLAYERS
-          call SetPlayerTechResearched(Player(i), this.AbsenceResearch, 0)
+          call SetPlayerTechResearched(Player(i), this.AbsenceResearch, researchLevel)
           set i = i + 1
         endloop
       else
         call BJDebugMsg("ERROR: attempted to set Absence research for faction " + this.name + " but one is already set")
       endif
-    endmethod                   
+    endmethod                 
 
     //Any time the player loses the game. E.g. Frozen Throne loss, Kil'jaeden loss
     method obliterate takes nothing returns nothing
