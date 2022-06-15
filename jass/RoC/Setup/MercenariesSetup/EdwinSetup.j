@@ -14,6 +14,8 @@ library EdwinSetup requires Faction
     call MERC_EDWIN.ModObjectLimit('n0DC', UNLIMITED)           //Mage
     call MERC_EDWIN.ModObjectLimit('h0AI', 4)           //Assassin
 
+    call MERC_EDWIN.ModObjectLimit('E01H', UNLIMITED)           //Edwin
+
 
     call MERC_EDWIN.ModObjectLimit('Rhme', 0)   //Attack Upgrade
     call MERC_EDWIN.ModObjectLimit('Rhar', 0)   //defense Upgrade

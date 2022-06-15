@@ -14,6 +14,8 @@ library MmmrrrggglllSetup requires Faction
     call MERC_MMMRRRGGGLLL.ModObjectLimit('n0DD', UNLIMITED)           //Warden
     call MERC_MMMRRRGGGLLL.ModObjectLimit('n0DE', 4)           //Overseer
 
+    call MERC_SNARLMANE.ModObjectLimit('U02M', UNLIMITED)           //Mmmrrrggglll
+
 
     call MERC_MMMRRRGGGLLL.ModObjectLimit('Rhme', 0)   //Attack Upgrade
     call MERC_MMMRRRGGGLLL.ModObjectLimit('Rhar', 0)   //defense Upgrade

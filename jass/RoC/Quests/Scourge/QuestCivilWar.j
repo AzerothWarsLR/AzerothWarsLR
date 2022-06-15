@@ -17,6 +17,7 @@ library QuestCivilWar requires QuestData, ScourgeSetup
     set this.Holder.Team = TEAM_SCOURGE
     call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
     call AdjustPlayerStateBJ( 2000, FACTION_LEGION.Player, PLAYER_STATE_RESOURCE_GOLD )
+    call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
     endmethod
 
     public static method create takes nothing returns thistype

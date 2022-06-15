@@ -3,7 +3,7 @@ library MercsCantHaveControlPoints initializer OnInit requires MercFaction, Cont
   private function Capture takes nothing returns nothing
     local Faction triggerFaction = Person.ByHandle(GetTriggerControlPoint().owner).Faction
     local ControlPoint triggerControlPoint = GetTriggerControlPoint()
-    if triggerFaction.getType() == MercFaction.typeid then
+    if triggerFaction.getType() == MercFaction.typeid or triggerFaction.getType() == MmmrrrggglllMercFaction.typeid or triggerFaction.getType() == SnarlmaneMercFaction.typeid or triggerFaction.getType() == EdwinMercFaction.typeid then
       call SetUnitOwner(triggerControlPoint.u, MercFaction(triggerFaction).Liege.Player, true)
     endif
   endfunction

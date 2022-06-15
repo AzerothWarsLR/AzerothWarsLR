@@ -14,6 +14,8 @@ library SnarlmaneSetup requires Faction
     call MERC_SNARLMANE.ModObjectLimit('o05Z', UNLIMITED)           //Warden
     call MERC_SNARLMANE.ModObjectLimit('h0AJ', 4)           //Overseer
 
+    call MERC_SNARLMANE.ModObjectLimit('O05S', UNLIMITED)           //Snarlmane
+
 
     call MERC_SNARLMANE.ModObjectLimit('Rhme', 0)   //Attack Upgrade
     call MERC_SNARLMANE.ModObjectLimit('Rhar', 0)   //defense Upgrade
