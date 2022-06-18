@@ -50,6 +50,9 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
         call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
         call LEGEND_KAEL.Spawn(this.Holder.Player, -11410, 21975, 110)
         call UnitAddItem(LEGEND_KAEL.Unit, CreateItem('I00M', GetUnitX(LEGEND_KAEL.Unit), GetUnitY(LEGEND_KAEL.Unit)))
+        call UnitAddItem(LEGEND_KAEL.Unit, CreateItem('I000', GetUnitX(LEGEND_KAEL.Unit), GetUnitY(LEGEND_KAEL.Unit)))
+        call AdjustPlayerStateBJ( 500, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
+        call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
         if GetLocalPlayer() == this.Holder.Player then
           call SetCameraPosition(GetRectCenterX(gg_rct_BloodElfSecondChanceSpawn), GetRectCenterY(gg_rct_BloodElfSecondChanceSpawn))
         endif

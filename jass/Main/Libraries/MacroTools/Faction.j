@@ -538,6 +538,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
       call obliterate()
     endif
     set thistype.triggerFaction = this
+    set this.ScoreStatus = SCORESTATUS_DEFEATED
     call OnFactionGameLeave.fire()
     call OnLeave()
     endmethod 
