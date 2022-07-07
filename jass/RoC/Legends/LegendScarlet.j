@@ -21,6 +21,10 @@ library LegendScarlet initializer OnInit requires Legend
     set LEGEND_SAIDEN.UnitType = 'H08G'
     set LEGEND_SAIDEN.StartingXP = 1000
 
+    set LEGEND_TIRION = Legend.create()
+    set LEGEND_TIRION.UnitType = 'H09Z'
+    set LEGEND_TIRION.StartingXP = 2800
+
 endfunction
 
 endlibrary
