@@ -6,11 +6,11 @@ library QuestTownWatch requires QuestData
 
   struct QuestTownWatch extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "邪教徒们被消灭了，我们的城镇现在安全了"
+      return "The Cultists have been eliminated. Our towns are now safe."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得4000木材和500黄金"
+      return "Gain 4000 lumber and 500 gold"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -22,7 +22,7 @@ library QuestTownWatch requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("诅咒教派", "异端邪教徒们正在洛丹伦的村庄中传播致命的瘟疫，我们必须阻止他们，防止腐化，杀死所有的邪教分子", "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
+      local thistype this = thistype.allocate("The Cult of the Damned", "Unholy Cultists are spreading a deadly plague among the villages of Lordaeron. We must stop them, prevent the corruption, and kill all the Cultists.", "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
       call this.AddQuestItem(QuestItemResearch.create('Rhse', 'h083'))
       call this.AddQuestItem(QuestItemBuild.create('h084', 8))
       call this.AddQuestItem(QuestItemKillXUnit.create('u01U', 3))

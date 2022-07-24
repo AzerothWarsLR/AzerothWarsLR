@@ -8,11 +8,11 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "拉格纳罗斯终于控制了黑石并加入了古神对世界的征服"
+      return "The Ragnaros has finally taken over Blackrock and join the Old Gods in their conquest of Azeroth"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "将你的势力改为拉格纳罗斯并加入古神"
+      return "Change your faction to the Ragnaros Fireminions and join the Old Gods"
     endmethod  
 
     private method RemoveCreeps takes nothing returns nothing
@@ -46,7 +46,7 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
         call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
         set LEGEND_RAGNAROS.UnitType = 'U02K'
         set LEGEND_RAGNAROS.PermaDies = true
-        set LEGEND_RAGNAROS.DeathMessage = "炎魔之王终于被击败并被送回元素界"
+        set LEGEND_RAGNAROS.DeathMessage = "The Firelord has finally been defeated and sent back to the Elemental plane."
         call SetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_LIFE, GetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MAX_LIFE))
         call SetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MANA, GetUnitState(LEGEND_RAGNAROS.Unit, UNIT_STATE_MAX_MANA))
         call UnitAddItemSafe(LEGEND_RAGNAROS.Unit, ARTIFACT_SULFURAS.item)
@@ -55,7 +55,7 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
         call UnitRescue(gg_unit_N00D_1457, FACTION_RAGNAROS.Player)
         set LEGEND_RAGNAROS.UnitType = 'U02K'
         set LEGEND_RAGNAROS.PermaDies = true
-        set LEGEND_RAGNAROS.DeathMessage = "炎魔之王终于被击败并被送回元素界"
+        set LEGEND_RAGNAROS.DeathMessage = "The Firelord has finally been defeated and sent back to the Elemental plane."
       endif
 
       set this.Holder.Team = TEAM_OLDGOD
@@ -65,7 +65,7 @@ library QuestRagnarosPath requires Persons, IronforgeSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("唤醒炎魔之王", "龙吼氏族仍遍布在暮光高地中", "ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp")
+      local thistype this = thistype.allocate("The Firelord Awakens", "The Dragonmaw clan is still roaming in the Twilight Highlands.", "ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp")
       call this.AddQuestItem(QuestItemResearch.create('R08T', 'h048'))
       return this
     endmethod

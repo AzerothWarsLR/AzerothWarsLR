@@ -34,10 +34,10 @@ library QuestItemKillUnit requires QuestItemData, Event, Environment
 
     private method InitializeDescription takes nothing returns nothing
       if IsUnitType(this.target, UNIT_TYPE_STRUCTURE) or IsUnitType(this.target, UNIT_TYPE_ANCIENT) then
-        set this.Description = "摧毁" + GetUnitName(this.target)
+        set this.Description = "Destroy " + GetUnitName(this.target)
         return
       endif
-      set this.Description = "杀掉" + GetUnitName(this.target)
+      set this.Description = "Kill " + GetUnitName(this.target)
     endmethod
 
     private static method OnAnyUnitDeath takes nothing returns nothing

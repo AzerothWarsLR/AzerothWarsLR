@@ -18,7 +18,7 @@ library CheatLevel initializer OnInit requires Persons, TestSafety
     
     if S2I(parameter) > 0 then
       call ForGroupBJ( GetUnitsSelectedAll(p), function SetLevel )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 将选中英雄的等级设为" + parameter + "。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Setting hero level of selected units to " + parameter + ".")
     endif    
   endfunction
 

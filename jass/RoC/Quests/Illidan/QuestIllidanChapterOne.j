@@ -6,11 +6,11 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     private QuestData questToDiscover
 
     private method operator CompletionPopup takes nothing returns string
-      return "伊利丹已经知道古尔丹之颅就藏在达拉然之中"
+      return "Illidan has learned of the existence of the Skull of Gul'dan, hidden in Dalaran"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "第二章 - 古尔丹之颅"
+      return "Chapter Two - The Skull of Gul'dan"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -18,10 +18,10 @@ library QuestIllidanChapterOne requires QuestData, QuestItemLegendReachRect, Que
     endmethod
 
     public static method create takes QuestData questToDiscover returns thistype
-      local thistype this = thistype.allocate("第一章：图书馆的秘密", "为了获得他渴望的力量，伊利丹必须搜刮隐秘的大图书馆内的秘密", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_Dire_Maul_Entrance, "菲拉斯"))
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "大图书馆"))
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "伊莫塔尔的巢穴"))
+      local thistype this = thistype.allocate("Chapter One: The Aetheneum Secrets", "In order to gain the power he craves, Illidan must plunder the hidden Aetheneum library for its secrets.", "ReplaceableTextures\\CommandButtons\\BTNDoomlord.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_Dire_Maul_Entrance, "Feralas"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_AethneumLibraryEntrance, "the Aetheneum Library"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_ImmolFight, "Immol'thar's Lair"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_IMMOLTHAR))
       set this.questToDiscover = questToDiscover
       return this

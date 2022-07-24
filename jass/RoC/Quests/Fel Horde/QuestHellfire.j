@@ -6,11 +6,11 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   struct QuestHellfire extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "地狱火堡垒已经被征服，其军队现在可以自由协助" + this.Holder.Team.Name + "。"
+      return "Hellfire Citadel has been subjugated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得地狱火堡垒中所有单位和建筑并允许在祭坛内召唤卡加斯"
+      return "Control of all units in Hellfire Citadel and enable Kargath to be trained at the altar"
     endmethod
 
     private method GrantHellfire takes player whichPlayer returns nothing
@@ -51,7 +51,7 @@ library QuestHellfire requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("堡垒", "地狱火堡垒内的氏族并不尊重卡加斯的地位，干掉摩摩尔来将玛瑟里顿确立为无可争议的外域之王", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
+      local thistype this = thistype.allocate("The Citadel", "The clans holding Hellfire Citadel do not respect Kargath authority yet, destroy Murmur to finally establish Magtheridon as the undisputable king of Outland", "ReplaceableTextures\\CommandButtons\\BTNFelOrcFortress.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01J')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02N')))

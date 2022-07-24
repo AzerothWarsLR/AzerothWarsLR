@@ -2,11 +2,11 @@ library QuestSecondObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal
 
   struct QuestSecondObelisk extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "第二座方尖碑已经建成。尼奥罗萨与艾泽拉斯之间的链接更加紧密了。"
+      return "The second Obelisk has been set. Ny'alotha's connection to Azeroth grows stronger."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "解锁尼奥罗萨的南部区域，而下一个先驱者将会打开一道通往暮光高地的临时传送门"
+      return "Unlock the southern zone of Nya'lotha, and the next Herald you train will open a temporary portal to the Twilight Highlands."
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestSecondObelisk requires QuestData, GeneralHelpers, BlackEmpirePortal
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("第二座方尖碑", "现实的融合越来越紧密。必须在奥丹姆建筑另外一座方尖碑。", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
+      local thistype this = thistype.allocate("Second Obelisk", "The convergence of realities grows ever closer. An Obelisk must be established in Uldum.", "ReplaceableTextures\\CommandButtons\\BTNIceCrownObelisk.blp")
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n0BD')))
       return this
     endmethod

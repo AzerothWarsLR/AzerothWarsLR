@@ -271,7 +271,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
         call UnitRemoveAbility(unit, DUMMY_PERMADIES)
         if diesWithout != null then
           set tempGroup = CreateGroup()
-          set tooltip = "当这个单位死亡时将会无法复活，除非以下的首都在你的控制之下:\n"
+          set tooltip = "When this unit dies, it will be unrevivable unless any of the following capitals are under your control:\n"
           call BlzGroupAddGroupFast(diesWithout, tempGroup)   
           loop
             set u = FirstOfGroup(tempGroup)
@@ -279,7 +279,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
             set tooltip = tooltip + " - " + GetUnitName(u) + "|n"
             call GroupRemoveUnit(tempGroup, u)
           endloop
-          set tooltip = tooltip + "\n使用这个技能会在小地图上标记需要的首都。"
+          set tooltip = tooltip + "\nUsing this ability pings each of these capitals on the minimap."
           call UnitAddAbility(unit, DUMMY_DIESWITHOUT)
           call BlzSetAbilityStringLevelField(BlzGetUnitAbility(unit, DUMMY_DIESWITHOUT), ABILITY_SLF_TOOLTIP_NORMAL_EXTENDED, 0, tooltip)
           call DestroyGroup(tempGroup)
@@ -308,9 +308,9 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       endif
       if this.deathMessage != null and this.deathMessage != "" and this.enableMessages == true then
         if IsUnitType(unit, UNIT_TYPE_STRUCTURE) then
-          set displayString = "\n|cffffcc00首都被摧毁|r\n"
+          set displayString = "\n|cffffcc00CAPITAL DESTROYED|r\n"
         else
-          set displayString = "\n|cffffcc00英雄被杀|r\n"
+          set displayString = "\n|cffffcc00HERO SLAIN|r\n"
         endif
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, displayString + deathMessage)
       endif
@@ -363,7 +363,7 @@ library Legend requires GeneralHelpers, Event, GeneralHelpers
       call OnLegendDeath.fire()
 
       if GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_PASSIVE) or GetOwningPlayer(unit) == Player(PLAYER_NEUTRAL_AGGRESSIVE) and deathMessage != "" and deathMessage != null then
-        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00传奇野怪已死|r\n" + deathMessage)
+        call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00LEGENDARY CREEP DEATH|r\n" + deathMessage)
       endif
 
       if permaDies or not IsUnitType(this.unit, UNIT_TYPE_HERO) then

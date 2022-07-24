@@ -6,11 +6,11 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
 
   struct QuestDalaran extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "达拉然郊区现在安全了，法师们将加入" + this.Holder.Team.Name + "。"
+      return "Dalaran outskirs are now secure, the mages will join " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得达拉然内所有单位和建筑的控制权，并允许在祭坛内召唤安东尼达斯。"
+      return "Control of all units in Dalaran and enables Antonidas to be trained at the Altar"
     endmethod
 
     private method GrantDalaran takes player whichPlayer returns nothing
@@ -59,7 +59,7 @@ library QuestDalaran requires QuestData, LordaeronSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("郊区", "达拉然的领土支离破碎，夺回失去的领土并保护达拉然的人民。", "ReplaceableTextures\\CommandButtons\\BTNArcaneCastle.blp")
+      local thistype this = thistype.allocate("Outskirts", "The territories of Dalaran are fragmented, secure the lands and protect Dalaran citizens .", "ReplaceableTextures\\CommandButtons\\BTNArcaneCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01D')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n018')))

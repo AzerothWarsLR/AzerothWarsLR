@@ -42,7 +42,7 @@ library ControlPointVictory initializer OnInit requires Team, ControlPoint
   endfunction
 
   private function TeamWarning takes Team whichTeam, integer controlPoints returns nothing
-    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n" + VICTORY_COLOR + "阵营胜利在望|r\n" + whichTeam.Name + "已经占领了" + I2S(controlPoints) + "/" + I2S(CPS_VICTORY) + "个胜利需要的控制点！")
+    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n" + VICTORY_COLOR + "TEAM VICTORY IMMINENT|r\n" + whichTeam.Name + " has captured " + I2S(controlPoints) + " out of " + I2S(CPS_VICTORY) + " Control Points required to win the game!")
   endfunction
 
   private function ControlPointOwnerChanges takes nothing returns nothing

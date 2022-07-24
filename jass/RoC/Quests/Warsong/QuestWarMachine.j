@@ -2,11 +2,11 @@ library QuestWarMachine requires QuestData, ScourgeSetup
 
   struct QuestWarMachine extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "对灰谷的大规模开发增强了整个部落的武器、装甲和防御。"
+      return "The massive exploitation of Ashenvale has bolstered the entire Horde's weapons, armour and defenses."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你和你所有的盟友可以研究" + GetObjectName('Rhme') + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", 和 " + GetObjectName('Rosp') + "。"
+      return "You and all of your allies gain the researches " + GetObjectName('Rhme') + ", " + GetObjectName('Rhar') + ", " + GetObjectName('Rorb') + ", and " + GetObjectName('Rosp')
     endmethod
 
     private method BlessPlayer takes player whichPlayer returns nothing
@@ -32,7 +32,7 @@ library QuestWarMachine requires QuestData, ScourgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("战争机器", "部落现在可以进入灰谷那富饶的林地。现在是时候开始收割和武装了。", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
+      local thistype this = thistype.allocate("The War Machine", "The bountiful woodlands of Ashenvale are now accessible to the Horde. It is time to begin harvesting and armament operations.", "ReplaceableTextures\\CommandButtons\\BTNBundleOfLumber.blp")
       call this.AddQuestItem(QuestItemResearch.create('R021', 'o01I'))
       return this
     endmethod

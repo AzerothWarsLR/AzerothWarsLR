@@ -2,11 +2,11 @@ library QuestTuurem requires QuestData, DalaranSetup
 
   struct QuestTuurem extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "信使及时到达了图雷姆"
+      return "The messenger has arrived, Tuurem has been reached in time."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得图雷姆所有建筑"
+      return "Control of all buildings in Tuurem"
     endmethod
 
     private method GrantTuurem takes player whichPlayer returns nothing
@@ -38,8 +38,8 @@ library QuestTuurem requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("警告图雷姆", "必须警告图雷姆兽人即将入侵", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Tuurem, "图雷姆", false))
+      local thistype this = thistype.allocate("Warn Tuurem", "The city of Tuurem has to be warned of the imminent Orc invasion", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Tuurem, "Tuurem", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

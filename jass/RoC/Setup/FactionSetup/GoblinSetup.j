@@ -6,7 +6,7 @@ library GoblinSetup requires Faction, TeamSetup
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_GOBLIN = LiegeFaction.create("锈水财阀", PLAYER_COLOR_LIGHT_GRAY, "|cff808080","ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
+    set FACTION_GOBLIN = LiegeFaction.create("Bilgewater", PLAYER_COLOR_LIGHT_GRAY, "|cff808080","ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
     set f = FACTION_GOBLIN
     set f.Team = TEAM_HORDE
     set f.StartingGold = 150

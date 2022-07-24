@@ -4,11 +4,11 @@ library QuestHonorHold requires QuestData, StormwindSetup, GeneralHelpers
 
   struct QuestHonorHold extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "荣耀堡现在不再受到不断逼近的地狱火堡垒的威胁。达纳斯·托尔贝恩和他的人民选择重新加入联盟。"
+      return "Honor Hold is now free from the constant looming threat of Hellfire Citadel. Danath Trollbane and his people elect to rejoin the Alliance."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得半英雄达纳斯·托尔贝恩，荣耀堡的所有单位和建筑"
+      return "The demihero Danath Trollbane, and control of all units at Honor Hold"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestHonorHold requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("荣耀堡", "尽管外域的气候异常恶劣，一些联盟部队还是设法在那里建立了一个叫做荣誉堡的小镇", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
+      local thistype this = thistype.allocate("Honor Hold", "Despite Outland's incredibly harsh climate, some Alliance forces have managed to make a home there - a town called Honor Hold", "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HELLFIRECITADEL))
       return this
     endmethod

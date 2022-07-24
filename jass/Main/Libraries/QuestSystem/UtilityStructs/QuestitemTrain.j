@@ -10,7 +10,7 @@ library QuestItemTrain requires QuestItemData
 
     private method operator CurrentTrainCount= takes integer value returns nothing
       set this.currentTrainCount = value
-      set this.Description = "在" + GetObjectName(trainFromId) + "内训练" + GetObjectName(objectId) + "(" + I2S(currentTrainCount) + "/" + I2S(targetTrainCount) + ")个"
+      set this.Description = "Train " + GetObjectName(objectId) + "s from the " + GetObjectName(trainFromId) + " (" + I2S(currentTrainCount) + "/" + I2S(targetTrainCount) + ")"
     endmethod
 
     static method create takes integer objectId, integer trainFromId, integer targetTrainCount returns thistype

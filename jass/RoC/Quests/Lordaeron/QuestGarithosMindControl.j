@@ -5,11 +5,11 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
   struct QuestGarithosMindControl extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "加瑟里斯那软弱的心灵在希尔瓦娜斯的心灵控制面前简直就和没有一样 "
+      return "Garithos weak mind is an easy pray to Sylvanas mind control, "
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你将失去所有，但加瑟里斯和一小支部队会生成在洛丹伦首都附近"
+      return "You lose everything, but will spawn with Garithos and a small army in Capital City"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -47,7 +47,7 @@ library QuestGarithosMindControl requires LordaeronSetup, LegendLordaeron, Displ
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("心灵控制加瑟里斯", "加瑟里斯一直不信任其他种族，他也许能够被心灵控制", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
+      local thistype this = thistype.allocate("Garithos' Mind-Control", "Garithos has always had a distrust of other races, he might be tempted to join the Scarlet MindControl.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
       call this.AddQuestItem(QuestItemResearch.create('R08F', 'hbla'))
       return this
     endmethod

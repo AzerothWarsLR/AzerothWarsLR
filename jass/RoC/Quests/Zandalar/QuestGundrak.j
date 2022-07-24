@@ -8,11 +8,11 @@ library QuestGundrak requires LegendNeutral
 
   struct QuestGundrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "古达克已经被攻陷了。达卡莱巨魔们向" + this.Holder.Team.Name + "伸出了援手"
+      return "Gundrak has fallen. The Drakkari trolls lend their might to the " + this.Holder.Team.Name 
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得古达克，300黄金并允许在" + GetObjectName(TROLL_SHRINE_ID) + "内训练" + GetObjectName(WARLORD_ID) + "单位"
+      return "Control of Gundrak, 300 gold tribute and the ability to train " + GetObjectName(WARLORD_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestGundrak requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("达卡莱要塞", "古达克的达卡莱巨魔相信他们的堡垒坚不可摧。占领它来赢得他们的忠诚。", "ReplaceableTextures\\CommandButtons\\BTNTerrorTroll.blp")
+      local thistype this = thistype.allocate("The Drakkari Fortress", "The Drakkari troll of Gundrak believe their fortress to be impregnable. Capture it to gain their loyalty.", "ReplaceableTextures\\CommandButtons\\BTNTerrorTroll.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_GUNDRAK, false))
       return this
     endmethod

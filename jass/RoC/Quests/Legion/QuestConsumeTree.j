@@ -7,11 +7,11 @@ library QuestConsumeTree requires Persons, LegionSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "阿克蒙德已经吞噬了世界之树并几乎势不可挡"
+      return "Archimonde has now consummed the World Tree and is now nigh unstoppable"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "通过吞噬世界之树，阿克蒙德将获得巨大的力量。全属性增加80点并将消除德鲁伊阵营。"
+      return "By consuming the World Tree, Archimonde will obtain immense power. +80 to all stats. Additionally, the Druids faction will be eliminated."
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -24,8 +24,8 @@ library QuestConsumeTree requires Persons, LegionSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("诸神黄昏", "吞噬世界之树将赋予阿克蒙德不可估量的力量并永远地消灭掉作为他死敌的德鲁伊。", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ArchimondeChannel, "世界之树", LEGEND_ARCHIMONDE, 420, 90))
+      local thistype this = thistype.allocate("Twilight of the Gods", "Consuming the World Tree will grant Archimonde immeasurable power and eliminate his mortal enemies, the Druids of Kalimdor, forever.", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ArchimondeChannel, "The World Tree", LEGEND_ARCHIMONDE, 420, 90))
       return this
     endmethod
   endstruct

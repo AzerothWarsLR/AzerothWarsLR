@@ -2,11 +2,11 @@ library QuestDarkshire requires QuestData, StormwindSetup, QuestItemKillUnit
 
   struct QuestDarkshire extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "夜色镇已经被解放，它的军队现在可以自由地协助" + this.Holder.Team.Name + "."
+      return "Darkshire has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得夜色镇所有建筑和单位"
+      return "Control of all units in Darkshire"
     endmethod
 
     private method GrantDarkshire takes player whichPlayer returns nothing
@@ -40,7 +40,7 @@ library QuestDarkshire requires QuestData, StormwindSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("豺狼人问题", "夜色镇正遭到豺狼人的袭击，把他们赶走！", "ReplaceableTextures\\CommandButtons\\BTNGnollArcher.blp")
+      local thistype this = thistype.allocate("Gnoll troubles", "The town of Darkshire is under attack by Gnoll's, clear them out!", "ReplaceableTextures\\CommandButtons\\BTNGnollArcher.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ngnv_0586)) //Gnoll Overseer
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00V')))
       call this.AddQuestItem(QuestItemExpire.create(1425))

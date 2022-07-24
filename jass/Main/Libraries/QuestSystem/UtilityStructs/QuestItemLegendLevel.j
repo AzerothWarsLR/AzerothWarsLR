@@ -8,7 +8,7 @@ library QuestItemLegendLevel requires QuestItemData, Legend
 
     static method create takes Legend target, integer level returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = target.Name + "的等级是" + I2S(level)
+      set this.Description = target.Name + " is level " + I2S(level)
       set this.target = target
       set this.level = level
       set thistype.byIndex[thistype.count] = this

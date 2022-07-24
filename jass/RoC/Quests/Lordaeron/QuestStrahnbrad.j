@@ -3,11 +3,11 @@ library QuestStrahnbrad requires QuestData, LordaeronSetup, QuestItemControlPoin
 
   struct QuestStrahnbrad extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "斯坦恩布莱德已经被解放"
+      return "Strahnbrad has been liberated."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得斯坦恩布莱德所有建筑和单位"
+      return "Control of all buildings in Strahnbrad"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestStrahnbrad requires QuestData, LordaeronSetup, QuestItemControlPoin
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("斯坦恩布莱德保卫战", "斯坦恩布莱德正遭到一些强盗的袭击，干掉他们。", "ReplaceableTextures\\CommandButtons\\BTNFarm.blp")
+      local thistype this = thistype.allocate("The Defense of Strahnbrad", "The Strahnbrad is under attack by some brigands, clear them out", "ReplaceableTextures\\CommandButtons\\BTNFarm.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))
       call this.AddQuestItem(QuestItemExpire.create(1170))
       call this.AddQuestItem(QuestItemSelfExists.create())

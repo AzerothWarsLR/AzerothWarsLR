@@ -2,11 +2,11 @@ library QuestKilsorrow requires QuestData
 
   struct QuestKilsorrow extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "基尔索罗现已建立，其军队现在可以自由协助" + this.Holder.Team.Name + "."
+      return "Kil'sorrow is now established, The Black Temple and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得基尔索罗要塞，黑暗神殿和3个新恶魔之门。埃索达不再是无敌的了。"
+      return "Control of all units in Kil'sorrow, The Black Temple and 3 new Demon Gates. The Exodar will be made vulnerable."
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -20,11 +20,11 @@ library QuestKilsorrow requires QuestData
       call UnitRescue(LEGEND_BLACKTEMPLE.Unit, this.Holder.Player)
       call LEGEND_MAGTHERIDON.AddUnitDependency(gg_unit_o00F_0659)
       call SetUnitInvulnerable(gg_unit_h09W_3303, false)
-      set LEGEND_MAGTHERIDON.DeathMessage = "玛瑟里顿的永恒恶魔之魂已经被吞噬，他将将永远的死去。外域之主已经陨落。"
+      set LEGEND_MAGTHERIDON.DeathMessage = "Magtheridon’s eternal demon soul has been consumed, and his life permanently extinguished. The Lord of Outland has fallen."
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("基尔索罗要塞", "这座邪恶的要塞将会很好的服务于邪部落，将周围的领土清理干净来建立它", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
+      local thistype this = thistype.allocate("Kil'sorrow Fortress", "This sinister fortress will serve the Fel Horde well, clear the surrounding lands to establish it", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))

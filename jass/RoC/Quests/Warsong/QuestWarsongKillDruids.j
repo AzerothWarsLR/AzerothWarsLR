@@ -8,11 +8,11 @@ library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
     private static integer EXPERIENCE_REWARD = 10000
 
     private method operator CompletionPopup takes nothing returns string
-      return "世界之树已经被占领。战歌至上！"
+      return "Nordrassil has been captured. The Warsong is supreme!"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "格罗姆·地狱咆哮获得 " + I2S(EXPERIENCE_REWARD) + " 点经验并允许召唤工头格里布斯"
+      return "Grom Hellscream gains " + I2S(EXPERIENCE_REWARD) + " experience and you can now train Foreman Glibbs"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -20,7 +20,7 @@ library QuestWarsongKillDruids requires WarsongSetup, LegendDruids, Display
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("拆掉它", "世界之树是暗夜精灵永生的源头。占领它来永久的削弱暗夜精灵。","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
+      local thistype this = thistype.allocate("Tear It Down", "The World Tree, Nordrassil, is the Night Elves' source of immortality. Capture it to cripple them permanently.","ReplaceableTextures\\CommandButtons\\BTNFountainOfLife.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_GROM))
       set this.ResearchId = QUEST_RESEARCH_ID

@@ -7,11 +7,11 @@ library QuestSapphiron requires QuestData, ScourgeSetup
 
   struct QuestSapphiron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "萨菲隆已死，并在天灾军团的命令下被复活成为了一只强大的冰霜巨龙。"
+      return "Sapphiron has been slain, and has been reanimated as a mighty Frost Wyrm under the command of the Scourge."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得半英雄萨菲隆和冰霜巨龙"
+      return "The demihero Sapphiron and Frost Wyrms"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -24,7 +24,7 @@ library QuestSapphiron requires QuestData, ScourgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("萨菲隆", "杀死蓝龙-萨菲隆，让克尔苏加德将她复活成一只冰霜巨龙。在诺森德可以找到萨菲隆.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
+      local thistype this = thistype.allocate("Sapphiron", "Kill Sapphiron the Blue Dragon to have Kel'Tuzad reanimate her as a Frost Wyrm. Sapphiron can be found in Northrend.", "ReplaceableTextures\\CommandButtons\\BTNFrostWyrm.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SAPPHIRON))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KELTHUZAD, false))
       return this

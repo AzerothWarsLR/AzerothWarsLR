@@ -6,11 +6,11 @@ library QuestTyr requires QuestData, ScarletSetup
 
   struct QuestTyr extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "提尔之手加入了战争，其军队现在可以自由协助" + this.Holder.Team.Name + "."
+      return "Tyr's Hand has joined the war and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得提尔之手内所有单位和建筑"
+      return "Control of all units in Tyr's Hand"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestTyr requires QuestData, ScarletSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("血色飞地", "提尔之手暂时是中立的，但当时机成熟时，他们将与血色十字军结盟", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+      local thistype this = thistype.allocate("The Scarlet Enclave", "The legions at Tyr's Hand remain neutral for the moment, but when the time is right, they will align themselves with the Scarlet Crusade.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemTime.create(1000))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = RESEARCH_ID

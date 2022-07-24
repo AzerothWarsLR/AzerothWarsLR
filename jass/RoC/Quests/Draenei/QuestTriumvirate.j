@@ -6,11 +6,11 @@ library QuestTriumvirate requires DraeneiSetup, QuestItemControlPoint, GeneralHe
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "维纶解放了阿古斯，重新组装了执政团之冠"
+      return "Velen has liberated Argus and re-assembled the Crown of Triumvirate"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你获得了执政团之冠"
+      return "You gain the powerful item, the Crown of the Triumvirate"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestTriumvirate requires DraeneiSetup, QuestItemControlPoint, GeneralHe
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("执政团之冠", "很久以前，领导着德莱尼人的是执政团。如果维纶能重新征服阿古斯，他便可以重组执政官之冠。", "ReplaceableTextures\\CommandButtons\\BTNNeverMeltingCrown.blp")
+      local thistype this = thistype.allocate("Crown of the Triumvirate", "Eons ago, the council that led the Eredar was the Triumvirate. If Velen could reconquer Argus, he could reform the Crown of the Triumvirate", "ReplaceableTextures\\CommandButtons\\BTNNeverMeltingCrown.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BH')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BL')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X')))

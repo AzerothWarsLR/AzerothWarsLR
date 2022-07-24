@@ -2,15 +2,15 @@ library QuestKelthuzad requires QuestData, ScourgeSetup, LegendScourge, LegendQu
 
   struct QuestKelthuzad extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      local string completionPopup = "克尔苏加德通过太阳井无限的魔法能量获得了重生和力量。"
+      local string completionPopup = "Kel'thuzad has been reanimated and empowered through the unlimited magical energies of the Sunwell."
       if FACTION_LEGION != 0 then
-        set completionPopup = completionPopup + "他现在有能力召唤燃烧军团了。"
+        set completionPopup = completionPopup + " He now has the ability to summon the Burning Legion."
       endif
       return completionPopup
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "克尔苏加德变成了巫妖"
+      return "Kel'thuzad becomes a Lich"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -23,9 +23,9 @@ library QuestKelthuzad requires QuestData, ScourgeSetup, LegendScourge, LegendQu
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("超越死亡的生命", "克尔苏加德是诅咒教派的领袖，也是一位非常强大的亡灵巫师。如果他被带到太阳井并浸泡在太阳井的井水中，他将作为一个不朽的巫妖复活.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
+      local thistype this = thistype.allocate("Life Beyond Death", "Kel'thuzad is the leader of the Cult of the Damned and an extraordinarily powerful necromancer. If he were to be brought to the Sunwell and submerged in its waters, he would be reanimated as an immortal Lich.", "ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_Sunwell, "太阳井"))
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_KELTHUZAD, gg_rct_Sunwell, "The Sunwell"))
       return this
     endmethod
   endstruct

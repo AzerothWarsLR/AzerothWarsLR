@@ -6,19 +6,19 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
 
   struct QuestConquerKul extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "在启航之前，我们需要征服库尔提拉斯"
+      return "Before setting sails we need to conquer Kul'tiras"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "解锁船坞并获得750黄金"
+      return "Unlock shipyards and 750 gold"
     endmethod
 
     private method operator FailurePopup takes nothing returns string
-      return "赞达拉已经被摧毁"
+      return "Zandalar has fallen"
     endmethod
 
     private method operator FailureDescription takes nothing returns string
-      return "你将不能建造船坞，但解锁了祖尔法拉克"
+      return "You can no longer build shipyards, but you unlock Zulfarrak"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -49,7 +49,7 @@ library QuestConquerKul requires LegendNeutral, LegendKultiras, TrollSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("征服伯拉勒斯", "库尔提拉斯人和其舰队多年来一直是赞达拉帝国的威胁，是时候让他们永远休息一下了。", "ReplaceableTextures\\CommandButtons\\BTNGalleonIcon.blp")
+      local thistype this = thistype.allocate("Conquer Boralus", "The Kul'tiran people and their fleet have been a threat to the Zandalari Empire for ages, it is time to put them to rest. ", "ReplaceableTextures\\CommandButtons\\BTNGalleonIcon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DAZARALOR, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BORALUS))
       set this.ResearchId = QUEST_RESEARCH_ID

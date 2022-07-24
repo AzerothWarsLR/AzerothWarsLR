@@ -10,7 +10,7 @@ library CheatUnlock initializer OnInit requires Persons, TestSafety
   endglobals
 
   private function UnlockUpgrade takes player p, integer i returns nothing
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 获得研究" + GetObjectName(i) + ".")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Granted research " + GetObjectName(i) + ".")
     call SetPlayerTechResearched(p, i, 1)
   endfunction
 

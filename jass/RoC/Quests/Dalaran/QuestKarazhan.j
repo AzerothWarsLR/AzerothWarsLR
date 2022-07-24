@@ -2,11 +2,11 @@ library QuestKarazhan requires LegendNeutral
 
   struct QuestKarazhan extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "卡拉赞被占领了。" + this.Holder.Name + "的档案员们在大厅里搜索着奥术资源。"
+      return "Karazhan has been captured. " + this.Holder.Name + "'s  archivists scour its halls for arcane resources."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "可以在卡拉赞内研究三个强大的升级。"
+      return "Learn to research three powerful upgrades at Karazhan."
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -16,7 +16,7 @@ library QuestKarazhan requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("卡拉赞的秘密", "麦迪文的灵魂仍在神秘的闲逛着。达拉然可以把它的强大魔法运用起来。", "ReplaceableTextures\\CommandButtons\\BTNTomeBrown.blp")
+      local thistype this = thistype.allocate("Secrets of Karazhan", "The spire of Medivh stands mysteriously idle. Dalaran could make use of its grand magicks.", "ReplaceableTextures\\CommandButtons\\BTNTomeBrown.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN, false))
       return this
     endmethod

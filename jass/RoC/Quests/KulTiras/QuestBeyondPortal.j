@@ -6,15 +6,15 @@ library QuestBeyondPortal requires QuestData, KultirasSetup, GeneralHelpers
 
   struct QuestBeyondPortal extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "兽人已经成为了过去式，现在可以训练燧发枪手单位了"
+      return "The orcs are no more and we can now train Fusillier."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "允许在兵营内训练燧发枪手单位"
+      return "You will be able to train Fusillier from the Barrack"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("黑暗之门以外", "来自德拉诺的兽人威胁仍笼罩着所有人，把兽人和他们的基地消灭干净。", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
+      local thistype this = thistype.allocate("Beyond the Dark Portal", "The Orc threat from Draenor still looms over all. Eliminate every trace of the Orcs and their bases.", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HELLFIRECITADEL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_BLACKROCKSPIRE))

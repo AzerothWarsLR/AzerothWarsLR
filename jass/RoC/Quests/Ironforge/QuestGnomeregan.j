@@ -6,11 +6,11 @@ library QuestGnomeregan requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   struct QuestGnomeregan extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "诺莫瑞根已经被解放，它的军队现在可以自由协助" + this.Holder.Team.Name + "."
+      return "Gnomeregan has been literated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得诺莫瑞根所有建筑和单位"
+      return "Control of all units in Gnomeregan"
     endmethod
 
     private method GrantGnomeregan takes player whichPlayer returns nothing
@@ -46,7 +46,7 @@ library QuestGnomeregan requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("发明之城", "长久以来，由于穴居人和冰巨魔的侵扰，诺莫瑞根的居民们一直无法协助联盟作战。为他们解决冰巨魔来获得他们的支持。", "ReplaceableTextures\\CommandButtons\\BTNFlyingMachine.blp")
+      local thistype this = thistype.allocate("The City of Invention", "The people of Gnomeregan have long been unable to assist the Alliance in its wars due an infestation of troggs and Ice Trolls. Resolve their conflicts for them to gain their services.", "ReplaceableTextures\\CommandButtons\\BTNFlyingMachine.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nitw_1513)) //Ice Troll Warlord
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

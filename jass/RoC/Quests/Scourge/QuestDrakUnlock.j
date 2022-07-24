@@ -7,11 +7,11 @@ library QuestDrakUnlock requires QuestData, ScourgeSetup, QuestItemControlPoint,
 
   struct QuestDrakUnlock extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "达克萨隆要塞现在在天灾军团的控制之下。"
+      return "Drak'taron Keep is now under the control of the Scourge."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得达克萨隆要塞的所有单位和建筑"
+      return "Control of all buildings in Drak'taron Keep'"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -23,7 +23,7 @@ library QuestDrakUnlock requires QuestData, ScourgeSetup, QuestItemControlPoint,
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("达克萨隆要塞", "达克萨隆要塞将是一个海边的前哨基地。", "ReplaceableTextures\\CommandButtons\\BTNUndeadShipyard.blp")
+      local thistype this = thistype.allocate("Drak'taron Keep", "Drak'taron's Keep will be the place for an outpost by the sea.", "ReplaceableTextures\\CommandButtons\\BTNUndeadShipyard.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n030')))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       call this.AddQuestItem(QuestItemExpire.create(1140))

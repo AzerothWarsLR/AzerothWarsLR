@@ -6,11 +6,11 @@ library QuestBusinessExpansion requires QuestData
 
   struct QuestBusinessExpansion extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "你现在可以建筑船坞和船只了"
+      return "You can now build shipyards and ships"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "船坞可以建造了"
+      return "The shipyard will be buildable"
     endmethod
 
      private method GrantGadetzan takes player whichPlayer returns nothing
@@ -44,7 +44,7 @@ library QuestBusinessExpansion requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("商业扩张", "贸易大王加里维克斯需要大量的财富来统治未来的地精帝国，他需要在世界各地迅速扩张他的业务", "ReplaceableTextures\\CommandButtons\\BTNGoblinPrince.blp")
+      local thistype this = thistype.allocate("Business Expansion", "Trade Prince Gallywix will need a great amount of wealth to rule the future Goblin Empire; he needs to expand his business all over the world quickly.", "ReplaceableTextures\\CommandButtons\\BTNGoblinPrince.blp")
       call this.AddQuestItem(QuestItemTrain.create('nzep','o04M', 16))
       call this.AddQuestItem(QuestItemTrain.create('o04S','o04M', 10))
       set this.ResearchId = QUEST_RESEARCH_ID

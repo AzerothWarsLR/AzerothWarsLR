@@ -6,11 +6,11 @@ library QuestQueldanil requires QuestData, QuelthalasSetup, LegendNeutral
 
   struct QuestQueldanil extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "奎尔萨拉斯终于在辛特兰与迷失的流浪者重聚。"
+      return "Quel'thalas has finally reunited with its lost rangers in the Hinterlands."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "奎尔丹尼的控制权"
+      return "Control of Quel'danil Lodge"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -25,8 +25,8 @@ library QuestQueldanil requires QuestData, QuelthalasSetup, LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("奎尔丹尼", "奎尔达尼尔小屋是一个位于辛特兰的高等精灵前哨基地。游侠们已经有一段时间没有和奎尔萨拉斯联系了。", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge, "奎尔丹尼小屋", true))
+      local thistype this = thistype.allocate("Quel'danil Lodge", "Quel'danil Lodge is a High Elven outpost situated in the Hinterlands. It's been some time since the rangers there have been in contact with Quel'thalas.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_QuelDanil_Lodge, "Quel'danil Lodge", true))
       call this.AddQuestItem(QuestItemTime.create(1320))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, true))
       set this.ResearchId = QUEST_RESEARCH_ID

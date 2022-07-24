@@ -6,11 +6,11 @@ library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit, Gen
 
   struct QuestTitanJailors extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "看守克苏恩沉眠之地的泰坦看守者已经被摧毁。现在，没有什么能阻挡其拉虫族和它们的主人了。"
+      return "THe titan jailors guarding C'thun's resting place have been destroyed. Now nothing stands between the Qiraji and their master."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得安其拉神殿内部所有的单位和建筑并解锁唤醒克苏恩的法术。"
+      return "Gain control of all units in Ahn'qiraj's inner temple and unlock the awakening spell for C'thun"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestTitanJailors requires QuestData, CthunSetup, QuestItemKillUnit, Gen
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("古神的狱卒", "古神克苏恩被囚禁在安其拉神庙的深处，有泰坦留下的机械典狱官看守着。", "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp")
+      local thistype this = thistype.allocate("Jailors of the Old God", "The Old God C'thun is imprisoned deep within the temple of Ahn'qiraj, defended by mechanical wardens left behind by the Titans.", "ReplaceableTextures\\CommandButtons\\BTNArmorGolem.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nsgg_1490)) //Golem
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02K')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n078')))

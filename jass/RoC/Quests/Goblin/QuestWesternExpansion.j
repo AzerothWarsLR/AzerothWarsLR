@@ -6,15 +6,15 @@ library QuestWesternExpansion requires LegendSentinels, Display, QuestItemLegend
 
   struct QuestWesternExpansion extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "西部海岸现在没有讨厌的精灵了，我们的业务也可以继续扩张了，飞艇也可以安全的飞行了。"
+      return "The western shores are now clear of pesky elves, our business expansion can continue and our Zeppelins can fly safe."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "解锁" + GetObjectName('h091') + "单位"
+      return "Learn to train " + GetObjectName('h091') + "s"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("西部扩张", "羽月要塞和奥伯丁让精灵们控制了卡利姆多的西海岸。我们需要摧毁它们来为我们向西拓展的业务扫清道路！", "ReplaceableTextures\\CommandButtons\\BTNNightElfShipyard.blp")
+      local thistype this = thistype.allocate("Western Expansion", "Feathermoon Stronghold and Auberdine give the Elves a grip on the western shore of Kalimdor. We need to destroy them to clear a way for our business expansion west!", "ReplaceableTextures\\CommandButtons\\BTNNightElfShipyard.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       set this.ResearchId = QUEST_RESEARCH_ID

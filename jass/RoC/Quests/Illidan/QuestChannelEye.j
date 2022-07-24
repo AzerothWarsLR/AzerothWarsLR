@@ -7,11 +7,11 @@ library QuestChannelEye requires Persons, NagaSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "伊利丹摧毁了冰封王座，基尔加丹给予了他应得的奖励"
+      return "Illidan has destroyed the Frozen Throne and given by Kil'jaeden his just reward"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "摧毁冰封王座将会抹除天灾军团势力并使伊利丹立即升到20级"
+      return "Destroying the Frozen Throne will eliminate the Scourge faction and make Illidan level 20 instantly."
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -22,11 +22,11 @@ library QuestChannelEye requires Persons, NagaSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("达拉然废墟", "伊利丹被基尔加丹派去摧毁冰封王座", "ReplaceableTextures\\CommandButtons\\BTNTheLichKingQuest.blp")
+      local thistype this = thistype.allocate("The Ruins of Dalaran", "Illidan has been tasked by Kil'jaeden to destroy the Frozen Throne.", "ReplaceableTextures\\CommandButtons\\BTNTheLichKingQuest.blp")
       call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_EYEOFSARGERAS, gg_rct_RuinOfDalaran, "Ruins of Dalaran"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_DALARAN))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CAPITALPALACE))
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_RuinOfDalaran, "达拉然废墟", LEGEND_ILLIDAN, 360, 90))
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_RuinOfDalaran, "Ruins of Dalaran", LEGEND_ILLIDAN, 360, 90))
       call this.AddQuestItem(QuestItemResearch.create('R063', 'n055'))
       return this
     endmethod

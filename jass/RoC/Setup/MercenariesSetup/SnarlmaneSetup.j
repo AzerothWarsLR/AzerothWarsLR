@@ -5,7 +5,7 @@ library SnarlmaneSetup requires Faction
   endglobals
 
   public function OnInit takes nothing returns nothing
-    set MERC_SNARLMANE = SnarlmaneMercFaction.create("黑鬃豺狼人", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNGnollKing.blp", LEGEND_SNARLMANE)
+    set MERC_SNARLMANE = SnarlmaneMercFaction.create("Blackmane", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNGnollKing.blp", LEGEND_SNARLMANE)
     set MERC_SNARLMANE.TeleportItemType = 'I00V'  
     set MERC_SNARLMANE.AbsenceResearch = 'R076'
 

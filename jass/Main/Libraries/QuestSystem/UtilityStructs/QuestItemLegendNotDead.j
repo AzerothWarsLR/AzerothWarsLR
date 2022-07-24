@@ -61,9 +61,9 @@ library QuestItemLegendNotDead requires QuestItemData, Environment, Legend
       local thistype this = thistype.allocate()
       set this.target = target
       if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) then
-        set this.Description = target.Name + "是完好的"
+        set this.Description = target.Name + " is intact"
       else
-        set this.Description = target.Name + "是存活的"
+        set this.Description = target.Name + " is alive"
       endif
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

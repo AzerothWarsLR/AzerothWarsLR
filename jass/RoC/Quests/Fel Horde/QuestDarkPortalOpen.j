@@ -7,11 +7,11 @@ library QuestDarkPortalOpen requires QuestData, FelHordeSetup, GeneralHelpers
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "黑暗之门已经开启"
+      return "The Dark Portal is now open"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "黑暗之门已经开启"
+      return "The Dark Portal is now open"
     endmethod
 
     private method OpenPortal takes nothing returns nothing
@@ -44,7 +44,7 @@ library QuestDarkPortalOpen requires QuestData, FelHordeSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("开启黑暗之门", "黑暗之门已经被开启", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
+      local thistype this = thistype.allocate("The Dark Portal Opens", "The Dark Portal has been opened", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
       call this.AddQuestItem(QuestItemTime.create(600))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemExpire.create(785))

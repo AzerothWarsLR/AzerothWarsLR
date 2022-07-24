@@ -7,11 +7,11 @@ library QuestGatesofAhnqiraj requires QuestData, QuestItemKillUnit
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "古神克苏恩已经苏醒并准备将其拉虫人们释放到艾泽拉斯"
+      return "The Old God C'thun has awaken and is now ready to unleash the Qiraji on the world of Azeorth."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得克苏恩并允许开启安琪拉之门"
+      return "Gain control of C'thun and enable you to open the Gates of Ahn'qiraj"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestGatesofAhnqiraj requires QuestData, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("安琪拉之门", "流沙之战结束时，龙族们将其拉虫族封印在了圣甲虫之墙后。在几百年后的今天，克苏恩再次准备打开祂古老帝国的大门。", "ReplaceableTextures\\CommandButtons\\BTNScarabMedal.blp")
+      local thistype this = thistype.allocate("The Gates of Ahn'Qiraj", "At the conclusion of the War of the Shifting Sands, the Dragonflights sealed the Qiraji behind the Scarab Wall. Now centuries later, C'thun is once again ready to open the gates to his ancient empire.", "ReplaceableTextures\\CommandButtons\\BTNScarabMedal.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0O1', true))
       return this
     endmethod

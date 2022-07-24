@@ -5,11 +5,11 @@ library QuestDreadlordInsurgent requires LegionSetup, LegendLegion, Display
   struct QuestDreadlordInsurgent extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "恐惧魔王很快将倒向希尔瓦娜斯并被迫加入被遗忘者"
+      return "The Dreadlord has quickly fallen to Sylvanas and forced to join the Forsaken "
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你将失去一切，但会在洛丹伦首都附近获得一小支部队，瓦里玛萨斯和莉莉安·沃斯"
+      return "You lose everything, but will spawn with a small army, Varimathras and Lilian Voss near Capital City"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -44,7 +44,7 @@ library QuestDreadlordInsurgent requires LegionSetup, LegendLegion, Display
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("恐惧魔王叛军", "瓦里玛萨斯已经扩张并试图控制瘟疫之地，希尔瓦娜斯将试图让他加入她的事业。", "ReplaceableTextures\\CommandButtons\\BTNHeroDreadLord.blp")
+      local thistype this = thistype.allocate("Dreadlord Insurgent", "Varimathras has branched out and tried to take control of the Plaguelands, Sylvanas will try and make him join her cause", "ReplaceableTextures\\CommandButtons\\BTNHeroDreadLord.blp")
       call this.AddQuestItem(QuestItemResearch.create('R08H', 'n040'))
       return this
     endmethod

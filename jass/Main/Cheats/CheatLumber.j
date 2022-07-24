@@ -15,7 +15,7 @@ library CheatLumber initializer OnInit requires Persons, TestSafety
       
       set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
       call SetPlayerState(p, PLAYER_STATE_RESOURCE_LUMBER, S2I(parameter))
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 将木材设为" + parameter + "。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Set to " + parameter + " lumber.")
     endfunction
 
     private function OnInit takes nothing returns nothing

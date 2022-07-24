@@ -7,11 +7,11 @@ library QuestConstructionSites requires QuestData, StormwindSetup
 
   struct QuestConstructionSites extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "暴风城的建筑工地现在已经准备好升级"
+      return "Stormwind's Construction Sites are now ready to be upgraded."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你的建筑工地可以升级"
+      return "Your Construction Sites can be upgraded"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -27,7 +27,7 @@ library QuestConstructionSites requires QuestData, StormwindSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("必然的进步", "暴风城尚未完全从第二次战争期间遭受的蹂躏中恢复过来，并等待着重建。", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
+      local thistype this = thistype.allocate("Inevitable Progress", "Stormwind has not yet fully recovered from the ravaging it experienced during the Second War. Await reconstruction.", "ReplaceableTextures\\CommandButtons\\BTNGenericHumanBuilding.blp")
       call this.AddQuestItem(QuestItemTime.create(360))
       return this
     endmethod

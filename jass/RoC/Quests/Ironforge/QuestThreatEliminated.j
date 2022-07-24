@@ -7,15 +7,15 @@ library QuestThreatEliminated requires QuestData, IronforgeSetup, GeneralHelpers
 
   struct QuestThreatEliminated extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "随着邪部落的威胁被清除，矮人现在可以自由开启其他的冒险了"
+      return "With the threat of the Fel Horde now eliminated, the Dwarves are free to explore other ventures"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你可以在铁匠铺内选择你的道路了。"
+      return "You can select your path in the Blacksmith"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("邪部落的威胁", "邪部落对矮人的威胁已经大到不能忽视了，必须不惜一切代价的消灭他。", "ReplaceableTextures\\CommandButtons\\BTNIronHordeStrongHold.blp")
+      local thistype this = thistype.allocate("The Threat of the Fel Horde", "The Fel Horde is too big a threat to the Dwarven people to be ignored, they must be eliminated at all cost.", "ReplaceableTextures\\CommandButtons\\BTNIronHordeStrongHold.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       set this.ResearchId = RESEARCH_ID
       return this

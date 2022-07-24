@@ -3,11 +3,11 @@ library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit, G
 
   struct QuestShadowfang extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "影牙城堡已经被解放，它的军队现在可以自由的协助" + this.Holder.Team.Name + "了。"
+      return "Shadowfang has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得影牙城堡所有单位和建筑的控制权。"
+      return "Control of all units in Shadowfang"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -22,7 +22,7 @@ library QuestShadowfang requires QuestData, LordaeronSetup, QuestItemKillUnit, G
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("银松森林的阴影", "银松森林对旅行者来说并不安全，需要对其进行调查。", "ReplaceableTextures\\CommandButtons\\BTNworgen.blp")
+      local thistype this = thistype.allocate("Shadows of Silverspine Forest", "The woods of Silverspine are unsafe for travellers, they need to be investigated", "ReplaceableTextures\\CommandButtons\\BTNworgen.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nwld_0984)) //Worgen
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01D')))
       call this.AddQuestItem(QuestItemExpire.create(1444))

@@ -6,11 +6,11 @@ library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
 
   struct QuestCrystalGolem extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return this.Holder.Name + "的大地魔像们被注入了活水晶。"
+      return this.Holder.Name + "'s Earth Golems have been infused with living crystal."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "将你的土魔像转化为水晶魔像。"
+      return "Transform your Earth Golems into Crystal Golems"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestCrystalGolem requires QuestItemControlPoint, LegendLegion, Display
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("晶歌森林", "晶歌森林的活水晶被临近的军团所折磨。将它们从腐化中解放出来，它们可以用来增强达拉然的构装体。", "ReplaceableTextures\\CommandButtons\\BTNRockGolem.blp")
+      local thistype this = thistype.allocate("Crystalsong Forest", "The living crystal of the Crystalsong Forest suffers from its proximity to the Legion. Freed from that corruption, it could be used to empower Dalaran's constructs.", "ReplaceableTextures\\CommandButtons\\BTNRockGolem.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02R')))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       return this

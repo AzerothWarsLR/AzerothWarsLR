@@ -2,11 +2,11 @@ library QuestTempestReach requires QuestData, GilneasSetup, QuestItemControlPoin
 
   struct QuestTempestReach extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "风暴海崖已经被解放"
+      return "Tempest Reach has been liberated."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得风暴海崖所有建筑"
+      return "Control of all buildings in Tempest Reach"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestTempestReach requires QuestData, GilneasSetup, QuestItemControlPoin
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("风暴海崖", "我们需要占领的第一个定居点是风暴海崖，就在我们所在的南方。", "ReplaceableTextures\\CommandButtons\\BTNGilneasFarm.blp")
+      local thistype this = thistype.allocate("Tempest Reach", "The first settlement we need to capture is Tempest Reach, just south of our location", "ReplaceableTextures\\CommandButtons\\BTNGilneasFarm.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n084')))
       call this.AddQuestItem(QuestItemExpire.create(670))
       call this.AddQuestItem(QuestItemSelfExists.create())

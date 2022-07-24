@@ -4,43 +4,43 @@ library InstanceSetup requires Instance
     local Instance tempInstance = 0
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "深穴"
+    set tempInstance.Name = "Barrow Deeps"
     call tempInstance.addRect(gg_rct_InstanceBarrowDeeps)
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "扭曲虚空"
+    set tempInstance.Name = "Twisting Nether"
     call tempInstance.addRect(gg_rct_TwistingNether)    
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "厄运之槌"
+    set tempInstance.Name = "Dire Maul"
     call tempInstance.addRect(gg_rct_InstanceDireMaul)      
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "通灵学院"
+    set tempInstance.Name = "Scholomance"
     call tempInstance.addRect(gg_rct_InstanceScholomance)         
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "黑石深渊"
+    set tempInstance.Name = "Blackrock Depths"
     call tempInstance.addRect(gg_rct_InstanceBlackrock)  
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "萨格拉斯之墓"
+    set tempInstance.Name = "Tomb of Sargeras"
     call tempInstance.addRect(gg_rct_InstanceSargerasTomb)          
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "艾卓-尼鲁布"
+    set tempInstance.Name = "Azjol'nerub"
     call tempInstance.addRect(gg_rct_InstanceAzjolNerub)
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "外域"
+    set tempInstance.Name = "Outland"
     call tempInstance.addRect(gg_rct_InstanceOutland)      
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "外域"
+    set tempInstance.Name = "Outland"
     call tempInstance.addRect(gg_rct_InstanceNazjatar)      
 
     set tempInstance = Instance.create()
-    set tempInstance.Name = "达拉然地牢"
+    set tempInstance.Name = "Dalaran Dungeons"
     call tempInstance.addRect(gg_rct_InstanceDalaranDungeon1)     
     call tempInstance.addRect(gg_rct_InstanceDalaranDungeon2)   
     call tempInstance.addRect(gg_rct_InstanceDalaranDungeon3)                                                                                       

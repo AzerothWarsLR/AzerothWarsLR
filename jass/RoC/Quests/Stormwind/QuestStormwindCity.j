@@ -6,11 +6,11 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   struct QuestStormwindCity extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "暴风城已经被解放，其军队现在可以自由协助" + this.Holder.Team.Name + "。"
+      return "Stormwind has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得暴风城内所有单位和建筑并允许在祭坛内召唤瓦里安"
+      return "Control of all units in Stormwind and enable Varian to be trained at the altar"
     endmethod
 
     private method GrantStormwind takes player whichPlayer returns nothing
@@ -49,7 +49,7 @@ library QuestStormwindCity requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("清理郊外", "暴风城的郊外到处都是邪恶的生物。杀掉他们的领袖来重新获得城市的控制", "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp")
+      local thistype this = thistype.allocate("Clear the Outskirts", "The outskirts of Stormwind are infested by evil creatures. Kill their leaders and regain control of the Towns.", "ReplaceableTextures\\CommandButtons\\BTNNobbyMansionCastle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00Z')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n011')))

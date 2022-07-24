@@ -8,11 +8,11 @@ library QuestTortolla initializer OnInit requires QuestData, DruidsSetup, Genera
     static unit sleepingTortolla
 
     private method operator CompletionPopup takes nothing returns string
-      return "托尔托拉终于从上古的沉睡中醒来了"
+      return "Tortolla has finally awoken from his ancient slumber."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你可以在长者祭坛内召唤托尔托拉了"
+      return "You can summon Tortolla from the Altar of Elders"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -28,7 +28,7 @@ library QuestTortolla initializer OnInit requires QuestData, DruidsSetup, Genera
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("乌龟半神", "托尔托拉在上古之战中受伤严重，从那个时候开始便一直在休养生息。", "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleGreen.blp")
+      local thistype this = thistype.allocate("The Turtle Demigod", "Tortolla was badly wounded during the War of the Ancients, and has been resting ever since.", "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleGreen.blp")
       call this.AddQuestItem(QuestItemTime.create(1200))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = 'R049'

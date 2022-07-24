@@ -8,11 +8,11 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
   struct QuestIllidanChapterThree extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "伊利丹必须唤醒来自海洋深处的娜迦"
+      return "Illidan must awaken the Naga from the depth of the ocean"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得纳沙塔尔和娜迦的忠诚"
+      return "Nazjatar and the Naga's loyalty"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -31,9 +31,9 @@ library QuestIllidanChapterThree requires QuestData, QuestItemLegendReachRect, Q
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("第三章：深海居民", "唤醒娜迦将给伊利丹提供能够实现他目标所需的军队", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_StartQuest3, "出口"))
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_MaelstromAmbient, "大漩涡"))
+      local thistype this = thistype.allocate("Chapter Three: Dwellers from the Deep", "Awakening the Naga will give Illidan the army he needs to achieve his goals.", "ReplaceableTextures\\CommandButtons\\BTNNagaMyrmidon.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_StartQuest3, "the exit"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_MaelstromAmbient, "the Maelstrom"))
       call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, true))
       return this
     endmethod

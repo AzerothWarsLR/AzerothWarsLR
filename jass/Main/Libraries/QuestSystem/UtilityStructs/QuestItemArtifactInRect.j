@@ -80,7 +80,7 @@ library QuestItemArtifactInRect requires QuestItemData, Artifact
       set this.targetArtifact = targetArtifact
       set this.targetRect = targetRect
       set this.targetRegion = RectToRegion(targetRect)
-      set this.Description = "将" + GetItemName(targetArtifact.item) + "带到" + rectName
+      set this.Description = "Bring " + GetItemName(targetArtifact.item) + " to " + rectName
       call TriggerRegisterEnterRegion(thistype.entersRectTrig, this.targetRegion, null)
       call TriggerRegisterLeaveRegion(thistype.exitsRectTrig, this.targetRegion, null)      
       set thistype.byIndex[thistype.count] = this

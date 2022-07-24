@@ -8,11 +8,11 @@ library QuestDemonGateMonastery requires QuestData, LegionSetup
     private QuestItemKillUnit questItemKillMonastery
 
     private method operator CompletionPopup takes nothing returns string
-      return "血色修道院已经倒塌，而一道更大的恶魔之门从它的废墟中升起。"
+      return "The great Scarlet Monastery has fallen, and from its ashes rises an even greater Demon Gate."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "在血色修道院的位置获得一个新的恶魔之门"
+      return "A new Demon Gate at the Monastery's location"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -28,7 +28,7 @@ library QuestDemonGateMonastery requires QuestData, LegionSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("血色裂缝", "血色修道院周边的有着非凡的能量。摧毁这座圣光的堡垒并在它的位置建造一个恶魔之门。", "ReplaceableTextures\\CommandButtons\\BTNMaskOfDeath.blp")
+      local thistype this = thistype.allocate("A Scarlet Rift", "The energies surrounding the Scarlet Monastery are extraordinary. Destroy this bastion of light to fabricate a Demon Gate in its place.", "ReplaceableTextures\\CommandButtons\\BTNMaskOfDeath.blp")
       set this.questItemKillMonastery = this.AddQuestItem(QuestItemKillUnit.create(gg_unit_h00T_0786))
       return this
     endmethod

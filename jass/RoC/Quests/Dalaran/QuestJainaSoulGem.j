@@ -3,11 +3,11 @@ library QuestJainaSoulGem requires QuestData, Artifact, LegendDalaran, LegendSco
 
   struct QuestJainaSoulGem extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "吉安娜·普罗德摩尔在通灵学院的废墟之中发现了灵魂宝石。"
+      return "Jaina Proudmoore has discovered the Soul Gem within the ruined vaults at Scholomance."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "灵魂宝石"
+      return "The Soul Gem"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -15,8 +15,8 @@ library QuestJainaSoulGem requires QuestData, Artifact, LegendDalaran, LegendSco
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("灵魂宝石", "通灵学院内有着各种各样的邪恶神器。把吉安娜带到那里看看会发现什么。", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem, "通灵学院"))
+      local thistype this = thistype.allocate("The Soul Gem", "Scholomance is home to a wide variety of profane artifacts. Bring Jaina there to see what might be discovered.", "ReplaceableTextures\\CommandButtons\\BTNSoulGem.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_JAINA, gg_rct_Jaina_soul_gem, "Scholomance"))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SCHOLOMANCE))
       return this
     endmethod

@@ -29,7 +29,7 @@ library LegendWarsong initializer OnInit requires Legend
 
     set LEGEND_STONEMAUL = Legend.create()
     set LEGEND_STONEMAUL.Unit = gg_unit_o004_0169
-    set LEGEND_STONEMAUL.DeathMessage = "石锤堡垒已经被摧毁"
+    set LEGEND_STONEMAUL.DeathMessage = "The fortress of the Stonemaul Clan has fallen."
     set LEGEND_STONEMAUL.IsCapital = true
 
     set LEGEND_ENCAMPMENT = Legend.create()

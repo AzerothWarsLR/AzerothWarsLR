@@ -4,11 +4,11 @@ library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemA
     private QuestItemAnyUnitInRect questItemAnyUnitInRect
 
     private method operator CompletionPopup takes nothing returns string
-      return "古尔丹之颅已经被" + GetHeroProperName(questItemAnyUnitInRect.TriggerUnit) + "取回。它邪恶的力量将为燃烧军团在艾泽拉斯的行动提供支援。"
+      return "The Skull of Gul'dan has been retrieved by " + GetHeroProperName(questItemAnyUnitInRect.TriggerUnit) + ". Its nefarious energies will fuel the Legion's operations on Azeroth."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "古尔丹之颅"
+      return "The Skull of Gul'dan"
     endmethod   
 
     private method OnComplete takes nothing returns nothing
@@ -22,8 +22,8 @@ library QuestSkullOfGuldan requires QuestData, Artifact, LegionSetup, QuestItemA
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("古尔丹之颅", "术士大师古尔丹的颅骨被达拉然的法师们保护了起来。它的正统所有权属于燃烧军团。", "ReplaceableTextures\\CommandButtons\\BTNGuldanSkull.blp")
-      set this.questItemAnyUnitInRect = this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_DalaranDungeon, "达拉然地牢", true))
+      local thistype this = thistype.allocate("The Skull of Gul'dan", "The Skull of the master warlock Gul'dan is protected by the Mages of Dalaran. It rightfully belongs to the Legion.", "ReplaceableTextures\\CommandButtons\\BTNGuldanSkull.blp")
+      set this.questItemAnyUnitInRect = this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_DalaranDungeon, "Dalaran Dungeons", true))
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendDead.create(LEGEND_ILLIDAN), QuestItemFactionDefeated.create(FACTION_NAGA)))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

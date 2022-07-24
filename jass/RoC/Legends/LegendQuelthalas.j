@@ -20,7 +20,7 @@ library LegendQuelthalas initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_SILVERMOON = Legend.create()
     set LEGEND_SILVERMOON.Unit = gg_unit_h003_0418
-    set LEGEND_SILVERMOON.DeathMessage = "高等精灵的壮丽城市银月城已经被她的敌人摧毁"
+    set LEGEND_SILVERMOON.DeathMessage = "The grand city of the high elves, Silvermoon, has been crushed by her enemies."
     set LEGEND_SILVERMOON.IsCapital = true
 
     set LEGEND_SUNWELL = Legend.create()
@@ -66,7 +66,7 @@ library LegendQuelthalas initializer OnInit requires Legend
     set LEGEND_KILJAEDEN.UnitType = 'U004'
     set LEGEND_KILJAEDEN.PermaDies = true
     set LEGEND_KILJAEDEN.StartingXP = 10800
-    set LEGEND_KILJAEDEN.DeathMessage = "欺诈者基尔加丹已经被消灭，但对于血精灵来说为时已晚，他们那被恶魔污染了的血脉将继续延续下去。"
+    set LEGEND_KILJAEDEN.DeathMessage = "Kil'jaeden the Deceiver has been annihilated, but it is too late for the Blood Elves, who will continue to live and die with demonic taint coursing through their veins."
   endfunction
 
 endlibrary

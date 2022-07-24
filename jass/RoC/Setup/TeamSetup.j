@@ -20,44 +20,44 @@ library TeamSetup requires Team
     //Starting teams
     local Team t = 0
 
-    set TEAM_ALLIANCE = Team.create("联盟")
-    set TEAM_ALLIANCE.VictoryMusic = "史诗胜利"
+    set TEAM_ALLIANCE = Team.create("Alliance")
+    set TEAM_ALLIANCE.VictoryMusic = "HeroicVictory"
 
-    set TEAM_LEGION = Team.create("燃烧军团")
-    set TEAM_LEGION.VictoryMusic = "黑暗胜利"
+    set TEAM_LEGION = Team.create("Burning Legion")
+    set TEAM_LEGION.VictoryMusic = "DarkVictory"
 
-    set TEAM_HORDE = Team.create("部落")
-    set TEAM_HORDE.VictoryMusic = "黑暗胜利"
+    set TEAM_HORDE = Team.create("Horde")
+    set TEAM_HORDE.VictoryMusic = "DarkVictory"
 
-    set TEAM_NIGHT_ELVES = Team.create("暗夜精灵")
-    set TEAM_NIGHT_ELVES.VictoryMusic = "史诗胜利"
+    set TEAM_NIGHT_ELVES = Team.create("Night Elves")
+    set TEAM_NIGHT_ELVES.VictoryMusic = "HeroicVictory"
 
-    set TEAM_OLDGOD = Team.create("古神")
-    set TEAM_OLDGOD.VictoryMusic = "黑暗胜利"
+    set TEAM_OLDGOD = Team.create("Old Gods")
+    set TEAM_OLDGOD.VictoryMusic = "DarkVictory"
 
-    set TEAM_NAGA = Team.create("伊利达雷")
-    set TEAM_NAGA.VictoryMusic = "黑暗胜利"
+    set TEAM_NAGA = Team.create("Illidari")
+    set TEAM_NAGA.VictoryMusic = "DarkVictory"
 
-    set TEAM_GILNEAS = Team.create("吉尔尼斯")
-    set TEAM_GILNEAS.VictoryMusic = "史诗胜利"
+    set TEAM_GILNEAS = Team.create("Gilneas")
+    set TEAM_GILNEAS.VictoryMusic = "HeroicVictory"
 
-    set TEAM_DRAENEI = Team.create("德莱尼")
-    set TEAM_DRAENEI.VictoryMusic = "史诗胜利"
+    set TEAM_DRAENEI = Team.create("Draenei")
+    set TEAM_DRAENEI.VictoryMusic = "HeroicVictory"
 
-    set TEAM_KULTIRAS = Team.create("库尔提拉斯")
-    set TEAM_KULTIRAS.VictoryMusic = "史诗胜利"
+    set TEAM_KULTIRAS = Team.create("Kul'tiras")
+    set TEAM_KULTIRAS.VictoryMusic = "HeroicVictory"
 
-    set TEAM_ZANDALAR = Team.create("赞达拉")
-    set TEAM_ZANDALAR.VictoryMusic = "史诗胜利"
+    set TEAM_ZANDALAR = Team.create("Zandalar")
+    set TEAM_ZANDALAR.VictoryMusic = "HeroicVictory"
 
-    set TEAM_SCARLET = Team.create("血色十字军")
-    set TEAM_SCARLET.VictoryMusic = "黑暗胜利"
+    set TEAM_SCARLET = Team.create("Scarlet Crusade")
+    set TEAM_SCARLET.VictoryMusic = "DarkVictory"
  
-    set TEAM_FORSAKEN = Team.create("被遗忘者")
-    set TEAM_FORSAKEN.VictoryMusic = "黑暗胜利"
+    set TEAM_FORSAKEN = Team.create("Forsaken")
+    set TEAM_FORSAKEN.VictoryMusic = "DarkVictory"
 
-    set TEAM_SCOURGE = Team.create("诺森德")
-    set TEAM_SCOURGE.VictoryMusic = "黑暗胜利"
+    set TEAM_SCOURGE = Team.create("Northrend")
+    set TEAM_SCOURGE.VictoryMusic = "DarkVictory"
   endfunction
 
 endlibrary

@@ -15,7 +15,7 @@ library CheatTime initializer OnInit requires Persons, Persons, TestSafety
     local string parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     
     call SetFloatGameState(GAME_STATE_TIME_OF_DAY, S2R(parameter))
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 设定时间为" + parameter + "。")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Time of day set to " + parameter + ".")
   endfunction
 
   private function OnInit takes nothing returns nothing

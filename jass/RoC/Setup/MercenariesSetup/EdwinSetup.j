@@ -5,7 +5,7 @@ library EdwinSetup requires Faction
   endglobals
 
   public function OnInit takes nothing returns nothing
-    set MERC_EDWIN = EdwinMercFaction.create("迪菲亚兄弟会", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", LEGEND_EDWIN)
+    set MERC_EDWIN = EdwinMercFaction.create("Defias", PLAYER_COLOR_COAL, "|cFF808080","ReplaceableTextures\\CommandButtons\\BTNDarkSoldier2.blp", LEGEND_EDWIN)
     set MERC_EDWIN.TeleportItemType = 'I00V' 
     set MERC_EDWIN.AbsenceResearch = 'R02C'
 

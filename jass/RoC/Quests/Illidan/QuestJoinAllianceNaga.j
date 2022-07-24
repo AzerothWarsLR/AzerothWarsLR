@@ -3,11 +3,11 @@ library QuestJoinAllianceNaga requires Persons, GeneralHelpers
   struct QuestJoinAllianceNaga extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "伊利达雷加入了联盟"
+      return "The Illidari have joined the Alliance"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "加入联盟"
+      return "Join the Alliance team"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -16,7 +16,7 @@ library QuestJoinAllianceNaga requires Persons, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("加入联盟", "随着世界末日威胁的出现，联盟终于接触到了暗夜精灵并邀请他们加入联盟。", "ReplaceableTextures\\CommandButtons\\BTNalliance.blp")
+      local thistype this = thistype.allocate("Join the Alliance", "The Alliance has invited the Night Elves to join them in the face of a looming world threat.", "ReplaceableTextures\\CommandButtons\\BTNalliance.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IG', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ALTRUIS, true))
       call this.AddQuestItem(QuestItemResearch.create('R062', 'n055'))

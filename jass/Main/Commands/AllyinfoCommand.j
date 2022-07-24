@@ -8,10 +8,10 @@
   private function Actions takes nothing returns nothing
     local Person whichPerson = Person.ByHandle(GetTriggerPlayer())
 
-    call DisplayTextToPlayer(whichPerson.Player, 0, 0, "结盟指令现在是: 
--invite (势力名字)
--join (队伍名字)
--uninvite (势力名字)
+    call DisplayTextToPlayer(whichPerson.Player, 0, 0, "The ally command have changed, they are now: 
+-invite (faction name)
+-join (team name)
+-uninvite (faction name)
 -unally")
 
   endfunction

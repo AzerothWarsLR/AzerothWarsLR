@@ -43,17 +43,17 @@ library LegendNaga initializer OnInit requires Legend
 
     set LEGEND_NZOTH = Legend.create()
     set LEGEND_NZOTH.Unit = gg_unit_U01Z_1237
-    set LEGEND_NZOTH.DeathMessage = "腐蚀者恩佐斯在实施他最后的计谋前等待了千万年。然而一切都是徒劳的。恩佐斯已死，他永远没有机会再见证他黑暗帝国的真正实现。"
+    set LEGEND_NZOTH.DeathMessage = "N'zoth the Corruptor lay in wait for millenia before enacting final ploy. In the end, it was all for naught; N'zoth lies dead, and he will never witness the true realization of his Black Empire."
     set LEGEND_NZOTH.PermaDies = true
 
     set LEGEND_NAZJATAR = Legend.create()
     set LEGEND_NAZJATAR.Unit = gg_unit_n045_3377
-    set LEGEND_NAZJATAR.DeathMessage = "艾萨拉女王和纳沙塔尔帝国的所在地永恒宫殿已经被摧毁。"
+    set LEGEND_NAZJATAR.DeathMessage = "The Eternal Palace, the royal seat of Queen Azshara and the Nazjatar Empire, has been destroyed."
     set LEGEND_NAZJATAR.IsCapital = true
 
     set LEGEND_VAULT = Legend.create()
     set LEGEND_VAULT.Unit = gg_unit_n05A_2845
-    set LEGEND_VAULT.DeathMessage = "大图书馆已经被摧毁，存在于其中的知识也随之消逝。"
+    set LEGEND_VAULT.DeathMessage = "The Aetheneum vault has been destroyed, and with it, ages of knowledge is lost."
     set LEGEND_VAULT.IsCapital = true
   endfunction
 

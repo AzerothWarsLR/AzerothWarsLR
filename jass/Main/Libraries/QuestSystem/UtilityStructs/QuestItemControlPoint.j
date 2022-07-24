@@ -60,7 +60,7 @@ library QuestItemControlPoint initializer OnInit requires QuestItemData, Control
     static method create takes ControlPoint target returns thistype
       local thistype this = thistype.allocate()
       set this.target = target
-      set this.Description = "你的队伍控制了" + target.Name
+      set this.Description = "Your team controls " + target.Name
       set this.targetWidget = target.Unit
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

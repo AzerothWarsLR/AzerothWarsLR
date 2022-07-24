@@ -22,10 +22,10 @@ library CheatNocd initializer OnInit requires Persons, TestSafety, PlayerUnitEve
     
     if parameter == "on" then
       set Toggle[pId] = true
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无技能冷却开启")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r No cooldowns activated.")
     elseif parameter == "off" then
       set Toggle[pId] = false
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无技能冷却关闭")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r No cooldowns deactivated.")
     endif
   endfunction
 

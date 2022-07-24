@@ -7,7 +7,7 @@ library ScourgeSetup requires Faction, TeamSetup, UnitTypesScourge
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SCOURGE = LiegeFaction.create("天灾军团", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
+    set FACTION_SCOURGE = LiegeFaction.create("Scourge", PLAYER_COLOR_PURPLE, "|c00540081","ReplaceableTextures\\CommandButtons\\BTNRevenant.blp")
     set f = FACTION_SCOURGE
     set f.Team = TEAM_LEGION
     set f.PresenceResearch = 'R05K'

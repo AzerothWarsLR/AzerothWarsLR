@@ -164,7 +164,7 @@ library QuestItemChannelRect requires QuestItemData, Legend, T32, AIDS, Filtered
       set this.targetRect = targetRect
       set this.targetLegend = whichLegend
       set this.duration = duration
-      set this.Description = "让" + whichLegend.Name + "在" + rectName + "施法" + I2S(R2I(duration)) + "秒"
+      set this.Description = "Have " + whichLegend.Name + " channel at " + rectName + " for " + I2S(R2I(duration)) + " seconds"
       set this.facing = facing
       call TriggerRegisterEnterRegion(thistype.entersRectTrig, this.target, null)
       set this.MapEffectPath = TARGET_EFFECT

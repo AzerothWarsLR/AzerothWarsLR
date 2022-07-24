@@ -5,11 +5,11 @@ library QuestGarithosCrusade requires LordaeronSetup, LegendLordaeron, Display
   struct QuestGarithosCrusade extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "一直以来加瑟里斯都不喜欢其他种族。他的自豪感和对权力的渴望促使洛丹伦的残余势力加入了血色十字军"
+      return "Garithos has always had a disliking for the other races. His pride and desire for power has led the remnants of the Lordaeron forces to join the crusade"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你将失去一切，但会在提尔之手生成加瑟里斯和一小支部队"
+      return "You lose everything, but will spawn with Garithos and a small army in Tyr Hand"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -47,7 +47,7 @@ library QuestGarithosCrusade requires LordaeronSetup, LegendLordaeron, Display
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("加瑟里斯的十字军", "加瑟里斯一直不信任其他种族，他可能会被诱惑加入血色十字军", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
+      local thistype this = thistype.allocate("Garithos' Crusade", "Garithos has always had a distrust of other races, he might be tempted to join the Scarlet Crusade.", "ReplaceableTextures\\CommandButtons\\BTNGarithos.blp")
       call this.AddQuestItem(QuestItemResearch.create('R08E', 'hbla'))
       return this
     endmethod

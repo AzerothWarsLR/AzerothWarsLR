@@ -39,7 +39,7 @@ library LegendNeutral initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_RAGNAROS = Legend.create()
     set LEGEND_RAGNAROS.Unit = gg_unit_N00D_1457
-    set LEGEND_RAGNAROS.DeathMessage = "炎魔之王与火地之王拉格纳罗斯已经被杀死。"
+    set LEGEND_RAGNAROS.DeathMessage = "Ragnaros, the King of Fire and Lord of the Firelands, has been extinguished."
 
     set LEGEND_SEAWITCH = Legend.create()
     set LEGEND_SEAWITCH.Unit = gg_unit_O02L_0340

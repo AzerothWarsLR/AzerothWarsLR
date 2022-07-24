@@ -18,7 +18,7 @@ library CheatOwner initializer OnInit requires TestSafety
     
     if S2I(parameter) >= 0 then
       call ForGroupBJ( GetUnitsSelectedAll(p), function SetOwner )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 将选中单位的控制权交给" + GetPlayerName(Player(S2I(parameter))) + ".")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Setting owner of selected units to " + GetPlayerName(Player(S2I(parameter))) + ".")
     endif    
   endfunction
 

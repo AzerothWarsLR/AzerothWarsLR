@@ -13,7 +13,7 @@ library LegendFrostwolf initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_CAIRNE = Legend.create()
     set LEGEND_CAIRNE.UnitType = 'Ocbh'
-    set LEGEND_CAIRNE.DeathMessage = "凯恩的精神在这个世界上流传了下来。牛头人已经开始崇敬他们逝去的先祖。"
+    set LEGEND_CAIRNE.DeathMessage = "Cairne's spirit has passed on from this world. The Tauren have already begun to revere their fallen ancestor."
     set LEGEND_CAIRNE.StartingXP = 1000
 
     set LEGEND_THRALL = Legend.create()
@@ -22,7 +22,7 @@ library LegendFrostwolf initializer OnInit requires Legend
   
     set LEGEND_THUNDERBLUFF = Legend.create()
     set LEGEND_THUNDERBLUFF.Unit = gg_unit_o00J_1495
-    set LEGEND_THUNDERBLUFF.DeathMessage = "雷霆崖上的牛头人们已经被赶走。血蹄部族失去了家园。"
+    set LEGEND_THUNDERBLUFF.DeathMessage = "The mesas of Thunderbluff have been swept clean of the Tauren. The Bloodhoof are without a home."
     set LEGEND_THUNDERBLUFF.IsCapital = true
 
     set LEGEND_DARKSPEARHOLD = Legend.create()
@@ -35,7 +35,7 @@ library LegendFrostwolf initializer OnInit requires Legend
 
     set LEGEND_ORGRIMMAR = Legend.create()
     set LEGEND_ORGRIMMAR.Unit = gg_unit_o01B_0190
-    set LEGEND_ORGRIMMAR.DeathMessage = "奥格瑞玛已经被拆除。随着它的毁灭，兽人们在新世界寻找庇护之地的希望和梦想也随之毁灭。"
+    set LEGEND_ORGRIMMAR.DeathMessage = "Orgrimmar has been demolished. With it dies the hopes and dreams of a wartorn race seeking refuge in a new world."
   endfunction
 
 endlibrary

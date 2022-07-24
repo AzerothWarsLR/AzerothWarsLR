@@ -22,11 +22,11 @@ library CheatControl initializer OnInit requires Persons, Persons, TestSafety
         call SetPlayerAllianceStateBJ( Player(i), GetTriggerPlayer(), bj_ALLIANCE_ALLIED_ADVUNITS )
         set i = i + 1
       endloop
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 获得所有玩家的控制权。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Granted control of all players.")
     else        
       call SetPlayerAllianceStateBJ( Player(S2I(parameter)), GetTriggerPlayer(), bj_ALLIANCE_ALLIED_ADVUNITS )
       call SetPlayerAllianceStateBJ( GetTriggerPlayer(), Player(S2I(parameter)), bj_ALLIANCE_ALLIED_ADVUNITS )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 获得玩家" + GetPlayerName(Player(S2I(parameter))) + "的控制权。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Granted control of player " + GetPlayerName(Player(S2I(parameter))) + ".")
     endif
   endfunction
 

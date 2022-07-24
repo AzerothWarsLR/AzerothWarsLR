@@ -7,11 +7,11 @@ library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
 
   struct QuestDarkIron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "和平会谈成功了，黑铁矮人将会加入矮人帝国"
+      return "The peace talk were succesful, The Dark Iron will join the Dwarven Empire."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得影炉堡的控制并允许在坚韧祭坛内召唤达格兰·索瑞森"
+      return "You gain control of Shadowforge City and can train the hero Dagran Thaurassian from the Altar of Fortitude"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -39,8 +39,8 @@ library QuestDarkIron requires QuestItemKillUnit, IronforgeSetup, LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("黑铁盟友", "黑铁矮人们是叛徒，把麦格尼带到他们的首都来进行和平谈判。", "ReplaceableTextures\\CommandButtons\\BTNRPGDarkIron.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Shadowforge_gate, "影炉堡"))
+      local thistype this = thistype.allocate("Dark Iron Alliance", "The Dark Iron dwarves are renegades. Bring Magni to their capital to open negotiations for an alliance.", "ReplaceableTextures\\CommandButtons\\BTNRPGDarkIron.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Shadowforge_gate, "Shadowforge"))
       call this.AddQuestItem(QuestItemResearch.create('R08U', 'h048'))
       return this
     endmethod

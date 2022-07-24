@@ -14,7 +14,7 @@ library CheatTeam initializer OnInit requires Team, TestSafety
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     set t = Team.teamsByName[parameter]
     set Person.ById(pId).Faction.Team = t
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 测试将队伍改为" + t.Name + ".")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set team to " + t.Name + ".")
   endfunction
 
   //===========================================================================

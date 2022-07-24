@@ -8,16 +8,16 @@ library QuestBlueDragons requires QuestItemControlLegend, LegendDalaran, Display
 
   struct QuestBlueDragons extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "魔枢已经被占领。蓝龙军团现在为" + this.Holder.Name + "而战。"
+      return "The Nexus has been captured. The Blue Dragonflight fights for " + this.Holder.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "学会如何训练蓝龙单位"
+      return "Learn to train Blue Dragons"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "你现在可以在军事区和魔枢内训练蓝龙单位了")
+      call DisplayUnitTypeAcquired(Holder.Player, DRAGON_ID, "You can now train Blue Dragons from Military Quarters and the Nexus.")
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestBlueDragons requires QuestItemControlLegend, LegendDalaran, Display
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("蓝龙军团", "诺森德的蓝龙们是艾泽拉斯的魔法守护者。它们可能会被说服自愿加入达拉然的法师们。", "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
+      local thistype this = thistype.allocate("The Blue Dragonflight", "The Blue Dragons of Northrend are the wardens of magic on Azeroth. They might be convinced to willingly join the mages of Dalaran.", "ReplaceableTextures\\CommandButtons\\BTNAzureDragon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS, false))
       return this
     endmethod

@@ -2,7 +2,7 @@ library FactionMultiboard requires ControlPoint, Faction, Team
 
   globals
     private constant integer COLUMN_COUNT   = 3
-    private constant string  TITLE          = "计分板"
+    private constant string  TITLE          = "Scoreboard"
     private constant integer HEADER_SIZE    = 1
     
     constant integer COLUMN_FACTION = 0

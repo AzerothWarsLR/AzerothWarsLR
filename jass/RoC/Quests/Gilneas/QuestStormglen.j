@@ -2,11 +2,11 @@ library QuestStormglen requires QuestData, GilneasSetup, QuestItemControlPoint, 
 
   struct QuestStormglen extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "风谷村已经被解放"
+      return "Stormglen Village has been liberated."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得风谷村所有建筑"
+      return "Control of all buildings in Stormglen Village"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestStormglen requires QuestData, GilneasSetup, QuestItemControlPoint, 
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("风谷村", "下一个村庄就在黑瘴林旁边，风暴海崖的西南方。我们同时需要净化旁边森林。", "ReplaceableTextures\\CommandButtons\\BTNGilneasWizardTower.blp")
+      local thistype this = thistype.allocate("Stormglen", "The next village is right next to the Blackwald, south west of Tempest Reach. We will need to purify the forest too", "ReplaceableTextures\\CommandButtons\\BTNGilneasWizardTower.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n084')))
       call this.AddQuestItem(QuestItemExpire.create(950))

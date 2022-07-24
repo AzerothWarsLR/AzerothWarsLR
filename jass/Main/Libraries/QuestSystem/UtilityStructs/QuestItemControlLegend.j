@@ -68,7 +68,7 @@ library QuestItemControlLegend initializer OnInit requires QuestItemData, Legend
     static method create takes Legend target, boolean canFail returns thistype
       local thistype this = thistype.allocate()
       set this.target = target
-      set this.Description = "你的队伍控制了" + target.Name
+      set this.Description = "Your team controls " + target.Name
       set this.canFail = canFail
       set this.targetWidget = target.Unit
       set thistype.byIndex[thistype.count] = this

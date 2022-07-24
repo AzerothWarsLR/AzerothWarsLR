@@ -93,9 +93,9 @@ library QuestItemAnyUnitInRect requires QuestItemData, Environment
       local thistype this = thistype.allocate()
       local trigger trig = CreateTrigger()
       if heroOnly then
-        set this.Description = "你有一个英雄位于" + rectName
+        set this.Description = "You have a hero at " + rectName
       else
-        set this.Description = "你有一个单位位于" + rectName
+        set this.Description = "You have a unit at " + rectName
       endif
       set this.target = RectToRegion(targetRect)
       set this.targetRect = targetRect

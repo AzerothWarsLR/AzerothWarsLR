@@ -3,11 +3,11 @@ library QuestFirstWave requires QuestData, DraeneiSetup
   struct QuestFirstWave extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "德莱尼已经坚持了足够长的时间让他们大部分的平民都进入了埃索达"
+      return "The Draenei have holded long enough and most of their civilisation had time to join the Exodar"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "秘蓝岛上的神圣堡垒、星界圣所和水晶尖塔不会被删除t。你将不会失去你在外域采集的黄金。"
+      return "The Divine Citadel, Astral Sanctum and Crystal Spire will not be deleted from Azuremyst. You will not lose the bonus gold from the gold you mined in Outland."
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestFirstWave requires QuestData, DraeneiSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("破碎的文明", "邪兽人的攻击随时都会开始，德莱尼人必须将平民都疏散到埃索达上", "ReplaceableTextures\\CommandButtons\\BTNDraeneiDivineCitadel.blp")
+      local thistype this = thistype.allocate("Broken Civilisation", "The Fel Orc attack will begin at any moment, the Draenei need to evacuate their civilians aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNDraeneiDivineCitadel.blp")
       call this.AddQuestItem(QuestItemTime.create(540))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())

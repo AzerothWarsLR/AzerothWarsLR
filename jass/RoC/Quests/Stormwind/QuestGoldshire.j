@@ -2,11 +2,11 @@ library QuestGoldshire requires QuestData, StormwindSetup
 
   struct QuestGoldshire extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "豺狼人被打败了，闪金镇安全了"
+      return "The Gnolls have been defeated, Goldshire is safe."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得闪金镇所有建筑和单位"
+      return "Control of all units in Goldshire"
     endmethod
 
     private method GrantGoldshire takes player whichPlayer returns nothing
@@ -38,7 +38,7 @@ library QuestGoldshire requires QuestData, StormwindSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("埃尔文之灾", "霍格和他的手下已经占领了闪金镇，把他们清除掉！", "ReplaceableTextures\\CommandButtons\\BTNGnoll.blp")
+      local thistype this = thistype.allocate("The Scourge of Elwynn", "Hogger and his pack have taken over Goldshire, clear them out!", "ReplaceableTextures\\CommandButtons\\BTNGnoll.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_n021_2624)) //Hogger
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00Z')))
       call this.AddQuestItem(QuestItemExpire.create(1335))

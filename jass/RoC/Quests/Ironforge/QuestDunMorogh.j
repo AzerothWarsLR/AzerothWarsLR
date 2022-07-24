@@ -2,11 +2,11 @@ library QuestDunMorogh requires QuestData, ScarletSetup
 
   struct QuestDunMorogh extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "巨魔们被打败了，丹莫罗将加入你的事业"
+      return "The Trolls have been defeated, Dun Morogh will join your cause."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得丹莫罗所有建筑和单位"
+      return "Control of all units in Dun Morogh"
     endmethod
 
     private method GrantDunMorogh takes player whichPlayer returns nothing
@@ -38,7 +38,7 @@ library QuestDunMorogh requires QuestData, ScarletSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("山中之村", "一小股巨魔正在袭击丹莫罗，击败他们。", "ReplaceableTextures\\CommandButtons\\BTNIceTrollShadowPriest.blp")
+      local thistype this = thistype.allocate("Mountain Village", "A small troll skirmish is attacking Dun Morogh. Push them back!", "ReplaceableTextures\\CommandButtons\\BTNIceTrollShadowPriest.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nith_1625)) //Troll
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n014')))
       call this.AddQuestItem(QuestItemExpire.create(1435))

@@ -17,11 +17,11 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_KELTHUZAD = Legend.create()
     set LEGEND_KELTHUZAD.UnitType = 'U001'
     set LEGEND_KELTHUZAD.PermaDies = true
-    set LEGEND_KELTHUZAD.DeathMessage = "克尔苏加德被杀了。他将以灵魂形态继续存在，如果将他带到太阳井的话也许能将他复生。"
+    set LEGEND_KELTHUZAD.DeathMessage = "Kel'thuzad has been slain. He lives on in spectral form, and may yet return if he is brought to the Sunwell."
     set LEGEND_KELTHUZAD.DeathSfx = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"
     set LEGEND_KELTHUZAD.Essential = true
     set LEGEND_KELTHUZAD.StartingXP = 1000
-    set LEGEND_KELTHUZAD.Name = "克尔苏加德"
+    set LEGEND_KELTHUZAD.Name = "Kel'thuzad"
 
     set LEGEND_ANUBARAK = Legend.create()
     set LEGEND_ANUBARAK.UnitType = 'Uanb'
@@ -40,7 +40,7 @@ library LegendScourge initializer OnInit requires Legend
     set LEGEND_LICHKING = Legend.create()
     set LEGEND_LICHKING.Unit = gg_unit_u000_0649
     set LEGEND_LICHKING.Hivemind = true
-    set LEGEND_LICHKING.DeathMessage = "伟大的巫妖王已经被消灭。亡灵们因为失去了主人而再次变成无脑的怪物。"
+    set LEGEND_LICHKING.DeathMessage = "The great Lich King has been destroyed. With no central mind to command them, the forces of the Undead have gone rogue."
 endfunction
 
 endlibrary

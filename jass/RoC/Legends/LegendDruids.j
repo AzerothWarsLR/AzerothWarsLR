@@ -17,7 +17,7 @@ library LegendDruids initializer OnInit requires Legend
     set LEGEND_CENARIUS = Legend.create()
     set LEGEND_CENARIUS.UnitType = 'Ecen'
     set LEGEND_CENARIUS.PermaDies = true
-    set LEGEND_CENARIUS.DeathMessage = "森林之主塞纳留斯倒下了。卡多雷的德鲁伊们失去了他们最伟大的导师。"
+    set LEGEND_CENARIUS.DeathMessage = "The Lord of the Forest, Cenarius, has fallen. The druids of the Kaldorei have lost their greatest mentor."
     set LEGEND_CENARIUS.DeathSfx = "Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl"
     set LEGEND_CENARIUS.PlayerColor = PLAYER_COLOR_CYAN
 

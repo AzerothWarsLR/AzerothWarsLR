@@ -7,11 +7,11 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
   struct QuestTempestKeep extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "风暴要塞已经建造好了."
+      return "The TempestKeep have been constructed."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得风暴要塞"
+      return "Control of the TempestKeep"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -55,7 +55,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
 
       call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 4000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )
-      set this.Holder.Name = "血精灵"
+      set this.Holder.Name = "Blood Elves"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNBloodMage2.blp"
       if GetLocalPlayer() == this.Holder.Player then
           call SetCameraPosition(GetRectCenterX(gg_rct_TempestKeepSpawn), GetRectCenterY(gg_rct_TempestKeepSpawn))
@@ -63,7 +63,7 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("寻找主人", "血精灵们渴望魔法，他们需要寻找更强大的魔法来源。也许外域是他们困境的答案。", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
+      local thistype this = thistype.allocate("In Search of Masters", "The Blood Elves are starved for magic; they need to search for more powerful sources of it. Maybe Outland is the answer to their plight.", "ReplaceableTextures\\CommandButtons\\BTNBloodelvenWarrior.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IP', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KAEL, true))
       set this.ResearchId = QUEST_RESEARCH_ID

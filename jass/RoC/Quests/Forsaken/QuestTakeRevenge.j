@@ -2,16 +2,16 @@ library QuestTakeRevenge requires QuestData, ForsakenSetup, GeneralHelpers
 
   struct QuestTakeRevenge extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "随着巫妖王的逝世，希尔瓦娜斯的复仇终于完成了。她吸收了他的力量，成为了女妖之王"
+      return "With the Lich King eliminated, Sylvanas vengeance is finally complete. She has absorbed his power and has become the Banshee Queen"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "希尔瓦娜斯获得20点智力、力量和混乱攻击"
+      return "Sylvanas gains 20 intelligence, 20 strength and Chaos damage"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       local unit whichUnit = LEGEND_SYLVANASV.Unit
-      call BlzSetUnitName(whichUnit, "女妖之王")
+      call BlzSetUnitName(whichUnit, "Banshee Queen")
       call AddSpecialEffectTarget("war3mapImported\\SoulArmor.mdx", whichUnit, "chest")
       call BlzSetUnitWeaponIntegerField(whichUnit, UNIT_WEAPON_IF_ATTACK_ATTACK_TYPE, 0, 5) //Chaos
       call AddHeroAttributes(whichUnit, 20, 0, 20)
@@ -19,7 +19,7 @@ library QuestTakeRevenge requires QuestData, ForsakenSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("冷酷的复仇", "希尔瓦娜斯渴望向巫妖王复仇。杀了他并吸收他的力量也许可以满足她内心的空虚", "ReplaceableTextures\\CommandButtons\\BTNHelmofdomination.blp")
+      local thistype this = thistype.allocate("Cold-Hearted Revenge", "Sylvanas longs to take revenge on the Lich King. Killing him and absorbing his power would maybe satisfy the emptiness inside her", "ReplaceableTextures\\CommandButtons\\BTNHelmofdomination.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n0BC')))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SYLVANASV, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))

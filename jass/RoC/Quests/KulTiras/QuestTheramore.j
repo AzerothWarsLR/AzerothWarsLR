@@ -8,11 +8,11 @@ library QuestTheramore requires QuestData
     private static group theramoreUnits = CreateGroup()
 
     private method operator CompletionPopup takes nothing returns string
-      return "尘泥沼泽海岸边的一个相当大的岛屿已经被殖民并被称为塞拉摩，这标志着人类在卡利姆多建立的第一个定居点。"
+      return "A sizeable isle off the coast of Dustwallow Marsh has been colonized and dubbed Theramore, marking the first human settlement to be established on Kalimdor."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得塞拉摩内所有单位和建筑的控制权。"
+      return "Control of all units at Theramore"
     endmethod
 
     private static method GrantToPlayer takes player whichPlayer returns nothing
@@ -43,7 +43,7 @@ library QuestTheramore requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("塞拉摩", "遥远的卡利姆多大地上仍未受到人类文明的影响。如果第三次战争进展不佳，将有可能需要在这这里建立一个前线基地。", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
+      local thistype this = thistype.allocate("Theramore", "The distant lands of Kalimdor remain untouched by human civilization. If the Third War proceeds poorly, it may become necessary to establish a forward base there.", "ReplaceableTextures\\CommandButtons\\BTNHumanArcaneTower.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h076'))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

@@ -19,21 +19,21 @@ library InviteCommand initializer OnInit requires Team
         set targetFaction = Faction.factionsByName[content]
 
         if targetFaction == 0 then
-          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "没有一个叫" + content + "的队伍")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
           return
         endif
 
         if targetFaction.CanBeInvited == false then
-          call DisplayTextToPlayer(senderPerson.Player, 0, 0, targetFaction.prefixCol + targetFaction.Name + "不能自愿的更换势力")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, targetFaction.prefixCol + targetFaction.Name + " can't voluntarily change teams.")
         endif
 
         if senderPerson.Faction == targetFaction then
-          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "你不能邀请自己加入自己的势力。")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "You cannot invite yourself to your own team.")
           return
         endif
 
         if targetFaction.Person == 0 then
-          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "没有属于" + targetFaction.prefixCol + targetFaction.Name + "|r的玩家。")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.Name + "|r.")
           return
         endif
 
@@ -43,7 +43,7 @@ library InviteCommand initializer OnInit requires Team
 
       endif
     else 
-      call DisplayTextToPlayer(senderPerson.Player, 0, 0, "你还不能结盟")
+      call DisplayTextToPlayer(senderPerson.Player, 0, 0, "You cannot ally yet")
     endif 
   endfunction
 

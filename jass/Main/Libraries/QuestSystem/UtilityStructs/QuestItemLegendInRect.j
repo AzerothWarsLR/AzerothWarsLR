@@ -69,7 +69,7 @@ library QuestItemLegendInRect requires QuestItemData, Legend, Environment
       set this.target = RectToRegion(targetRect)
       set this.targetRect = targetRect
       set this.legend = legend
-      set this.Description = legend.Name + "在" + rectName
+      set this.Description = legend.Name + " is at " + rectName
       call TriggerRegisterEnterRegion(thistype.entersRectTrig, this.target, null)
       call TriggerRegisterLeaveRegion(thistype.exitsRectTrig, this.target, null)
       set thistype.byIndex[thistype.count] = this

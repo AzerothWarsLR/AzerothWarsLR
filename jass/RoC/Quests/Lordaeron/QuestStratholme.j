@@ -3,11 +3,11 @@ library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit, G
 
   struct QuestStratholme extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "斯坦索姆已经被解放，其军队现在可以自由地协助" + this.Holder.Team.Name + "."
+      return "Stratholme has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得斯坦索姆所有建筑和单位"
+      return "Control of all units in Stratholme"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -22,7 +22,7 @@ library QuestStratholme requires QuestData, LordaeronSetup, QuestItemKillUnit, G
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("黑石与卷轴", "黑石氏族占领了奥特兰克，为了洛丹伦的安全必须消灭他们。", "ReplaceableTextures\\CommandButtons\\BTNChaosBlademaster.blp")
+      local thistype this = thistype.allocate("Blackrock and Roll", "The Blackrock clan has taken over Alterac, they must be eliminated for the safety of Lordaeron", "ReplaceableTextures\\CommandButtons\\BTNChaosBlademaster.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_o00B_1316)) //Jubei
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n019')))
       call this.AddQuestItem(QuestItemUpgrade.create('hcas', 'htow'))

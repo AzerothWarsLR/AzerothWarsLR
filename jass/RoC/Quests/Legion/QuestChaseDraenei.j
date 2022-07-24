@@ -2,11 +2,11 @@ library QuestChaseDraenei requires QuestData
 
   struct QuestChaseDraenei extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "我们已经在外域中消灭了德莱尼人"
+      return "We have eradicated the Draenei from Outland"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "你将从德莱尼人那掠夺500黄金和木材。埃索达也将变得可摧毁"
+      return "You will plunder 500 gold and lumber from the Draenei. The Exodar will also be made vulnerable"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -16,7 +16,7 @@ library QuestChaseDraenei requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("万年追杀", "德莱尼们从阿古斯逃到了外域。消灭他们所有人。", "ReplaceableTextures\\CommandButtons\\BTNEredarWarlockPurple.blp")
+      local thistype this = thistype.allocate("Chase across the Eons", "The Draenei have escaped Argus, they have run away to Outland. Elimimnate them all.", "ReplaceableTextures\\CommandButtons\\BTNEredarWarlockPurple.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))

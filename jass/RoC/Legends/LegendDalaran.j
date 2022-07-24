@@ -29,14 +29,14 @@ library LegendDalaran initializer OnInit requires Legend
 
     set LEGEND_DALARAN = Legend.create()
     set LEGEND_DALARAN.Unit = gg_unit_h002_0230
-    set LEGEND_DALARAN.DeathMessage = "紫罗兰堡，东部王国奥术知识的终极堡垒，像一座沙堡一样崩塌了。"
+    set LEGEND_DALARAN.DeathMessage = "The Violet Citadel, the ultimate bastion of arcane knowledge in the Eastern Kingdoms, crumbles like a sand castle."
     set LEGEND_DALARAN.IsCapital = true
 
     set LEGEND_ANTONIDAS = Legend.create()
     set LEGEND_ANTONIDAS.UnitType = 'Hant'
     set LEGEND_ANTONIDAS.StartingXP = 1000
     call LEGEND_ANTONIDAS.AddUnitDependency(LEGEND_DALARAN.Unit)
-    set LEGEND_ANTONIDAS.DeathMessage = "大法师安东尼达斯被杀死了，他的广博知识随着他的死亡而永远的消失了。达拉然的法师们失去了最聪明的头脑。"
+    set LEGEND_ANTONIDAS.DeathMessage = "Archmage Antonidas has been cut down, his vast knowledge forever lost with his death. The mages of Dalaran have lost their brightest mind."
   endfunction
 
 endlibrary

@@ -10,11 +10,11 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "现实的融合已经完成。通往风暴峭壁、北部高地和塔纳利斯的传送门将会永久开启"
+      return "The Merging of Realities has come to pass. The Nya'lothan portals to Storm Peaks, Northern Highlands, and Tanaris have been permanently opened."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "通往风暴峭壁、北部高地和塔纳利斯的传送门将会永久开启"
+      return "The Nya'lothan portals to Storm Peaks, Northern Highlands, and Tanaris will be permanently opened"
     endmethod
 
     //Opens the central portals in Nyalotha permanently.
@@ -46,7 +46,7 @@ library QuestThirdObelisk requires QuestData, BlackEmpirePortalSetup, Herald
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("现实的融合", "现实正在被疯狂渐渐吞噬。一旦在暮光高地的方尖碑被建立起来，艾泽拉斯的镜像世界和尼奥罗萨将终于合为一体而黑暗帝国将会被释放。", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
+      local thistype this = thistype.allocate("Merging of Realities", "Reality frays at the seams as madness threatents to overtake it. Once an Obelisk has been established in the Twilight Highlands, the mirror worlds of Azeroth and Ny'alotha will finally be one, and the Black Empire will be unleashed.", "ReplaceableTextures\\CommandButtons\\BTNHorrorSoul.blp")
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n02S')))
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n04V')))
       call this.AddQuestItem(QuestItemObelisk.create(ControlPoint.ByUnitType('n0BD')))

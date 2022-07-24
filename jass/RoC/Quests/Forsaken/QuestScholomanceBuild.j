@@ -6,11 +6,11 @@ library QuestScholomanceBuild requires QuestData
 
   struct QuestScholomanceBuild extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "解锁普崔司和密室"
+      return "Putress is now trainable and you now have access to the Shadowvault."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "解锁祭坛内的普崔司和诺森德的基地。"
+      return "Putress is trainable at the altar and unlock the base in Northrend"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestScholomanceBuild requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("秘密集结", "通灵学院是入侵洛丹伦的秘密集结地，建造你的基础建筑并准备好入侵。", "ReplaceableTextures\\CommandButtons\\BTNAffinityII.blp")
+      local thistype this = thistype.allocate("Secret Buildup", "The Scholomance is the secret staging ground for the invasion of Lordaeron, build your infrastructure and be ready for war.", "ReplaceableTextures\\CommandButtons\\BTNAffinityII.blp")
       call this.AddQuestItem(QuestItemBuild.create('u011', 2))
       call this.AddQuestItem(QuestItemBuild.create('h08C', 20))
       call this.AddQuestItem(QuestItemBuild.create('u014', 1))

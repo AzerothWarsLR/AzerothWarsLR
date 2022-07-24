@@ -6,7 +6,7 @@ library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, Le
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "德雷克塔尔的法术书"
+      return "Drek'thar's Spellbook"
     endmethod   
 
     private method OnComplete takes nothing returns nothing
@@ -15,9 +15,9 @@ library QuestDrektharsSpellbook requires QuestData, Artifact, FrostwolfSetup, Le
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("德雷克塔尔的法术书", "野蛮的暗夜精灵们威胁着整个部落的安危。占领他们的世界之树并把萨尔带到它的脚下。", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
+      local thistype this = thistype.allocate("Drekthar's Spellbook", "The savage Night Elves threaten the safety of the entire Horde. Capture their World Tree and bring Thrall to its roots.", "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_THRALL, gg_rct_Drekthars_Spellbook, "诺达希尔"))
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_THRALL, gg_rct_Drekthars_Spellbook, "Nordrassil"))
       return this
     endmethod
   endstruct

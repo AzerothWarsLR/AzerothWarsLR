@@ -6,11 +6,11 @@ library QuestSpiderWar requires QuestData, QuestItemKillUnit, QuestItemExpire, Q
 
   struct QuestSpiderWar extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "诺森德和冰冠堡垒现在完全在巫妖王和" + this.Holder.Team.Name + "的控制之下了。"
+      return "Northrend and the Icecrown Citadel is now under full control of the Lich King and the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "在冰封王座可以研究瘟疫了，解锁克尔苏加德和瑞文戴尔并在冰冠冰川获得一个基地。"
+      return "Access to the Plague Research at the Frozen Throne, Kel'tuzad and Rivendare trainable and a base in Icecrown"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestSpiderWar requires QuestData, QuestItemKillUnit, QuestItemExpire, Q
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("蜘蛛之战", "骄傲的蛛魔已经向新成立的巫妖王宣战，杀掉他们以控制诺森德大陆。", "ReplaceableTextures\\CommandButtons\\BTNNerubianQueen.blp")
+      local thistype this = thistype.allocate("War of the Spider", "The proud Nerubians have declared war on the newly formed Lich King, destroy them to secure the continent of Northrend.", "ReplaceableTextures\\CommandButtons\\BTNNerubianQueen.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08D')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00G')))

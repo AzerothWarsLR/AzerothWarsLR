@@ -6,11 +6,11 @@ library QuestLegionCaptureSunwell requires QuestData, LegionSetup, LegendQueltha
 
   struct QuestLegionCaptureSunwell extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "太阳井已经被天灾军团占领，它现在充斥着死灵能量。"
+      return "The Sunwell has been captured by the Scourge. It now writhes with necromantic energy."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "一项增强恐惧魔王的研究"
+      return "A research improving your Dreadlords"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -23,7 +23,7 @@ library QuestLegionCaptureSunwell requires QuestData, LegionSetup, LegendQueltha
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("银月城陷落", "太阳井是高等精灵永生和魔法力量的源泉。在天灾军团的控制下，它将会成为巨大的死灵力量的源泉。", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
+      local thistype this = thistype.allocate("Fall of Silvermoon", "The Sunwell is the source of the High Elves' immortality and magical prowess. Under control of the Scourge, it would be the source of immense necromantic power.", "ReplaceableTextures\\CommandButtons\\BTNOrbOfCorruption.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
       return this
     endmethod

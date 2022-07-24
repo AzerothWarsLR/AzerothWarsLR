@@ -3,11 +3,11 @@ library QuestLivingShadow requires QuestData, Artifact, LegendLordaeron, LegendT
 
   struct QuestLivingShadow extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "乌瑟尔在暮光堡垒的废墟中发现了活体虚空"
+      return "Uther has discovered the Living Embodiment of Shadow in the ruins of the Twilight Citadel"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得活体虚空并开启灰烬使者任务"
+      return "The Living Shadow and the Ashbringer Quest discovery"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -17,8 +17,8 @@ library QuestLivingShadow requires QuestData, Artifact, LegendLordaeron, LegendT
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("活体虚空", "竖立在暮光高地上的暮光堡垒是黑暗的灯塔。摧毁它并清除掉周围的邪恶之地。", "ReplaceableTextures\\CommandButtons\\BTNShadow Orb.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_UTHER, gg_rct_TwilightOutside, "暮光堡垒"))
+      local thistype this = thistype.allocate("The Living Embodiment of Shadow", "The Dark Fortress looming over the Twilight Highlands is a beacon of darkness. Destroy it and clear the surrounding lands of evil.", "ReplaceableTextures\\CommandButtons\\BTNShadow Orb.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_UTHER, gg_rct_TwilightOutside, "Twilight Citadel"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09F')))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_GRIMBATOL, false))
       return this

@@ -64,7 +64,7 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set ARTIFACT_TROLKALAR = Artifact.create(CreateItem('I01O', DUMMY_X, DUMMY_Y))    //Trol'kalar
     call ARTIFACT_TROLKALAR.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_TROLKALAR.setDescription("暴风城任务")
+    call ARTIFACT_TROLKALAR.setDescription("Stormwind Quest")
     set ARTIFACT_TROLKALAR.TitanforgedAbility = 'A0VM'
 
     set ARTIFACT_SCEPTEROFTHEQUEEN = Artifact.create(CreateItem('I00I', DUMMY_X, DUMMY_Y))
@@ -76,11 +76,11 @@ library ArtifactSetup requires Artifact, ArtifactMenu
     call UnitAddItem(gg_unit_nbsm_1188, ARTIFACT_BOOKOFMEDIVH.item) 
 
     set ARTIFACT_SKULLOFGULDAN = Artifact.create(CreateItem('I007', 21886, -25219))    //Skull of Gul'dan
-    call ARTIFACT_SKULLOFGULDAN.setDescription("伊利丹任务")
+    call ARTIFACT_SKULLOFGULDAN.setDescription("Illidan Quest")
 
     set ARTIFACT_ZINROKH = Artifact.create(CreateItem('I016', DUMMY_X, DUMMY_Y))    //Zin'rokh
     call ARTIFACT_ZINROKH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_ZINROKH.setDescription("由碎片组合而成")
+    call ARTIFACT_ZINROKH.setDescription("Assembled from its fragments")
     set ARTIFACT_ZINROKH.TitanforgedAbility = 'A0VM'
 
     set tempArtifact = Artifact.create(CreateItem('I01M', DUMMY_X, DUMMY_Y))    //Bronze Demon Soul Fragment
@@ -107,11 +107,11 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set ARTIFACT_DREKTHARSSPELLBOOK = Artifact.create(CreateItem('dtsb', DUMMY_X, DUMMY_Y))    //Drek'thar's Spellbook
     call ARTIFACT_DREKTHARSSPELLBOOK.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_DREKTHARSSPELLBOOK.setDescription("霜狼氏族任务")
+    call ARTIFACT_DREKTHARSSPELLBOOK.setDescription("Frostwolf Quest")
 
     set ARTIFACT_SOULGEM = Artifact.create(CreateItem('gsou', DUMMY_X, DUMMY_Y))
     call ARTIFACT_SOULGEM.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_SOULGEM.setDescription("达拉然任务")
+    call ARTIFACT_SOULGEM.setDescription("Dalaran's Quest")
     set ARTIFACT_SOULGEM.falseX = -14269
     set ARTIFACT_SOULGEM.falseY = 22281
 
@@ -135,11 +135,11 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set ARTIFACT_CROWNEASTERNKINGDOMS = Artifact.create(CreateItem('I00U', DUMMY_X, DUMMY_Y))
     call ARTIFACT_CROWNEASTERNKINGDOMS.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("暴风城和洛丹伦任务")
+    call ARTIFACT_CROWNEASTERNKINGDOMS.setDescription("Stormwind and Lordaeron Quest")
 
     set ARTIFACT_CROWNTRIUMVIRATE = Artifact.create(CreateItem('I011', DUMMY_X, DUMMY_Y))
     call ARTIFACT_CROWNTRIUMVIRATE.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_CROWNTRIUMVIRATE.setDescription("德莱尼任务")
+    call ARTIFACT_CROWNTRIUMVIRATE.setDescription("Draenei Quest")
 
     set ARTIFACT_SCYTHEOFELUNE = Artifact.create(CreateItem('I00R', DUMMY_X, DUMMY_Y))
     call UnitAddAbility(gg_unit_O038_3742, ARTIFACT_HOLDER_ABIL_ID)   
@@ -147,31 +147,31 @@ library ArtifactSetup requires Artifact, ArtifactMenu
 
     set ARTIFACT_THUNDERFURY = Artifact.create(CreateItem('I00Z', DUMMY_X, DUMMY_Y))
     call ARTIFACT_THUNDERFURY.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_THUNDERFURY.setDescription("暮光之锤任务")
+    call ARTIFACT_THUNDERFURY.setDescription("Twilight Hammer's Quest")
     set ARTIFACT_THUNDERFURY.falseX = -1649
     set ARTIFACT_THUNDERFURY.falseY = 7628
 
     set ARTIFACT_LIVINGSHADOW = Artifact.create(CreateItem('odef', DUMMY_X, DUMMY_Y))
     call ARTIFACT_LIVINGSHADOW.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_LIVINGSHADOW.setDescription("洛丹伦任务")
+    call ARTIFACT_LIVINGSHADOW.setDescription("Lordaeron's Quest")
     set ARTIFACT_LIVINGSHADOW.falseX = -19525
     set ARTIFACT_LIVINGSHADOW.falseY = -5192
 
     set ARTIFACT_ASHBRINGER = Artifact.create(CreateItem('I012', DUMMY_X, DUMMY_Y))
     call ARTIFACT_ASHBRINGER.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_ASHBRINGER.setDescription("洛丹伦任务")
+    call ARTIFACT_ASHBRINGER.setDescription("Lordaeron's Quest")
     set ARTIFACT_ASHBRINGER.falseX = 10569
     set ARTIFACT_ASHBRINGER.falseY = -5280
 
     set ARTIFACT_XALATATH = Artifact.create(CreateItem('I015', DUMMY_X, DUMMY_Y))
     call ARTIFACT_XALATATH.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_XALATATH.setDescription("黑暗帝国任务")
+    call ARTIFACT_XALATATH.setDescription("Black Empire's Quest")
     set ARTIFACT_XALATATH.falseX = 7121
     set ARTIFACT_XALATATH.falseY = 10000
 
     set ARTIFACT_DEMONSOUL = Artifact.create(CreateItem('I01A', DUMMY_X, DUMMY_Y))
     call ARTIFACT_DEMONSOUL.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call ARTIFACT_DEMONSOUL.setDescription("安其拉任务")
+    call ARTIFACT_DEMONSOUL.setDescription("Ahn'Qiraj's Quest")
     set ARTIFACT_DEMONSOUL.falseX = 12508
     set ARTIFACT_DEMONSOUL.falseY = -11437
 

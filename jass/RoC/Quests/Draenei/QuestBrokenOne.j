@@ -7,15 +7,15 @@ library QuestBrokenOne requires QuestData, DraeneiSetup
   struct QuestBrokenOne extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "祭坛内可以召唤努波顿了"
+      return "The hero Nobundo is now trainable at the Altar"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "努波顿将会加入埃索达的幸存者"
+      return "Nobundo will join the survivors on the Exodar"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("破碎者", "大萨满努波顿为了让维纶带领其他德莱尼逃跑而留下来战斗。如果德莱尼能够坚持的够久，也许他能够回来加入埃索达的幸存者们。", "ReplaceableTextures\\CommandButtons\\BTNAkamanew.blp")
+      local thistype this = thistype.allocate("The Broken One", "The great shaman Nobundo is fighting to enable Velen and most of the Draenei to escape. If the Draenei hold out long enough, he might have time to join the survivors aboard the Exodar", "ReplaceableTextures\\CommandButtons\\BTNAkamanew.blp")
       call this.AddQuestItem(QuestItemTime.create(660))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02O')))
       set this.ResearchId = QUESTRESEARCH_ID

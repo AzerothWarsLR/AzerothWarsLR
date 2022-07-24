@@ -2,11 +2,11 @@ library QuestTelredor requires QuestData, DalaranSetup
 
   struct QuestTelredor extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "信使及时到达了泰雷多尔"
+      return "The messenger has arrived, Telredor has been reached in time."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得泰雷多尔所有建筑"
+      return "Control of all buildings in Telredor"
     endmethod
 
     private method GrantTelredor takes player whichPlayer returns nothing
@@ -38,8 +38,8 @@ library QuestTelredor requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("警告泰雷多尔", "必须警告泰雷多尔兽人即将入侵", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Telredor, "泰雷多尔", false))
+      local thistype this = thistype.allocate("Warn Telredor", "The city of Telredor has to be warned of the imminent Orc invasion", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Telredor, "Telredor", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

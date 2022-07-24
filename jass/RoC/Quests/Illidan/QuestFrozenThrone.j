@@ -6,11 +6,11 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
       return true
     endmethod
     private method operator CompletionPopup takes nothing returns string
-      return "作为对其使命的奖励，伊利丹和他的追随者们被允许加入燃烧军团。"
+      return "As a reward for his mission, Illidan and his followers have been welcomed into the ranks of the Burning Legion"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "伊利达雷队伍将会加入燃烧军团"
+      return "The Illidari team will join the Burning Legion in their team"
     endmethod
 
     private method OnComplete takes nothing returns nothing 
@@ -31,7 +31,7 @@ library QuestFrozenThrone requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("冰与火之交响曲", "基尔加丹命令伊利丹摧毁冰封王座，而他将服从命令", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
+      local thistype this = thistype.allocate("A Symphony of Frost and Flame", "Kil'jaeden has ordered Illidan to destroy the Frozen Throne, and he shall obey.", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(LEGEND_LICHKING.Unit))
       call this.AddQuestItem(QuestItemResearch.create('R063', 'o01I'))
       return this

@@ -13,24 +13,24 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     private static group SecondChanceUnits
 
     private method operator CompletionPopup takes nothing returns string
-      return "军团枢纽已经被摧毁。一群雄心勃勃的法师抓住机会学习了恶魔的魔法，成为第一批血法师."
+      return "The Legion Nexus has been obliterated. A group of ambitious mages seize the opportunity to study the demons' magic, becoming the first Blood Mages."
     endmethod
 
     private method operator FailurePopup takes nothing returns string
-      return "太阳井沦陷了。幸存者们逃到了达拉然，并将自己改名为血精灵，以纪念他们倒下的人民。"
+      return "The Sunwell has fallen. The survivors escape to Dalaran and name themselves the Blood Elves in remembrance of their fallen people."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "在联合议会中可以训练" + GetObjectName(UNITTYPE_ID) + "单位了, 并可以从祭坛中召唤凯尔萨斯王子"
+      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium, and you can summon Prince Kael'thas from the Altar of Prowess"
     endmethod
 
     private method operator FailureDescription takes nothing returns string
-      return "你失去了你控制的一切，但你在达拉然地牢获得了凯尔萨斯王子，并在联合议会中可以训练" + GetObjectName(UNITTYPE_ID) + "单位了。"
+      return "You lose everything you control, but you gain Prince Kael'thas at the Dalaran Dungeons, and you can train " + GetObjectName(UNITTYPE_ID) + "s from the Consortium"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(Holder.Player, QUEST_RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(Holder.Player, UNITTYPE_ID, "现在你可以在" + GetObjectName(BUILDING_ID) + "中训练" + GetObjectName(UNITTYPE_ID) + "单位了。")
+      call DisplayUnitTypeAcquired(Holder.Player, UNITTYPE_ID, "You can now train " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID) + ".")
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -89,7 +89,7 @@ library QuestTheBloodElves requires QuelthalasSetup, LegendLegion, LegendQueltha
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("血精灵", "奎尔萨拉斯的精灵极度的依赖太阳井的魔法。没有它，他们将不得不求助于更黑暗的魔法来满足自己。", "ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp")
+      local thistype this = thistype.allocate("The Blood Elves", "The Elves of Quel'thalas have a deep reliance on the Sunwell's magic. Without it, they would have to turn to darker magicks to sate themselves.", "ReplaceableTextures\\CommandButtons\\BTNHeroBloodElfPrince.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ANASTERIAN, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, true))

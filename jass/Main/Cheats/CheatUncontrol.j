@@ -22,11 +22,11 @@ library CheatUncontrol initializer OnInit requires Persons, Persons, TestSafety
         call SetPlayerAlliance(Player(i), GetTriggerPlayer(), ALLIANCE_SHARED_ADVANCED_CONTROL, false)
         set i = i + 1
       endloop
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 取消对所有玩家的控制")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Revoked control of all players.")
     else      
       call SetPlayerAlliance(Player(S2I(parameter)), GetTriggerPlayer(), ALLIANCE_SHARED_CONTROL, false)  
       call SetPlayerAlliance(Player(S2I(parameter)), GetTriggerPlayer(), ALLIANCE_SHARED_ADVANCED_CONTROL, false)
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 取消对玩家" + GetPlayerName(Player(S2I(parameter))) + "的控制")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Revoked control of player " + GetPlayerName(Player(S2I(parameter))) + ".")
     endif
   endfunction
 

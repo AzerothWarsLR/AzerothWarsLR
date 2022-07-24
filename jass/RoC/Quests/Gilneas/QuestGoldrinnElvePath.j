@@ -11,16 +11,16 @@ library QuestGoldrinnElvePath requires QuestData, GilneasSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "戈德林加入了吉尔尼斯"
+      return "Goldrinn has joined Gilneas"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "可以在祭坛内召唤戈德林"
+      return "Goldrinn will be trainable at the altar"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("狼神神殿", "为了了解她人民的困境，苔丝将前往暗夜精灵那了解什么是狼人。她需要到达在海加尔山的戈德林神殿", "ReplaceableTextures\\CommandButtons\\BTNWorgenMoon.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_GoldrinnHyjal, "海加尔山的戈德林神殿"))
+      local thistype this = thistype.allocate("Shrine of the Wolf God", "To understand the plight of her people, Tess will go to the Shrine of Goldrinn in Hyjal to understand what it is to be a Worgen.", "ReplaceableTextures\\CommandButtons\\BTNWorgenMoon.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TESS, gg_rct_GoldrinnHyjal, "Shrine of Goldrinn in Mount Hyjal"))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_GENN))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

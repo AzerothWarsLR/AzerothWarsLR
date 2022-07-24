@@ -6,11 +6,11 @@ library QuestGrimBatol requires QuestData, TwilightSetup, GeneralHelpers
 
   struct QuestGrimBatol extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "格瑞姆巴托现在在我们的控制之下，它的军队现在可以自由的协助" + this.Holder.Team.Name + "了。"
+      return "Grim Batol is now under our control, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "控制格瑞姆巴托的所有单位并允许训练兽人死亡骑士单位。"
+      return "Control of all units in Grim Batol and able to train Orcish Death Knights"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -28,7 +28,7 @@ library QuestGrimBatol requires QuestData, TwilightSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("被诅咒的堡垒", "山中城格瑞姆巴托将会是暮光之锤氏族的完美堡垒。它在过去很好的发挥了作用，而今后也会继续如此。", "ReplaceableTextures\\CommandButtons\\BTNFortressWC2.blp")
+      local thistype this = thistype.allocate("The Cursed Fortress", "The mountain fortress of Grim Batol will be the perfect stronghold for the Twilight hammer clan. It has served well in the past and will do so again.", "ReplaceableTextures\\CommandButtons\\BTNFortressWC2.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_VAELASTRASZ))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03X')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n04V')))

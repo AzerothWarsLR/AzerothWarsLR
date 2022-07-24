@@ -24,7 +24,7 @@ library QuestItemExpire requires QuestItemData, Persons
 
     static method create takes integer duration returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "在" + I2S(duration) + "秒过去前完成这个任务"
+      set this.Description = " Complete this quest before " + I2S(duration) + " seconds have elapsed"
       set this.timer = CreateTimer()
       call TimerStart(this.timer, duration, false, function thistype.OnAnyTimerExpires)
       set thistype.byTimer[GetHandleId(this.timer)] = this

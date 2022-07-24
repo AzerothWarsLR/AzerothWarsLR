@@ -7,16 +7,16 @@ library QuestSentinelsKillFrostwolf requires SentinelsSetup, LegendFrostwolf, Di
 
   struct QuestSentinelsKillFrostwolf extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "霜狼氏族和他们的牛头人盟友已经被驱逐出卡利姆多。没人会怀念他们的。"
+      return "The Frostwolves have been ousted from Kalimdor, along with their Tauren allies. They will not be missed."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得半英雄阿马拉和英雄加洛德"
+      return "The demihero Amara and the hero Jarod"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(this.Holder.Player, AMARA_ID, "你现在可以在长老祭坛内复活阿玛拉了")
+      call DisplayUnitTypeAcquired(this.Holder.Player, AMARA_ID, "You can now revive Amara from the Altar of Elders.")
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestSentinelsKillFrostwolf requires SentinelsSetup, LegendFrostwolf, Di
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("把他们赶回去", "霜狼氏族开始在贫瘠之地和莫高雷平原上建立据点，他们必须被赶回去。", "ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
+      local thistype this = thistype.allocate("Drive Them Back", "The Frostwolf Clan is beginning to seize a firm foothold within the Barrens and on the plains of Mulgore. They must be driven back.", "ReplaceableTextures\\CommandButtons\\BTNThrall.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_THUNDERBLUFF))
       return this
     endmethod

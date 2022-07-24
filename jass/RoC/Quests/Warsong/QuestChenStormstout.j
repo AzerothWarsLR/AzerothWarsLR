@@ -8,11 +8,11 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
 
   struct QuestChenStormstout extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "陈·风暴烈酒加入了" + this.Holder.Team.Name + "。"
+      return "Chen Stormstout has joined the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得英雄陈·风暴烈酒"
+      return "The hero Chen Stormstout"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -31,8 +31,8 @@ library QuestChenStormstout requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("流浪的酿酒大师", "谣传有一种来自另外一个大陆的奇怪白毛生物。也许它能说服加入部落。", "ReplaceableTextures\\CommandButtons\\BTNPandarenBrewmaster.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen, "陈·风暴烈酒", false))
+      local thistype this = thistype.allocate("The Wandering Brewmaster", "Rumours tell of a strange white-furred creature from a foreign land. Perhaps it could be convinced to join the Horde.", "ReplaceableTextures\\CommandButtons\\BTNPandarenBrewmaster.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Chen, "Chen Stormstout", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

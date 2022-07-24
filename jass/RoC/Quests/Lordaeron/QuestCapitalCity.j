@@ -6,11 +6,11 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemControlPoi
 
   struct QuestCapitalCity extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "首都已经被解放，其军队现在可以自由协助" + this.Holder.Team.Name + "."
+      return "Capital City has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得首都内所有单位和建筑"
+      return "Control of all units in Capital City"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestCapitalCity requires QuestData, LordaeronSetup, QuestItemControlPoi
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("心脏地带", "洛丹伦的领土支离破碎。重新控制旧联盟的领土来确保王国的安全。", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+      local thistype this = thistype.allocate("Hearthlands", "The territories of Lordaeron are fragmented. Regain control of the old Alliance's hold to secure the kingdom.", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_CAERDARROW, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01M')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01C')))

@@ -24,10 +24,10 @@ library CheatTele initializer OnInit requires Persons, TestSafety
     
     if parameter == "on" then
       set TeleToggle[pId] = true
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 传送开启")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Teleport activated. Use patrol to move instantly.")
     elseif parameter == "off" then
       set TeleToggle[pId] = false
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 传送关闭")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Teleport deactivated. Patrol works normally.")
     endif
   endfunction
 

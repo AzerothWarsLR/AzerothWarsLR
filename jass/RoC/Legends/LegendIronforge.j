@@ -26,13 +26,13 @@ library LegendIronforge initializer OnInit requires Legend
     set LEGEND_MAGNI = Legend.create()
     set LEGEND_MAGNI.UnitType = 'H00S'
     call LEGEND_MAGNI.AddUnitDependency(gg_unit_h001_0180)
-    set LEGEND_MAGNI.DeathMessage = "麦格尼·铜须国王已经死亡。"
+    set LEGEND_MAGNI.DeathMessage = "King Magni Bronzebeard has died."
     set LEGEND_MAGNI.Essential = true
     set LEGEND_MAGNI.StartingXP = 1000
 
     set LEGEND_GREATFORGE = Legend.create()
     set LEGEND_GREATFORGE.Unit = gg_unit_h001_0180
-    set LEGEND_GREATFORGE.DeathMessage = "大熔炉已经被熄灭。"
+    set LEGEND_GREATFORGE.DeathMessage = "The Great Forge has been extinguished."
     set LEGEND_GREATFORGE.IsCapital = true
 
     set LEGEND_THELSAMAR = Legend.create()

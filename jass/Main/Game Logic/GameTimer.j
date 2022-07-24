@@ -19,7 +19,7 @@ library GameTimer initializer OnInit
 
   private function EndTurn takes nothing returns nothing
     set TurnCount = TurnCount + 1
-    call TimerDialogSetTitle(TurnTimerDialog, "第" + I2S(TurnCount) + "回合")
+    call TimerDialogSetTitle(TurnTimerDialog, "Turn " + I2S(TurnCount))
   endfunction
 
   private function GameTick takes nothing returns nothing
@@ -28,7 +28,7 @@ library GameTimer initializer OnInit
 
   private function ShowTimer takes nothing returns nothing
     call TimerDialogDisplay(TurnTimerDialog, true)
-    call TimerDialogSetTitle(TurnTimerDialog, "游戏开始于：")    
+    call TimerDialogSetTitle(TurnTimerDialog, "Game starts in:")    
   endfunction
 
   private function Actions takes nothing returns nothing

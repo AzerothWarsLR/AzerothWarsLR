@@ -24,10 +24,10 @@ library CheatBuild initializer OnInit requires Persons, TestSafety, PlayerUnitEv
     
     if parameter == "on" then
       set BuildToggle[pId] = true
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 快速建造已激活。你的建筑在被取消后会立即建好。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Fast build activated. Your structures will build instantly when cancelled.")
     elseif parameter == "off" then
       set BuildToggle[pId] = false
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 快速建造已关闭。你的建筑会正常建造。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Fast build deactivated. Your structures will build normally.")
     endif
   endfunction
 

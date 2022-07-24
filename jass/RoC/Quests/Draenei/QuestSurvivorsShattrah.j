@@ -7,15 +7,15 @@ library QuestSurvivorsShattrah requires QuestData, DraeneiSetup
   struct QuestSurvivorsShattrah extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "祭坛内可以召唤玛尔拉德"
+      return "The hero Maraad is now trainable at the Altar"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "玛尔拉德将加入埃索达的幸存者"
+      return "Maraad will join the survivors on the Exodar"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("沙塔斯的幸存者", "沙塔斯大屠杀即迅速又残酷，如果德莱尼人在外域坚持足够长的时间，他们也许能重新找回一些幸存者。", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
+      local thistype this = thistype.allocate("The Survivors of Shattrah", "The Shattrah massacre was swift and brutal, if the Draenei hold long enough in Outland, they might regroup with some of the survivors.", "ReplaceableTextures\\CommandButtons\\BTNGlazeroth.blp")
       call this.AddQuestItem(QuestItemTime.create(420))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())

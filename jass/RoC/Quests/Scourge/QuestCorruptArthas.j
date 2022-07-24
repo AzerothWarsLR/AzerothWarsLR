@@ -7,11 +7,11 @@ library QuestCorruptArthas requires GeneralHelpers, LegendLordaeron, LordaeronSe
 
   struct QuestCorruptArthas extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "由于未能保护他的人民，阿尔萨斯抓住了被诅咒的符文之剑霜之哀伤作为复仇的工具。霜之哀伤的恶意压倒了他，让阿尔萨斯成为了天灾忠实的死亡骑士，并将很快成为天灾最伟大的战士。"
+      return "Having failed to protect his people, Arthas seizes the cursed runeblade Frostmourne as the instrument of his vengeance. The malevolence of the blade overwhelms him. Arthas is now a loyal Death Knight of the Scourge, and will soon become its greatest champion."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "允许在黑暗祭坛内召唤阿尔萨斯·米希尔"
+      return "You can train Arthas Menethil from the Altar of Darkness"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -31,7 +31,7 @@ library QuestCorruptArthas requires GeneralHelpers, LegendLordaeron, LordaeronSe
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("无处可逃", "当斯坦索姆城被攻陷时，阿尔萨斯王子将抛弃他的人民，加入天灾军团，成为他们的勇士。", "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
+      local thistype this = thistype.allocate("The Culling", "When the city of Stratholme, Prince Arthas will abandon his people and join the Scourge as their champion.", "ReplaceableTextures\\CommandButtons\\BTNHeroDeathKnight.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STRATHOLME))
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemLegendDead.create(LEGEND_ARTHAS), QuestItemFactionDefeated.create(FACTION_LORDAERON)))
       call this.AddQuestItem(QuestItemSelfExists.create())

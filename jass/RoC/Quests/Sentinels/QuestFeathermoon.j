@@ -6,11 +6,11 @@ library QuestFeathermoon requires QuestData, ScarletSetup
 
   struct QuestFeathermoon extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "羽月要塞被解放并加入了哨兵的战斗"
+      return "Feathermoon Stronghold has been relieved and has joined the Sentinels in their war effort"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得羽月要塞中的所有单位和建筑，并在祭坛内可以召唤珊蒂斯了。"
+      return "Control of all units in Feathermoon Stronghold and make Shandris and Maiev trainable at the Altar"
     endmethod
 
     private method GrantFeathermoon takes player whichPlayer returns nothing
@@ -46,8 +46,8 @@ library QuestFeathermoon requires QuestData, ScarletSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("羽月要塞", "羽月要塞守卫了一万年，是时候将守卫们从职责中解放出来了。", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_FeathermoonUnlock, "羽月要塞", false))
+      local thistype this = thistype.allocate("Feathermoon Stronghold", "Feathermoon Stronghold stood guard for ten thousand years, it is time to relieve the guards from their duty.", "ReplaceableTextures\\CommandButtons\\BTNBearDen.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_FeathermoonUnlock, "Feathermoon", false))
       call this.AddQuestItem(QuestItemUpgrade.create('n06P', 'n06J'))
       call this.AddQuestItem(QuestItemExpire.create(1485))
       call this.AddQuestItem(QuestItemSelfExists.create())

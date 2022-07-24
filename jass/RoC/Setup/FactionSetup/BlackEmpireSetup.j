@@ -6,7 +6,7 @@ library BlackEmpireSetup requires Faction, TeamSetup
 
     public function OnInit takes nothing returns nothing
      local Faction f   
-     set FACTION_BLACKEMPIRE = LiegeFaction.create("黑暗帝国", PLAYER_COLOR_TURQUOISE, "|cff008080","ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
+     set FACTION_BLACKEMPIRE = LiegeFaction.create("Black Empire", PLAYER_COLOR_TURQUOISE, "|cff008080","ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
      set f = FACTION_BLACKEMPIRE
      set f.Team = TEAM_OLDGOD
      set f.StartingGold = 150

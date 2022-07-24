@@ -6,7 +6,7 @@ library ScarletSetup requires Faction, TeamSetup
 
   public function OnInit takes nothing returns nothing
     local Faction f
-    set FACTION_SCARLET = LiegeFaction.create("民兵", PLAYER_COLOR_MAROON, "|cff800000","ReplaceableTextures\\CommandButtons\\BTNPeasant.blp")
+    set FACTION_SCARLET = LiegeFaction.create("Militia", PLAYER_COLOR_MAROON, "|cff800000","ReplaceableTextures\\CommandButtons\\BTNPeasant.blp")
     set f = FACTION_SCARLET
     set f.Team = TEAM_ALLIANCE
     set f.StartingGold = 150

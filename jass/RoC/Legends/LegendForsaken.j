@@ -23,11 +23,11 @@ library LegendForsaken initializer OnInit requires Legend
 
     set LEGEND_SCHOLOMANCE = Legend.create()
     set LEGEND_SCHOLOMANCE.Unit = gg_unit_u012_1149
-    set LEGEND_SCHOLOMANCE.DeathMessage = "通灵学院，天灾军团在洛丹伦的行动据点已经被摧毁了。"
+    set LEGEND_SCHOLOMANCE.DeathMessage = "Scholomance, the center of the Scourge's operations in Lordaeron, has been destroyed."
 
     set LEGEND_UNDERCITY = Legend.create()
     set LEGEND_UNDERCITY.Unit = gg_unit_h08S_0502
-    set LEGEND_UNDERCITY.DeathMessage = "幽暗城，被遗忘者的家园已经被毁灭。"
+    set LEGEND_UNDERCITY.DeathMessage = "The Undercity, the home of the Forsaken, has been decimated."
 endfunction
 
 endlibrary

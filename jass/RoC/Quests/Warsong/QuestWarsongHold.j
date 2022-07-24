@@ -7,11 +7,11 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
 
   struct QuestWarsongHold extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "战歌氏族已经启航前往诺森德冰冷的海岸，并在北风苔原建立了一个坚固的营地。"
+      return "The Warsong Clan has set sail for the icy shores of Northrend and set up a formidable encampment at Borean Tundra."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "在诺森德的北风苔原获得一个新基地"
+      return "A new base at Borean Tundra in Northrend"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -21,7 +21,7 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
       //Spawn the base
       call SetUnitOwner(boreanTundra, this.Holder.Player, true)
       set warsongHold = CreateStructureForced(this.Holder.Player, 'o02S', -7648, 15456, 270, 192)
-      call BlzSetUnitName(warsongHold, "战歌要塞")
+      call BlzSetUnitName(warsongHold, "Warsong Hold")
       call BlzSetUnitMaxHP(warsongHold, 4000)
       call SetUnitLifePercentBJ(warsongHold, 100)
       call UnitAddAbility(warsongHold, ABILITY_ID)
@@ -56,7 +56,7 @@ library QuestWarsongHold requires WarsongSetup, LegendWarsong, GeneralHelpers, Q
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("战歌要塞", "遥远的诺森德是叛徒萨满耐奥祖的新家。战歌必须在海岸登陆，以终结他现在的威胁。", "ReplaceableTextures\\CommandButtons\\BTNTuskaarBrown.blp")
+      local thistype this = thistype.allocate("Warsong Hold", "The far-off land of Northrend is the new home of the traitor shaman Ner'zhul. The Warsong must land its forces on its shores in order to end the existential threat he now represents.", "ReplaceableTextures\\CommandButtons\\BTNTuskaarBrown.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'o02T'))
       return this
     endmethod

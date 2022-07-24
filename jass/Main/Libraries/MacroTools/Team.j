@@ -88,7 +88,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     method RemoveFaction takes Faction faction returns nothing
       local integer i = 0
       if not this.factions.contains(faction) then
-        call BJDebugMsg("尝试移除" + this.name + "队伍内的" + faction.Name)
+        call BJDebugMsg("Attempted to remove non-present faction " + faction.Name + " from team " + this.name)
       endif
       call this.factions.remove(faction)
       //Make all present factions ally the new faction and visa-versa
@@ -103,7 +103,7 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     method AddFaction takes Faction faction returns nothing
       local integer i = 0
       if this.factions.contains(faction) then
-        call BJDebugMsg("尝试添加已经存在的势力" + faction.Name + "到" + this.name + "内。")
+        call BJDebugMsg("Attempted to add already present faction " + faction.Name + " to team " + this.name)
       endif
       call this.factions.add(faction)
       //Make all present factions ally the new faction and visa-versa
@@ -140,8 +140,8 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
     //Revokes an invite sent to a player
     method Uninvite takes Faction whichFaction returns nothing
       if this.invitees.contains(whichFaction) then
-        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r已经不再被邀请加入" + this.name + "了。")
-        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "你已经不再被邀请加入" + this.name + "了。")
+        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r is no longer invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "You are no longer invited to join the " + this.name + ".")
         call this.invitees.remove(whichFaction)
       endif
     endmethod
@@ -152,8 +152,8 @@ library Team initializer OnInit requires Table, Event, Persons, Set, ScoreStatus
         if GetLocalPlayer() == whichFaction.Player or this.factions.contains(Person.ByHandle(GetLocalPlayer())) then
           call StartSound(gg_snd_ArrangedTeamInvitation)
         endif
-        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r被邀请加入" + this.name + "。")
-        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "你被邀请加入" + this.name + "。输入-join " + this.name + " 来接受邀请。")
+        call this.DisplayText(whichFaction.prefixCol + whichFaction.name + "|r has been invited to join the " + this.name + ".")
+        call DisplayTextToPlayer(whichFaction.Player, 0, 0, "You have been invited to join the " + this.name + ". Type -join " + this.name + " to accept.")
         call this.invitees.add(whichFaction)
       endif
     endmethod

@@ -6,11 +6,11 @@ library QuestSpreadTheWord requires QuestData
 
   struct QuestSpreadTheWord extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "可以召唤高阶女祭司艾苏尔了"
+      return "The high priestess Azil is now trainable"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "祭坛内可以召唤高阶女祭司艾苏尔了"
+      return "The high priestess Azil is trainable at the altar"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -21,7 +21,7 @@ library QuestSpreadTheWord requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("传播古神的低语", "世界将聆听古神的低语。传播末日的景象。", "ReplaceableTextures\\CommandButtons\\BTNOldGodWhispers.blp")
+      local thistype this = thistype.allocate("Spread the Whispers of the Old God", "The world shall hear the whispers of the Old God. Spread the visions of the end", "ReplaceableTextures\\CommandButtons\\BTNOldGodWhispers.blp")
       call this.AddQuestItem(QuestItemBuild.create('o03C', 1))
       call this.AddQuestItem(QuestItemTrain.create('obot','o03I', 3))
       set this.ResearchId = QUEST_RESEARCH_ID

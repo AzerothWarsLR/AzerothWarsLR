@@ -23,10 +23,10 @@ library CheatGod initializer OnInit requires Persons, TestSafety
     
     if parameter == "on" then
         set Toggle[pId] = true
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无敌模式激活。你的单位会造成100倍伤害并不会受到伤害。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r God mod activated. Your units will deal 100x damage and take no damage.")
     elseif parameter == "off" then
       set Toggle[pId] = false
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无敌模式关闭。")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r God mode deactivated.")
     endif
   endfunction
 

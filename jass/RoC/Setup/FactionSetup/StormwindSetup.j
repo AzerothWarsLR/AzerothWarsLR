@@ -7,7 +7,7 @@ library StormwindSetup requires Faction, TeamSetup, UnitTypesStormwind
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_STORMWIND = LiegeFaction.create("暴风城", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
+    set FACTION_STORMWIND = LiegeFaction.create("Stormwind", PLAYER_COLOR_AQUA, "|CFF106246","ReplaceableTextures\\CommandButtons\\BTNKnight.blp")
     set f = FACTION_STORMWIND
     set f.Team = TEAM_ALLIANCE
     set f.PresenceResearch = 'R060'

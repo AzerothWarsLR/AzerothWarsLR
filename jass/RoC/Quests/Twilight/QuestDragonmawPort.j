@@ -2,11 +2,11 @@ library QuestDragonmawPort requires QuestData, TwilightSetup, QuestItemKillUnit
 
   struct QuestDragonmawPort extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "龙喉港已经落入了我们的掌控之中，其中的军队可以自由的支援" + this.Holder.Team.Name + "了。"
+      return "Dragonmaw Port has fallen under our control and its military is now free to assist the " + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "控制龙喉港的所有建筑"
+      return "Control of all buildings in Dragonmaw Port"
     endmethod
 
     private method GrantDragonmawPort takes player whichPlayer returns nothing
@@ -40,7 +40,7 @@ library QuestDragonmawPort requires QuestData, TwilightSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("龙喉港", "龙喉港将会是入侵艾泽拉斯的完美集结地。", "ReplaceableTextures\\CommandButtons\\BTNIronHordeSummoningCircle.blp")
+      local thistype this = thistype.allocate("Dragonmaw Port", "The Dragonmaw Port will be the perfect staging ground of the invasion of Azeroth", "ReplaceableTextures\\CommandButtons\\BTNIronHordeSummoningCircle.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08T')))
       call this.AddQuestItem(QuestItemExpire.create(1227))
       call this.AddQuestItem(QuestItemSelfExists.create())

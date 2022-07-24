@@ -12,13 +12,13 @@ library LegendTwilight initializer OnInit requires Legend
   private function OnInit takes nothing returns nothing
     set LEGEND_TWILIGHTCITADEL = Legend.create()
     set LEGEND_TWILIGHTCITADEL.Unit = gg_unit_h05U_0015
-    set LEGEND_TWILIGHTCITADEL.DeathMessage = "暮光堡垒已经倒塌。土地也开始恢复，尽管这个过程可能需要数十年才能让那散发的古神臭味从暮光高地上完全消散。"
+    set LEGEND_TWILIGHTCITADEL.DeathMessage = "The Twilight Citadel has been toppled. Already the land has begun to heal, but it may be decades before the permeating Old God stink fully dissipates from the Twilight Highlands."
     set LEGEND_TWILIGHTCITADEL.IsCapital = true
    
     set LEGEND_DEATHWING = Legend.create()
     set LEGEND_DEATHWING.Unit = gg_unit_u01Y_0071
     set LEGEND_DEATHWING.PermaDies = true
-    set LEGEND_DEATHWING.DeathMessage = "黑色天灾死亡之翼不复存在。毁灭者终于被毁灭了。"
+    set LEGEND_DEATHWING.DeathMessage = "Deathwing, the Black Scourge, is no more. The Destroyer has finally been defeated."
 
     set LEGEND_AZIL = Legend.create()
     set LEGEND_AZIL.UnitType = 'H08Q'

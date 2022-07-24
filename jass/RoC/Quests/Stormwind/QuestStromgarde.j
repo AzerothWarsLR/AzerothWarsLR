@@ -9,11 +9,11 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral, Gener
     private QuestItemAnyUnitInRect questItemAnyUnitInRect = 0
 
     private method operator CompletionPopup takes nothing returns string
-      return "加林·托尔贝恩已经承诺加入暴风城"
+      return "Galen Trollbane has pledged his forces to Stormwind's cause."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "获得激流堡所有单位和建筑，神器托卡拉尔，并允许在国王祭坛内召唤加林·托尔贝恩"
+      return "Control of all units at Stromgarde, the artifact Trol'kalar, and you can summon the hero Galen Trollbane from the Altar of Kings"
     endmethod
 
     private method GiveStromgarde takes player whichPlayer returns nothing
@@ -52,8 +52,8 @@ library QuestStromgarde requires QuestData, StormwindSetup, LegendNeutral, Gener
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("激流堡", "尽管激流堡的实力自阿拉索帝国时代以来已经减弱，但它仍然是人类的重要堡垒。他们可以被说服动员他们的力量来支援暴风城.", "ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp")
-      set this.questItemAnyUnitInRect = QuestItemAnyUnitInRect.create(gg_rct_Stromgarde, "激流堡", true)
+      local thistype this = thistype.allocate("Stromgarde", "Although Stromgarde's strength has dwindled since the days of the Arathorian Empire, it remains a significant bastion of humanity. They could be convinced to mobilize their forces for Stormwind.", "ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp")
+      set this.questItemAnyUnitInRect = QuestItemAnyUnitInRect.create(gg_rct_Stromgarde, "Stromgarde", true)
       call this.AddQuestItem(this.questItemAnyUnitInRect)
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

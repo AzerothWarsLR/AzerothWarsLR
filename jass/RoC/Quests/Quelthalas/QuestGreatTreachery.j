@@ -11,11 +11,11 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "血精灵加入了燃烧军团"
+      return "The Blood Elves have joined the Burning Legion"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "解锁召唤基尔加丹任务并加入燃烧军团"
+      return "Unlock the summon Kil'jaeden quest and join the Burning Legion team"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -29,7 +29,7 @@ library QuestGreatTreachery requires Persons, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("背叛者", "基尔加丹向凯尔提出了为他的人民提供力量和救赎。只有接受了基尔加丹的要求才能满足血精灵对魔法的渴望.", "ReplaceableTextures\\CommandButtons\\BTNFelKaelthas.blp")
+      local thistype this = thistype.allocate("The Great Treachery", "Kil'jaeden has approached Kael with an offer of power and salvation for his people. Only by accepting will his hunger for magic by satiated.", "ReplaceableTextures\\CommandButtons\\BTNFelKaelthas.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IF', true))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

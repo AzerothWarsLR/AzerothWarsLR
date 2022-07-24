@@ -6,11 +6,11 @@ library QuestYoggSaron requires QuestData, GeneralHelpers
 
   struct QuestYoggSaron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "尤格-萨隆已经苏醒"
+      return "Yogg-Saron has been awoken"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "古神尤格-萨隆将加入黑暗帝国，并可以训练遗忘者单位。"
+      return "The old god Yogg-Saron will join the Black Empire and enable to train Forgotten ones"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestYoggSaron requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("千面之魔", "尤格-萨隆在无数年前被泰坦们囚禁在诺森德之下。", "ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
+      local thistype this = thistype.allocate("Fiend of a Thousand Faces", "Yogg-Saron was imprisoned beneath Northrend by the Titans countless millenia ago. ", "ReplaceableTextures\\CommandButtons\\BTNYogg-saronIcon.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n053')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00I')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02S')))
