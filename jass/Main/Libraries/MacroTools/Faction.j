@@ -255,7 +255,7 @@ library Faction initializer OnInit requires Persons, Event, Set, QuestData, Envi
     endmethod
 
     stub method Unally takes nothing returns nothing
-      local string newTeamName = this.Name + " Pact"
+      local string newTeamName = this.Name
       local Team newTeam = 0
 
       if this.Team.PlayerCount > 1 then

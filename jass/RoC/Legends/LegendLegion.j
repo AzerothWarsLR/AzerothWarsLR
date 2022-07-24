@@ -13,7 +13,7 @@ library LegendLegion initializer OnInit requires Legend
     set LEGEND_ARCHIMONDE = Legend.create()
     set LEGEND_ARCHIMONDE.Unit = gg_unit_Uwar_2344
     set LEGEND_ARCHIMONDE.PermaDies = true
-    set LEGEND_ARCHIMONDE.DeathMessage = "Archimonde the Defiler has been banished from Azeroth, marking the end of his second failed invasion."
+    set LEGEND_ARCHIMONDE.DeathMessage = "污染者阿克蒙德已经被逐出艾泽拉斯，这标志着他第二次失败的入侵。"
     set LEGEND_ARCHIMONDE.StartingXP = 10800
     set LEGEND_ARCHIMONDE.Essential = true
     

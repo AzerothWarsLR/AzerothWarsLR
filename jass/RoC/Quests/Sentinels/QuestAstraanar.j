@@ -2,11 +2,11 @@ library QuestAstranaar requires QuestData, SentinelsSetup, GeneralHelpers
 
   struct QuestAstranaar extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Astranaar has been relieved and has joined the Sentinels in their war effort"
+      return "阿斯特兰纳已经被解放，并加入了哨兵"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Astranaar Outpost and Darnassus"
+      return "获得阿斯特兰纳前哨和达纳苏斯的所有单位和建筑"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -24,8 +24,8 @@ library QuestAstranaar requires QuestData, SentinelsSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Astranaar Stronghold", "Darkshore is under attack by some Murloc. We should deal with them swiftly and then make for the Astranaar Outpost. Clearing the Murlocs will also reestablish communication with Darnassus.", "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TYRANDE, gg_rct_AstranaarUnlock, "Astranaar Outpost"))
+      local thistype this = thistype.allocate("阿斯特兰纳要塞", "黑海岸正遭受一些鱼人的袭击。我们应该迅速对付他们，然后前往阿斯特拉纳前哨。清除鱼人也将让我们能够重新与达纳苏斯建立联系。", "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_TYRANDE, gg_rct_AstranaarUnlock, "阿斯特拉纳前哨"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02U')))
       call this.AddQuestItem(QuestItemExpire.create(1430))
       call this.AddQuestItem(QuestItemSelfExists.create())

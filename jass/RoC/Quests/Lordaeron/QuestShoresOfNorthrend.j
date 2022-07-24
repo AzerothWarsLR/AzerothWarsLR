@@ -6,11 +6,11 @@ library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, General
 
   struct QuestShoresOfNorthrend extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Crown Prince Arthas, and what remains of his forces, have landed on the shores of Northrend and established a base camp."
+      return "阿尔萨斯王子以及他剩下的部队以及在诺森德的海岸边登陆并建立了一个基地。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A new base near Dragonblight in Northrend, and Arthas revives there"
+      return "在诺森德的龙骨荒野获得一个新基地，阿尔萨斯将在那复活。"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -57,7 +57,7 @@ library QuestShoresOfNorthrend requires LordaeronSetup, LegendLordaeron, General
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Shores of Northrend", "Mal'ganis' citadel lies somewhere within the arctic wastes of the north. In order to assault the Dreadlord, Arthas must first establish a base camp at the shores of Northrend.", "ReplaceableTextures\\CommandButtons\\BTNHumanTransport.blp")
+      local thistype this = thistype.allocate("诺森德海岸", "玛尔加尼斯的堡垒位于北极荒野的北部。为了杀掉恐惧魔王，阿尔萨斯必须首先在诺森德海岸建立一个基地。", "ReplaceableTextures\\CommandButtons\\BTNHumanTransport.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, true))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SCHOLOMANCE))
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'hshy'))

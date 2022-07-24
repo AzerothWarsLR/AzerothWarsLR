@@ -20,10 +20,10 @@ library UninviteCommand initializer OnInit requires Team
         if targetFaction.Person != 0 then
         	call senderPerson.Faction.Team.Uninvite(targetFaction)
         else
-          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no player with the Faction " + targetFaction.prefixCol + targetFaction.Name + "|r.")
+          call DisplayTextToPlayer(senderPerson.Player, 0, 0, "在" + targetFaction.prefixCol + targetFaction.Name + "|r势力中没有玩家。")
       	endif
       else
-        call DisplayTextToPlayer(senderPerson.Player, 0, 0, "There is no Faction with the name " + content + ".")
+        call DisplayTextToPlayer(senderPerson.Player, 0, 0, content + "势力不存在。")
       endif
     endif
   endfunction

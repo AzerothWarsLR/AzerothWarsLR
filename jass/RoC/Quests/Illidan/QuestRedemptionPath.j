@@ -12,11 +12,11 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Nazjatar and the Aetheneum is now under the influence of the Night Elves."
+      return "大图书馆现在在暗夜精灵的控制之下"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in the Aetheneum. Join the Night Elves and enable to train Altruis."
+      return "获得大图书馆内所有单位和建筑。加入暗夜精灵并允许召唤奥图里斯"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -43,10 +43,10 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Brothers Stormrage", "Illidan follows his heart and seeks forgivness from Malfurion. United by their brotherly bond and their desire to protect Tyrande, they decide to unite their forces once again.", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
+      local thistype this = thistype.allocate("怒风兄弟", "伊利丹遵循他的内心向玛法里奥寻求宽恕。出于兄弟之间的情谊和保护泰兰德的愿望，他们决定重新联合起来。", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemSelfExists.create())
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Finished Campaign"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "战役完成"))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

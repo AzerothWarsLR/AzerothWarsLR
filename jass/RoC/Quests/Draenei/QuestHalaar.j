@@ -2,11 +2,11 @@ library QuestHalaar requires QuestData, DalaranSetup
 
   struct QuestHalaar extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The messenger has arrived, Halaar has been reached in time."
+      return "信使及时到达了哈拉尔。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Halaar"
+      return "获得哈拉尔所有建筑"
     endmethod
 
     private method GrantHalaar takes player whichPlayer returns nothing
@@ -38,8 +38,8 @@ library QuestHalaar requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Warn Halaar", "The city of Halaar has to be warned of the imminent Orc invasion", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Halaar, "Halaar", false))
+      local thistype this = thistype.allocate("警告哈拉尔", "必须警告哈拉尔兽人即将入侵", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Halaar, "哈拉尔", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

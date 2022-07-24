@@ -7,11 +7,11 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Illidan has killed Magtheridon and subjugated the Fel Horde, the Illidari grow strong."
+      return "伊利丹杀掉了玛瑟里顿并收服了邪部落，伊利达雷变得更强了。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Fel Horde will join us and Magtheridon will die"
+      return "邪部落将会加入我们，而玛瑟里顿会永久死亡"
     endmethod
 
     private method OnComplete takes nothing returns nothing 
@@ -26,7 +26,7 @@ library QuestBlackTemple requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Lord of Outland", "The Fel Horde is weak and complacent. The Illidari will easily subjugate them into Illidan's service.", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
+      local thistype this = thistype.allocate("外域之主", "邪部落软弱而自满。伊利达雷会轻易征服他们并让他们为伊利丹服务。", "ReplaceableTextures\\CommandButtons\\BTNMetamorphosis.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00R')))
       call this.AddQuestItem(QuestItemResearch.create('R063', 'n055'))

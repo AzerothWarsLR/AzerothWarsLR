@@ -5,11 +5,11 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
   struct QuestCrossroads extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Crossroads have been constructed."
+      return "十字路口已经修好了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of the Crossroads"
+      return "十字路口的控制权"
     endmethod    
 
     private method GiveCrossroads takes player whichPlayer returns nothing
@@ -45,7 +45,7 @@ library QuestCrossroads requires Persons, FrostwolfSetup, WarsongSetup, GeneralH
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Crossroads", "The Horde still needs to establish a strong strategic foothold into Kalimdor. There is an opportune crossroads nearby.", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
+      local thistype this = thistype.allocate("十字路口", "部落仍然需要在卡利姆多建立强大的战略立足点。附近有一个合适的十字路口。", "ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nrzm_0113)) //Razorman Medicine Man
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01T')))
       call this.AddQuestItem(QuestItemExpire.create(1460))

@@ -35,7 +35,7 @@ library QuestItemLegendHasArtifact initializer OnInit requires QuestItemData, Ar
 
     static method create takes Legend targetLegend, Artifact targetArtifact returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = targetLegend.Name + " has " + GetItemName(targetArtifact.item)
+      set this.Description = targetLegend.Name + "拥有" + GetItemName(targetArtifact.item)
       set this.targetLegend = targetLegend
       set this.targetArtifact = targetArtifact
       set thistype.byIndex[thistype.count] = this

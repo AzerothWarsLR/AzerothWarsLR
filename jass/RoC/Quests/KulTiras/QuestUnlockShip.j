@@ -2,19 +2,19 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
 
   struct QuestUnlockShip extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Proudmoore capital ship is now ready to set sails!"
+      return "普罗德摩尔的旗舰现在可以启航了！"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unpause the Proudmoore capital ship and unlocks the buildings inside."
+      return "解除普罗德摩尔旗舰的暂停并解锁里面的建筑"
     endmethod
 
     private method operator FailurePopup takes nothing returns string
-      return "Boralus has fallen, Katherine has escaped on the Proudmoore Capital Ship with a handful of Survivors."
+      return "伯拉勒斯已经被毁，凯瑟琳和少数幸存者们一起乘坐普罗德摩尔旗舰逃离。"
     endmethod
 
     private method operator FailureDescription takes nothing returns string
-      return "You lose everything you control, but you gain Katherine at the capital ship."
+      return "你将失去你控制的所有，但在你的旗舰内获得凯瑟琳"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -53,7 +53,7 @@ library QuestUnlockShip requires QuestData, KultirasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Zandalar Menace", "The Troll Empire of Zandalar is a danger to the safety of Kul'tiras and the Alliance. Before setting sail, we must eliminate them.", "ReplaceableTextures\\CommandButtons\\BTNGalleonIcon.blp")
+      local thistype this = thistype.allocate("赞达拉威胁", "巨魔帝国赞达拉对库尔提拉斯和联盟的安全构成了威胁。在启航之前我们必须消灭他们。", "ReplaceableTextures\\CommandButtons\\BTNGalleonIcon.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DAZARALOR, false))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BORALUS, true))
       return this

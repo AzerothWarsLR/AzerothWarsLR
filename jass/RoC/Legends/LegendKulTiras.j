@@ -23,7 +23,7 @@ library LegendKultiras initializer OnInit requires Legend
 
     set LEGEND_BORALUS = Legend.create()
     set LEGEND_BORALUS.Unit = gg_unit_h046_0409
-    set LEGEND_BORALUS.DeathMessage = "Boralus Keep has fallen"
+    set LEGEND_BORALUS.DeathMessage = "伯拉勒斯要塞已经被毁"
 
   endfunction
 

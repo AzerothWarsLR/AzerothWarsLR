@@ -6,11 +6,11 @@ library QuestAshenvale requires QuestData, DruidsSetup
 
   struct QuestAshenvale extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Ashenvale is under control and the forest has been awakened"
+      return "灰谷在你的控制之下，森林也被唤醒了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Ashenvale and summon Saplings all around the Warsong Lumber Camp"
+      return "获得灰谷所有单位并召唤战歌伐木营周围的所有树苗"
     endmethod
 
     private method GrantAshenvale takes player whichPlayer returns nothing
@@ -47,8 +47,8 @@ library QuestAshenvale requires QuestData, DruidsSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The forest needs healing. Regain control of it to unleash it's wrath on the Horde", "ReplaceableTextures\\CommandButtons\\BTNKeeperC.blp")
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_MALFURION, gg_rct_AshenvaleUnlock, "Ashenvale"))
+      local thistype this = thistype.allocate("灰谷之魂", "这片森林需要治疗。夺回森林的控制权并将它的愤怒释放给部落", "ReplaceableTextures\\CommandButtons\\BTNKeeperC.blp")
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_MALFURION, gg_rct_AshenvaleUnlock, "灰谷"))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n07C')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01Q')))
       call this.AddQuestItem(QuestItemResearch.create('R091', 'n002'))

@@ -9,11 +9,11 @@ library QuestFelHordeKillIronforge requires QuestData, FelHordeSetup, QuestItemL
 
   struct QuestFelHordeKillIronforge extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Great Forge has been annihilated. The Fel Horde's peons immediately salvage its intact refineries and put them to purpose in the creation of Felsteel."
+      return "大熔炉已被摧毁。邪兽人的苦工们立即抢下了其完整的精炼厂并将其投入到制造魔钢之中"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID) + " and acquire Felsteel Plating"
+      return "在" + GetObjectName(BUILDING_ID) + "内解锁" + I2S(UNIT_LIMIT) + GetObjectName(UNITTYPE_ID) + "并获得魔钢板甲"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestFelHordeKillIronforge requires QuestData, FelHordeSetup, QuestItemL
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Felsteel Refining", "The smiths of Ironforge have long been put to use crafting goods and war machinery. In the hands of the Fel Horde, they could be used to smelt and refine the ultimate metal: Felsteel.", "ReplaceableTextures\\CommandButtons\\BTNInfernalFlameCannon.blp")
+      local thistype this = thistype.allocate("魔钢精炼", "铁炉堡的铁匠们精通于制造物品和战争机器，而在被邪兽人俘虏后他们被奴役去冶炼和精炼最强的金属，魔钢", "ReplaceableTextures\\CommandButtons\\BTNInfernalFlameCannon.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_GREATFORGE))
       return this
     endmethod

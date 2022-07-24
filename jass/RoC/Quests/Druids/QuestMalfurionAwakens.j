@@ -11,11 +11,11 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
 
   struct QuestMalfurionAwakens extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Malfurion has emerged from his deep slumber in the Barrow Den."
+      return "玛法里奥已经从兽穴中的沉睡中醒来。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain the hero Malfurion and the artifact G'hanir"
+      return "获得英雄玛法里奥和神器加尼尔，母亲之树"
     endmethod
 
     private method GiveMoonglade takes player whichPlayer returns nothing
@@ -56,9 +56,9 @@ library QuestMalfurionAwakens initializer OnInit requires DruidsSetup, LegendDru
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Awakening of Stormrage", "Ever since the War of the Ancients ten thousand years ago, Malfurion Stormrage and his druids have slumbered within the Barrow Den. Now, their help is required once again.", "ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+      local thistype this = thistype.allocate("怒风的苏醒", "自那一万年前的上古之战以来，玛法里奥·怒风和他的德鲁伊们就一直沉睡在兽穴之中。现在，暗夜精灵们再次需要他们的力量。", "ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
       call this.AddQuestItem(QuestItemAcquireArtifact.create(ARTIFACT_HORNOFCENARIUS))
-      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_HORNOFCENARIUS, gg_rct_Moonglade, "The Barrow Den"))
+      call this.AddQuestItem(QuestItemArtifactInRect.create(ARTIFACT_HORNOFCENARIUS, gg_rct_Moonglade, "兽穴"))
       call this.AddQuestItem(QuestItemExpire.create(1440))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this

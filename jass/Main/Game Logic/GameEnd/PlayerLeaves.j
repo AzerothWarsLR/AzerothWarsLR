@@ -7,9 +7,9 @@ library PlayerLeaves initializer OnInit requires Persons
 
     //Display leaving message
     if triggerPerson.Faction != 0 then
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, triggerPerson.Faction.ColoredName + " has left the game.")
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, triggerPerson.Faction.ColoredName + "离开了游戏。")
     else
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, GetPlayerName(triggerPerson.Player) + "has left the game.")
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, GetPlayerName(triggerPerson.Player) + "离开了游戏。")
     endif
 
     //Defeat the player

@@ -6,11 +6,11 @@ library QuestBlackrock requires QuestData, QuestItemKillUnit
 
   struct QuestBlackrock extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Blackrock Citadel has been subjugated, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "黑石堡垒已经臣服于你，它的军队现在可以自由的协助" + this.Holder.Team.Name + "。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Blackrock Citadel and enable Dal'rend Blackhand to be trained at the altar"
+      return "获得黑石堡垒内所有单位和建筑，并解锁祭坛内的雷德·黑手"
     endmethod
 
     private method GrantBlackrock takes player whichPlayer returns nothing
@@ -58,7 +58,7 @@ library QuestBlackrock requires QuestData, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Blackrock Unification", "Make contact with the Blackrock clan and convince them to join Magtheridon", "ReplaceableTextures\\CommandButtons\\BTNBlackhand.blp")
+      local thistype this = thistype.allocate("统一黑石", "联系黑石氏族并说服他们加入玛瑟里顿", "ReplaceableTextures\\CommandButtons\\BTNBlackhand.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create('R090', 'o00F'), QuestItemTime.create(960)))
       call this.AddQuestItem(QuestItemExpire.create(1451))

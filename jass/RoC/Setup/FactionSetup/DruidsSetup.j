@@ -8,7 +8,7 @@ library DruidsSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_DRUIDS = LiegeFaction.create("Druids", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
+    set FACTION_DRUIDS = LiegeFaction.create("德鲁伊", PLAYER_COLOR_BROWN, "|c004e2a04","ReplaceableTextures\\CommandButtons\\BTNFurion.blp")
     set f = FACTION_DRUIDS
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R06E'

@@ -6,11 +6,11 @@ library QuestGoldenFleet requires QuestData
 
   struct QuestGoldenFleet extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Rastakhan is now trainable and Direhorn are available"
+      return "现在可以召唤拉斯塔哈，并允许训练恐角龙单位"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Rastakhan is trainable at the altar and Direhorns are trainable"
+      return "允许在祭坛内召唤拉斯塔哈，并允许训练恐角龙单位"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -21,7 +21,7 @@ library QuestGoldenFleet requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Golden Fleet", "The King has ordered for the greatest armada in the world. The construction of the Golden Fleet has begun!", "ReplaceableTextures\\CommandButtons\\BTNTrollConjurer.blp")
+      local thistype this = thistype.allocate("黄金舰队", "国王下令建造世界上最大的无敌舰队，黄金舰队的建造已经开始", "ReplaceableTextures\\CommandButtons\\BTNTrollConjurer.blp")
       call this.AddQuestItem(QuestItemTrain.create('o04W','o049', 5))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

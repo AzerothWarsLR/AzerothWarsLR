@@ -10,11 +10,11 @@ library QuestSummonLegion requires QuestData, ScourgeSetup, LegionSetup
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Tremble, mortals, and despair. Doom has come to this world."
+      return "颤抖吧凡人！绝望吧！末日已经降临于这个世界！"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Archimonde, control of all units in the Twisting Nether, and learn to train Greater Demons"
+      return "获得阿克蒙德、扭曲虚空中所有建筑和单位并学会训练更强大的恶魔单位"
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -24,7 +24,7 @@ library QuestSummonLegion requires QuestData, ScourgeSetup, LegionSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Under the Burning Sky", "The greater forces of the Burning Legion lie in wait in the vast expanse of the Twisting Nether. Use the Book of Medivh to tear open a hole in space-time, and visit the full might of the Legion upon Azeroth.", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
+      local thistype this = thistype.allocate("燃烧的天空之下", "燃烧军团更强大的部队在广阔的扭曲虚空中等待着。使用麦迪文之书在时空中撕开一道口子让世界见识一下燃烧军团的全部力量。", "ReplaceableTextures\\CommandButtons\\BTNArchimonde.blp")
       call this.AddQuestItem(QuestItemCastSpell.create(RITUAL_ID, false))
       set this.ResearchId = 'R04B'
       return this

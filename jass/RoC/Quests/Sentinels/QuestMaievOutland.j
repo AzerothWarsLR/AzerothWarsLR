@@ -3,11 +3,11 @@ library QuestMaievOutland requires Persons, QuelthalasSetup, GeneralHelpers
   struct QuestMaievOutland extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "Maiev's Outland outpost have been constructed."
+      return "玛维的外域前哨基地已经建造完成。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Maiev's Outland outpost and moves Maiev to Outland"
+      return "获得玛维的外域前哨基地所有单位和建筑并将玛维移动到外域"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -17,7 +17,7 @@ library QuestMaievOutland requires Persons, QuelthalasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Driven by Vengeance", "Maiev drive for vengeance leads her to chase Illidan all the way to other worlds.", "ReplaceableTextures\\CommandButtons\\BTNMaievArmor.blp")
+      local thistype this = thistype.allocate("复仇的驱使", "玛维复仇的欲望驱使她一路追逐伊利丹，直到另一个世界。", "ReplaceableTextures\\CommandButtons\\BTNMaievArmor.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0J5', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_MAIEV, true))
       return this

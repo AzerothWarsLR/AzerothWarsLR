@@ -7,11 +7,11 @@ library QuestLumberQuota requires QuestData, WarsongSetup, QuestItemResearch, Qu
 
   struct QuestLumberQuota extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Orgrimmar has been founded and has joined us and the " + this.Holder.Team.Name + "."
+      return "奥格瑞玛已成立并加入我们和" + this.Holder.Team.Name + "。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Orgrimmar, able to train Varok"
+      return "获得奥格瑞玛内所有单位和建筑并允许召唤瓦罗克"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestLumberQuota requires QuestData, WarsongSetup, QuestItemResearch, Qu
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("To Tame a Land", "This new continent is ripe for opportunity, if the Horde is going to survive, a new city needs to be built.", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
+      local thistype this = thistype.allocate("驯服土地", "这个新大陆充满了机遇，如果部落要生存下去，就需要建造一座新的城市。", "ReplaceableTextures\\CommandButtons\\BTNFortress.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'o02S'))
       call this.AddQuestItem(QuestItemExpire.create(1500))
       call this.AddQuestItem(QuestItemSelfExists.create())

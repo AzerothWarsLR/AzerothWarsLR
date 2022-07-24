@@ -9,11 +9,11 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
 
   struct QuestSeaWitch extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The sea witch Zar'jira has been slain. Thrall and Vol'jin can now set sail."
+      return "海巫扎尔吉拉已死，萨尔和沃金可以启航了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain control of all neutral units on the Darkspear Isles and teleport to shore"
+      return "获得暗矛岛上的所有单位和建筑并将萨尔传送到海岸边。"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -49,7 +49,7 @@ library QuestSeaWitch requires FrostwolfSetup, LegendNeutral, Display, QuestItem
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Riders on the Storm", "Warchief Thrall and his forces have been shipwrecked on the Darkspear Isles. Kill the Sea Witch there to give them a chance to rebuild their fleet and escape.", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
+      local thistype this = thistype.allocate("风暴中的乘客", "大酋长萨尔和他的部队搁浅在了暗矛群岛上。杀死那里的海巫来获得一个重建舰队并逃跑的机会。", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SEAWITCH))
       call this.AddQuestItem(QuestItemExpire.create(600))
       set this.ResearchId = QUEST_RESEARCH_ID

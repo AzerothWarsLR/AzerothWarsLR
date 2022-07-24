@@ -11,11 +11,11 @@ library QuestCataclysm requires QuestData, TwilightSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Deathwing is here, Doomsday is at hand, the Cataclysm as begun!"
+      return "死亡之翼已经到来，末日近在眼前，大灾变开始了！"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Cultists all over the world join your cause actively, Deathwing as a super demihero and the 2 elemental ascendant heroes."
+      return "世界各地的邪教徒们积极地加入你的事业，获得死亡之翼作为高级半英雄和两名元素升腾者英雄。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestCataclysm requires QuestData, TwilightSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Cataclysm", "The Old God's will is finnicky, you are not privy to when their plan will be set in motion, but when it is, your cult will be ready to welcome it.", "ReplaceableTextures\\CommandButtons\\BTNDeathwing.blp")
+      local thistype this = thistype.allocate("大灾变", "古神的意志便是一切，你不被允许知道祂们的计划何时开始，但当时机来临时，你的崇拜者们将会准备好迎接祂。", "ReplaceableTextures\\CommandButtons\\BTNDeathwing.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DEATHWING, false))
       return this
     endmethod

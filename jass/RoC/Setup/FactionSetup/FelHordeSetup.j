@@ -7,7 +7,7 @@ library FelHordeSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_FEL_HORDE = LiegeFaction.create("Fel Horde", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
+    set FACTION_FEL_HORDE = LiegeFaction.create("邪部落", PLAYER_COLOR_GREEN, "|c0020c000","ReplaceableTextures\\CommandButtons\\BTNPitLord.blp")
     set f = FACTION_FEL_HORDE
     set f.Team = TEAM_LEGION
     set f.PresenceResearch = 'R05L'

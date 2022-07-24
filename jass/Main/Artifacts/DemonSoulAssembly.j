@@ -9,7 +9,7 @@ library ZinrokhAssembly initializer OnInit requires Artifact, Persons, FilteredI
     local Artifact tempArtifact = Artifact.artifactsByType[whichItemId]
     call SetItemPosition(tempArtifact.item, DUMMY_X, DUMMY_Y)
     call tempArtifact.setStatus(ARTIFACT_STATUS_HIDDEN)
-    call tempArtifact.setDescription("Used to create the Demon Soul")
+    call tempArtifact.setDescription("用来打造恶魔之魂")
   endfunction
 
   private function ItemPickup takes nothing returns nothing
@@ -28,7 +28,7 @@ library ZinrokhAssembly initializer OnInit requires Artifact, Persons, FilteredI
       set tempItem = tempArtifact.item
       call UnitAddItemSafe(triggerUnit, tempItem)
       set triggerPerson = Person.ByHandle(GetOwningPlayer(GetTriggerUnit()))
-      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has assembled Zin'rokh, Destroyer of Worlds!" )
+      call DisplayTextToForce(bj_FORCE_ALL_PLAYERS, triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r已经合成了辛洛斯，诸界的毁灭者" )
       set tempItem = null
       call DestroyTrigger(GetTriggeringTrigger())  
     endif

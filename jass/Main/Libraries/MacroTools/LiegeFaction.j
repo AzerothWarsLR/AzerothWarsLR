@@ -55,11 +55,11 @@ library LiegeFaction requires Faction, Set
 
     method AddMerc takes MercFaction mercToAdd returns nothing
       if (mercs.contains(mercToAdd)) then
-        call BJDebugMsg("Attempted to add merc " + mercToAdd.Name + " to liege " + this.name + " but it is already present")
+        call BJDebugMsg("尝试添加佣兵" + mercToAdd.Name + "给" + this.name + "，但该佣兵已经存在。")
         return
       endif
       if mercToAdd.Liege != this and mercToAdd.Liege != 0 then
-        call BJDebugMsg("Attempted to add merc " + mercToAdd.Name + " to liege " + this.name + " but it already has the liege " + mercToAdd.Liege.Name)
+        call BJDebugMsg("尝试添加佣兵" + mercToAdd.Name + "给" + this.name + "但它已经加入了" + mercToAdd.Liege.Name)
         return
       endif
       call CopyObjectLevelToMercenaries(ARMOR_UPGRADE, GetObjectLevel(ARMOR_UPGRADE))
@@ -74,7 +74,7 @@ library LiegeFaction requires Faction, Set
 
     static method create takes string name, playercolor playCol, string prefixCol, string icon returns thistype
       local thistype this = thistype.allocate(name, playCol, prefixCol, icon)
-      set this.mercs = Set.create(name +  "s mercenaries")
+      set this.mercs = Set.create(name + "的佣兵")
       return this
     endmethod
   endstruct

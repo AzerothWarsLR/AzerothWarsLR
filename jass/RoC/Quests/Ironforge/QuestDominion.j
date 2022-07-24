@@ -6,11 +6,11 @@ library QuestDominion requires QuestData, IronforgeSetup
 
   struct QuestDominion extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Dwarven Empire is re-united again, Ironforge is ready for war again."
+      return "矮人帝国重新统一，铁炉堡再次准备好了进行战争。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Ironforge"
+      return "获得铁炉堡内所有建筑和单位"
     endmethod
 
     private method GrantDominion takes player whichPlayer returns nothing
@@ -48,7 +48,7 @@ library QuestDominion requires QuestData, IronforgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Dwarven Dominion", "The Dwarven Dominion must be established before Ironforge can join the war.", "ReplaceableTextures\\CommandButtons\\BTNDwarvenKeep.blp")
+      local thistype this = thistype.allocate("矮人领土", "矮人领土必须在铁炉堡加入战争之前建立", "ReplaceableTextures\\CommandButtons\\BTNDwarvenKeep.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n017')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n014')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n013')))

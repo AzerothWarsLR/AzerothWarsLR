@@ -7,15 +7,15 @@ library QuestEmbassy requires QuestData, LegionSetup
 
   struct QuestEmbassy extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "We have eradicated the Draenei from Outland"
+      return "我们已经将外域中的德莱尼人消灭了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can build the Infernal Machine Factory and summon Anetheron from the " + GetObjectName(ALTAR_ID)
+      return "允许建造炼狱机器工厂和在" + GetObjectName(ALTAR_ID) + "内召唤安纳塞隆"
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Genocide of the Draenei", "The Draenei race existence insults the Eredar overlords of the Burning Legion, destroy them all", "ReplaceableTextures\\CommandButtons\\BTNEredarRed.blp")
+      local thistype this = thistype.allocate("种族灭绝德莱尼", "德莱尼的存在侮辱了燃烧军团的艾瑞达领主，杀光他们。", "ReplaceableTextures\\CommandButtons\\BTNEredarRed.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))

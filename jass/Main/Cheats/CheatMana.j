@@ -24,10 +24,10 @@ library CheatMana initializer OnInit requires Persons, TestSafety
       
       if parameter == "on" then
         set Toggle[pId] = true
-        call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Infinite mana activated.")
+        call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无限魔法值开启")
       elseif parameter == "off" then
         set Toggle[pId] = false
-        call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Infinite mana deactivated.")
+        call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 无限魔法值关闭")
       endif
     endfunction
 

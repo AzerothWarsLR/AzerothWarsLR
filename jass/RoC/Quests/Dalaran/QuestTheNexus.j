@@ -7,11 +7,11 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Nexus powers have been absorbed by Jaina and she joins the Lich King in the eternal ice of Northrend."
+      return "吉安娜在吸收了魔枢的魔力后加入了永恒之冰内的巫妖王。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You become the Nexus faction, allied with the Scourge and enemy with everyone else. Jaina becomes much more powerful"
+      return "你成为了与天灾军团结盟的魔枢势力并与其他阵营敌对。吉安娜变得更为强大了。"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -48,14 +48,14 @@ library QuestTheNexus requires Persons, DalaranSetup, GeneralHelpers
 
       call UnitRemoveAbilityBJ( 'A0RB', LEGEND_JAINA.Unit)
       set this.Holder.Team = TEAM_SCOURGE
-      set this.Holder.Name = "The Nexus"
+      set this.Holder.Name = "魔枢"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNJaina_Archmage.blp"
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Nexus", "The new Lich King calls for Jaina, tempts her with power. The Nexus needs a master, and Jaina is perfect for it.", "ReplaceableTextures\\CommandButtons\\BTNBlueDragonNexus.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_JainaChannel, "The Nexus", LEGEND_JAINA, 60, 270))
+      local thistype this = thistype.allocate("魔枢", "新巫妖王用力量来诱惑吉安娜加入他。魔枢需要一位强大的法师，而吉安娜正是完美的人选。", "ReplaceableTextures\\CommandButtons\\BTNBlueDragonNexus.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_JainaChannel, "魔枢", LEGEND_JAINA, 60, 270))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_JAINA, true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NEXUS, false))
       return this

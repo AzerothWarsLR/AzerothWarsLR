@@ -31,11 +31,11 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
     
     private method operator CompletionPopup takes nothing returns string
-      return "Illidan has invaded Outland and has allied himself with the Draenei Broken Ones."
+      return "伊利丹入侵了外域并与德莱尼破碎者结盟。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Open a portal to Outland, grants you the Draenei village near it, enables you to train Akama, Najentus and Draenei units, grants you 250 food limit and grants you 800 gold"
+      return "开启一道通往外域的传送门，获得附近的德莱尼村庄"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -52,7 +52,7 @@ library QuestExilePath requires QuestData, NagaSetup
       call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_AetheneumTombExit2) )
 
       call SetPlayerTechResearched(FACTION_SENTINELS.Player, 'R06D', 1)
-      set this.Holder.Name = "Illidari"
+      set this.Holder.Name = "伊利达雷"
       
       call WaygateActivateBJ( true, gg_unit_h01D_3380 )
       call ShowUnitShow( gg_unit_h01D_3380 )
@@ -63,10 +63,10 @@ library QuestExilePath requires QuestData, NagaSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("A Parting of Ways", "Illidan must go his own way to find power, and Outland is the perfect place to acquire it.", "ReplaceableTextures\\CommandButtons\\BTNIllidanDemonicPower.blp")
+      local thistype this = thistype.allocate("分道扬镳", "伊利丹必须通过自己的方式来获得力量，而外域是获得力量的完美地方。", "ReplaceableTextures\\CommandButtons\\BTNIllidanDemonicPower.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'n055'))
       call this.AddQuestItem(QuestItemSelfExists.create())
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "Finished Campaign"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_ILLIDAN, gg_rct_NazjatarHidden, "完成战役"))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this
     endmethod

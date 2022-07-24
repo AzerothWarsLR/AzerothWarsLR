@@ -6,11 +6,11 @@ library QuestBoralus requires QuestData, ScarletSetup, GeneralHelpers
 
   struct QuestBoralus extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Kul'Tiras has joined the war and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "库尔提拉斯已经加入了战争，其军队现在可以自由的协助" + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Kul'Tiras and enables Katherine Proodmoure to be trained at the altar"
+      return "获得库尔提拉斯所有建筑和单位并允许在祭坛内召唤凯瑟琳·普罗德摩尔"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -30,7 +30,7 @@ library QuestBoralus requires QuestData, ScarletSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The City at Sea", "Proudmoore is stranded at sea. Rejoin Boralus to take control of the city.", "ReplaceableTextures\\CommandButtons\\BTNHumanShipyard.blp")
+      local thistype this = thistype.allocate("海上之城", "普罗德摩尔被困在了海上。重新加入伯拉勒斯来控制城市", "ReplaceableTextures\\CommandButtons\\BTNHumanShipyard.blp")
       call this.AddQuestItem(QuestItemResearch.create('R04R', 'h06I'))
       call this.AddQuestItem(QuestItemUpgrade.create('h06I', 'h062'))
       call this.AddQuestItem(QuestItemExpire.create(900))

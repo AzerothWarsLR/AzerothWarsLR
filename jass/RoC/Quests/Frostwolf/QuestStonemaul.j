@@ -6,11 +6,11 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
 
   struct QuestStonemaul extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Stonemaul has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "石锤堡垒已经被解放而它的军队将可以自由的协作" + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Stonemaul and 3000 lumber"
+      return "获得石锤堡垒内所以单位和建筑的控制权和3000木头。"
     endmethod
 
     private method GrantStonemaul takes player whichPlayer returns nothing
@@ -46,7 +46,7 @@ library QuestStonemaul requires QuestData, WarsongSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Chieftain's Challenge", "The Ogres of Stonemaul follow the strongest, slay the Chieftain to gain control of the base.", "ReplaceableTextures\\CommandButtons\\BTNOneHeadedOgre.blp")
+      local thistype this = thistype.allocate("大酋长的挑战", "石锤食人魔们只会跟随强者，杀死食人魔酋长以获得基地的控制权。", "ReplaceableTextures\\CommandButtons\\BTNOneHeadedOgre.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_KORGALL))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n022')))
       call this.AddQuestItem(QuestItemExpire.create(1505))

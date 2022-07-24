@@ -8,11 +8,11 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsSetup
   struct QuestAndrassil extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "With Northrend finally free of the Lich King's influence, the time is ripe to regrow Andrassil in the hope that it can help reclaim this barren land."
+      return "随着诺森德最终摆脱了巫妖王的影响，重新种下安达希尔的时机已经来临，希望它能帮助开垦这片贫瘠的土地。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A new capital at Grizzly Hills that can research a powerful upgrade for your Druids of the Claw, and you can train the hero Ursoc from the Altar of Elders"
+      return "在灰熊丘陵的新首都可以研究利爪德鲁伊的一个强大升级，并解锁长者祭坛内的英雄乌索克。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -27,10 +27,10 @@ library QuestAndrassil requires QuestData, ControlPoint, DruidsSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Crown of the Snow", "Long ago, Fandral Staghelm cut a sapling from Nordrassil and used it to grow Andrassil in Northrend. Without the blessing of the Aspects, it fell to the Old Gods' corruption. If Northrend were to be reclaimed, Andrassil's growth could begin anew.", "ReplaceableTextures\\CommandButtons\\BTNTreant.blp")
+      local thistype this = thistype.allocate("雪原之冠", "很久之前范达尔鹿盔从诺达希尔上砍下了一颗树苗并在诺森德种下了安达希尔。没有守护巨龙的祝福让它落入了古神的腐化之中。如果诺森德被收复的话，安达希尔就可以重新开始生长了。", "ReplaceableTextures\\CommandButtons\\BTNTreant.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_LICHKING))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03U')))
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_GrizzlyHills, "Grizzly Hills", true))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_GrizzlyHills, "灰熊丘陵", true))
       return this
     endmethod
   endstruct

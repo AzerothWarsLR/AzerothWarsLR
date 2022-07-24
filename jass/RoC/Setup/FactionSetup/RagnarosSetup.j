@@ -7,7 +7,7 @@ library RagnarosSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_RAGNAROS = LiegeFaction.create("Ragnaros", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp")
+    set FACTION_RAGNAROS = LiegeFaction.create("拉格纳罗斯", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHeroAvatarOfFlame.blp")
     set f = FACTION_RAGNAROS
     set f.Team = TEAM_OLDGOD
     set f.StartingGold = 150

@@ -7,11 +7,11 @@ library QuestLumberMarket requires GoblinSetup, LegendDruids
   struct QuestLumberMarket extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "The World Tree is ours, our lumber supplies will never run out!"
+      return "世界之树是我们的了，我们的木材供应将永远不会耗尽！"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Shredders will gain cleaving attack and 500 hit points. You will gain 30000 lumber."
+      return "伐木机获得分裂攻击和500点生命值。你将获得30000木头。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestLumberMarket requires GoblinSetup, LegendDruids
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Lumber Market Krash", "The World Tree would provide enough lumber to completely crash the lumber market, forcing our Shredders to specialise more on war.", "ReplaceableTextures\\CommandButtons\\BTNJunkGolem.blp")
+      local thistype this = thistype.allocate("木材市场崩溃", "世界之树提供的木材足以彻底摧毁木材市场，迫使我们的伐木机更加专注于战争。", "ReplaceableTextures\\CommandButtons\\BTNJunkGolem.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_NORDRASSIL, false))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

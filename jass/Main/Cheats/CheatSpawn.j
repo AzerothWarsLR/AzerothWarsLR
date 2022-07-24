@@ -52,7 +52,7 @@ library CheatSpawn initializer OnInit requires TestSafety
     
     if S2Raw(parameter) >= 0 then
       call ForGroupBJ( GetUnitsSelectedAll(p), function Spawn )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to spawn " + parameter2 + " of object " + GetObjectName(S2Raw(parameter)) + ".")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 尝试生产" + parameter2 + "个" + GetObjectName(S2Raw(parameter)) + "。")
     endif    
   endfunction
 

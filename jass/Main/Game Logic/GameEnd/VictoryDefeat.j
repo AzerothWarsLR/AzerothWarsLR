@@ -11,7 +11,7 @@ library VictoryDefeat requires GameTimer
     local Team loopTeam
 
     call ClearTextMessages()
-    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\nTEAM VICTORY!|r\nThe " + whichTeam.Name + " has won the game! Surviving players may continue playing, but scores have already been recorded.")
+    call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\n队伍胜利！|r\n" + whichTeam.Name + "获胜了！剩余的玩家可以继续游玩，但分数已经被记录。")
     //Give victory to ALL teams which are still standing at this point
     loop
       exitwhen i == Team.Count
@@ -24,7 +24,7 @@ library VictoryDefeat requires GameTimer
 
   function DefeatTeam takes Team whichTeam returns nothing
     if GetGameTime() >= 60 then
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\nTEAM DEFEAT!|r\nThe " + whichTeam.Name + " has been defeated.")
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, VICTORY_COLOR + "\n队伍失败!|r\n " + whichTeam.Name + "被击败了。")
       call StartSound(gg_snd_GameFound)
     endif
   endfunction

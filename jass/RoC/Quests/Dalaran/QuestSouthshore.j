@@ -2,11 +2,11 @@ library QuestSouthshore requires QuestData, DalaranSetup
 
   struct QuestSouthshore extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Murlocs have been defeated, Southshore is safe."
+      return "鱼人们已经被击败，南海镇现在安全了。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Southshore"
+      return "获得南海镇所有单位和建筑的控制权。"
     endmethod
 
     private method GrantSouthshore takes player whichPlayer returns nothing
@@ -38,7 +38,7 @@ library QuestSouthshore requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Murloc Troubles", "A small murloc skirmish is attacking Southshore, push them back", "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp")
+      local thistype this = thistype.allocate("鱼人问题", "南海镇正遭到一小股鱼人们的袭击，击退它们。", "ReplaceableTextures\\CommandButtons\\BTNMurloc.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nmrm_0204)) //Murloc
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08M')))
       call this.AddQuestItem(QuestItemExpire.create(1135))

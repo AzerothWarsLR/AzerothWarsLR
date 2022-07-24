@@ -27,7 +27,7 @@ library QuestItemControlUnit requires QuestItemData
       local trigger trig = CreateTrigger()
       call TriggerRegisterUnitEvent(trig, target, EVENT_UNIT_CHANGE_OWNER)    
       call TriggerAddAction(trig, function thistype.OnAnyUnitChangeOwner)
-      set this.Description = "Your team controls " + GetUnitName(target)
+      set this.Description = "你的队伍控制了" + GetUnitName(target)
       set this.target = target
       set this.targetWidget = target
       set thistype.byHandleId[GetHandleId(target)] = this

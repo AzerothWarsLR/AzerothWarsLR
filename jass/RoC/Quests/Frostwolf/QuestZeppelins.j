@@ -8,11 +8,11 @@ library QuestZeppelins requires LegendSentinels, Display
 
   struct QuestZeppelins extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Sentinels have been slain. With their Hippogryphs no longer terrorizing the skies, the Horde can field its refurbished Zeppelins."
+      return "哨兵们已经被击败。天空中没有了角鹰兽们威胁后，部落终于可以将飞艇部署到战场之上了。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(UNITTYPE_ID) + "s"
+      return "解锁训练" + GetObjectName(UNITTYPE_ID) + "单位"
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -22,11 +22,11 @@ library QuestZeppelins requires LegendSentinels, Display
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(this.Holder.Player, UNITTYPE_ID, "You can now train Zeppelins from the Goblin Laboratory.")
+      call DisplayUnitTypeAcquired(this.Holder.Player, UNITTYPE_ID, "你现在可以在地精实验室内训练飞艇单位了。")
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Spirits of Ashenvale", "The Sentinels have laid claim over Kalimdor. As long as they survive, the Orcs will never be safe.", "ReplaceableTextures\\CommandButtons\\BTNGoblinZeppelin.blp")
+      local thistype this = thistype.allocate("灰谷之魂", "卡利姆多大陆上到处都是哨兵。只要她们还活着一天，兽人就永远不会安全。", "ReplaceableTextures\\CommandButtons\\BTNGoblinZeppelin.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_AUBERDINE))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
       return this

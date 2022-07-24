@@ -2,11 +2,11 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
 
   struct QuestScepterOfTheQueenWarsong extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Highborne are no longer implicitly defended by the Night Elven presence at Feathermoon Stronghold. The Horde unleashes their full might against these Night Elven arcanists."
+      return "羽月要塞的暗夜精灵不再能暗中保护上层精灵了。部落将对这些暗夜精灵奥术师释放出他们全部的力量"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain the Scepter of the Queen and turn all units in Dire Maul hostile"
+      return "获得女王权杖并使厄运之槌内的所有单位转为敌对。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -15,10 +15,10 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Royal Plunder", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Feathermoon Stronghold falls, it would become a simple matter to slaughter the Highborne and plunder their artifacts.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
+      local thistype this = thistype.allocate("皇家掠夺者", "古老的上层精灵遗迹在厄运之槌的废墟中留存了下来。如果羽月要塞失守，屠杀这些上层精灵并掠夺他们的神器将变得十分简单", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_STONEMAUL))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FEATHERMOON))
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "厄运之槌", true))
       return this
     endmethod
   endstruct
@@ -27,11 +27,11 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
     private static integer researchId = 'R02O'
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Shen'dralar, the Highborne survivors of the Sundering, swear allegiance to their fellow Night Elves. As a sign of their loyalty, they offer up an artifact they have guarded for thousands of years: the Scepter of the Queen."
+      return "辛德拉，在大分裂中幸存下来的上层精灵们发誓效忠他们的暗夜精灵同伴。为了表示他们诚意，他们献上了一件他们守护了数千年的神器，女王权杖"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain the Scepter of the Queen and control of all units in Dire Maul"
+      return "获得女王权杖和厄运之槌所有单位和建筑"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -49,10 +49,10 @@ library QuestScepterOfTheQueen initializer OnInit requires QuestData, WarsongSet
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Return to the Fold", "Remnants of the ancient Highborne survive within the ruins of Dire Maul. If Stonemaul falls, it would be safe for them to come out.", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
+      local thistype this = thistype.allocate("浪子回头", "古老的上层精灵遗迹在厄运之槌的废墟中留存了下来。如果石锤堡垒被摧毁，他们就可以安全的离开了。", "ReplaceableTextures\\CommandButtons\\BTNNagaWeaponUp2.blp")
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_FEATHERMOON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STONEMAUL))
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "Dire Maul", true))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_HighBourne, "厄运之槌", true))
       return this
     endmethod
   endstruct  

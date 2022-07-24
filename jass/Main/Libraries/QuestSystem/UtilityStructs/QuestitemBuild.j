@@ -9,7 +9,7 @@ library QuestItemBuild requires QuestItemData
 
     private method operator CurrentBuildCount= takes integer value returns nothing
       set this.currentBuildCount = value
-      set this.Description = "Build " + GetObjectName(objectId) + "s (" + I2S(currentBuildCount) + "/" + I2S(targetBuildCount) + ")"
+      set this.Description = "建造(" + I2S(currentBuildCount) + "/" + I2S(targetBuildCount) + ")个" + GetObjectName(objectId)
     endmethod
 
     static method create takes integer objectId, integer targetBuildCount returns thistype

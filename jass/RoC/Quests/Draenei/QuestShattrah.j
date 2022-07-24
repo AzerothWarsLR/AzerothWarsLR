@@ -2,11 +2,11 @@ library QuestShattrah requires QuestData, DalaranSetup
 
   struct QuestShattrah extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The messenger has arrived, Shattrah has been reached in time."
+      return "信使及时到达了沙塔斯。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Shattrah"
+      return "获得沙塔斯所有建筑"
     endmethod
 
     private method GrantShattrah takes player whichPlayer returns nothing
@@ -38,8 +38,8 @@ library QuestShattrah requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Warn Shattrah", "The city of Shattrah has to be warned of the imminent Orc invasion", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Shattrah, "Shattrah", false))
+      local thistype this = thistype.allocate("警告沙塔斯", "必须警告沙塔斯兽人即将入侵", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Shattrah, "沙塔斯", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

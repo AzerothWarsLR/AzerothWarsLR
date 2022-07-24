@@ -9,11 +9,11 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
   struct QuestThunderBluff extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Crossroads have been constructed."
+      return "十字路口已经被建好。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Thunder Bluff"
+      return "获得雷霆崖的控制权"
     endmethod    
 
     private method OnFail takes nothing returns nothing
@@ -28,9 +28,9 @@ library QuestThunderBluff initializer OnInit requires Persons, FrostwolfSetup, W
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Long March", "The Tauren have been wandering for too long. The plains of Mulgore would offer respite from this endless journey.", "ReplaceableTextures\\CommandButtons\\BTNCentaurKhan.blp")
+      local thistype this = thistype.allocate("长征", "牛头人们已经流浪了太长时间。莫高雷平原可以为这永无止境的流浪提供喘息之所。", "ReplaceableTextures\\CommandButtons\\BTNCentaurKhan.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_CENTAURKHAN))
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_ThunderBluff, "Thunder Bluff", true))
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_ThunderBluff, "雷霆崖", true))
       call this.AddQuestItem(QuestItemExpire.create(1455))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID

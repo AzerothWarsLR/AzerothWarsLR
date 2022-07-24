@@ -11,11 +11,11 @@ library QuestPlague requires QuestData, ScourgeSetup
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The plague has been unleashed! The citizens of Lordaeron are quickly transforming into mindless zombies."
+      return "瘟疫爆发了！洛丹伦的平民正在迅速转变为无脑的僵尸"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "A plague is unleashed upon the lands of Lordaeron"
+      return "瘟疫将释放到洛丹伦的土地之上"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -29,7 +29,7 @@ library QuestPlague requires QuestData, ScourgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Plague of Undeath", "You can unleash a devastating zombifying plague across the lands of Lordaeron. Once it's started, you can type -off to deactivate Cauldron Zombie spawns. Type -end to stop citizens from turning into zombies.", "ReplaceableTextures\\CommandButtons\\BTNPlagueBarrel.blp")
+      local thistype this = thistype.allocate("亡灵瘟疫", "你可以在洛丹伦的土地上发动毁灭性的僵尸瘟疫。当瘟疫开始后，你可以输入-off来停止大锅僵尸的生成。输入-end来停止将平民们转化为僵尸。", "ReplaceableTextures\\CommandButtons\\BTNPlagueBarrel.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'u000'), QuestItemTime.create(900)))
       call this.AddQuestItem(QuestItemTime.create(720))
       set this.ResearchId = QUEST_RESEARCH_ID

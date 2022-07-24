@@ -164,9 +164,9 @@ library QuestData initializer OnInit requires QuestItemData, Event
       endif
       call this.OnAdd()
       if this.FailurePopup != null then
-        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On completion:|r " + this.CompletionDescription + "\n|cffffcc00On failure:|r " + this.FailureDescription)
+        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On 完成:|r " + this.CompletionDescription + "\n|cffffcc00On 失败:|r " + this.FailureDescription)
       else
-        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On completion:|r " + this.CompletionDescription)
+        call QuestSetDescription(this.quest, this.description + "\n|cffffcc00On 完成:|r " + this.CompletionDescription)
       endif
       loop
         exitwhen i == this.questItemCount
@@ -234,7 +234,7 @@ library QuestData initializer OnInit requires QuestItemData, Event
     private method DisplayCompletedGlobal takes nothing returns nothing
       local string display = ""
       if GetLocalPlayer() != this.Holder.Player then
-        set display = display + "\n|cffffcc00MAJOR EVENT - " + this.Holder.prefixCol + this.Title + "|r\n" + this.CompletionPopup + "\n"
+        set display = display + "\n|cffffcc00重要事件 - " + this.Holder.prefixCol + this.Title + "|r\n" + this.CompletionPopup + "\n"
         call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, display)
         if Person.ByHandle(GetLocalPlayer()).Faction.Team.ContainsFaction(this.Holder) then
           call StartSound(bj_questCompletedSound)
@@ -249,13 +249,13 @@ library QuestData initializer OnInit requires QuestItemData, Event
       local QuestItemData tempQuestItemData
       local string display = ""
       if GetLocalPlayer() == this.Holder.Player then
-        set display = display + "\n|cffffcc00QUEST UPDATED - " + this.Title + "|r\n" + this.Description + "\n"
+        set display = display + "\n|cffffcc00任务更新 - " + this.Title + "|r\n" + this.Description + "\n"
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = questItems[i]
           if tempQuestItemData.ShowsInQuestLog then
             if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+              set display = display + " - |cff808080" + tempQuestItemData.Description + "(已完成)|r\n"
             else
               set display = display + " - " + tempQuestItemData.Description + "\n"
             endif
@@ -273,18 +273,18 @@ library QuestData initializer OnInit requires QuestItemData, Event
       local string display = ""
       if GetLocalPlayer() == this.Holder.Player then
         if this.FailurePopup != null then
-          set display = display + "\n|cffffcc00QUEST FAILED - " + this.Title + "|r\n" + this.FailurePopup + "\n"
+          set display = display + "\n|cffffcc00任务失败 - " + this.Title + "|r\n" + this.FailurePopup + "\n"
         else
-          set display = display + "\n|cffffcc00QUEST FAILED - " + this.Title + "|r\n" + this.Description + "\n"
+          set display = display + "\n|cffffcc00任务失败 - " + this.Title + "|r\n" + this.Description + "\n"
         endif
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = this.questItems[i]
           if tempQuestItemData.ShowsInQuestLog then
             if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+              set display = display + " - |cff808080" + tempQuestItemData.Description + " (已完成)|r\n"
             elseif tempQuestItemData.Progress == QUEST_PROGRESS_FAILED then
-              set display = display + " - |cffCD5C5C" + tempQuestItemData.Description + " (Failed)|r\n"
+              set display = display + " - |cffCD5C5C" + tempQuestItemData.Description + " (失败)|r\n"
             else
               set display = display + " - " + tempQuestItemData.Description + "\n"
             endif
@@ -301,12 +301,12 @@ library QuestData initializer OnInit requires QuestItemData, Event
       local QuestItemData tempQuestItemData
       local string display = ""
       if GetLocalPlayer() == this.Holder.Player then
-        set display = display + "\n|cffffcc00QUEST COMPLETED - " + this.Title + "|r\n" + this.CompletionPopup + "\n"
+        set display = display + "\n|cffffcc00任务完成 - " + this.Title + "|r\n" + this.CompletionPopup + "\n"
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = this.questItems[i]
           if tempQuestItemData.ShowsInQuestLog then
-            set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+            set display = display + " - |cff808080" + tempQuestItemData.Description + " (已完成)|r\n"
           endif
           set i = i + 1
         endloop
@@ -320,13 +320,13 @@ library QuestData initializer OnInit requires QuestItemData, Event
       local QuestItemData tempQuestItemData
       local string display = ""
       if GetLocalPlayer() == this.Holder.Player then
-        set display = display + "\n|cffffcc00QUEST DISCOVERED - " + this.Title + "|r\n" + this.Description + "\n"
+        set display = display + "\n|cffffcc00任务发现 - " + this.Title + "|r\n" + this.Description + "\n"
         loop 
           exitwhen i == this.questItemCount
           set tempQuestItemData = questItems[i]
           if tempQuestItemData.ShowsInQuestLog then
             if tempQuestItemData.Progress == QUEST_PROGRESS_COMPLETE then
-              set display = display + " - |cff808080" + tempQuestItemData.Description + " (Completed)|r\n"
+              set display = display + " - |cff808080" + tempQuestItemData.Description + " (已完成)|r\n"
             else
               set display = display + " - " + tempQuestItemData.Description + "\n"
             endif

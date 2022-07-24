@@ -34,7 +34,7 @@ library QuestItemCompleteQuest initializer OnInit requires QuestData, Faction
       endif
 
       set this.target = target
-      set this.Description = "Complete the quest " + target.Title
+      set this.Description = "完成任务" + target.Title
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

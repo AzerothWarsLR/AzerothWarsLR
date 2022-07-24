@@ -16,7 +16,7 @@ library CheatRemove initializer OnInit requires TestSafety
     local integer pId = GetPlayerId(p)
 
     call ForGroupBJ( GetUnitsSelectedAll(p), function Remove )
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Permanently removing selected units.")   
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 永久移除选中的单位")   
   endfunction
 
   private function OnInit takes nothing returns nothing

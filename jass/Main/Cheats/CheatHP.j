@@ -18,7 +18,7 @@ library CheatHP initializer OnInit requires Persons, TestSafety
     
     if S2I(parameter) >= 0 then
       call ForGroupBJ( GetUnitsSelectedAll(p), function SetHP )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Setting hitpoints of selected units to " + parameter + ".")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 设定选中单位的生命值为" + parameter + "。")
     endif    
   endfunction
 

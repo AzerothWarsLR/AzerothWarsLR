@@ -3,11 +3,11 @@ library QuestJoinAllianceSentinel requires Persons, GeneralHelpers
   struct QuestJoinAllianceSentinel extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Sentinels have joined the Alliance"
+      return "哨兵加入了联盟"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Join the Alliance team"
+      return "加入联盟"
     endmethod    
 
 
@@ -17,7 +17,7 @@ library QuestJoinAllianceSentinel requires Persons, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Join the Alliance", "With a world ending threat happening, the Alliance has reached to the Night Elves to join them", "ReplaceableTextures\\CommandButtons\\BTNalliance.blp")
+      local thistype this = thistype.allocate("加入联盟", "随着世界末日威胁的出现，联盟终于接触到了暗夜精灵并邀请他们加入联盟。", "ReplaceableTextures\\CommandButtons\\BTNalliance.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IG', true))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_TYRANDE, true))
       return this

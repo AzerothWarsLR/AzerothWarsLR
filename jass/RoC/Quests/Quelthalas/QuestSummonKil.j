@@ -10,11 +10,11 @@ library QuestSummonKil requires QuestData
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The greater demon Kil'jaeden has been summoned to Azeroth"
+      return "欺诈者基尔加丹已经被召唤到艾泽拉斯"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The hero Kil'jaeden"
+      return "英雄基尔加丹"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -23,8 +23,8 @@ library QuestSummonKil requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Great Deceiver", "The greater demon Kil'jaeden has been scheming for aeons. Will Kael finally be the one to summon him and consume Azeroth?", "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_KaelSunwellChannel, "The Sunwell", LEGEND_KAEL, 180, 270))
+      local thistype this = thistype.allocate("欺诈者", "欺诈者基尔加丹已经密谋了很久，凯尔最终会召唤他并摧毁艾泽拉斯吗？", "ReplaceableTextures\\CommandButtons\\BTNKiljaedin.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_KaelSunwellChannel, "太阳井", LEGEND_KAEL, 180, 270))
       return this
     endmethod
   endstruct

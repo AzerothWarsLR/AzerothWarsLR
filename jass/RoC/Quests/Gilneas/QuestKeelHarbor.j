@@ -2,11 +2,11 @@ library QuestKeelHarbor requires QuestData, GilneasSetup, QuestItemControlPoint,
 
   struct QuestKeelHarbor extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Keel Harbor has been liberated."
+      return "覆舟海湾已经被解放"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Keel Harbor "
+      return "获得覆舟海湾所有建筑"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestKeelHarbor requires QuestData, GilneasSetup, QuestItemControlPoint,
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Keel Harbor", "The final village is the coastal harbor near the capital", "ReplaceableTextures\\CommandButtons\\BTNGilneasShipyard.blp")
+      local thistype this = thistype.allocate("覆舟海湾", "最后一个村庄是首都附近的沿海港口。", "ReplaceableTextures\\CommandButtons\\BTNGilneasShipyard.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n08X')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n031')))
       call this.AddQuestItem(QuestItemExpire.create(1280))

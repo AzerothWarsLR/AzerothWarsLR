@@ -6,11 +6,11 @@ library QuestLiberateLordaeron requires QuestData, ScarletSetup
 
   struct QuestLiberateLordaeron extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The lands of Lordaeron have been purged from Undeath and Corruption"
+      return "洛丹伦领土上的亡灵和腐化已经被净化掉了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Enable to train Commander Goodchild and Isilien, Unlock New Hearthglen in Northrend and the Scarlet Harbor"
+      return "允许召唤指挥官古尔乔和伊森利恩并解锁在诺森德的新壁炉谷和血色十字军港口"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -55,7 +55,7 @@ library QuestLiberateLordaeron requires QuestData, ScarletSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Liberation of Lordaeron", "The lands of Lordaeron are overrun by corruption. Everything must be purged!", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
+      local thistype this = thistype.allocate("解放洛丹伦", "洛丹伦的土地已经被腐败所淹没，必须净化掉一切", "ReplaceableTextures\\CommandButtons\\BTNCastle.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BRIGITTE, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01F')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03P')))

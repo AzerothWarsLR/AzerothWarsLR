@@ -15,7 +15,7 @@ library CheatGold initializer OnInit requires Persons, TestSafety
     
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     call SetPlayerState(p, PLAYER_STATE_RESOURCE_GOLD, S2I(parameter))
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Set to " + parameter + " gold.")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 设定金币为" + parameter + "。")
   endfunction
 
   private function OnInit takes nothing returns nothing

@@ -13,7 +13,7 @@ library CheatFood initializer OnInit requires Persons, TestSafety
     
     set parameter = SubString(enteredString, StringLength(COMMAND), StringLength(enteredString))  
     call AdjustPlayerStateBJ(S2I(parameter), p, PLAYER_STATE_RESOURCE_FOOD_CAP)
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Granted " + parameter + " food.")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 获得" + parameter + "食物。")
   endfunction
 
   private function OnInit takes nothing returns nothing

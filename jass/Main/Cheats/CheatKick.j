@@ -16,7 +16,7 @@ library CheatKick initializer OnInit requires TestSafety
     set kickId = (S2I(parameter))
     
     set Person.ById(kickId).Faction.ScoreStatus = SCORESTATUS_DEFEATED
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to kick player " + GetPlayerName(Player(kickId)) + ".")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 尝试踢掉玩家" + GetPlayerName(Player(kickId)) + "。")
   endfunction
 
   private function OnInit takes nothing returns nothing

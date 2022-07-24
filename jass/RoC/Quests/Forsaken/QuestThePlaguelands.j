@@ -2,11 +2,11 @@ library QuestThePlaguelands requires QuestData, ForsakenSetup
 
   struct QuestThePlaguelands extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The ravaged lands of Lordaeron are now under the control of the Forsaken and able to train up to 4 Val'kyr join their ranks. 500 gold was plundered."
+      return "洛丹伦那被蹂躏的土地现在处于被遗忘者的控制之下，允许最多4名瓦格里加入并掠夺到了500金"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Enable 4 Val'kyr to be raised and grants 500 gold"
+      return "可以训练最多4名瓦格里并获得500黄金"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -16,7 +16,7 @@ library QuestThePlaguelands requires QuestData, ForsakenSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Plaguelands", "The ravaged lands of Lordaeron must be conquered by the Forsaken, their survival depends on it", "ReplaceableTextures\\CommandButtons\\BTNNathanosBlightcaller.blp")
+      local thistype this = thistype.allocate("瘟疫之地", "洛丹伦那被蹂躏的土地必须被被遗忘者征服，他们的生存取决于此", "ReplaceableTextures\\CommandButtons\\BTNNathanosBlightcaller.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_UNDERCITY, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01F')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n044')))

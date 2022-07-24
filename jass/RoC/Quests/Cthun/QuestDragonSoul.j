@@ -2,11 +2,11 @@ library QuestDragonSoul requires QuestData, GeneralHelpers
 
   struct QuestDragonSoul extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Skeram will be granted the Dragon Soul"
+      return "斯克拉姆将获得巨龙之魂"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "The Dragon Soul will be granted to Skeram"
+      return "斯克拉姆将获得巨龙之魂"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -14,8 +14,8 @@ library QuestDragonSoul requires QuestData, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Dragon Soul", "The Dragon Soul was lost in the Blackrock Mountain long ago. Skeram might be powerful enough to restore it.", "ReplaceableTextures\\CommandButtons\\BTNBrokenAmulet.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_DragonSoulChannel, "Burning Steppe", LEGEND_SKERAM, 240, 160))
+      local thistype this = thistype.allocate("巨龙之魂", "巨龙之魂很久之前就遗失在了黑石山内，斯克拉姆可能有足够的力量来恢复它。", "ReplaceableTextures\\CommandButtons\\BTNBrokenAmulet.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_DragonSoulChannel, "燃烧平原", LEGEND_SKERAM, 240, 160))
       return this
     endmethod
   endstruct

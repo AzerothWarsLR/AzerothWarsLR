@@ -17,10 +17,10 @@ library CheatVision initializer OnInit requires Persons, Persons, TestSafety
     
     if parameter == "on" then
       set fogs[pId] = CreateFogModifierRectBJ( true, p, FOG_OF_WAR_VISIBLE, GetPlayableMapRect() )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Whole map revealed.")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 全图视野开启")
     elseif parameter == "off" then
       call DestroyFogModifier(fogs[pId])
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Whole map unrevealed.")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 全图视野关闭")
     endif
   endfunction
 

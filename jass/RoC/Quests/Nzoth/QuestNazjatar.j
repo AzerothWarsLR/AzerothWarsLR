@@ -11,11 +11,11 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Aszhara has rebuilt the Nazjatar Empire!"
+      return "艾萨拉重建了纳沙塔尔帝国"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You will unlock Nazjatar, N'zoth, Pillar of Waves and your food limit will raise to 200. Your workers will be unlimited"
+      return "解锁纳沙塔尔恩佐斯和波涛之柱，你的食物限制将提高到200。"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -37,7 +37,7 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Building the Nazjatar Empire", "Azshara needs to rebuild her glorious empire. To that end, she will require a large amount of resources", "ReplaceableTextures\\CommandButtons\\BTNTempleOfTides.blp")
+      local thistype this = thistype.allocate("重建纳沙塔尔帝国", "艾萨拉需要重建她辉煌的帝国。因此她需要大量资源。", "ReplaceableTextures\\CommandButtons\\BTNTempleOfTides.blp")
       call this.AddQuestItem(QuestItemUpgrade.create('n0C9', 'n0C2'))
       call this.AddQuestItem(QuestItemResearch.create('R08Q', 'n0C9'))
       call this.AddQuestItem(QuestItemSelfExists.create())

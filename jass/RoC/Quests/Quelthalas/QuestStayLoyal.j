@@ -10,11 +10,11 @@ library QuestStayLoyal requires Persons, GeneralHelpers
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Blood Elves stay loyal to Illidan"
+      return "血精灵忠于伊利丹"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Stay allied to Illidan"
+      return "与伊利丹保持同盟关系"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestStayLoyal requires Persons, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Refuse Kil'Jaeden's Offer", "Kil'jaeden has approached Kael with an offer of power and salvation. He should refuse it and resist the temptation of Fel power.", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
+      local thistype this = thistype.allocate("拒绝基尔加丹的提议", "基尔加丹向凯尔提供了力量和救赎，凯尔拒绝并抵制恶魔力量的诱惑", "ReplaceableTextures\\CommandButtons\\BTNDemonHunter2.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0IK', true))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

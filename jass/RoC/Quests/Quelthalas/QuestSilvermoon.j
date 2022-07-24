@@ -6,11 +6,11 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
 
   struct QuestSilvermoon extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Silvermoon siege has been lifted, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "银月城的围攻已经解除，它的军队现在可以自由地协助" + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Silvermoon and enable Anasterian to be trained at the Altar"
+      return "获得银月城所有单位和建筑，并在祭坛内解锁安纳斯特里亚"
     endmethod
 
     private method GrantSilvermoon takes player whichPlayer returns nothing
@@ -53,7 +53,7 @@ library QuestSilvermoon requires QuestData, IronforgeSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Siege of Silvermoon", "Silvermoon has been besieged by Trolls. Clear them out and destroy their city of Zul'aman.", "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp")
+      local thistype this = thistype.allocate("银月城之围", "银月城被巨魔围困，清除他们，摧毁他们的祖阿曼城。", "ReplaceableTextures\\CommandButtons\\BTNForestTrollTrapper.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_O00O_1933)) //Zul'jin
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01V')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n01L')))

@@ -49,7 +49,7 @@ library QuestItemLegendReachRect requires QuestItemData, Legend, Environment
       set this.target = RectToRegion(targetRect)
       set this.targetRect = targetRect
       set this.legend = legend
-      set this.Description = legend.Name + " reaches " + rectName
+      set this.Description = legend.Name + "到达" + rectName
       call TriggerRegisterEnterRegion(thistype.entersRectTrig, this.target, null)
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

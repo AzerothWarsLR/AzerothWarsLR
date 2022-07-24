@@ -5,7 +5,7 @@ library MmmrrrggglllSetup requires Faction
   endglobals
 
   public function OnInit takes nothing returns nothing
-    set MERC_MMMRRRGGGLLL = MmmrrrggglllMercFaction.create("Grimscale", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNMurlocFlesheater.blp", LEGEND_MMMRRRGGGLLL)
+    set MERC_MMMRRRGGGLLL = MmmrrrggglllMercFaction.create("暗鳞鱼人", PLAYER_COLOR_BLUE, "|c000042ff","ReplaceableTextures\\CommandButtons\\BTNMurlocFlesheater.blp", LEGEND_MMMRRRGGGLLL)
     set MERC_MMMRRRGGGLLL.TeleportItemType = 'I00V'  
     set MERC_MMMRRRGGGLLL.AbsenceResearch = 'R04H'
 

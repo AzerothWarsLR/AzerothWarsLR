@@ -9,7 +9,7 @@ library QuestItemKillXUnit requires QuestItemData
 
     private method operator CurrentKillXUnitCount= takes integer value returns nothing
       set this.currentKillXUnitCount = value
-      set this.Description = "Kill " + GetObjectName(objectId) + "s (" + I2S(currentKillXUnitCount) + "/" + I2S(targetKillXUnitCount) + ")"
+      set this.Description = "杀掉(" + I2S(currentKillXUnitCount) + "/" + I2S(targetKillXUnitCount) + ")个" + GetObjectName(objectId)
     endmethod
 
     static method create takes integer objectId, integer targetKillXUnitCount returns thistype

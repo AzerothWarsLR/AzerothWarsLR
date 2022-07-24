@@ -8,11 +8,11 @@ library QuestJoinCrusade requires Persons, KultirasSetup, GeneralHelpers
   struct QuestJoinCrusade extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "Kul Tiras has joined the Scarlet Crusade"
+      return "库尔提拉斯加入了血色十字军"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock Order Inquisitor and join the Scarlet Crusade"
+      return "解锁秩序审判者并加入血色十字军"
     endmethod    
 
     private method OnComplete takes nothing returns nothing
@@ -21,7 +21,7 @@ library QuestJoinCrusade requires Persons, KultirasSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Join the Crusade", "Daelin Proudmoore sees the plight of the Scarlet Crusade. As fellow human survivors of horrible war, they should join forces with Kul'tiras.", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
+      local thistype this = thistype.allocate("加入十字军", "戴林普罗德摩尔看到了血色十字军的困境。作为那恐怖战争的人类幸存者，他们应该联合起来。", "ReplaceableTextures\\CommandButtons\\BTNDivine_Reckoning_Icon.blp")
       call this.AddQuestItem(QuestItemCastSpell.create('A0JB', true))
       set this.ResearchId = QUEST_RESEARCH_ID
       return this

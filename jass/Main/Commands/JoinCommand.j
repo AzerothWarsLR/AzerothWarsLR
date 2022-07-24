@@ -13,7 +13,7 @@ library JoinCommand initializer OnInit requires Team
     local Person triggerPerson = Person.ByHandle(GetTriggerPlayer())
 
     if triggerPerson.Faction.CanBeInvited == false then
-      call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You can't voluntarily change teams.")
+      call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "你不能自愿的改变阵营。")
     endif
 
   	if SubString( enteredString, 0, StringLength(COMMAND) ) == COMMAND then
@@ -23,13 +23,13 @@ library JoinCommand initializer OnInit requires Team
       if targetTeam != 0 then
         if targetTeam.IsFactionInvited(triggerPerson.Faction) then
           set triggerPerson.Faction.Team = targetTeam
-          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have joined " + targetTeam.Name + ".")
-          call targetTeam.DisplayText(triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r has joined the " + targetTeam.Name + ".")
+          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "你加入了" + targetTeam.Name + "。")
+          call targetTeam.DisplayText(triggerPerson.Faction.prefixCol + triggerPerson.Faction.Name + "|r加入了" + targetTeam.Name + "。")
         else
-          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "You have not been invited to join " + targetTeam.Name + ".")
+          call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "你还未被邀请加入" + targetTeam.Name + ".")
         endif
       else
-        call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "There is no Team with the name " + targetTeam.Name + ".")
+        call DisplayTextToPlayer(triggerPerson.Player, 0, 0, "没有一个叫" + targetTeam.Name + "的队伍。")
       endif
     endif
   endfunction

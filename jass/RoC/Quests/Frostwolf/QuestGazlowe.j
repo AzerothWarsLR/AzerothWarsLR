@@ -8,11 +8,11 @@ library QuestGazlowe requires QuestData, ControlPoint, FrostwolfSetup, LegendFro
   struct QuestGazlowe extends QuestData
 
     private method operator CompletionPopup takes nothing returns string
-      return "With the Goblin homeland of Kezan now under " + this.Holder.Name + " control, the goblin Gazlowe offers his services as an expert engineer, upgrading your Shredders with new weaponry."
+      return "现在地精的家园，科赞在" + this.Holder.Name + "的控制之下, 地精工程师加兹鲁维将为你提供他的服务，为你的伐木机升级新的装备。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Gazlowe from the Altar of Storms, and Shredders learn to cast Pocket Factory, Saw Bombardment, and Emergency Repairs"
+      return "你可以可以从祭坛内召唤加兹鲁维，伐木机将学会口袋工厂、锯子炸弹和紧急维修。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestGazlowe requires QuestData, ControlPoint, FrostwolfSetup, LegendFro
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Explosive Engineering", "The Horde needs engineering skills if it is to thrive. The Goblins of Kezan could provide such expertise.", "ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
+      local thistype this = thistype.allocate("爆炸工程", "部落想要发展就需要工程技术。科赞的地精们正好可以提供这样的专业知识。", "ReplaceableTextures\\CommandButtons\\BTNHeroTinker.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n04Z')))
       return this
     endmethod

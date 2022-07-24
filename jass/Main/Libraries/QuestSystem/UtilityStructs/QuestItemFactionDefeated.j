@@ -24,7 +24,7 @@ library QuestItemFactionDefeated initializer OnInit requires QuestItemData, Fact
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       set this.target = whichFaction
-      set this.Description = whichFaction.Name + " has been defeated"
+      set this.Description = whichFaction.Name + "被击败了"
       return this
     endmethod
   endstruct

@@ -2,11 +2,11 @@ library QuestDuskhaven requires QuestData, GilneasSetup, QuestItemControlPoint, 
 
   struct QuestDuskhaven extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Duskhaven has been liberated."
+      return "暮湾镇已经被解放"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Duskhaven "
+      return "获得暮湾镇所有建筑"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -18,7 +18,7 @@ library QuestDuskhaven requires QuestData, GilneasSetup, QuestItemControlPoint, 
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Duskhaven", "The next town is located in the western coast", "ReplaceableTextures\\CommandButtons\\BTNGilneasTownHall.blp")
+      local thistype this = thistype.allocate("暮湾镇", "下一座城镇在西部海岸。", "ReplaceableTextures\\CommandButtons\\BTNGilneasTownHall.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n031')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n06V')))
       call this.AddQuestItem(QuestItemExpire.create(1280))

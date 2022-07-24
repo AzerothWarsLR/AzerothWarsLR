@@ -1,12 +1,12 @@
-library QuestSecureStart requires QuestData, NzothSetup
+  library QuestSecureStart requires QuestData, NzothSetup
 
   struct QuestSecureStart extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The depth of the Sea is now under Aszhara control."
+      return "海洋深渊现在由纳沙塔尔控制"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Gain 150 gold and unlock the exits to Nazjatar"
+      return "获得150黄金并解锁纳沙塔尔的出口"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestSecureStart requires QuestData, NzothSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Ocean's Depth", "We need to secure the depth of the Sea before moving out, take out the nearby monsters to open the way out of Nazjatar", "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp")
+      local thistype this = thistype.allocate("大海深处", "在我们离开前需要确保海洋深渊的安全，干掉附近的怪物来开启离开纳沙塔尔的出口。", "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05W')))
       call this.AddQuestItem(QuestItemResearch.create('R092', 'n0C9'))
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_ntrd_2592)) //Big Turtle

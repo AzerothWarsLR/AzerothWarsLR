@@ -42,9 +42,9 @@ library QuestItemLegendDead requires QuestItemData, Legend
       set this.target = target
       set this.targetWidget = target.Unit
       if IsUnitType(target.Unit, UNIT_TYPE_STRUCTURE) then
-        set this.Description = target.Name + " is destroyed"
+        set this.Description = target.Name + "被摧毁"
       else
-        set this.Description = target.Name + " is dead"
+        set this.Description = target.Name + "已死亡"
       endif
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

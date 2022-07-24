@@ -7,11 +7,11 @@ library QuestClosePortal requires QuestData, QuestItemChannelRect
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Khadgar has closed the Dark Portal definately"
+      return "卡德加已经完全地关闭了黑暗之门"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Close the Dark Portal from both sides"
+      return "将黑暗之门完全关闭"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -28,8 +28,8 @@ library QuestClosePortal requires QuestData, QuestItemChannelRect
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Seal the Dark Portal", "The Dark Portal has been a menace to the Kingdom of Stormwind for decades, it is time to end the menace once and for all.", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ClosePortal, "The Dark Portal", LEGEND_KHADGAR, 480, 270))
+      local thistype this = thistype.allocate("封住黑暗之门", "黑暗之门数十年来都是暴风王国的威胁，现在是时候彻底结束这个威胁了", "ReplaceableTextures\\CommandButtons\\BTNDarkPortal.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_ClosePortal, "黑暗之门", LEGEND_KHADGAR, 480, 270))
       return this
     endmethod
   endstruct

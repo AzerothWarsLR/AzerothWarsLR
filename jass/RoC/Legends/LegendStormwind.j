@@ -14,7 +14,7 @@ library LegendStormwind initializer OnInit requires Legend
     set LEGEND_VARIAN = Legend.create()
     set LEGEND_VARIAN.UnitType = 'H00R'
     call LEGEND_VARIAN.AddUnitDependency(gg_unit_h00X_0007)
-    set LEGEND_VARIAN.DeathMessage = "The King of Stormwind dies a warrior’s death, defending hearth and family. The Wrynn Dynasty crumbles with his passing."
+    set LEGEND_VARIAN.DeathMessage = "暴风王国国王像一个战士一样死在保卫家园和家人的过程中。乌瑞恩王朝随着他的去世而瓦解。"
     set LEGEND_VARIAN.Essential = true
     set LEGEND_VARIAN.StartingXP = 1800
 
@@ -31,7 +31,7 @@ library LegendStormwind initializer OnInit requires Legend
 
     set LEGEND_STORMWINDKEEP = Legend.create()
     set LEGEND_STORMWINDKEEP.Unit = gg_unit_h00X_0007
-    set LEGEND_STORMWINDKEEP.DeathMessage = "Stormwind Keep, the capitol of the nation of Stormwind, has been destroyed!"
+    set LEGEND_STORMWINDKEEP.DeathMessage = "暴风城，暴风王国的首都已经被摧毁"
     set LEGEND_STORMWINDKEEP.IsCapital = true
 
     set LEGEND_DARKSHIRE = Legend.create()

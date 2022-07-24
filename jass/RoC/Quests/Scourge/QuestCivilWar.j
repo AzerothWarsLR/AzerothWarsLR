@@ -6,11 +6,11 @@ library QuestCivilWar requires QuestData, ScourgeSetup
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Lich King has rebelled against his demon masters"
+      return "巫妖王背叛了他的恶魔主人"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unally from the Legion team and the Scourge and Legion factions will gain 2000 gold"
+      return "与军团阵营解除联盟，天灾军团和燃烧军团会获得2000黄金"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -21,7 +21,7 @@ library QuestCivilWar requires QuestData, ScourgeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Civil War", "The Lich King wants to break free from his Demon Master, but he will need a champion first", "ReplaceableTextures\\CommandButtons\\BTNTheLichKingQuest.blp")
+      local thistype this = thistype.allocate("内战", "巫妖王想要从他的恶魔主人那里挣脱出来，但他首先需要一个勇士", "ReplaceableTextures\\CommandButtons\\BTNTheLichKingQuest.blp")
       call this.AddQuestItem(QuestItemResearch.create('R07W', 'u000'))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ARTHAS, false))
       call this.AddQuestItem(QuestItemTime.create(900))

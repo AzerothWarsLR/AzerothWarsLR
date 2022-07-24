@@ -7,20 +7,20 @@ library QuestThunderEagle requires QuestData, QuestItemControlPoint, LordaeronSe
 
   struct QuestThunderEagle extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The Thunder Eagles, now in safe hands " + this.Holder.Name + "."
+      return "现在" + this.Holder.Name + "获得了雷鹰."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Learn to train " + GetObjectName(THUNDER_EAGLE_ID) + "s"
+      return "解锁" + GetObjectName(THUNDER_EAGLE_ID) + "。"
     endmethod
 
     private method OnComplete takes nothing returns nothing
       call SetPlayerTechResearched(this.Holder.Player, RESEARCH_ID, 1)
-      call DisplayUnitTypeAcquired(this.Holder.Player, THUNDER_EAGLE_ID, "You can now train Thunder Eagles from upgraded Town Halls and from your capitals.")
+      call DisplayUnitTypeAcquired(this.Holder.Player, THUNDER_EAGLE_ID, "现在可以从升级后后的市政厅和首都训练雷鹰单位")
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("To the Skies!", "The Thunder Eagles of the Storm Peaks live in fear of the Legion. Wipe out the Legion Nexus to bring these great birds out into the open.", "ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
+      local thistype this = thistype.allocate("直冲云霄！", "风暴峭壁上的雷鹰们生活在对军团的恐惧之中。消灭军团枢纽来让这些雷鹰们自由。", "ReplaceableTextures\\CommandButtons\\BTNWarEagle.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_DRAKTHARONKEEP, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02S')))
       return this

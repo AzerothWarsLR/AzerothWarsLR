@@ -12,15 +12,15 @@ library QuestArgentDawn requires QuestData, ScarletSetup, QuestItemResearch, Que
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Argent Dawn has been declared and ready to join the " + this.Holder.Team.Name + "."
+      return "银色黎明已经成立并准备加入" + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock your elites, Crusader units and Tirion Fordring"
+      return "解锁你的精英、十字军部队和提里奥·佛丁"
     endmethod
 
     private method OnComplete takes nothing returns nothing
-      set this.Holder.Name = "Argent"
+      set this.Holder.Name = "银色黎明"
       set this.Holder.Icon = "ReplaceableTextures\\CommandButtons\\BTNTirionPaladin.blp"
       call SetPlayerTechResearched(FACTION_SCARLET.Player, 'R086', 1)
       call PlayThematicMusicBJ( "war3mapImported\\ScarletTheme.mp3" )
@@ -40,7 +40,7 @@ library QuestArgentDawn requires QuestData, ScarletSetup, QuestItemResearch, Que
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Argent Dawn", "The Militia of Lordaeron has been solidified into the Argent Dawn, a strong military force lead by Tirion Fording.", "ReplaceableTextures\\CommandButtons\\BTNResurrection.blp")
+      local thistype this = thistype.allocate("银色黎明", "洛丹伦的民兵已经团结成了银色黎明，一支由提里奥·佛丁带领的强大军事力量", "ReplaceableTextures\\CommandButtons\\BTNResurrection.blp")
       call this.AddQuestItem(QuestItemResearch.create(RESEARCH_ID, 'h00T'))
       call this.AddQuestItem(QuestItemSelfExists.create())
       set this.ResearchId = QUEST_RESEARCH_ID

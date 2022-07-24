@@ -31,7 +31,7 @@
     set MercMenuLauncher = BlzCreateFrame("ScriptDialogButton", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI,0), 0, 0)
     call BlzFrameSetSize(MercMenuLauncher, 0.1, 0.025)
     call BlzFrameSetAbsPoint(MercMenuLauncher, FRAMEPOINT_CENTER, 0.15, 0.56)
-    call BlzFrameSetText(MercMenuLauncher, "Mercenaries")
+    call BlzFrameSetText(MercMenuLauncher, "佣兵")
     set trig = CreateTrigger()
     call BlzTriggerRegisterFrameEvent(trig, MercMenuLauncher, FRAMEEVENT_CONTROL_CLICK)
     call TriggerAddAction(trig, function MercLauncherClick)

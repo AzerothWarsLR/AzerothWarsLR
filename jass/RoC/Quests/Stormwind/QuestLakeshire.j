@@ -2,11 +2,11 @@ library QuestLakeshire requires QuestData, StormwindSetup, QuestItemKillUnit
 
   struct QuestLakeshire extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Lakeshire has been liberated, and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "湖畔镇已经被解放，现在可以自由地协助" + this.Holder.Team.Name + "."
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Lakeshire"
+      return "获得湖畔镇所有建筑和单位"
     endmethod
 
     private method GrantLakeshire takes player whichPlayer returns nothing
@@ -40,7 +40,7 @@ library QuestLakeshire requires QuestData, StormwindSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Marauding Ogres", "The town of Lakeshire is invaded by Ogres, wipe them out!", "ReplaceableTextures\\CommandButtons\\BTNOgreLord.blp")
+      local thistype this = thistype.allocate("食人魔劫掠", "湖畔镇被食人魔们入侵了，消灭他们！", "ReplaceableTextures\\CommandButtons\\BTNOgreLord.blp")
       call this.AddQuestItem(QuestItemKillUnit.create(gg_unit_nogl_0621)) //Ogre Lord
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n011')))
       call this.AddQuestItem(QuestItemExpire.create(1427))

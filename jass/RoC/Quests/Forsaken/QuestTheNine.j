@@ -2,11 +2,11 @@ library QuestTheNine requires QuestData, ForsakenSetup
 
   struct QuestTheNine extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Enable up to 9 Val'kyr join their ranks."
+      return "允许训练最多9名瓦格里"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Enable 9 Val'kyr to be raised"
+      return "允许训练最多9名瓦格里"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -15,7 +15,7 @@ library QuestTheNine requires QuestData, ForsakenSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Nine", "Most of the Val'kyr are still in Northrend, under the influence of the Lich King, they need to join the Forsaken cause", "ReplaceableTextures\\CommandButtons\\BTNPaleValkyr.blp")
+      local thistype this = thistype.allocate("九武神", "大多数的瓦格里仍然在诺森德巫妖王的控制之下，她们需要加入被遗忘者的大业", "ReplaceableTextures\\CommandButtons\\BTNPaleValkyr.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SYLVANASV, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n02J')))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n03U')))

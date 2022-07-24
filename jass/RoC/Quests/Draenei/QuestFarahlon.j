@@ -2,11 +2,11 @@ library QuestFarahlon requires QuestData, DalaranSetup
 
   struct QuestFarahlon extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The messenger has arrived, Farahlon has been reached in time."
+      return "信使及时到达了法兰伦。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Farahlon"
+      return "获得法兰伦所有建筑"
     endmethod
 
     private method GrantFarahlon takes player whichPlayer returns nothing
@@ -38,8 +38,8 @@ library QuestFarahlon requires QuestData, DalaranSetup
 
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Warn Farahlon", "The city of Farahlon has to be warned of the imminent Orc invasion", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Farahlon, "Farahlon", false))
+      local thistype this = thistype.allocate("警告法兰伦", "必须警告法兰伦兽人即将入侵。", "ReplaceableTextures\\CommandButtons\\BTNCallToArms.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Farahlon, "法兰伦", false))
       call this.AddQuestItem(QuestItemSelfExists.create())
       return this
     endmethod

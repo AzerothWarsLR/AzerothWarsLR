@@ -36,7 +36,7 @@ library QuestItemDontCompleteQuest initializer OnInit requires QuestData, Factio
       endif
 
       set this.target = target
-      set this.Description = "Do not complete the quest " + target.Title
+      set this.Description = "不要完成任务" + target.Title
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

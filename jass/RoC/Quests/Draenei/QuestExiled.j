@@ -12,11 +12,11 @@ library QuestExiled requires QuestData, DraeneiSetup
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "The Draenei have landed on Azuremyst after escaping Outland"
+      return "德莱尼人在逃离外域后降落了在秘蓝岛"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Azuremyst, gain 200 gold, 500 lumber and teleports all your units away from Outland"
+      return "获得秘蓝岛所有单位和建筑，200黄金、500木头并将你外域中所有的单位传送出来。"
     endmethod
 
     private method GrantExiled takes player whichPlayer returns nothing
@@ -114,7 +114,7 @@ library QuestExiled requires QuestData, DraeneiSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Exile from Outland", "The Draenei need to escape Outland through the Exodar ship. We will need to power it up with a Divine Citadel first. The longer you hold out, the better the rewards will be", "ReplaceableTextures\\CommandButtons\\BTNUndeadAirBarge.blp")
+      local thistype this = thistype.allocate("来自外域的流亡者", "德莱尼人需要通过埃索达飞船来逃离外域。我们需要先用神圣堡垒来为其充能。坚持的时间越长，奖励就越好", "ReplaceableTextures\\CommandButtons\\BTNUndeadAirBarge.blp")
       call this.AddQuestItem(QuestItemEitherOf.create(QuestItemResearch.create(RESEARCH_ID, 'h09W'), QuestItemTime.create(662)))
       call this.AddQuestItem(QuestItemLegendNotPermanentlyDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemSelfExists.create())

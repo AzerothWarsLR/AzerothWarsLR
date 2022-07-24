@@ -7,11 +7,11 @@ library QuestOrgrimmarPortal requires QuestData, QuestItemChannelRect
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Zuluhead has opened the portal to Orgrimmar. Hurry, it will collapse in 3 mins"
+      return "祖鲁希德开启了一道通往奥格瑞玛的传送门。快点，传送门只能维持三分钟。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Open a Portal between Dragonmaw Port and Orgrimmar"
+      return "在龙喉港和奥格瑞玛之间开启一道传送门"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -27,8 +27,8 @@ library QuestOrgrimmarPortal requires QuestData, QuestItemChannelRect
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Reunification of the Horde", "The new Horde in Kalimdor has send a message to the Dragonmaw Clan to join them, Zuluhead will need to open a portal for his people to go through!", "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_DragonmawPortal, "Dragonmaw Port", LEGEND_ZULUHED, 180, 300))
+      local thistype this = thistype.allocate("部落的统一", "卡利姆多的新部落已经向龙吼氏族发出了邀请，祖鲁希德需要打开一个传送门来让他的人民通过。", "ReplaceableTextures\\CommandButtons\\BTNPortal.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_DragonmawPortal, "龙喉港", LEGEND_ZULUHED, 180, 300))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_GRIMBATOL, false))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ORGRIMMAR, false))
       return this

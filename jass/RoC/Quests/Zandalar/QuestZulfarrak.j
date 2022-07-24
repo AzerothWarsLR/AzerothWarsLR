@@ -7,11 +7,11 @@ library QuestZulfarrak requires LegendNeutral
 
   struct QuestZulfarrak extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Zul'farrak has fallen. The Sandfury trolls lend their might to the " + this.Holder.Team.Name + ", you can train Storm Wyrms and Gahz'rilla awakens from its slumber."
+      return "祖尔法拉克沦陷了。沙怒巨魔把他们的力量借给了" + this.Holder.Team.Name + ", 你可以训练风暴龙并唤醒加兹瑞拉了。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Zul'farrak, 300 gold tribute, enable to train Storm Wyrm and you can summon the hero Gahz'rilla from the Altar of Conquerors"
+      return "获得祖尔法拉，300黄金，可以训练风暴龙，并可以在征服者祭坛内召唤英雄加兹瑞拉"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -44,9 +44,9 @@ library QuestZulfarrak requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Fury of the Sands", "The Sandfury Trolls of Zul'farrak are openly hostile to visitors, but they share a common heritage with the Zandalari Trolls. An adequate display of force could bring them around.", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
+      local thistype this = thistype.allocate("沙之愤怒", "祖尔法拉克的沙怒巨魔敌视所有人，但他们与赞达拉里巨魔有着共同的传统。适当地展示武力可以使他们改变主意。", "ReplaceableTextures\\CommandButtons\\BTNDarkTroll.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_ZULFARRAK, false))
-      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_PRIEST, gg_rct_Zulfarrak, "Zulfarrak"))
+      call this.AddQuestItem(QuestItemLegendReachRect.create(LEGEND_PRIEST, gg_rct_Zulfarrak, "祖尔法拉克"))
       return this
     endmethod
   endstruct

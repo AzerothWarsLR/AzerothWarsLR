@@ -7,7 +7,7 @@ library QuestItemResearch requires QuestItemData
 
     static method create takes integer researchId, integer structureId returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "Research " + GetObjectName(researchId) + " from the " + GetObjectName(structureId)
+      set this.Description = "在" + GetObjectName(structureId) + "内研究" + GetObjectName(researchId)
       set this.researchId = researchId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

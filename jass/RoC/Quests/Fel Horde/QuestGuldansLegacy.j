@@ -6,11 +6,11 @@ library QuestGuldansLegacy requires QuestData, FelHordeSetup
 
   struct QuestGuldansLegacy extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Gul'dan's remains have been located within the Tomb of Sargeras. His eldritch knowledge may now be put to purpose."
+      return "古尔丹的遗体在萨格拉斯之墓内被发现了。他的骇人知识可以为我们所用了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Unlock the Blood Runes and Demonic construction researches in the War Mill"
+      return "解锁鲜血符文和战争磨坊中的恶魔构造研究"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -23,8 +23,8 @@ library QuestGuldansLegacy requires QuestData, FelHordeSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Gul'dans Legacy", "The Orc Warlock Gul'dan is ultimately responsible for the formation of the Fel Horde. Though long dead, his teachings could still be extracted from his body.", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
-      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Guldan, "Gul'dan's corpse in the Tomb of Sargeras", true))
+      local thistype this = thistype.allocate("古尔丹的遗产", "尽管古尔丹已经死去多时，但邪兽人的出现也有他的间接助力，而他那邪恶的知识仍可以从他的尸体内提取出来", "ReplaceableTextures\\CommandButtons\\BTNGuldan.blp")
+      call this.AddQuestItem(QuestItemAnyUnitInRect.create(gg_rct_Guldan, "萨格拉斯之墓内的古尔丹尸体", true))
       return this
     endmethod
   endstruct

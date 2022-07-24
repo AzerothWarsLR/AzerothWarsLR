@@ -6,11 +6,11 @@ library QuestZandalar requires QuestData, TrollSetup
 
   struct QuestZandalar extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "The City of Gold is now yours to command and has joined the " + this.Holder.Team.Name + "."
+      return "黄金之城现在在你的控制之下，并已加入了" + this.Holder.Team.Name + "。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all units in Zandalar and enables the Golden Fleet to be built"
+      return "获得赞达拉的所有单位和建筑并允许建造黄金舰队"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -29,7 +29,7 @@ library QuestZandalar requires QuestData, TrollSetup
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("City of Gold", "We need to regain control of our land.", "ReplaceableTextures\\CommandButtons\\BTNBloodTrollMage.blp")
+      local thistype this = thistype.allocate("黄金之城", "血巨魔的叛乱必须被镇压。", "ReplaceableTextures\\CommandButtons\\BTNBloodTrollMage.blp")
       call this.AddQuestItem(QuestItemResearch.create('R04R', 'o03Z'))
       call this.AddQuestItem(QuestItemUpgrade.create('o03Z', 'o03Y'))
       call this.AddQuestItem(QuestItemExpire.create(900))

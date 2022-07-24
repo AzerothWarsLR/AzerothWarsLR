@@ -7,11 +7,11 @@ library QuestFallenGuardian requires LegendDalaran, LegendNeutral, ControlPoint
 
   struct QuestFallenGuardian extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Medivh's spirit has been cleansed of Sargeras' influence, allowing him to return to Azeroth for a time."
+      return "萨格拉斯的影响已经被从麦迪文的灵魂中被清除并允许他回到艾泽拉斯一段时间。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Medivh from the Altar of Knowledge"
+      return "你可以在知识圣坛内召唤麦迪文。"
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -20,7 +20,7 @@ library QuestFallenGuardian requires LegendDalaran, LegendNeutral, ControlPoint
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Fallen Guardian", "Medivh's body was corrupted by Sargeras at conception. Now that he is dead, the secrets of the Tomb of Sargeras and Sargeras combined might allow the mages of Dalaran to cleanse his spirit.", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
+      local thistype this = thistype.allocate("堕落的守护者", "麦迪文的肉体在其母亲受孕时被萨格拉斯腐化了。既然现在他已经死了，萨格拉斯之墓的秘密和萨格拉斯结合在一起也许能让达拉然的法师们净化他的灵魂。", "ReplaceableTextures\\CommandButtons\\BTNMedivh.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_KARAZHAN, false))
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n00J')))
       set this.ResearchId = 'R04K'

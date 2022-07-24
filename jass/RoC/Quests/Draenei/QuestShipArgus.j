@@ -7,11 +7,11 @@ library QuestShipArgus requires QuestData, QuestItemChannelRect
     endmethod
 
     private method operator CompletionPopup takes nothing returns string
-      return "Velen has opened the portal to Argus"
+      return "维纶打开了一道通往阿古斯的传送门"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Open a Portal between Tempest Keep and Argus"
+      return "在风暴要塞和阿古斯之间建立一道传送门"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -24,8 +24,8 @@ library QuestShipArgus requires QuestData, QuestItemChannelRect
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Reconquering Tempest Keep", "Tempest Keep still has the power to open a portal Argus, but Velen needs to channel it", "ReplaceableTextures\\CommandButtons\\BTNArcaneCastle.blp")
-      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_TempestKeepSpawn, "Tempest Keep", LEGEND_VELEN, 180, 0))
+      local thistype this = thistype.allocate("重征风暴要塞", "风暴要塞仍然有能力打开通往阿古斯的传送门，但需要维纶来开启它。", "ReplaceableTextures\\CommandButtons\\BTNArcaneCastle.blp")
+      call this.AddQuestItem(QuestItemChannelRect.create(gg_rct_TempestKeepSpawn, "风暴要塞", LEGEND_VELEN, 180, 0))
       return this
     endmethod
   endstruct

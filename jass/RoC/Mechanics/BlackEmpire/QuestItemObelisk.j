@@ -16,7 +16,7 @@ library QuestItemObelisk initializer OnInit requires QuestItemData, BlackEmpireO
 
     static method create takes ControlPoint target returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "Summon a Nya'lothan Obelisk on " + GetUnitName(target.u)
+      set this.Description = "在" + GetUnitName(target.u) + "召唤一个尼奥罗萨方尖碑"
       set this.target = target
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

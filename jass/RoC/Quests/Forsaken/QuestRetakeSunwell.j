@@ -2,11 +2,11 @@ library QuestRetakeSunwell requires QuestData, ForsakenSetup, LegendForsaken, Le
 
   struct QuestRetakeSunwell extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Sylvanas and all the Banshee Hall units gain 500 bonus hit points"
+      return "希尔瓦娜斯和在女妖大厅内的单位获得500额外生命值"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Sylvanas and her Banshees will be empowered with 500 additional hitpoints each"
+      return "希尔瓦娜斯和她的女妖们将会获得额外500点生命值"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -14,7 +14,7 @@ library QuestRetakeSunwell requires QuestData, ForsakenSetup, LegendForsaken, Le
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Retaking the Sunwell", "Even in undeath, the Sunwell's energy call to the Forsaken banshees. Reclaim it to bolster their vitality", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
+      local thistype this = thistype.allocate("夺回太阳井", "即便已经成为了被遗忘者女妖，太阳井仍在召唤她们。夺回太阳井来增强女妖们的生命力。", "ReplaceableTextures\\CommandButtons\\BTNGhost.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_SUNWELL, false))
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_UNDERCITY, false))
       return this

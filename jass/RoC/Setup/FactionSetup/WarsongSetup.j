@@ -6,7 +6,7 @@ library WarsongSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
 
-    set FACTION_WARSONG = LiegeFaction.create("Warsong", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
+    set FACTION_WARSONG = LiegeFaction.create("战歌氏族", PLAYER_COLOR_ORANGE, "|c00ff8000","ReplaceableTextures\\CommandButtons\\BTNHellScream.blp")
     set f = FACTION_WARSONG
     set f.Team = TEAM_HORDE
     set f.PresenceResearch = 'R05W'

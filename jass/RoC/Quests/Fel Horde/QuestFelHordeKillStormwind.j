@@ -9,11 +9,11 @@ library QuestFelHordeKillStormwind requires QuestData, FelHordeSetup, QuestItemL
 
   struct QuestFelHordeKillStormwind extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Stormwind's annihilation has left behind the corpses of thousands of elite knights. As occurred during the Second War, these corpses have been filled with the souls of slain Shadow Council members, recreating the indominatable order of Death Knights."
+      return "暴风城的毁灭留下了数千名精锐骑士的尸体。正如兽人们在第二次战争中所做的一样，邪兽人们把被杀死的暗影议会成员们的灵魂塞进了这些尸体内，重现了邪恶的死亡骑士团"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Teron Gorefiend can be trained at the altar and learn to train " + I2S(UNIT_LIMIT) + " " + GetObjectName(UNITTYPE_ID) + "s from the " + GetObjectName(BUILDING_ID)
+      return "祭坛内可以召唤泰隆·血魔了并在" + GetObjectName(BUILDING_ID) "内解锁" + I2S(UNIT_LIMIT) + "个" + GetObjectName(UNITTYPE_ID) 
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -26,7 +26,7 @@ library QuestFelHordeKillStormwind requires QuestData, FelHordeSetup, QuestItemL
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Those Who Came Before", "During the Second War, the souls of slain Shadow Council members were infused into the corpses of Stormwind knights to create the Death Knights. If Stormwind were to fall again, the unholy order could return.", "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
+      local thistype this = thistype.allocate("先行者们", "在第二次战争期间被杀掉的暗影议会成员的灵魂被注入了暴风城骑士的尸体内，成为了死亡骑士。如果暴风城再次陷落的话，那邪恶的死亡骑士团也可以再次归来。", "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_STORMWINDKEEP))
       return this
     endmethod

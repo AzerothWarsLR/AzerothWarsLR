@@ -21,7 +21,7 @@ library QuestItemEitherOf initializer OnInit requires QuestItemData
       set this.questItemB = questItemB
       set questItemA.ParentQuestItem = this
       set questItemB.ParentQuestItem = this
-      set this.Description = questItemA.Description + " or " + questItemB.Description
+      set this.Description = questItemA.Description + "或者" + questItemB.Description
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1
       return this

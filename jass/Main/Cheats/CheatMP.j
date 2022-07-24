@@ -18,7 +18,7 @@ library CheatMP initializer OnInit requires TestSafety
     
     if S2I(parameter) >= 0 then
       call ForGroupBJ( GetUnitsSelectedAll(p), function SetMana )
-      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Setting mana of selected units to " + parameter + ".")
+      call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 将选中目标的魔法值设为" + parameter + ".")
     endif    
   endfunction
 

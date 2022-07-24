@@ -30,11 +30,11 @@ library Herald initializer OnInit requires BlackEmpirePortalSetup, AIDS, ReturnT
       if instance == 0 then
         set instance = this
       else
-        call BJDebugMsg("ERROR: there can only be one " + GetObjectName(HERALD_ID))
+        call BJDebugMsg("错误：同时只能存在一个" + GetObjectName(HERALD_ID))
         return
       endif
       call this.LinkToPortal(BlackEmpirePortal.Objective)
-      call BlzSetUnitName(this.unit, "Herald of " + this.linkedPortal.Name)
+      call BlzSetUnitName(this.unit, this.linkedPortal.Name + "的先驱者")
     endmethod
 
     private method AIDS_onDestroy takes nothing returns nothing

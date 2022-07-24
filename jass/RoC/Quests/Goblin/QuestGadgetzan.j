@@ -6,11 +6,11 @@ library QuestGadgetzan requires QuestData, GoblinSetup, QuestItemKillUnit
 
   struct QuestGadgetzan extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "We can train Noggenfogger and Gadgetzan is now under our influence and its military is now free to assist the " + this.Holder.Team.Name + "."
+      return "解锁诺格弗格并且加基森现在可以自由支援" + this.Holder.Team.Name + "。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of all buildings in Gadgetzan and enables Noggenfogger to be built at the altar"
+      return "获得加基森所有单位和建筑，并允许在祭坛内可以召唤诺格弗格。"
     endmethod
 
     private method GrantGadetzan takes player whichPlayer returns nothing
@@ -44,7 +44,7 @@ library QuestGadgetzan requires QuestData, GoblinSetup, QuestItemKillUnit
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Gadgetzan", "The city of Gadgetzan is a perfect foothold into Kalimdor.", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
+      local thistype this = thistype.allocate("加基森", "加基森是在卡利姆多的完美立足点。", "ReplaceableTextures\\CommandButtons\\BTNHeroAlchemist.blp")
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n05C')))
       call this.AddQuestItem(QuestItemExpire.create(1522))
       call this.AddQuestItem(QuestItemSelfExists.create())

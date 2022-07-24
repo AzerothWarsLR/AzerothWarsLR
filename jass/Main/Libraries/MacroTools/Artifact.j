@@ -163,8 +163,8 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore, Envir
       if this.titanforged == false then
         set this.titanforged = true
         call BlzItemAddAbility(this.item, this.titanforgedAbility)
-        call BlzSetItemExtendedTooltip(this.item, BlzGetItemExtendedTooltip(this.item) + "|n|n|cff800000Titanforged|r|n" + BlzGetAbilityExtendedTooltip(this.titanforgedAbility, 0))
-        call BlzSetItemDescription(this.item, BlzGetItemDescription(this.item) + "|n|cff800000Titanforged|r")
+        call BlzSetItemExtendedTooltip(this.item, BlzGetItemExtendedTooltip(this.item) + "|n|n|cff800000泰坦锻造|r|n" + BlzGetAbilityExtendedTooltip(this.titanforgedAbility, 0))
+        call BlzSetItemDescription(this.item, BlzGetItemDescription(this.item) + "|n|cff800000泰坦锻造|r")
       endif
     endmethod
 
@@ -303,7 +303,7 @@ library Artifact initializer OnInit requires Table, Event, Persons, Shore, Envir
         call OnArtifactCreate.fire()
         return this
       else
-        call BJDebugMsg("ERROR: Attempted to create already existing Artifact from " + GetItemName(whichItem))
+        call BJDebugMsg("错误: 尝试制造已经存在的神器" + GetItemName(whichItem))
         return 0
       endif
     endmethod

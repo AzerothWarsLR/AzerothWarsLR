@@ -7,11 +7,11 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
 
   struct QuestKhadgar extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Khadgar has been freed from his confines under the Black Temple, and he is now free to serve the Kingdom of Stormwind."
+      return "卡德加已经被从黑暗神殿的束缚中解放出来，他现在可以为暴风王国服务了"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You can summon Khadgar from the Altar of Kings"
+      return "允许在国王祭坛内召唤卡德加"
     endmethod
 
     private method OnAdd takes nothing returns nothing
@@ -19,7 +19,7 @@ library QuestKhadgar requires QuestData, StormwindSetup, GeneralHelpers
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Keeper of the Eternal Watch", "At the end of the Second War, Khadgar remained in Draenor to seal the Dark Portal, effectively ending the conflict. He has been stranded deep in Outland ever since.", "ReplaceableTextures\\CommandButtons\\BTNMageWC2.blp")
+      local thistype this = thistype.allocate("永恒岗哨守护者", "在第二次战争结束时，卡德加留在了德拉诺封印黑暗之门并结束了战争。从那之后他便一直被困在外域的深处。", "ReplaceableTextures\\CommandButtons\\BTNMageWC2.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_BLACKTEMPLE, false))
       set this.ResearchId = 'R016'
       return this

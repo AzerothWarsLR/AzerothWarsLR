@@ -8,11 +8,11 @@ library QuestJinthaAlor requires LegendNeutral
 
   struct QuestJinthaAlor extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Jintha'Alor has fallen. The Vilebranch trolls lend their might to the " + this.Holder.Team.Name + "."
+      return "辛萨罗已经沦陷。邪枝巨魔把他们的力量借给了" + this.Holder.Team.Name + "。"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "Control of Jintha'Alor, 300 gold tribute and the ability to train " + GetObjectName(BEAR_RIDER_ID) + "s from the " + GetObjectName(TROLL_SHRINE_ID)
+      return "获得辛萨罗，300黄金并允许在" + GetObjectName(TROLL_SHRINE_ID) + "内训练" + GetObjectName(BEAR_RIDER_ID) + "单位"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -25,7 +25,7 @@ library QuestJinthaAlor requires LegendNeutral
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("The Ancient Egg", "The Vilebranch trolls of Jintha'Alor are controlled by their fear of the Soulflayer's egg, hidden within their shrine. Smash it to gain their loyalty.", "ReplaceableTextures\\CommandButtons\\BTNForestTrollShadowPriest.blp")
+      local thistype this = thistype.allocate("远古之卵", "辛萨罗的邪枝巨魔被对隐藏在神龛中的吞灵者的卵的恐惧所控制。粉碎它以获得他们的忠诚。", "ReplaceableTextures\\CommandButtons\\BTNForestTrollShadowPriest.blp")
       call this.AddQuestItem(QuestItemControlLegend.create(LEGEND_JINTHAALOR, false))
       return this
     endmethod

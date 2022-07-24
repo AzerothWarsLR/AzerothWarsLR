@@ -103,7 +103,7 @@
       set this.nextButton = BlzCreateFrame("ScriptDialogButton", this.backdrop, 0, 0)
       call BlzFrameSetPoint(this.nextButton, FRAMEPOINT_BOTTOMRIGHT, this.backdrop, FRAMEPOINT_BOTTOMRIGHT, -BOTTOM_BUTTON_X_OFFSET, BOTTOM_BUTTON_Y_OFFSET)
       call BlzFrameSetSize(this.nextButton, 0.09, 0.037)
-      call BlzFrameSetText(this.nextButton, "Next")      
+      call BlzFrameSetText(this.nextButton, "下一页")      
 
       set this.nextTrigger = CreateTrigger()
       call BlzTriggerRegisterFrameEvent(this.nextTrigger, this.nextButton, FRAMEEVENT_CONTROL_CLICK)
@@ -114,7 +114,7 @@
       set this.prevButton = BlzCreateFrame("ScriptDialogButton", this.backdrop, 0, 0)
       call BlzFrameSetPoint(this.prevButton, FRAMEPOINT_BOTTOMLEFT, this.backdrop, FRAMEPOINT_BOTTOMLEFT, BOTTOM_BUTTON_X_OFFSET, BOTTOM_BUTTON_Y_OFFSET)
       call BlzFrameSetSize(this.prevButton, 0.09, 0.037)
-      call BlzFrameSetText(this.prevButton, "Previous")    
+      call BlzFrameSetText(this.prevButton, "上一页")    
       
       set this.prevTrigger = CreateTrigger()
       call BlzTriggerRegisterFrameEvent(this.prevTrigger, this.prevButton, FRAMEEVENT_CONTROL_CLICK)
@@ -137,18 +137,18 @@
       //Create title for this page
       set this.title = BlzCreateFrame("ArtifactMenuTitle", this.backdrop, 0, 0)
       call BlzFrameSetPoint(this.title, FRAMEPOINT_CENTER, this.backdrop, FRAMEPOINT_TOP, 0.0, -0.025)
-      call BlzFrameSetText(this.title, "Artifacts")   
+      call BlzFrameSetText(this.title, "神器")   
 
       //Create page number for this page
       set this.pageNumber = BlzCreateFrame("ArtifactMenuTitle", this.backdrop, 0, 0)
       call BlzFrameSetPoint(this.pageNumber, FRAMEPOINT_CENTER, this.backdrop, FRAMEPOINT_TOPRIGHT, -0.05, -0.025)
-      call BlzFrameSetText(this.pageNumber, "Page " + I2S(this.id+1))                      
+      call BlzFrameSetText(this.pageNumber, "第" + I2S(this.id+1) + "页")                      
 
       //Create exit button for this page
       set this.exitButton = BlzCreateFrame("ScriptDialogButton", this.backdrop, 0, 0)
       call BlzFrameSetPoint(this.exitButton, FRAMEPOINT_BOTTOM, this.backdrop, FRAMEPOINT_BOTTOM, 0.0, BOTTOM_BUTTON_Y_OFFSET)
       call BlzFrameSetSize(this.exitButton, 0.09, 0.037)
-      call BlzFrameSetText(this.exitButton, "Exit")
+      call BlzFrameSetText(this.exitButton, "退出")
       set this.exitTrigger = CreateTrigger()
       call BlzTriggerRegisterFrameEvent(this.exitTrigger, this.exitButton, FRAMEEVENT_CONTROL_CLICK)
       call TriggerAddAction(this.exitTrigger, function thistype.exitButtonClick)   
@@ -200,7 +200,7 @@
 
     method setOwner takes Person p returns nothing
       if p != 0 then
-        call this.setText("Owned by|n" + p.Faction.prefixCol + p.Faction.Name + "|r")   
+        call this.setText("正被|n" + p.Faction.prefixCol + p.Faction.Name + "|r持有")   
       endif    
     endmethod        
 
@@ -298,7 +298,7 @@
       set this.pingButton = BlzCreateFrame("ScriptDialogButton", this.box, 0, 0)
       call BlzFrameSetSize(this.pingButton, 0.062, 0.027)
       call BlzFrameSetPoint(this.pingButton, FRAMEPOINT_LEFT, this.box, FRAMEPOINT_LEFT, 0.057, -0.0090)   
-      call BlzFrameSetText(this.pingButton, "Ping")    
+      call BlzFrameSetText(this.pingButton, "标记")    
       call BlzFrameSetVisible(this.pingButton, false)    
       set this.pingTrigger = CreateTrigger()
       call BlzTriggerRegisterFrameEvent(this.pingTrigger, this.pingButton, FRAMEEVENT_CONTROL_CLICK)
@@ -337,7 +337,7 @@
     set ArtifactMenuLauncher = BlzCreateFrame("ScriptDialogButton", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI,0), 0, 0)
     call BlzFrameSetSize(ArtifactMenuLauncher, 0.20, 0.025)
     call BlzFrameSetAbsPoint(ArtifactMenuLauncher, FRAMEPOINT_CENTER, 0.0, 0.56)
-    call BlzFrameSetText(ArtifactMenuLauncher, "Artifacts")
+    call BlzFrameSetText(ArtifactMenuLauncher, "神器")
     set trig = CreateTrigger()
     call BlzTriggerRegisterFrameEvent(trig, ArtifactMenuLauncher, FRAMEEVENT_CONTROL_CLICK)
     call TriggerAddAction(trig, function ArtifactLauncherClick)

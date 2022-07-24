@@ -6,11 +6,11 @@ library QuestGilneasCity requires QuestData
 
   struct QuestGilneasCity extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Every worgen has been eliminated, the curse is lifting!"
+      return "所有的狼人都被杀掉了，诅咒被解除了！"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "gain control of the Greymann wall and Gilneas City"
+      return "获得格雷迈恩之墙和吉尔尼斯城的控制权。"
     endmethod
 
     private method OnFail takes nothing returns nothing
@@ -33,7 +33,7 @@ library QuestGilneasCity requires QuestData
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Liberation of Gilneas", "Gilneas has been under the curse of the Worgen. Eliminate all of them to free Gilneas of the curse", "ReplaceableTextures\\CommandButtons\\BTNGilneasCathedral.blp")
+      local thistype this = thistype.allocate("吉尔尼斯的解放", "吉尔尼斯一直被狼人诅咒所困扰。消灭所有狼人来解除吉尔尼斯的诅咒。", "ReplaceableTextures\\CommandButtons\\BTNGilneasCathedral.blp")
       call this.AddQuestItem(QuestItemKillXUnit.create('o02J', 11))
       call this.AddQuestItem(QuestItemKillXUnit.create('O038', 4))
       call this.AddQuestItem(QuestItemUpgrade.create('h02C', 'h01R'))

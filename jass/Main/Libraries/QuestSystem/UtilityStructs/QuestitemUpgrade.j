@@ -12,7 +12,7 @@ library QuestItemUpgrade requires QuestItemData
 
     static method create takes integer objectId, integer upgradeFromId returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "Upgrade your " + GetObjectName(upgradeFromId) + " to a " + GetObjectName(objectId)
+      set this.Description = "升级你的" + GetObjectName(upgradeFromId) + "到" + GetObjectName(objectId)
       set this.objectId = objectId
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

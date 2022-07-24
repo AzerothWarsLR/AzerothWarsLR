@@ -37,9 +37,9 @@ library QuestItemCastSpell requires QuestItemData
       local thistype this = thistype.allocate()
       call PlayerUnitEventAddAction(EVENT_PLAYER_UNIT_SPELL_FINISH, function thistype.OnAnyUnitFinishesSpell) //TODO: use filtered events
       if holderOnly then
-        set this.Description = "Cast " + GetObjectName(spellId)
+        set this.Description = "施放" + GetObjectName(spellId)
       else
-        set this.Description = "Anyone casts " + GetObjectName(spellId)
+        set this.Description = "任何人施放" + GetObjectName(spellId)
       endif
       set this.spellId = spellId
       set this.holderOnly = holderOnly

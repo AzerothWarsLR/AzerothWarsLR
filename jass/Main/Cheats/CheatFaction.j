@@ -15,7 +15,7 @@ library CheatFaction initializer OnInit requires Faction, TestSafety
     set f = Faction.factionsByName[parameter]
     
     set Person.ById(pId).Faction = f
-    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r Attempted to set faction to " + f.Name + ".")
+    call DisplayTextToPlayer(p, 0, 0, "|cffD27575CHEAT:|r 尝试将势力设定为" + f.Name + ".")
   endfunction
 
   private function OnInit takes nothing returns nothing

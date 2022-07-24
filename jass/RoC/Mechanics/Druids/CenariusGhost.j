@@ -14,7 +14,7 @@ library CenariusGhost initializer OnInit requires LegendDruids
     local trigger trig = CreateTrigger()
     call OnLegendPermaDeath.register(trig)
     call TriggerAddCondition(trig, Condition(function Dies))        
-    set LEGEND_CENARIUS.DeathMessage = "Cenarius, Demigod of the Night Elves, has fallen. His spirit lives on, a mere echo of his former self."
+    set LEGEND_CENARIUS.DeathMessage = "塞纳留斯，暗夜精灵的半神已经倒下。他的灵魂活了下来，但却只不过是从前的回音。"
   endfunction  
 
 endlibrary

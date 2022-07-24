@@ -28,7 +28,7 @@ library LegendGilneas initializer OnInit requires Legend
 
     set LEGEND_GILNEASCASTLE = Legend.create()
     set LEGEND_GILNEASCASTLE.Unit = gg_unit_h04I_1276
-    set LEGEND_GILNEASCASTLE.DeathMessage = "The Gilneas castle has fallen"
+    set LEGEND_GILNEASCASTLE.DeathMessage = "吉尔尼斯城堡已经被毁。"
     set LEGEND_GILNEASCASTLE.IsCapital = true
   endfunction
 

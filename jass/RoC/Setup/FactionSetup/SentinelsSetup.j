@@ -7,7 +7,7 @@ library SentinelsSetup requires Faction, TeamSetup
   public function OnInit takes nothing returns nothing
     local Faction f
     
-    set FACTION_SENTINELS = LiegeFaction.create("Sentinels", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp")
+    set FACTION_SENTINELS = LiegeFaction.create("哨兵", PLAYER_COLOR_MINT, "|CFFBFFF80","ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp")
     set f = FACTION_SENTINELS
     set f.Team = TEAM_NIGHT_ELVES
     set f.PresenceResearch = 'R05Y'

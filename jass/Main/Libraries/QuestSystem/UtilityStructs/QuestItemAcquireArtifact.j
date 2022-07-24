@@ -34,7 +34,7 @@ library QuestItemAcquireArtifact initializer OnInit requires QuestItemData, Arti
 
     static method create takes Artifact target returns thistype
       local thistype this = thistype.allocate()
-      set this.Description = "Acquire " + GetItemName(target.item)
+      set this.Description = "获取" + GetItemName(target.item)
       set this.target = target
       set thistype.byIndex[thistype.count] = this
       set thistype.count = thistype.count + 1

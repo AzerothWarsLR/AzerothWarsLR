@@ -56,7 +56,7 @@ library MercFaction requires Faction
 
     private method OnTeamChange takes nothing returns nothing
       if this.Team != liege.Team then
-        call BJDebugMsg("ERROR: Merc faction " + this.name + " is on team " + this.Team.Name + " and should be on liege " + liege.Name + "'s Team " + liege.Team.Name)
+        call BJDebugMsg("错误：佣兵" + this.name + "现在" + this.Team.Name + "阵营并应该效忠于" + liege.Name + "的阵营" + liege.Team.Name)
       endif
     endmethod
 
@@ -69,11 +69,11 @@ library MercFaction requires Faction
     endmethod
 
     private method operator SelectionMessage takes nothing returns string
-      return this.prefixCol + this.name + "|r now serves " + Liege.prefixCol + liege.Name + "|r."
+      return this.prefixCol + this.name + "|r 现在效忠于" + Liege.prefixCol + liege.Name + "|r。"
     endmethod
 
     private method DisplaySelection takes nothing returns nothing
-      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00Merc SELECTED|r\n" + this.SelectionMessage)
+      call DisplayTextToPlayer(GetLocalPlayer(), 0, 0, "\n|cffffcc00佣兵已选择|r\n" + this.SelectionMessage)
     endmethod
 
     private method SelectForPerson takes Person whichPerson returns nothing
@@ -83,21 +83,21 @@ library MercFaction requires Faction
           if liegeCandidate != 0 then
             set this.Liege = liegeCandidate
           else
-            call DisplayTextToPlayer(whichPerson.Player, 0, 0,"There is no available Employer for this Mercenary.")
+            call DisplayTextToPlayer(whichPerson.Player, 0, 0,"该佣兵目前没有可以效忠的雇主。")
             return
           endif
     
       if whichPerson.Faction == this.Liege then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You can't become your own Merc.")
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "你不能成为你自己的佣兵。")
         return
       endif
       if whichPerson.Faction!= 0 and whichPerson.Faction.getType() == MercFaction.typeid or whichPerson.Faction.getType() == MmmrrrggglllMercFaction.typeid or whichPerson.Faction.getType() == SnarlmaneMercFaction.typeid or whichPerson.Faction.getType() == EdwinMercFaction.typeid then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "You are already a Merc.")
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "你已经是一个佣兵了。")
         return
       endif
       set highestValueCP = ControlPoint.GetHighestValueCP(this.Liege.Person)
       if highestValueCP == 0 then
-        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "This faction has no control point.")
+        call DisplayTextToPlayer(whichPerson.Player, 0, 0, "这个势力没有控制点。")
         return
       endif
       call whichPerson.Faction.Leave()

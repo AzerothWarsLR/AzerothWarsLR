@@ -7,11 +7,11 @@ library QuestWildhammer requires QuestItemKillUnit, IronforgeSetup, LegendNeutra
 
   struct QuestWildhammer extends QuestData
     private method operator CompletionPopup takes nothing returns string
-      return "Magni has spoken with Falstad Wildhammer and secured an alliance with the Wildhammer Clan."
+      return "麦格尼已经与弗斯塔德·蛮锤进行了交谈并与蛮锤氏族建立了联盟"
     endmethod
 
     private method operator CompletionDescription takes nothing returns string
-      return "You gain control of Aerie Peak and you can train the hero Falstad Wildhammer from the Altar of Fortitude"
+      return "获得鹰巢山所有建筑和单位并允许在祭坛内召唤弗斯塔德·蛮锤"
     endmethod
 
     private method OnComplete takes nothing returns nothing
@@ -46,8 +46,8 @@ library QuestWildhammer requires QuestItemKillUnit, IronforgeSetup, LegendNeutra
     endmethod
 
     public static method create takes nothing returns thistype
-      local thistype this = thistype.allocate("Wildhammer Alliance", "The Wildhammer dwarves roam freely over the peaks of the Hinterlands. An audience with Magni himself might earn their cooperation.", "ReplaceableTextures\\CommandButtons\\BTNHeroGriffonWarrior.blp")
-      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Aerie_Peak, "Aerie Peak"))
+      local thistype this = thistype.allocate("蛮锤盟友", "蛮锤矮人们自由的漫游在辛特兰的山峰之上。麦格尼亲自与他们去进行会谈的话说不定能获得他们的协助。", "ReplaceableTextures\\CommandButtons\\BTNHeroGriffonWarrior.blp")
+      call this.AddQuestItem(QuestItemLegendInRect.create(LEGEND_MAGNI, gg_rct_Aerie_Peak, "鹰巢山"))
       return this
     endmethod
   endstruct
