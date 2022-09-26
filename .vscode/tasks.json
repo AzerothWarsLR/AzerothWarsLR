@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "start AzerothWarsMapCompiler.exe",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+            "options": {
+                "cwd": "buildTools"
+              },
+			"label": "Build and run",
+			"detail": "Build and run Warcraft: Legacies"
+		}
+	]
+}
