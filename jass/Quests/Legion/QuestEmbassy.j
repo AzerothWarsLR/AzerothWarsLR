@@ -17,7 +17,6 @@ library QuestEmbassy requires QuestData, LegionSetup
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Genocide of the Draenei", "The Draenei race existence insults the Eredar overlords of the Burning Legion, destroy them all", "ReplaceableTextures\\CommandButtons\\BTNEredarRed.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
       set this.ResearchId = 'R042'
       return this
