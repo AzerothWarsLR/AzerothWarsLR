@@ -10,7 +10,6 @@ library LegendDraenei initializer OnInit requires Legend
 
     Legend LEGEND_SHATTRAH
     Legend LEGEND_FARAHLON
-    Legend LEGEND_TUUREM
     Legend LEGEND_TELREDOR
     Legend LEGEND_HALAAR
   endglobals
@@ -45,9 +44,6 @@ library LegendDraenei initializer OnInit requires Legend
 
     set LEGEND_TELREDOR = Legend.create()
     set LEGEND_TELREDOR.Unit = gg_unit_h0AG_2567
-
-    set LEGEND_TUUREM = Legend.create()
-    set LEGEND_TUUREM.Unit = gg_unit_h0AD_2508
 
     set LEGEND_HALAAR = Legend.create()
     set LEGEND_HALAAR.Unit = gg_unit_h0AE_2561

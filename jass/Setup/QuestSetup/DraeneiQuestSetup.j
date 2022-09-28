@@ -5,7 +5,6 @@ library DraeneiQuestSetup requires DraeneiSetup
     local QuestData newQuest = FACTION_DRAENEI.AddQuest(QuestExiled.create())
     set FACTION_DRAENEI.StartingQuest = newQuest
     //Early duel
-    call FACTION_DRAENEI.AddQuest(QuestTuurem.create())
     call FACTION_DRAENEI.AddQuest(QuestShattrah.create())
     call FACTION_DRAENEI.AddQuest(QuestTelredor.create())
     call FACTION_DRAENEI.AddQuest(QuestHalaar.create())

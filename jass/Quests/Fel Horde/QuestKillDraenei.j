@@ -36,7 +36,6 @@ library QuestKillDraenei requires QuestData
       call this.AddQuestItem(QuestItemControlPoint.create(ControlPoint.ByUnitType('n09X')))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_EXODARSHIP))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))

@@ -26,7 +26,6 @@ library QuestKilsorrow requires QuestData
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Kil'sorrow Fortress", "This sinister fortress will serve the Fel Horde well, clear the surrounding lands to establish it", "ReplaceableTextures\\CommandButtons\\BTNFelOrcWatchTower.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))

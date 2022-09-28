@@ -18,7 +18,6 @@ library QuestChaseDraenei requires QuestData
     public static method create takes nothing returns thistype
       local thistype this = thistype.allocate("Chase across the Eons", "The Draenei have escaped Argus, they have run away to Outland. Elimimnate them all.", "ReplaceableTextures\\CommandButtons\\BTNEredarWarlockPurple.blp")
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
-      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TUUREM))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
