@@ -9,7 +9,7 @@ library TwilightSetup requires Faction, TeamSetup
     
     set FACTION_TWILIGHT = LiegeFaction.create("Twilight", PLAYER_COLOR_LAVENDER, "|cff9178a8","ReplaceableTextures\\CommandButtons\\BTNChogall.blp")
     set f = FACTION_TWILIGHT
-    set f.Team = TEAM_OLDGOD
+    set f.Team = TEAM_LEGION
     set f.StartingGold = 150
     set f.StartingLumber = 350
 

@@ -45,14 +45,11 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
     set p = Person.create(Player(13))
     set p.Faction = FACTION_DRAENEI
 
-    set p = Person.create(Player(14))
-    set p.Faction = FACTION_BLACKEMPIRE
-
     set p = Person.create(Player(15))
     set p.Faction = FACTION_NAGA
 
     set p = Person.create(Player(16))
-    set p.Faction = FACTION_CTHUN
+    set p.Faction = FACTION_DRAGONMAW
 
     set p = Person.create(Player(17))
     set p.Faction = FACTION_TROLL
@@ -71,9 +68,6 @@ library PersonSetup requires Persons, Team, ScourgeSetup, LegionSetup, FelHordeS
 
     set p = Person.create(Player(23))
     set p.Faction = FACTION_LEGION
-
-    set p = Person.create(Player(21))
-    set p.Faction = FACTION_NZOTH
 
 
   endfunction
