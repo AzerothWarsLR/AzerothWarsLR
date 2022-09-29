@@ -20,6 +20,7 @@ library QuestChaseDraenei requires QuestData
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_SHATTRAH))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_HALAAR))
       call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_FARAHLON))
+      call this.AddQuestItem(QuestItemLegendDead.create(LEGEND_TELREDOR))
       call this.AddQuestItem(QuestItemExpire.create(660))
       return this
     endmethod
