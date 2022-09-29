@@ -1,14 +1,7 @@
-library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanChapterTwo, QuestIllidanChapterThree, GlobalQuest
+library NagaQuestSetup requires NagaSetup, GlobalQuest
 
   public function OnInit takes nothing returns nothing
     //Early duel
-
-    local QuestData chapterThree = QuestIllidanChapterThree.create()
-    local QuestData chapterTwo = QuestIllidanChapterTwo.create(chapterThree)
-    local QuestData chapterOne = QuestIllidanChapterOne.create(chapterTwo)
-    call FACTION_NAGA.AddQuest(chapterOne)
-    call FACTION_NAGA.AddQuest(chapterTwo)
-    call FACTION_NAGA.AddQuest(chapterThree)
 
     call FACTION_NAGA.AddQuest(QuestDefeatAzshara.create())
 
@@ -19,10 +12,6 @@ library NagaQuestSetup requires NagaSetup, QuestIllidanChapterOne, QuestIllidanC
     set KILL_FROZEN_THRONE = QuestFrozenThrone.create()
     set CHANNEL_EYE = QuestChannelEye.create()
 
-    set chapterTwo.Progress = QUEST_PROGRESS_UNDISCOVERED
-    set chapterThree.Progress = QUEST_PROGRESS_UNDISCOVERED
-
-    set FACTION_NAGA.StartingQuest = chapterOne
   endfunction
 
 endlibrary

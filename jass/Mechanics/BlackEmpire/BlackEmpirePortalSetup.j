@@ -20,7 +20,7 @@ library BlackEmpirePortalSetup initializer OnInit requires BlackEmpirePortal
     set BLACKEMPIREPORTAL_NORTHREND.Next = BLACKEMPIREPORTAL_TANARIS
     set BLACKEMPIREPORTAL_NORTHREND.NearbyControlPoint = ControlPoint.ByUnitType('n02S')
 
-    set BLACKEMPIREPORTAL_ILLIDAN = BlackEmpirePortal.create(gg_unit_h03V_0183, gg_dest_OTsp_35732, GetRectCenterX(gg_rct_Ny_Nazjatar_Interior), GetRectCenterY(gg_rct_Ny_Nazjatar_Interior), gg_unit_n07E_0958, "N'zoth")
+  //  set BLACKEMPIREPORTAL_ILLIDAN = BlackEmpirePortal.create(gg_unit_h03V_0183, gg_dest_OTsp_35732, GetRectCenterX(gg_rct_Ny_Nazjatar_Interior), GetRectCenterY(gg_rct_Ny_Nazjatar_Interior), gg_unit_n07E_0958, "N'zoth")
 
     set BlackEmpirePortal.Objective = BLACKEMPIREPORTAL_NORTHREND //The first portal that an Obelisk needs to be built at
   endfunction

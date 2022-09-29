@@ -1,4 +1,4 @@
-library GilneasQuestSetup requires GilneasSetup, QuestIllidanChapterOne, QuestIllidanChapterTwo, QuestIllidanChapterThree
+library GilneasQuestSetup requires GilneasSetup
 
   public function OnInit takes nothing returns nothing
     //Early duel

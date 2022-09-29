@@ -30,10 +30,10 @@ library QuestNazjatar requires QuestData, QuestItemLegendReachRect, QuestItemCas
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 150 )
       set BLACKEMPIREPORTAL_ILLIDAN.PortalState = BLACKEMPIREPORTALSTATE_OPEN
       call FACTION_NZOTH.ModObjectLimit('nmpe', UNLIMITED)   //Mur'gul Slave
-      call WaygateActivateBJ( true, gg_unit_h01A_0402 )
-      call WaygateSetDestinationLocBJ( gg_unit_h01A_0402 , GetRectCenter(gg_rct_NazjatarExit1) )
-      call WaygateActivateBJ( true, gg_unit_h01D_3378 )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
+    //  call WaygateActivateBJ( true, gg_unit_h01A_0402 )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01A_0402 , GetRectCenter(gg_rct_NazjatarExit1) )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3378 )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3378, GetRectCenter(gg_rct_NazjatarExit2) )
     endmethod
 
     public static method create takes nothing returns thistype

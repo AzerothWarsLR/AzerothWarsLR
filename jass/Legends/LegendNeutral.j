@@ -28,8 +28,6 @@ library LegendNeutral initializer OnInit requires Legend
     Legend LEGEND_FOUNTAINOFHEALTH_DALARAN
     Legend LEGEND_FOUNTAINOFBLOOD
     Legend LEGEND_CENTAURKHAN
-    Legend LEGEND_IMMOLTHAR
-    Legend LEGEND_ARUGAL
     Legend LEGEND_VAELASTRASZ
     Legend LEGEND_OCCULUS
     Legend LEGEND_SARAGOSA
@@ -137,9 +135,6 @@ library LegendNeutral initializer OnInit requires Legend
 
     set LEGEND_CENTAURKHAN = Legend.create()
     set LEGEND_CENTAURKHAN.Unit = gg_unit_ncnk_0573
-
-    set LEGEND_IMMOLTHAR = Legend.create()
-    set LEGEND_IMMOLTHAR.Unit = gg_unit_n04R_1914
 
     set LEGEND_VAELASTRASZ = Legend.create()
     set LEGEND_VAELASTRASZ.Unit = gg_unit_nrwm_1981

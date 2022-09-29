@@ -49,9 +49,9 @@ library QuestTempestKeep requires Persons, QuelthalasSetup, GeneralHelpers
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IK')
       call UnitAddAbility(LEGEND_KAEL.Unit, 'A0IF')
       
-      if ( not ( IsUnitHiddenBJ(gg_unit_n07E_1491) == true ) ) then
-            call IssueImmediateOrderBJ( LEGEND_KAEL.Unit, "thunderclap" )
-      endif
+    //  if ( not ( IsUnitHiddenBJ(gg_unit_n07E_1491) == true ) ) then
+    //        call IssueImmediateOrderBJ( LEGEND_KAEL.Unit, "thunderclap" )
+    //  endif
 
       call AdjustPlayerStateBJ( 2000, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
       call AdjustPlayerStateBJ( 4000, this.Holder.Player, PLAYER_STATE_RESOURCE_LUMBER )

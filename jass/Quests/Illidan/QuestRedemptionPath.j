@@ -26,20 +26,20 @@ library QuestRedemptionPath requires QuestData, NagaSetup, GeneralHelpers
       call FACTION_NAGA.ModObjectLimit('h08W', 6)   //Demon Hunter
       set EXILE_PATH.Progress = QUEST_PROGRESS_FAILED     
       call RescueNeutralUnitsInRect(gg_rct_AethneumCatacombs, this.Holder.Player)
-      call WaygateActivateBJ( true, gg_unit_h01D_3387 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3385 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3379 )
-      call WaygateActivateBJ( true, gg_unit_h01D_3380 )
-      call ShowUnitShow( gg_unit_h01D_3387 )
-      call ShowUnitShow( gg_unit_h01D_3385 )
-      call ShowUnitShow( gg_unit_h01D_3380 )
-      call ShowUnitShow( gg_unit_h01D_3379 )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3387, GetRectCenter(gg_rct_AetheneumTombExit2) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3385 , GetRectCenter(gg_rct_AethneumTombExit) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_AetheneumTombEntrance2) )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3379 , GetRectCenter(gg_rct_AethneumLibraryEntrance) )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3387 )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3385 )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3379 )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3380 )
+   //   call ShowUnitShow( gg_unit_h01D_3387 )
+    //  call ShowUnitShow( gg_unit_h01D_3385 )
+    //  call ShowUnitShow( gg_unit_h01D_3380 )
+    //  call ShowUnitShow( gg_unit_h01D_3379 )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3387, GetRectCenter(gg_rct_AetheneumTombExit2) )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3385 , GetRectCenter(gg_rct_AethneumTombExit) )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_AetheneumTombEntrance2) )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3379 , GetRectCenter(gg_rct_AethneumLibraryEntrance) )
       set this.Holder.Team = TEAM_NIGHT_ELVES
-      call DestructableRestoreLife( gg_dest_YT24_0267, GetDestructableMaxLife(GetLastCreatedDestructable()), true )
+    //  call DestructableRestoreLife( gg_dest_YT24_0267, GetDestructableMaxLife(GetLastCreatedDestructable()), true )
     endmethod
 
     public static method create takes nothing returns thistype

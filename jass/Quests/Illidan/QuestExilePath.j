@@ -47,16 +47,15 @@ library QuestExilePath requires QuestData, NagaSetup
       call FACTION_NAGA.ModObjectLimit('ndrs', 6)   //Seer
       set REDEMPTION_PATH.Progress = QUEST_PROGRESS_FAILED
       set this.Holder.Team = TEAM_NAGA
-      call WaygateActivateBJ( true, gg_unit_n07E_1491 )
-      call ShowUnitShow( gg_unit_n07E_1491  )
-      call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_AetheneumTombExit2) )
+    //  call WaygateActivateBJ( true, gg_unit_n07E_1491 )
+    //  call WaygateSetDestinationLocBJ( gg_unit_n07E_1491, GetRectCenter(gg_rct_AetheneumTombExit2) )
 
       call SetPlayerTechResearched(FACTION_SENTINELS.Player, 'R06D', 1)
       set this.Holder.Name = "Illidari"
       
-      call WaygateActivateBJ( true, gg_unit_h01D_3380 )
-      call ShowUnitShow( gg_unit_h01D_3380 )
-      call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
+    //  call WaygateActivateBJ( true, gg_unit_h01D_3380 )
+    //  call ShowUnitShow( gg_unit_h01D_3380 )
+    //  call WaygateSetDestinationLocBJ( gg_unit_h01D_3380 , GetRectCenter(gg_rct_IllidanOutlandEntrance) )
 
       call SetPlayerStateBJ( this.Holder.Player, PLAYER_STATE_FOOD_CAP_CEILING, 250 )
       call AdjustPlayerStateBJ( 800, this.Holder.Player, PLAYER_STATE_RESOURCE_GOLD )
