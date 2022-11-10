@@ -46,16 +46,20 @@ library ControlPointVictory initializer OnInit requires Team, ControlPoint
   endfunction
 
   private function ControlPointOwnerChanges takes nothing returns nothing
-    local Team team
+    local Team newOwnerTeam
+    local Team formerOwnerTeam
     local integer teamControlPoints
 
     if not GameWon then
-      set team = Person.ByHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Faction.Team
-      set teamControlPoints = GetTeamControlPoints(team)
-      if teamControlPoints >= CPS_VICTORY then
-        call TeamVictory(team)
-      elseif teamControlPoints > CPS_WARNING then
-        call TeamWarning(team, teamControlPoints)
+      set newOwnerTeam = Person.ByHandle(GetOwningPlayer(GetTriggerControlPoint().u)).Faction.Team
+      set formerOwnerTeam = Person.ByHandle(GetControlPointPreviousOwner()).Faction.Team
+      if newOwnerTeam != formerOwnerTeam then
+        set teamControlPoints = GetTeamControlPoints(newOwnerTeam)
+        if teamControlPoints >= CPS_VICTORY then
+          call TeamVictory(newOwnerTeam)
+        elseif teamControlPoints > CPS_WARNING then
+          call TeamWarning(newOwnerTeam, teamControlPoints)
+        endif
       endif
     endif
   endfunction
